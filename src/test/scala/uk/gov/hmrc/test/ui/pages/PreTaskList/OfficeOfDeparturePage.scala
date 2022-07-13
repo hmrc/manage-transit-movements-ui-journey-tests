@@ -16,25 +16,22 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object LocalReferenceNumberPage extends BasePage {
+object OfficeOfDeparturePage extends BasePage {
 
-  val url: String  = TestConfiguration.url("manage-transit-movements-departure-frontend") + "/local-reference-number"
-  val LRNPageTitle = "What is the local reference number (LRN)? - Manage your transit movements - GOV.UK"
-  val randomLRN    = randomAlphaNumericString(15)
+  val officeOfDepartureTitle = "Where is the office of departure? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    driver.navigate().to(url)
-    onPage(LRNPageTitle)
+    onPage(officeOfDepartureTitle)
     this
   }
 
-  def inputRandomLRNAndSubmit: OfficeOfDeparturePage.type = {
-    findById("value").sendKeys(randomLRN)
-    submitPage()
-    OfficeOfDeparturePage
+  def selectAnOffice(office: String): Unit = {
+    fillInputById("value", office)
+    waitForPresence(By.id("value"))
+    clickByCssSelector("li#value__option--0")
   }
 
 }

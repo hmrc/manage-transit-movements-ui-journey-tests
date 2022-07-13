@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.WebDriver
-import org.scalatestplus.selenium.WebBrowser.click
 import org.scalatestplus.selenium.Chrome.{singleSel, textField}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
@@ -43,6 +42,6 @@ object AuthorityWizard extends BasePage {
     textField("enrolment[0].taxIdentifier[0].name").value = "EORINumber"
     textField("enrolment[0].taxIdentifier[0].value").value = id
 
-    click on "submit"
+    submitPage()
   }
 }

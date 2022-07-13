@@ -16,25 +16,24 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object LocalReferenceNumberPage extends BasePage {
+object DeclarationTypePage extends BasePage {
 
-  val url: String  = TestConfiguration.url("manage-transit-movements-departure-frontend") + "/local-reference-number"
-  val LRNPageTitle = "What is the local reference number (LRN)? - Manage your transit movements - GOV.UK"
-  val randomLRN    = randomAlphaNumericString(15)
+  val declarationTypeTitle = "What declaration do you want to create? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    driver.navigate().to(url)
-    onPage(LRNPageTitle)
+    onPage(declarationTypeTitle)
     this
   }
-
-  def inputRandomLRNAndSubmit: OfficeOfDeparturePage.type = {
-    findById("value").sendKeys(randomLRN)
-    submitPage()
-    OfficeOfDeparturePage
+  def selectDeclarationType(declarationTypeSelected: String): this.type = {
+    declarationTypeSelected match {
+      case "T1"  => clickRadioBtn(declarationTypeSelected);
+      case "T2"  => clickRadioBtn(declarationTypeSelected);
+      case "T2F" => clickRadioBtn(declarationTypeSelected);
+      case "T"   => clickRadioBtn(declarationTypeSelected);
+    }
+    this
   }
 
 }
