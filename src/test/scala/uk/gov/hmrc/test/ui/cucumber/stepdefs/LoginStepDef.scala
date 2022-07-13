@@ -16,16 +16,25 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.scala.{EN, ScalaDsl, Scenario}
-import org.openqa.selenium.{OutputType, TakesScreenshot}
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePage}
+import uk.gov.hmrc.test.ui.pages.Turnover.deleteCookies
 
-class Hooks extends ScalaDsl with EN with BrowserDriver {
-  After { scenario: Scenario =>
-    if (scenario.isFailed) {
-      val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
-      scenario.attach(screenshot, "image/png", screenshotName)
-    }
+class LoginStepDef extends BaseStepDef {
+
+  Given("""I delete all cookies""") { () =>
+    deleteCookies();
   }
+
+  And("""^I login with ID (.*)$""") { (id: String) =>
+    AuthorityWizard.login(id);
+  }
+
+  Then("""I am on the Manage Transit Movements Hub service""") { () =>
+    ManageTransitMovementsHomePage.loadPage
+  }
+
+  Given("""^(?:I )?click on the (.+) link$""") { (link: String) =>
+    ManageTransitMovementsHomePage.selectAction(link)
+  }
+
 }

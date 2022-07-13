@@ -1,110 +1,162 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
+
+This is the UI journey test repository for the following frontend services:
+- manage-transit-movements-frontend
+- manage-transit-movements-departure-frontend
+- manage-transit-movements-arrivals-frontend
+- manage-transit-movements-cancellation-frontend
+- manage-transit-movements-unloading-frontend
 
 # manage-transit-movements-ui-journey-tests
-UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
+UI test suite for the CTC-Traders team using WebDriver and Cucumber.  
 
-## Running the tests
+## How to run the journey tests
+Tests can be run in Chrome or Firefox using a GUI or headless browser, either locally or in a docker container (described later).
 
-Prior to executing the tests ensure you have:
- - Docker - to run mongo and browser (Chrome or Firefox) inside a container 
- - Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
+### Journeys Covered
 
-Run the following command to start services locally:
+     Legacy enrolment
+     Manage transit movements
+     Cancellation journeys
+     End to end journeys
+     Normal declaration journeys
 
-    docker run --rm -d --name mongo -d -p 27017:27017 mongo:4.0
-    sm --start PLATFORM_EXAMPLE_UI_TESTS -r --wait 100
+### Start service manager
+For Departure and Cancellation tests run -
 
-Using the `--wait 100` argument ensures a health check is run on all the services started as part of the profile. `100` refers to the given number of seconds to wait for services to pass health checks.
+    sm --start CTC_TRADERS_DEPARTURE_ACCEPTANCE -r
 
-Then execute the `run_tests.sh` script:
+For all other tests (Arrivals, Manage, Unloading) run -
 
-    ./run_tests.sh <browser-driver> <environment> 
+    sm --start CTC_TRADERS_ALL_ACCEPTANCE -r
 
-The `run_tests.sh` script defaults to using `chrome` in the `local` environment.  For a complete list of supported param values, see:
- - `src/test/resources/application.conf` for **environment** 
- - [webdriver-factory](https://github.com/hmrc/webdriver-factory#2-instantiating-a-browser-with-default-options) for **browser-driver**
 
-## Running tests against a containerised browser - on a developer machine
+### Driver/Browser Config
+All configuration of the browsers types we test with is handled by a dependency on the [HMRC Webdriver Factory library](https://github.com/hmrc/webdriver-factory)
 
-The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
-The script requires `remote-chrome` or `remote-firefox` as an argument.
+We have configured a headless browser type by passing additional Chrome options in the Driver class and access this using the `-Dbrowsertype=headless` jvm option in the `~/run_headless.sh` script.
 
-Read more about the script's functionality [here](run_browser_with_docker.sh).
+## Test execution
+Run the appropriate shell script to run the full suites in a GUI browser
+Append the below with _local, _zap, _jenkins, _a11y.
 
-To run against a containerised Chrome browser:
+    ./run_departures_local.sh
+    ./run_arrivals_local.sh
+    ./run_cancellation_local.sh
+    ./run_unloading_local.sh
+    ./run_manage_local.sh
+### Security Tests
+Security tests are dependant on [HMRC Zap Automation library](https://github.com/hmrc/zap-automation) and configured to run using Zap 2.8.0.  
+ZAP tests are configured to scan the request/response of the full suite of journey tests or a subsection but using the @tag.
 
-```bash
-./run_browser_with_docker.sh remote-chrome 
-./run_tests.sh remote-chrome local
-```
+### Jenkins
+A monitor has been set up in the Phase5 space to give easy and clear visibility of the jenkins jobs available. All jobs are sutibially named.
 
-`./run_browser_with_docker.sh` is **NOT** required when running in a CI environment. 
+[QA Jenkins monitor](https://build.tax.service.gov.uk/job/Common%20Transit%20Convention%20Traders%20Phase%205/view/QA%20Monitor/)
 
-#### Running the tests against a test environment
 
-To run the tests against an environment set the corresponding `host` environment property as specified under
- `<env>.host.services` in the [application.conf](/src/test/resources/application.conf). 
 
-For example, to execute the `run_tests.sh` script using Chrome remote-webdriver against QA environment 
+## Accessbility Tests
+To support accessibility tests we can run the tests with an additional parameter which will force each page into a failure state, allowing us to capture the html of the error messages.
 
-    ./run_tests.sh remote-chrome qa
+### Test execution
 
-## Running ZAP tests
+#### Jenkins
+To run the accessibility tests on Jenkins run the build-jobs though the [QA Jenkins monitor](https://build.tax.service.gov.uk/job/Common%20Transit%20Convention%20Traders%20Phase%205/view/QA%20Monitor/). If you would like to run the accessibility job against your local test branch, build with paramaters and enter your branch.
 
-ZAP tests can be automated using the HMRC Dynamic Application Security Testing approach. Running 
-automated ZAP tests should not be considered a substitute for manual exploratory testing using OWASP ZAP.
+#### Locally
+    Accessibility tests cannot be run locally
 
-#### Tagging tests for ZAP
+### Config
+* Extent: ~/src/test/resources/extent-config.xml
+* Suites: ~/src/test/scala/suites/Runner.scala & Runner_WIP.scala
+* Before: Setup test reports directory
+* After:  Write report using junit source
+* Frequency - Report written on suite execution
 
-It is not required to proxy every journey test via ZAP. The intention of proxying a test through ZAP is to expose all the
- relevant pages of an application to ZAP. So tagging a subset of the journey tests or creating a 
- single ZAP focused journey test is sufficient.
+### Output
+Reports are written to ~/target/test-reports/html-report/index.html
 
-#### Configuring the browser to proxy via ZAP 
+## Data Cleanup
+Cleanup script to drop the 'user-answers' mongo collection.
 
-Setting the system property `zap.proxy=true` configures the browser specified in `browser` property to proxy via ZAP. 
-This is achieved using [webdriver-factory](https://github.com/hmrc/webdriver-factory#proxying-trafic-via-zap).
+`./drop_departure_frontend_data.sh`
+`./drop_arrival_frontend_data.sh`
 
-#### Executing a ZAP test
+## Screenshots
+Screenshot utility allowing screenshots to be taken on demand. This is available to use but not currently being called in any common steps.
 
-The shell script `run_zap_tests.sh` is available to execute ZAP tests. The script proxies a set of journey tests, 
-tagged as `ZapTests`, via ZAP.  
+### To use
+Add `tryTakeScreenShot()` method to steps or page object where required
 
-For example, to execute ZAP tests locally using a Chrome browser
+Add jvm option `-Dscreenshots=true` to `~/.run` scripts to capture screenshot
 
-```
-./run_zap_test.sh chrome local
-```
+Screenshots are output to `~/target/screenshots` as a .png image
 
-To execute ZAP tests locally using a remote-chrome browser
+## Installing and running the tests in Docker
 
-```
-./run_browser_with_docker.sh remote-chrome 
-./run_zap_test.sh remote-chrome local
-``` 
+### Install Docker
+* Linux: https://docs.docker.com/install/linux/docker-ce/ubuntu/ followed by
+  https://docs.docker.com/install/linux/linux-postinstall/
+* Mac (install docker desktop): https://docs.docker.com/docker-for-mac/install/
 
-`./run_browser_with_docker.sh` is **NOT** required when running in a CI environment.
+### Start service manager
+For Departure tests run -
 
-### Running tests using BrowserStack
-If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/main/README.md/#user-content-running-tests-using-browser-stack) project.
+    sm --start CTC_TRADERS_DEPARTURE_ACCEPTANCE -r
 
-## Installing local driver binaries
+For all other tests run -
 
-This project supports UI test execution using Firefox (Geckodriver) and Chrome (Chromedriver) browsers. 
+    sm --start CTC_TRADERS_ALL_ACCEPTANCE -r
 
-See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
+### Change to the docker/chrome directory
 
-    ./installGeckodriver.sh <operating-system> <driver-version>
-    or
-    ./installChromedriver <operating-system> <driver-version>
+    cd $WORKSPACE/manage-transit-movements-acceptance-tests/docker/chrome/
 
-- *<operating-system>* defaults to **linux64**, however it also supports **macos**
-- *<driver-version>* defaults to **0.21.0** for Gecko/Firefox, and the latest release for Chrome.  You can, however, however pass any version available at the [Geckodriver](https://github.com/mozilla/geckodriver/tags) or [Chromedriver](http://chromedriver.storage.googleapis.com/) repositories.
+### Build the chrome instance (including the . at the end)
+*You only need to do this once:*
 
-**Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
+     docker build -t chrome .
 
-**Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+### Start the Docker container
+
+*This will map service manager, chrome and vnc viewer ports to a Docker alias on the container instance.*
+
+`./rundocker.sh` or
+
+`./rundocker.sh smenv`
+
+**Note - Passing the "smenv" argument is required if you are running a service manager virtualenv.**
+
+### Run the journey tests
+
+    cd $WORKSPACE/manage-transit-movements-acceptance-tests
+    ./run_departures_headless_remote.sh (runs in remote container using headless browser)
+    ./run_cancellation_headless_remote.sh (runs in remote container using headless browser)
+    ./run_manage_headless_remote.sh (runs in remote container using headless browser)
+Or
+
+    ./run_departures_jenkins.sh (runs in remote container using GUI browser)
+    ./run_cancellation_jenkins.sh (runs in remote container using GUI browser)
+    ./run_manage_jenkins.sh (runs in remote container using GUI browser)
+
+### Connect to the VNC server (View running tests)
+
+Connect to the image on `vnc://localhost:5900` with your favorite vnc client (if you're on a mac just use Safari)
+
+When prompted for a password, enter: `secret`
+
+### Updating selenium version
+
+Edit  `~/docker/chrome/Dockerfile`
+
+Update `FROM selenium/standalone-chrome-debug:<version>` to reflect [Selenium version](https://github.com/SeleniumHQ/docker-selenium/releases)
+
+### Useful docker commands
+
+    docker ps                                   # Lists all running containers
+    docker stop $(docker ps -a -q)              # Stops all running containers
+    docker exec -it <container id> /bin/bash    # Bash access to container
+
 
 ### Scalafmt
  This repository uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf).

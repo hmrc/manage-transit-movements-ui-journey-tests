@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2022 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
+import org.openqa.selenium.{By, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+
+import java.time.Duration
 
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton = "continue-button"
@@ -31,6 +35,24 @@ trait BasePage extends BrowserDriver with Matchers {
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
+
+  //
+  def deleteCookies() = driver.manage().deleteAllCookies()
+
+  val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+    .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
+    .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
+    .ignoring(classOf[Exception])
+
+  def waitForPresence(by: By): WebElement =
+    fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+
+  def findBy(by: By): WebElement = waitForPresence(by)
+
+  def findById(id: String): WebElement = findBy(By.id(id))
+
+  def clickById(id: String): Unit = findById(id).click()
+
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

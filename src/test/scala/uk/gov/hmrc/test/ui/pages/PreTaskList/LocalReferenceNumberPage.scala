@@ -14,16 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object LocalReferenceNumberPage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val url: String  = TestConfiguration.url("manage-transit-movements-departure-frontend") + "/local-reference-number"
+  val LRNPageTitle = "What is the local reference number (LRN)? - Manage your transit movements - GOV.UK"
+
+
+  def loadPage: this.type = {
+    driver.navigate().to(url)
+    onPage(LRNPageTitle)
+    this
+  }
+
+
 }
