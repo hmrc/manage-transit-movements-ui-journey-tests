@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+object TaskListPage extends BasePage {
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@traderDetails"
-)
-class Runner {}
+  val taskListTitle = "Declaration summary - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(taskListTitle)
+    this
+  }
+
+  def selectDeclarationSection(sectionLink: String): Unit =
+    sectionLink match {
+      case "Add trader details"    => clickByPartialLinkText(sectionLink)
+      case "Add guarantee details" => clickByPartialLinkText(sectionLink)
+    }
+
+}

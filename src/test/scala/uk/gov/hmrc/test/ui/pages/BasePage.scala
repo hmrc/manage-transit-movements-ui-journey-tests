@@ -47,6 +47,11 @@ trait BasePage extends BrowserDriver with Matchers {
   def waitForPresence(by: By): WebElement =
     fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
+  def clear(locator: By): Unit = {
+    waitForPresence(locator)
+    findElement(locator).clear()
+  }
+
   def findBy(by: By): WebElement = waitForPresence(by)
 
   def findById(id: String): WebElement = findBy(By.id(id))
@@ -67,6 +72,8 @@ trait BasePage extends BrowserDriver with Matchers {
     val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
     randomStringFromCharList(length, chars)
   }
+  def findElement(locator: By): WebElement          =
+    driver.findElement(locator)
 
   def fillInput(by: By, text: String): Unit = {
     val input = driver.findElement(by)
@@ -74,6 +81,13 @@ trait BasePage extends BrowserDriver with Matchers {
     if (text != null && text.nonEmpty) input.sendKeys(text)
   }
   def fillInputById(id: String, text: String): Unit = fillInput(By.id(id), text)
+
+  def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String) = {
+    sendKeys(By.id("addressLine1"), addressLine1)
+    sendKeys(By.id("addressLine2"), addressLine2)
+    sendKeys(By.id("postalCode"), postalCode)
+    sendKeys(By.id("country"), country)
+  }
 
   def bringIntoView(by: By, action: WebElement => Unit): Unit = {
     val element                 = waitForPresence(by)
@@ -88,6 +102,13 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickRadioBtn(answer: String): Unit =
     findByCssSelector(s"input[type='radio'][value='$answer']").click()
+
+  def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
+
+  def sendKeys(locator: By, value: String): Unit = {
+    clear(locator)
+    findElement(locator).sendKeys(value)
+  }
 
 }
 

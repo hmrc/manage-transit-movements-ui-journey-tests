@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@traderDetails"
-)
-class Runner {}
+object HolderAddressPage extends BasePage {
+
+  val holderAddressTitle = "What is the transit holder’s address? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(holderAddressTitle)
+    this
+  }
+
+  def enterHolderAddress: this.type = {
+    fillInAddress("1 Church lane", "Godrics Hollow", "BA1 0AA", "United Kingdom")
+    submitPage()
+    this
+  }
+
+}

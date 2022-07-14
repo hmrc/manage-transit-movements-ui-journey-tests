@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.TraderDetails
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@traderDetails"
-)
-class Runner {}
+object AddHolderContactNamePage extends BasePage {
+
+  val holderContactPersonNameTitle = "What is the contact’s name? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(holderContactPersonNameTitle)
+    this
+  }
+
+  def enterContactPersonNameValue(holderContactName: String): this.type = {
+    onPage(holderContactPersonNameTitle)
+    fillInputById("value", holderContactName);
+    this;
+  }
+
+}

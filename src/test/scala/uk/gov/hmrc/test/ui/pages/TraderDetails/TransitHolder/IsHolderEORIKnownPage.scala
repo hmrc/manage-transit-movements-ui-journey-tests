@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@traderDetails"
-)
-class Runner {}
+object IsHolderEORIKnownPage extends BasePage {
+
+  val holderEORIKnownTitle = "Do you know the transit holder’s EORI number? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(holderEORIKnownTitle)
+    this
+  }
+  def selectIsHolderEORIKnown(isEoriKnownAnswer: String): this.type = {
+    isEoriKnownAnswer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
+
+}

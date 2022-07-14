@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.TaskListPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@traderDetails"
-)
-class Runner {}
+class TaskListStepDef extends BaseStepDef {
+
+  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
+    TaskListPage.loadPage
+  }
+
+  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
+    TaskListPage.loadPage
+    TaskListPage.selectDeclarationSection(answer);
+  }
+
+}
