@@ -14,23 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.TraderDetails
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class TaskListStepDef extends BaseStepDef {
+object MoreThanOneConsigneePage extends BasePage {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
+  val isThereMoreThanOneConsigneeTitle = "Is there more than one consignee? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(isThereMoreThanOneConsigneeTitle)
+    this
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
-  }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
+  def enterIsThereMoreThanOneConsignee(answer: String): MoreThanOneConsigneePage.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
 
 }

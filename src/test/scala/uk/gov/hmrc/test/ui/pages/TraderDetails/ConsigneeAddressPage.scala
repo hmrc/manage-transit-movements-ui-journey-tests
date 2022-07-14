@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.TraderDetails
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class TaskListStepDef extends BaseStepDef {
+object ConsigneeAddressPage extends BasePage {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
+  val consigneeAddressTitle = "What is the consignee’s address? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(consigneeAddressTitle)
+    this
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
+  def enterConsigneeAddress: this.type = {
+    fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
+    submitPage()
+    this;
   }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
-  }
-
 }

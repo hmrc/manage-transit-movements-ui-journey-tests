@@ -30,7 +30,24 @@ Feature: Example Feature file using Cucumber
     And I enter +44 4381 82 83 on the holder's contact phone number page
     And I submit on the CYA page
 
+    #Representative details
+    And I choose radio option No on the acting as representative page
+
+    #Reduced data set
+    And I choose radio option Yes on the approved operator page
+
+    #Consignee at header level
+    And I choose radio option No on the more than one consignee page
+    And I choose radio option Yes on the is consignee eori known page
+    And I enter GB123456123456 on the consignee eori number page
+    And I enter Simpson Blog Consignee on the consignee name page
+    And I fill in the consignee address page
+    And I submit on the CYA page
+    Then I should be on the task list page
+    And I should see COMPLETED status for trader details
     
+
+
 
 
 

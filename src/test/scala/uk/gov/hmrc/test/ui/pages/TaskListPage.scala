@@ -16,6 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
+import org.scalatest.compatible.Assertion
+
 object TaskListPage extends BasePage {
 
   val taskListTitle = "Declaration summary - Manage your transit movements - GOV.UK"
@@ -30,5 +33,10 @@ object TaskListPage extends BasePage {
       case "Add trader details"    => clickByPartialLinkText(sectionLink)
       case "Add guarantee details" => clickByPartialLinkText(sectionLink)
     }
+
+  def checkTraderDetailsStatus(status: String): Assertion = {
+    val statusFieldText: String = driver.findElement(By.id("trader-details-status")).getText
+    statusFieldText shouldBe status
+  }
 
 }

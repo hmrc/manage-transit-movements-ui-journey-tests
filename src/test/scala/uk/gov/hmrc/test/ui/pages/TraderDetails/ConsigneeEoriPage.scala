@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.TraderDetails
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class TaskListStepDef extends BaseStepDef {
+object ConsigneeEoriPage extends BasePage {
+  val consigneeEoriTitle = "What is the consignee’s EORI number? - Manage your transit movements - GOV.UK"
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
+  def loadPage: this.type = {
+    onPage(consigneeEoriTitle)
+    this
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
-  }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
+  def enterConsigneeEori(answer: String): ConsigneeEoriPage.type = {
+    fillInputById("value", answer);
+    this;
   }
 
 }
