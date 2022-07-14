@@ -31,6 +31,7 @@ object DeclarationTypePage extends BasePage {
       case "T1"  => clickRadioBtn(declarationTypeSelected);
       case "T2"  => clickRadioBtn(declarationTypeSelected);
       case "T2F" => clickRadioBtn(declarationTypeSelected);
+      case "TIR" => clickRadioBtn(declarationTypeSelected);
       case "T"   => clickRadioBtn(declarationTypeSelected);
     }
     this

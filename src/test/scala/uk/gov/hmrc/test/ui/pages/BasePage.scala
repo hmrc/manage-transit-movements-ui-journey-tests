@@ -37,7 +37,7 @@ trait BasePage extends BrowserDriver with Matchers {
       )
 
   //
-  def deleteCookies() = driver.manage().deleteAllCookies()
+  def deleteCookies(): Unit = driver.manage().deleteAllCookies()
 
   val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
@@ -88,6 +88,7 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickRadioBtn(answer: String): Unit =
     findByCssSelector(s"input[type='radio'][value='$answer']").click()
+
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

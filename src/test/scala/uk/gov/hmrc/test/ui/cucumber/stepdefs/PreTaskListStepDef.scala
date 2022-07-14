@@ -17,13 +17,14 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.CYAPage
-import uk.gov.hmrc.test.ui.pages.PreTaskList.{DeclarationTypePage, LocalReferenceNumberPage, OfficeOfDeparturePage, ProcedureTypePage, SecurityDetailsPage}
+import uk.gov.hmrc.test.ui.pages.PreTaskList.{DeclarationTypePage, LocalReferenceNumberPage, OfficeOfDeparturePage, ProcedureTypePage, SecurityDetailsPage, TIRCarnetPage}
 
 class PreTaskListStepDef extends BaseStepDef {
 
   When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
     LocalReferenceNumberPage.loadPage
-    LocalReferenceNumberPage.inputRandomLRNAndSubmit
+    LocalReferenceNumberPage.inputRandomLRN
+    LocalReferenceNumberPage.submitPage();
   }
 
   And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>
@@ -42,6 +43,12 @@ class PreTaskListStepDef extends BaseStepDef {
     DeclarationTypePage.loadPage
     DeclarationTypePage.selectDeclarationType(answer)
     DeclarationTypePage.submitPage();
+  }
+
+  And("""^(?:I )?enter (.+) on the tir carnet page$""") { (answer: String) =>
+    TIRCarnetPage.loadPage
+    TIRCarnetPage.enterCarnetNumber(answer);
+    TIRCarnetPage.submitPage();
   }
 
   And("""^(?:I )?choose radio option (.*) on the security type page$""") { (answer: String) =>

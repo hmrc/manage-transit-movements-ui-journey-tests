@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import uk.gov.hmrc.test.ui.pages.CYAPage.deleteCookies
 import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePage}
-import uk.gov.hmrc.test.ui.pages.Turnover.deleteCookies
 
 class LoginStepDef extends BaseStepDef {
 
