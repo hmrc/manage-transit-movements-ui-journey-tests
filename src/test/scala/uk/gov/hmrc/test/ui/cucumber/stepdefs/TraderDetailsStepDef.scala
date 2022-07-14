@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder.{HolderAddressPage, HolderEORINumberPage, IsHolderEORIKnownPage}
-import uk.gov.hmrc.test.ui.pages.TraderDetails.{ActingAsRepresentativePage, AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, ConsigneeAddressPage, ConsigneeEoriPage, ConsigneeNamePage, HolderNamePage, IsConsigneeEoriKnownPage, MoreThanOneConsigneePage, SetReducedDataSetIndicatorPage}
+import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder.{AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, HolderAddressPage, HolderEORINumberPage, IsHolderEORIKnownPage}
+import uk.gov.hmrc.test.ui.pages.TraderDetails.{ActingAsRepresentativePage, AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsigneeAddressPage, ConsigneeEoriPage, ConsigneeNamePage, ConsignorAddressPage, ConsignorEoriPage, ConsignorNamePage, HolderNamePage, IsConsigneeEoriKnownPage, IsConsignorEoriKnownPage, MoreThanOneConsigneePage, RepresentativeCapacityPage, RepresentativeEORINumberPage, RepresentativeNamePage, RepresentativePhoneNumberPage, SetReducedDataSetIndicatorPage}
 
 class TraderDetailsStepDef extends BaseStepDef {
 
@@ -73,11 +73,78 @@ class TraderDetailsStepDef extends BaseStepDef {
     ActingAsRepresentativePage.submitPage();
   }
 
+  And("""^(?:I )?enter (.+) on the representative eori page$""") { (answer: String) =>
+    RepresentativeEORINumberPage.loadPage
+    RepresentativeEORINumberPage.enterRepresentativeEori(answer)
+    RepresentativeEORINumberPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the representative name page$""") { (answer: String) =>
+    RepresentativeNamePage.loadPage
+    RepresentativeNamePage.enterRepresentativeName(answer)
+    RepresentativeNamePage.submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the representative capacity page$""") { (answer: String) =>
+    RepresentativeCapacityPage.loadPage
+    RepresentativeCapacityPage.selectCapacity(answer)
+    RepresentativeCapacityPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the representative phone number page$""") { (answer: String) =>
+    RepresentativePhoneNumberPage.loadPage
+    RepresentativePhoneNumberPage.enterRepresentativePhoneNumber(answer)
+    RepresentativePhoneNumberPage.submitPage()
+  }
+
   //Approved operator - data set indicator
   Then("""^(?:I )?choose radio option (.*) on the approved operator page""") { (answer: String) =>
     SetReducedDataSetIndicatorPage.loadPage
     SetReducedDataSetIndicatorPage.setReducedDataSetIndicator(answer)
     SetReducedDataSetIndicatorPage.submitPage();
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the is consignor eori known page$""") { (answer: String) =>
+    IsConsignorEoriKnownPage.loadPage
+    IsConsignorEoriKnownPage.enterDoYouKnowConsignorEori(answer)
+    IsConsignorEoriKnownPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the consignor eori number page$""") { (answer: String) =>
+    ConsignorEoriPage.loadPage
+    ConsignorEoriPage.enterConsignorEori(answer)
+    ConsignorEoriPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the consignor name page$""") { (answer: String) =>
+    ConsignorNamePage.loadPage
+    ConsignorNamePage.enterConsignorName(answer)
+    ConsignorNamePage.submitPage()
+  }
+
+  And("""^(?:I )?fill in the consignor address page$""") { () =>
+    ConsignorAddressPage.loadPage
+    ConsignorAddressPage.enterConsignorAddress()
+    ConsignorAddressPage.submitPage()
+  }
+
+  //Consignor contact
+  Then("""^(?:I )?choose radio option (.*) on adding contact for consignor page$""") { (answer: String) =>
+    AddConsignorContactPersonPage.loadPage
+    AddConsignorContactPersonPage.addConsignorContactPersonValue(answer)
+    AddConsignorContactPersonPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the consignor contact name page$""") { (answer: String) =>
+    AddConsignorContactNamePage.loadPage
+    AddConsignorContactNamePage.enterConsignorContactName(answer)
+    AddConsignorContactNamePage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the consignor contact number page$""") { (answer: String) =>
+    AddConsignorContactPhoneNumberPage.loadPage
+    AddConsignorContactPhoneNumberPage.enterConsignorContactPersonTelephoneValue(answer)
+    AddConsignorContactPhoneNumberPage.submitPage()
   }
 
   //Consignee

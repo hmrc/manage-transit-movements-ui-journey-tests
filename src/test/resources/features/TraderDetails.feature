@@ -45,7 +45,51 @@ Feature: Example Feature file using Cucumber
     And I submit on the CYA page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
-    
+
+  Scenario: 02 TraderDetails - GB Normal - Both Security - No reduced data set - Add consignor contact
+    And I select GB on the office of departure page
+    And I choose radio option Normal on the procedure type page
+    And I choose radio option T2 on the declaration type page
+    And I choose radio option Both entry and exit summary declarations (ENS and EXS) on the security type page
+    And I submit on the CYA page
+
+    #Holder of transit
+    And I click the link with visible text: Add trader details
+    And I choose radio option No on the is eori known type page
+    And I enter Joe Blog on the holder name page
+    And I fill in the holder address page
+
+    #Holder's contact person's details
+    And I choose radio option No on the add contact page
+    And I submit on the CYA page
+
+    #Representative details
+    And I choose radio option Yes on the acting as representative page
+    And I enter GB123456121111 on the representative eori page
+    And I enter Rosie Blog Rep on the representative name page
+    And I choose radio option Direct (principal solely liable) on the representative capacity page
+    And I enter +44 4381 82 83 on the representative phone number page
+    And I submit on the CYA page
+
+    #Reduced data set
+    And I choose radio option No on the approved operator page
+
+     #Consignor
+    And I choose radio option Yes on the is consignor eori known page
+    And I enter GB123456789000 on the consignor eori number page
+    And I enter Lewies Blog Consignor on the consignor name page
+    And I fill in the consignor address page
+
+    #Consignor contact
+    Then I choose radio option Yes on adding contact for consignor page
+    And I enter John Blog Consignor Contact on the consignor contact name page
+    And I enter +348756374563 on the consignor contact number page
+
+    #Consignee at header level
+    When I choose radio option Yes on the more than one consignee page
+    And I submit on the CYA page
+    Then I should be on the task list page
+    And I should see COMPLETED status for trader details
 
 
 

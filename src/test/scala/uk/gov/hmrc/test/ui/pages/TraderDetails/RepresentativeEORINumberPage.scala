@@ -18,21 +18,18 @@ package uk.gov.hmrc.test.ui.pages.TraderDetails
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AddHolderContactPersonPage extends BasePage {
+object RepresentativeEORINumberPage extends BasePage {
 
-  val addContactPersonTitle = "Do you want to add a contact? - Manage your transit movements - GOV.UK"
+  val representativeEORITitle = "What is your EORI number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(addContactPersonTitle)
+    onPage(representativeEORITitle)
     this
   }
 
-  def addContactPersonValue(addContactPersonAnswer: String): this.type = {
-    addContactPersonAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  def enterRepresentativeEori(eoriNumber: String): this.type = {
+    fillInputById("value", eoriNumber);
+    this;
   }
 
 }

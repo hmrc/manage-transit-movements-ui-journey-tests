@@ -18,19 +18,17 @@ package uk.gov.hmrc.test.ui.pages.TraderDetails
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AddHolderContactNamePage extends BasePage {
+object RepresentativePhoneNumberPage extends BasePage {
 
-  val holderContactPersonNameTitle = "What is the contact’s name? - Manage your transit movements - GOV.UK"
+  val representativePhoneTitle = "What is your phone number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(holderContactPersonNameTitle)
+    onPage(representativePhoneTitle)
     this
   }
 
-  def enterContactPersonNameValue(holderContactName: String): this.type = {
-    onPage(holderContactPersonNameTitle)
-    fillInputById("value", holderContactName);
+  def enterRepresentativePhoneNumber(phoneNumberAnswer: String): RepresentativePhoneNumberPage.type = {
+    fillInputById("value", phoneNumberAnswer);
     this;
   }
-
 }
