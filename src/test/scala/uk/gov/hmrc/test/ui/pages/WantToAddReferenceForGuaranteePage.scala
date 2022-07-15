@@ -14,17 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.Cucumber
-import io.cucumber.junit.CucumberOptions
-import org.junit.runner.RunWith
+object WantToAddReferenceForGuaranteePage extends BasePage {
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@departure"
-)
-class Runner {}
+  val doYouWantToAddReferenceTitle =
+    "Do you want to add a reference for the guarantee? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(doYouWantToAddReferenceTitle)
+    this
+  }
+
+  def selectToAddReference(answer: String): WantToAddReferenceForGuaranteePage.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
+}

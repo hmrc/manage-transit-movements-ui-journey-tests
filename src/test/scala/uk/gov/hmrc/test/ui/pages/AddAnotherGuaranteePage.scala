@@ -14,22 +14,27 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+object AddAnotherGuaranteePage extends BasePage {
 
-object AddHolderContactNamePage extends BasePage {
-
-  val holderContactPersonNameTitle = "What is the contact’s name? - Manage your transit movements - GOV.UK"
+  var numberOfGuarantees       = 1
+  var guarantees               = "guarantee"
+  def addAnotherGuaranteeTitle =
+    f"You have added $numberOfGuarantees $guarantees - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(holderContactPersonNameTitle)
+    onPage(addAnotherGuaranteeTitle)
     this
   }
 
-  def enterContactPersonNameValue(holderContactName: String): this.type = {
-    fillInputById("value", holderContactName);
-    this;
-  }
+  def needToAddAnotherGuarantee(answer: String): Unit =
+    answer match {
+      case "Yes" =>
+        clickById("value")
+        numberOfGuarantees += 1
+        guarantees = "guarantees"
+      case "No"  => clickById("value-no");
+    }
 
 }
