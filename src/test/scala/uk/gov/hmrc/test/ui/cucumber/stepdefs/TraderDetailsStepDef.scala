@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee.{ConsigneeAddressPage, ConsigneeEoriPage, ConsigneeNamePage, IsConsigneeEoriKnownPage, MoreThanOneConsigneePage}
-import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor.{AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsignorAddressPage, ConsignorEoriPage, ConsignorNamePage, IsConsignorEoriKnownPage}
-import uk.gov.hmrc.test.ui.pages.TraderDetails.Representative.{ActingAsRepresentativePage, RepresentativeCapacityPage, RepresentativeEORINumberPage, RepresentativeNamePage, RepresentativePhoneNumberPage}
-import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder.{AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, HolderAddressPage, HolderEORINumberPage, HolderNamePage, IsHolderEORIKnownPage, IsTIRidKnownPage, TirHolderIdPage}
+import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee._
+import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor._
+import uk.gov.hmrc.test.ui.pages.TraderDetails.Representative._
+import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder._
 import uk.gov.hmrc.test.ui.pages.TraderDetails.SetReducedDataSetIndicatorPage
 
 class TraderDetailsStepDef extends BaseStepDef {

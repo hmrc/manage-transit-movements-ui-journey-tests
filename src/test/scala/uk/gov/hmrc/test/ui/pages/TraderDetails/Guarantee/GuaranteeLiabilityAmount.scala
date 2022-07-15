@@ -14,19 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
 
-object OtherGuarantee8ReferencePage extends BasePage {
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-  val otherGuarantee8ReferenceTitle = "What is the reference? - Manage your transit movements - GOV.UK"
+object GuaranteeLiabilityAmount extends BasePage {
+
+  val guaranteeLiabilityAmountTitle = "How much is the liability in pounds? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(otherGuarantee8ReferenceTitle)
+    onPage(guaranteeLiabilityAmountTitle)
     this
   }
 
-  def enterOtherReference(answer: String): OtherGuarantee8ReferencePage.type = {
-    fillInputById("value", answer)
+  def enterLiabilityAmount(amount: String): GuaranteeLiabilityAmount.type = {
+    fillInputById("value", amount)
     this
   }
 

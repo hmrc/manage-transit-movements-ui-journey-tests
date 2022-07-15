@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
 
-object GuaranteeReferenceNumberPage extends BasePage {
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-  val guaranteeReferenceNumberTitle =
-    "What is the Guarantee Reference Number (GRN)? - Manage your transit movements - GOV.UK"
+object OtherGuarantee8ReferencePage extends BasePage {
+
+  val otherGuarantee8ReferenceTitle = "What is the reference? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(guaranteeReferenceNumberTitle)
+    onPage(otherGuarantee8ReferenceTitle)
     this
   }
 
-  def enterGRN(guaranteeReferenceNumber: String): GuaranteeReferenceNumberPage.type = {
-    fillInputById("value", guaranteeReferenceNumber)
+  def enterOtherReference(answer: String): OtherGuarantee8ReferencePage.type = {
+    fillInputById("value", answer)
     this
   }
 

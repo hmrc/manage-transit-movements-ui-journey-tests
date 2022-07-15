@@ -14,20 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
 
-object GuaranteeLiabilityAmount extends BasePage {
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-  val guaranteeLiabilityAmountTitle = "How much is the liability in pounds? - Manage your transit movements - GOV.UK"
+object WantToAddReferenceForGuaranteePage extends BasePage {
+
+  val doYouWantToAddReferenceTitle =
+    "Do you want to add a reference for the guarantee? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(guaranteeLiabilityAmountTitle)
+    onPage(doYouWantToAddReferenceTitle)
     this
   }
 
-  def enterLiabilityAmount(amount: String): GuaranteeLiabilityAmount.type = {
-    fillInputById("value", amount)
+  def selectToAddReference(answer: String): WantToAddReferenceForGuaranteePage.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
     this
   }
-
 }

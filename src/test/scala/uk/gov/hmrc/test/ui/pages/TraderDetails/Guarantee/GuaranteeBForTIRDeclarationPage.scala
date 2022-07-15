@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+
+import uk.gov.hmrc.test.ui.pages.BasePage
 
 object GuaranteeBForTIRDeclarationPage extends BasePage {
 

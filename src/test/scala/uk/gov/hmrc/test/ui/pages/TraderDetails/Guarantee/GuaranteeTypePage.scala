@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+
+import uk.gov.hmrc.test.ui.pages.BasePage
 
 object GuaranteeTypePage extends BasePage {
 
@@ -25,7 +27,7 @@ object GuaranteeTypePage extends BasePage {
     this
   }
 
-  def selectGuaranteeType(guaranteeType: String): Unit = {
+  def selectGuaranteeType(guaranteeType: String): GuaranteeTypePage.type = {
     guaranteeType match {
       case "(0) Guarantee waiver"                                                                   => clickById("value");
       case "(1) Comprehensive guarantee"                                                            => clickById("value_1");
@@ -38,6 +40,7 @@ object GuaranteeTypePage extends BasePage {
       case "(A) Guarantee waiver by agreement"                                                      => clickById("value_8");
       case "(R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways" =>
         clickById("value_9");
+
     }
     this
   }
