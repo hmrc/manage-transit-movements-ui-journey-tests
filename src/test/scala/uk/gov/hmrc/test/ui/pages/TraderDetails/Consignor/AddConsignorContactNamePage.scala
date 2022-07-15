@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RepresentativeCapacityPage extends BasePage {
-  val representativeCapacityTitle = "What is your capacity? - Manage your transit movements - GOV.UK"
+object AddConsignorContactNamePage extends BasePage {
+
+  val consignorContactPersonNameTitle = "Who is the contact for the consignor? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(representativeCapacityTitle)
+    onPage(consignorContactPersonNameTitle)
     this
   }
 
-  def selectCapacity(representativeCapacityAnswer: String): this.type = {
-
-    representativeCapacityAnswer match {
-      case "Direct (principal solely liable)"              => clickRadioBtn("direct")
-      case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
-    }
-    this
+  def enterConsignorContactName(consignorContactName: String): this.type = {
+    fillInputById("value", consignorContactName);
+    this;
   }
 }

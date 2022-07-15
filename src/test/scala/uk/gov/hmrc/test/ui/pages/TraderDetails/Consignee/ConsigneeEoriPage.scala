@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object IsTIRidKnownPage extends BasePage {
-
-  val isTIRidKnownTitle = "Is the TIR holder’s identification number known? - Manage your transit movements - GOV.UK"
+object ConsigneeEoriPage extends BasePage {
+  val consigneeEoriTitle = "What is the consignee’s EORI number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(isTIRidKnownTitle)
+    onPage(consigneeEoriTitle)
     this
   }
 
-  def enterIsTIRidKnown(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  def enterConsigneeEori(answer: String): ConsigneeEoriPage.type = {
+    fillInputById("value", answer);
+    this;
   }
+
 }

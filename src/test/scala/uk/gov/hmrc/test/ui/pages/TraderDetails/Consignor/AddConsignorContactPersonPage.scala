@@ -14,21 +14,26 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object RepresentativePhoneNumberPage extends BasePage {
+object AddConsignorContactPersonPage extends BasePage {
 
-  val representativePhoneTitle = "What is your phone number? - Manage your transit movements - GOV.UK"
+  val addConsignorContactPersonTitle =
+    "Do you want to add a contact for the consignor? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(representativePhoneTitle)
+    onPage(addConsignorContactPersonTitle)
     this
   }
 
-  def enterRepresentativePhoneNumber(phoneNumberAnswer: String): RepresentativePhoneNumberPage.type = {
-    fillInputById("value", phoneNumberAnswer);
-    this;
+  def addConsignorContactPersonValue(addConsignorContactPersonAnswer: String): this.type = {
+    addConsignorContactPersonAnswer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
+
 }

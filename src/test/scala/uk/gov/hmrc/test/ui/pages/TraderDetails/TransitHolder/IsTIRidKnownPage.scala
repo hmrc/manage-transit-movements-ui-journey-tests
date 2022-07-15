@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ConsignorAddressPage extends BasePage {
+object IsTIRidKnownPage extends BasePage {
 
-  val consignorAddressTitle = "What is the consignor’s address? - Manage your transit movements - GOV.UK"
+  val isTIRidKnownTitle = "Is the TIR holder’s identification number known? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(consignorAddressTitle)
+    onPage(isTIRidKnownTitle)
     this
   }
 
-  def enterConsignorAddress(): this.type = {
-    fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
-    submitPage()
-    this;
+  def enterIsTIRidKnown(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
-
 }

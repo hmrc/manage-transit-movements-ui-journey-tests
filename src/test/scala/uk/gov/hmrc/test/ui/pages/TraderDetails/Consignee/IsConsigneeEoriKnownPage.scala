@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ActingAsRepresentativePage extends BasePage {
-
-  val actingAsRepresentativeTitle = "Are you acting as a representative? - Manage your transit movements - GOV.UK"
+object IsConsigneeEoriKnownPage extends BasePage {
+  val isConsigneeEoriKnownTitle = "Do you know the consignee’s EORI number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(actingAsRepresentativeTitle)
+    onPage(isConsigneeEoriKnownTitle)
     this
   }
 
-  def actingAsRepresentativeValue(actingAsRepresentativeAnswer: String): this.type = {
-    actingAsRepresentativeAnswer match {
+  def enterDoYouKnowConsigneeEori(answer: String): IsConsigneeEoriKnownPage.type = {
+    answer match {
       case "Yes" => clickById("value");
       case "No"  => clickById("value-no");
     }

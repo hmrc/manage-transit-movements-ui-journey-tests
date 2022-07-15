@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.CYAPage
 import uk.gov.hmrc.test.ui.pages.PreTaskList.{DeclarationTypePage, LocalReferenceNumberPage, OfficeOfDeparturePage, ProcedureTypePage, SecurityDetailsPage, TIRCarnetPage}
 
 class PreTaskListStepDef extends BaseStepDef {

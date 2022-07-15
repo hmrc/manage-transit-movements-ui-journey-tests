@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object IsConsignorEoriKnownPage extends BasePage {
-  val isConsignorEoriKnownTitle = "Do you know the consignor’s EORI number? - Manage your transit movements - GOV.UK"
+object ConsignorAddressPage extends BasePage {
+
+  val consignorAddressTitle = "What is the consignor’s address? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(isConsignorEoriKnownTitle)
+    onPage(consignorAddressTitle)
     this
   }
 
-  def enterDoYouKnowConsignorEori(answer: String): IsConsignorEoriKnownPage.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  def enterConsignorAddress(): this.type = {
+    fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
+    submitPage()
+    this;
   }
+
 }

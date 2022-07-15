@@ -14,24 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object CostOfGoods extends BasePage {
+object ConsignorEoriPage extends BasePage {
+  val consignorEoriTitle = "What is the consignor’s EORI number? - Manage your transit movements - GOV.UK"
 
-  val costOfGoods      = "Enter your cost of goods - Check your VAT flat rate - GOV.UK"
-  val costOfGoodsInput = "costOfGoods"
-
-  def provideCostOfGoodsAmount(amount: String): this.type = {
-    onPage(costOfGoods)
-    driver.findElement(By.id(costOfGoodsInput)).sendKeys(amount)
+  def loadPage: this.type = {
+    onPage(consignorEoriTitle)
     this
   }
 
-  def submitVATInformation: CheckYourVATResult.type = {
-    submitPage()
-    CheckYourVATResult
+  def enterConsignorEori(answer: String): ConsignorEoriPage.type = {
+    fillInputById("value", answer);
+    this;
   }
-
 }

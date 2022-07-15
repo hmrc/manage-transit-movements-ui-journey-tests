@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TirHolderIdPage extends BasePage {
-
-  val tirHolderIdTitle = "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
+object AddConsignorContactPhoneNumberPage extends BasePage {
+  val addConsignorContactTelephoneTitle =
+    "What is the consignor contact’s phone number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(tirHolderIdTitle)
+    onPage(addConsignorContactTelephoneTitle)
     this
   }
 
-  def enterTIRHolderId(answer: String): TirHolderIdPage.type = {
-    fillInputById("value", answer);
+  def enterConsignorContactPersonTelephoneValue(consignorTelephoneNumber: String): this.type = {
+    fillInputById("value", consignorTelephoneNumber);
     this;
   }
 }

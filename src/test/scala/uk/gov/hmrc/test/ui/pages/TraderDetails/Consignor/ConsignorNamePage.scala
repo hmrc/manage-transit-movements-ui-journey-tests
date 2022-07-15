@@ -14,25 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object MoreThanOneConsigneePage extends BasePage {
-
-  val isThereMoreThanOneConsigneeTitle = "Is there more than one consignee? - Manage your transit movements - GOV.UK"
+object ConsignorNamePage extends BasePage {
+  val consignorNameTitle = "What is the consignor’s name? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(isThereMoreThanOneConsigneeTitle)
+    onPage(consignorNameTitle)
     this
   }
 
-  def enterIsThereMoreThanOneConsignee(answer: String): MoreThanOneConsigneePage.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  def enterConsignorName(answer: String): ConsignorNamePage.type = {
+    fillInputById("value", answer);
+    this;
   }
-
 }

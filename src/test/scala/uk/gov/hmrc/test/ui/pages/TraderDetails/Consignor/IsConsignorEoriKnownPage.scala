@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object CheckYourVATResult extends BasePage {
+object IsConsignorEoriKnownPage extends BasePage {
+  val isConsignorEoriKnownTitle = "Do you know the consignor’s EORI number? - Manage your transit movements - GOV.UK"
 
-  val checkYourVatResult   = "Your VAT calculation - Check your VAT flat rate - GOV.UK"
-  val resultOutcome        = "resultOutcome"
-  val useSetVATFlatRate    = "You can use the 16.5% VAT flat rate"
-  val useUniqueVATFlatRate = "You can use the VAT flat rate for your business type"
-
-  def result: String = {
-    onPage(checkYourVatResult)
-    driver.findElement(By.id(resultOutcome)).getText
+  def loadPage: this.type = {
+    onPage(isConsignorEoriKnownTitle)
+    this
   }
 
+  def enterDoYouKnowConsignorEori(answer: String): IsConsignorEoriKnownPage.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
 }

@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AddConsignorContactPersonPage extends BasePage {
-
-  val addConsignorContactPersonTitle =
-    "Do you want to add a contact for the consignor? - Manage your transit movements - GOV.UK"
+object ConsigneeNamePage extends BasePage {
+  val consigneeNameTitle = "What is the consignee’s name? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(addConsignorContactPersonTitle)
+    onPage(consigneeNameTitle)
     this
   }
 
-  def addConsignorContactPersonValue(addConsignorContactPersonAnswer: String): this.type = {
-    addConsignorContactPersonAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  def enterConsigneeName(answer: String): ConsigneeNamePage.type = {
+    fillInputById("value", answer);
+    this;
   }
 
 }

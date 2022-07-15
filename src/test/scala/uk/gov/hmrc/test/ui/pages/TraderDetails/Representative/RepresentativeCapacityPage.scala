@@ -14,20 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ConsignorEoriPage extends BasePage {
-  val consignorEoriTitle = "What is the consignor’s EORI number? - Manage your transit movements - GOV.UK"
+object RepresentativeCapacityPage extends BasePage {
+  val representativeCapacityTitle = "What is your capacity? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(consignorEoriTitle)
+    onPage(representativeCapacityTitle)
     this
   }
 
-  def enterConsignorEori(answer: String): ConsignorEoriPage.type = {
-    fillInputById("value", answer);
-    this;
+  def selectCapacity(representativeCapacityAnswer: String): this.type = {
+
+    representativeCapacityAnswer match {
+      case "Direct (principal solely liable)"              => clickRadioBtn("direct")
+      case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
+    }
+    this
   }
 }

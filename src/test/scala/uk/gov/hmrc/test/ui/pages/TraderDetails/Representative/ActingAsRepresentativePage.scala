@@ -14,22 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object ConsigneeAddressPage extends BasePage {
+object ActingAsRepresentativePage extends BasePage {
 
-  val consigneeAddressTitle = "What is the consignee’s address? - Manage your transit movements - GOV.UK"
+  val actingAsRepresentativeTitle = "Are you acting as a representative? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(consigneeAddressTitle)
+    onPage(actingAsRepresentativeTitle)
     this
   }
 
-  def enterConsigneeAddress: this.type = {
-    fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
-    submitPage()
-    this;
+  def actingAsRepresentativeValue(actingAsRepresentativeAnswer: String): this.type = {
+    actingAsRepresentativeAnswer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
+
 }
