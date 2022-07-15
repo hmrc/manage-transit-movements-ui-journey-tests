@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder.{AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, HolderAddressPage, HolderEORINumberPage, IsHolderEORIKnownPage}
-import uk.gov.hmrc.test.ui.pages.TraderDetails.{ActingAsRepresentativePage, AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsigneeAddressPage, ConsigneeEoriPage, ConsigneeNamePage, ConsignorAddressPage, ConsignorEoriPage, ConsignorNamePage, HolderNamePage, IsConsigneeEoriKnownPage, IsConsignorEoriKnownPage, MoreThanOneConsigneePage, RepresentativeCapacityPage, RepresentativeEORINumberPage, RepresentativeNamePage, RepresentativePhoneNumberPage, SetReducedDataSetIndicatorPage}
+import uk.gov.hmrc.test.ui.pages.TraderDetails.{ActingAsRepresentativePage, AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsigneeAddressPage, ConsigneeEoriPage, ConsigneeNamePage, ConsignorAddressPage, ConsignorEoriPage, ConsignorNamePage, HolderNamePage, IsConsigneeEoriKnownPage, IsConsignorEoriKnownPage, IsTIRidKnownPage, MoreThanOneConsigneePage, RepresentativeCapacityPage, RepresentativeEORINumberPage, RepresentativeNamePage, RepresentativePhoneNumberPage, SetReducedDataSetIndicatorPage, TirHolderIdPage}
 
 class TraderDetailsStepDef extends BaseStepDef {
 
@@ -104,6 +104,19 @@ class TraderDetailsStepDef extends BaseStepDef {
     SetReducedDataSetIndicatorPage.submitPage();
   }
 
+  //Consignor
+  And("""^(?:I )?choose radio option (.*) on the is TIR id known type page$""") { (answer: String) =>
+    IsTIRidKnownPage.loadPage
+    IsTIRidKnownPage.enterIsTIRidKnown(answer)
+    IsTIRidKnownPage.submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the TIR holder id page$""") { (answer: String) =>
+    TirHolderIdPage.loadPage
+    TirHolderIdPage.enterTIRHolderId(answer)
+    TirHolderIdPage.submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the is consignor eori known page$""") { (answer: String) =>
     IsConsignorEoriKnownPage.loadPage
     IsConsignorEoriKnownPage.enterDoYouKnowConsignorEori(answer)
@@ -129,7 +142,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   }
 
   //Consignor contact
-  Then("""^(?:I )?choose radio option (.*) on adding contact for consignor page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on adding contact for consignor page$""") { (answer: String) =>
     AddConsignorContactPersonPage.loadPage
     AddConsignorContactPersonPage.addConsignorContactPersonValue(answer)
     AddConsignorContactPersonPage.submitPage()

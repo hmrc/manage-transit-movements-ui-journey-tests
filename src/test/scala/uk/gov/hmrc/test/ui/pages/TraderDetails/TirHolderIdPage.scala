@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails
 
-object CYAPage extends BasePage {
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-  val CYATitle = "Check your answers - Manage your transit movements - GOV.UK"
+object TirHolderIdPage extends BasePage {
 
-  def loadPage: CYAPage.type = {
-    onPage(CYATitle)
-    submitPage()
+  val tirHolderIdTitle = "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(tirHolderIdTitle)
     this
   }
 
-  def clickChangeLink(text: String): Unit = {
-    val id = text.replace(" ", "-").toLowerCase
-    clickById(id)
+  def enterTIRHolderId(answer: String): TirHolderIdPage.type = {
+    fillInputById("value", answer);
+    this;
   }
 }

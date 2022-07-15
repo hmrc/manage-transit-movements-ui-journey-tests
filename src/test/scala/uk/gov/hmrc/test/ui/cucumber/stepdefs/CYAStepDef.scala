@@ -14,20 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-object CYAPage extends BasePage {
+import uk.gov.hmrc.test.ui.pages.CYAPage
 
-  val CYATitle = "Check your answers - Manage your transit movements - GOV.UK"
+class CYAStepDef extends BaseStepDef {
 
-  def loadPage: CYAPage.type = {
-    onPage(CYATitle)
-    submitPage()
-    this
+  And("""^(?:I )?submit on the CYA page""") { () =>
+    CYAPage.loadPage;
   }
 
-  def clickChangeLink(text: String): Unit = {
-    val id = text.replace(" ", "-").toLowerCase
-    clickById(id)
+  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
+    CYAPage.clickChangeLink(text)
   }
+
 }

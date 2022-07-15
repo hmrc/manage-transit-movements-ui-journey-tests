@@ -57,8 +57,4 @@ class PreTaskListStepDef extends BaseStepDef {
     SecurityDetailsPage.submitPage();
   }
 
-  And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage.loadPage;
-  }
-
 }
