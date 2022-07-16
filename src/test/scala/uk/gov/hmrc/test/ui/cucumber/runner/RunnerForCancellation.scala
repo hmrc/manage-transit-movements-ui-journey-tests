@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-object GuaranteeBForTIRDeclarationPage extends BasePage {
-
-  val guaranteeBTitle = "Guarantee added for TIR declaration - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(guaranteeBTitle)
-    this
-  }
-
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@cancellation"
+)
+class RunnerForCancellation {}

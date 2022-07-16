@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+package uk.gov.hmrc.test.ui.pages.Guarantee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 

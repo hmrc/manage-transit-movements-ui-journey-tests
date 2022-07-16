@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee._
+import uk.gov.hmrc.test.ui.pages.Guarantee._
 class GuaranteeDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?choose radio option (.*) on the guarantee type page$""") { (answer: String) =>
     GuaranteeTypePage.loadPage

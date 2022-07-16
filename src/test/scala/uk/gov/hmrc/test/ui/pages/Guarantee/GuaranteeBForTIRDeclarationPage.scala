@@ -14,21 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+package uk.gov.hmrc.test.ui.pages.Guarantee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object GuaranteeAccessCodePage extends BasePage {
+object GuaranteeBForTIRDeclarationPage extends BasePage {
 
-  val guaranteeAccessCodeTitle = "What is the access code? - Manage your transit movements - GOV.UK"
+  val guaranteeBTitle = "Guarantee added for TIR declaration - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(guaranteeAccessCodeTitle)
+    onPage(guaranteeBTitle)
     this
   }
 
-  def enterAccessCode(accessCode: String): GuaranteeAccessCodePage.type = {
-    fillInputById("value", accessCode)
-    this
-  }
 }

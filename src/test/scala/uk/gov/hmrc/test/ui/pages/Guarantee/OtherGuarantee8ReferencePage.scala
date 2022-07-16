@@ -14,30 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+package uk.gov.hmrc.test.ui.pages.Guarantee
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AddAnotherGuaranteePage extends BasePage {
+object OtherGuarantee8ReferencePage extends BasePage {
 
-  var numberOfGuarantees = 1
-  var guarantees         = "guarantee"
-
-  def addAnotherGuaranteeTitle =
-    f"You have added $numberOfGuarantees $guarantees - Manage your transit movements - GOV.UK"
+  val otherGuarantee8ReferenceTitle = "What is the reference? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(addAnotherGuaranteeTitle)
+    onPage(otherGuarantee8ReferenceTitle)
     this
   }
 
-  def needToAddAnotherGuarantee(answer: String): Unit =
-    answer match {
-      case "Yes" =>
-        clickById("value")
-        numberOfGuarantees += 1
-        guarantees = "guarantees"
-      case "No"  => clickById("value-no");
-    }
+  def enterOtherReference(answer: String): OtherGuarantee8ReferencePage.type = {
+    fillInputById("value", answer)
+    this
+  }
 
 }

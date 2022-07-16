@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Guarantee
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-object OtherGuarantee8ReferencePage extends BasePage {
-
-  val otherGuarantee8ReferenceTitle = "What is the reference? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(otherGuarantee8ReferenceTitle)
-    this
-  }
-
-  def enterOtherReference(answer: String): OtherGuarantee8ReferencePage.type = {
-    fillInputById("value", answer)
-    this
-  }
-
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@normal_submission or @simplified_submission or @resubmit_normal_submission"
+)
+class RunnerForArrival {}

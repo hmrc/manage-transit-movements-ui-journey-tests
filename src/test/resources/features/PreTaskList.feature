@@ -8,7 +8,7 @@ Feature: Pre-task list
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
-  @ZAP
+
   Scenario: GB Simplified - T1 - NO Safety and Security
     And I select GB on the office of departure page
     And I choose radio option Simplified on the procedure type page

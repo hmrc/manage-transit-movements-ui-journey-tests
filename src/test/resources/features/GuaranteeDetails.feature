@@ -10,7 +10,7 @@ Feature: Guarantee journeys
     And I input a random LRN on the LocalReferenceNumber page
 
 
-
+    @wip @a11y @ZAP
     Scenario: 01 GB declaration with multiple guarantees [0,3,5,9,R]
       And I select GB on the office of departure page
       And I choose radio option Normal on the procedure type page
