@@ -19,9 +19,12 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
+import org.mongodb.scala.MongoClient
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-
+import scala.language.postfixOps
+import scala.concurrent.Await
+import scala.concurrent.duration.DurationInt
 import java.time.Duration
 
 trait BasePage extends BrowserDriver with Matchers {
@@ -38,6 +41,21 @@ trait BasePage extends BrowserDriver with Matchers {
 
   //
   def deleteCookies(): Unit = driver.manage().deleteAllCookies()
+
+  private def dropCollection(dbName: String, collectionName: String, mongoClient: MongoClient): Unit =
+    Await.result(
+      mongoClient
+        .getDatabase(dbName)
+        .getCollection(collectionName)
+        .drop()
+        .head(),
+      10 seconds
+    )
+
+  def clearDbUserAnswers(): Unit = {
+    val mongoClient: MongoClient = MongoClient()
+    dropCollection("manage-transit-movements-departure-frontend", "user-answers", mongoClient)
+  }
 
   val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
