@@ -43,20 +43,25 @@ Execute `./run_tests.sh`
 
 #### Run tests for a specific service
 For isolated run for particular frontend is the runner that takes tags - append the appropriate tag in the terminal
-- Execute for Departures `./run_with_tags.sh Departure`
-- Execute for Arrivals `./run_with_tags.sh Arrival`
-- Execute for Cancellation `./run_with_tags.sh Cancellation`
-- Execute for Unloading `./run_with_tags.sh Unloading`
-- Execute for Manage `./run_with_tags.sh Manage`
+- Execute for Departures `./run_with_tags.sh Departure` or running headless `./run_with_tags.sh Departure headless`
+- Execute for Arrivals `./run_with_tags.sh Arrival` or running headless `./run_with_tags.sh Arrival headless`
+- Execute for Cancellation `./run_with_tags.sh Cancellation` or running headless `./run_with_tags.sh Cancellation headless`
+- Execute for Unloading `./run_with_tags.sh Unloading` or running headless `./run_with_tags.sh Unloading headless`
+- Execute for Manage `./run_with_tags.sh Manage` or running headless `./run_with_tags.sh Manage headless`
 
 #### Run Work-In-Progress tests
--Execute `./run_wip.sh`
+-Execute `./run_wip.sh` or running headless `./run_wip.sh headless`
 
 #### ZAP testing
 -Execute `./run_zap_tests.sh`
 
 #### Accessibility testing
 - Execute `./run_a11y_tests.sh`
+
+#### Drop database manually
+- Execute `./drop_arrival_frontend_data.sh`
+- Execute `./drop_departure_frontend_data.sh`
+- Execute `./drop_unloading_frontend_data.sh`
 
 ### Security Tests
 Security tests are dependant on [HMRC Zap Automation library](https://github.com/hmrc/zap-automation) and configured to run using Zap 2.8.0.  

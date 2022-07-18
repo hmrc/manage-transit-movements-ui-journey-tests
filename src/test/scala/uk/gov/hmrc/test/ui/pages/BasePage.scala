@@ -16,12 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+
+import org.junit.Before
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import org.mongodb.scala.MongoClient
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+
 import scala.language.postfixOps
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
@@ -40,22 +43,27 @@ trait BasePage extends BrowserDriver with Matchers {
       )
 
   //
-  def deleteCookies(): Unit = driver.manage().deleteAllCookies()
 
-  private def dropCollection(dbName: String, collectionName: String, mongoClient: MongoClient): Unit =
+@Before
+  def clearDbUserAnswersAndDeleteCookies(): Unit = {
+    println("============================Dropping db")
+    val mongoClient: MongoClient = MongoClient()
+    dropCollection("manage-transit-movements-departure-frontend", mongoClient)
+    dropCollection("manage-transit-movements-arrival-frontend", mongoClient)
+    dropCollection("manage-transit-movements-unloading-frontend", mongoClient)
+    println("============================Clearing cookies")
+    driver.manage().deleteAllCookies()
+  }
+
+  private def dropCollection(dbName: String, mongoClient: MongoClient): Unit =
     Await.result(
       mongoClient
         .getDatabase(dbName)
-        .getCollection(collectionName)
+        .getCollection("user-answers")
         .drop()
         .head(),
       10 seconds
     )
-
-  def clearDbUserAnswers(): Unit = {
-    val mongoClient: MongoClient = MongoClient()
-    dropCollection("manage-transit-movements-departure-frontend", "user-answers", mongoClient)
-  }
 
   val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
@@ -100,7 +108,7 @@ trait BasePage extends BrowserDriver with Matchers {
   }
   def fillInputById(id: String, text: String): Unit = fillInput(By.id(id), text)
 
-  def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String) = {
+  def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String): Unit = {
     sendKeys(By.id("addressLine1"), addressLine1)
     sendKeys(By.id("addressLine2"), addressLine2)
     sendKeys(By.id("postalCode"), postalCode)

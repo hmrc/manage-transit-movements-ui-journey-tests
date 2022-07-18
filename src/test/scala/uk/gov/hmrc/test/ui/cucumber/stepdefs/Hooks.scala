@@ -19,8 +19,15 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import io.cucumber.scala.{EN, ScalaDsl, Scenario}
 import org.openqa.selenium.{OutputType, TakesScreenshot}
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.CYAPage.clearDbUserAnswersAndDeleteCookies
 
 class Hooks extends ScalaDsl with EN with BrowserDriver {
+
+  Before {
+    clearDbUserAnswersAndDeleteCookies()
+    ()
+  }
+
   After { scenario: Scenario =>
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")

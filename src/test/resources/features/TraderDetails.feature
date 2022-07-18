@@ -3,13 +3,12 @@
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
   Background:
-    Given I delete all cookies
-    And I login with ID 1234567
+    Given I login with ID 1234567
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
 
-  @a11y @ZAP
+  @ZAP
   Scenario: 01 TraderDetails - GB Normal - No Security - Reduced Data Set - Not more than 1 consignee
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page

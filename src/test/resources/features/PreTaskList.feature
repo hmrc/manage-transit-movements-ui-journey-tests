@@ -3,8 +3,7 @@
 Feature: Pre-task list
 
   Background:
-    Given I delete all cookies
-    And I login with ID 1234567
+    Given I login with ID 1234567
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page

@@ -1,16 +1,15 @@
- @wip @guaranteeDetails @departure
+ @guaranteeDetails @departure
 
 Feature: Guarantee journeys
 
   Background:
-    Given I delete all cookies
-    And I login with ID 1234567
+    Given I login with ID 1234567
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
 
 
-    @a11y @ZAP
+  @wip @a11y @ZAP
     Scenario: 01 GB declaration with multiple guarantees [0,3,5,9,R]
       And I select GB on the office of departure page
       And I choose radio option Normal on the procedure type page

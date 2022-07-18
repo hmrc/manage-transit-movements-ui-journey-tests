@@ -16,15 +16,10 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.CYAPage.{clearDbUserAnswers, deleteCookies}
 import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePage}
 
 class LoginStepDef extends BaseStepDef {
 
-  Given("""I delete all cookies""") { () =>
-    deleteCookies();
-    clearDbUserAnswers()
-  }
 
   And("""^I login with ID (.*)$""") { (id: String) =>
     AuthorityWizard.login(id);
