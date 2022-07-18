@@ -20,23 +20,20 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object AddAnotherGuaranteePage extends BasePage {
 
-  var numberOfGuarantees = 1
-  var guarantees         = "guarantee"
-
-  def addAnotherGuaranteeTitle =
-    f"You have added $numberOfGuarantees $guarantees - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(addAnotherGuaranteeTitle)
-    this
-  }
+  def checkGuaranteesAddedTitle(numberOfGuarantees: String): Unit =
+    numberOfGuarantees match {
+      case "1" =>
+        val addAnotherGuaranteeTitle = f"You have added 1 guarantee - Manage your transit movements - GOV.UK"
+        onPage(addAnotherGuaranteeTitle)
+      case _   =>
+        val addAnotherGuaranteeTitle =
+          f"You have added $numberOfGuarantees guarantees - Manage your transit movements - GOV.UK"
+        onPage(addAnotherGuaranteeTitle)
+    }
 
   def needToAddAnotherGuarantee(answer: String): Unit =
     answer match {
-      case "Yes" =>
-        clickById("value")
-        numberOfGuarantees += 1
-        guarantees = "guarantees"
+      case "Yes" => clickById("value")
       case "No"  => clickById("value-no");
     }
 

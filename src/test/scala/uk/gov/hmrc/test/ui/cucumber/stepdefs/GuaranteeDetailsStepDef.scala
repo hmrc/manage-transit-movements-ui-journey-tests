@@ -42,8 +42,8 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
     GuaranteeLiabilityAmount.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the add another guarantee page$""") { () =>
-    AddAnotherGuaranteePage.loadPage
+  Then("""^(?:I )?(?:should )?have (.+) guarantees added on the add another guarantee page$""") { (answer: String) =>
+    AddAnotherGuaranteePage.checkGuaranteesAddedTitle(answer)
   }
 
   When("""^(?:I )?choose radio option (.*) on the add another guarantee page$""") { (answer: String) =>

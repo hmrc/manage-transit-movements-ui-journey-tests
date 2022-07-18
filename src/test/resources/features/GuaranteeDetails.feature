@@ -1,4 +1,4 @@
-@guaranteeDetails @departure
+ @wip @guaranteeDetails @departure
 
 Feature: Guarantee journeys
 
@@ -10,7 +10,7 @@ Feature: Guarantee journeys
     And I input a random LRN on the LocalReferenceNumber page
 
 
-    @wip @a11y @ZAP
+    @a11y @ZAP
     Scenario: 01 GB declaration with multiple guarantees [0,3,5,9,R]
       And I select GB on the office of departure page
       And I choose radio option Normal on the procedure type page
@@ -27,20 +27,20 @@ Feature: Guarantee journeys
       And I enter 10000 on the amount to be covered page
       And I submit on the CYA page
 
-      Then I should be on the add another guarantee page
+      Then I should have 1 guarantees added on the add another guarantee page
       When I choose radio option Yes on the add another guarantee page
       And I choose radio option (3) Individual guarantee in cash on the guarantee type page
       And I choose radio option Yes on the do you want to add a reference for the guarantee page
       And I enter 01GB123456789012 on the other reference for the guarantee 3 page
       And I submit on the CYA page
 
-      Then I should be on the add another guarantee page
+      Then I should have 2 guarantees added on the add another guarantee page
       When I choose radio option Yes on the add another guarantee page
       And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
       And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
       And I submit on the CYA page
 
-      Then I should be on the add another guarantee page
+      Then I should have 3 guarantees added on the add another guarantee page
       When I choose radio option Yes on the add another guarantee page
       And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
       And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
@@ -48,11 +48,11 @@ Feature: Guarantee journeys
       And I enter 10000 on the amount to be covered page
       And I submit on the CYA page
 
-      Then I should be on the add another guarantee page
+      Then I should have 4 guarantees added on the add another guarantee page
       When I choose radio option Yes on the add another guarantee page
       And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
 
-      Then I should be on the add another guarantee page
+      Then I should have 5 guarantees added on the add another guarantee page
       When I choose radio option No on the add another guarantee page
       Then I should be on the task list page
 
@@ -72,6 +72,7 @@ Feature: Guarantee journeys
       And I enter 10000 on the amount to be covered page
       And I submit on the CYA page
 
+      Then I should have 1 guarantees added on the add another guarantee page
       And I choose radio option Yes on the add another guarantee page
       And I choose radio option (2) Individual guarantee as an undertaking by a guarantor on the guarantee type page
       And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
@@ -79,14 +80,17 @@ Feature: Guarantee journeys
       And I enter 10000 on the amount to be covered page
       And I submit on the CYA page
 
+      Then I should have 2 guarantees added on the add another guarantee page
       And I choose radio option Yes on the add another guarantee page
       And I choose radio option (8) Guarantee not required – exempt public body on the guarantee type page
       And I enter 01GB123456789012 on the other reference for the guarantee 8 page
       And I submit on the CYA page
 
+      Then I should have 3 guarantees added on the add another guarantee page
       And I choose radio option Yes on the add another guarantee page
       And I choose radio option (A) Guarantee waiver by agreement on the guarantee type page
 
+      Then I should have 4 guarantees added on the add another guarantee page
       And I choose radio option No on the add another guarantee page
       Then I should be on the task list page
 
