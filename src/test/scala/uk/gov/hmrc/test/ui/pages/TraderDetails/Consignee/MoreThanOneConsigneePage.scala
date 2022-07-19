@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2022 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object CostOfGoods extends BasePage {
+object MoreThanOneConsigneePage extends BasePage {
 
-  val costOfGoods      = "Enter your cost of goods - Check your VAT flat rate - GOV.UK"
-  val costOfGoodsInput = "costOfGoods"
+  val isThereMoreThanOneConsigneeTitle = "Is there more than one consignee? - Manage your transit movements - GOV.UK"
 
-  def provideCostOfGoodsAmount(amount: String): this.type = {
-    onPage(costOfGoods)
-    driver.findElement(By.id(costOfGoodsInput)).sendKeys(amount)
+  def loadPage: this.type = {
+    onPage(isThereMoreThanOneConsigneeTitle)
     this
   }
 
-  def submitVATInformation: CheckYourVATResult.type = {
-    submitPage()
-    CheckYourVATResult
+  def enterIsThereMoreThanOneConsignee(answer: String): MoreThanOneConsigneePage.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
 
 }

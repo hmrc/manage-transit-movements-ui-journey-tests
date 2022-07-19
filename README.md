@@ -1,110 +1,96 @@
-**This is a template README.md.  Be sure to update this with project specific content that describes your ui test project.**
+#This is the UI journey test repository for the following frontend services:
+- manage-transit-movements-frontend
+- manage-transit-movements-departure-frontend
+- manage-transit-movements-arrivals-frontend
+- manage-transit-movements-cancellation-frontend
+- manage-transit-movements-unloading-frontend
 
-# manage-transit-movements-ui-journey-tests
-UI test suite for the `<digital service name>` using WebDriver and `<scalatest/cucumber>`.  
+## manage-transit-movements-ui-journey-tests
+UI test suite for the CTC-Traders team using WebDriver and Cucumber.  
 
-## Running the tests
+## How to run the journey tests
+Tests can be run in Chrome or Firefox using a GUI or headless browser
 
-Prior to executing the tests ensure you have:
- - Docker - to run mongo and browser (Chrome or Firefox) inside a container 
- - Appropriate [drivers installed](#installing-local-driver-binaries) - to run tests against locally installed Browser
- - Installed/configured [service manager](https://github.com/hmrc/service-manager).  
-
-Run the following command to start services locally:
-
-    docker run --rm -d --name mongo -d -p 27017:27017 mongo:4.0
-    sm --start PLATFORM_EXAMPLE_UI_TESTS -r --wait 100
-
-Using the `--wait 100` argument ensures a health check is run on all the services started as part of the profile. `100` refers to the given number of seconds to wait for services to pass health checks.
-
-Then execute the `run_tests.sh` script:
-
-    ./run_tests.sh <browser-driver> <environment> 
-
-The `run_tests.sh` script defaults to using `chrome` in the `local` environment.  For a complete list of supported param values, see:
- - `src/test/resources/application.conf` for **environment** 
- - [webdriver-factory](https://github.com/hmrc/webdriver-factory#2-instantiating-a-browser-with-default-options) for **browser-driver**
-
-## Running tests against a containerised browser - on a developer machine
-
-The script `./run_browser_with_docker.sh` can be used to start a Chrome or Firefox container on a developer machine. 
-The script requires `remote-chrome` or `remote-firefox` as an argument.
-
-Read more about the script's functionality [here](run_browser_with_docker.sh).
-
-To run against a containerised Chrome browser:
-
-```bash
-./run_browser_with_docker.sh remote-chrome 
-./run_tests.sh remote-chrome local
+### Journeys Covered
+```
+     Legacy enrolment
+     Manage transit movements
+     Cancellation journeys
+     End to end journeys
+     Normal declaration journeys
 ```
 
-`./run_browser_with_docker.sh` is **NOT** required when running in a CI environment. 
+### Start service manager
+For Departure and Cancellation tests run -
 
-#### Running the tests against a test environment
+    `sm --start CTC_TRADERS_DEPARTURE_ACCEPTANCE -r`
 
-To run the tests against an environment set the corresponding `host` environment property as specified under
- `<env>.host.services` in the [application.conf](/src/test/resources/application.conf). 
+For all other tests (Arrivals, Manage, Unloading) run -
 
-For example, to execute the `run_tests.sh` script using Chrome remote-webdriver against QA environment 
+    `sm --start CTC_TRADERS_ARRIVAL_P5_ACCEPTANCE -r`
 
-    ./run_tests.sh remote-chrome qa
 
-## Running ZAP tests
+### Driver/Browser Config
+All configuration of the browsers types we test with is handled by a dependency on the [HMRC Webdriver Factory library](https://github.com/hmrc/webdriver-factory)
 
-ZAP tests can be automated using the HMRC Dynamic Application Security Testing approach. Running 
-automated ZAP tests should not be considered a substitute for manual exploratory testing using OWASP ZAP.
+We have configured a headless browser type by passing additional Chrome options in the Driver class and access this using the `-Dbrowsertype=headless` jvm option in the `~/run_headless.sh` script.
 
-#### Tagging tests for ZAP
+## Test execution
+Run the appropriate shell script to run the full suites in a GUI browser
 
-It is not required to proxy every journey test via ZAP. The intention of proxying a test through ZAP is to expose all the
- relevant pages of an application to ZAP. So tagging a subset of the journey tests or creating a 
- single ZAP focused journey test is sufficient.
+#### Run all tests locally
+Execute `./run_tests.sh`
 
-#### Configuring the browser to proxy via ZAP 
+#### Run tests for a specific service
+For isolated run for particular frontend is the runner that takes tags - append the appropriate tag in the terminal
+- Execute for Departures `./run_with_tags.sh Departure` or running headless `./run_with_tags.sh Departure headless`
+- Execute for Arrivals `./run_with_tags.sh Arrival` or running headless `./run_with_tags.sh Arrival headless`
+- Execute for Cancellation `./run_with_tags.sh Cancellation` or running headless `./run_with_tags.sh Cancellation headless`
+- Execute for Unloading `./run_with_tags.sh Unloading` or running headless `./run_with_tags.sh Unloading headless`
+- Execute for Manage `./run_with_tags.sh Manage` or running headless `./run_with_tags.sh Manage headless`
 
-Setting the system property `zap.proxy=true` configures the browser specified in `browser` property to proxy via ZAP. 
-This is achieved using [webdriver-factory](https://github.com/hmrc/webdriver-factory#proxying-trafic-via-zap).
+#### Run Work-In-Progress tests
+-Execute `./run_wip.sh` or running headless `./run_wip.sh headless`
 
-#### Executing a ZAP test
+#### ZAP testing
+-Execute `./run_zap_tests.sh`
 
-The shell script `run_zap_tests.sh` is available to execute ZAP tests. The script proxies a set of journey tests, 
-tagged as `ZapTests`, via ZAP.  
+#### Accessibility testing
+- Execute `./run_a11y_tests.sh`
 
-For example, to execute ZAP tests locally using a Chrome browser
+#### Drop database manually
+- Execute `./drop_arrival_frontend_data.sh`
+- Execute `./drop_departure_frontend_data.sh`
+- Execute `./drop_unloading_frontend_data.sh`
 
-```
-./run_zap_test.sh chrome local
-```
+### Security Tests
+Security tests are dependant on [HMRC Zap Automation library](https://github.com/hmrc/zap-automation) and configured to run using Zap 2.8.0.  
+ZAP tests are configured to scan the request/response of the full suite of journey tests or a subsection but using the @tag.
 
-To execute ZAP tests locally using a remote-chrome browser
+### Jenkins
+A monitor has been set up in the Phase5 space to give easy and clear visibility of the jenkins jobs available. All jobs are sutibially named.
 
-```
-./run_browser_with_docker.sh remote-chrome 
-./run_zap_test.sh remote-chrome local
-``` 
+[QA Jenkins monitor](https://build.tax.service.gov.uk/job/Common%20Transit%20Convention%20Traders%20Phase%205/view/QA%20Monitor/)
 
-`./run_browser_with_docker.sh` is **NOT** required when running in a CI environment.
 
-### Running tests using BrowserStack
-If you would like to run your tests via BrowserStack from your local development environment please refer to the [webdriver-factory](https://github.com/hmrc/webdriver-factory/blob/main/README.md/#user-content-running-tests-using-browser-stack) project.
+#### Jenkins Accessibility Testing
+To run the accessibility tests on Jenkins run the build-jobs though the [QA Jenkins monitor](https://build.tax.service.gov.uk/job/Common%20Transit%20Convention%20Traders%20Phase%205/view/QA%20Monitor/). If you would like to run the accessibility job against your local test branch, build with paramaters and enter your branch.
 
-## Installing local driver binaries
+## Data Cleanup
+Cleanup script to drop the 'user-answers' mongo collection.
 
-This project supports UI test execution using Firefox (Geckodriver) and Chrome (Chromedriver) browsers. 
+`./drop_departure_frontend_data.sh`
+`./drop_arrival_frontend_data.sh`
 
-See the `drivers/` directory for some helpful scripts to do the installation work for you.  They should work on both Mac and Linux by running the following command:
+## Screenshots
+Screenshot utility allowing screenshots to be taken on demand. This is available to use but not currently being called in any common steps.
 
-    ./installGeckodriver.sh <operating-system> <driver-version>
-    or
-    ./installChromedriver <operating-system> <driver-version>
+### To use
+Add `tryTakeScreenShot()` method to steps or page object where required
 
-- *<operating-system>* defaults to **linux64**, however it also supports **macos**
-- *<driver-version>* defaults to **0.21.0** for Gecko/Firefox, and the latest release for Chrome.  You can, however, however pass any version available at the [Geckodriver](https://github.com/mozilla/geckodriver/tags) or [Chromedriver](http://chromedriver.storage.googleapis.com/) repositories.
+Add jvm option `-Dscreenshots=true` to `~/.run` scripts to capture screenshot
 
-**Note 1:** *You will need to ensure that you have a recent version of Chrome and/or Firefox installed for the later versions of the drivers to work reliably.*
-
-**Note 2** *These scripts use sudo to set the right permissions on the drivers so you will likely be prompted to enter your password.*
+Screenshots are output to `~/target/screenshots` as a .png image
 
 ### Scalafmt
  This repository uses [Scalafmt](https://scalameta.org/scalafmt/), a code formatter for Scala. The formatting rules configured for this repository are defined within [.scalafmt.conf](.scalafmt.conf).

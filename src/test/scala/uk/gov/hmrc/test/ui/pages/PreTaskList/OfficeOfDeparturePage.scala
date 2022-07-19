@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object OfficeOfDeparturePage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val officeOfDepartureTitle = "Where is the office of departure? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(officeOfDepartureTitle)
+    this
+  }
+
+  def selectAnOffice(office: String): Unit = {
+    fillInputById("value", office)
+    waitForPresence(By.id("value"))
+    clickByCssSelector("li#value__option--0")
+  }
+
 }

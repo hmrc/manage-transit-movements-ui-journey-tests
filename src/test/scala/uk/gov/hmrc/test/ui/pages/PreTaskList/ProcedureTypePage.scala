@@ -14,16 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object ProcedureTypePage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val procedureTypeTitle = "What type of procedure are you using? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(procedureTypeTitle)
+    this
+  }
+
+  def selectWhatTypeOfProcedure(procedureTypeSelected: String): this.type = {
+    procedureTypeSelected match {
+      case "Normal"     => clickRadioBtn(procedureTypeSelected.toLowerCase());
+      case "Simplified" => clickRadioBtn(procedureTypeSelected.toLowerCase());
+    }
+    this
+  }
+
 }

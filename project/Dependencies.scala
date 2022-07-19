@@ -11,7 +11,8 @@ object Dependencies {
     "io.cucumber"          % "cucumber-junit"    % "6.9.1"   % Test,
     "junit"                % "junit"             % "4.12"    % Test,
     "com.novocode"         % "junit-interface"   % "0.11"    % Test,
-    "com.typesafe"         % "config"            % "1.3.2"   % Test
+    "com.typesafe"         % "config"            % "1.3.2"   % Test,
+    "org.mongodb.scala"    %% "mongo-scala-driver"    % "4.3.3"   % Test
   )
 
 }

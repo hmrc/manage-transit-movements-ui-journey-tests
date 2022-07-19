@@ -14,16 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.CYAPage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+class CYAStepDef extends BaseStepDef {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  And("""^(?:I )?submit on the CYA page""") { () =>
+    CYAPage.loadPage;
+  }
+
+  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
+    CYAPage.clickChangeLink(text)
+  }
+
 }

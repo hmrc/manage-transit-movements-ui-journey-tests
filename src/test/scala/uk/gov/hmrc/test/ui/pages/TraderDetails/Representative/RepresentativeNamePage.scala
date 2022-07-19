@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object RepresentativeNamePage extends BasePage {
+  val representativeNameTitle = "What is your name? - Manage your transit movements - GOV.UK"
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  def loadPage: this.type = {
+    onPage(representativeNameTitle)
+    this
+  }
+
+  def enterRepresentativeName(representativeNameAnswer: String): this.type = {
+    fillInputById("value", representativeNameAnswer);
+    this;
+  }
 }

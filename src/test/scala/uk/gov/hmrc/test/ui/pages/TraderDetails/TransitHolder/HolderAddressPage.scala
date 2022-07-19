@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object HolderAddressPage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val holderAddressTitle = "What is the transit holder’s address? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(holderAddressTitle)
+    this
+  }
+
+  def enterHolderAddress: this.type = {
+    fillInAddress("1 Church lane", "Godrics Hollow", "BA1 0AA", "United Kingdom")
+    submitPage()
+    this
+  }
+
 }

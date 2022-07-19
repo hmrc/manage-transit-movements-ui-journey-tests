@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object TirHolderIdPage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val tirHolderIdTitle = "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(tirHolderIdTitle)
+    this
+  }
+
+  def enterTIRHolderId(answer: String): TirHolderIdPage.type = {
+    fillInputById("value", answer);
+    this;
+  }
 }

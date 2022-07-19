@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object ConsignorEoriPage extends BasePage {
+  val consignorEoriTitle = "What is the consignor’s EORI number? - Manage your transit movements - GOV.UK"
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  def loadPage: this.type = {
+    onPage(consignorEoriTitle)
+    this
+  }
+
+  def enterConsignorEori(answer: String): ConsignorEoriPage.type = {
+    fillInputById("value", answer);
+    this;
+  }
 }

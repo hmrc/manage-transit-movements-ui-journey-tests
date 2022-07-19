@@ -14,19 +14,26 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import org.scalatest.matchers.should.Matchers
-import org.scalatest.concurrent.Eventually
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import io.cucumber.scala.{EN, ScalaDsl}
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-import scala.util.Try
+object AddConsignorContactPersonPage extends BasePage {
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
+  val addConsignorContactPersonTitle =
+    "Do you want to add a contact for the consignor? - Manage your transit movements - GOV.UK"
 
-  sys.addShutdownHook {
-    Try(SingletonDriver.closeInstance)
+  def loadPage: this.type = {
+    onPage(addConsignorContactPersonTitle)
+    this
   }
+
+  def addConsignorContactPersonValue(addConsignorContactPersonAnswer: String): this.type = {
+    addConsignorContactPersonAnswer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
+
 }

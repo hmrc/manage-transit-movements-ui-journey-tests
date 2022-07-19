@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+object AddConsignorContactNamePage extends BasePage {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  val consignorContactPersonNameTitle = "Who is the contact for the consignor? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(consignorContactPersonNameTitle)
+    this
+  }
+
+  def enterConsignorContactName(consignorContactName: String): this.type = {
+    fillInputById("value", consignorContactName);
+    this;
+  }
 }

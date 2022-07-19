@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
+import uk.gov.hmrc.test.ui.pages.TaskListPage
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+class TaskListStepDef extends BaseStepDef {
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
+    TaskListPage.loadPage
+  }
+
+  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
+    TaskListPage.loadPage
+    TaskListPage.selectDeclarationSection(answer);
+  }
+
+  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
+    TaskListPage.checkTraderDetailsStatus(status)
+  }
+
 }
