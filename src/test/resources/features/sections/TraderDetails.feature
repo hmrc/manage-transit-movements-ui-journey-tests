@@ -168,12 +168,12 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I submit on the CYA page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
-
+@wip
   Scenario: 05 TraderDetails - Change reduced data set, add consignor contact and change more than one consignee
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
-    And I choose radio option No security on the security type page
+    And I choose radio option Entry summary declaration (ENS) on the security type page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -193,25 +193,21 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Reduced data set
     And I choose radio option Yes on the approved operator page
 
+    #Consignor
+    And I choose radio option Yes on the is consignor eori known page
+    And I enter GB123456789000 on the consignor eori number page
+    And I enter Lewies Blog Consignor on the consignor name page
+    And I fill in the consignor address page
+
+    #Consignor contact
+    And I choose radio option No on adding contact for consignor page
+
     #Consignee at header level
     And I choose radio option Yes on the more than one consignee page
 
     #Change reduced data set indicator
     And I click the change link for has reduced data set on the CYA page
     And I choose radio option No on the approved operator page
-
-    #Add consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
-    And I enter Lewies Blog Consignor on the consignor name page
-    And I fill in the consignor address page
-    And I choose radio option No on adding contact for consignor page
-
-    #Change and add contact
-    And I click the change link for has consignor contact on the CYA page
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
 
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page

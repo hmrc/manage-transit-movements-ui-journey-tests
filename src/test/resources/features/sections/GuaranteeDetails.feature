@@ -1,6 +1,6 @@
- @guaranteeDetails @departure
+@guaranteeDetails @departure
 
-Feature: Guarantee journeys
+Feature: Guarantee journeys includes pre task list
 
   Background:
     Given I login with ID 1234567
@@ -8,8 +8,7 @@ Feature: Guarantee journeys
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
 
-
-  @wip @a11y @ZAP
+  @a11y @ZAP
     Scenario: 01 GB declaration with multiple guarantees [0,3,5,9,R]
       And I select GB on the office of departure page
       And I choose radio option Normal on the procedure type page
@@ -98,7 +97,7 @@ Feature: Guarantee journeys
       And I choose radio option Normal on the procedure type page
       And I choose radio option TIR on the declaration type page
       And I enter 1234567 on the tir carnet page
-      And I choose radio option No security on the security type page
+      And I choose radio option Both entry and exit summary declarations (ENS and EXS) on the security type page
       And I submit on the CYA page
 
       And I click the link with visible text: Add guarantee details

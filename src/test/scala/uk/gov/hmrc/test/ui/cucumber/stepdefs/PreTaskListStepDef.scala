@@ -52,7 +52,7 @@ class PreTaskListStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the security type page$""") { (answer: String) =>
     SecurityDetailsPage.loadPage
-    SecurityDetailsPage.selectDeclarationType(answer)
+    SecurityDetailsPage.selectSecurityType(answer)
     SecurityDetailsPage.submitPage();
   }
 

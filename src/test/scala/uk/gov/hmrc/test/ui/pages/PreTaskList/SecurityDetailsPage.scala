@@ -28,7 +28,7 @@ object SecurityDetailsPage extends BasePage {
     onPage(securityDetailsTitle)
     this
   }
-  def selectDeclarationType(securityTypeSelected: String): this.type = {
+  def selectSecurityType(securityTypeSelected: String): this.type = {
     securityTypeSelected match {
       case "No security"                                            =>
         securityTypeCSSValue = "noSecurity"
