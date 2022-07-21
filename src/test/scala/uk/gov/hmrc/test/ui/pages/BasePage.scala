@@ -42,7 +42,6 @@ trait BasePage extends BrowserDriver with Matchers {
 
   //
 
-
   def clearDbUserAnswersAndDeleteCookies(): Unit = {
     println("============================Dropping db")
     val mongoClient: MongoClient = MongoClient()
