@@ -24,6 +24,6 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@normal_submission or @simplified_submission or @resubmit_normal_submission"
+  tags = "@arrival"
 )
 class RunnerForArrival {}

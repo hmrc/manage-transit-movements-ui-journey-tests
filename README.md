@@ -76,12 +76,6 @@ A monitor has been set up in the Phase5 space to give easy and clear visibility 
 #### Jenkins Accessibility Testing
 To run the accessibility tests on Jenkins run the build-jobs though the [QA Jenkins monitor](https://build.tax.service.gov.uk/job/Common%20Transit%20Convention%20Traders%20Phase%205/view/QA%20Monitor/). If you would like to run the accessibility job against your local test branch, build with paramaters and enter your branch.
 
-## Data Cleanup
-Cleanup script to drop the 'user-answers' mongo collection.
-
-`./drop_departure_frontend_data.sh`
-`./drop_arrival_frontend_data.sh`
-
 ## Screenshots
 Screenshot utility allowing screenshots to be taken on demand. This is available to use but not currently being called in any common steps.
 
