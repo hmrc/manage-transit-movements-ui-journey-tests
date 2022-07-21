@@ -168,7 +168,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I submit on the CYA page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
-@wip
+
   Scenario: 05 TraderDetails - Change reduced data set, add consignor contact and change more than one consignee
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
