@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.junit.Before
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
@@ -43,7 +42,7 @@ trait BasePage extends BrowserDriver with Matchers {
 
   //
 
-  @Before
+
   def clearDbUserAnswersAndDeleteCookies(): Unit = {
     println("============================Dropping db")
     val mongoClient: MongoClient = MongoClient()

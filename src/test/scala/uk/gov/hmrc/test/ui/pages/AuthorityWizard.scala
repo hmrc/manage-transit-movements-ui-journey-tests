@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.WebDriver
-import org.scalatestplus.selenium.Chrome.{singleSel, textField}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object AuthorityWizard extends BasePage {
@@ -31,17 +29,16 @@ object AuthorityWizard extends BasePage {
     this
   }
 
-  def login(id: String)(implicit driver: WebDriver): Unit = {
-    AuthorityWizard.loadPage
+  def login(id: String): Unit = {
+    loadPage
     val redirectionUrl = TestConfiguration.url("manage-transit-movements-frontend")
-    textField("redirectionUrl").value = redirectionUrl
-    singleSel("credentialStrength").value = "weak"
-    singleSel("confidenceLevel").value = "50"
-    singleSel("affinityGroup").value = "Organisation"
-    textField("enrolment[0].name").value = "HMRC-CTC-ORG"
-    textField("enrolment[0].taxIdentifier[0].name").value = "EORINumber"
-    textField("enrolment[0].taxIdentifier[0].value").value = id
-
+    findById("redirectionUrl").sendKeys(redirectionUrl)
+    findById("credentialStrength").sendKeys("weak")
+    findById("confidenceLevel").sendKeys("50")
+    findById("affinityGroupSelect").sendKeys("Organisation")
+    findById("enrolment[0].name").sendKeys("HMRC-CTC-ORG")
+    findById("input-0-0-name").sendKeys("EORINumber")
+    findById("input-0-0-value").sendKeys(id)
     submitPage()
   }
 }
