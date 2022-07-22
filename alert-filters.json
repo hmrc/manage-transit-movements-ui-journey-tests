@@ -1,0 +1,36 @@
+{
+  "add": [
+    {
+      "reason": "Absence of Anti-CSRF Tokens in auth-login-stub",
+      "contextId": 1,
+      "url": "http://localhost:9949/auth-login-stub/gg-sign-in",
+      "ruleId": 10202,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "PII Disclosure - False positive",
+      "contextId": 1,
+      "url": "http:\\/\\/localhost:.*\\/manage-transit-movements\\/.*",
+      "ruleId": 10062,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "Cross-Domain Misconfiguration - Sub-resources loaded from code.jquery.com use 'Access-Control-Allow-Origin: *' for CORS",
+      "contextId": 1,
+      "url": "https://code.jquery.com/jquery-3.6.0.min.js",
+      "ruleId": 10098,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    },
+    {
+      "reason": "X-Content-Type-Options Header Missing - when the application runs on the platform, this header gets added",
+      "contextId": 1,
+      "url": "https://code.jquery.com/jquery-3.6.0.min.js",
+      "ruleId": 10021,
+      "urlIsRegex": "false",
+      "newLevel": 0
+    }
+  ]
+}
