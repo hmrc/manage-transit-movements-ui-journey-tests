@@ -27,11 +27,4 @@ object OfficeOfDeparturePage extends BasePage {
     onPage(officeOfDepartureTitle)
     this
   }
-
-  def selectAnOffice(office: String): Unit = {
-    fillInputById("value", office)
-    waitForPresence(By.id("value"))
-    clickByCssSelector("li#value__option--0")
-  }
-
 }

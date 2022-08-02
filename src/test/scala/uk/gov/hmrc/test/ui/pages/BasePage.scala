@@ -22,6 +22,7 @@ import org.scalatest.matchers.should.Matchers
 import org.mongodb.scala.MongoClient
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.pages.PreTaskList.OfficeOfDeparturePage.{clickByCssSelector, fillInputById, waitForPresence}
 
 import scala.language.postfixOps
 import scala.concurrent.Await
@@ -131,6 +132,12 @@ trait BasePage extends BrowserDriver with Matchers {
   def sendKeys(locator: By, value: String): Unit = {
     clear(locator)
     findElement(locator).sendKeys(value)
+  }
+
+  def selectAnOffice(office: String): Unit = {
+    fillInputById("value", office)
+    waitForPresence(By.id("value"))
+    clickByCssSelector("li#value__option--0")
   }
 
 }

@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.RouteDetails
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class TaskListStepDef extends BaseStepDef {
+object BindingItineraryPage extends BasePage {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
+  val bindingItineraryTitle = "Do you want the transit to follow a binding itinerary? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(bindingItineraryTitle)
+    this
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
-  }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
+  def selectBindingItinerary(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
   }
 }

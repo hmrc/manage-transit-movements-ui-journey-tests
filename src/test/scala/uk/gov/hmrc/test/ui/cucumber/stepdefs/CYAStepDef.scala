@@ -27,5 +27,4 @@ class CYAStepDef extends BaseStepDef {
   And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
     CYAPage.clickChangeLink(text)
   }
-
 }

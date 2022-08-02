@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.RouteDetails
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class TaskListStepDef extends BaseStepDef {
+object OfficeOfDestinationPage extends BasePage {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
-  }
+  val officeOfDestinationTitle = "Where is the office of destination? - Manage your transit movements - GOV.UK"
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
-  }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
+  def loadPage: this.type = {
+    onPage(officeOfDestinationTitle)
+    this
   }
 }
