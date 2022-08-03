@@ -1,4 +1,5 @@
 @routeDetails @departure
+@wip
 Feature: Route details journeys includes pre task list
 
   Background:
@@ -38,7 +39,10 @@ Feature: Route details journeys includes pre task list
     And I choose radio option Yes on the transit route add country page
     And I select Andorra on the transit route country page
     Then I should have 1 country or countries to transit route added on the transit route add country page
-    And I choose radio option No on the add another transit route country page
+    When I choose radio option Yes on the add another transit route country page
+    And I select Argentina on the transit route country page
+    Then I should have 2 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -77,28 +81,9 @@ Feature: Route details journeys includes pre task list
     Then I should be on the task list page
 
 
-  Scenario: 05 GB Binding Itinerary set to NO
-    When I select GB on the office of departure page
-    And I choose radio option Normal on the procedure type page
-    And I choose radio option T2 on the declaration type page
-    And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the CYA page
-    Then I should be on the task list page
-    When I click the link with visible text: Add route details
-    And I select GB on the office of destination page
-    And I choose radio option No on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add country page
-    When I choose radio option Yes on the add another transit route country page
-    And I select Argentina on the transit route country page
-    Then I should have 2 country or countries to transit route added on the transit route add country page
-    When I choose radio option No on the add another transit route country page
-    And I submit on the CYA page
-    Then I should be on the task list page
-
 
   ####Route Details XI
-  Scenario: 06 XI No Security selected and Binding Itinerary set to NO
+  Scenario: 05 XI No Security selected and Binding Itinerary set to NO
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -112,8 +97,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
 
-
-  Scenario: 07 XI No Security selected and Binding Itinerary set to NO and then YES to add country transit route
+  Scenario: 06 XI No Security selected and Binding Itinerary set to NO and then YES to add country transit route
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -131,7 +115,7 @@ Feature: Route details journeys includes pre task list
     Then I should be on the task list page
 
 
-  Scenario: 08 XI No Security selected and Binding Itinerary set to YES
+  Scenario: 07 XI No Security selected and Binding Itinerary set to YES
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -144,42 +128,5 @@ Feature: Route details journeys includes pre task list
     And I select Andorra on the transit route country page
     Then I should have 1 country or countries to transit route added on the transit route add country page
     And I choose radio option No on the add another transit route country page
-    And I submit on the CYA page
-    Then I should be on the task list page
-
-
-  Scenario: 09 XI Binding Itinerary set to YES
-    When I select XI on the office of departure page
-    And I choose radio option Normal on the procedure type page
-    And I choose radio option T2 on the declaration type page
-    And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the CYA page
-    Then I should be on the task list page
-    When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add country page
-    And I choose radio option No on the add another transit route country page
-    And I submit on the CYA page
-    Then I should be on the task list page
-
-
-  Scenario: 10 XI Binding Itinerary set to NO
-    When I select XI on the office of departure page
-    And I choose radio option Normal on the procedure type page
-    And I choose radio option T2 on the declaration type page
-    And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the CYA page
-    Then I should be on the task list page
-    When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
-    And I choose radio option No on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add country page
-    When I choose radio option Yes on the add another transit route country page
-    And I select Argentina on the transit route country page
-    Then I should have 2 country or countries to transit route added on the transit route add country page
-    When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
     Then I should be on the task list page

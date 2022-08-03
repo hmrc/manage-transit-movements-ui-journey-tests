@@ -1,4 +1,5 @@
 @departureXIe2e
+  @wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -87,7 +88,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select XI on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    And I choose radio option No on the add another transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -139,6 +141,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select XI on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
-    And I choose radio option No on the add another transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option Yes on the add another transit route country page
+    And I select Argentina on the transit route country page
+    Then I should have 2 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
     Then I should be on the task list page
