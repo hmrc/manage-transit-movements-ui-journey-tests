@@ -1,5 +1,4 @@
 @routeDetails @departure
-@wip
 Feature: Route details journeys includes pre task list
 
   Background:
@@ -10,7 +9,7 @@ Feature: Route details journeys includes pre task list
 
 
   @a11y @ZAP
-###Route Details GB
+  #Route Details GB
   Scenario: 01 GB No Security selected and Binding Itinerary set to NO
     When I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -81,8 +80,7 @@ Feature: Route details journeys includes pre task list
     Then I should be on the task list page
 
 
-
-  ####Route Details XI
+  #Route Details XI
   Scenario: 05 XI No Security selected and Binding Itinerary set to NO
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -113,7 +111,6 @@ Feature: Route details journeys includes pre task list
     And I choose radio option No on the add another transit route country page
     And I submit on the CYA page
     Then I should be on the task list page
-
 
   Scenario: 07 XI No Security selected and Binding Itinerary set to YES
     When I select XI on the office of departure page

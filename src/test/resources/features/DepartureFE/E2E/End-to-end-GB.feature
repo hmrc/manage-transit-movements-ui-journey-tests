@@ -1,5 +1,4 @@
 @departureGBe2e
-@wip
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -100,7 +99,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
-    #### Route details: Binding Itinerary set to Yes
+    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select GB on the office of destination page
     And I choose radio option Yes on the binding itinerary page
@@ -193,7 +192,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
-    #### Route details: Binding Itinerary set to No and additional route
+    #Route details: Binding Itinerary set to No and additional route
     When I click the link with visible text: Add route details
     And I select GB on the office of destination page
     And I choose radio option No on the binding itinerary page
