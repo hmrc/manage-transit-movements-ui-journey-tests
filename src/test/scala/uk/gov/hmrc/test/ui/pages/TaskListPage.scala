@@ -39,5 +39,4 @@ object TaskListPage extends BasePage {
     val statusFieldText: String = driver.findElement(By.id("trader-details-status")).getText
     statusFieldText shouldBe status
   }
-
 }

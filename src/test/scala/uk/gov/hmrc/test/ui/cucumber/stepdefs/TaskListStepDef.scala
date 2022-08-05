@@ -32,4 +32,5 @@ class TaskListStepDef extends BaseStepDef {
   And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
     TaskListPage.checkTraderDetailsStatus(status)
   }
+
 }

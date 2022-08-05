@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.RouteDetails
 
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.Guarantee.AddAnotherGuaranteePage.onPage
 
 object AddAnotherTransitRouteCountryPage extends BasePage {
 

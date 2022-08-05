@@ -34,4 +34,5 @@ object BindingItineraryPage extends BasePage {
     }
     this
   }
+
 }

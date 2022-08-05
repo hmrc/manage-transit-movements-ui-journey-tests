@@ -26,4 +26,5 @@ object OfficeOfDestinationPage extends BasePage {
     onPage(officeOfDestinationTitle)
     this
   }
+
 }

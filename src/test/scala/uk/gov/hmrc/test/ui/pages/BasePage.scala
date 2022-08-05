@@ -41,8 +41,6 @@ trait BasePage extends BrowserDriver with Matchers {
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
 
-  //
-
   def clearDbUserAnswersAndDeleteCookies(): Unit = {
     println("============================Dropping db")
     val mongoClient: MongoClient = MongoClient()

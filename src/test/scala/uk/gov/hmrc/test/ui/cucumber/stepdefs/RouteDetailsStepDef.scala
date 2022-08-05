@@ -26,7 +26,6 @@ class RouteDetailsStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?choose radio option (.*) on the binding itinerary page$""") { (answer: String) =>
-    //Thread.sleep(10000000)
     BindingItineraryPage.loadPage
     BindingItineraryPage.selectBindingItinerary(answer)
     BindingItineraryPage.submitPage()

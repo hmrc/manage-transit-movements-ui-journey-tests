@@ -94,6 +94,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
 
+
   Scenario: 06 XI No Security selected and Binding Itinerary set to NO and then YES to add country transit route
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
