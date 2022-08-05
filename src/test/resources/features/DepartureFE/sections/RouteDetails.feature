@@ -7,6 +7,7 @@ Feature: Route details journeys includes pre task list
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
 
+
   @a11y @ZAP
   #Route Details GB
   Scenario: 01 GB No Security selected and Binding Itinerary set to NO
