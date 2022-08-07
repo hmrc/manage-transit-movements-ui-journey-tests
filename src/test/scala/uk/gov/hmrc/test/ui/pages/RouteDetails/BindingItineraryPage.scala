@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PreTaskList
+package uk.gov.hmrc.test.ui.pages.RouteDetails
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object OfficeOfDeparturePage extends BasePage {
+object BindingItineraryPage extends BasePage {
 
-  val officeOfDepartureTitle = "Where is the office of departure? - Manage your transit movements - GOV.UK"
+  val bindingItineraryTitle = "Do you want the transit to follow a binding itinerary? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(officeOfDepartureTitle)
+    onPage(bindingItineraryTitle)
+    this
+  }
+
+  def selectBindingItinerary(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
     this
   }
 }

@@ -74,4 +74,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
     GuaranteeBForTIRDeclarationPage.loadPage
   }
 
+  And("""^(?:I )?choose to continue""") { () =>
+    GuaranteeBForTIRDeclarationPage.submitPage();
+  }
 }
