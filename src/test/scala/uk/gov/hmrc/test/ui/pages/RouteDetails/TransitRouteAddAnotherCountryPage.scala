@@ -34,7 +34,7 @@ package uk.gov.hmrc.test.ui.pages.RouteDetails
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object AddAnotherTransitRouteCountryPage extends BasePage {
+object TransitRouteAddAnotherCountryPage extends BasePage {
 
   def checkAddAnotherTransitRouteCountryTitle(numberOfCountry: String): Unit =
     numberOfCountry match {
