@@ -38,12 +38,12 @@ class RouteDetailsStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?(?:should )?have (.+) country or countries to transit route added on the transit route add country page$""") { (answer: String) =>
-    AddAnotherTransitRouteCountryPage.checkAddAnotherTransitRouteCountryTitle(answer)
+    TransitRouteAddAnotherCountryPage.checkAddAnotherTransitRouteCountryTitle(answer)
   }
 
   And("""^(?:I )?choose radio option (.*) on the add another transit route country page$""") { (answer: String) =>
-    AddAnotherTransitRouteCountryPage.selectAddAnotherTransitRouteCountry(answer)
-    AddAnotherTransitRouteCountryPage.submitPage()
+    TransitRouteAddAnotherCountryPage.selectAddAnotherTransitRouteCountry(answer)
+    TransitRouteAddAnotherCountryPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") { (answer: String) =>
