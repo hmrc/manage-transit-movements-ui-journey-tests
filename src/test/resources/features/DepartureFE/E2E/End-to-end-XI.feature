@@ -1,5 +1,4 @@
 @departureXIe2e
-
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -83,6 +82,15 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
+    #Route details: Binding Itinerary set to Yes
+    When I click the link with visible text: Add route details
+    And I select XI on the office of destination page
+    And I choose radio option Yes on the binding itinerary page
+    And I select Andorra on the transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
@@ -124,5 +132,18 @@ Feature: End to end journey for Northern Ireland office of departure
     #Guarantee details
     And I click the link with visible text: Add guarantee details
     Then I should be on the guarantee B added for TIR declaration page
+    When I choose to continue
+    And I should be on the task list page
 
-
+    #Route details: Binding Itinerary set to No
+    When I click the link with visible text: Add route details
+    And I select XI on the office of destination page
+    And I choose radio option No on the binding itinerary page
+    And I select Andorra on the transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option Yes on the add another transit route country page
+    And I select Argentina on the transit route country page
+    Then I should have 2 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
+    And I submit on the CYA page
+    Then I should be on the task list page

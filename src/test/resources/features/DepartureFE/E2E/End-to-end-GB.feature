@@ -1,5 +1,4 @@
 @departureGBe2e
-
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -64,7 +63,7 @@ Feature: End to end journey for Great Britain office of departure
 
     When I click the link with visible text: Add guarantee details
 
-      #Guarantee details
+    #Guarantee details
     And I choose radio option (0) Guarantee waiver on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I enter AC01 on the access code page
@@ -99,6 +98,17 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 5 guarantees added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
+
+    #Route details: Binding Itinerary set to Yes
+    When I click the link with visible text: Add route details
+    And I select GB on the office of destination page
+    And I choose radio option Yes on the binding itinerary page
+    And I select Andorra on the transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
+    And I submit on the CYA page
+    Then I should be on the task list page
+
 
   Scenario: 01 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8]
     And I choose radio option Normal on the procedure type page
@@ -155,7 +165,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 1 guarantees added on the add another guarantee page
     And I choose radio option Yes on the add another guarantee page
 
-     #Guarantee details
+    #Guarantee details
     And I choose radio option (2) Individual guarantee as an undertaking by a guarantor on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I enter AC01 on the access code page
@@ -165,7 +175,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 2 guarantees added on the add another guarantee page
     And I choose radio option Yes on the add another guarantee page
 
-     #Guarantee details
+    #Guarantee details
     And I choose radio option (4) Individual guarantee in the form of vouchers on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I enter AC01 on the access code page
@@ -180,4 +190,17 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
     And I choose radio option No on the add another guarantee page
+    Then I should be on the task list page
+
+    #Route details: Binding Itinerary set to No and additional route
+    When I click the link with visible text: Add route details
+    And I select GB on the office of destination page
+    And I choose radio option No on the binding itinerary page
+    And I select Andorra on the transit route country page
+    Then I should have 1 country or countries to transit route added on the transit route add country page
+    When I choose radio option Yes on the add another transit route country page
+    And I select Argentina on the transit route country page
+    Then I should have 2 country or countries to transit route added on the transit route add country page
+    When I choose radio option No on the add another transit route country page
+    And I submit on the CYA page
     Then I should be on the task list page

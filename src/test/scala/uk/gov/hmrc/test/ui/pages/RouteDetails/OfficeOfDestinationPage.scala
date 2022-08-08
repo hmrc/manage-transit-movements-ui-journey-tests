@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PreTaskList
+package uk.gov.hmrc.test.ui.pages.RouteDetails
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object OfficeOfDeparturePage extends BasePage {
+object OfficeOfDestinationPage extends BasePage {
 
-  val officeOfDepartureTitle = "Where is the office of departure? - Manage your transit movements - GOV.UK"
+  val officeOfDestinationTitle = "Where is the office of destination? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(officeOfDepartureTitle)
+    onPage(officeOfDestinationTitle)
     this
   }
 }
