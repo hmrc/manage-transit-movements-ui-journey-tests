@@ -90,7 +90,6 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 country or countries to transit route added on the transit route add country page
     When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B

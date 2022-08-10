@@ -21,7 +21,6 @@ Feature: Route details journeys includes pre task list
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   Scenario: 02 GB No Security selected and Binding Itinerary set to NO and then YES to add country transit route
@@ -42,7 +41,6 @@ Feature: Route details journeys includes pre task list
     Then I should have 2 country or countries to transit route added on the transit route add country page
     When I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   Scenario: 03 GB No Security selected and Binding Itinerary set to YES
@@ -59,7 +57,6 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add country page
     And I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   Scenario: 04 GB Binding Itinerary set to YES
@@ -76,7 +73,6 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add country page
     And I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   #Route Details XI
@@ -92,7 +88,6 @@ Feature: Route details journeys includes pre task list
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
 
   Scenario: 06 XI No Security selected and Binding Itinerary set to NO and then YES to add country transit route
@@ -110,7 +105,6 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add country page
     And I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
 
   Scenario: 07 XI No Security selected and Binding Itinerary set to YES
     When I select XI on the office of departure page
@@ -126,4 +120,3 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add country page
     And I choose radio option No on the add another transit route country page
     And I submit on the CYA page
-    Then I should be on the task list page
