@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object OfficeOfDestinationPage extends BasePage {
+object ConfirmRemoveOfficeOfTransitPage extends BasePage {
 
-  val officeOfDestinationTitle = "Where is the office of destination? - Manage your transit movements - GOV.UK"
+  val confirmRemoveOfficeOfTransitTitle = "Are you sure you want to remove this office of transit? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(officeOfDestinationTitle)
+    onPage(confirmRemoveOfficeOfTransitTitle)
+    this
+  }
+
+  def selectConfirmRemoveOfficeOfTransit(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
     this
   }
 }

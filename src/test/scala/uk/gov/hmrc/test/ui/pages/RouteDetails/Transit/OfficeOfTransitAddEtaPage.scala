@@ -14,16 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransitRouteCountryPage extends BasePage {
+object OfficeOfTransitAddEtaPage extends BasePage {
 
-  val transitRouteCountryTitle = "Which country do you want to add to the transit route? - Manage your transit movements - GOV.UK"
+  def checkOfficeOfTransitAddEtaTitle(etaOffice: String): Unit =
+    etaOffice match {
+      case "Paris" =>
+        onPage(f"Do you want to add a time of arrival in Paris (FR001260)? - Manage your transit movements - GOV.UK")
+      case "BOSTON" =>
+        onPage(f"Do you want to add a time of arrival in BOSTON (GB000244)? - Manage your transit movements - GOV.UK")
+    }
 
-  def loadPage: this.type = {
-    onPage(transitRouteCountryTitle)
+  def selectOfficeOfTransitAddEta(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
     this
   }
 }

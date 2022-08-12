@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransitRouteAddCountryPage extends BasePage {
+object OfficeOfDestinationPage extends BasePage {
 
-  val transitRouteAddCountryTitle = "Do you want to add a country to the transit route? - Manage your transit movements - GOV.UK"
+  val officeOfDestinationTitle = "Where is the office of destination? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(transitRouteAddCountryTitle)
-    this
-  }
-
-  def selectTransitRouteAddCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No" => clickById("value-no");
-    }
+    onPage(officeOfDestinationTitle)
     this
   }
 }

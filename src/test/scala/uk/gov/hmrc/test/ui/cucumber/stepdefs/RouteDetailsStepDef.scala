@@ -15,6 +15,7 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
+import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing.{BindingItineraryPage, OfficeOfDestinationPage, TransitRouteAddAnotherCountryPage, TransitRouteAddCountryPage, TransitRouteCountryPage, TransitRouteRemoveCountryPage}
 import uk.gov.hmrc.test.ui.pages.RouteDetails._
 
 class RouteDetailsStepDef extends BaseStepDef {
@@ -37,13 +38,23 @@ class RouteDetailsStepDef extends BaseStepDef {
     TransitRouteCountryPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) country or countries to transit route added on the transit route add country page$""") { (answer: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) country or countries to transit route added on the transit route add another country page$""") { (answer: String) =>
     TransitRouteAddAnotherCountryPage.checkAddAnotherTransitRouteCountryTitle(answer)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add another transit route country page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the transit route add another country page$""") { (answer: String) =>
     TransitRouteAddAnotherCountryPage.selectAddAnotherTransitRouteCountry(answer)
     TransitRouteAddAnotherCountryPage.submitPage()
+  }
+
+  And("""^(?:I )?choose to click on (.*) link on the transit route add another country page$""") { (sectionLink: String) =>
+    TransitRouteAddAnotherCountryPage.clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the transit route remove country page$""") { (answer: String) =>
+    TransitRouteRemoveCountryPage.loadPage
+    TransitRouteRemoveCountryPage.selectTransitRouteRemoveCountry(answer)
+    TransitRouteRemoveCountryPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") { (answer: String) =>
