@@ -23,7 +23,7 @@ Feature: Route details journeys includes pre task list
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
-#Route Details Transit -> Yes
+    #Route Details Transit -> Yes
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
@@ -56,7 +56,7 @@ Feature: Route details journeys includes pre task list
     Then I should have 2 country or countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit ->  Add office of transit page [No]
+    #Route Details Transit ->  Add office of transit page [No]
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option No on the add office of transit page
     Then I should be on the task list page
@@ -81,7 +81,7 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit -> office of transit add eta [No] and Remove office of transit
+   #Route Details Transit -> office of transit add eta [No] and Remove office of transit
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
@@ -110,7 +110,7 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit -> office of transit add eta [No] and Then add another transit office
+   #Route Details Transit -> office of transit add eta [No] and Then add another transit office
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
@@ -146,7 +146,7 @@ Feature: Route details journeys includes pre task list
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
-#Route Details Transit -> Yes
+   #Route Details Transit -> Yes
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
@@ -175,7 +175,7 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit ->  Add office of transit page [No]
+   #Route Details Transit ->  Add office of transit page [No]
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option No on the add office of transit page
     Then I should be on the task list page
@@ -196,7 +196,7 @@ Feature: Route details journeys includes pre task list
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit -> office of transit add eta [No] and Remove office of transit
+   #Route Details Transit -> office of transit add eta [No] and Remove office of transit
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
