@@ -15,9 +15,15 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
-import uk.gov.hmrc.test.ui.pages.RouteDetails._
+import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing._
 
 class RouteDetailsStepDef extends BaseStepDef {
+
+  And("""^(?:I )?select (.+) on the country of destination page$""") { (answer: String) =>
+    CountryOfDestinationPage.loadPage
+    CountryOfDestinationPage.selectAnOffice(answer)
+    CountryOfDestinationPage.submitPage()
+  }
 
   And("""^(?:I )?select (.+) on the office of destination page$""") { (answer: String) =>
     OfficeOfDestinationPage.loadPage
@@ -37,13 +43,23 @@ class RouteDetailsStepDef extends BaseStepDef {
     TransitRouteCountryPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) country or countries to transit route added on the transit route add country page$""") { (answer: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) country or countries to transit route added on the transit route add another country page$""") { (answer: String) =>
     TransitRouteAddAnotherCountryPage.checkAddAnotherTransitRouteCountryTitle(answer)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add another transit route country page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the transit route add another country page$""") { (answer: String) =>
     TransitRouteAddAnotherCountryPage.selectAddAnotherTransitRouteCountry(answer)
     TransitRouteAddAnotherCountryPage.submitPage()
+  }
+
+  And("""^(?:I )?choose to click on (.*) link on the transit route add another country page$""") { (sectionLink: String) =>
+    TransitRouteAddAnotherCountryPage.clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the transit route remove country page$""") { (answer: String) =>
+    TransitRouteRemoveCountryPage.loadPage
+    TransitRouteRemoveCountryPage.selectTransitRouteRemoveCountry(answer)
+    TransitRouteRemoveCountryPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") { (answer: String) =>

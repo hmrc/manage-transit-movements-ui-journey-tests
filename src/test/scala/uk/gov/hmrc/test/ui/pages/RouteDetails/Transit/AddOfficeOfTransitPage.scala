@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object BindingItineraryPage extends BasePage {
+object AddOfficeOfTransitPage extends BasePage {
 
-  val bindingItineraryTitle = "Do you want the transit to follow a binding itinerary? - Manage your transit movements - GOV.UK"
+  val addOfficeOfTransitPageTitle = "Do you want to add an office of transit? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(bindingItineraryTitle)
+    onPage(addOfficeOfTransitPageTitle)
     this
   }
 
-  def selectBindingItinerary(answer: String): this.type = {
+  def selectAddOfficeOfTransit(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
       case "No"  => clickById("value-no");
