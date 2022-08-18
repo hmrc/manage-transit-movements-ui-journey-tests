@@ -1,5 +1,4 @@
 @departureGBe2e
-@wip
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -101,6 +100,7 @@ Feature: End to end journey for Great Britain office of departure
 
    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
@@ -212,8 +212,9 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
-   #Route details: Binding Itinerary set to No and additional route
+    #Route details: Binding Itinerary set to No and additional route
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
@@ -224,7 +225,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
 
-  #Route Details Transit -> office of transit add eta [No] and Then add another transit office
+    #Route Details Transit -> office of transit add eta [No] and Then add another transit office
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page

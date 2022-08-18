@@ -1,5 +1,4 @@
 @departureXIe2e
-@wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -85,7 +84,8 @@ Feature: End to end journey for Northern Ireland office of departure
 
     #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
+    And I select Italy on the country of destination page
+    And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country or countries to transit route added on the transit route add another country page
@@ -96,7 +96,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit -> office of transit add eta [No] and Remove office of transit
+   #Route Details Transit -> office of transit add eta [No] and Remove office of transit
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page
@@ -157,7 +157,8 @@ Feature: End to end journey for Northern Ireland office of departure
 
     #Route details: Binding Itinerary set to No
     When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
+    And I select Italy on the country of destination page
+    And I select Bari on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country or countries to transit route added on the transit route add another country page
@@ -166,7 +167,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 2 country or countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-#Route Details Transit -> office of transit add eta [No] and Then add another transit office
+   #Route Details Transit -> office of transit add eta [No] and Then add another transit office
     And I choose radio option Yes on the t2 declaration type page
     And I choose radio option Yes on the add office of transit page
     And I select France on the office of transit country page

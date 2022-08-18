@@ -15,10 +15,15 @@
  */
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
-import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing.{BindingItineraryPage, OfficeOfDestinationPage, TransitRouteAddAnotherCountryPage, TransitRouteAddCountryPage, TransitRouteCountryPage, TransitRouteRemoveCountryPage}
-import uk.gov.hmrc.test.ui.pages.RouteDetails._
+import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing._
 
 class RouteDetailsStepDef extends BaseStepDef {
+
+  And("""^(?:I )?select (.+) on the country of destination page$""") { (answer: String) =>
+    CountryOfDestinationPage.loadPage
+    CountryOfDestinationPage.selectAnOffice(answer)
+    CountryOfDestinationPage.submitPage()
+  }
 
   And("""^(?:I )?select (.+) on the office of destination page$""") { (answer: String) =>
     OfficeOfDestinationPage.loadPage

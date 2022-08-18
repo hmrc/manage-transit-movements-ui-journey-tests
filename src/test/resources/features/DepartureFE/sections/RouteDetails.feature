@@ -1,5 +1,4 @@
 @routeDetails @departure
-@wip
 Feature: Route details journeys includes pre task list
 
   Background:
@@ -19,6 +18,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
@@ -46,6 +46,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option Yes on the transit route add country page
@@ -70,6 +71,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
@@ -104,6 +106,7 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
+    And I select United Kingdom on the country of destination page
     And I select GB on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
@@ -142,7 +145,8 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
+    And I select Italy on the country of destination page
+    And I select Bari on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -168,7 +172,8 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
+    And I select Italy on the country of destination page
+    And I select Bari on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option Yes on the transit route add country page
     And I select Andorra on the transit route country page
@@ -190,7 +195,8 @@ Feature: Route details journeys includes pre task list
     And I submit on the CYA page
     Then I should be on the task list page
     When I click the link with visible text: Add route details
-    And I select XI on the office of destination page
+    And I select Italy on the country of destination page
+    And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country or countries to transit route added on the transit route add another country page
