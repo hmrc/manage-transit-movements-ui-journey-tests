@@ -1,4 +1,4 @@
-@routeDetails @departure @wip
+@routeDetails @departure
 Feature: Route details journeys includes pre task list
 
   Background:
