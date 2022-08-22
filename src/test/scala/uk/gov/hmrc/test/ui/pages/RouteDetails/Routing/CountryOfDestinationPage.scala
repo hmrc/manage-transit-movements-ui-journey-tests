@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object CountryOfDestinationPage extends BasePage {
 
-  val countryOfDestinationTitle = "Which country is the transit movement ending in? - Manage your transit movements - GOV.UK"
+  val countryOfDestinationTitle = "What is the country of destination? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(countryOfDestinationTitle)
