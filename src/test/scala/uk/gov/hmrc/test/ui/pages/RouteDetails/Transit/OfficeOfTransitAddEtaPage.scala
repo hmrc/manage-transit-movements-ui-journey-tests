@@ -26,6 +26,8 @@ object OfficeOfTransitAddEtaPage extends BasePage {
         onPage(f"Do you want to add a time of arrival in Paris (FR001260)? - Manage your transit movements - GOV.UK")
       case "BOSTON" =>
         onPage(f"Do you want to add a time of arrival in BOSTON (GB000244)? - Manage your transit movements - GOV.UK")
+      case "Bari" =>
+        onPage(f"Do you want to add a time of arrival in Bari (IT018100)? - Manage your transit movements - GOV.UK")
     }
 
   def selectOfficeOfTransitAddEta(answer: String): this.type = {

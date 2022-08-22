@@ -27,5 +27,7 @@ object OfficeOfTransitPage extends BasePage {
         onPage(f"Where in France is the office of transit? - Manage your transit movements - GOV.UK")
       case "United Kingdom" =>
         onPage(f"Where in United Kingdom is the office of transit? - Manage your transit movements - GOV.UK")
+      case "Italy" =>
+        onPage(f"Where in Italy is the office of transit? - Manage your transit movements - GOV.UK")
     }
 }

@@ -55,5 +55,4 @@ class PreTaskListStepDef extends BaseStepDef {
     SecurityDetailsPage.selectSecurityType(answer)
     SecurityDetailsPage.submitPage();
   }
-
 }
