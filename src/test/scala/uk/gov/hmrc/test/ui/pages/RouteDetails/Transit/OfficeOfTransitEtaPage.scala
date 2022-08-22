@@ -26,25 +26,27 @@ object OfficeOfTransitEtaPage extends BasePage {
 
   def checkOfficeOfTransitEtaTitle(etaOffice: String): Unit =
     etaOffice match {
-      case "Paris, France" =>
+      case "Paris, France"          =>
         onPage(f"When do you expect the transit to arrive in Paris, France? - Manage your transit movements - GOV.UK")
       case "BOSTON, United Kingdom" =>
-        onPage(f"When do you expect the transit to arrive in BOSTON, United Kingdom? - Manage your transit movements - GOV.UK")
+        onPage(
+          f"When do you expect the transit to arrive in BOSTON, United Kingdom? - Manage your transit movements - GOV.UK"
+        )
     }
 
   def fillInNowDateAndTime(): Unit = {
     val dateAndTime = LocalDateTime.now
 
-    val day = dateAndTime.getDayOfMonth.toString;
-    val month = dateAndTime.getMonthValue.toString;
-    val year = dateAndTime.getYear.toString;
-    val hour = dateAndTime.getHour.toString;
+    val day    = dateAndTime.getDayOfMonth.toString;
+    val month  = dateAndTime.getMonthValue.toString;
+    val year   = dateAndTime.getYear.toString;
+    val hour   = dateAndTime.getHour.toString;
     val minute = dateAndTime.getMinute.toString;
 
-    sendKeys(By.id("date_day"), day)
-    sendKeys(By.id("date_month"), month)
-    sendKeys(By.id("date_year"), year)
-    sendKeys(By.id("time_hour"), hour)
-    sendKeys(By.id("time_minute"), minute)
+    sendKeys(By.id("dateDay"), day)
+    sendKeys(By.id("dateMonth"), month)
+    sendKeys(By.id("dateYear"), year)
+    sendKeys(By.id("timeHour"), hour)
+    sendKeys(By.id("timeMinute"), minute)
   }
 }
