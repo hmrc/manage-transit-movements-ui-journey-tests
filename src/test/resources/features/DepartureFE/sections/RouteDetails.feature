@@ -34,6 +34,7 @@ Feature: Route details transit journeys
 #Page not found is displayed
 
 
+
 #[CTCP-641] : Security type No Security selected and Binding Itinerary set to NO for route
 #[CTCP-960] : Customs Office of Departure/Reference Number is in CL112 set AND the first 2 characters of the Customs Office of Destination Declared/Reference Number is in CL112 set
 #AND the first 2 characters of Customs Office of Departure is EQUAL the first 2 characters of the Customs Office of Destination Declared/Reference Number
@@ -126,6 +127,7 @@ Feature: Route details transit journeys
     When I choose radio option No on the add another office of transit page
 
 
+
 #[CTCP-641] : Security type No security and Binding Itinerary set to YES
 #[CTCP-960] : Declaration Type EQUAL T
 #AND Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
@@ -195,6 +197,7 @@ Feature: Route details transit journeys
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 2 office or offices of transit added on the add another office of transit page
+
 
 
 #[CTCP-641] : Security type No security and Binding Itinerary set to No
