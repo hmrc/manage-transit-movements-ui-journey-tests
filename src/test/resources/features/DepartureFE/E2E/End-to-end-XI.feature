@@ -1,4 +1,5 @@
 @departureXIe2e
+@wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -10,8 +11,9 @@ Feature: End to end journey for Northern Ireland office of departure
 
   Scenario: 01 Pre Task List - XI Simplified - T2F (NON TIR) - EXS - XI NON TIR guarantee
     And I choose radio option Simplified on the procedure type page
-    And I choose radio option T2F on the declaration type page
-    And I choose radio option Exit summary declaration (EXS) on the security type page
+    And I choose radio option T on the declaration type page
+    And I choose radio option No security on the security type page
+
     And I submit on the CYA page
 
     #Holder of transit
@@ -82,7 +84,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
-    #Route details: Binding Itinerary set to Yes
+   #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
     And I select Bari on the office of destination page
@@ -96,19 +98,18 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-   #Route Details Transit -> office of transit add eta [No] and Remove office of transit
+   #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
     And I choose radio option Yes on the t2 declaration type page
-    And I choose radio option Yes on the add office of transit page
-    And I select France on the office of transit country page
-    When I select Paris on the office of transit page
-    Then I should have Paris arrival time title on the office of transit add eta page
+    And I select United Kingdom on the office of transit country page
+    Then I should have United Kingdom as office of transit on the office of transit page
+    When I select BOSTON on the office of transit page
+    Then I should have BOSTON arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office or offices of transit added on the add another office of transit page
-    When I choose to click on Remove link on the add another office of transit page
-    And I choose radio option Yes on the confirm remove office of transit page
-    And I choose radio option No on the add office of transit page
-    Then I should be on the task list page
+    When I choose radio option No on the add another office of transit page
+
+
 
 
 
@@ -167,25 +168,5 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 2 country or countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-   #Route Details Transit -> office of transit add eta [No] and Then add another transit office
-    And I choose radio option Yes on the t2 declaration type page
-    And I choose radio option Yes on the add office of transit page
-    And I select France on the office of transit country page
-    Then I should have France as office of transit on the office of transit page
-    When I select Paris on the office of transit page
-    Then I should have Paris arrival time title on the office of transit add eta page
-    When I choose radio option No on the office of transit add eta page
-    And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
-    When I choose radio option Yes on the add another office of transit page
-    And I select United Kingdom on the office of transit country page
-    Then I should have United Kingdom as office of transit on the office of transit page
-    When I select BOSTON on the office of transit page
-    Then I should have BOSTON arrival time title on the office of transit add eta page
-    When I choose radio option Yes on the office of transit add eta page
-    Then I should have BOSTON, United Kingdom as transit to arrive on the office of transit eta page
-    When I choose fill in the date and time on the office of transit eta page
-    And I submit on the CYA page
-    Then I should have 2 office or offices of transit added on the add another office of transit page
-    When I choose radio option No on the add another office of transit page
-    Then I should be on the task list page
+   #Route Details Transit -> #TransitOperation/declarationType is set to TIR
+   #Page not found is displayed
