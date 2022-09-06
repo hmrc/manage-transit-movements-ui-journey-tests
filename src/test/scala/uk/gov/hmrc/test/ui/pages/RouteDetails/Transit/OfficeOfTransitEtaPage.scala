@@ -24,15 +24,9 @@ import java.time.LocalDateTime
 
 object OfficeOfTransitEtaPage extends BasePage {
 
-  def checkOfficeOfTransitEtaTitle(etaOffice: String): Unit =
-    etaOffice match {
-      case "Paris, France"          =>
-        onPage(f"When do you expect the transit to arrive in Paris, France? - Manage your transit movements - GOV.UK")
-      case "BOSTON, United Kingdom" =>
-        onPage(
-          f"When do you expect the transit to arrive in BOSTON, United Kingdom? - Manage your transit movements - GOV.UK"
-        )
-    }
+  def checkOfficeOfTransitEtaTitle(etaOffice: String): Unit = {
+    onPage(f"When do you expect the transit to arrive in $etaOffice? - Manage your transit movements - GOV.UK");
+  }
 
   def fillInNowDateAndTime(): Unit = {
     val dateAndTime = LocalDateTime.now
