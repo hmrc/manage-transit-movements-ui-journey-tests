@@ -20,14 +20,7 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OfficeOfTransitPage extends BasePage {
 
-
-  def checkOfficeOfTransitTitle(countryOffice: String): Unit =
-    countryOffice match {
-      case "France" =>
-        onPage(f"Where in France is the office of transit? - Manage your transit movements - GOV.UK")
-      case "United Kingdom" =>
-        onPage(f"Where in United Kingdom is the office of transit? - Manage your transit movements - GOV.UK")
-      case "Italy" =>
-        onPage(f"Where in Italy is the office of transit? - Manage your transit movements - GOV.UK")
-    }
+  def checkOfficeOfTransitTitle(countryOffice: String): Unit = {
+    onPage(f"Where in $countryOffice is the office of transit? - Manage your transit movements - GOV.UK");
+  }
 }

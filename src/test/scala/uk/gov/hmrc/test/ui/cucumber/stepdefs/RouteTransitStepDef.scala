@@ -20,10 +20,10 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.Transit._
 
 class RouteTransitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the t2 declaration type page$""") { (answer: String) =>
-    T2DeclarationTypePage.loadPage
-    T2DeclarationTypePage.selectT2Declaration(answer)
-    T2DeclarationTypePage.submitPage()
+  And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") { (answer: String) =>
+    T2DeclarationPage.loadPage
+    T2DeclarationPage.selectT2Declaration(answer)
+    T2DeclarationPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the add office of transit page$""") { (answer: String) =>

@@ -18,12 +18,12 @@ package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object T2DeclarationTypePage extends BasePage {
+object T2DeclarationPage extends BasePage {
 
-  val t2DeclarationTypePageTitle = "Does the transit include any T2 declarations? - Manage your transit movements - GOV.UK"
+  val t2DeclarationPageTitle = "Does the transit include any T2 declarations? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(t2DeclarationTypePageTitle)
+    onPage(t2DeclarationPageTitle)
     this
   }
 

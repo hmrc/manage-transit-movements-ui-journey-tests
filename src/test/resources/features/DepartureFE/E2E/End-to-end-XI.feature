@@ -1,5 +1,4 @@
 @departureXIe2e
-@wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -99,18 +98,15 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
-    And I choose radio option Yes on the t2 declaration type page
-    And I select United Kingdom on the office of transit country page
-    Then I should have United Kingdom as office of transit on the office of transit page
-    When I select BOSTON on the office of transit page
-    Then I should have BOSTON arrival time title on the office of transit add eta page
+    And I choose radio option Yes on the t2 declaration page
+    And I select Andorra on the office of transit country page
+    Then I should have Andorra as office of transit on the office of transit page
+    When I select DCNJ PORTA on the office of transit page
+    Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office or offices of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
-
-
-
 
 
 

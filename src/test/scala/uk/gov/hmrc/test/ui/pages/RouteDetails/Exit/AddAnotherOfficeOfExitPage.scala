@@ -14,20 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object OfficeOfTransitAddEtaPage extends BasePage {
+object AddAnotherOfficeOfExitPage extends BasePage {
 
-  def checkOfficeOfTransitAddEtaTitle(etaOffice: String): Unit = {
-    onPage(f"Do you want to add a time of arrival in $etaOffice? - Manage your transit movements - GOV.UK");
-  }
+  def checkAddAnotherOfficeOfExitTitle(numberOfCountry: String): Unit =
+    numberOfCountry match {
+      case "1" =>
+        onPage(f"You have added 1 office of exit - Manage your transit movements - GOV.UK")
+      case _ =>
+        onPage(f"You have added $numberOfCountry offices of exit - Manage your transit movements - GOV.UK")
+    }
 
-  def selectOfficeOfTransitAddEta(answer: String): this.type = {
+  def selectAddAnotherOfficeOfExit(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "No" => clickById("value-no");
     }
     this
   }
