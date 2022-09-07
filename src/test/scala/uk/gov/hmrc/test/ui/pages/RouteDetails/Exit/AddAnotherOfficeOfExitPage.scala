@@ -24,14 +24,14 @@ object AddAnotherOfficeOfExitPage extends BasePage {
     numberOfCountry match {
       case "1" =>
         onPage(f"You have added 1 office of exit - Manage your transit movements - GOV.UK")
-      case _ =>
+      case _   =>
         onPage(f"You have added $numberOfCountry offices of exit - Manage your transit movements - GOV.UK")
     }
 
   def selectAddAnotherOfficeOfExit(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
-      case "No" => clickById("value-no");
+      case "No"  => clickById("value-no");
     }
     this
   }

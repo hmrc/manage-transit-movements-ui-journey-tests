@@ -25,7 +25,9 @@ object TransitRouteAddAnotherCountryPage extends BasePage {
       case "1" =>
         onPage(f"You have added 1 country to the transit route - Manage your transit movements - GOV.UK")
       case _   =>
-        onPage(f"You have added $numberOfCountry countries to the transit route - Manage your transit movements - GOV.UK")
+        onPage(
+          f"You have added $numberOfCountry countries to the transit route - Manage your transit movements - GOV.UK"
+        )
     }
 
   def selectAddAnotherTransitRouteCountry(answer: String): this.type = {
@@ -35,6 +37,5 @@ object TransitRouteAddAnotherCountryPage extends BasePage {
     }
     this
   }
-
 
 }
