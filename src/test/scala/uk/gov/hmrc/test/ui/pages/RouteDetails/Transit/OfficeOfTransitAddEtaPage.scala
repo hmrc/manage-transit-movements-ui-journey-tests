@@ -20,9 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OfficeOfTransitAddEtaPage extends BasePage {
 
-  def checkOfficeOfTransitAddEtaTitle(etaOffice: String): Unit = {
+  def checkOfficeOfTransitAddEtaTitle(etaOffice: String): Unit =
     onPage(f"Do you want to add a time of arrival in $etaOffice? - Manage your transit movements - GOV.UK");
-  }
 
   def selectOfficeOfTransitAddEta(answer: String): this.type = {
     answer match {

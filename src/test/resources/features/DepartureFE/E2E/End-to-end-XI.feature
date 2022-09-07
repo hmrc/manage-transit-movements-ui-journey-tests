@@ -23,7 +23,6 @@ Feature: End to end journey for Northern Ireland office of departure
 
     #Holder's contact person's details
     And I choose radio option No on the add contact page
-    And I submit on the CYA page
 
     #Representative details
     And I choose radio option Yes on the acting as representative page
@@ -31,7 +30,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
-    And I submit on the CYA page
 
     #Reduced data set
     And I choose radio option No on the approved operator page
@@ -127,7 +125,6 @@ Feature: End to end journey for Northern Ireland office of departure
 
    #Holder's contact person's details
     And I choose radio option No on the add contact page
-    And I submit on the CYA page
 
     #Representative details
     And I choose radio option No on the acting as representative page

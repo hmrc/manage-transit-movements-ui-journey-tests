@@ -47,7 +47,8 @@ class RouteTransitStepDef extends BaseStepDef {
     OfficeOfTransitPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) arrival time title on the office of transit add eta page$""") { (answer: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) arrival time title on the office of transit add eta page$""") {
+    (answer: String) =>
       OfficeOfTransitAddEtaPage.checkOfficeOfTransitAddEtaTitle(answer)
   }
 
@@ -56,8 +57,9 @@ class RouteTransitStepDef extends BaseStepDef {
     OfficeOfTransitAddEtaPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as transit to arrive on the office of transit eta page$""") { (answer: String) =>
-    OfficeOfTransitEtaPage.checkOfficeOfTransitEtaTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+) as transit to arrive on the office of transit eta page$""") {
+    (answer: String) =>
+      OfficeOfTransitEtaPage.checkOfficeOfTransitEtaTitle(answer)
   }
 
   And("""^(?:I )?choose fill in the date and time on the office of transit eta page$""") { () =>
@@ -65,7 +67,9 @@ class RouteTransitStepDef extends BaseStepDef {
     OfficeOfTransitEtaPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) office or offices of transit added on the add another office of transit page$""") { (answer: String) =>
+  Then(
+    """^(?:I )?(?:should )?have (.+) office or offices of transit added on the add another office of transit page$"""
+  ) { (answer: String) =>
     AddAnotherOfficeOfTransitPage.checkAddAnotherOfficeOfTransitTitle(answer)
   }
 
