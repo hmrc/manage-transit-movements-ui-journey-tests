@@ -87,12 +87,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     When I choose to click on Remove link on the transit route add another country page
     And I choose radio option Yes on the transit route remove country page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
@@ -155,10 +155,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Bari on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     When I choose radio option Yes on the transit route add another country page
     And I select Argentina on the transit route country page
-    Then I should have 2 country or countries to transit route added on the transit route add another country page
+    Then I should have 2 countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> #TransitOperation/declarationType is set to TIR
