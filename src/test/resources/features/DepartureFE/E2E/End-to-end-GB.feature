@@ -219,7 +219,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have DCNJ PORTA, Andorra as transit to arrive on the office of transit eta page
     And I choose fill in the date and time on the office of transit eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option Yes on the add another office of transit page
     And I select Andorra on the office of transit country page
     Then I should have Andorra as office of transit on the office of transit page
@@ -227,5 +227,5 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 2 office or offices of transit added on the add another office of transit page
+    Then I should have 2 offices of transit added on the add another office of transit page
 #Page not found is displayed

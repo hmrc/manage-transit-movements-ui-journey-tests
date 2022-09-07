@@ -103,7 +103,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
 
 

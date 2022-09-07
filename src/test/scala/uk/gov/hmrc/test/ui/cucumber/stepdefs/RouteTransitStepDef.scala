@@ -68,7 +68,7 @@ class RouteTransitStepDef extends BaseStepDef {
   }
 
   Then(
-    """^(?:I )?(?:should )?have (.+) office or offices of transit added on the add another office of transit page$"""
+    """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of transit page$"""
   ) { (answer: String) =>
     AddAnotherOfficeOfTransitPage.checkAddAnotherOfficeOfTransitTitle(answer)
   }
