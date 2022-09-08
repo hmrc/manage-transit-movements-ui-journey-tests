@@ -1,4 +1,5 @@
 @routeDetails @departure
+@wip
 Feature: Route details transit journeys
 
   Background:
@@ -31,7 +32,10 @@ Feature: Route details transit journeys
     Then I should have 1 country or countries to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-   #Route Details Exit -> TransitOperation/declarationType is set to [TIR]
+   #Route Details Exit -> Qualifier of the identification V [Customs office identifier]
+   And I choose radio option Designated location on the location of goods type page
+   And I choose radio option Customs office identifier on the location of goods identification page
+   And I select XI on the location of goods customs office identification page
 #Page not found is displayed
 
 
@@ -59,8 +63,13 @@ Feature: Route details transit journeys
     And I submit on the CYA page
    #Route Details Transit -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-   #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
+   #Route Details Exit -> Qualifier of the identification X [EORI number]
+    And I choose radio option Designated location on the location of goods type page
+    And I choose radio option EORI number on the location of goods identification page
+    And I enter GB123456789000 on the location of goods eori page
+#Not completed waiting for dev
 #Page not found is displayed
+
 
 
 
@@ -96,7 +105,13 @@ Feature: Route details transit journeys
     And I submit on the CYA page
     Then I should have 1 office or offices of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
+   #Route Details Exit -> Qualifier of the identification Y [Authorisation number]
+    And I choose radio option Designated location on the location of goods type page
+    And I choose radio option Authorisation number on the location of goods identification page
+    And I enter 1234567890 on the location of goods authorisation number page
+#Not completed waiting for dev
 #Page not found is displayed
+
 
 
 
@@ -137,6 +152,9 @@ Feature: Route details transit journeys
     And I submit on the CYA page
     Then I should have 1 office or offices of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
+#  Qualifier of the identification W [Coordinates]
+#Page not found is displayed
+
 
 
 
@@ -173,6 +191,10 @@ Feature: Route details transit journeys
     Then I should have 1 office or offices of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
+
+#  Qualifier of the identification U [UN/LOCODE]
+#Page not found is displayed
+
 
 
 
@@ -213,7 +235,14 @@ Feature: Route details transit journeys
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 2 office or offices of transit added on the add another office of transit page
-   #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
+    When I choose radio option No on the add another office of transit page
+   #Route Details Exit ->  Qualifier of the identification Z [Address]
+    And I choose radio option Designated location on the location of goods type page
+    And I choose radio option Address on the location of goods identification page
+    And I fill in address on the location of goods address page
+#Page not found is displayed
+
+
 
 
 
@@ -247,6 +276,8 @@ Feature: Route details transit journeys
     When I choose radio option No on the office of transit add eta page
    #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
 
+#Qualifier of the identification T [Postal code]
+#Page not found is displayed
 
 
 #[CTCP-641] : Security type No security and Binding Itinerary set to No
