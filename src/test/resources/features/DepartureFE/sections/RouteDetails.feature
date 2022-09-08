@@ -29,7 +29,7 @@ Feature: Route details transit journeys
     And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Exit -> Qualifier of the identification V [Customs office identifier]
@@ -72,7 +72,6 @@ Feature: Route details transit journeys
 
 
 
-
 #[CTCP-641] : Security type No Security selected and Binding Itinerary set to NO
 #[CTCP-960] : Customs Office of Departure/Reference Number is in CL112 set AND the first 2 characters of the Customs Office of Destination Declared/Reference Number is in CL112 set
               #AND the first 2 characters of Customs Office of Departure is EQUAL the first 2 characters of the Customs Office of Destination Declared/Reference Number
@@ -103,7 +102,7 @@ Feature: Route details transit journeys
     Then I should have Dover/Folkestone Eurotunnel Freight, United Kingdom as transit to arrive on the office of transit eta page
     And I choose fill in the date and time on the office of transit eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Exit -> Qualifier of the identification Y [Authorisation number]
     And I choose radio option Designated location on the location of goods type page
@@ -133,7 +132,7 @@ Feature: Route details transit journeys
     And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Germany on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> Entry point is [Office of transit country]
@@ -143,14 +142,14 @@ Feature: Route details transit journeys
     Then I should have Berlin, Berlin-Flughafen-Tegel (DE002105) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Exit -> Set CL147 country security and custom office Transit declared is present [False]
     And I select Germany on the office of exit country page
     Then I should have Germany as an office of exit title on the office of exit page
     When I select Dortmund on the office of exit page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of exit page
+    Then I should have 1 office of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
 #  Qualifier of the identification W [Coordinates]
 #Page not found is displayed
@@ -177,7 +176,7 @@ Feature: Route details transit journeys
     And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
@@ -188,7 +187,7 @@ Feature: Route details transit journeys
     Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
 
@@ -226,7 +225,7 @@ Feature: Route details transit journeys
     Then I should have Bari (IT018100) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option Yes on the add another office of transit page
     And I select France on the office of transit country page
     Then I should have France as office of transit on the office of transit page
@@ -234,7 +233,7 @@ Feature: Route details transit journeys
     Then I should have Dunkerque port bureau (FR001260) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 2 office or offices of transit added on the add another office of transit page
+    Then I should have 2 offices of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Exit ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the location of goods type page
@@ -272,7 +271,7 @@ Feature: Route details transit journeys
     Then I should have Bari (IT018100) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the office of transit add eta page
    #Route Details Exit -> TransitOperation/declarationType is in set [0,1] -> [No security]
 

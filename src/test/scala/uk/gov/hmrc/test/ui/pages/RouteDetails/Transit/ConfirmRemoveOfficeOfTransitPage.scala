@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object ConfirmRemoveOfficeOfTransitPage extends BasePage {
 
-  val confirmRemoveOfficeOfTransitTitle = "Are you sure you want to remove this office of transit? - Manage your transit movements - GOV.UK"
+  val confirmRemoveOfficeOfTransitTitle =
+    "Are you sure you want to remove this office of transit? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(confirmRemoveOfficeOfTransitTitle)

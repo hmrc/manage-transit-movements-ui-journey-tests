@@ -32,7 +32,7 @@ object TaskListPage extends BasePage {
     sectionLink match {
       case "Add trader details"    => clickByPartialLinkText(sectionLink)
       case "Add guarantee details" => clickByPartialLinkText(sectionLink)
-      case "Add route details" => clickByPartialLinkText(sectionLink)
+      case "Add route details"     => clickByPartialLinkText(sectionLink)
     }
 
   def checkTraderDetailsStatus(status: String): Assertion = {

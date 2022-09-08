@@ -35,7 +35,9 @@ class RouteExitStepDef extends BaseStepDef {
     OfficeOfExitPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) office or offices of transit added on the add another office of exit page$""") { (answer: String) =>
+  Then(
+    """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of exit page$"""
+  ) { (answer: String) =>
     AddAnotherOfficeOfExitPage.checkAddAnotherOfficeOfExitTitle(answer)
   }
 

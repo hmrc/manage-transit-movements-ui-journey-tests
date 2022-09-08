@@ -23,7 +23,6 @@ Feature: End to end journey for Northern Ireland office of departure
 
     #Holder's contact person's details
     And I choose radio option No on the add contact page
-    And I submit on the CYA page
 
     #Representative details
     And I choose radio option Yes on the acting as representative page
@@ -31,7 +30,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
-    And I submit on the CYA page
 
     #Reduced data set
     And I choose radio option No on the approved operator page
@@ -89,12 +87,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Bari on the office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     When I choose to click on Remove link on the transit route add another country page
     And I choose radio option Yes on the transit route remove country page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
@@ -105,7 +103,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
-    Then I should have 1 office or offices of transit added on the add another office of transit page
+    Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
 
 
@@ -127,7 +125,6 @@ Feature: End to end journey for Northern Ireland office of departure
 
    #Holder's contact person's details
     And I choose radio option No on the add contact page
-    And I submit on the CYA page
 
     #Representative details
     And I choose radio option No on the acting as representative page
@@ -158,10 +155,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Bari on the office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country or countries to transit route added on the transit route add another country page
+    Then I should have 1 country to transit route added on the transit route add another country page
     When I choose radio option Yes on the transit route add another country page
     And I select Argentina on the transit route country page
-    Then I should have 2 country or countries to transit route added on the transit route add another country page
+    Then I should have 2 countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Transit -> #TransitOperation/declarationType is set to TIR
