@@ -45,42 +45,6 @@ class RouteExitStepDef extends BaseStepDef {
     AddAnotherOfficeOfExitPage.selectAddAnotherOfficeOfExit(answer)
     AddAnotherOfficeOfExitPage.submitPage()
   }
-
-  And("""^(?:I )?choose radio option (.*) on the location of goods type page$""") { (answer: String) =>
-    LocationOfGoodsTypePage.loadPage
-    LocationOfGoodsTypePage.selectLocationOfGoodsType(answer)
-    LocationOfGoodsTypePage.submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the location of goods identification page$""") { (answer: String) =>
-    LocationOfGoodsIdentificationPage.loadPage
-    LocationOfGoodsIdentificationPage.selectLocationOfGoodsIdentification(answer)
-    LocationOfGoodsIdentificationPage.submitPage()
-  }
-
-  And("""^(?:I )?select (.+) on the location of goods customs office identification page$""") { (answer: String) =>
-    LocationOfGoodsCustomsOfficeIdentificationPage.loadPage
-    LocationOfGoodsCustomsOfficeIdentificationPage.selectAnOffice(answer)
-    LocationOfGoodsCustomsOfficeIdentificationPage.submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the location of goods eori page$""") { (answer: String) =>
-    LocationOfGoodsEoriPage.loadPage
-    LocationOfGoodsEoriPage.enterEoriNumber(answer);
-    LocationOfGoodsEoriPage.submitPage();
-  }
-
-  And("""^(?:I )?enter (.+) on the location of goods authorisation number page$""") { (answer: String) =>
-    LocationOfGoodsAuthorisationNumberPage.loadPage
-    LocationOfGoodsAuthorisationNumberPage.enterAuthorisationNumber(answer);
-    LocationOfGoodsAuthorisationNumberPage.submitPage();
-  }
-
-  And("""^(?:I )?fill in address on the location of goods address page$""") { () =>
-    LocationOfGoodsAddress.loadPage
-    LocationOfGoodsAddress.enterLocationOfGoodsAddress;
-    LocationOfGoodsAddress.submitPage()
-  }
 }
 
 

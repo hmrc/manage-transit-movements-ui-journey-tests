@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object LocationOfGoodsEoriPage extends BasePage {
+object LocationOfGoodsPostalCodePage extends BasePage {
 
-  val locationOfGoodsEoriTitle = "What is the EORI number for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsPostalCodeTitle = "What is the address for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(locationOfGoodsEoriTitle)
+    onPage(locationOfGoodsPostalCodeTitle)
     this
   }
 
-  def enterEoriNumber(number: String): Unit =
-    fillInputById("value", number)
+  def enterFirstLocationOfGoodsPostalCodeCountry: Unit = {
+    fillInputById("streetNumber", "121")
+    fillInputById("postalCode", "M19 6LL")
+    clickById("country");
+    clickById("country__option--0");
+  }
 }

@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object LocationOfGoodsAddress extends BasePage {
+object LocationOfGoodsAddIdentificationPage extends BasePage {
 
-  val locationOfGoodsAddressTitle = "What is the address for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsAddIdentificationTitle = "Do you want to add another identifier for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(locationOfGoodsAddressTitle)
+    onPage(locationOfGoodsAddIdentificationTitle)
     this
   }
 
-  def enterLocationOfGoodsAddress: this.type = {
-    fillInAddress("1 Old Lane", "Hull", "H1 0AA", "United Kingdom")
-    submitPage()
+  def selectLocationOfGoodsAddIdentification(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No" => clickById("value-no");
+    }
     this
   }
-
 }

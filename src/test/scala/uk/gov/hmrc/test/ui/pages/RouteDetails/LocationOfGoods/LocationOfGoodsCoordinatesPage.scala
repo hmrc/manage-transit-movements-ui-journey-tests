@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object LocationOfGoodsCustomsOfficeIdentificationPage extends BasePage {
+object LocationOfGoodsCoordinatesPage extends BasePage {
 
-  val locationOfGoodsCustomsOfficeIdentificationTitle = "What is the customs office identifier for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsCoordinatesTitle = "What are the coordinates for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(locationOfGoodsCustomsOfficeIdentificationTitle)
+    onPage(locationOfGoodsCoordinatesTitle)
     this
+  }
+
+  def enterLocationOfGoodsCoordinates(latitudeNo: String, longitudeNo: String): Unit = {
+    fillInputById("latitude", latitudeNo)
+    fillInputById("longitude", longitudeNo)
   }
 }

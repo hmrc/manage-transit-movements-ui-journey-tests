@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.RouteDetails.Transit.AddOfficeOfTransitPage.{addOfficeOfTransitPageTitle, clickById, onPage}
@@ -30,9 +30,9 @@ object LocationOfGoodsTypePage extends BasePage {
 
   def selectLocationOfGoodsType(answer: String): this.type = {
     answer match {
-      case "Designated location" => clickById("value");
-      case "Authorised place - the authorised consignor’s approved premises" => clickById("value_1");
-      case "Approved place - a designated location approved and controlled by the office of departure or destination" => clickById("value_2");
+      case "Authorised place" => clickById("value");
+      case "Designated location" => clickById("value_1");
+      case "Approved place" => clickById("value_2");
       case "Other" => clickById("value_3");
     }
     this
