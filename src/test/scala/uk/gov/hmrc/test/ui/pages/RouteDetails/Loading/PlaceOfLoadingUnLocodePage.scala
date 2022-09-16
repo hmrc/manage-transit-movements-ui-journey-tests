@@ -18,20 +18,12 @@ package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingAddUnLocodePage extends BasePage {
+object PlaceOfLoadingUnLocodePage extends BasePage {
 
-  val placeOfLoadingAddUnLocodeTitle = "Do you want to add a UN/LOCODE for the place of loading? - Manage your transit movements - GOV.UK"
+  val placeOfLoadingUnLocodeTitle = "What is the UN/LOCODE for the place of loading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(placeOfLoadingAddUnLocodeTitle)
-    this
-  }
-
-  def selectPlaceOfLoadingAddUnLocode(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
+    onPage(placeOfLoadingUnLocodeTitle)
     this
   }
 }

@@ -9,7 +9,7 @@ Feature: Route details transit journeys
 
 
 
- @a11y @ZAP
+@a11y @ZAP
 #[CTCP-641] : Security type No security and Binding Itinerary set to No
 #[CTCP-960] : If at least one instance of consignment/country of routing of consignment/country is in CL112 set [No]
 #[CTCP-884] : Route Details Exit and Location of goods -> Do you need to add a location of goods [NO]
@@ -33,6 +33,13 @@ Feature: Route details transit journeys
    And I choose radio option No on the add office of transit page
    #Route Details Location -> Do you need to add a location of goods [NO]
    And I choose radio option No on the add location of goods page
+   #Route Details Loading ->
+   And I choose radio option Yes on the place of loading add un locode page
+   And I select Aalen on the place of loading un locode page
+   And I choose radio option Yes on the place of loading add extra information page
+   And I select United Kingdom on the place of loading country page
+   Then I should have United Kingdom as loading location on the place of loading location page
+   When I enter London on the place of loading location page
 #Page not found is displayed
 
 
@@ -66,6 +73,11 @@ Feature: Route details transit journeys
     And I choose radio option Customs office identifier on the location of goods identification page
     And I select XI on the location of goods customs office identification page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option No on the place of loading add un locode page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed
 
 
@@ -104,12 +116,16 @@ Feature: Route details transit journeys
     And I enter HMRC Test on the location of goods contact page
     And I enter +44 2345 82 83 on the location of goods contact telephone number page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
 
 
-
+@wip
 #[CTCP-641] : Security type Entry summary declaration (ENS) and Binding Itinerary set to Yes
 #[CTCP-960] : Declaration Type EQUAL T2 [TRUE]
 #[CTCP-884] : Route Details Exit and Location of goods -> Qualifier of the identification Y [Authorisation number] -> Location of goods add identifier [No] -> Location of goods add contact [No]
@@ -155,6 +171,10 @@ Feature: Route details transit journeys
     And I choose radio option No on the location of goods add identifier page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -197,6 +217,10 @@ Feature: Route details transit journeys
     And I enter 50.96622 and 50.96622 on the location of goods coordinates page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -241,6 +265,10 @@ Feature: Route details transit journeys
     And I select Aalen on the location of goods customs un locode page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -289,6 +317,11 @@ Feature: Route details transit journeys
     And I fill in address on the location of goods address page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option No on the place of loading add un locode page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed
 
 
@@ -328,4 +361,9 @@ Feature: Route details transit journeys
     And I fill in address on the location of goods postal code page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading ->
+    And I choose radio option No on the place of loading add un locode page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed

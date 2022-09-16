@@ -28,7 +28,7 @@ class PreTaskListStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>
     OfficeOfDeparturePage.loadPage
-    OfficeOfDeparturePage.selectAnOffice(answer)
+    OfficeOfDeparturePage.selectValueFromDropDown(answer)
     OfficeOfDeparturePage.submitPage()
   }
 

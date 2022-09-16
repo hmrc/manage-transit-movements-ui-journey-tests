@@ -40,7 +40,7 @@ class RouteLocationStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the location of goods customs office identification page$""") { (answer: String) =>
     LocationOfGoodsCustomsOfficeIdentificationPage.loadPage
-    LocationOfGoodsCustomsOfficeIdentificationPage.selectAnOffice(answer)
+    LocationOfGoodsCustomsOfficeIdentificationPage.selectValueFromDropDown(answer)
     LocationOfGoodsCustomsOfficeIdentificationPage.submitPage()
   }
 
@@ -64,7 +64,7 @@ class RouteLocationStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the location of goods customs un locode page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage.loadPage
-    LocationOfGoodsUnLocodePage.selectAnOffice(answer)
+    LocationOfGoodsUnLocodePage.selectValueFromDropDown(answer)
     LocationOfGoodsUnLocodePage.submitPage()
   }
 

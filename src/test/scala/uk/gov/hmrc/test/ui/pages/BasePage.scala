@@ -132,8 +132,8 @@ trait BasePage extends BrowserDriver with Matchers {
     findElement(locator).sendKeys(value)
   }
 
-  def selectAnOffice(office: String): Unit = {
-    fillInputById("value", office)
+  def selectValueFromDropDown(valueOption: String): Unit = {
+    fillInputById("value", valueOption)
     waitForPresence(By.id("value"))
     clickByCssSelector("li#value__option--0")
   }
