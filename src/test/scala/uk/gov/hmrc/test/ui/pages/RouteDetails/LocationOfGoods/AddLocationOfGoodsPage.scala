@@ -14,29 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransitRouteAddAnotherCountryPage extends BasePage {
+object AddLocationOfGoodsPage extends BasePage {
 
-  def checkAddAnotherTransitRouteCountryTitle(numberOfCountry: String): Unit =
-    numberOfCountry match {
-      case "1" =>
-        onPage(f"You have added 1 country to the transit route - Manage your transit movements - GOV.UK")
-      case _   =>
-        onPage(
-          f"You have added $numberOfCountry countries to the transit route - Manage your transit movements - GOV.UK"
-        )
-    }
+  val addLocationOfGoodsTitle = "Do you want to add a location of goods? - Manage your transit movements - GOV.UK"
 
-  def selectAddAnotherTransitRouteCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
+  def loadPage: this.type = {
+    onPage(addLocationOfGoodsTitle)
     this
   }
 
+  def selectAddLocationOfGoods(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No" => clickById("value-no");
+    }
+    this
+  }
 
 }
