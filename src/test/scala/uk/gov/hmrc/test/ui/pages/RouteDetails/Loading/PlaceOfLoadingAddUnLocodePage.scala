@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object PlaceOfLoadingAddUnLocodePage extends BasePage {
 
-  val placeOfLoadingAddUnLocodeTitle = "What is the address for the location of goods? - Manage your transit movements - GOV.UK"
+  val placeOfLoadingAddUnLocodeTitle =
+    "Do you want to add a UN/LOCODE for the place of loading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(placeOfLoadingAddUnLocodeTitle)

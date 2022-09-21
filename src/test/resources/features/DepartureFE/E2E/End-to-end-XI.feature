@@ -93,10 +93,16 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
-   #Route Details Location -> Do you need to add a location of goods [NO]
+   #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
     And I choose radio option No on the add location of goods page
+   #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Aalen on the place of loading un locode page
+    And I choose radio option Yes on the place of loading add extra information page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed
-
 
 
 
@@ -147,12 +153,17 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 2 countries to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-   #Route Details Exit -> Qualifier of the identification V [Customs office identifier]
+   #Route Details Location Of Goods -> Qualifier of the identification V [Customs office identifier]
     And I choose radio option Yes on the add location of goods page
     And I choose radio option Designated location on the location of goods type page
     And I choose radio option Customs office identifier on the location of goods identification page
     And I select XI on the location of goods customs office identification page
     And I submit on the CYA page
+   #Route Details Loading -> place of loading add un locode [No]
+    And I choose radio option No on the place of loading add un locode page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
    #Page not found is displayed
 
 
@@ -221,7 +232,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
-   #Route Details location -> Qualifier of the identification Y [Authorisation number] -> [No] -> [No]
+   #Route Details Location Of Goods -> Qualifier of the identification Y [Authorisation number] -> [No] -> [No]
     And I choose radio option Yes on the add location of goods page
     And I choose radio option Designated location on the location of goods type page
     And I choose radio option Authorisation number on the location of goods identification page
@@ -229,6 +240,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the location of goods add identifier page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -277,13 +292,17 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 country to transit route added on the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-   #Route Details Location -> Qualifier of the identification U [UN/LOCODE]
+   #Route Details Location Of Goods -> Qualifier of the identification U [UN/LOCODE]
     And I choose radio option Yes on the add location of goods page
     And I choose radio option Designated location on the location of goods type page
     And I choose radio option UN/LOCODE on the location of goods identification page
     And I select Aalen on the location of goods customs un locode page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 

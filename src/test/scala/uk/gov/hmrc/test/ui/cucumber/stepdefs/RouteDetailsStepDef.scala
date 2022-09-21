@@ -21,13 +21,13 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the country of destination page$""") { (answer: String) =>
     CountryOfDestinationPage.loadPage
-    CountryOfDestinationPage.selectAnOffice(answer)
+    CountryOfDestinationPage.selectValueFromDropDown(answer)
     CountryOfDestinationPage.submitPage()
   }
 
   And("""^(?:I )?select (.+) on the office of destination page$""") { (answer: String) =>
     OfficeOfDestinationPage.loadPage
-    OfficeOfDestinationPage.selectAnOffice(answer)
+    OfficeOfDestinationPage.selectValueFromDropDown(answer)
     OfficeOfDestinationPage.submitPage()
   }
 
@@ -39,7 +39,7 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the transit route country page$""") { (answer: String) =>
     TransitRouteCountryPage.loadPage
-    TransitRouteCountryPage.selectAnOffice(answer)
+    TransitRouteCountryPage.selectValueFromDropDown(answer)
     TransitRouteCountryPage.submitPage()
   }
 

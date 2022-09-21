@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object LocationOfGoodsAdditionalIdentifierPage extends BasePage {
 
-  val locationOfGoodsAdditionalIdentifierTitle = "What is the additional identifier for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsAdditionalIdentifierTitle =
+    "What is the additional identifier for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(locationOfGoodsAdditionalIdentifierTitle)

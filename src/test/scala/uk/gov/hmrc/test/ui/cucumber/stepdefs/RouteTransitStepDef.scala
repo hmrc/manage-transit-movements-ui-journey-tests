@@ -34,7 +34,7 @@ class RouteTransitStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the office of transit country page$""") { (answer: String) =>
     OfficeOfTransitCountryPage.loadPage
-    OfficeOfTransitCountryPage.selectAnOffice(answer)
+    OfficeOfTransitCountryPage.selectValueFromDropDown(answer)
     OfficeOfTransitCountryPage.submitPage()
   }
 
@@ -43,7 +43,7 @@ class RouteTransitStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?select (.+) on the office of transit page$""") { (answer: String) =>
-    OfficeOfTransitPage.selectAnOffice(answer)
+    OfficeOfTransitPage.selectValueFromDropDown(answer)
     OfficeOfTransitPage.submitPage()
   }
 

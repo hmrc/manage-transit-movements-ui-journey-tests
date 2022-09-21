@@ -30,7 +30,7 @@ object AddLocationOfGoodsPage extends BasePage {
   def selectAddLocationOfGoods(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
-      case "No" => clickById("value-no");
+      case "No"  => clickById("value-no");
     }
     this
   }

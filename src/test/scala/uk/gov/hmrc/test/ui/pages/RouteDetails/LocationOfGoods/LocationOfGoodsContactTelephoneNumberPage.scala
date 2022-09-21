@@ -20,14 +20,14 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object LocationOfGoodsContactTelephoneNumberPage extends BasePage {
 
-  val locationOfGoodsContactTelephoneNumberTitle = "What is the contact for the location of goods’ telephone number? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsContactTelephoneNumberTitle =
+    "What is the contact for the location of goods’ telephone number? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(locationOfGoodsContactTelephoneNumberTitle)
     this
   }
 
-  def enterLocationOfGoodsContactTelephoneNumber(phoneNumberAnswer: String): Unit = {
+  def enterLocationOfGoodsContactTelephoneNumber(phoneNumberAnswer: String): Unit =
     fillInputById("value", phoneNumberAnswer);
-  }
 }

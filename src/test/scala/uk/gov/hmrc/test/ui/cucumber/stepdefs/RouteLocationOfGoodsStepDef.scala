@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods._
 
-class RouteLocationStepDef extends BaseStepDef {
+class RouteLocationOfGoodsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the add location of goods page$""") { (answer: String) =>
     AddLocationOfGoodsPage.loadPage
@@ -40,7 +40,7 @@ class RouteLocationStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the location of goods customs office identification page$""") { (answer: String) =>
     LocationOfGoodsCustomsOfficeIdentificationPage.loadPage
-    LocationOfGoodsCustomsOfficeIdentificationPage.selectAnOffice(answer)
+    LocationOfGoodsCustomsOfficeIdentificationPage.selectValueFromDropDown(answer)
     LocationOfGoodsCustomsOfficeIdentificationPage.submitPage()
   }
 
@@ -64,7 +64,7 @@ class RouteLocationStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the location of goods customs un locode page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage.loadPage
-    LocationOfGoodsUnLocodePage.selectAnOffice(answer)
+    LocationOfGoodsUnLocodePage.selectValueFromDropDown(answer)
     LocationOfGoodsUnLocodePage.submitPage()
   }
 
@@ -86,10 +86,11 @@ class RouteLocationStepDef extends BaseStepDef {
     LocationOfGoodsAddContactPage.submitPage()
   }
 
-  And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") { (latitudeNo: String, longitudeNo: String) =>
-    LocationOfGoodsCoordinatesPage.loadPage
-    LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo);
-    LocationOfGoodsCoordinatesPage.submitPage();
+  And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") {
+    (latitudeNo: String, longitudeNo: String) =>
+      LocationOfGoodsCoordinatesPage.loadPage
+      LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo);
+      LocationOfGoodsCoordinatesPage.submitPage();
   }
 
   And("""^(?:I )?fill in address on the location of goods postal code page$""") { () =>

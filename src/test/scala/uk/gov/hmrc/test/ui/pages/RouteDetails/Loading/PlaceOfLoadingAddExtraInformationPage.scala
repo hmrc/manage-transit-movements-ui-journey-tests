@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransitRouteRemoveCountryPage extends BasePage {
+object PlaceOfLoadingAddExtraInformationPage extends BasePage {
 
-  val transitRouteRemoveCountryTitle =
-    "Are you sure you want to remove Andorra from the transit route? - Manage your transit movements - GOV.UK"
+  val placeOfLoadingAddExtraInformationTitle =
+    "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(transitRouteRemoveCountryTitle)
+    onPage(placeOfLoadingAddExtraInformationTitle)
     this
   }
 
-  def selectTransitRouteRemoveCountry(answer: String): this.type = {
+  def selectPlaceOfLoadingAddExtraInformationTitle(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
       case "No"  => clickById("value-no");

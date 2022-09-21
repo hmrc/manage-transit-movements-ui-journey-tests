@@ -22,7 +22,7 @@ class RouteExitStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the office of exit country page$""") { (answer: String) =>
     OfficeOfExitCountryPage.loadPage
-    OfficeOfExitCountryPage.selectAnOffice(answer)
+    OfficeOfExitCountryPage.selectValueFromDropDown(answer)
     OfficeOfExitCountryPage.submitPage()
   }
 
@@ -31,7 +31,7 @@ class RouteExitStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?select (.+) on the office of exit page$""") { (answer: String) =>
-    OfficeOfExitPage.selectAnOffice(answer)
+    OfficeOfExitPage.selectValueFromDropDown(answer)
     OfficeOfExitPage.submitPage()
   }
 
@@ -46,6 +46,3 @@ class RouteExitStepDef extends BaseStepDef {
     AddAnotherOfficeOfExitPage.submitPage()
   }
 }
-
-
-

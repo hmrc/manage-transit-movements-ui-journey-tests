@@ -98,7 +98,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location -> Qualifier of the identification X [EORI number] -> [YES]
+  #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
     And I choose radio option Authorised place on the location of goods type page
     And I choose radio option EORI number on the location of goods identification page
     And I enter GB123456789000 on the location of goods eori page
@@ -108,6 +108,13 @@ Feature: End to end journey for Great Britain office of departure
     And I enter HMRC Test on the location of goods contact page
     And I enter +44 2345 82 83 on the location of goods contact telephone number page
     And I submit on the CYA page
+  #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Aalen on the place of loading un locode page
+    And I choose radio option Yes on the place of loading add extra information page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed
 
 
@@ -209,12 +216,16 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
     Then I should have 2 offices of transit added on the add another office of transit page
     And I choose radio option No on the add another office of transit page
-  #Route Details Location -> Qualifier of the identification W [Coordinate] -> [No]
+  #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
     And I choose radio option Designated location on the location of goods type page
     And I choose radio option Coordinates on the location of goods identification page
     And I enter 50.96622 and 50.96622 on the location of goods coordinates page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+  #Route Details Loading -> place of loading add un locode [No]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -309,12 +320,16 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location ->  Qualifier of the identification Z [Address]
+  #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the location of goods type page
     And I choose radio option Address on the location of goods identification page
     And I fill in address on the location of goods address page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+  #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
+    And I choose radio option Yes on the place of loading add un locode page
+    And I select Andorra la Vella on the place of loading un locode page
+    And I choose radio option No on the place of loading add extra information page
 #Page not found is displayed
 
 
@@ -409,11 +424,16 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location -> Qualifier of the identification T [Postal code]
+  #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
     And I choose radio option Authorised place on the location of goods type page
     And I choose radio option Postal code on the location of goods identification page
     And I fill in address on the location of goods postal code page
     And I choose radio option No on the location of goods add contact page
     And I submit on the CYA page
+  #Route Details Loading -> place of loading add un locode [No]
+    And I choose radio option No on the place of loading add un locode page
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
 #Page not found is displayed
 

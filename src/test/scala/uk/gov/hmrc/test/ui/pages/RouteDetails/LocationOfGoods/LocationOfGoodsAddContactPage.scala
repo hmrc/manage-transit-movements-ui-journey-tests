@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object LocationOfGoodsAddContactPage extends BasePage {
 
-  val locationOfGoodsAddContactTitle = "Do you want to add a contact for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsAddContactTitle =
+    "Do you want to add a contact for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(locationOfGoodsAddContactTitle)
@@ -30,7 +31,7 @@ object LocationOfGoodsAddContactPage extends BasePage {
   def selectLocationOfGoodsAddContact(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
-      case "No" => clickById("value-no");
+      case "No"  => clickById("value-no");
     }
     this
   }

@@ -14,25 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
+package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object TransitRouteRemoveCountryPage extends BasePage {
+object PlaceOfLoadingLocationPage extends BasePage {
 
-  val transitRouteRemoveCountryTitle =
-    "Are you sure you want to remove Andorra from the transit route? - Manage your transit movements - GOV.UK"
+  def checkPlaceOfLoadingLocationTitle(loadingLocation: String): Unit =
+    onPage(f"Where in $loadingLocation is the place of loading? - Manage your transit movements - GOV.UK");
 
-  def loadPage: this.type = {
-    onPage(transitRouteRemoveCountryTitle)
-    this
-  }
-
-  def selectTransitRouteRemoveCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  def enterPlaceOfLoadingLocation(number: String): Unit =
+    fillInputById("value", number)
 }
