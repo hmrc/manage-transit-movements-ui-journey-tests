@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object LocationOfGoodsEoriPage extends BasePage {
 
-  val locationOfGoodsEoriTitle = "What is the EORI number for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsEoriTitle =
+    "What is the EORI number for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(locationOfGoodsEoriTitle)

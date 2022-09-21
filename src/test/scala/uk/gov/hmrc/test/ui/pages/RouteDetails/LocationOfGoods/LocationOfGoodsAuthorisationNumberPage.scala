@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object LocationOfGoodsAuthorisationNumberPage extends BasePage {
 
-  val locationOfGoodsAuthorisationNumberTitle = "What is the authorisation number for the location of goods? - Manage your transit movements - GOV.UK"
+  val locationOfGoodsAuthorisationNumberTitle =
+    "What is the authorisation number for the location of goods? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(locationOfGoodsAuthorisationNumberTitle)

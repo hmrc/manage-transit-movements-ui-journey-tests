@@ -16,18 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.mongodb.scala.MongoClient
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
-import org.mongodb.scala.MongoClient
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.pages.PreTaskList.OfficeOfDeparturePage.{clickByCssSelector, fillInputById, waitForPresence}
 
-import scala.language.postfixOps
+import java.time.Duration
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
-import java.time.Duration
+import scala.language.postfixOps
 
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton = "submit"

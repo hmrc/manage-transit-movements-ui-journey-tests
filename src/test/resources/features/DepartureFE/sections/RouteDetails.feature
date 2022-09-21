@@ -1,4 +1,5 @@
 @routeDetails @departure
+@wip
 Feature: Route details transit journeys
 
   Background:

@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.RouteDetails.Transit.AddOfficeOfTransitPage.{addOfficeOfTransitPageTitle, clickById, onPage}
 
 object LocationOfGoodsTypePage extends BasePage {
 
@@ -30,10 +29,10 @@ object LocationOfGoodsTypePage extends BasePage {
 
   def selectLocationOfGoodsType(answer: String): this.type = {
     answer match {
-      case "Authorised place" => clickById("value");
+      case "Authorised place"    => clickById("value");
       case "Designated location" => clickById("value_1");
-      case "Approved place" => clickById("value_2");
-      case "Other" => clickById("value_3");
+      case "Approved place"      => clickById("value_2");
+      case "Other"               => clickById("value_3");
     }
     this
   }

@@ -1,4 +1,6 @@
 @departureGBe2e
+@wip
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:

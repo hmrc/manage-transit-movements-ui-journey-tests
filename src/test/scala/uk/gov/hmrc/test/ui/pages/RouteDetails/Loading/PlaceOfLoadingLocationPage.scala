@@ -26,5 +26,3 @@ object PlaceOfLoadingLocationPage extends BasePage {
   def enterPlaceOfLoadingLocation(number: String): Unit =
     fillInputById("value", number)
 }
-
-

@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.BasePage
 
 object OfficeOfDeparturePage extends BasePage {

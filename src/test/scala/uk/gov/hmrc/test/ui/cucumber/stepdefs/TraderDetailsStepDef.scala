@@ -19,8 +19,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee._
 import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor._
 import uk.gov.hmrc.test.ui.pages.TraderDetails.Representative._
-import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder._
 import uk.gov.hmrc.test.ui.pages.TraderDetails.SetReducedDataSetIndicatorPage
+import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder._
 
 class TraderDetailsStepDef extends BaseStepDef {
 

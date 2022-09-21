@@ -44,8 +44,9 @@ class RouteLoadingStepDef extends BaseStepDef {
     PlaceOfLoadingCountryPage.submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as loading location on the place of loading location page$""") { (answer: String) =>
-    PlaceOfLoadingLocationPage.checkPlaceOfLoadingLocationTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+) as loading location on the place of loading location page$""") {
+    (answer: String) =>
+      PlaceOfLoadingLocationPage.checkPlaceOfLoadingLocationTitle(answer)
   }
 
   And("""^(?:I )?enter (.+) on the place of loading location page$""") { (answer: String) =>

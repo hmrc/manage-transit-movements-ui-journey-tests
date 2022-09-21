@@ -86,10 +86,11 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
     LocationOfGoodsAddContactPage.submitPage()
   }
 
-  And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") { (latitudeNo: String, longitudeNo: String) =>
-    LocationOfGoodsCoordinatesPage.loadPage
-    LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo);
-    LocationOfGoodsCoordinatesPage.submitPage();
+  And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") {
+    (latitudeNo: String, longitudeNo: String) =>
+      LocationOfGoodsCoordinatesPage.loadPage
+      LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo);
+      LocationOfGoodsCoordinatesPage.submitPage();
   }
 
   And("""^(?:I )?fill in address on the location of goods postal code page$""") { () =>

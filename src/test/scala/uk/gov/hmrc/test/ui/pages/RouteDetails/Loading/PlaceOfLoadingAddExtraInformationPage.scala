@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 
 object PlaceOfLoadingAddExtraInformationPage extends BasePage {
 
-  val placeOfLoadingAddExtraInformationTitle = "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
+  val placeOfLoadingAddExtraInformationTitle =
+    "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(placeOfLoadingAddExtraInformationTitle)

@@ -38,5 +38,4 @@ object TransitRouteAddAnotherCountryPage extends BasePage {
     this
   }
 
-
 }

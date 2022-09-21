@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
 import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing.TransitRouteAddAnotherCountryPage.clickById
 
 object TransitRouteRemoveCountryPage extends BasePage {
 
