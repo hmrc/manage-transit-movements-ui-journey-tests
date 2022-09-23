@@ -47,6 +47,22 @@
       "ruleId": 10021,
       "urlIsRegex": "true",
       "newLevel": 0
+    },
+    {
+      "reason": "Ignore Missing Anti-clickjacking Header",
+      "contextId": 1,
+      "url": "https:\\/\\/optimizationguide-pa.googleapis.com\\/.*",
+      "ruleId": 10020,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "X-Content-Type-Options Header Missing - when the application runs on the platform, this header gets added",
+      "contextId": 1,
+      "url": "https:\\/\\/optimizationguide-pa.googleapis.com\\/.*",
+      "ruleId": 10021,
+      "urlIsRegex": "true",
+      "newLevel": 0
     }
   ]
 }
