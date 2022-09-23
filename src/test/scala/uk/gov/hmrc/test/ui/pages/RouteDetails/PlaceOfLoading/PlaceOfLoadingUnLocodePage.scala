@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingCountryPage extends BasePage {
+object PlaceOfLoadingUnLocodePage extends BasePage {
 
-  val placeOfLoadingUnLocodeTitle = "In which country is the place of loading? - Manage your transit movements - GOV.UK"
+  val placeOfLoadingUnLocodeTitle =
+    "What is the UN/LOCODE for the place of loading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
     onPage(placeOfLoadingUnLocodeTitle)

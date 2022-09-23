@@ -1,4 +1,5 @@
 @departureGBe2e
+@wip
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -115,10 +116,9 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-#Page not found is displayed
-
-
-
+  #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8]
@@ -226,9 +226,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-#Page not found is displayed
-
-
+  #Route Details Unloading -> [Set 1]
+    And I choose radio option No on the place of unloading add un locode page
+    And I select United Kingdom on the place of unloading country page
+    And I enter Dublin on the place of unloading location page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R]
@@ -330,9 +333,9 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-#Page not found is displayed
-
-
+  #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
@@ -435,5 +438,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-#Page not found is displayed
+  #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
+    Then I should be on the task list page
 

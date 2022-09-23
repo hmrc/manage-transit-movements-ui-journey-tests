@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingAddExtraInformationPage extends BasePage {
+object PlaceOfUnloadingAddExtraInformationPage extends BasePage {
 
-  val placeOfLoadingAddExtraInformationTitle =
-    "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
+  val placeOfUnloadingAddExtraInformationTitle =
+    "Do you want to add extra information for the place of unloading? - Manage your transit movements - GOV.UK"
 
   def loadPage: this.type = {
-    onPage(placeOfLoadingAddExtraInformationTitle)
+    onPage(placeOfUnloadingAddExtraInformationTitle)
     this
   }
 
-  def selectPlaceOfLoadingAddExtraInformationTitle(answer: String): this.type = {
+  def selectPlaceOfUnloadingAddExtraInformation(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value");
       case "No"  => clickById("value-no");

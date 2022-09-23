@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods._
 
-class RouteLocationOfGoodsStepDef extends BaseStepDef {
+class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the add location of goods page$""") { (answer: String) =>
     AddLocationOfGoodsPage.loadPage

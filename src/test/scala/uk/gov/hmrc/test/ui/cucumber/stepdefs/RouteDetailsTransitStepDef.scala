@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.Transit._
 
-class RouteTransitStepDef extends BaseStepDef {
+class RouteDetailsTransitStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") { (answer: String) =>
     T2DeclarationPage.loadPage
