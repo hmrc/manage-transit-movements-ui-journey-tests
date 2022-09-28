@@ -249,7 +249,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
 
 
-
+  @a11y
   Scenario: 04 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page

@@ -43,18 +43,18 @@ trait BasePage extends BrowserDriver with Matchers {
   def clearDbUserAnswersAndDeleteCookies(): Unit = {
     println("============================Dropping db")
     val mongoClient: MongoClient = MongoClient()
-    dropCollection("manage-transit-movements-departure-frontend", mongoClient)
-    dropCollection("manage-transit-movements-arrival-frontend", mongoClient)
-    dropCollection("manage-transit-movements-unloading-frontend", mongoClient)
+    dropCollection(mongoClient, "manage-transit-movements-departure-cache", "manage-transit-movements-departure-frontend")
+    dropCollection(mongoClient, "manage-transit-movements-arrival-frontend")
+    dropCollection(mongoClient, "manage-transit-movements-unloading-frontend")
     println("============================Clearing cookies")
     driver.manage().deleteAllCookies()
   }
 
-  private def dropCollection(dbName: String, mongoClient: MongoClient): Unit =
+  private def dropCollection(mongoClient: MongoClient, dbName: String, collectionName: String = "user-answers"): Unit =
     Await.result(
       mongoClient
         .getDatabase(dbName)
-        .getCollection("user-answers")
+        .getCollection(collectionName)
         .drop()
         .head(),
       10 seconds
