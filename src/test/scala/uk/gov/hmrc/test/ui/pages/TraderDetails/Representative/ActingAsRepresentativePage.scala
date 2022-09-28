@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ActingAsRepresentativePage extends BasePage {
+object ActingAsRepresentativePage extends YesNoPage {
 
-  val actingAsRepresentativeTitle = "Are you acting as a representative? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(actingAsRepresentativeTitle)
-    this
-  }
-
-  def actingAsRepresentativeValue(actingAsRepresentativeAnswer: String): this.type = {
-    actingAsRepresentativeAnswer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
+  override def title(args: String*): String =
+    "Are you acting as a representative? - Manage your transit movements - GOV.UK"
 
 }

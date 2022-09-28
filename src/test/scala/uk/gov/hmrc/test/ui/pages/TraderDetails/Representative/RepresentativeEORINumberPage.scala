@@ -16,20 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object RepresentativeEORINumberPage extends BasePage {
+object RepresentativeEORINumberPage extends StringPage {
 
-  val representativeEORITitle = "What is your EORI number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(representativeEORITitle)
-    this
-  }
-
-  def enterRepresentativeEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber)
-    this
-  }
+  override def title(args: String*): String = "What is your EORI number? - Manage your transit movements - GOV.UK"
 
 }

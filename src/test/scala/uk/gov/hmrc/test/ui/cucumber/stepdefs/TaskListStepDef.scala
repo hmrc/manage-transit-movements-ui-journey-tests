@@ -21,16 +21,19 @@ import uk.gov.hmrc.test.ui.pages.TaskListPage
 class TaskListStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage.loadPage
+    TaskListPage
+      .loadPage()
   }
 
   Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer)
+    TaskListPage
+      .loadPage()
+      .selectDeclarationSection(answer)
   }
 
   And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage.checkTraderDetailsStatus(status)
+    TaskListPage
+      .checkTraderDetailsStatus(status)
   }
 
 }

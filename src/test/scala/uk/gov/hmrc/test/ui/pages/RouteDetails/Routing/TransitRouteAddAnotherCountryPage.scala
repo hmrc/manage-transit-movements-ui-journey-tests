@@ -16,26 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object TransitRouteAddAnotherCountryPage extends BasePage {
+object TransitRouteAddAnotherCountryPage extends YesNoPage {
 
-  def checkAddAnotherTransitRouteCountryTitle(numberOfCountry: String): Unit =
-    numberOfCountry match {
-      case "1" =>
-        onPage(f"You have added 1 country to the transit route - Manage your transit movements - GOV.UK")
-      case _   =>
-        onPage(
-          f"You have added $numberOfCountry countries to the transit route - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String =
+    args match {
+      case Seq("1") => "You have added 1 country to the transit route - Manage your transit movements - GOV.UK"
+      case _        =>
+        String.format(
+          "You have added %s countries to the transit route - Manage your transit movements - GOV.UK",
+          args: _*
         )
     }
-
-  def selectAddAnotherTransitRouteCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
-
 }

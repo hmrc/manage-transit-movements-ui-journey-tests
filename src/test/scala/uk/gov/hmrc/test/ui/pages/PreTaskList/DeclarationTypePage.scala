@@ -16,24 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object DeclarationTypePage extends BasePage {
+object DeclarationTypePage extends RadioPage {
 
-  val declarationTypeTitle = "What declaration do you want to create? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String =
+    "What declaration do you want to create? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(declarationTypeTitle)
-    this
-  }
-  def selectDeclarationType(declarationTypeSelected: String): this.type = {
-    declarationTypeSelected match {
-      case "T1"  => clickRadioBtn(declarationTypeSelected)
-      case "T2"  => clickRadioBtn(declarationTypeSelected)
-      case "T2F" => clickRadioBtn(declarationTypeSelected)
-      case "TIR" => clickRadioBtn(declarationTypeSelected)
-      case "T"   => clickRadioBtn(declarationTypeSelected)
-    }
+  // answer is one of T1, T2, T2F, TIR, T
+  override def select(answer: String): this.type = {
+    clickRadioBtn(answer)
     this
   }
 

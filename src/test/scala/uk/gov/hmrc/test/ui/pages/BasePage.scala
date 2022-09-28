@@ -30,18 +30,12 @@ import scala.language.postfixOps
 
 trait BasePage extends BrowserDriver with Matchers {
 
-  lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+  private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
     .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
     .ignoring(classOf[Exception])
 
-  def submitPage(): Unit = findBy(By.id("submit")).click()
-
-  def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != pageTitle)
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
+  def submitPage(): Unit = clickById("submit")
 
   def dropCollections(): Unit = {
     println("============================Dropping db")
@@ -63,15 +57,13 @@ trait BasePage extends BrowserDriver with Matchers {
     driver.manage().deleteAllCookies()
   }
 
-  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  private def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
-  def findByCssSelector(cssSelector: String): WebElement = findBy(By.cssSelector(cssSelector))
-
   def clickById(id: String): Unit = findById(id).click()
 
-  def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
+  private def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
     val sb = new StringBuilder
     for (_ <- 1 to length) {
       val randomNum = util.Random.nextInt(chars.length)
@@ -88,38 +80,36 @@ trait BasePage extends BrowserDriver with Matchers {
   def fillInputById(id: String, text: String): Unit = sendKeys(By.id(id), text)
 
   def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String): Unit = {
-    sendKeys(By.id("addressLine1"), addressLine1)
-    sendKeys(By.id("addressLine2"), addressLine2)
-    sendKeys(By.id("postalCode"), postalCode)
-    sendKeys(By.id("country"), country)
+    fillInputById("addressLine1", addressLine1)
+    fillInputById("addressLine2", addressLine2)
+    fillInputById("postalCode", postalCode)
+    selectValueFromDropDown(country, "country")
   }
 
-  def bringIntoView(by: By, action: WebElement => Unit): Unit = {
+  private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
     val element                 = findBy(by)
     val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
     jse.executeScript("arguments[0].scrollIntoView()", element)
     action(element)
   }
 
-  def click(by: By): Unit = bringIntoView(by, _.click)
-
-  def clickByCssSelector(cssSelector: String): Unit = click(By.cssSelector(cssSelector))
+  private def click(by: By): Unit = bringIntoView(by, _.click)
 
   def clickRadioBtn(answer: String): Unit =
-    findByCssSelector(s"input[type='radio'][value='$answer']").click()
+    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
 
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
-  def sendKeys(locator: By, value: String): Unit = {
+  private def sendKeys(locator: By, value: String): Unit = {
     val element = findBy(locator)
     element.clear()
     element.sendKeys(value)
   }
 
-  def selectValueFromDropDown(valueOption: String): Unit = {
-    findBy(By.id("value"))
-    fillInputById("value", valueOption)
-    clickByCssSelector("li#value__option--0")
+  def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
+    findBy(By.id(id))
+    fillInputById(id, valueOption)
+    click(By.cssSelector(s"li#${id}__option--0"))
   }
 }
 

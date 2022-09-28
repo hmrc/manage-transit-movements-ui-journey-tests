@@ -16,21 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object AddHolderContactPhoneNumberPage extends BasePage {
+object AddHolderContactPhoneNumberPage extends StringPage {
 
-  val addHolderContactTelephoneTitle =
+  override def title(args: String*): String =
     "What is the transit holder’s contact phone number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(addHolderContactTelephoneTitle)
-    this
-  }
-
-  def enterContactPersonTelephoneValue(holderTelephoneNumber: String): this.type = {
-    fillInputById("value", holderTelephoneNumber)
-    this
-  }
 
 }

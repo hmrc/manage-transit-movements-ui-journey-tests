@@ -21,28 +21,34 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.Exit._
 class RouteExitStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the office of exit country page$""") { (answer: String) =>
-    OfficeOfExitCountryPage.loadPage
-    OfficeOfExitCountryPage.selectValueFromDropDown(answer)
-    OfficeOfExitCountryPage.submitPage()
+    OfficeOfExitCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as an office of exit title on the office of exit page$""") { (answer: String) =>
-    OfficeOfExitPage.checkOfficeOfExitTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+) as an office of exit title on the office of exit page$""") {
+    (numberOfOffices: String) =>
+      OfficeOfExitPage
+        .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?select (.+) on the office of exit page$""") { (answer: String) =>
-    OfficeOfExitPage.selectValueFromDropDown(answer)
-    OfficeOfExitPage.submitPage()
+    OfficeOfExitPage
+      .select(answer)
+      .submitPage()
   }
 
   Then(
     """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of exit page$"""
-  ) { (answer: String) =>
-    AddAnotherOfficeOfExitPage.checkAddAnotherOfficeOfExitTitle(answer)
+  ) { (numberOfOffices: String) =>
+    AddAnotherOfficeOfExitPage
+      .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?choose radio option (.*) on the add another office of exit page$""") { (answer: String) =>
-    AddAnotherOfficeOfExitPage.selectAddAnotherOfficeOfExit(answer)
-    AddAnotherOfficeOfExitPage.submitPage()
+    AddAnotherOfficeOfExitPage
+      .select(answer)
+      .submitPage()
   }
 }

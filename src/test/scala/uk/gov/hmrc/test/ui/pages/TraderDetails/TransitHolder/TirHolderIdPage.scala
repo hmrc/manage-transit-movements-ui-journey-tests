@@ -16,19 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object TirHolderIdPage extends BasePage {
+object TirHolderIdPage extends StringPage {
 
-  val tirHolderIdTitle = "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String =
+    "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(tirHolderIdTitle)
-    this
-  }
-
-  def enterTIRHolderId(answer: String): TirHolderIdPage.type = {
-    fillInputById("value", answer)
-    this
-  }
 }

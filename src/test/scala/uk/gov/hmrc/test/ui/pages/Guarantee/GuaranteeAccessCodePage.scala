@@ -16,19 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GuaranteeAccessCodePage extends BasePage {
+object GuaranteeAccessCodePage extends StringPage {
 
-  val guaranteeAccessCodeTitle = "What is the access code? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the access code? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(guaranteeAccessCodeTitle)
-    this
-  }
-
-  def enterAccessCode(accessCode: String): GuaranteeAccessCodePage.type = {
-    fillInputById("value", accessCode)
-    this
-  }
 }

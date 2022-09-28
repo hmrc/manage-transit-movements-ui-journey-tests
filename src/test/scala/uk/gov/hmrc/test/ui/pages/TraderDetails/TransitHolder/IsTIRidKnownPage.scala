@@ -16,22 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IsTIRidKnownPage extends BasePage {
+object IsTIRidKnownPage extends YesNoPage {
 
-  val isTIRidKnownTitle = "Is the TIR holder’s identification number known? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(isTIRidKnownTitle)
-    this
-  }
-
-  def enterIsTIRidKnown(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
+  override def title(args: String*): String =
+    "Is the TIR holder’s identification number known? - Manage your transit movements - GOV.UK"
 }

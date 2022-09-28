@@ -16,28 +16,32 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object GuaranteeTypePage extends BasePage {
+object GuaranteeTypePage extends RadioPage {
 
-  val guaranteeTypeTitle = "Which type of guarantee is it? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Which type of guarantee is it? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(guaranteeTypeTitle)
-    this
-  }
-
-  def selectGuaranteeType(guaranteeType: String): GuaranteeTypePage.type = {
-    guaranteeType match {
-      case "(0) Guarantee waiver"                                                                   => clickById("value")
-      case "(1) Comprehensive guarantee"                                                            => clickById("value_1")
-      case "(2) Individual guarantee as an undertaking by a guarantor"                              => clickById("value_2")
-      case "(3) Individual guarantee in cash"                                                       => clickById("value_3")
-      case "(4) Individual guarantee in the form of vouchers"                                       => clickById("value_4")
-      case "(5) Guarantee waiver – secured for 500 euros or less"                                   => clickById("value_5")
-      case "(8) Guarantee not required – exempt public body"                                        => clickById("value_6")
-      case "(9) Individual guarantee with multiple usage"                                           => clickById("value_7")
-      case "(A) Guarantee waiver by agreement"                                                      => clickById("value_8")
+  override def select(answer: String): this.type = {
+    answer match {
+      case "(0) Guarantee waiver"                                                                   =>
+        clickById("value")
+      case "(1) Comprehensive guarantee"                                                            =>
+        clickById("value_1")
+      case "(2) Individual guarantee as an undertaking by a guarantor"                              =>
+        clickById("value_2")
+      case "(3) Individual guarantee in cash"                                                       =>
+        clickById("value_3")
+      case "(4) Individual guarantee in the form of vouchers"                                       =>
+        clickById("value_4")
+      case "(5) Guarantee waiver – secured for 500 euros or less"                                   =>
+        clickById("value_5")
+      case "(8) Guarantee not required – exempt public body"                                        =>
+        clickById("value_6")
+      case "(9) Individual guarantee with multiple usage"                                           =>
+        clickById("value_7")
+      case "(A) Guarantee waiver by agreement"                                                      =>
+        clickById("value_8")
       case "(R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways" =>
         clickById("value_9")
     }

@@ -16,18 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ConsignorEoriPage extends BasePage {
-  val consignorEoriTitle = "What is the consignor’s EORI number? - Manage your transit movements - GOV.UK"
+object ConsignorEoriPage extends StringPage {
 
-  def loadPage: this.type = {
-    onPage(consignorEoriTitle)
-    this
-  }
+  override def title(args: String*): String =
+    "What is the consignor’s EORI number? - Manage your transit movements - GOV.UK"
 
-  def enterConsignorEori(answer: String): ConsignorEoriPage.type = {
-    fillInputById("value", answer)
-    this
-  }
 }

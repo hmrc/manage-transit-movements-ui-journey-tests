@@ -16,15 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object GuaranteeBForTIRDeclarationPage extends BasePage {
+object GuaranteeBForTIRDeclarationPage extends Page {
 
-  val guaranteeBTitle = "Guarantee added for TIR declaration - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(guaranteeBTitle)
-    this
-  }
+  override def title(args: String*): String =
+    "Guarantee added for TIR declaration - Manage your transit movements - GOV.UK"
 
 }

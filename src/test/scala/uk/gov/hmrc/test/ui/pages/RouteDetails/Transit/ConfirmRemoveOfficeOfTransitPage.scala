@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ConfirmRemoveOfficeOfTransitPage extends BasePage {
+object ConfirmRemoveOfficeOfTransitPage extends YesNoPage {
 
-  val confirmRemoveOfficeOfTransitTitle =
+  override def title(args: String*): String =
     "Are you sure you want to remove this office of transit? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(confirmRemoveOfficeOfTransitTitle)
-    this
-  }
-
-  def selectConfirmRemoveOfficeOfTransit(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
 }

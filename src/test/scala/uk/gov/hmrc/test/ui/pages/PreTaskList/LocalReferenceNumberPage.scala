@@ -16,25 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object LocalReferenceNumberPage extends BasePage {
+object LocalReferenceNumberPage extends Page {
 
-  val url: String  = TestConfiguration.url("manage-transit-movements-departure-frontend") + "/local-reference-number"
-  val LRNPageTitle = "What is the local reference number (LRN)? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String =
+    "What is the local reference number (LRN)? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    driver.navigate().to(url)
-    onPage(LRNPageTitle)
-    this
-  }
-
-  def inputRandomLRN: OfficeOfDeparturePage.type = {
+  def inputRandomLRN: this.type = {
     val randomLRN = randomAlphaNumericString(15)
-    findById("value").sendKeys(randomLRN)
+    fillInputById("value", randomLRN)
     println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
-    OfficeOfDeparturePage
+    this
   }
 
 }

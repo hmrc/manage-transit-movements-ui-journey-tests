@@ -16,33 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object SecurityDetailsPage extends BasePage {
+object SecurityDetailsPage extends RadioPage {
 
-  val securityDetailsTitle =
+  override def title(args: String*): String =
     "What type of safety and security details do you need to add? - Manage your transit movements - GOV.UK"
-  var securityTypeCSSValue = ""
 
-  def loadPage: this.type = {
-    onPage(securityDetailsTitle)
-    this
-  }
-  def selectSecurityType(securityTypeSelected: String): this.type = {
-    securityTypeSelected match {
-      case "No security"                                            =>
-        securityTypeCSSValue = "noSecurity"
-        clickRadioBtn(securityTypeCSSValue)
-      case "Entry summary declaration (ENS)"                        =>
-        securityTypeCSSValue = "entrySummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue)
-      case "Exit summary declaration (EXS)"                         =>
-        securityTypeCSSValue = "exitSummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue)
-      case "Both entry and exit summary declarations (ENS and EXS)" =>
-        securityTypeCSSValue = "entryAndExitSummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue)
+  override def select(answer: String): this.type = {
+    val securityTypeCSSValue = answer match {
+      case "No security"                                            => "noSecurity"
+      case "Entry summary declaration (ENS)"                        => "entrySummaryDeclaration"
+      case "Exit summary declaration (EXS)"                         => "exitSummaryDeclaration"
+      case "Both entry and exit summary declarations (ENS and EXS)" => "entryAndExitSummaryDeclaration"
     }
+    clickRadioBtn(securityTypeCSSValue)
     this
   }
 

@@ -16,18 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object RepresentativeNamePage extends BasePage {
-  val representativeNameTitle = "What is your name? - Manage your transit movements - GOV.UK"
+object RepresentativeNamePage extends StringPage {
 
-  def loadPage: this.type = {
-    onPage(representativeNameTitle)
-    this
-  }
+  override def title(args: String*): String = "What is your name? - Manage your transit movements - GOV.UK"
 
-  def enterRepresentativeName(representativeNameAnswer: String): this.type = {
-    fillInputById("value", representativeNameAnswer)
-    this
-  }
 }

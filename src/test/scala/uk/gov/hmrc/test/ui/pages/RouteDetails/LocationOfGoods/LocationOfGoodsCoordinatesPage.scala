@@ -16,20 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object LocationOfGoodsCoordinatesPage extends BasePage {
+object LocationOfGoodsCoordinatesPage extends Page {
 
-  val locationOfGoodsCoordinatesTitle =
+  override def title(args: String*): String =
     "What are the coordinates for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsCoordinatesTitle)
-    this
-  }
-
-  def enterLocationOfGoodsCoordinates(latitudeNo: String, longitudeNo: String): Unit = {
+  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
     fillInputById("latitude", latitudeNo)
     fillInputById("longitude", longitudeNo)
+    this
   }
 }

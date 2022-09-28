@@ -14,19 +14,27 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PreTaskList
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import java.time.LocalDateTime
 
-object ProcedureTypePage extends RadioPage {
+trait DateTimePage extends Page {
 
-  override def title(args: String*): String =
-    "What type of procedure are you using? - Manage your transit movements - GOV.UK"
+  def fillInputs(): this.type = {
+    val dateAndTime = LocalDateTime.now
 
-  // answer is one of Normal, Simplified
-  override def select(answer: String): this.type = {
-    clickRadioBtn(answer.toLowerCase())
+    val day    = dateAndTime.getDayOfMonth.toString
+    val month  = dateAndTime.getMonthValue.toString
+    val year   = dateAndTime.getYear.toString
+    val hour   = dateAndTime.getHour.toString
+    val minute = dateAndTime.getMinute.toString
+
+    fillInputById("dateDay", day)
+    fillInputById("dateMonth", month)
+    fillInputById("dateYear", year)
+    fillInputById("timeHour", hour)
+    fillInputById("timeMinute", minute)
+
     this
   }
-
 }

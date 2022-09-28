@@ -16,20 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object HolderEORINumberPage extends BasePage {
+object HolderEORINumberPage extends StringPage {
 
-  val holderEORITitle = "What is the transit holder’s EORI number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(holderEORITitle)
-    this
-  }
-
-  def enterHolderEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber)
-    this
-  }
+  override def title(args: String*): String =
+    "What is the transit holder’s EORI number? - Manage your transit movements - GOV.UK"
 
 }

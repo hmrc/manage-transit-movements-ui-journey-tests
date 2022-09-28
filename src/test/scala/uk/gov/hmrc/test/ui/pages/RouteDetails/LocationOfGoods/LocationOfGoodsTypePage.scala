@@ -16,18 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object LocationOfGoodsTypePage extends BasePage {
+object LocationOfGoodsTypePage extends RadioPage {
 
-  val locationOfGoodsTypeTitle = "Which type of location is it? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Which type of location is it? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsTypeTitle)
-    this
-  }
-
-  def selectLocationOfGoodsType(answer: String): this.type = {
+  override def select(answer: String): this.type = {
     answer match {
       case "Authorised place"    => clickById("value")
       case "Designated location" => clickById("value_1")

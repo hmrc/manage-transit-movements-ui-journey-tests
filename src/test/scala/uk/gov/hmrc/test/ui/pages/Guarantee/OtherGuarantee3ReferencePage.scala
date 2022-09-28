@@ -16,21 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object OtherGuarantee3ReferencePage extends BasePage {
+object OtherGuarantee3ReferencePage extends StringPage {
 
-  val otherGuarantee3ReferenceTitle =
+  override def title(args: String*): String =
     "What is the reference for the guarantee? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(otherGuarantee3ReferenceTitle)
-    this
-  }
-
-  def enterOtherReference(answer: String): OtherGuarantee3ReferencePage.type = {
-    fillInputById("value", answer)
-    this
-  }
 
 }

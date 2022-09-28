@@ -21,38 +21,44 @@ import uk.gov.hmrc.test.ui.pages.PreTaskList._
 class PreTaskListStepDef extends BaseStepDef {
 
   When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
-    LocalReferenceNumberPage.loadPage
-    LocalReferenceNumberPage.inputRandomLRN
-    LocalReferenceNumberPage.submitPage()
+    LocalReferenceNumberPage
+      .loadPage()
+      .inputRandomLRN
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>
-    OfficeOfDeparturePage.loadPage
-    OfficeOfDeparturePage.selectValueFromDropDown(answer)
-    OfficeOfDeparturePage.submitPage()
+    OfficeOfDeparturePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the procedure type page$""") { (answer: String) =>
-    ProcedureTypePage.loadPage
-    ProcedureTypePage.selectWhatTypeOfProcedure(answer)
-    ProcedureTypePage.submitPage()
+    ProcedureTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the declaration type page$""") { (answer: String) =>
-    DeclarationTypePage.loadPage
-    DeclarationTypePage.selectDeclarationType(answer)
-    DeclarationTypePage.submitPage()
+    DeclarationTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the tir carnet page$""") { (answer: String) =>
-    TIRCarnetPage.loadPage
-    TIRCarnetPage.enterCarnetNumber(answer)
-    TIRCarnetPage.submitPage()
+    TIRCarnetPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the security type page$""") { (answer: String) =>
-    SecurityDetailsPage.loadPage
-    SecurityDetailsPage.selectSecurityType(answer)
-    SecurityDetailsPage.submitPage()
+    SecurityDetailsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 }

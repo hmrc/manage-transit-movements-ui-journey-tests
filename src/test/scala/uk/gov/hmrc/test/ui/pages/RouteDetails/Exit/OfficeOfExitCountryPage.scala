@@ -16,15 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object OfficeOfExitCountryPage extends BasePage {
+object OfficeOfExitCountryPage extends SelectPage {
 
-  val officeOfExitCountryTitle = "Which country is the office of exit in? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(officeOfExitCountryTitle)
-    this
-  }
+  override def title(args: String*): String =
+    "Which country is the office of exit in? - Manage your transit movements - GOV.UK"
 
 }

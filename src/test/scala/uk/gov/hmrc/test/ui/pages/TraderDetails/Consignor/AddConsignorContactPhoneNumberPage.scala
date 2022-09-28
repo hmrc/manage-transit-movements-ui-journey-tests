@@ -16,19 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object AddConsignorContactPhoneNumberPage extends BasePage {
-  val addConsignorContactTelephoneTitle =
+object AddConsignorContactPhoneNumberPage extends StringPage {
+
+  override def title(args: String*): String =
     "What is the consignor contact’s phone number? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(addConsignorContactTelephoneTitle)
-    this
-  }
-
-  def enterConsignorContactPersonTelephoneValue(consignorTelephoneNumber: String): this.type = {
-    fillInputById("value", consignorTelephoneNumber)
-    this
-  }
 }

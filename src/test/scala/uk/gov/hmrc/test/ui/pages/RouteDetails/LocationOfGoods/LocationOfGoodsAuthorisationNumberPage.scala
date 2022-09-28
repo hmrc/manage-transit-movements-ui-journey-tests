@@ -16,18 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsAuthorisationNumberPage extends BasePage {
+object LocationOfGoodsAuthorisationNumberPage extends StringPage {
 
-  val locationOfGoodsAuthorisationNumberTitle =
+  override def title(args: String*): String =
     "What is the authorisation number for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsAuthorisationNumberTitle)
-    this
-  }
-
-  def enterAuthorisationNumber(number: String): Unit =
-    fillInputById("value", number)
 }

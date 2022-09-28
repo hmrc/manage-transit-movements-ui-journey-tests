@@ -16,21 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object LocationOfGoodsAddressPage extends BasePage {
+object LocationOfGoodsAddressPage extends Page {
 
-  val locationOfGoodsAddressTitle =
+  override def title(args: String*): String =
     "What is the address for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsAddressTitle)
-    this
-  }
-
-  def enterLocationOfGoodsAddress: this.type = {
+  def enterLocationOfGoodsAddress(): this.type = {
     fillInAddress("1 Old Lane", "Hull", "H1 0AA", "United Kingdom")
-    submitPage()
     this
   }
 

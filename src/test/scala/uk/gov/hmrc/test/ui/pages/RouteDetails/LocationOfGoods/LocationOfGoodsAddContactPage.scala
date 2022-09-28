@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object LocationOfGoodsAddContactPage extends BasePage {
+object LocationOfGoodsAddContactPage extends YesNoPage {
 
-  val locationOfGoodsAddContactTitle =
+  override def title(args: String*): String =
     "Do you want to add a contact for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsAddContactTitle)
-    this
-  }
-
-  def selectLocationOfGoodsAddContact(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
 }

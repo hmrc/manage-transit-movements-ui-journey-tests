@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object PlaceOfLoadingAddExtraInformationPage extends BasePage {
+object PlaceOfLoadingAddExtraInformationPage extends YesNoPage {
 
-  val placeOfLoadingAddExtraInformationTitle =
+  override def title(args: String*): String =
     "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(placeOfLoadingAddExtraInformationTitle)
-    this
-  }
-
-  def selectPlaceOfLoadingAddExtraInformationTitle(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
 }

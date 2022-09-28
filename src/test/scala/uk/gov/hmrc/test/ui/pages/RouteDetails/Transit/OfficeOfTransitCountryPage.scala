@@ -16,16 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object OfficeOfTransitCountryPage extends BasePage {
+object OfficeOfTransitCountryPage extends SelectPage {
 
-  val officeOfTransitCountryTitle =
+  override def title(args: String*): String =
     "Which country is the office of transit in? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(officeOfTransitCountryTitle)
-    this
-  }
 
 }

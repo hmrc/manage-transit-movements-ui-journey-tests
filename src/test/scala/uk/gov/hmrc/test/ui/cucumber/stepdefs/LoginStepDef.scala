@@ -21,15 +21,19 @@ import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePag
 class LoginStepDef extends BaseStepDef {
 
   And("""^I login with ID (.*)$""") { (id: String) =>
-    AuthorityWizard.login(id)
+    AuthorityWizard
+      .fillInputs(id)
+      .submitPage()
   }
 
   Then("""I am on the Manage Transit Movements Hub service""") { () =>
-    ManageTransitMovementsHomePage.loadPage
+    ManageTransitMovementsHomePage
+      .loadPage()
   }
 
   Given("""^(?:I )?click on the (.+) link$""") { (link: String) =>
-    ManageTransitMovementsHomePage.selectAction(link)
+    ManageTransitMovementsHomePage
+      .selectAction(link)
   }
 
 }

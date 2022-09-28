@@ -16,22 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object T2DeclarationPage extends BasePage {
+object T2DeclarationPage extends YesNoPage {
 
-  val t2DeclarationPageTitle = "Does the transit include any T2 declarations? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String =
+    "Does the transit include any T2 declarations? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(t2DeclarationPageTitle)
-    this
-  }
-
-  def selectT2Declaration(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
 }

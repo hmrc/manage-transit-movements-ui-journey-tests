@@ -16,23 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object MoreThanOneConsigneePage extends BasePage {
+object MoreThanOneConsigneePage extends YesNoPage {
 
-  val isThereMoreThanOneConsigneeTitle = "Is there more than one consignee? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(isThereMoreThanOneConsigneeTitle)
-    this
-  }
-
-  def enterIsThereMoreThanOneConsignee(answer: String): MoreThanOneConsigneePage.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
+  override def title(args: String*): String =
+    "Is there more than one consignee? - Manage your transit movements - GOV.UK"
 
 }

@@ -16,18 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsAdditionalIdentifierPage extends BasePage {
+object LocationOfGoodsAdditionalIdentifierPage extends StringPage {
 
-  val locationOfGoodsAdditionalIdentifierTitle =
+  override def title(args: String*): String =
     "What is the additional identifier for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsAdditionalIdentifierTitle)
-    this
-  }
-
-  def enterLocationOfGoodsAdditionalIdentifierNumber(number: String): Unit =
-    fillInputById("value", number)
 }

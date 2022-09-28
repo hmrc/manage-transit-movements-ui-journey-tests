@@ -16,24 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddConsignorContactPersonPage extends BasePage {
+object AddConsignorContactPersonPage extends YesNoPage {
 
-  val addConsignorContactPersonTitle =
+  override def title(args: String*): String =
     "Do you want to add a contact for the consignor? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(addConsignorContactPersonTitle)
-    this
-  }
-
-  def addConsignorContactPersonValue(addConsignorContactPersonAnswer: String): this.type = {
-    addConsignorContactPersonAnswer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-    }
-    this
-  }
 
 }

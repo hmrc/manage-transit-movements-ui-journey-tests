@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+trait Page extends BasePage {
 
-object PlaceOfLoadingLocationPage extends StringPage {
+  def title(args: String*): String
 
-  override def title(args: String*): String =
-    String.format("Where in %s is the place of loading? - Manage your transit movements - GOV.UK", args: _*)
+  def loadPage(args: String*): this.type = {
+    onPage(title(args: _*))
+    this
+  }
 
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != pageTitle)
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
 }

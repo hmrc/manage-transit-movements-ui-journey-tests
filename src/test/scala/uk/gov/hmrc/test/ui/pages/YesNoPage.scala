@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+trait YesNoPage extends Page {
 
-object PlaceOfLoadingLocationPage extends StringPage {
-
-  override def title(args: String*): String =
-    String.format("Where in %s is the place of loading? - Manage your transit movements - GOV.UK", args: _*)
-
+  def select(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
+    }
+    this
+  }
 }

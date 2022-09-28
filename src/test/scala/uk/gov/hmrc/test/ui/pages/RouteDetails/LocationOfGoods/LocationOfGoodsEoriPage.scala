@@ -16,18 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsEoriPage extends BasePage {
+object LocationOfGoodsEoriPage extends StringPage {
 
-  val locationOfGoodsEoriTitle =
+  override def title(args: String*): String =
     "What is the EORI number for the location of goods? - Manage your transit movements - GOV.UK"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsEoriTitle)
-    this
-  }
-
-  def enterEoriNumber(number: String): Unit =
-    fillInputById("value", number)
 }
