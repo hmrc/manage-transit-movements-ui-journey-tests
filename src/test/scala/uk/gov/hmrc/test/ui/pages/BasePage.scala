@@ -57,7 +57,7 @@ trait BasePage extends BrowserDriver with Matchers {
     driver.manage().deleteAllCookies()
   }
 
-  private def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
@@ -79,13 +79,6 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def fillInputById(id: String, text: String): Unit = sendKeys(By.id(id), text)
 
-  def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String): Unit = {
-    fillInputById("addressLine1", addressLine1)
-    fillInputById("addressLine2", addressLine2)
-    fillInputById("postalCode", postalCode)
-    selectValueFromDropDown(country, "country")
-  }
-
   private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
     val element                 = findBy(by)
     val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
@@ -93,7 +86,7 @@ trait BasePage extends BrowserDriver with Matchers {
     action(element)
   }
 
-  private def click(by: By): Unit = bringIntoView(by, _.click)
+  def click(by: By): Unit = bringIntoView(by, _.click)
 
   def clickRadioBtn(answer: String): Unit =
     findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
@@ -104,12 +97,6 @@ trait BasePage extends BrowserDriver with Matchers {
     val element = findBy(locator)
     element.clear()
     element.sendKeys(value)
-  }
-
-  def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
-    findBy(By.id(id))
-    fillInputById(id, valueOption)
-    click(By.cssSelector(s"li#${id}__option--0"))
   }
 }
 

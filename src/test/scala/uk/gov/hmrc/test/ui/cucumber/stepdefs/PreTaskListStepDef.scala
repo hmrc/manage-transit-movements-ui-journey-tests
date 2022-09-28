@@ -23,7 +23,7 @@ class PreTaskListStepDef extends BaseStepDef {
   When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
-      .inputRandomLRN
+      .fillInput()
       .submitPage()
   }
 

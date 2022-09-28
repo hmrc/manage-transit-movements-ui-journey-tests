@@ -16,10 +16,26 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
+
 trait SelectPage extends Page {
 
   def select(answer: String): this.type = {
     selectValueFromDropDown(answer)
     this
   }
+
+  protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
+    findBy(By.id(id))
+    fillInputById(id, valueOption)
+    selectFirstValue(id)
+  }
+
+  protected def openDropdownAndSelectFirstValue(id: String): Unit = {
+    clickById(id)
+    selectFirstValue(id)
+  }
+
+  private def selectFirstValue(id: String): Unit =
+    clickById(s"${id}__option--0")
 }

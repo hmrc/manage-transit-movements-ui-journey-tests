@@ -48,7 +48,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?fill in the holder address page$""") { () =>
     HolderAddressPage
       .loadPage()
-      .enterHolderAddress
+      .fillInputs()
       .submitPage()
   }
 
@@ -159,7 +159,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?fill in the consignor address page$""") { () =>
     ConsignorAddressPage
       .loadPage()
-      .enterConsignorAddress()
+      .fillInputs()
       .submitPage()
   }
 
@@ -217,7 +217,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?fill in the consignee address page$""") { () =>
     ConsigneeAddressPage
       .loadPage()
-      .enterConsigneeAddress
+      .fillInputs()
       .submitPage()
   }
 

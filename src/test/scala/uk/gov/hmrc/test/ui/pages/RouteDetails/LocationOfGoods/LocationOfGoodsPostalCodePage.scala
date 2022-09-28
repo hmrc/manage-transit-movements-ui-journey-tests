@@ -16,17 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.PostalCodePage
 
-object LocationOfGoodsPostalCodePage extends Page {
+object LocationOfGoodsPostalCodePage extends PostalCodePage {
 
   override def title(args: String*): String = "What is the address for the location of goods?"
 
-  def enterFirstLocationOfGoodsPostalCodeCountry(): this.type = {
-    fillInputById("streetNumber", "121")
-    fillInputById("postalCode", "M19 6LL")
-    clickById("country")
-    clickById("country__option--0")
-    this
-  }
+  override val streetNumber: String = "121"
+  override val postalCode: String   = "M19 6LL"
 }

@@ -16,15 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.AddressPage
 
-object ConsignorAddressPage extends Page {
+object ConsignorAddressPage extends AddressPage {
 
   override def title(args: String*): String = "What is the consignor’s address?"
 
-  def enterConsignorAddress(): this.type = {
-    fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
-    this
-  }
+  override val addressLine1: String = "1 Merry Lane"
+  override val addressLine2: String = "Godrics Hollow"
+  override val postalCode: String   = "CA1 9AA"
+  override val country: String      = "United Kingdom"
 
 }

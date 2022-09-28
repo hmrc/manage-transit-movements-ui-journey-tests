@@ -16,15 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.AddressPage
 
-object HolderAddressPage extends Page {
+object HolderAddressPage extends AddressPage {
 
   override def title(args: String*): String = "What is the transit holder’s address?"
 
-  def enterHolderAddress: this.type = {
-    fillInAddress("1 Church lane", "Godrics Hollow", "BA1 0AA", "United Kingdom")
-    this
-  }
-
+  override val addressLine1: String = "1 Church lane"
+  override val addressLine2: String = "Godrics Hollow"
+  override val postalCode: String   = "BA1 0AA"
+  override val country: String      = "United Kingdom"
 }

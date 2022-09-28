@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PreTaskList
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.Page
+trait AddressPage extends SelectPage {
 
-object LocalReferenceNumberPage extends Page {
+  val addressLine1: String
+  val addressLine2: String
+  val postalCode: String
+  val country: String
 
-  override def title(args: String*): String = "What is the local reference number (LRN)?"
-
-  def fillInput(): this.type = {
-    val randomLRN = randomAlphaNumericString(15)
-    fillInputById("value", randomLRN)
-    println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
+  def fillInputs(): this.type = {
+    fillInputById("addressLine1", addressLine1)
+    fillInputById("addressLine2", addressLine2)
+    fillInputById("postalCode", postalCode)
+    selectValueFromDropDown(country, "country")
     this
   }
-
 }

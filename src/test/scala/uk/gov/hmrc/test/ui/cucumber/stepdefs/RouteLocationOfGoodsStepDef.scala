@@ -65,7 +65,7 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
   And("""^(?:I )?fill in address on the location of goods address page$""") { () =>
     LocationOfGoodsAddressPage
       .loadPage()
-      .enterLocationOfGoodsAddress()
+      .fillInputs()
       .submitPage()
   }
 
@@ -108,7 +108,7 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
   And("""^(?:I )?fill in address on the location of goods postal code page$""") { () =>
     LocationOfGoodsPostalCodePage
       .loadPage()
-      .enterFirstLocationOfGoodsPostalCodeCountry()
+      .fillInputs()
       .submitPage()
   }
 
