@@ -103,6 +103,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -166,6 +167,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
     And I enter Dublin on the place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -254,6 +256,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the place of unloading country page
     And I enter Dublin on the place of unloading location page
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -312,6 +315,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the place of loading add extra information page
    #Route Details Unloading -> No [Set 2]
     And I choose radio option No on the add place of unloading page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
