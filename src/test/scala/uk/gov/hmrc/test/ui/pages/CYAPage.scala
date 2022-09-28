@@ -22,7 +22,6 @@ object CYAPage extends BasePage {
 
   def loadPage: CYAPage.type = {
     onPage(CYATitle)
-    submitPage()
     this
   }
 

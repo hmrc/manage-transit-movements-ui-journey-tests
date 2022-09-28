@@ -43,7 +43,11 @@ trait BasePage extends BrowserDriver with Matchers {
   def clearDbUserAnswersAndDeleteCookies(): Unit = {
     println("============================Dropping db")
     val mongoClient: MongoClient = MongoClient()
-    dropCollection(mongoClient, "manage-transit-movements-departure-cache", "manage-transit-movements-departure-frontend")
+    dropCollection(
+      mongoClient,
+      "manage-transit-movements-departure-cache",
+      "manage-transit-movements-departure-frontend"
+    )
     dropCollection(mongoClient, "manage-transit-movements-arrival-frontend")
     dropCollection(mongoClient, "manage-transit-movements-unloading-frontend")
     println("============================Clearing cookies")
@@ -132,8 +136,8 @@ trait BasePage extends BrowserDriver with Matchers {
   }
 
   def selectValueFromDropDown(valueOption: String): Unit = {
-    fillInputById("value", valueOption)
     waitForPresence(By.id("value"))
+    fillInputById("value", valueOption)
     clickByCssSelector("li#value__option--0")
   }
 }

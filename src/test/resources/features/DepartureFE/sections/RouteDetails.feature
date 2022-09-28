@@ -9,7 +9,7 @@ Feature: Route details transit journeys
 
 
 
-@a11y @ZAP
+@a11y @wip
 #[CTCP-641] : Security type No security and Binding Itinerary set to No
 #[CTCP-960] : If at least one instance of consignment/country of routing of consignment/country is in CL112 set [No]
 #[CTCP-884] : Route Details Exit and Location of goods -> Do you need to add a location of goods [NO]
