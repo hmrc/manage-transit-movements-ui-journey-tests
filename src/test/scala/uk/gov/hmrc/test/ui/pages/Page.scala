@@ -26,7 +26,7 @@ trait Page extends BasePage {
   }
 
   private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != pageTitle)
+    if (driver.getTitle != s"$pageTitle - Manage your transit movements - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )

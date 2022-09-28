@@ -21,7 +21,7 @@ import org.scalatest.compatible.Assertion
 
 object TaskListPage extends Page {
 
-  override def title(args: String*): String = "Declaration summary - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Declaration summary"
 
   def selectDeclarationSection(sectionLink: String): this.type = {
     sectionLink match {

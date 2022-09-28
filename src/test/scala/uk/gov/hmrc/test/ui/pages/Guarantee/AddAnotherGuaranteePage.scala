@@ -20,10 +20,9 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddAnotherGuaranteePage extends YesNoPage {
 
-  override def title(args: String*): String =
-    args match {
-      case Seq("1") => "You have added 1 guarantee - Manage your transit movements - GOV.UK"
-      case _        => String.format("You have added %s guarantees - Manage your transit movements - GOV.UK", args: _*)
-    }
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 guarantee"
+    case _        => String.format("You have added %s guarantees", args: _*)
+  }
 
 }

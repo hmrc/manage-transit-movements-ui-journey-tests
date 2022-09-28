@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object RepresentativeEORINumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is your EORI number? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is your EORI number?"
 
 }

@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object TirHolderIdPage extends StringPage {
 
-  override def title(args: String*): String =
-    "What is the TIR holder’s identification number? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the TIR holder’s identification number?"
 
 }

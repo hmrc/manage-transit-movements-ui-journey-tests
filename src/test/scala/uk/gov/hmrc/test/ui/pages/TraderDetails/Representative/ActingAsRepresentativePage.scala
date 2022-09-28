@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ActingAsRepresentativePage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Are you acting as a representative? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Are you acting as a representative?"
 
 }

@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object ProcedureTypePage extends RadioPage {
 
-  override def title(args: String*): String =
-    "What type of procedure are you using? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What type of procedure are you using?"
 
   // answer is one of Normal, Simplified
   override def select(answer: String): this.type = {

@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AddConsignorContactPhoneNumberPage extends StringPage {
 
-  override def title(args: String*): String =
-    "What is the consignor contact’s phone number? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the consignor contact’s phone number?"
 
 }

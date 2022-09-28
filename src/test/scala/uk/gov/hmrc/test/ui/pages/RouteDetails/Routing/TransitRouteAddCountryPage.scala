@@ -20,6 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object TransitRouteAddCountryPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to add a country to the transit route? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Do you want to add a country to the transit route?"
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object GuaranteeAccessCodePage extends StringPage {
 
-  override def title(args: String*): String = "What is the access code? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the access code?"
 
 }

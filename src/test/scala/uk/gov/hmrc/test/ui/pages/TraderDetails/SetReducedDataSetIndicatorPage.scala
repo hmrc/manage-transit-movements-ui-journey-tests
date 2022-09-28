@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object SetReducedDataSetIndicatorPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to use a reduced data set? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Do you want to use a reduced data set?"
 
 }

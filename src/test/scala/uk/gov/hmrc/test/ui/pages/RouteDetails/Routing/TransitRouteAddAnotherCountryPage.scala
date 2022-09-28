@@ -20,13 +20,12 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object TransitRouteAddAnotherCountryPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    args match {
-      case Seq("1") => "You have added 1 country to the transit route - Manage your transit movements - GOV.UK"
-      case _        =>
-        String.format(
-          "You have added %s countries to the transit route - Manage your transit movements - GOV.UK",
-          args: _*
-        )
-    }
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 country to the transit route"
+    case _        =>
+      String.format(
+        "You have added %s countries to the transit route",
+        args: _*
+      )
+  }
 }

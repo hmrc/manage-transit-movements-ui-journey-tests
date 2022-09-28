@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 object CYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Check your answers"
 
   def clickChangeLink(text: String): Unit = {
     val id = text.replace(" ", "-").toLowerCase

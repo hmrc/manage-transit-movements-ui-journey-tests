@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object OfficeOfTransitAddEtaPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("Do you want to add a time of arrival in %s? - Manage your transit movements - GOV.UK", args: _*)
+  override def title(args: String*): String = String.format("Do you want to add a time of arrival in %s?", args: _*)
 
 }

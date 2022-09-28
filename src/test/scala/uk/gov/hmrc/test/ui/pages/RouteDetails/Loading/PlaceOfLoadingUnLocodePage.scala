@@ -20,6 +20,5 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object PlaceOfLoadingUnLocodePage extends SelectPage {
 
-  override def title(args: String*): String =
-    "What is the UN/LOCODE for the place of loading? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the UN/LOCODE for the place of loading?"
 }

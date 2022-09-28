@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddHolderContactPersonPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a contact? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Do you want to add a contact?"
 
 }

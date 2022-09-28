@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object LocationOfGoodsIdentificationPage extends RadioPage {
 
-  override def title(args: String*): String =
-    "How do you want to identify the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "How do you want to identify the location of goods?"
 
   override def select(answer: String): this.type = {
     answer match {

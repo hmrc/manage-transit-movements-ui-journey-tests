@@ -20,6 +20,5 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object LocationOfGoodsUnLocodePage extends SelectPage {
 
-  override def title(args: String*): String =
-    "What is the UN/LOCODE for the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"
 }

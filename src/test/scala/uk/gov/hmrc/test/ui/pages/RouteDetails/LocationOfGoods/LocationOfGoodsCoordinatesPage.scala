@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object LocationOfGoodsCoordinatesPage extends Page {
 
-  override def title(args: String*): String =
-    "What are the coordinates for the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What are the coordinates for the location of goods?"
 
   def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
     fillInputById("latitude", latitudeNo)

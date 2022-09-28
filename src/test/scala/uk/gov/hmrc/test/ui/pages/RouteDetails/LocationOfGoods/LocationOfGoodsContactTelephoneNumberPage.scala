@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object LocationOfGoodsContactTelephoneNumberPage extends StringPage {
 
-  override def title(args: String*): String =
-    "What is the contact for the location of goods’ telephone number? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the contact for the location of goods’ telephone number?"
 
 }

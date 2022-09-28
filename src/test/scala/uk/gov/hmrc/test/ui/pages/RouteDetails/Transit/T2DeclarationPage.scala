@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object T2DeclarationPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Does the transit include any T2 declarations? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Does the transit include any T2 declarations?"
 
 }

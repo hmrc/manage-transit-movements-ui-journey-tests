@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object LocationOfGoodsAddressPage extends Page {
 
-  override def title(args: String*): String =
-    "What is the address for the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the address for the location of goods?"
 
   def enterLocationOfGoodsAddress(): this.type = {
     fillInAddress("1 Old Lane", "Hull", "H1 0AA", "United Kingdom")

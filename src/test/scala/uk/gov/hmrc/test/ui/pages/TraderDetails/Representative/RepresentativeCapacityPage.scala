@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object RepresentativeCapacityPage extends RadioPage {
 
-  override def title(args: String*): String = "What is your capacity? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is your capacity?"
 
   override def select(answer: String): this.type = {
     answer match {

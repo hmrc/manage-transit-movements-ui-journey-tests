@@ -20,6 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object WantToAddReferenceForGuaranteePage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to add a reference for the guarantee? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Do you want to add a reference for the guarantee?"
 }

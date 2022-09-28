@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object TransitRouteCountryPage extends SelectPage {
 
-  override def title(args: String*): String =
-    "Which country do you want to add to the transit route? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Which country do you want to add to the transit route?"
 
 }

@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object GuaranteeTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of guarantee is it? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Which type of guarantee is it?"
 
   override def select(answer: String): this.type = {
     answer match {

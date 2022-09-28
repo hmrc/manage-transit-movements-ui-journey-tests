@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object PlaceOfLoadingAddExtraInformationPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to add extra information for the place of loading? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Do you want to add extra information for the place of loading?"
 
 }

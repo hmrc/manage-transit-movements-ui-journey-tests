@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object SecurityDetailsPage extends RadioPage {
 
-  override def title(args: String*): String =
-    "What type of safety and security details do you need to add? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What type of safety and security details do you need to add?"
 
   override def select(answer: String): this.type = {
     val securityTypeCSSValue = answer match {

@@ -20,8 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object ConsigneeAddressPage extends Page {
 
-  override def title(args: String*): String =
-    "What is the consignee’s address? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the consignee’s address?"
 
   def enterConsigneeAddress: this.type = {
     fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")

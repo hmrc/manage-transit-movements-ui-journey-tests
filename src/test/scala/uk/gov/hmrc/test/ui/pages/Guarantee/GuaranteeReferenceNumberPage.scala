@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object GuaranteeReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String =
-    "What is the Guarantee Reference Number (GRN)? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
 
 }

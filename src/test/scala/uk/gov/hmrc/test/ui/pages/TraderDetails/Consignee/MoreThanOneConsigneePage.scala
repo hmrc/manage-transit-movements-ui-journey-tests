@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object MoreThanOneConsigneePage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Is there more than one consignee? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Is there more than one consignee?"
 
 }
