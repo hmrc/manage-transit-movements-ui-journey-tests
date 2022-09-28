@@ -29,5 +29,5 @@ object LocationOfGoodsContactTelephoneNumberPage extends BasePage {
   }
 
   def enterLocationOfGoodsContactTelephoneNumber(phoneNumberAnswer: String): Unit =
-    fillInputById("value", phoneNumberAnswer);
+    fillInputById("value", phoneNumberAnswer)
 }

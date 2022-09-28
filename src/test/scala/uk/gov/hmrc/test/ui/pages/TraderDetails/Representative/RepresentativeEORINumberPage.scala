@@ -28,8 +28,8 @@ object RepresentativeEORINumberPage extends BasePage {
   }
 
   def enterRepresentativeEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber);
-    this;
+    fillInputById("value", eoriNumber)
+    this
   }
 
 }

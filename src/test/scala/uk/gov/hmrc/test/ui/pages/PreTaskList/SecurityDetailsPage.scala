@@ -22,7 +22,7 @@ object SecurityDetailsPage extends BasePage {
 
   val securityDetailsTitle =
     "What type of safety and security details do you need to add? - Manage your transit movements - GOV.UK"
-  var securityTypeCSSValue = "";
+  var securityTypeCSSValue = ""
 
   def loadPage: this.type = {
     onPage(securityDetailsTitle)
@@ -32,16 +32,16 @@ object SecurityDetailsPage extends BasePage {
     securityTypeSelected match {
       case "No security"                                            =>
         securityTypeCSSValue = "noSecurity"
-        clickRadioBtn(securityTypeCSSValue);
+        clickRadioBtn(securityTypeCSSValue)
       case "Entry summary declaration (ENS)"                        =>
         securityTypeCSSValue = "entrySummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue);
+        clickRadioBtn(securityTypeCSSValue)
       case "Exit summary declaration (EXS)"                         =>
         securityTypeCSSValue = "exitSummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue);
+        clickRadioBtn(securityTypeCSSValue)
       case "Both entry and exit summary declarations (ENS and EXS)" =>
         securityTypeCSSValue = "entryAndExitSummaryDeclaration"
-        clickRadioBtn(securityTypeCSSValue);
+        clickRadioBtn(securityTypeCSSValue)
     }
     this
   }

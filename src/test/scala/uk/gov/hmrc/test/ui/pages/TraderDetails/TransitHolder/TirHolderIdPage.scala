@@ -28,7 +28,7 @@ object TirHolderIdPage extends BasePage {
   }
 
   def enterTIRHolderId(answer: String): TirHolderIdPage.type = {
-    fillInputById("value", answer);
-    this;
+    fillInputById("value", answer)
+    this
   }
 }

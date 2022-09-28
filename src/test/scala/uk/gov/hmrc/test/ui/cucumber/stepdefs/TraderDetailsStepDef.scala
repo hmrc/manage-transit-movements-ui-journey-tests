@@ -33,18 +33,18 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?enter (.+) on the holder eori number page$""") { (answer: String) =>
     HolderEORINumberPage.loadPage
     HolderEORINumberPage.enterHolderEori(answer)
-    HolderEORINumberPage.submitPage();
+    HolderEORINumberPage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder name page$""") { (answer: String) =>
     HolderNamePage.loadPage
     HolderNamePage.enterHolderName(answer)
-    HolderNamePage.submitPage();
+    HolderNamePage.submitPage()
   }
 
   And("""^(?:I )?fill in the holder address page$""") { () =>
     HolderAddressPage.loadPage
-    HolderAddressPage.enterHolderAddress;
+    HolderAddressPage.enterHolderAddress
     HolderAddressPage.submitPage()
   }
 
@@ -53,19 +53,19 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?choose radio option (.*) on the add contact page$""") { (answer: String) =>
     AddHolderContactPersonPage.loadPage
     AddHolderContactPersonPage.addContactPersonValue(answer)
-    AddHolderContactPersonPage.submitPage();
+    AddHolderContactPersonPage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder's contact name page$""") { (answer: String) =>
     AddHolderContactNamePage.loadPage
     AddHolderContactNamePage.enterContactPersonNameValue(answer)
-    AddHolderContactNamePage.submitPage();
+    AddHolderContactNamePage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder's contact phone number page$""") { (answer: String) =>
     AddHolderContactPhoneNumberPage.loadPage
     AddHolderContactPhoneNumberPage.enterContactPersonTelephoneValue(answer)
-    AddHolderContactPhoneNumberPage.submitPage();
+    AddHolderContactPhoneNumberPage.submitPage()
   }
 
   //Representative
@@ -73,7 +73,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   And("""^(?:I )?choose radio option (.*) on the acting as representative page$""") { (answer: String) =>
     ActingAsRepresentativePage.loadPage
     ActingAsRepresentativePage.actingAsRepresentativeValue(answer)
-    ActingAsRepresentativePage.submitPage();
+    ActingAsRepresentativePage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the representative eori page$""") { (answer: String) =>
@@ -104,7 +104,7 @@ class TraderDetailsStepDef extends BaseStepDef {
   Then("""^(?:I )?choose radio option (.*) on the approved operator page""") { (answer: String) =>
     SetReducedDataSetIndicatorPage.loadPage
     SetReducedDataSetIndicatorPage.setReducedDataSetIndicator(answer)
-    SetReducedDataSetIndicatorPage.submitPage();
+    SetReducedDataSetIndicatorPage.submitPage()
   }
 
   //Consignor

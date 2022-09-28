@@ -29,8 +29,8 @@ object ProcedureTypePage extends BasePage {
 
   def selectWhatTypeOfProcedure(procedureTypeSelected: String): this.type = {
     procedureTypeSelected match {
-      case "Normal"     => clickRadioBtn(procedureTypeSelected.toLowerCase());
-      case "Simplified" => clickRadioBtn(procedureTypeSelected.toLowerCase());
+      case "Normal"     => clickRadioBtn(procedureTypeSelected.toLowerCase())
+      case "Simplified" => clickRadioBtn(procedureTypeSelected.toLowerCase())
     }
     this
   }

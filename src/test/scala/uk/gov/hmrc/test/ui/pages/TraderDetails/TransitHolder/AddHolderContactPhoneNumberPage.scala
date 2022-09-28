@@ -29,8 +29,8 @@ object AddHolderContactPhoneNumberPage extends BasePage {
   }
 
   def enterContactPersonTelephoneValue(holderTelephoneNumber: String): this.type = {
-    fillInputById("value", holderTelephoneNumber);
-    this;
+    fillInputById("value", holderTelephoneNumber)
+    this
   }
 
 }

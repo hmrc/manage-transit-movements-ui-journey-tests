@@ -29,8 +29,8 @@ object MoreThanOneConsigneePage extends BasePage {
 
   def enterIsThereMoreThanOneConsignee(answer: String): MoreThanOneConsigneePage.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

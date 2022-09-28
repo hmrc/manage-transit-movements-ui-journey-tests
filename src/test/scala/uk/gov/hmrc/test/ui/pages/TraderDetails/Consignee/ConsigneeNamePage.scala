@@ -27,8 +27,8 @@ object ConsigneeNamePage extends BasePage {
   }
 
   def enterConsigneeName(answer: String): ConsigneeNamePage.type = {
-    fillInputById("value", answer);
-    this;
+    fillInputById("value", answer)
+    this
   }
 
 }

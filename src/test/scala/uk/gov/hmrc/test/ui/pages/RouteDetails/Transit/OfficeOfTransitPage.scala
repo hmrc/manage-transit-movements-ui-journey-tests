@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 object OfficeOfTransitPage extends BasePage {
 
   def checkOfficeOfTransitTitle(countryOffice: String): Unit =
-    onPage(f"Where in $countryOffice is the office of transit? - Manage your transit movements - GOV.UK");
+    onPage(f"Where in $countryOffice is the office of transit? - Manage your transit movements - GOV.UK")
 }

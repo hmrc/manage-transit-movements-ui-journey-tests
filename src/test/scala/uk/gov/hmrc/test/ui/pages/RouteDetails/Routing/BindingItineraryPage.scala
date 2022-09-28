@@ -30,8 +30,8 @@ object BindingItineraryPage extends BasePage {
 
   def selectBindingItinerary(answer: String): this.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

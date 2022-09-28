@@ -46,19 +46,19 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.+) on the location of goods eori page$""") { (answer: String) =>
     LocationOfGoodsEoriPage.loadPage
-    LocationOfGoodsEoriPage.enterEoriNumber(answer);
-    LocationOfGoodsEoriPage.submitPage();
+    LocationOfGoodsEoriPage.enterEoriNumber(answer)
+    LocationOfGoodsEoriPage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the location of goods authorisation number page$""") { (answer: String) =>
     LocationOfGoodsAuthorisationNumberPage.loadPage
-    LocationOfGoodsAuthorisationNumberPage.enterAuthorisationNumber(answer);
-    LocationOfGoodsAuthorisationNumberPage.submitPage();
+    LocationOfGoodsAuthorisationNumberPage.enterAuthorisationNumber(answer)
+    LocationOfGoodsAuthorisationNumberPage.submitPage()
   }
 
   And("""^(?:I )?fill in address on the location of goods address page$""") { () =>
     LocationOfGoodsAddressPage.loadPage
-    LocationOfGoodsAddressPage.enterLocationOfGoodsAddress;
+    LocationOfGoodsAddressPage.enterLocationOfGoodsAddress
     LocationOfGoodsAddressPage.submitPage()
   }
 
@@ -76,8 +76,8 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.+) on the location of goods additional identifier page$""") { (answer: String) =>
     LocationOfGoodsAdditionalIdentifierPage.loadPage
-    LocationOfGoodsAdditionalIdentifierPage.enterLocationOfGoodsAdditionalIdentifierNumber(answer);
-    LocationOfGoodsAdditionalIdentifierPage.submitPage();
+    LocationOfGoodsAdditionalIdentifierPage.enterLocationOfGoodsAdditionalIdentifierNumber(answer)
+    LocationOfGoodsAdditionalIdentifierPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the location of goods add contact page$""") { (answer: String) =>
@@ -89,20 +89,20 @@ class RouteLocationOfGoodsStepDef extends BaseStepDef {
   And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") {
     (latitudeNo: String, longitudeNo: String) =>
       LocationOfGoodsCoordinatesPage.loadPage
-      LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo);
-      LocationOfGoodsCoordinatesPage.submitPage();
+      LocationOfGoodsCoordinatesPage.enterLocationOfGoodsCoordinates(latitudeNo, longitudeNo)
+      LocationOfGoodsCoordinatesPage.submitPage()
   }
 
   And("""^(?:I )?fill in address on the location of goods postal code page$""") { () =>
     LocationOfGoodsPostalCodePage.loadPage
-    LocationOfGoodsPostalCodePage.enterFirstLocationOfGoodsPostalCodeCountry;
+    LocationOfGoodsPostalCodePage.enterFirstLocationOfGoodsPostalCodeCountry()
     LocationOfGoodsPostalCodePage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the location of goods contact page$""") { (answer: String) =>
     LocationOfGoodsContactPage.loadPage
-    LocationOfGoodsContactPage.enterLocationOfGoodsContact(answer);
-    LocationOfGoodsContactPage.submitPage();
+    LocationOfGoodsContactPage.enterLocationOfGoodsContact(answer)
+    LocationOfGoodsContactPage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the location of goods contact telephone number page$""") { (answer: String) =>

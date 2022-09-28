@@ -28,11 +28,11 @@ object DeclarationTypePage extends BasePage {
   }
   def selectDeclarationType(declarationTypeSelected: String): this.type = {
     declarationTypeSelected match {
-      case "T1"  => clickRadioBtn(declarationTypeSelected);
-      case "T2"  => clickRadioBtn(declarationTypeSelected);
-      case "T2F" => clickRadioBtn(declarationTypeSelected);
-      case "TIR" => clickRadioBtn(declarationTypeSelected);
-      case "T"   => clickRadioBtn(declarationTypeSelected);
+      case "T1"  => clickRadioBtn(declarationTypeSelected)
+      case "T2"  => clickRadioBtn(declarationTypeSelected)
+      case "T2F" => clickRadioBtn(declarationTypeSelected)
+      case "TIR" => clickRadioBtn(declarationTypeSelected)
+      case "T"   => clickRadioBtn(declarationTypeSelected)
     }
     this
   }

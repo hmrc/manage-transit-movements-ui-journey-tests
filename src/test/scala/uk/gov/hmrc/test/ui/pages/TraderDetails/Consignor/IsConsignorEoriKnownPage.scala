@@ -28,8 +28,8 @@ object IsConsignorEoriKnownPage extends BasePage {
 
   def enterDoYouKnowConsignorEori(answer: String): IsConsignorEoriKnownPage.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

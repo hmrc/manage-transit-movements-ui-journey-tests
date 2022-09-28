@@ -29,8 +29,8 @@ object ActingAsRepresentativePage extends BasePage {
 
   def actingAsRepresentativeValue(actingAsRepresentativeAnswer: String): this.type = {
     actingAsRepresentativeAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

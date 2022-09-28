@@ -28,10 +28,10 @@ object LocationOfGoodsPostalCodePage extends BasePage {
     this
   }
 
-  def enterFirstLocationOfGoodsPostalCodeCountry: Unit = {
+  def enterFirstLocationOfGoodsPostalCodeCountry(): Unit = {
     fillInputById("streetNumber", "121")
     fillInputById("postalCode", "M19 6LL")
-    clickById("country");
-    clickById("country__option--0");
+    clickById("country")
+    clickById("country__option--0")
   }
 }

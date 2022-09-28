@@ -24,16 +24,16 @@ import java.time.LocalDateTime
 object OfficeOfTransitEtaPage extends BasePage {
 
   def checkOfficeOfTransitEtaTitle(etaOffice: String): Unit =
-    onPage(f"When do you expect the transit to arrive in $etaOffice? - Manage your transit movements - GOV.UK");
+    onPage(f"When do you expect the transit to arrive in $etaOffice? - Manage your transit movements - GOV.UK")
 
   def fillInNowDateAndTime(): Unit = {
     val dateAndTime = LocalDateTime.now
 
-    val day    = dateAndTime.getDayOfMonth.toString;
-    val month  = dateAndTime.getMonthValue.toString;
-    val year   = dateAndTime.getYear.toString;
-    val hour   = dateAndTime.getHour.toString;
-    val minute = dateAndTime.getMinute.toString;
+    val day    = dateAndTime.getDayOfMonth.toString
+    val month  = dateAndTime.getMonthValue.toString
+    val year   = dateAndTime.getYear.toString
+    val hour   = dateAndTime.getHour.toString
+    val minute = dateAndTime.getMinute.toString
 
     sendKeys(By.id("dateDay"), day)
     sendKeys(By.id("dateMonth"), month)

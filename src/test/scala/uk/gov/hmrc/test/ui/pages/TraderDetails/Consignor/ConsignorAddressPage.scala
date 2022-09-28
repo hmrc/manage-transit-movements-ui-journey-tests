@@ -30,7 +30,7 @@ object ConsignorAddressPage extends BasePage {
   def enterConsignorAddress(): this.type = {
     fillInAddress("1 Merry Lane", "Godrics Hollow", "CA1 9AA", "United Kingdom")
     submitPage()
-    this;
+    this
   }
 
 }

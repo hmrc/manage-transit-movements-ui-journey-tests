@@ -28,8 +28,8 @@ object IsHolderEORIKnownPage extends BasePage {
   }
   def selectIsHolderEORIKnown(isEoriKnownAnswer: String): this.type = {
     isEoriKnownAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

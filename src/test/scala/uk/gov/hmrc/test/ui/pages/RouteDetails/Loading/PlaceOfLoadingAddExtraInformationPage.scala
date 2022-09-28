@@ -30,8 +30,8 @@ object PlaceOfLoadingAddExtraInformationPage extends BasePage {
 
   def selectPlaceOfLoadingAddExtraInformationTitle(answer: String): this.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

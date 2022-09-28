@@ -30,13 +30,13 @@ object LocationOfGoodsIdentificationPage extends BasePage {
 
   def selectLocationOfGoodsIdentification(answer: String): this.type = {
     answer match {
-      case "Customs office identifier" => clickById("value");
-      case "EORI number"               => clickById("value_1");
-      case "Authorisation number"      => clickById("value_2");
-      case "Coordinates"               => clickById("value_3");
-      case "UN/LOCODE"                 => clickById("value_4");
-      case "Address"                   => clickById("value_5");
-      case "Postal code"               => clickById("value_6");
+      case "Customs office identifier" => clickById("value")
+      case "EORI number"               => clickById("value_1")
+      case "Authorisation number"      => clickById("value_2")
+      case "Coordinates"               => clickById("value_3")
+      case "UN/LOCODE"                 => clickById("value_4")
+      case "Address"                   => clickById("value_5")
+      case "Postal code"               => clickById("value_6")
     }
     this
   }

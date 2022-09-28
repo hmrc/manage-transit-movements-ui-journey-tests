@@ -28,8 +28,8 @@ object HolderEORINumberPage extends BasePage {
   }
 
   def enterHolderEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber);
-    this;
+    fillInputById("value", eoriNumber)
+    this
   }
 
 }

@@ -27,7 +27,7 @@ object ConsignorEoriPage extends BasePage {
   }
 
   def enterConsignorEori(answer: String): ConsignorEoriPage.type = {
-    fillInputById("value", answer);
-    this;
+    fillInputById("value", answer)
+    this
   }
 }

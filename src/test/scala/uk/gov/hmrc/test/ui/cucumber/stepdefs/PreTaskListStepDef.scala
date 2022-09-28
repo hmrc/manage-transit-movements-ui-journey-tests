@@ -23,7 +23,7 @@ class PreTaskListStepDef extends BaseStepDef {
   When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
     LocalReferenceNumberPage.loadPage
     LocalReferenceNumberPage.inputRandomLRN
-    LocalReferenceNumberPage.submitPage();
+    LocalReferenceNumberPage.submitPage()
   }
 
   And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>
@@ -35,24 +35,24 @@ class PreTaskListStepDef extends BaseStepDef {
   And("""^(?:I )?choose radio option (.*) on the procedure type page$""") { (answer: String) =>
     ProcedureTypePage.loadPage
     ProcedureTypePage.selectWhatTypeOfProcedure(answer)
-    ProcedureTypePage.submitPage();
+    ProcedureTypePage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the declaration type page$""") { (answer: String) =>
     DeclarationTypePage.loadPage
     DeclarationTypePage.selectDeclarationType(answer)
-    DeclarationTypePage.submitPage();
+    DeclarationTypePage.submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the tir carnet page$""") { (answer: String) =>
     TIRCarnetPage.loadPage
-    TIRCarnetPage.enterCarnetNumber(answer);
-    TIRCarnetPage.submitPage();
+    TIRCarnetPage.enterCarnetNumber(answer)
+    TIRCarnetPage.submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the security type page$""") { (answer: String) =>
     SecurityDetailsPage.loadPage
     SecurityDetailsPage.selectSecurityType(answer)
-    SecurityDetailsPage.submitPage();
+    SecurityDetailsPage.submitPage()
   }
 }

@@ -28,7 +28,7 @@ object RepresentativePhoneNumberPage extends BasePage {
   }
 
   def enterRepresentativePhoneNumber(phoneNumberAnswer: String): RepresentativePhoneNumberPage.type = {
-    fillInputById("value", phoneNumberAnswer);
-    this;
+    fillInputById("value", phoneNumberAnswer)
+    this
   }
 }

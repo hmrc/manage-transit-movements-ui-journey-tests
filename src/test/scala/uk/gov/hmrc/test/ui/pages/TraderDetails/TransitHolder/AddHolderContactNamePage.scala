@@ -28,8 +28,8 @@ object AddHolderContactNamePage extends BasePage {
   }
 
   def enterContactPersonNameValue(holderContactName: String): this.type = {
-    fillInputById("value", holderContactName);
-    this;
+    fillInputById("value", holderContactName)
+    this
   }
 
 }

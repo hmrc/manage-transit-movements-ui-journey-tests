@@ -28,7 +28,7 @@ object AddConsignorContactNamePage extends BasePage {
   }
 
   def enterConsignorContactName(consignorContactName: String): this.type = {
-    fillInputById("value", consignorContactName);
-    this;
+    fillInputById("value", consignorContactName)
+    this
   }
 }

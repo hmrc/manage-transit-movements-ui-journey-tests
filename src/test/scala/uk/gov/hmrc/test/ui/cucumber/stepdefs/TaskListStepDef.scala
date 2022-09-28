@@ -26,7 +26,7 @@ class TaskListStepDef extends BaseStepDef {
 
   Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
     TaskListPage.loadPage
-    TaskListPage.selectDeclarationSection(answer);
+    TaskListPage.selectDeclarationSection(answer)
   }
 
   And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>

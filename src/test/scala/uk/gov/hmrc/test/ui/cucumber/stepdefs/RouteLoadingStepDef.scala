@@ -50,7 +50,7 @@ class RouteLoadingStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?enter (.+) on the place of loading location page$""") { (answer: String) =>
-    PlaceOfLoadingLocationPage.enterPlaceOfLoadingLocation(answer);
-    PlaceOfLoadingLocationPage.submitPage();
+    PlaceOfLoadingLocationPage.enterPlaceOfLoadingLocation(answer)
+    PlaceOfLoadingLocationPage.submitPage()
   }
 }

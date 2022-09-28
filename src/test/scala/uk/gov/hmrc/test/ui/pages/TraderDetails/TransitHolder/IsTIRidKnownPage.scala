@@ -29,8 +29,8 @@ object IsTIRidKnownPage extends BasePage {
 
   def enterIsTIRidKnown(answer: String): this.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }

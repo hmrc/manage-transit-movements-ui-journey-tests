@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePag
 class LoginStepDef extends BaseStepDef {
 
   And("""^I login with ID (.*)$""") { (id: String) =>
-    AuthorityWizard.login(id);
+    AuthorityWizard.login(id)
   }
 
   Then("""I am on the Manage Transit Movements Hub service""") { () =>

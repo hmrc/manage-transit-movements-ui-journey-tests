@@ -30,8 +30,8 @@ object WantToAddReferenceForGuaranteePage extends BasePage {
 
   def selectToAddReference(answer: String): WantToAddReferenceForGuaranteePage.type = {
     answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
     }
     this
   }
