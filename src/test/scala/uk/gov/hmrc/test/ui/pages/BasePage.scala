@@ -31,8 +31,7 @@ import scala.language.postfixOps
 trait BasePage extends BrowserDriver with Matchers {
   val continueButton = "submit"
 
-  def submitPage(): Unit =
-    driver.findElement(By.id(continueButton)).click()
+  def submitPage(): Unit = findElement(By.id(continueButton)).click()
 
   def onPage(pageTitle: String): Unit =
     if (driver.getTitle != pageTitle)
@@ -72,10 +71,7 @@ trait BasePage extends BrowserDriver with Matchers {
   def waitForPresence(by: By): WebElement =
     fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
-  def clear(locator: By): Unit = {
-    waitForPresence(locator)
-    findElement(locator).clear()
-  }
+  def clear(locator: By): Unit = findElement(locator).clear()
 
   def findBy(by: By): WebElement = waitForPresence(by)
 
@@ -97,8 +93,11 @@ trait BasePage extends BrowserDriver with Matchers {
     val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
     randomStringFromCharList(length, chars)
   }
-  def findElement(locator: By): WebElement          =
+
+  def findElement(locator: By): WebElement = {
+    waitForPresence(locator)
     driver.findElement(locator)
+  }
 
   def fillInput(by: By, text: String): Unit = {
     val input = driver.findElement(by)
