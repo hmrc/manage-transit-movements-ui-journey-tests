@@ -1,4 +1,4 @@
-@arrival @ZAP
+@arrival
 
 Feature: Arrival dummy feature
 
