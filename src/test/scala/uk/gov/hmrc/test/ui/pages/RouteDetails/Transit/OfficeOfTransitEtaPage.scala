@@ -16,11 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.DateTimePage
+import uk.gov.hmrc.test.ui.pages.{DateTimePage, InvalidTitleArgsException}
 
 object OfficeOfTransitEtaPage extends DateTimePage {
 
-  override def title(args: String*): String =
-    String.format("When do you expect the transit to arrive in %s? - Manage your transit movements - GOV.UK", args: _*)
-
+  override def title(args: String*): String = args match {
+    case Seq(office, country) =>
+      String.format(
+        "When do you expect the transit to arrive in %s, %s? - Manage your transit movements - GOV.UK",
+        office,
+        country
+      )
+    case _                    =>
+      throw InvalidTitleArgsException(s"Expected a country and office but got: $args")
+  }
 }

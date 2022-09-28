@@ -114,3 +114,4 @@ trait BasePage extends BrowserDriver with Matchers {
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
+case class InvalidTitleArgsException(s: String) extends Exception(s)

@@ -65,10 +65,10 @@ class RouteTransitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as transit to arrive on the office of transit eta page$""") {
-    (office: String) =>
+  Then("""^(?:I )?(?:should )?have (.+), (.+) as transit to arrive on the office of transit eta page$""") {
+    (office: String, country: String) =>
       OfficeOfTransitEtaPage
-        .loadPage(office)
+        .loadPage(office, country)
   }
 
   And("""^(?:I )?choose fill in the date and time on the office of transit eta page$""") { () =>
