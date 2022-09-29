@@ -1,4 +1,4 @@
-@cancellation @ZAP
+@cancellation
 
 Feature: Cancellation dummy feature
 

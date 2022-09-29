@@ -21,7 +21,8 @@ import uk.gov.hmrc.test.ui.pages.CYAPage
 class CYAStepDef extends BaseStepDef {
 
   And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage.loadPage;
+    CYAPage.loadPage
+    CYAPage.submitPage()
   }
 
   And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>

@@ -8,7 +8,7 @@ Feature: End to end journey for Great Britain office of departure
     And I input a random LRN on the LocalReferenceNumber page
     And I select GB on the office of departure page
 
-
+  @a11y
   Scenario: 01 GB Simplified - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page

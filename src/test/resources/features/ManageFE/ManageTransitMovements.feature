@@ -1,4 +1,4 @@
-@managehub @ZAP
+@managehub
 
 Feature: Manage transit movements feature
 

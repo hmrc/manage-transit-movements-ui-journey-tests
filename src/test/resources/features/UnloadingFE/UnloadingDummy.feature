@@ -1,4 +1,4 @@
-@unloading_remarks @ZAP
+@unloading_remarks
 
 Feature: Unloading dummy feature
 

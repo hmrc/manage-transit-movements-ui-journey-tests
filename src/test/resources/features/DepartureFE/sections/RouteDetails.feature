@@ -8,7 +8,7 @@ Feature: Route details transit journeys
     And I input a random LRN on the LocalReferenceNumber page
 
 
-  @a11y @ZAP
+  @a11y
 #[CTCP-641] : Security type No Security selected and Binding Itinerary set to NO for route
 #[CTCP-960] : Customs Office of Departure/Reference Number is in CL112 set AND the first 2 characters of the Customs Office of Destination Declared/Reference Number is in CL112 set
               #AND the first 2 characters of Customs Office of Departure is EQUAL the first 2 characters of the Customs Office of Destination Declared/Reference Number AND Route Details Transit -> Add office of transit [No]

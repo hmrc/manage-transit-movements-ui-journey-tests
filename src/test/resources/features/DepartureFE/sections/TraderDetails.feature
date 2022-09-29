@@ -1,4 +1,4 @@
-@traderDetails @departure @ZAP
+@traderDetails @departure
 
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
@@ -8,7 +8,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
 
-  @ZAP
+
   Scenario: 01 TraderDetails - GB Normal - No Security - Reduced Data Set - Not more than 1 consignee
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
