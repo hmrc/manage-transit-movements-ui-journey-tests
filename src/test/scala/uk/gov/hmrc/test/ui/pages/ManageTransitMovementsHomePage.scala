@@ -21,6 +21,7 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 object ManageTransitMovementsHomePage extends Page {
 
   // TODO - this is a bug in manage-transit-movements-frontend
+  //  Should just be "Manage your transit movements"
   override def title(args: String*): String = "Manage your transit movements - GOV.UK"
 
   override def loadPage(args: String*): this.type = {

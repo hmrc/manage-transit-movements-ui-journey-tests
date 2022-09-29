@@ -22,6 +22,7 @@ class LoginStepDef extends BaseStepDef {
 
   And("""^I login with ID (.*)$""") { (id: String) =>
     AuthorityWizard
+      .loadPage()
       .fillInputs(id)
       .submitPage()
   }
