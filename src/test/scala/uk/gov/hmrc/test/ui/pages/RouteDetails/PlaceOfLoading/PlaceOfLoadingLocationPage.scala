@@ -16,13 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object PlaceOfLoadingLocationPage extends BasePage {
+object PlaceOfLoadingLocationPage extends StringPage {
 
-  def checkPlaceOfLoadingLocationTitle(loadingLocation: String): Unit =
-    onPage(f"Where in $loadingLocation is the place of loading? - Manage your transit movements - GOV.UK");
+  override def title(args: String*): String = String.format("Where in %s is the place of loading?", args: _*)
 
-  def enterPlaceOfLoadingLocation(number: String): Unit =
-    fillInputById("value", number)
 }

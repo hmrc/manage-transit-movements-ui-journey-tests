@@ -16,15 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object LocationOfGoodsCustomsOfficeIdentificationPage extends BasePage {
+object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
-  val locationOfGoodsCustomsOfficeIdentificationTitle =
-    "What is the customs office identifier for the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the customs office identifier for the location of goods?"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsCustomsOfficeIdentificationTitle)
-    this
-  }
 }

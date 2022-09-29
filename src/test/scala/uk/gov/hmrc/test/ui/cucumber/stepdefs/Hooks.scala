@@ -24,8 +24,8 @@ import uk.gov.hmrc.test.ui.pages.BasePage
 class Hooks extends ScalaDsl with EN with BrowserDriver with BasePage {
 
   Before {
-    clearDbUserAnswersAndDeleteCookies()
-    ()
+    dropCollections()
+    deleteCookies()
   }
 
   After { scenario: Scenario =>

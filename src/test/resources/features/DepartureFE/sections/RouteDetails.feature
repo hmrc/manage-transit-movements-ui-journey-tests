@@ -292,7 +292,7 @@ Feature: Route details transit journeys
   #Route Details Unloading -> [Set 1]
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Newcastle on the United Kingdom place of unloading location page
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -358,7 +358,7 @@ Feature: Route details transit journeys
     And I select Aalen on the place of unloading un locode page
     And I choose radio option Yes on the place of unloading add extra information page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Leeds on the United Kingdom place of unloading location page
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page

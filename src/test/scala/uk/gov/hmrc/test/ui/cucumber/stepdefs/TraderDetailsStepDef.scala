@@ -25,173 +25,200 @@ import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder._
 class TraderDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the is eori known type page$""") { (answer: String) =>
-    IsHolderEORIKnownPage.loadPage
-    IsHolderEORIKnownPage.selectIsHolderEORIKnown(answer)
-    IsHolderEORIKnownPage.submitPage()
+    IsHolderEORIKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder eori number page$""") { (answer: String) =>
-    HolderEORINumberPage.loadPage
-    HolderEORINumberPage.enterHolderEori(answer)
-    HolderEORINumberPage.submitPage();
+    HolderEORINumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder name page$""") { (answer: String) =>
-    HolderNamePage.loadPage
-    HolderNamePage.enterHolderName(answer)
-    HolderNamePage.submitPage();
+    HolderNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?fill in the holder address page$""") { () =>
-    HolderAddressPage.loadPage
-    HolderAddressPage.enterHolderAddress;
-    HolderAddressPage.submitPage()
+    HolderAddressPage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
   //Transit holder contact person
 
   And("""^(?:I )?choose radio option (.*) on the add contact page$""") { (answer: String) =>
-    AddHolderContactPersonPage.loadPage
-    AddHolderContactPersonPage.addContactPersonValue(answer)
-    AddHolderContactPersonPage.submitPage();
+    AddHolderContactPersonPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder's contact name page$""") { (answer: String) =>
-    AddHolderContactNamePage.loadPage
-    AddHolderContactNamePage.enterContactPersonNameValue(answer)
-    AddHolderContactNamePage.submitPage();
+    AddHolderContactNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the holder's contact phone number page$""") { (answer: String) =>
-    AddHolderContactPhoneNumberPage.loadPage
-    AddHolderContactPhoneNumberPage.enterContactPersonTelephoneValue(answer)
-    AddHolderContactPhoneNumberPage.submitPage();
+    AddHolderContactPhoneNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   //Representative
 
   And("""^(?:I )?choose radio option (.*) on the acting as representative page$""") { (answer: String) =>
-    ActingAsRepresentativePage.loadPage
-    ActingAsRepresentativePage.actingAsRepresentativeValue(answer)
-    ActingAsRepresentativePage.submitPage();
+    ActingAsRepresentativePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the representative eori page$""") { (answer: String) =>
-    RepresentativeEORINumberPage.loadPage
-    RepresentativeEORINumberPage.enterRepresentativeEori(answer)
-    RepresentativeEORINumberPage.submitPage()
+    RepresentativeEORINumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the representative name page$""") { (answer: String) =>
-    RepresentativeNamePage.loadPage
-    RepresentativeNamePage.enterRepresentativeName(answer)
-    RepresentativeNamePage.submitPage()
+    RepresentativeNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the representative capacity page$""") { (answer: String) =>
-    RepresentativeCapacityPage.loadPage
-    RepresentativeCapacityPage.selectCapacity(answer)
-    RepresentativeCapacityPage.submitPage()
+    RepresentativeCapacityPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the representative phone number page$""") { (answer: String) =>
-    RepresentativePhoneNumberPage.loadPage
-    RepresentativePhoneNumberPage.enterRepresentativePhoneNumber(answer)
-    RepresentativePhoneNumberPage.submitPage()
+    RepresentativePhoneNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   //Approved operator - data set indicator
   Then("""^(?:I )?choose radio option (.*) on the approved operator page""") { (answer: String) =>
-    SetReducedDataSetIndicatorPage.loadPage
-    SetReducedDataSetIndicatorPage.setReducedDataSetIndicator(answer)
-    SetReducedDataSetIndicatorPage.submitPage();
+    SetReducedDataSetIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   //Consignor
   And("""^(?:I )?choose radio option (.*) on the is TIR id known type page$""") { (answer: String) =>
-    IsTIRidKnownPage.loadPage
-    IsTIRidKnownPage.enterIsTIRidKnown(answer)
-    IsTIRidKnownPage.submitPage()
+    IsTIRidKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the TIR holder id page$""") { (answer: String) =>
-    TirHolderIdPage.loadPage
-    TirHolderIdPage.enterTIRHolderId(answer)
-    TirHolderIdPage.submitPage()
+    TirHolderIdPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the is consignor eori known page$""") { (answer: String) =>
-    IsConsignorEoriKnownPage.loadPage
-    IsConsignorEoriKnownPage.enterDoYouKnowConsignorEori(answer)
-    IsConsignorEoriKnownPage.submitPage()
+    IsConsignorEoriKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignor eori number page$""") { (answer: String) =>
-    ConsignorEoriPage.loadPage
-    ConsignorEoriPage.enterConsignorEori(answer)
-    ConsignorEoriPage.submitPage()
+    ConsignorEoriPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignor name page$""") { (answer: String) =>
-    ConsignorNamePage.loadPage
-    ConsignorNamePage.enterConsignorName(answer)
-    ConsignorNamePage.submitPage()
+    ConsignorNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?fill in the consignor address page$""") { () =>
-    ConsignorAddressPage.loadPage
-    ConsignorAddressPage.enterConsignorAddress()
-    ConsignorAddressPage.submitPage()
+    ConsignorAddressPage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
   //Consignor contact
   And("""^(?:I )?choose radio option (.*) on adding contact for consignor page$""") { (answer: String) =>
-    AddConsignorContactPersonPage.loadPage
-    AddConsignorContactPersonPage.addConsignorContactPersonValue(answer)
-    AddConsignorContactPersonPage.submitPage()
+    AddConsignorContactPersonPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignor contact name page$""") { (answer: String) =>
-    AddConsignorContactNamePage.loadPage
-    AddConsignorContactNamePage.enterConsignorContactName(answer)
-    AddConsignorContactNamePage.submitPage()
+    AddConsignorContactNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignor contact number page$""") { (answer: String) =>
-    AddConsignorContactPhoneNumberPage.loadPage
-    AddConsignorContactPhoneNumberPage.enterConsignorContactPersonTelephoneValue(answer)
-    AddConsignorContactPhoneNumberPage.submitPage()
+    AddConsignorContactPhoneNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   //Consignee
   And("""^(?:I )?choose radio option (.*) on the more than one consignee page$""") { (answer: String) =>
-    MoreThanOneConsigneePage.loadPage
-    MoreThanOneConsigneePage.enterIsThereMoreThanOneConsignee(answer)
-    MoreThanOneConsigneePage.submitPage()
+    MoreThanOneConsigneePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the is consignee eori known page$""") { (answer: String) =>
-    IsConsigneeEoriKnownPage.loadPage
-    IsConsigneeEoriKnownPage.enterDoYouKnowConsigneeEori(answer)
-    IsConsigneeEoriKnownPage.submitPage()
+    IsConsigneeEoriKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignee eori number page$""") { (answer: String) =>
-    ConsigneeEoriPage.loadPage
-    ConsigneeEoriPage.enterConsigneeEori(answer)
-    ConsigneeEoriPage.submitPage()
+    ConsigneeEoriPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the consignee name page$""") { (answer: String) =>
-    ConsigneeNamePage.loadPage
-    ConsigneeNamePage.enterConsigneeName(answer)
-    ConsigneeNamePage.submitPage()
+    ConsigneeNamePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?fill in the consignee address page$""") { () =>
-    ConsigneeAddressPage.loadPage
-    ConsigneeAddressPage.enterConsigneeAddress
-    ConsigneeAddressPage.submitPage()
+    ConsigneeAddressPage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
 }

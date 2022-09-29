@@ -16,18 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsContactPage extends BasePage {
+object LocationOfGoodsContactPage extends StringPage {
 
-  val locationOfGoodsContactTitle =
-    "Who is the contact for the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Who is the contact for the location of goods?"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsContactTitle)
-    this
-  }
-
-  def enterLocationOfGoodsContact(textValue: String): Unit =
-    fillInputById("value", textValue)
 }

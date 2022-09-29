@@ -21,39 +21,45 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading._
 class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the add place of unloading page$""") { (answer: String) =>
-    AddPlaceOfUnloadingPage.loadPage
-    AddPlaceOfUnloadingPage.selectAddPlaceOfUnloading(answer)
-    AddPlaceOfUnloadingPage.submitPage()
+    AddPlaceOfUnloadingPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the place of unloading add un locode page$""") { (answer: String) =>
-    PlaceOfUnloadingAddUnLocodePage.loadPage
-    PlaceOfUnloadingAddUnLocodePage.selectPlaceOfUnloadingAddUnLocode(answer)
-    PlaceOfUnloadingAddUnLocodePage.submitPage()
+    PlaceOfUnloadingAddUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the place of unloading un locode page$""") { (answer: String) =>
-    PlaceOfUnloadingUnLocodePage.loadPage
-    PlaceOfUnloadingUnLocodePage.selectValueFromDropDown(answer)
-    PlaceOfUnloadingUnLocodePage.submitPage()
+    PlaceOfUnloadingUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the place of unloading add extra information page$""") {
     (answer: String) =>
-      PlaceOfUnloadingAddExtraInformationPage.loadPage
-      PlaceOfUnloadingAddExtraInformationPage.selectPlaceOfUnloadingAddExtraInformation(answer)
-      PlaceOfUnloadingAddExtraInformationPage.submitPage()
+      PlaceOfUnloadingAddExtraInformationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the place of unloading country page$""") { (answer: String) =>
-    PlaceOfUnloadingCountryPage.loadPage
-    PlaceOfUnloadingCountryPage.selectValueFromDropDown(answer)
-    PlaceOfUnloadingCountryPage.submitPage()
+    PlaceOfUnloadingCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the place of unloading location page$""") { (answer: String) =>
-    PlaceOfUnloadingLocationPage.loadPage
-    PlaceOfUnloadingLocationPage.enterPlaceOfUnloadingLocation(answer);
-    PlaceOfUnloadingLocationPage.submitPage();
+  And("""^(?:I )?enter (.+) on the (.+) place of unloading location page$""") { (answer: String, country: String) =>
+    PlaceOfUnloadingLocationPage
+      .loadPage(country)
+      .fillInput(answer)
+      .submitPage()
   }
 }

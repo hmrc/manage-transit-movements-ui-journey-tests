@@ -16,23 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object BindingItineraryPage extends BasePage {
+object BindingItineraryPage extends YesNoPage {
 
-  val bindingItineraryTitle =
-    "Do you want the transit to follow a binding itinerary? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(bindingItineraryTitle)
-    this
-  }
-
-  def selectBindingItinerary(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  override def title(args: String*): String = "Do you want the transit to follow a binding itinerary?"
 }

@@ -14,12 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+trait AddressPage extends SelectPage {
 
-object OfficeOfTransitCountryPage extends SelectPage {
+  val addressLine1: String
+  val addressLine2: String
+  val postalCode: String
+  val country: String
 
-  override def title(args: String*): String = "Which country is the office of transit in?"
-
+  def fillInputs(): this.type = {
+    fillInputById("addressLine1", addressLine1)
+    fillInputById("addressLine2", addressLine2)
+    fillInputById("postalCode", postalCode)
+    selectValueFromDropDown(country, "country")
+    this
+  }
 }

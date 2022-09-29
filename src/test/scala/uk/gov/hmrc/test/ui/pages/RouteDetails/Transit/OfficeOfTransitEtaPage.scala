@@ -16,29 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.{DateTimePage, InvalidTitleArgsException}
 
-import java.time.LocalDateTime
+object OfficeOfTransitEtaPage extends DateTimePage {
 
-object OfficeOfTransitEtaPage extends BasePage {
-
-  def checkOfficeOfTransitEtaTitle(etaOffice: String): Unit =
-    onPage(f"When do you expect the transit to arrive in $etaOffice? - Manage your transit movements - GOV.UK");
-
-  def fillInNowDateAndTime(): Unit = {
-    val dateAndTime = LocalDateTime.now
-
-    val day    = dateAndTime.getDayOfMonth.toString;
-    val month  = dateAndTime.getMonthValue.toString;
-    val year   = dateAndTime.getYear.toString;
-    val hour   = dateAndTime.getHour.toString;
-    val minute = dateAndTime.getMinute.toString;
-
-    sendKeys(By.id("dateDay"), day)
-    sendKeys(By.id("dateMonth"), month)
-    sendKeys(By.id("dateYear"), year)
-    sendKeys(By.id("timeHour"), hour)
-    sendKeys(By.id("timeMinute"), minute)
+  override def title(args: String*): String = args match {
+    case Seq(office, country) =>
+      String.format(
+        "When do you expect the transit to arrive in %s, %s?",
+        office,
+        country
+      )
+    case _                    =>
+      throw InvalidTitleArgsException(s"Expected a country and office but got: $args")
   }
 }

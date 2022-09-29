@@ -29,116 +29,53 @@ import scala.concurrent.duration.DurationInt
 import scala.language.postfixOps
 
 trait BasePage extends BrowserDriver with Matchers {
-  val continueButton = "submit"
 
-  def submitPage(): Unit = findElement(By.id(continueButton)).click()
-
-  def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != pageTitle)
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
-
-  def clearDbUserAnswersAndDeleteCookies(): Unit = {
-    println("============================Dropping db")
-    val mongoClient: MongoClient = MongoClient()
-    dropCollection(
-      mongoClient,
-      "manage-transit-movements-departure-cache",
-      "manage-transit-movements-departure-frontend"
-    )
-    dropCollection(mongoClient, "manage-transit-movements-arrival-frontend")
-    dropCollection(mongoClient, "manage-transit-movements-unloading-frontend")
-    println("============================Clearing cookies")
-    driver.manage().deleteAllCookies()
-  }
-
-  private def dropCollection(mongoClient: MongoClient, dbName: String, collectionName: String = "user-answers"): Unit =
-    Await.result(
-      mongoClient
-        .getDatabase(dbName)
-        .getCollection(collectionName)
-        .drop()
-        .head(),
-      10 seconds
-    )
-
-  val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+  private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
     .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
     .ignoring(classOf[Exception])
 
-  def waitForPresence(by: By): WebElement =
-    fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
 
-  def clear(locator: By): Unit = findElement(locator).clear()
+  private lazy val mongoClient: MongoClient = MongoClient()
 
-  def findBy(by: By): WebElement = waitForPresence(by)
+  def dropCollections(): Unit = {
+    println("============================Dropping dbs")
+
+    def dropCollection(dbName: String, collectionName: String = "user-answers"): Unit =
+      Await.result(
+        mongoClient.getDatabase(dbName).getCollection(collectionName).drop().toFuture(),
+        10 seconds
+      )
+
+    dropCollection("manage-transit-movements-departure-cache", "manage-transit-movements-departure-frontend")
+    dropCollection("manage-transit-movements-arrival-frontend")
+    dropCollection("manage-transit-movements-unloading-frontend")
+  }
+
+  def deleteCookies(): Unit = {
+    println("============================Clearing cookies")
+    driver.manage().deleteAllCookies()
+  }
+
+  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
-  def findByCssSelector(cssSelector: String): WebElement = findBy(By.cssSelector(cssSelector))
-
-  def clickById(id: String): Unit = findById(id).click()
-
-  def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
-    val sb = new StringBuilder
-    for (_ <- 1 to length) {
-      val randomNum = util.Random.nextInt(chars.length)
-      sb.append(chars(randomNum))
-    }
-    sb.toString
-  }
-  def randomAlphaNumericString(length: Int): String = {
-    val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
-    randomStringFromCharList(length, chars)
-  }
-
-  def findElement(locator: By): WebElement = {
-    waitForPresence(locator)
-    driver.findElement(locator)
-  }
-
-  def fillInput(by: By, text: String): Unit = {
-    val input = driver.findElement(by)
-    input.clear()
-    if (text != null && text.nonEmpty) input.sendKeys(text)
-  }
-  def fillInputById(id: String, text: String): Unit = fillInput(By.id(id), text)
-
-  def fillInAddress(addressLine1: String, addressLine2: String, postalCode: String, country: String): Unit = {
-    sendKeys(By.id("addressLine1"), addressLine1)
-    sendKeys(By.id("addressLine2"), addressLine2)
-    sendKeys(By.id("postalCode"), postalCode)
-    sendKeys(By.id("country"), country)
-  }
-
-  def bringIntoView(by: By, action: WebElement => Unit): Unit = {
-    val element                 = waitForPresence(by)
-    val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
-    jse.executeScript("arguments[0].scrollIntoView()", element)
-    action(element)
-  }
-
   def click(by: By): Unit = bringIntoView(by, _.click)
 
-  def clickByCssSelector(cssSelector: String): Unit = click(By.cssSelector(cssSelector))
-
-  def clickRadioBtn(answer: String): Unit =
-    findByCssSelector(s"input[type='radio'][value='$answer']").click()
+  def clickById(id: String): Unit = click(By.id(id))
 
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
-  def sendKeys(locator: By, value: String): Unit = {
-    clear(locator)
-    findElement(locator).sendKeys(value)
-  }
+  def submitPage(): Unit = clickById("submit")
 
-  def selectValueFromDropDown(valueOption: String): Unit = {
-    waitForPresence(By.id("value"))
-    fillInputById("value", valueOption)
-    clickByCssSelector("li#value__option--0")
+  private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
+    val element = findBy(by)
+    jse.executeScript("arguments[0].scrollIntoView()", element)
+    action(element)
   }
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
+case class InvalidTitleArgsException(s: String) extends Exception(s)

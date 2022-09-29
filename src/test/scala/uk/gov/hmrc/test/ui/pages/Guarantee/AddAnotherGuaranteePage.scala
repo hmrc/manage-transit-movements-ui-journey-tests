@@ -16,25 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherGuaranteePage extends BasePage {
+object AddAnotherGuaranteePage extends YesNoPage {
 
-  def checkGuaranteesAddedTitle(numberOfGuarantees: String): Unit =
-    numberOfGuarantees match {
-      case "1" =>
-        val addAnotherGuaranteeTitle = f"You have added 1 guarantee - Manage your transit movements - GOV.UK"
-        onPage(addAnotherGuaranteeTitle)
-      case _   =>
-        val addAnotherGuaranteeTitle =
-          f"You have added $numberOfGuarantees guarantees - Manage your transit movements - GOV.UK"
-        onPage(addAnotherGuaranteeTitle)
-    }
-
-  def needToAddAnotherGuarantee(answer: String): Unit =
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no");
-    }
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 guarantee"
+    case _        => String.format("You have added %s guarantees", args: _*)
+  }
 
 }

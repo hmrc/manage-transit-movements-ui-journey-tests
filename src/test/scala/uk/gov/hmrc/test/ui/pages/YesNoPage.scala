@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+trait YesNoPage extends RadioPage {
 
-object OfficeOfTransitCountryPage extends SelectPage {
-
-  override def title(args: String*): String = "Which country is the office of transit in?"
-
+  def select(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
+    }
+    this
+  }
 }

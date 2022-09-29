@@ -16,21 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IsConsignorEoriKnownPage extends BasePage {
-  val isConsignorEoriKnownTitle = "Do you know the consignor’s EORI number? - Manage your transit movements - GOV.UK"
+object IsConsignorEoriKnownPage extends YesNoPage {
 
-  def loadPage: this.type = {
-    onPage(isConsignorEoriKnownTitle)
-    this
-  }
+  override def title(args: String*): String = "Do you know the consignor’s EORI number?"
 
-  def enterDoYouKnowConsignorEori(answer: String): IsConsignorEoriKnownPage.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
 }

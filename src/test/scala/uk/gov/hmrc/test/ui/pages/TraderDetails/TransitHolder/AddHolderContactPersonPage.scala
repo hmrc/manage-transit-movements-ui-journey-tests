@@ -16,23 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddHolderContactPersonPage extends BasePage {
+object AddHolderContactPersonPage extends YesNoPage {
 
-  val addContactPersonTitle = "Do you want to add a contact? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(addContactPersonTitle)
-    this
-  }
-
-  def addContactPersonValue(addContactPersonAnswer: String): this.type = {
-    addContactPersonAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  override def title(args: String*): String = "Do you want to add a contact?"
 
 }

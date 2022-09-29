@@ -16,23 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherOfficeOfTransitPage extends BasePage {
+object AddAnotherOfficeOfTransitPage extends YesNoPage {
 
-  def checkAddAnotherOfficeOfTransitTitle(numberOfCountry: String): Unit =
-    numberOfCountry match {
-      case "1" =>
-        onPage(f"You have added 1 office of transit - Manage your transit movements - GOV.UK")
-      case _   =>
-        onPage(f"You have added $numberOfCountry offices of transit - Manage your transit movements - GOV.UK")
-    }
-
-  def selectAddAnotherOfficeOfTransit(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 office of transit"
+    case _        => String.format("You have added %s offices of transit", args: _*)
   }
 }

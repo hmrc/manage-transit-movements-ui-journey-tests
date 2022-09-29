@@ -19,25 +19,21 @@ package uk.gov.hmrc.test.ui.pages
 import org.openqa.selenium.By
 import org.scalatest.compatible.Assertion
 
-object TaskListPage extends BasePage {
+object TaskListPage extends Page {
 
-  val taskListTitle = "Declaration summary - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(taskListTitle)
-    this
-  }
+  override def title(args: String*): String = "Declaration summary"
 
   def selectDeclarationSection(sectionLink: String): Unit =
-    sectionLink match {
-      case "Add trader details"    => clickByPartialLinkText(sectionLink)
-      case "Add guarantee details" => clickByPartialLinkText(sectionLink)
-      case "Add route details"     => clickByPartialLinkText(sectionLink)
-    }
+    clickByPartialLinkText(sectionLink)
 
-  def checkTraderDetailsStatus(status: String): Assertion = {
-    val statusFieldText: String = driver.findElement(By.id("trader-details-status")).getText
+  def checkTraderDetailsStatus(status: String): Assertion =
+    checkStatus("trader-details", status)
+
+  def checkRouteDetailsStatus(status: String): Assertion =
+    checkStatus("route-details", status)
+
+  private def checkStatus(section: String, status: String): Assertion = {
+    val statusFieldText: String = driver.findElement(By.id(s"$section-status")).getText
     statusFieldText shouldBe status
   }
-
 }

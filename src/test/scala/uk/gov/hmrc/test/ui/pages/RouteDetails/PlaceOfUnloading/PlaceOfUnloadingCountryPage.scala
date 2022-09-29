@@ -16,15 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object PlaceOfUnloadingCountryPage extends BasePage {
+object PlaceOfUnloadingCountryPage extends SelectPage {
 
-  val placeOfUnloadingCountryTitle =
-    "Which country is the place of unloading in? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Which country is the place of unloading in?"
 
-  def loadPage: this.type = {
-    onPage(placeOfUnloadingCountryTitle)
-    this
-  }
 }

@@ -16,23 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object TransitRouteRemoveCountryPage extends BasePage {
+object TransitRouteRemoveCountryPage extends YesNoPage {
 
-  val transitRouteRemoveCountryTitle =
-    "Are you sure you want to remove Andorra from the transit route? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(transitRouteRemoveCountryTitle)
-    this
-  }
-
-  def selectTransitRouteRemoveCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  override def title(args: String*): String = "Are you sure you want to remove Andorra from the transit route?"
 }

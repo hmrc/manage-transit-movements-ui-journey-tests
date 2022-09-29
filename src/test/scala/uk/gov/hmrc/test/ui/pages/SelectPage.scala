@@ -14,12 +14,28 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import org.openqa.selenium.By
 
-object OfficeOfTransitCountryPage extends SelectPage {
+trait SelectPage extends StringPage {
 
-  override def title(args: String*): String = "Which country is the office of transit in?"
+  def select(answer: String): this.type = {
+    selectValueFromDropDown(answer)
+    this
+  }
 
+  protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
+    findBy(By.id(id))
+    fillInputById(id, valueOption)
+    selectFirstValue(id)
+  }
+
+  protected def openDropdownAndSelectFirstValue(id: String): Unit = {
+    clickById(id)
+    selectFirstValue(id)
+  }
+
+  private def selectFirstValue(id: String): Unit =
+    clickById(s"${id}__option--0")
 }

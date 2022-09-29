@@ -16,18 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ConsignorNamePage extends BasePage {
-  val consignorNameTitle = "What is the consignor’s name? - Manage your transit movements - GOV.UK"
+object ConsignorNamePage extends StringPage {
 
-  def loadPage: this.type = {
-    onPage(consignorNameTitle)
-    this
-  }
+  override def title(args: String*): String = "What is the consignor’s name?"
 
-  def enterConsignorName(answer: String): ConsignorNamePage.type = {
-    fillInputById("value", answer);
-    this;
-  }
 }

@@ -21,36 +21,42 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading._
 class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the place of loading add un locode page$""") { (answer: String) =>
-    PlaceOfLoadingAddUnLocodePage.loadPage
-    PlaceOfLoadingAddUnLocodePage.selectPlaceOfLoadingAddUnLocode(answer)
-    PlaceOfLoadingAddUnLocodePage.submitPage()
+    PlaceOfLoadingAddUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the place of loading un locode page$""") { (answer: String) =>
-    PlaceOfLoadingUnLocodePage.loadPage
-    PlaceOfLoadingUnLocodePage.selectValueFromDropDown(answer)
-    PlaceOfLoadingUnLocodePage.submitPage()
+    PlaceOfLoadingUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the place of loading add extra information page$""") { (answer: String) =>
-    PlaceOfLoadingAddExtraInformationPage.loadPage
-    PlaceOfLoadingAddExtraInformationPage.selectPlaceOfLoadingAddExtraInformationTitle(answer)
-    PlaceOfLoadingAddExtraInformationPage.submitPage()
+    PlaceOfLoadingAddExtraInformationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the place of loading country page$""") { (answer: String) =>
-    PlaceOfLoadingCountryPage.loadPage
-    PlaceOfLoadingCountryPage.selectValueFromDropDown(answer)
-    PlaceOfLoadingCountryPage.submitPage()
+    PlaceOfLoadingCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+) as loading location on the place of loading location page$""") {
     (answer: String) =>
-      PlaceOfLoadingLocationPage.checkPlaceOfLoadingLocationTitle(answer)
+      PlaceOfLoadingLocationPage
+        .loadPage(answer)
   }
 
   And("""^(?:I )?enter (.+) on the place of loading location page$""") { (answer: String) =>
-    PlaceOfLoadingLocationPage.enterPlaceOfLoadingLocation(answer);
-    PlaceOfLoadingLocationPage.submitPage();
+    PlaceOfLoadingLocationPage
+      .fillInput(answer)
+      .submitPage()
   }
 }

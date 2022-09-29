@@ -20,17 +20,13 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object AuthorityWizard extends BasePage {
 
-  val url: String = TestConfiguration.url("auth-login-stub")
-  val title       = "Authority Wizard"
-
-  def loadPage: this.type = {
+  def loadPage(): this.type = {
+    val url: String = TestConfiguration.url("auth-login-stub")
     driver.navigate().to(url)
-    onPage(title)
     this
   }
 
-  def login(id: String): Unit = {
-    loadPage
+  def fillInputs(eoriNumber: String): this.type = {
     val redirectionUrl = TestConfiguration.url("manage-transit-movements-frontend")
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("credentialStrength").sendKeys("weak")
@@ -38,7 +34,7 @@ object AuthorityWizard extends BasePage {
     findById("affinityGroupSelect").sendKeys("Organisation")
     findById("enrolment[0].name").sendKeys("HMRC-CTC-ORG")
     findById("input-0-0-name").sendKeys("EORINumber")
-    findById("input-0-0-value").sendKeys(id)
-    submitPage()
+    findById("input-0-0-value").sendKeys(eoriNumber)
+    this
   }
 }

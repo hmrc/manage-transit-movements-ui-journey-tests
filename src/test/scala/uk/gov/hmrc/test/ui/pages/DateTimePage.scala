@@ -14,17 +14,27 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import java.time.LocalDateTime
 
-object LocationOfGoodsCoordinatesPage extends StringPage {
+trait DateTimePage extends StringPage {
 
-  override def title(args: String*): String = "What are the coordinates for the location of goods?"
+  def fillInputs(): this.type = {
+    val dateAndTime = LocalDateTime.now
 
-  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
-    fillInputById("latitude", latitudeNo)
-    fillInputById("longitude", longitudeNo)
+    val day    = dateAndTime.getDayOfMonth.toString
+    val month  = dateAndTime.getMonthValue.toString
+    val year   = dateAndTime.getYear.toString
+    val hour   = dateAndTime.getHour.toString
+    val minute = dateAndTime.getMinute.toString
+
+    fillInputById("dateDay", day)
+    fillInputById("dateMonth", month)
+    fillInputById("dateYear", year)
+    fillInputById("timeHour", hour)
+    fillInputById("timeMinute", minute)
+
     this
   }
 }

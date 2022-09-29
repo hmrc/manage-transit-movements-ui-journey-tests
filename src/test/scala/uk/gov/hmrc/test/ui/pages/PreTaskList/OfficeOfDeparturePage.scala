@@ -16,14 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object OfficeOfDeparturePage extends BasePage {
+object OfficeOfDeparturePage extends SelectPage {
 
-  val officeOfDepartureTitle = "Where is the office of departure? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "Where is the office of departure?"
 
-  def loadPage: this.type = {
-    onPage(officeOfDepartureTitle)
-    this
-  }
 }

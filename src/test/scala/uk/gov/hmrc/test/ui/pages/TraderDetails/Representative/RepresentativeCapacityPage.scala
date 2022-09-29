@@ -16,19 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object RepresentativeCapacityPage extends BasePage {
-  val representativeCapacityTitle = "What is your capacity? - Manage your transit movements - GOV.UK"
+object RepresentativeCapacityPage extends RadioPage {
 
-  def loadPage: this.type = {
-    onPage(representativeCapacityTitle)
-    this
-  }
+  override def title(args: String*): String = "What is your capacity?"
 
-  def selectCapacity(representativeCapacityAnswer: String): this.type = {
-
-    representativeCapacityAnswer match {
+  override def select(answer: String): this.type = {
+    answer match {
       case "Direct (principal solely liable)"              => clickRadioBtn("direct")
       case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
     }
