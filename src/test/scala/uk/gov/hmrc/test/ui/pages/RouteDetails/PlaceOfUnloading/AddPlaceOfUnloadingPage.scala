@@ -16,22 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddPlaceOfUnloadingPage extends BasePage {
+object AddPlaceOfUnloadingPage extends YesNoPage {
 
-  val addPlaceOfUnloadingTitle = "Do you want to add a place of unloading? - Manage your transit movements - GOV.UK"
+  override def title(args: String*) = "Do you want to add a place of unloading?"
 
-  def loadPage: this.type = {
-    onPage(addPlaceOfUnloadingTitle)
-    this
-  }
-
-  def selectAddPlaceOfUnloading(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
 }
