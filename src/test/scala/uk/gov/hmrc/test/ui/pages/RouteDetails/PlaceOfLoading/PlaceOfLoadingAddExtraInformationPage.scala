@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object PlaceOfLoadingAddUnLocodePage extends YesNoPage {
+object PlaceOfLoadingAddExtraInformationPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a UN/LOCODE for the place of loading?"
+  override def title(args: String*): String = "Do you want to add extra information for the place of loading?"
 
 }

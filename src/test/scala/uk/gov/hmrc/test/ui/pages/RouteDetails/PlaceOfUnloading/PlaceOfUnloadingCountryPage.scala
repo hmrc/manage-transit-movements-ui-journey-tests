@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingUnLocodePage extends SelectPage {
+object PlaceOfUnloadingCountryPage extends BasePage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the place of loading?"
+  val placeOfUnloadingCountryTitle =
+    "Which country is the place of unloading in? - Manage your transit movements - GOV.UK"
+
+  def loadPage: this.type = {
+    onPage(placeOfUnloadingCountryTitle)
+    this
+  }
 }

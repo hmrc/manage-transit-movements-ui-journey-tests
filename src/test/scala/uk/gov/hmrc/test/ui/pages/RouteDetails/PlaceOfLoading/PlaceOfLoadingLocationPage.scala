@@ -14,25 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading
 
-import uk.gov.hmrc.test.ui.pages.TaskListPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-class TaskListStepDef extends BaseStepDef {
+object PlaceOfLoadingLocationPage extends StringPage {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage
-      .loadPage()
-  }
+  override def title(args: String*): String = String.format("Where in %s is the place of loading?", args: _*)
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage
-      .loadPage()
-      .selectDeclarationSection(answer)
-  }
-
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage
-      .checkTraderDetailsStatus(status)
-  }
 }

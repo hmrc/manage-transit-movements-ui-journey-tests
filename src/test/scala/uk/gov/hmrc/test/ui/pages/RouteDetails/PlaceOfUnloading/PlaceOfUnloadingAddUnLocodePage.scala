@@ -14,12 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingCountryPage extends SelectPage {
+object PlaceOfUnloadingAddUnLocodePage extends BasePage {
 
-  override def title(args: String*): String = "In which country is the place of loading?"
+  val placeOfUnloadingAddUnLocodeTitle =
+    "Do you want to add a UN/LOCODE for the place of unloading? - Manage your transit movements - GOV.UK"
 
+  def loadPage: this.type = {
+    onPage(placeOfUnloadingAddUnLocodeTitle)
+    this
+  }
+
+  def selectPlaceOfUnloadingAddUnLocode(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
 }

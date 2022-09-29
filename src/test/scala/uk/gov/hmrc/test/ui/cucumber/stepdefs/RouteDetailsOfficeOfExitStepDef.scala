@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.Exit._
 
-class RouteExitStepDef extends BaseStepDef {
+class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the office of exit country page$""") { (answer: String) =>
     OfficeOfExitCountryPage

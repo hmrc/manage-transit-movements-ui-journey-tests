@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object PlaceOfLoadingLocationPage extends StringPage {
+object PlaceOfLoadingCountryPage extends SelectPage {
 
-  override def title(args: String*): String = String.format("Where in %s is the place of loading?", args: _*)
+  override def title(args: String*): String = "In which country is the place of loading?"
 
 }

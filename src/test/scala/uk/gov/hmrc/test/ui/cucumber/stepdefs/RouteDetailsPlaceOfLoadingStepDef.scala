@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.RouteDetails.Loading._
+import uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfLoading._
 
-class RouteLoadingStepDef extends BaseStepDef {
+class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the place of loading add un locode page$""") { (answer: String) =>
     PlaceOfLoadingAddUnLocodePage
