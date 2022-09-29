@@ -14,15 +14,25 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Loading
+package uk.gov.hmrc.test.ui.pages.RouteDetails.PlaceOfUnloading
 
 import uk.gov.hmrc.test.ui.pages.BasePage
 
-object PlaceOfLoadingLocationPage extends BasePage {
+object PlaceOfUnloadingAddUnLocodePage extends BasePage {
 
-  def checkPlaceOfLoadingLocationTitle(loadingLocation: String): Unit =
-    onPage(f"Where in $loadingLocation is the place of loading? - Manage your transit movements - GOV.UK");
+  val placeOfUnloadingAddUnLocodeTitle =
+    "Do you want to add a UN/LOCODE for the place of unloading? - Manage your transit movements - GOV.UK"
 
-  def enterPlaceOfLoadingLocation(number: String): Unit =
-    fillInputById("value", number)
+  def loadPage: this.type = {
+    onPage(placeOfUnloadingAddUnLocodeTitle)
+    this
+  }
+
+  def selectPlaceOfUnloadingAddUnLocode(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value");
+      case "No"  => clickById("value-no");
+    }
+    this
+  }
 }

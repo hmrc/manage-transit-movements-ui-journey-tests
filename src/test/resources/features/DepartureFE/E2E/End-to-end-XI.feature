@@ -9,7 +9,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select XI on the office of departure page
 
 
-
   Scenario: 01 Pre Task List - XI Simplified - T2F (NON TIR) - EXS - XI NON TIR guarantee
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T on the declaration type page
@@ -102,17 +101,17 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-#Page not found is displayed
-
-
-
+  #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
-    And I choose radio option Exit summary declaration (EXS) on the security type page
+    And I choose radio option Entry summary declaration (ENS) on the security type page
     And I submit on the CYA page
     Then I should be on the task list page
     #Transit holder details
@@ -164,8 +163,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-   #Page not found is displayed
-
+   #Route Details Unloading -> [Set 1]
+    And I choose radio option No on the place of unloading add un locode page
+    And I select United Kingdom on the place of unloading country page
+    And I enter Dublin on the place of unloading location page
+    And I submit on the CYA page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
   Scenario: 03 Pre Task list - XI Normal - T2 - Guarantee Comprehensive guarantee
@@ -244,10 +248,16 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-#Page not found is displayed
-
-
-
+   #Route Details Unloading -> Yes to all [Set 2]
+    And I choose radio option Yes on the add place of unloading page
+    And I choose radio option Yes on the place of unloading add un locode page
+    And I select Aalen on the place of unloading un locode page
+    And I choose radio option Yes on the place of unloading add extra information page
+    And I select United Kingdom on the place of unloading country page
+    And I enter Dublin on the place of unloading location page
+    And I submit on the CYA page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
   @a11y
   Scenario: 04 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
@@ -303,7 +313,11 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-#Page not found is displayed
+   #Route Details Unloading -> No [Set 2]
+    And I choose radio option No on the add place of unloading page
+    And I submit on the CYA page
+    And I submit on the CYA page
+    Then I should be on the task list page
 
 
 
