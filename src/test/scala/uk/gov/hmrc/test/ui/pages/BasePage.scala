@@ -35,11 +35,12 @@ trait BasePage extends BrowserDriver with Matchers {
     .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
     .ignoring(classOf[Exception])
 
-  def submitPage(): Unit = clickById("submit")
+  private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+
+  private lazy val mongoClient: MongoClient = MongoClient()
 
   def dropCollections(): Unit = {
-    println("============================Dropping db")
-    val mongoClient: MongoClient = MongoClient()
+    println("============================Dropping dbs")
 
     def dropCollection(dbName: String, collectionName: String = "user-answers"): Unit =
       Await.result(
@@ -61,42 +62,18 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def findById(id: String): WebElement = findBy(By.id(id))
 
-  def clickById(id: String): Unit = findById(id).click()
-
-  private def randomStringFromCharList(length: Int, chars: Seq[Char]): String = {
-    val sb = new StringBuilder
-    for (_ <- 1 to length) {
-      val randomNum = util.Random.nextInt(chars.length)
-      sb.append(chars(randomNum))
-    }
-    sb.toString
-  }
-
-  def randomAlphaNumericString(length: Int): String = {
-    val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
-    randomStringFromCharList(length, chars)
-  }
-
-  def fillInputById(id: String, text: String): Unit = sendKeys(By.id(id), text)
-
-  private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
-    val element                 = findBy(by)
-    val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
-    jse.executeScript("arguments[0].scrollIntoView()", element)
-    action(element)
-  }
-
   def click(by: By): Unit = bringIntoView(by, _.click)
 
-  def clickRadioBtn(answer: String): Unit =
-    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
+  def clickById(id: String): Unit = click(By.id(id))
 
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
-  private def sendKeys(locator: By, value: String): Unit = {
-    val element = findBy(locator)
-    element.clear()
-    element.sendKeys(value)
+  def submitPage(): Unit = clickById("submit")
+
+  private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
+    val element = findBy(by)
+    jse.executeScript("arguments[0].scrollIntoView()", element)
+    action(element)
   }
 }
 

@@ -34,7 +34,6 @@ object ManageTransitMovementsHomePage extends Page {
       case "Make a departure declaration" => clickById("make-departure-declaration")
       case "Make an arrival notification" => clickById("make-arrival-notification")
       case "Check your guarantee balance" => clickById("check-guarantee-balance")
-      // case _                              => "Something went wrong"
     }
     this
   }

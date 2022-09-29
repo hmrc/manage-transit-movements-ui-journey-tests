@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsCoordinatesPage extends Page {
+object LocationOfGoodsCoordinatesPage extends StringPage {
 
   override def title(args: String*): String = "What are the coordinates for the location of goods?"
 

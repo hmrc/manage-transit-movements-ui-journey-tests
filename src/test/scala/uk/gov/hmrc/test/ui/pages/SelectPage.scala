@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.By
 
-trait SelectPage extends Page {
+trait SelectPage extends StringPage {
 
   def select(answer: String): this.type = {
     selectValueFromDropDown(answer)

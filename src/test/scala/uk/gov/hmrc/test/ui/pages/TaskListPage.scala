@@ -23,18 +23,17 @@ object TaskListPage extends Page {
 
   override def title(args: String*): String = "Declaration summary"
 
-  def selectDeclarationSection(sectionLink: String): this.type = {
-    sectionLink match {
-      case "Add trader details"    => clickByPartialLinkText(sectionLink)
-      case "Add guarantee details" => clickByPartialLinkText(sectionLink)
-      case "Add route details"     => clickByPartialLinkText(sectionLink)
-    }
-    this
-  }
+  def selectDeclarationSection(sectionLink: String): Unit =
+    clickByPartialLinkText(sectionLink)
 
-  def checkTraderDetailsStatus(status: String): Assertion = {
-    val statusFieldText: String = driver.findElement(By.id("trader-details-status")).getText
+  def checkTraderDetailsStatus(status: String): Assertion =
+    checkStatus("trader-details", status)
+
+  def checkRouteDetailsStatus(status: String): Assertion =
+    checkStatus("route-details", status)
+
+  private def checkStatus(section: String, status: String): Assertion = {
+    val statusFieldText: String = driver.findElement(By.id(s"$section-status")).getText
     statusFieldText shouldBe status
   }
-
 }

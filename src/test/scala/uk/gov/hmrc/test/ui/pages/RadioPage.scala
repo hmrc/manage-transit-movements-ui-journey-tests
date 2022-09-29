@@ -16,7 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
+
 trait RadioPage extends Page {
 
   def select(answer: String): this.type
+
+  protected def clickRadioBtn(answer: String): Unit =
+    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
 }

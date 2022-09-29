@@ -16,10 +16,33 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.By
+
 trait StringPage extends Page {
 
   def fillInput(answer: String): this.type = {
     fillInputById("value", answer)
     this
+  }
+
+  protected def fillInputById(id: String, text: String): Unit = {
+    val input = findBy(By.id(id))
+    input.clear()
+    input.sendKeys(text)
+  }
+
+  protected def randomAlphaNumericString(length: Int): String = {
+    val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')
+
+    def randomStringFromCharList(chars: Seq[Char]): String = {
+      val sb = new StringBuilder
+      for (_ <- 1 to length) {
+        val randomNum = util.Random.nextInt(chars.length)
+        sb.append(chars(randomNum))
+      }
+      sb.toString
+    }
+
+    randomStringFromCharList(chars)
   }
 }

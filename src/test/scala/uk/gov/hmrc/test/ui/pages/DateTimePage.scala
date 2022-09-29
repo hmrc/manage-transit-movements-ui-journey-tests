@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import java.time.LocalDateTime
 
-trait DateTimePage extends Page {
+trait DateTimePage extends StringPage {
 
   def fillInputs(): this.type = {
     val dateAndTime = LocalDateTime.now

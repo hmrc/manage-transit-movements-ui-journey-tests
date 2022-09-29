@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait YesNoPage extends Page {
+trait YesNoPage extends RadioPage {
 
   def select(answer: String): this.type = {
     answer match {

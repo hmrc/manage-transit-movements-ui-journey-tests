@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocalReferenceNumberPage extends Page {
+object LocalReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the local reference number (LRN)?"
 
