@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object RepresentativeEORINumberPage extends StringPage {
+object RepresentativeEoriNumbeOrTinPage extends StringPage {
 
-  override def title(args: String*): String = "What is your EORI number?"
+  override def title(args: String*): String = "What is the representative’s EORI number or TIN?"
 
 }

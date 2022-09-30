@@ -20,7 +20,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Transit holder details
     When I click the link with visible text: Add trader details
     And I choose radio option Yes on the is eori known type page
-    And I enter GB123456123456 on the holder eori number page
+    And I enter GB123456123456 on the holder eori number or tin page
     And I enter Joe Blog on the holder name page
     And I fill in the holder address page
 
@@ -37,8 +37,8 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
 
     #Consignee at header level
     And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori known page
-    And I enter GB123456123456 on the consignee eori number page
+    And I choose radio option Yes on the is consignee eori number or tin known page
+    And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
     And I fill in the consignee address page
     And I submit on the CYA page
@@ -63,7 +63,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
 
     #Representative details
     And I choose radio option Yes on the acting as representative page
-    And I enter GB123456121111 on the representative eori page
+    And I enter GB123456121111 on the representative eori number or tin page
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
@@ -72,8 +72,8 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option No on the approved operator page
 
     #Consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
 
@@ -108,13 +108,13 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
 
     #Representative details
     And I choose radio option Yes on the acting as representative page
-    And I enter GB123456121111 on the representative eori page
+    And I enter GB123456121111 on the representative eori number or tin page
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
 
     #Consignor
-    And I choose radio option No on the is consignor eori known page
+    And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
 
@@ -150,7 +150,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option No on the acting as representative page
 
     #Consignor
-    And I choose radio option No on the is consignor eori known page
+    And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
 
@@ -187,8 +187,8 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the approved operator page
 
     #Consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
 
@@ -205,8 +205,8 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page
     And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori known page
-    And I enter GB123456123456 on the consignee eori number page
+    And I choose radio option Yes on the is consignee eori number or tin known page
+    And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
     And I fill in the consignee address page
     And I submit on the CYA page

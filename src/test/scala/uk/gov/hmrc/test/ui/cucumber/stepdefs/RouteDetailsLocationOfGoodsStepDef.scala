@@ -48,8 +48,8 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods eori page$""") { (answer: String) =>
-    LocationOfGoodsEoriPage
+  And("""^(?:I )?enter (.+) on the location of goods eori tin page$""") { (answer: String) =>
+    LocationOfGoodsEoriTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
