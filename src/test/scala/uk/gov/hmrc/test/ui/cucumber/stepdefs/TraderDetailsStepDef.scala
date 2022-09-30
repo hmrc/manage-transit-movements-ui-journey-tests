@@ -25,14 +25,14 @@ import uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder._
 class TraderDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the is eori known type page$""") { (answer: String) =>
-    IsHolderEORIKnownPage
+    IsHolderEoriKnownPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the holder eori number page$""") { (answer: String) =>
-    HolderEORINumberPage
+  And("""^(?:I )?enter (.+) on the holder eori number or tin page$""") { (answer: String) =>
+    HolderEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
@@ -84,8 +84,8 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the representative eori page$""") { (answer: String) =>
-    RepresentativeEORINumberPage
+  And("""^(?:I )?enter (.+) on the representative eori number or tin page$""") { (answer: String) =>
+    RepresentativeEoriNumbeOrTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
@@ -135,15 +135,15 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the is consignor eori known page$""") { (answer: String) =>
-    IsConsignorEoriKnownPage
+  And("""^(?:I )?choose radio option (.*) on the is consignor eori number or tin known page$""") { (answer: String) =>
+    IsConsignorEoriNumberOrTinKnownPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the consignor eori number page$""") { (answer: String) =>
-    ConsignorEoriPage
+  And("""^(?:I )?enter (.+) on the consignor eori number or tin page$""") { (answer: String) =>
+    ConsignorEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
@@ -193,15 +193,15 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the is consignee eori known page$""") { (answer: String) =>
-    IsConsigneeEoriKnownPage
+  And("""^(?:I )?choose radio option (.*) on the is consignee eori number or tin known page$""") { (answer: String) =>
+    IsConsigneeEoriNumberOrTinKnownPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the consignee eori number page$""") { (answer: String) =>
-    ConsigneeEoriPage
+  And("""^(?:I )?enter (.+) on the consignee eori number or tin page$""") { (answer: String) =>
+    ConsigneeEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IsConsignorEoriKnownPage extends YesNoPage {
+object RepresentativeEoriNumbeOrTinPage extends StringPage {
 
-  override def title(args: String*): String = "Do you know the consignor’s EORI number or TIN?"
+  override def title(args: String*): String = "What is the representative’s EORI number or TIN?"
 
 }

@@ -18,8 +18,7 @@ package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ConsigneeEoriPage extends StringPage {
+object ConsigneeEoriNumberOrTinPage extends StringPage {
 
   override def title(args: String*): String = "What is the consignee’s EORI number or TIN?"
-
 }

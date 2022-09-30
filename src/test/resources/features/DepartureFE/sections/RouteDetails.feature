@@ -35,8 +35,8 @@ Feature: Route details transit journeys
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
     And I choose radio option Designated location on the location of goods type page
-    And I choose radio option EORI number on the location of goods identification page
-    And I enter GB123456789000 on the location of goods eori page
+    And I choose radio option EORI number or TIN on the location of goods identification page
+    And I enter GB123456789000 on the location of goods eori tin page
     And I choose radio option Yes on the location of goods add identifier page
     And I enter 1000 on the location of goods additional identifier page
     And I choose radio option Yes on the location of goods add contact page
