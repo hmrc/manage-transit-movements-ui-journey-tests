@@ -16,17 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object TIRCarnetPage extends BasePage {
+object TIRCarnetPage extends StringPage {
 
-  val tirCarnetTitle = "What is the TIR carnet reference? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What is the TIR carnet reference?"
 
-  def loadPage: this.type = {
-    onPage(tirCarnetTitle)
-    this
-  }
-
-  def enterCarnetNumber(carnetNumber: String): Unit =
-    fillInputById("value", carnetNumber)
 }

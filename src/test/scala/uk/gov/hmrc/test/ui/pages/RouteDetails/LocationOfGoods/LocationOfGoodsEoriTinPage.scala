@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json", "junit:target/test-reports/Runner.xml"),
-  tags = "@departure"
-)
-class Runner {}
+object LocationOfGoodsEoriTinPage extends StringPage {
+
+  override def title(args: String*): String = "What is the EORI number or Trader Identification Number (TIN) for the location of goods?"
+}

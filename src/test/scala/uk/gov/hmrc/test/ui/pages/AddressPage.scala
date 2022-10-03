@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Representative
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+trait AddressPage extends SelectPage {
 
-object RepresentativeEORINumberPage extends BasePage {
+  val addressLine1: String
+  val addressLine2: String
+  val postalCode: String
+  val country: String
 
-  val representativeEORITitle = "What is your EORI number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(representativeEORITitle)
+  def fillInputs(): this.type = {
+    fillInputById("addressLine1", addressLine1)
+    fillInputById("addressLine2", addressLine2)
+    fillInputById("postalCode", postalCode)
+    selectValueFromDropDown(country, "country")
     this
   }
-
-  def enterRepresentativeEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber);
-    this;
-  }
-
 }

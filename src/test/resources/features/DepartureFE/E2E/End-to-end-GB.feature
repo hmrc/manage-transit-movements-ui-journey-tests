@@ -1,5 +1,4 @@
 @departureGBe2e
-@wip
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -9,7 +8,7 @@ Feature: End to end journey for Great Britain office of departure
     And I input a random LRN on the LocalReferenceNumber page
     And I select GB on the office of departure page
 
-
+  @a11y
   Scenario: 01 GB Simplified - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -32,8 +31,8 @@ Feature: End to end journey for Great Britain office of departure
     And I click the change link for has reduced data set on the CYA page
     And I choose radio option No on the approved operator page
     #Add consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
@@ -45,8 +44,8 @@ Feature: End to end journey for Great Britain office of departure
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page
     And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori known page
-    And I enter GB123456123456 on the consignee eori number page
+    And I choose radio option Yes on the is consignee eori number or tin known page
+    And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
     And I fill in the consignee address page
     And I submit on the CYA page
@@ -101,8 +100,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
     And I choose radio option Authorised place on the location of goods type page
-    And I choose radio option EORI number on the location of goods identification page
-    And I enter GB123456789000 on the location of goods eori page
+    And I choose radio option EORI number or TIN on the location of goods identification page
+    And I enter GB123456789000 on the location of goods eori tin page
     And I choose radio option Yes on the location of goods add identifier page
     And I enter 1000 on the location of goods additional identifier page
     And I choose radio option Yes on the location of goods add contact page
@@ -117,6 +116,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -135,15 +135,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the add contact page
     #Representative details
     And I choose radio option Yes on the acting as representative page
-    And I enter GB123456121111 on the representative eori page
+    And I enter GB123456121111 on the representative eori number or tin page
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
     #Reduced data set
     And I choose radio option No on the approved operator page
     #Consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     #Consignor contact
@@ -229,7 +229,8 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Unloading -> [Set 1]
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Manchester on the United Kingdom place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -256,8 +257,8 @@ Feature: End to end journey for Great Britain office of departure
     And I click the change link for has reduced data set on the CYA page
     And I choose radio option No on the approved operator page
     #Add consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
@@ -269,8 +270,8 @@ Feature: End to end journey for Great Britain office of departure
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page
     And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori known page
-    And I enter GB123456123456 on the consignee eori number page
+    And I choose radio option Yes on the is consignee eori number or tin known page
+    And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
     And I fill in the consignee address page
     And I submit on the CYA page
@@ -335,6 +336,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the place of loading add extra information page
   #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -360,8 +362,8 @@ Feature: End to end journey for Great Britain office of departure
     And I click the change link for has reduced data set on the CYA page
     And I choose radio option No on the approved operator page
     #Add consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
@@ -373,8 +375,8 @@ Feature: End to end journey for Great Britain office of departure
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page
     And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori known page
-    And I enter GB123456123456 on the consignee eori number page
+    And I choose radio option Yes on the is consignee eori number or tin known page
+    And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
     And I fill in the consignee address page
     And I submit on the CYA page
@@ -439,6 +441,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 

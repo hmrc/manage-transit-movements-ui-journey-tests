@@ -16,20 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GuaranteeLiabilityAmount extends BasePage {
+object GuaranteeLiabilityAmount extends StringPage {
 
-  val guaranteeLiabilityAmountTitle = "How much is the liability in pounds? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(guaranteeLiabilityAmountTitle)
-    this
-  }
-
-  def enterLiabilityAmount(amount: String): GuaranteeLiabilityAmount.type = {
-    fillInputById("value", amount)
-    this
-  }
+  override def title(args: String*): String = "How much is the liability in pounds?"
 
 }

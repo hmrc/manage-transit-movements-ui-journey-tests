@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Exit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object OfficeOfExitPage extends BasePage {
+object OfficeOfExitPage extends SelectPage {
 
-  def checkOfficeOfExitTitle(countryOffice: String): String =
-    f"Where in $countryOffice is the office of transit? - Manage your transit movements - GOV.UK";
+  override def title(args: String*): String = String.format("Where in %s is the office of exit?", args: _*)
+
 }

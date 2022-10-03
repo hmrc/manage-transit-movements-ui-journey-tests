@@ -14,22 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+trait YesNoPage extends RadioPage {
 
-object HolderEORINumberPage extends BasePage {
-
-  val holderEORITitle = "What is the transit holder’s EORI number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(holderEORITitle)
+  def select(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
+    }
     this
   }
-
-  def enterHolderEori(eoriNumber: String): this.type = {
-    fillInputById("value", eoriNumber);
-    this;
-  }
-
 }

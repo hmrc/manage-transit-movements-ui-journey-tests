@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object OfficeOfTransitCountryPage extends SelectPage {
+object HolderEoriNumberOrTinPage extends StringPage {
 
-  override def title(args: String*): String = "Which country is the office of transit in?"
+  override def title(args: String*): String = "What is the transit holder’s EORI number or Trader Identification Number (TIN)?"
 
 }

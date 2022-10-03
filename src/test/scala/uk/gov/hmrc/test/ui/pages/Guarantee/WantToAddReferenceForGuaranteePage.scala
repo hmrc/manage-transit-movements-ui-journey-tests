@@ -16,23 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object WantToAddReferenceForGuaranteePage extends BasePage {
+object WantToAddReferenceForGuaranteePage extends YesNoPage {
 
-  val doYouWantToAddReferenceTitle =
-    "Do you want to add a reference for the guarantee? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(doYouWantToAddReferenceTitle)
-    this
-  }
-
-  def selectToAddReference(answer: String): WantToAddReferenceForGuaranteePage.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  override def title(args: String*): String = "Do you want to add a reference for the guarantee?"
 }

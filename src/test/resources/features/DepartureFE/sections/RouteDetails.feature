@@ -1,5 +1,4 @@
 @routeDetails @departure
-@wip
 Feature: Route details transit journeys
 
   Background:
@@ -9,7 +8,7 @@ Feature: Route details transit journeys
     And I input a random LRN on the LocalReferenceNumber page
 
 
-  @a11y @ZAP
+  @a11y
 #[CTCP-641] : Security type No Security selected and Binding Itinerary set to NO for route
 #[CTCP-960] : Customs Office of Departure/Reference Number is in CL112 set AND the first 2 characters of the Customs Office of Destination Declared/Reference Number is in CL112 set
               #AND the first 2 characters of Customs Office of Departure is EQUAL the first 2 characters of the Customs Office of Destination Declared/Reference Number AND Route Details Transit -> Add office of transit [No]
@@ -36,8 +35,8 @@ Feature: Route details transit journeys
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
     And I choose radio option Designated location on the location of goods type page
-    And I choose radio option EORI number on the location of goods identification page
-    And I enter GB123456789000 on the location of goods eori page
+    And I choose radio option EORI number or TIN on the location of goods identification page
+    And I enter GB123456789000 on the location of goods eori tin page
     And I choose radio option Yes on the location of goods add identifier page
     And I enter 1000 on the location of goods additional identifier page
     And I choose radio option Yes on the location of goods add contact page
@@ -49,7 +48,8 @@ Feature: Route details transit journeys
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
     And I submit on the CYA page
-    Then I should be on the task list page
+    And I submit on the CYA page
+   Then I should be on the task list page
 
 
 
@@ -97,6 +97,7 @@ Feature: Route details transit journeys
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -156,6 +157,7 @@ Feature: Route details transit journeys
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -204,6 +206,7 @@ Feature: Route details transit journeys
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -243,6 +246,7 @@ Feature: Route details transit journeys
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
  #Route Details Unloading -> [Set 0]
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -288,7 +292,8 @@ Feature: Route details transit journeys
   #Route Details Unloading -> [Set 1]
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Newcastle on the United Kingdom place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -353,7 +358,8 @@ Feature: Route details transit journeys
     And I select Aalen on the place of unloading un locode page
     And I choose radio option Yes on the place of unloading add extra information page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Leeds on the United Kingdom place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -408,5 +414,6 @@ Feature: Route details transit journeys
     And I choose radio option Yes on the place of unloading add un locode page
     And I select Aalen on the place of unloading un locode page
     And I choose radio option No on the place of unloading add extra information page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page

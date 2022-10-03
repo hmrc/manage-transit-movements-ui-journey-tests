@@ -17,64 +17,78 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.Guarantee._
+
 class GuaranteeDetailsStepDef extends BaseStepDef {
+
   And("""^(?:I )?choose radio option (.*) on the guarantee type page$""") { (answer: String) =>
-    GuaranteeTypePage.loadPage
-    GuaranteeTypePage.selectGuaranteeType(answer)
-    GuaranteeTypePage.submitPage()
+    GuaranteeTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the Guarantee Reference Number page$""") { (answer: String) =>
-    GuaranteeReferenceNumberPage.loadPage
-    GuaranteeReferenceNumberPage.enterGRN(answer)
-    GuaranteeReferenceNumberPage.submitPage()
+    GuaranteeReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the access code page$""") { (answer: String) =>
-    GuaranteeAccessCodePage.loadPage
-    GuaranteeAccessCodePage.enterAccessCode(answer)
-    GuaranteeAccessCodePage.submitPage()
+    GuaranteeAccessCodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the amount to be covered page$""") { (answer: String) =>
-    GuaranteeLiabilityAmount.loadPage
-    GuaranteeLiabilityAmount.enterLiabilityAmount(answer)
-    GuaranteeLiabilityAmount.submitPage()
+    GuaranteeLiabilityAmount
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) guarantees added on the add another guarantee page$""") { (answer: String) =>
-    AddAnotherGuaranteePage.checkGuaranteesAddedTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+) guarantees added on the add another guarantee page$""") {
+    (numberOfGuarantees: String) =>
+      AddAnotherGuaranteePage
+        .loadPage(numberOfGuarantees)
   }
 
   When("""^(?:I )?choose radio option (.*) on the add another guarantee page$""") { (answer: String) =>
-    AddAnotherGuaranteePage.needToAddAnotherGuarantee(answer)
-    AddAnotherGuaranteePage.submitPage()
+    AddAnotherGuaranteePage
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the do you want to add a reference for the guarantee page""") {
     (answer: String) =>
-      WantToAddReferenceForGuaranteePage.loadPage
-      WantToAddReferenceForGuaranteePage.selectToAddReference(answer)
-      WantToAddReferenceForGuaranteePage.submitPage()
+      WantToAddReferenceForGuaranteePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the other reference for the guarantee 3 page$""") { (answer: String) =>
-    OtherGuarantee3ReferencePage.loadPage
-    OtherGuarantee3ReferencePage.enterOtherReference(answer)
-    OtherGuarantee3ReferencePage.submitPage()
+    OtherGuarantee3ReferencePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the other reference for the guarantee 8 page$""") { (answer: String) =>
-    OtherGuarantee8ReferencePage.loadPage
-    OtherGuarantee8ReferencePage.enterOtherReference(answer)
-    OtherGuarantee8ReferencePage.submitPage()
+    OtherGuarantee8ReferencePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the guarantee B added for TIR declaration page$""") { () =>
-    GuaranteeBForTIRDeclarationPage.loadPage
+    GuaranteeBForTIRDeclarationPage
+      .loadPage()
   }
 
   And("""^(?:I )?choose to continue""") { () =>
-    GuaranteeBForTIRDeclarationPage.submitPage();
+    GuaranteeBForTIRDeclarationPage
+      .submitPage()
   }
 }

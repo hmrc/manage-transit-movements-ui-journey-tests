@@ -21,70 +21,84 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.Transit._
 class RouteDetailsTransitStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") { (answer: String) =>
-    T2DeclarationPage.loadPage
-    T2DeclarationPage.selectT2Declaration(answer)
-    T2DeclarationPage.submitPage()
+    T2DeclarationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the add office of transit page$""") { (answer: String) =>
-    AddOfficeOfTransitPage.loadPage
-    AddOfficeOfTransitPage.selectAddOfficeOfTransit(answer)
-    AddOfficeOfTransitPage.submitPage()
+    AddOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the office of transit country page$""") { (answer: String) =>
-    OfficeOfTransitCountryPage.loadPage
-    OfficeOfTransitCountryPage.selectValueFromDropDown(answer)
-    OfficeOfTransitCountryPage.submitPage()
+    OfficeOfTransitCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as office of transit on the office of transit page$""") { (answer: String) =>
-    OfficeOfTransitPage.checkOfficeOfTransitTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+) as office of transit on the office of transit page$""") {
+    (numberOfOffices: String) =>
+      OfficeOfTransitPage
+        .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?select (.+) on the office of transit page$""") { (answer: String) =>
-    OfficeOfTransitPage.selectValueFromDropDown(answer)
-    OfficeOfTransitPage.submitPage()
+    OfficeOfTransitPage
+      .select(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+) arrival time title on the office of transit add eta page$""") {
-    (answer: String) =>
-      OfficeOfTransitAddEtaPage.checkOfficeOfTransitAddEtaTitle(answer)
+    (office: String) =>
+      OfficeOfTransitAddEtaPage
+        .loadPage(office)
   }
 
   And("""^(?:I )?choose radio option (.*) on the office of transit add eta page$""") { (answer: String) =>
-    OfficeOfTransitAddEtaPage.selectOfficeOfTransitAddEta(answer)
-    OfficeOfTransitAddEtaPage.submitPage()
+    OfficeOfTransitAddEtaPage
+      .select(answer)
+      .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as transit to arrive on the office of transit eta page$""") {
-    (answer: String) =>
-      OfficeOfTransitEtaPage.checkOfficeOfTransitEtaTitle(answer)
+  Then("""^(?:I )?(?:should )?have (.+), (.+) as transit to arrive on the office of transit eta page$""") {
+    (office: String, country: String) =>
+      OfficeOfTransitEtaPage
+        .loadPage(office, country)
   }
 
   And("""^(?:I )?choose fill in the date and time on the office of transit eta page$""") { () =>
-    OfficeOfTransitEtaPage.fillInNowDateAndTime()
-    OfficeOfTransitEtaPage.submitPage()
+    OfficeOfTransitEtaPage
+      .fillInputs()
+      .submitPage()
   }
 
   Then(
     """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of transit page$"""
-  ) { (answer: String) =>
-    AddAnotherOfficeOfTransitPage.checkAddAnotherOfficeOfTransitTitle(answer)
+  ) { (numberOfOffices: String) =>
+    AddAnotherOfficeOfTransitPage
+      .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?choose radio option (.*) on the add another office of transit page$""") { (answer: String) =>
-    AddAnotherOfficeOfTransitPage.selectAddAnotherOfficeOfTransit(answer)
-    AddAnotherOfficeOfTransitPage.submitPage()
+    AddAnotherOfficeOfTransitPage
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose to click on (.*) link on the add another office of transit page$""") { (sectionLink: String) =>
-    AddAnotherOfficeOfTransitPage.clickByPartialLinkText(sectionLink)
+    AddAnotherOfficeOfTransitPage
+      .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?choose radio option (.*) on the confirm remove office of transit page$""") { (answer: String) =>
-    ConfirmRemoveOfficeOfTransitPage.loadPage
-    ConfirmRemoveOfficeOfTransitPage.selectConfirmRemoveOfficeOfTransit(answer)
-    ConfirmRemoveOfficeOfTransitPage.submitPage()
+    ConfirmRemoveOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 }

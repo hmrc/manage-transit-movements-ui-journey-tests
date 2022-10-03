@@ -16,20 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object AddHolderContactNamePage extends BasePage {
+object AddHolderContactNamePage extends StringPage {
 
-  val holderContactPersonNameTitle = "What is the contact’s name? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(holderContactPersonNameTitle)
-    this
-  }
-
-  def enterContactPersonNameValue(holderContactName: String): this.type = {
-    fillInputById("value", holderContactName);
-    this;
-  }
+  override def title(args: String*): String = "What is the contact’s name?"
 
 }

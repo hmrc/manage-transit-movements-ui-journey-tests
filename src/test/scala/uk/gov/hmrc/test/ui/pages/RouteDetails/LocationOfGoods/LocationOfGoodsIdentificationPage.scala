@@ -16,27 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object LocationOfGoodsIdentificationPage extends BasePage {
+object LocationOfGoodsIdentificationPage extends RadioPage {
 
-  val locationOfGoodsIdentificationTitle =
-    "How do you want to identify the location of goods? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "How do you want to identify the location of goods?"
 
-  def loadPage: this.type = {
-    onPage(locationOfGoodsIdentificationTitle)
-    this
-  }
-
-  def selectLocationOfGoodsIdentification(answer: String): this.type = {
+  override def select(answer: String): this.type = {
     answer match {
-      case "Customs office identifier" => clickById("value");
-      case "EORI number"               => clickById("value_1");
-      case "Authorisation number"      => clickById("value_2");
-      case "Coordinates"               => clickById("value_3");
-      case "UN/LOCODE"                 => clickById("value_4");
-      case "Address"                   => clickById("value_5");
-      case "Postal code"               => clickById("value_6");
+      case "Customs office identifier" => clickById("value")
+      case "EORI number or TIN"        => clickById("value_1")
+      case "Authorisation number"      => clickById("value_2")
+      case "Coordinates"               => clickById("value_3")
+      case "UN/LOCODE"                 => clickById("value_4")
+      case "Address"                   => clickById("value_5")
+      case "Postal code"               => clickById("value_6")
     }
     this
   }

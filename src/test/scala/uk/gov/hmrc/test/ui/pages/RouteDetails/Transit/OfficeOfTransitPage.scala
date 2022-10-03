@@ -16,10 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object OfficeOfTransitPage extends BasePage {
+object OfficeOfTransitPage extends SelectPage {
 
-  def checkOfficeOfTransitTitle(countryOffice: String): Unit =
-    onPage(f"Where in $countryOffice is the office of transit? - Manage your transit movements - GOV.UK");
+  override def title(args: String*): String = String.format("Where in %s is the office of transit?", args: _*)
 }

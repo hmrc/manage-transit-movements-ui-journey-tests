@@ -14,24 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+trait Page extends BasePage {
 
-object IsConsigneeEoriKnownPage extends BasePage {
-  val isConsigneeEoriKnownTitle = "Do you know the consignee’s EORI number? - Manage your transit movements - GOV.UK"
+  def title(args: String*): String
 
-  def loadPage: this.type = {
-    onPage(isConsigneeEoriKnownTitle)
+  def loadPage(args: String*): this.type = {
+    onPage(title(args: _*))
     this
   }
 
-  def enterDoYouKnowConsigneeEori(answer: String): IsConsigneeEoriKnownPage.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
-
+  private def onPage(pageTitle: String): Unit =
+    if (driver.getTitle != s"$pageTitle - Manage your transit movements - GOV.UK")
+      throw PageNotFoundException(
+        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
+      )
 }

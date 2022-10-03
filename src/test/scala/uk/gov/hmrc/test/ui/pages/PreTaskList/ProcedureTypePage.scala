@@ -16,22 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object ProcedureTypePage extends BasePage {
+object ProcedureTypePage extends RadioPage {
 
-  val procedureTypeTitle = "What type of procedure are you using? - Manage your transit movements - GOV.UK"
+  override def title(args: String*): String = "What type of procedure are you using?"
 
-  def loadPage: this.type = {
-    onPage(procedureTypeTitle)
-    this
-  }
-
-  def selectWhatTypeOfProcedure(procedureTypeSelected: String): this.type = {
-    procedureTypeSelected match {
-      case "Normal"     => clickRadioBtn(procedureTypeSelected.toLowerCase());
-      case "Simplified" => clickRadioBtn(procedureTypeSelected.toLowerCase());
-    }
+  // answer is one of Normal, Simplified
+  override def select(answer: String): this.type = {
+    clickRadioBtn(answer.toLowerCase())
     this
   }
 

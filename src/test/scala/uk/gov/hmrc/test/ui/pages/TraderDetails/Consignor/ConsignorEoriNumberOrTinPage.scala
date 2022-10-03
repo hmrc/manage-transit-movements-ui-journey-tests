@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ConsigneeEoriPage extends BasePage {
-  val consigneeEoriTitle = "What is the consignee’s EORI number? - Manage your transit movements - GOV.UK"
+object ConsignorEoriNumberOrTinPage extends StringPage {
 
-  def loadPage: this.type = {
-    onPage(consigneeEoriTitle)
-    this
-  }
-
-  def enterConsigneeEori(answer: String): ConsigneeEoriPage.type = {
-    fillInputById("value", answer);
-    this;
-  }
+  override def title(args: String*): String = "What is the consignor’s EORI number or Trader Identification Number (TIN)?"
 
 }

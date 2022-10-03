@@ -16,23 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.RouteDetails.Routing
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object TransitRouteAddCountryPage extends BasePage {
+object TransitRouteAddCountryPage extends YesNoPage {
 
-  val transitRouteAddCountryTitle =
-    "Do you want to add a country to the transit route? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(transitRouteAddCountryTitle)
-    this
-  }
-
-  def selectTransitRouteAddCountry(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
+  override def title(args: String*): String = "Do you want to add a country to the transit route?"
 }

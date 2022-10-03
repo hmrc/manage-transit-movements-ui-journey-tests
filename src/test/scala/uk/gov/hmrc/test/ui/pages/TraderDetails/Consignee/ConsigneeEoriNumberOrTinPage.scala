@@ -14,24 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IsHolderEORIKnownPage extends BasePage {
+object ConsigneeEoriNumberOrTinPage extends StringPage {
 
-  val holderEORIKnownTitle = "Do you know the transit holder’s EORI number? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(holderEORIKnownTitle)
-    this
-  }
-  def selectIsHolderEORIKnown(isEoriKnownAnswer: String): this.type = {
-    isEoriKnownAnswer match {
-      case "Yes" => clickById("value");
-      case "No"  => clickById("value-no");
-    }
-    this
-  }
-
+  override def title(args: String*): String = "What is the consignee’s EORI number or Trader Identification Number (TIN)?"
 }

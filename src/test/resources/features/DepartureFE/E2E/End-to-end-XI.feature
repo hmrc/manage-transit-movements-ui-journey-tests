@@ -1,5 +1,4 @@
 @departureXIe2e
-@wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -24,15 +23,15 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the add contact page
     #Representative details
     And I choose radio option Yes on the acting as representative page
-    And I enter GB123456121111 on the representative eori page
+    And I enter GB123456121111 on the representative eori number or tin page
     And I enter Rosie Blog Rep on the representative name page
     And I choose radio option Direct (principal solely liable) on the representative capacity page
     And I enter +44 4381 82 83 on the representative phone number page
     #Reduced data set
     And I choose radio option No on the approved operator page
     #Consignor
-    And I choose radio option Yes on the is consignor eori known page
-    And I enter GB123456789000 on the consignor eori number page
+    And I choose radio option Yes on the is consignor eori number or tin known page
+    And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     #Consignor contact
@@ -104,6 +103,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I enter London on the place of loading location page
   #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
+    And I submit on the CYA page
     Then I should be on the task list page
 
 
@@ -125,7 +125,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Representative details
     And I choose radio option No on the acting as representative page
     #Consignor
-    And I choose radio option No on the is consignor eori known page
+    And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     #Consignor contact
@@ -166,7 +166,8 @@ Feature: End to end journey for Northern Ireland office of departure
    #Route Details Unloading -> [Set 1]
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter London on the United Kingdom place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
@@ -189,7 +190,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Reduced data set
     And I choose radio option No on the approved operator page
     #Consignor
-    And I choose radio option No on the is consignor eori known page
+    And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     #Consignor contact
@@ -253,11 +254,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Aalen on the place of unloading un locode page
     And I choose radio option Yes on the place of unloading add extra information page
     And I select United Kingdom on the place of unloading country page
-    And I enter Dublin on the place of unloading location page
+    And I enter Birmingham on the United Kingdom place of unloading location page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 
-
+  @a11y
   Scenario: 04 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page
@@ -276,7 +278,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Representative details
     And I choose radio option No on the acting as representative page
     #Consignor
-    And I choose radio option No on the is consignor eori known page
+    And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
     And I fill in the consignor address page
     #Consignor contact
@@ -313,6 +315,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the place of loading add extra information page
    #Route Details Unloading -> No [Set 2]
     And I choose radio option No on the add place of unloading page
+    And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
 

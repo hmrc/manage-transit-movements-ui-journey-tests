@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import org.openqa.selenium.By
 
-object OfficeOfTransitCountryPage extends SelectPage {
+trait RadioPage extends Page {
 
-  override def title(args: String*): String = "Which country is the office of transit in?"
+  def select(answer: String): this.type
 
+  protected def clickRadioBtn(answer: String): Unit =
+    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
 }

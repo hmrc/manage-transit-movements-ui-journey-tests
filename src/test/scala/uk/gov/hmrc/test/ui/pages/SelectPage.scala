@@ -14,20 +14,28 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import org.openqa.selenium.By
 
-object LocationOfGoodsEoriPage extends BasePage {
+trait SelectPage extends StringPage {
 
-  val locationOfGoodsEoriTitle =
-    "What is the EORI number for the location of goods? - Manage your transit movements - GOV.UK"
-
-  def loadPage: this.type = {
-    onPage(locationOfGoodsEoriTitle)
+  def select(answer: String): this.type = {
+    selectValueFromDropDown(answer)
     this
   }
 
-  def enterEoriNumber(number: String): Unit =
-    fillInputById("value", number)
+  protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
+    findBy(By.id(id))
+    fillInputById(id, valueOption)
+    selectFirstValue(id)
+  }
+
+  protected def openDropdownAndSelectFirstValue(id: String): Unit = {
+    clickById(id)
+    selectFirstValue(id)
+  }
+
+  private def selectFirstValue(id: String): Unit =
+    clickById(s"${id}__option--0")
 }

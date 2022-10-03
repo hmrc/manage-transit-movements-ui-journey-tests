@@ -20,54 +20,63 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.Routing._
 class RouteDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?select (.+) on the country of destination page$""") { (answer: String) =>
-    CountryOfDestinationPage.loadPage
-    CountryOfDestinationPage.selectValueFromDropDown(answer)
-    CountryOfDestinationPage.submitPage()
+    CountryOfDestinationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the office of destination page$""") { (answer: String) =>
-    OfficeOfDestinationPage.loadPage
-    OfficeOfDestinationPage.selectValueFromDropDown(answer)
-    OfficeOfDestinationPage.submitPage()
+    OfficeOfDestinationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the binding itinerary page$""") { (answer: String) =>
-    BindingItineraryPage.loadPage
-    BindingItineraryPage.selectBindingItinerary(answer)
-    BindingItineraryPage.submitPage()
+    BindingItineraryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the transit route country page$""") { (answer: String) =>
-    TransitRouteCountryPage.loadPage
-    TransitRouteCountryPage.selectValueFromDropDown(answer)
-    TransitRouteCountryPage.submitPage()
+    TransitRouteCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   Then(
     """^(?:I )?(?:should )?have (.+) (?:country|countries) to transit route added on the transit route add another country page$"""
-  ) { (answer: String) =>
-    TransitRouteAddAnotherCountryPage.checkAddAnotherTransitRouteCountryTitle(answer)
+  ) { (numberOfCountries: String) =>
+    TransitRouteAddAnotherCountryPage
+      .loadPage(numberOfCountries)
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add another country page$""") { (answer: String) =>
-    TransitRouteAddAnotherCountryPage.selectAddAnotherTransitRouteCountry(answer)
-    TransitRouteAddAnotherCountryPage.submitPage()
+    TransitRouteAddAnotherCountryPage
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose to click on (.*) link on the transit route add another country page$""") {
     (sectionLink: String) =>
-      TransitRouteAddAnotherCountryPage.clickByPartialLinkText(sectionLink)
+      TransitRouteAddAnotherCountryPage
+        .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route remove country page$""") { (answer: String) =>
-    TransitRouteRemoveCountryPage.loadPage
-    TransitRouteRemoveCountryPage.selectTransitRouteRemoveCountry(answer)
-    TransitRouteRemoveCountryPage.submitPage()
+    TransitRouteRemoveCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") { (answer: String) =>
-    TransitRouteAddCountryPage.loadPage
-    TransitRouteAddCountryPage.selectTransitRouteAddCountry(answer)
-    TransitRouteAddCountryPage.submitPage()
+    TransitRouteAddCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 }
