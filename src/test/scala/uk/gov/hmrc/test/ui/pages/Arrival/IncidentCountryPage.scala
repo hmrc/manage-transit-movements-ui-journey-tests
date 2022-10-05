@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Arrival
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-trait RadioPage extends Page {
+object IncidentCountryPage extends SelectPage {
 
-  def select(answer: String): this.type
-
-  protected def clickRadioBtn(answer: String): Unit =
-    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
+  override def title(args: String*): String = "Which country is the place of incident in?"
 
 }

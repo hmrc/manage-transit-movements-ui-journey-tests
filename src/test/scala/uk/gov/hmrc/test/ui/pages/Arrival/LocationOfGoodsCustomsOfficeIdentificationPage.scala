@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Arrival
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-trait RadioPage extends Page {
+object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
-  def select(answer: String): this.type
-
-  protected def clickRadioBtn(answer: String): Unit =
-    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
+  override def title(args: String*): String = "What is the customs office identifier for the location of goods?"
 
 }

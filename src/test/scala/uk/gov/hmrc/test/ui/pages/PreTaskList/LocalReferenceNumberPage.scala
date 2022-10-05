@@ -29,4 +29,5 @@ object LocalReferenceNumberPage extends StringPage {
     this
   }
 
+  }
 }

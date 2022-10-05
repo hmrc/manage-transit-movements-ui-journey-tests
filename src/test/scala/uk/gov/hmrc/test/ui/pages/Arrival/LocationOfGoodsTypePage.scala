@@ -14,15 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Arrival
 
-import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.{DateTimePage, RadioPage}
 
-trait RadioPage extends Page {
 
-  def select(answer: String): this.type
+object LocationOfGoodsTypePage extends RadioPage  {
 
-  protected def clickRadioBtn(answer: String): Unit =
-    findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
+  override def title(args: String*): String = "Which type of location are the goods in?"
+
+  override def select(answer: String): this.type = {
+    answer match {
+      case "Authorised place" => clickById("value")
+      case "Designated location" => clickById("value_1")
+      case "Approved place" => clickById("value_2")
+      case "Other" => clickById("value_3")
+    }
+    this
+  }
 
 }

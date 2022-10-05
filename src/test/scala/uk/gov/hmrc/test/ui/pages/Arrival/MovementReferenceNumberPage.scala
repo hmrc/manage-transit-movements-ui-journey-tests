@@ -16,25 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object MovementReferenceNumberPage extends BasePage {
+object MovementReferenceNumberPage extends StringPage {
 
-  def checkGuaranteesAddedTitle(numberOfGuarantees: String): Unit =
-    numberOfGuarantees match {
-      case "1" =>
-        val addAnotherGuaranteeTitle = f"You have added 1 guarantee - Manage your transit movements - GOV.UK"
-        onPage(addAnotherGuaranteeTitle)
-      case _   =>
-        val addAnotherGuaranteeTitle =
-          f"You have added $numberOfGuarantees guarantees - Manage your transit movements - GOV.UK"
-        onPage(addAnotherGuaranteeTitle)
-    }
-
-  def needToAddAnotherGuarantee(answer: String): Unit =
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no");
-    }
+  override def title(args: String*): String = "What is the movement reference number (MRN)?"
 
 }
