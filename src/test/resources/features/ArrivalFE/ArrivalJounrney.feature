@@ -1,9 +1,9 @@
 @arrival
-
+@wip
 Feature: Arrival notification feature
 
   Background:
-    Given I login with ID 1234567
+    Given I login with ID 12345678
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make an arrival notification link
 
@@ -11,25 +11,16 @@ Feature: Arrival notification feature
 #[CTCP-697] : Location of goods
 #[CTCP-698] : Incidents and Endorsements
 
-  Scenario: 01
-
+  Scenario: 01 - Simplified
  # Identification
-    When I enter G20GB00006010025496 on the movement reference number page
-    And I enter date on the arrival date page
-    And I choose radio option No on the simplified procedure page
-    And I input a random number on the Identification Number page
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Simplified on the procedure type page
+    And I choose radio option ACT on the authorisations type page
+    And I enter 1200014210026352 on the authorisations reference number page
     And I submit on the CYA page
- # Location of goods
-    And I choose radio option Authorised place – the authorised consignor’s own premises on the type of location page
-    And I choose radio option Customs office identifier on the type of location page
-    And I select GB on the location of goods customs office identifier page
-    And I choose radio option No on the IncidentFlag page
-  # Incidents and Endorsements
-    And I select United Kingdom on the country is the place of incident page
-    And I select 1 - The carrier on the incident code for the place of incident page
-    And I input a random text on the Description of the incident page
-    And I choose radio option Yes on the add an endorsement page
-    And I enter date on the Endorsement Date page
-    And I input a random text on the authority of endorsement page
-    And I input a random text on the endorsement place page
-    And I select United Kingdom on the country is the place of endorsement in page
+    Then I should have 1 authorisation on the authorisations add another page
+    When I choose radio option No on the authorisations add another page
+    And I submit on the CYA page
+
+
+

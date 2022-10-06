@@ -28,6 +28,4 @@ object LocalReferenceNumberPage extends StringPage {
     println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
     this
   }
-
-  }
 }

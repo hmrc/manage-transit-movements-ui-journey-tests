@@ -16,10 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
+object AuthorisationsTypePage extends RadioPage {
 
-  override def title(args: String*): String = "What is the customs office identifier for the location of goods?"
+  override def title(args: String*): String = "Which type of authorisation are you using?"
 
+  override def select(answer: String): this.type = {
+    clickRadioBtn(answer)
+    this
+  }
 }

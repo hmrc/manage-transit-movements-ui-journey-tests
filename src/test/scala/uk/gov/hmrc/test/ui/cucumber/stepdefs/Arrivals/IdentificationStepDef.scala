@@ -27,24 +27,30 @@ class IdentificationStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-  And("""^(?:I )?enter date on the arrival date page$""") { () =>
-    ArrivalDatePage
-      .loadPage()
-      .fillDayMonthAndYearInput()
-      .submitPage()
-  }
 
-  And("""^(?:I )?choose radio option (.*) on the simplified procedure page$""") { (answer: String) =>
-    SimplifiedProcedurePage
+  And("""^(?:I )?choose radio option (.*) on the authorisations type page$""") { (answer: String) =>
+    AuthorisationsTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^I input a random number on the Identification Number page$""") { () =>
-    IdentificationNumberPage
+  And("""^(?:I )?enter (.+) on the authorisations reference number page$""") { (answer: String) =>
+    AuthorisationsReferenceNumberPage
       .loadPage()
-      .fillInput()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  Then("""^(?:I )?(?:should )?have (.+) (?:authorisation|authorisations) on the authorisations add another page$"""
+  ) { (numberOfOffices: String) =>
+    AuthorisationsAddAnotherPage
+      .loadPage(numberOfOffices)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the authorisations add another page$""") { (answer: String) =>
+    AuthorisationsAddAnotherPage
+      .select(answer)
       .submitPage()
   }
 }

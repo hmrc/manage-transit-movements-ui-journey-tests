@@ -16,10 +16,12 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival
 
-import uk.gov.hmrc.test.ui.pages.{DateTimePage, YesNoPage}
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object SimplifiedProcedurePage extends YesNoPage {
+object AuthorisationsAddAnotherPage extends YesNoPage {
 
-  override def title(args: String*): String = "Is Simplified Procedure"
-
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 authorisation"
+    case _ => String.format("You have added %s authorisations", args: _*)
+  }
 }

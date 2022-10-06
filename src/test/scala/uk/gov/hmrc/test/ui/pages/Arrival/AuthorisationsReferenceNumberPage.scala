@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentFlagPage extends YesNoPage {
+object AuthorisationsReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String = "IncidentFlag"
+  override def title(args: String*): String = "What’s the reference number for the ACT authorisation?"
 
 }
