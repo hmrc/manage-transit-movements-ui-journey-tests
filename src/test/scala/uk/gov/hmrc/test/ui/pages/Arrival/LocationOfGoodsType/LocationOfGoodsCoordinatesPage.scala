@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object AuthorisationsTypePage extends RadioPage {
+object LocationOfGoodsCoordinatesPage extends StringPage {
 
-  override def title(args: String*): String = "Which type of authorisation are you using?"
+  override def title(args: String*): String = "What are the coordinates for the location of goods?"
 
-  override def select(answer: String): this.type = {
-    clickRadioBtn(answer)
+  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
+    fillInputById("latitude", latitudeNo)
+    fillInputById("longitude", longitudeNo)
     this
   }
 }

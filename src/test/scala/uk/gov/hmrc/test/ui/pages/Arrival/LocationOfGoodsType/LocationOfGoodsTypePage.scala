@@ -14,12 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object AuthorisationsReferenceNumberPage extends StringPage {
+object LocationOfGoodsTypePage extends RadioPage {
 
-  override def title(args: String*): String = "What’s the reference number for the ACT authorisation?"
+  override def title(args: String*): String = "Which type of location are the goods in?"
 
+  override def select(answer: String): this.type = {
+    answer match {
+      case "Authorised place"    => clickById("value")
+      case "Designated location" => clickById("value_1")
+      case "Approved place"      => clickById("value_2")
+      case "Other"               => clickById("value_3")
+    }
+    this
+  }
 }

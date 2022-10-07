@@ -38,5 +38,18 @@ trait DateTimePage extends StringPage {
     this
   }
 
+  def fillYesterdayDateInputs(): this.type = {
+    val dateAndTime = LocalDateTime.now
+
+    val day = dateAndTime.minusDays(1).getDayOfMonth.toString
+    val month = dateAndTime.getMonthValue.toString
+    val year = dateAndTime.getYear.toString
+
+    fillInputById("value_day", day)
+    fillInputById("value_month", month)
+    fillInputById("value_year", year)
+    this
+  }
+
 
 }

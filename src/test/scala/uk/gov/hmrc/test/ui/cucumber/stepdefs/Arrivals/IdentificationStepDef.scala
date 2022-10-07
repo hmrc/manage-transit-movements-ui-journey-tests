@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrival._
+import uk.gov.hmrc.test.ui.pages.Arrival.Identification._
 
 class IdentificationStepDef extends BaseStepDef {
 

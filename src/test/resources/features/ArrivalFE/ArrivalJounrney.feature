@@ -1,5 +1,4 @@
 @arrival
-@wip
 Feature: Arrival notification feature
 
   Background:
@@ -7,10 +6,10 @@ Feature: Arrival notification feature
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make an arrival notification link
 
-#[CTCP-687] : Identification
-#[CTCP-697] : Location of goods
-#[CTCP-698] : Incidents and Endorsements
-
+  @wip
+#[CTCP-687] : Identification - Simplified -> ACT Authorisations type
+#[CTCP-697] : Location of goods - X Eori Number
+#[CTCP-698] : Incidents and Endorsements -
   Scenario: 01 - Simplified
  # Identification
     When I enter 21GB00014210026352 on the movement reference number page
@@ -21,6 +20,52 @@ Feature: Arrival notification feature
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
     And I submit on the CYA page
+#Location Of goods [697] Location of goods - X Eori Number
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option EORI number on the arrival location of goods identification page
+    And I enter GB123456789000 on the arrival location of goods eori tin page
+    And I choose radio option Yes on the arrival location of goods add additional identifier page
+    And I enter 1234 on the arrival location of goods additional identifier page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+#Incidents [CTCP-698] :
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698] :
+    And I choose radio option Yes on the incidents add endorsement page
+    And I choose fill in the date on the incidents endorsement date page
+    And I enter test data on the incidents endorsement authority page
+    And I select France on the incidents endorsement country page
+    And I enter test data on the incidents endorsement location page
 
+
+
+
+
+
+
+#[CTCP-687] : Identification - Simplified -> ACE Authorisations type
+#[CTCP-697] : Location of goods - W Coordinates
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 02 - Simplified
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Simplified on the procedure type page
+    And I choose radio option ACE on the authorisations type page
+    And I enter 1200014210026352 on the authorisations reference number page
+    And I submit on the CYA page
+    Then I should have 1 authorisation on the authorisations add another page
+    When I choose radio option No on the authorisations add another page
+    And I submit on the CYA page
+#Location Of goods [697]
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option Coordinates on the arrival location of goods identification page
+    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
 
 

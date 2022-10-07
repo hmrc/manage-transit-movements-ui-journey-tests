@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object AuthorisationsAddAnotherPage extends YesNoPage {
+object LocationOfGoodsAdditionalIdentifierPage extends StringPage {
 
-  override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 authorisation"
-    case _ => String.format("You have added %s authorisations", args: _*)
-  }
+  override def title(args: String*): String = "What is the additional identifier for the location of goods?"
+
 }

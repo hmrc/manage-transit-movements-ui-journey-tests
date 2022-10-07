@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival
+package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object MovementReferenceNumberPage extends StringPage {
+object IncidentsAddPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is the Movement Reference Number (MRN)?"
+  override def title(args: String*): String = "Were there any incidents during the transit?"
 
 }
