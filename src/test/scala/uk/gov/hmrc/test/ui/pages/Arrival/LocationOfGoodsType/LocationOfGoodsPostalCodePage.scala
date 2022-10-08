@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Identification
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.PostalCodePage
 
-object AuthorisationsReferenceNumberPage extends StringPage {
-    override def title(args: String*): String = String.format("What’s the reference number for the %s authorisation?", args: _*)
+object LocationOfGoodsPostalCodePage extends PostalCodePage {
+
+  override def title(args: String*): String = "What is the address for the location of goods?"
+
+  override val streetNumber: String = "121"
+  override val postalCode: String   = "M19 6LL"
 }

@@ -50,6 +50,34 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?select (.+) on the arrival location of goods customs un locode page$""") { (answer: String) =>
+    LocationOfGoodsUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the arrival location of goods customs office identification page$""") { (answer: String) =>
+    LocationOfGoodsCustomsOfficeIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?fill in address on the arrival location of goods postal code page$""") { () =>
+    LocationOfGoodsPostalCodePage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the arrival location of goods authorisation number page$""") { (answer: String) =>
+    LocationOfGoodsAuthorisationNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the arrival location of goods add contact page$""") { (answer: String) =>
     LocationOfGoodsAddContactPage
       .loadPage()
@@ -82,6 +110,14 @@ class LocationOfGoodsStepDef extends BaseStepDef {
     LocationOfGoodsAdditionalIdentifierPage
       .loadPage()
       .fillInput(answer)
+      .submitPage()
+  }
+
+
+  And("""^(?:I )?fill in address on the arrival location of goods address page$""") { () =>
+    LocationOfGoodsAddressPage
+      .loadPage()
+      .fillInputs()
       .submitPage()
   }
 }

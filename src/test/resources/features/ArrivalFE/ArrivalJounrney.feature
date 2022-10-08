@@ -1,4 +1,6 @@
 @arrival
+@wip
+
 Feature: Arrival notification feature
 
   Background:
@@ -6,16 +8,46 @@ Feature: Arrival notification feature
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make an arrival notification link
 
-  @wip
-#[CTCP-687] : Identification - Simplified -> ACT Authorisations type
-#[CTCP-697] : Location of goods - X Eori Number
+
+#Z address
+#[CTCP-687] : Identification - Simplified -> ACE Authorisations type
+#[CTCP-697] : Location of goods - Z address
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 01 - Simplified
  # Identification
     When I enter 21GB00014210026352 on the movement reference number page
     And I choose radio option Simplified on the procedure type page
+    And I choose radio option ACE on the authorisations type page
+    And I enter 1200014210026352 on the ACE authorisations reference number page
+    And I submit on the CYA page
+    Then I should have 1 authorisation on the authorisations add another page
+    When I choose radio option No on the authorisations add another page
+    And I submit on the CYA page
+#Location Of goods [697]
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option Address on the arrival location of goods identification page
+    And I fill in address on the arrival location of goods address page
+    And I choose radio option No on the arrival location of goods add contact page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page
+
+
+
+#X EORI number
+#[CTCP-687] : Identification - Simplified -> ACT Authorisations type
+#[CTCP-697] : Location of goods - X Eori Number
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 02 - Simplified
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Simplified on the procedure type page
     And I choose radio option ACT on the authorisations type page
-    And I enter 1200014210026352 on the authorisations reference number page
+    And I enter 1200014210026352 on the ACT authorisations reference number page
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
@@ -39,33 +71,125 @@ Feature: Arrival notification feature
     And I choose fill in the date on the incidents endorsement date page
     And I enter test data on the incidents endorsement authority page
     And I select France on the incidents endorsement country page
-    And I enter test data on the incidents endorsement location page
+    And I enter Incident test data on the incidents endorsement location page
 
 
 
 
-
-
-
-#[CTCP-687] : Identification - Simplified -> ACE Authorisations type
-#[CTCP-697] : Location of goods - W Coordinates
+#Y Authorisation
+#[CTCP-687] : Identification - Normal
+#[CTCP-697] : Location of goods -Y Authorisation
 #[CTCP-698] : Incidents and Endorsements -
-  Scenario: 02 - Simplified
+  Scenario: 03 - Normal
  # Identification
     When I enter 21GB00014210026352 on the movement reference number page
-    And I choose radio option Simplified on the procedure type page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026352 on the authorisations reference number page
+    And I choose radio option Normal on the procedure type page
     And I submit on the CYA page
-    Then I should have 1 authorisation on the authorisations add another page
-    When I choose radio option No on the authorisations add another page
+#Location Of goods [697]
+    And I choose radio option Designated location on the arrival location of goods type page
+    And I choose radio option Authorisation number on the arrival location of goods identification page
+    And I enter 1234567890 on the arrival location of goods authorisation number page
+    And I choose radio option No on the arrival location of goods add additional identifier page
+    And I choose radio option No on the arrival location of goods add contact page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page
+
+
+
+#W Coordinates
+#[CTCP-687] : Identification - Normal
+#[CTCP-697] : Location of goods - W Coordinates
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 04 - Normal
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Normal on the procedure type page
     And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Coordinates on the arrival location of goods identification page
     And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
-    And I choose radio option Yes on the arrival location of goods add contact page
-    And I enter John Joe on the arrival location of goods contact page
-    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+    And I choose radio option No on the arrival location of goods add contact page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page
 
 
+
+#V Customs office identifier
+#[CTCP-687] : Identification - Normal
+#[CTCP-697] : Location of goods - V Customs office identifier
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 05 - Normal
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Normal on the procedure type page
+    And I submit on the CYA page
+#Location Of goods [697]
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option Customs office identifier on the arrival location of goods identification page
+    And I select GB on the arrival location of goods customs office identification page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page
+
+
+
+#U UN/LOCODE
+#[CTCP-687] : Identification - Normal
+#[CTCP-697] : Location of goods - U UN/LOCODE
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 06 - Normal
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Normal on the procedure type page
+    And I submit on the CYA page
+#Location Of goods [697]
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option UN/LOCODE on the arrival location of goods identification page
+    And I select Aalen on the arrival location of goods customs un locode page
+    And I choose radio option No on the arrival location of goods add contact page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page
+
+
+
+#T Postal code
+#[CTCP-687] : Identification - Normal
+#[CTCP-697] : Location of goods - T Postal code
+#[CTCP-698] : Incidents and Endorsements -
+  Scenario: 07 - Normal
+ # Identification
+    When I enter 21GB00014210026352 on the movement reference number page
+    And I choose radio option Normal on the procedure type page
+    And I submit on the CYA page
+#Location Of goods [697]
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option Postal code on the arrival location of goods identification page
+    And I fill in address on the arrival location of goods postal code page
+    And I choose radio option No on the arrival location of goods add contact page
+#Incidents [CTCP-698]
+    And I choose radio option Yes on the incidents add page
+    And I select France on the incidents country page
+    And I choose radio option 1 - The carrier on the incidents code page
+    And I enter Test Incident Happened text on the incidents description page
+#Endorsements [CTCP-698]
+    And I choose radio option No on the incidents add endorsement page

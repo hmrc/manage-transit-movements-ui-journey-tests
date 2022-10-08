@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Identification
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object AuthorisationsReferenceNumberPage extends StringPage {
-    override def title(args: String*): String = String.format("What’s the reference number for the %s authorisation?", args: _*)
+object LocationOfGoodsUnLocodePage extends SelectPage {
+
+  override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"
 }
