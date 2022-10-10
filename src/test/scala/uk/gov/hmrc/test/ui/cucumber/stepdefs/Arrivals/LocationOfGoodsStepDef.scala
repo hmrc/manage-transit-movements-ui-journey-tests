@@ -35,11 +35,12 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods identification page$""") { (answer: String) =>
-    LocationOfGoodsIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the arrival location of goods identification page$""") {
+    (answer: String) =>
+      LocationOfGoodsIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) and (.+) on the arrival location of goods coordinates page$""") {
@@ -57,11 +58,12 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the arrival location of goods customs office identification page$""") { (answer: String) =>
-    LocationOfGoodsCustomsOfficeIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the arrival location of goods customs office identification page$""") {
+    (answer: String) =>
+      LocationOfGoodsCustomsOfficeIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?fill in address on the arrival location of goods postal code page$""") { () =>
@@ -99,11 +101,12 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods add additional identifier page$""") { (answer: String) =>
-    LocationOfGoodsAddAdditionalIdentifierPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the arrival location of goods add additional identifier page$""") {
+    (answer: String) =>
+      LocationOfGoodsAddAdditionalIdentifierPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the arrival location of goods additional identifier page$""") { (answer: String) =>
@@ -112,7 +115,6 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-
 
   And("""^(?:I )?fill in address on the arrival location of goods address page$""") { () =>
     LocationOfGoodsAddressPage

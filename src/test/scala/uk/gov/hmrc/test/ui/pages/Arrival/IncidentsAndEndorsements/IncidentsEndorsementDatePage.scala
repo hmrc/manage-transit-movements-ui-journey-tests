@@ -16,10 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
 
-import uk.gov.hmrc.test.ui.pages.DateTimePage
+import uk.gov.hmrc.test.ui.pages.DatePage
 
-object IncidentsEndorsementDatePage extends DateTimePage {
+import java.time.LocalDateTime
+
+object IncidentsEndorsementDatePage extends DatePage {
 
   override def title(args: String*): String = "When was the endorsement made?"
+
+  override val now: LocalDateTime = super.now.minusDays(1)
 
 }
