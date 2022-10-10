@@ -16,15 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.CoordinatesPage
 
-object LocationOfGoodsCoordinatesPage extends StringPage {
+object LocationOfGoodsCoordinatesPage extends CoordinatesPage {
 
   override def title(args: String*): String = "What are the coordinates for the location of goods?"
 
-  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
-    fillInputById("latitude", latitudeNo)
-    fillInputById("longitude", longitudeNo)
-    this
-  }
 }

@@ -20,7 +20,7 @@ import java.time.LocalDateTime
 
 trait DatePage extends StringPage {
 
-  val now: LocalDateTime = LocalDateTime.now
+  lazy val now: LocalDateTime = LocalDateTime.now()
 
   final val day: String   = now.getDayOfMonth.toString
   final val month: String = now.getMonthValue.toString
