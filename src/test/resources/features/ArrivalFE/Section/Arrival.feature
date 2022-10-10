@@ -1,6 +1,4 @@
 @arrival
-@wip
-
 Feature: Arrival notification feature
 
   Background:

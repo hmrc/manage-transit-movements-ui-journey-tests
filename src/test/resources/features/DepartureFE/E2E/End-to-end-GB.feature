@@ -99,14 +99,14 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
-    And I choose radio option Authorised place on the location of goods type page
-    And I choose radio option EORI number or TIN on the location of goods identification page
-    And I enter GB123456789000 on the location of goods eori tin page
-    And I choose radio option Yes on the location of goods add identifier page
-    And I enter 1000 on the location of goods additional identifier page
-    And I choose radio option Yes on the location of goods add contact page
-    And I enter HMRC Test on the location of goods contact page
-    And I enter +44 2345 82 83 on the location of goods contact telephone number page
+    And I choose radio option Authorised place on the departure location of goods type page
+    And I choose radio option EORI number or TIN on the departure location of goods identification page
+    And I enter GB123456789000 on the departure location of goods eori tin page
+    And I choose radio option Yes on the departure location of goods add identifier page
+    And I enter 1000 on the departure location of goods additional identifier page
+    And I choose radio option Yes on the departure location of goods add contact page
+    And I enter HMRC Test on the departure location of goods contact page
+    And I enter +44 2345 82 83 on the departure location of goods contact telephone number page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
     And I choose radio option Yes on the place of loading add un locode page
@@ -217,10 +217,10 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 2 offices of transit added on the add another office of transit page
     And I choose radio option No on the add another office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Coordinates on the location of goods identification page
-    And I enter 50.96622 and 50.96622 on the location of goods coordinates page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Coordinates on the departure location of goods identification page
+    And I enter 50.96622 and 50.96622 on the departure location of goods coordinates page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -325,10 +325,10 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Address on the location of goods identification page
-    And I fill in address on the location of goods address page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Address on the departure location of goods identification page
+    And I fill in address on the departure location of goods address page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -430,10 +430,10 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
-    And I choose radio option Authorised place on the location of goods type page
-    And I choose radio option Postal code on the location of goods identification page
-    And I fill in address on the location of goods postal code page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Authorised place on the departure location of goods type page
+    And I choose radio option Postal code on the departure location of goods identification page
+    And I fill in address on the departure location of goods postal code page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page

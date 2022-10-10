@@ -20,84 +20,84 @@ import uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods._
 
 class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the add location of goods page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the departure add location of goods page$""") { (answer: String) =>
     AddLocationOfGoodsPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the location of goods type page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods type page$""") { (answer: String) =>
     LocationOfGoodsTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the location of goods identification page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods identification page$""") { (answer: String) =>
     LocationOfGoodsIdentificationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the location of goods customs office identification page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the departure location of goods customs office identification page$""") { (answer: String) =>
     LocationOfGoodsCustomsOfficeIdentificationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods eori tin page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods eori tin page$""") { (answer: String) =>
     LocationOfGoodsEoriTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods authorisation number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods authorisation number page$""") { (answer: String) =>
     LocationOfGoodsAuthorisationNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?fill in address on the location of goods address page$""") { () =>
+  And("""^(?:I )?fill in address on the departure location of goods address page$""") { () =>
     LocationOfGoodsAddressPage
       .loadPage()
       .fillInputs()
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the location of goods customs un locode page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the departure location of goods customs un locode page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the location of goods add identifier page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods add identifier page$""") { (answer: String) =>
     LocationOfGoodsAddIdentificationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods additional identifier page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods additional identifier page$""") { (answer: String) =>
     LocationOfGoodsAdditionalIdentifierPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the location of goods add contact page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods add contact page$""") { (answer: String) =>
     LocationOfGoodsAddContactPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) and (.+) on the location of goods coordinates page$""") {
+  And("""^(?:I )?enter (.+) and (.+) on the departure location of goods coordinates page$""") {
     (latitudeNo: String, longitudeNo: String) =>
       LocationOfGoodsCoordinatesPage
         .loadPage()
@@ -105,21 +105,21 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?fill in address on the location of goods postal code page$""") { () =>
+  And("""^(?:I )?fill in address on the departure location of goods postal code page$""") { () =>
     LocationOfGoodsPostalCodePage
       .loadPage()
       .fillInputs()
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods contact page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods contact page$""") { (answer: String) =>
     LocationOfGoodsContactPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the location of goods contact telephone number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods contact telephone number page$""") { (answer: String) =>
     LocationOfGoodsContactTelephoneNumberPage
       .loadPage()
       .fillInput(answer)
