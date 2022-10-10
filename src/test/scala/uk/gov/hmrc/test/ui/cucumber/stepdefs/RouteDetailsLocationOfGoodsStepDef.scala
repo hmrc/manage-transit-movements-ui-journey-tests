@@ -34,18 +34,20 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods identification page$""") { (answer: String) =>
-    LocationOfGoodsIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods identification page$""") {
+    (answer: String) =>
+      LocationOfGoodsIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the departure location of goods customs office identification page$""") { (answer: String) =>
-    LocationOfGoodsCustomsOfficeIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the departure location of goods customs office identification page$""") {
+    (answer: String) =>
+      LocationOfGoodsCustomsOfficeIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the departure location of goods eori tin page$""") { (answer: String) =>
@@ -76,11 +78,12 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods add identifier page$""") { (answer: String) =>
-    LocationOfGoodsAddIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the departure location of goods add identifier page$""") {
+    (answer: String) =>
+      LocationOfGoodsAddIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the departure location of goods additional identifier page$""") { (answer: String) =>

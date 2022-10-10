@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.DatePage
+trait DatePage extends DateTimePage {
 
-import java.time.LocalDateTime
+  override def fillInputs(): this.type = {
+    fillInputById("value_day", day)
+    fillInputById("value_month", month)
+    fillInputById("value_year", year)
 
-object IncidentsEndorsementDatePage extends DatePage {
-
-  override def title(args: String*): String = "When was the endorsement made?"
-
-  override lazy val now: LocalDateTime = LocalDateTime.now().minusDays(1)
-
+    this
+  }
 }

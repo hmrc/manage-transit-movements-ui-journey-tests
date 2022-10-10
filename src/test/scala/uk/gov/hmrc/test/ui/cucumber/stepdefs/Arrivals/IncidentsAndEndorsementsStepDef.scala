@@ -58,7 +58,7 @@ class IncidentsAndEndorsementsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose fill in the date on the incidents endorsement date page$""") { () =>
     IncidentsEndorsementDatePage
-      .fillYesterdayDateInputs()
+      .fillInputs()
       .submitPage()
   }
 

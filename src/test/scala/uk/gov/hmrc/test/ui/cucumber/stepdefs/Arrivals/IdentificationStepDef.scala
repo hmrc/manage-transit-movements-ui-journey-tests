@@ -35,17 +35,18 @@ class IdentificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the (.+) authorisations reference number page$""") { (answer: String, authorisation: String) =>
-    AuthorisationsReferenceNumberPage
-      .loadPage(authorisation)
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the (.+) authorisations reference number page$""") {
+    (answer: String, authorisation: String) =>
+      AuthorisationsReferenceNumberPage
+        .loadPage(authorisation)
+        .fillInput(answer)
+        .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:authorisation|authorisations) on the authorisations add another page$"""
-  ) { (numberOfOffices: String) =>
-    AuthorisationsAddAnotherPage
-      .loadPage(numberOfOffices)
+  Then("""^(?:I )?(?:should )?have (.+) (?:authorisation|authorisations) on the authorisations add another page$""") {
+    (numberOfOffices: String) =>
+      AuthorisationsAddAnotherPage
+        .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?choose radio option (.*) on the authorisations add another page$""") { (answer: String) =>

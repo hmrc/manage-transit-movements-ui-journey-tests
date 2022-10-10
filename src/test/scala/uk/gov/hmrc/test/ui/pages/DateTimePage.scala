@@ -20,15 +20,15 @@ import java.time.LocalDateTime
 
 trait DateTimePage extends StringPage {
 
+  lazy val now: LocalDateTime = LocalDateTime.now()
+
+  final val day: String    = now.getDayOfMonth.toString
+  final val month: String  = now.getMonthValue.toString
+  final val year: String   = now.getYear.toString
+  final val hour: String   = now.getHour.toString
+  final val minute: String = now.getMinute.toString
+
   def fillInputs(): this.type = {
-    val dateAndTime = LocalDateTime.now
-
-    val day    = dateAndTime.getDayOfMonth.toString
-    val month  = dateAndTime.getMonthValue.toString
-    val year   = dateAndTime.getYear.toString
-    val hour   = dateAndTime.getHour.toString
-    val minute = dateAndTime.getMinute.toString
-
     fillInputById("dateDay", day)
     fillInputById("dateMonth", month)
     fillInputById("dateYear", year)
@@ -37,19 +37,4 @@ trait DateTimePage extends StringPage {
 
     this
   }
-
-  def fillYesterdayDateInputs(): this.type = {
-    val dateAndTime = LocalDateTime.now
-
-    val day = dateAndTime.minusDays(1).getDayOfMonth.toString
-    val month = dateAndTime.getMonthValue.toString
-    val year = dateAndTime.getYear.toString
-
-    fillInputById("value_day", day)
-    fillInputById("value_month", month)
-    fillInputById("value_year", year)
-    this
-  }
-
-
 }
