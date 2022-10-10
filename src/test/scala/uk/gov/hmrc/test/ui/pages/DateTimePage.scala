@@ -16,12 +16,19 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait DateTimePage extends DatePage {
+import java.time.LocalDateTime
 
+trait DateTimePage extends StringPage {
+
+  lazy val now: LocalDateTime = LocalDateTime.now()
+
+  final val day: String    = now.getDayOfMonth.toString
+  final val month: String  = now.getMonthValue.toString
+  final val year: String   = now.getYear.toString
   final val hour: String   = now.getHour.toString
   final val minute: String = now.getMinute.toString
 
-  override def fillInputs(): this.type = {
+  def fillInputs(): this.type = {
     fillInputById("dateDay", day)
     fillInputById("dateMonth", month)
     fillInputById("dateYear", year)
