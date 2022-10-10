@@ -9,7 +9,7 @@ Feature: End to end journey Arrival notification feature
 
 
 #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
-#[CTCP-697] : Location of goods - Z address
+#[CTCP-697] : Location of goods - Address [Z]
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 01 - Simplified
  # Identification
@@ -38,7 +38,7 @@ Feature: End to end journey Arrival notification feature
 
 @a11y
 #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
-#[CTCP-697] : Location of goods - X Eori Number
+#[CTCP-697] : Location of goods - Eori Number [X]
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 02 - Simplified
  # Identification
@@ -75,7 +75,7 @@ Feature: End to end journey Arrival notification feature
 
 
 #[CTCP-687] : Identification - Normal
-#[CTCP-697] : Location of goods - W Coordinates
+#[CTCP-697] : Location of goods - Coordinates [W]
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 03 - Normal
  # Identification
