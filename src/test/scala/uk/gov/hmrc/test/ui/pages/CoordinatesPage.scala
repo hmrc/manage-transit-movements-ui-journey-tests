@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+trait CoordinatesPage extends StringPage {
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@arrivalE2e"
-)
-class RunnerForArrival {}
+  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
+    fillInputById("latitude", latitudeNo)
+    fillInputById("longitude", longitudeNo)
+    this
+  }
+}

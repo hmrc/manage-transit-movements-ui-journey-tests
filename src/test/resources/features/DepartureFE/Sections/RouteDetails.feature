@@ -34,14 +34,14 @@ Feature: Route details transit journeys
   #Route Details Transit -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option EORI number or TIN on the location of goods identification page
-    And I enter GB123456789000 on the location of goods eori tin page
-    And I choose radio option Yes on the location of goods add identifier page
-    And I enter 1000 on the location of goods additional identifier page
-    And I choose radio option Yes on the location of goods add contact page
-    And I enter HMRC Test on the location of goods contact page
-    And I enter +44 2345 82 83 on the location of goods contact telephone number page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option EORI number or TIN on the departure location of goods identification page
+    And I enter GB123456789000 on the departure location of goods eori tin page
+    And I choose radio option Yes on the departure location of goods add identifier page
+    And I enter 1000 on the departure location of goods additional identifier page
+    And I choose radio option Yes on the departure location of goods add contact page
+    And I enter HMRC Test on the departure location of goods contact page
+    And I enter +44 2345 82 83 on the departure location of goods contact telephone number page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -88,10 +88,10 @@ Feature: Route details transit journeys
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Coordinates on the location of goods identification page
-    And I enter 50.96622 and 50.96622 on the location of goods coordinates page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Coordinates on the departure location of goods identification page
+    And I enter 50.96622 and 50.96622 on the departure location of goods coordinates page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -145,10 +145,10 @@ Feature: Route details transit journeys
     Then I should have 2 offices of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
   #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Address on the location of goods identification page
-    And I fill in address on the location of goods address page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Address on the departure location of goods identification page
+    And I fill in address on the departure location of goods address page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
@@ -194,10 +194,10 @@ Feature: Route details transit journeys
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the office of transit add eta page
   #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
-    And I choose radio option Authorised place on the location of goods type page
-    And I choose radio option Postal code on the location of goods identification page
-    And I fill in address on the location of goods postal code page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Authorised place on the departure location of goods type page
+    And I choose radio option Postal code on the departure location of goods identification page
+    And I fill in address on the departure location of goods postal code page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
@@ -219,14 +219,14 @@ Feature: Route details transit journeys
 #[CTCP-944] : Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
 #[CTCP-1252] : Route Details Unloading -> Security details -> No security [Set 0]
   Scenario: 05 XI
- #Office of Departure
+  #Office of Departure
     When I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
     And I submit on the CYA page
     Then I should be on the task list page
- #Route Details -> Binding Itinerary set to No
+  #Route Details -> Binding Itinerary set to No
     When I click the link with visible text: Add route details
    #Office of Destination Declared
     And I select Italy on the country of destination page
@@ -234,18 +234,18 @@ Feature: Route details transit journeys
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
- #Route Details Transit -> Add office of transit [No]
+  #Route Details Transit -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-   #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
-    And I choose radio option No on the add location of goods page
- #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
+  #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
+    And I choose radio option No on the departure add location of goods page
+  #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Aalen on the place of loading un locode page
     And I choose radio option Yes on the place of loading add extra information page
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
- #Route Details Unloading -> [Set 0]
+  #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -279,10 +279,10 @@ Feature: Route details transit journeys
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Exit -> Qualifier of the identification V [Customs office identifier]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Customs office identifier on the location of goods identification page
-    And I select XI on the location of goods customs office identification page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Customs office identifier on the departure location of goods identification page
+    And I select XI on the departure location of goods customs office identification page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
@@ -341,12 +341,12 @@ Feature: Route details transit journeys
     Then I should have 1 office of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
   #Route Details Location Of Goods -> Qualifier of the identification Y [Authorisation number] -> [No] -> [No]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Authorisation number on the location of goods identification page
-    And I enter 1234567890 on the location of goods authorisation number page
-    And I choose radio option No on the location of goods add identifier page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Authorisation number on the departure location of goods identification page
+    And I enter 1234567890 on the departure location of goods authorisation number page
+    And I choose radio option No on the departure location of goods add identifier page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -400,11 +400,11 @@ Feature: Route details transit journeys
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
   #Route Details Location Of Goods -> Qualifier of the identification U [UN/LOCODE]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option UN/LOCODE on the location of goods identification page
-    And I select Aalen on the location of goods customs un locode page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option UN/LOCODE on the departure location of goods identification page
+    And I select Aalen on the departure location of goods customs un locode page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
   #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page

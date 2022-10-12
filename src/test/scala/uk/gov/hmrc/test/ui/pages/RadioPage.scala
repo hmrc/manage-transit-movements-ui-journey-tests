@@ -24,4 +24,5 @@ trait RadioPage extends Page {
 
   protected def clickRadioBtn(answer: String): Unit =
     findBy(By.cssSelector(s"input[type='radio'][value='$answer']")).click()
+
 }

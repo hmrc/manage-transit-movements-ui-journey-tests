@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.AddressPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@arrivalE2e"
-)
-class RunnerForArrival {}
+object LocationOfGoodsAddressPage extends AddressPage {
+
+  override def title(args: String*): String = "What is the address for the location of goods?"
+
+  override val addressLine1: String = "1 Old Lane"
+  override val addressLine2: String = "Hull"
+  override val postalCode: String   = "H1 0AA"
+  override val country: String      = "United Kingdom"
+
+}

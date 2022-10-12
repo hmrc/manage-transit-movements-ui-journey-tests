@@ -1,7 +1,0 @@
-@arrival
-
-Feature: Arrival dummy feature
-
-  Scenario: Arrival dummy
-    Given I login with ID 1234567
-    Then I am on the Manage Transit Movements Hub service

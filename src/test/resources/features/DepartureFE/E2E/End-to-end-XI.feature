@@ -93,7 +93,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
    #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
-    And I choose radio option No on the add location of goods page
+    And I choose radio option No on the departure add location of goods page
    #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Aalen on the place of loading un locode page
@@ -153,10 +153,10 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Location Of Goods -> Qualifier of the identification V [Customs office identifier]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Customs office identifier on the location of goods identification page
-    And I select XI on the location of goods customs office identification page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Customs office identifier on the departure location of goods identification page
+    And I select XI on the departure location of goods customs office identification page
     And I submit on the CYA page
    #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
@@ -237,12 +237,12 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have 1 office of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
    #Route Details Location Of Goods -> Qualifier of the identification Y [Authorisation number] -> [No] -> [No]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option Authorisation number on the location of goods identification page
-    And I enter 1234567890 on the location of goods authorisation number page
-    And I choose radio option No on the location of goods add identifier page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option Authorisation number on the departure location of goods identification page
+    And I enter 1234567890 on the departure location of goods authorisation number page
+    And I choose radio option No on the departure location of goods add identifier page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
    #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
@@ -303,11 +303,11 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
    #Route Details Location Of Goods -> Qualifier of the identification U [UN/LOCODE]
-    And I choose radio option Yes on the add location of goods page
-    And I choose radio option Designated location on the location of goods type page
-    And I choose radio option UN/LOCODE on the location of goods identification page
-    And I select Aalen on the location of goods customs un locode page
-    And I choose radio option No on the location of goods add contact page
+    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Designated location on the departure location of goods type page
+    And I choose radio option UN/LOCODE on the departure location of goods identification page
+    And I select Aalen on the departure location of goods customs un locode page
+    And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
    #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
