@@ -14,20 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
 
-trait AddressPage extends SelectPage {
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-  val addressLine1: String
-  val addressLine2: String
-  val postalCode: String
-  //val country: String
+object ConsigneeCountryPage extends SelectPage {
 
-  def fillInputs(): this.type = {
-    fillInputById("numberAndStreet", addressLine1)
-    fillInputById("city", addressLine2)
-    fillInputById("postalCode", postalCode)
-   // selectValueFromDropDown(country, "country")
-    this
-  }
+  override def title(args: String*): String = "Which country is the consignee based in?"
+
 }

@@ -25,5 +25,6 @@ object HolderAddressPage extends AddressPage {
   override val addressLine1: String = "1 Church lane"
   override val addressLine2: String = "Godrics Hollow"
   override val postalCode: String   = "BA1 0AA"
-  override val country: String      = "United Kingdom"
+  //override val country: String      = "United Kingdom"
+
 }
