@@ -70,5 +70,3 @@ class TransportDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 }
-
-

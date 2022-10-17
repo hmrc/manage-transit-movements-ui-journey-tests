@@ -48,3 +48,20 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
 
     #Container details
     And I choose radio option Yes on the containers page
+
+  Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers
+    And I select XI on the office of departure page
+    And I choose radio option Normal on the procedure type page
+    And I choose radio option T1 on the declaration type page
+    And I choose radio option No security on the security type page
+    And I submit on the CYA page
+    Then I should be on the task list page
+
+
+    #Transport details
+    When I click the link with visible text: Add transport details
+    And I choose radio option No on the apply ucr item page
+    And I choose radio option No on the same destination country page
+
+    #Container details
+    And I choose radio option No on the containers page
