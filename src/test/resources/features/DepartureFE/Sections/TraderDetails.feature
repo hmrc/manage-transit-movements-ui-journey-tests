@@ -1,6 +1,6 @@
 @traderDetails @departure
-  @wip
 
+@wip
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
   Background:

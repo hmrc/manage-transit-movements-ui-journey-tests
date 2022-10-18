@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods._
+import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee.ConsigneeCountryPage
 
 class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
 
@@ -64,6 +65,12 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?select (.+) on the location of goods country page$""") { (answer: String) =>
+    LocationOfGoodsCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
   And("""^(?:I )?fill in address on the departure location of goods address page$""") { () =>
     LocationOfGoodsAddressPage
       .loadPage()
