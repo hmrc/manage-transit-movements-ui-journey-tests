@@ -147,6 +147,7 @@ Feature: Route details transit journeys
   #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Address on the departure location of goods identification page
+    And I select United Kingdom on the location of goods country page
     And I fill in address on the departure location of goods address page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page

@@ -1,4 +1,6 @@
 @departureGBe2e
+
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -18,6 +20,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
     #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -34,6 +37,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
     #Change and add contact
@@ -47,6 +51,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignee eori number or tin known page
     And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
+    And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -137,6 +142,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
     #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -152,6 +158,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     #Consignor contact
     And I choose radio option Yes on adding contact for consignor page
@@ -258,6 +265,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
     #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -274,6 +282,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
     #Change and add contact
@@ -287,6 +296,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignee eori number or tin known page
     And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
+    And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -341,6 +351,7 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Address on the departure location of goods identification page
+    And I select United Kingdom on the location of goods country page
     And I fill in address on the departure location of goods address page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
@@ -371,6 +382,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
     #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -387,6 +399,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
     #Change and add contact
@@ -400,6 +413,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the is consignee eori number or tin known page
     And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
+    And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -466,6 +480,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
+    
   #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
@@ -474,3 +489,4 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the items destination country page
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
+

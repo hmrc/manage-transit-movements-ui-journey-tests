@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee
+package uk.gov.hmrc.test.ui.pages.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.AddressPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object ConsigneeAddressPage extends AddressPage {
+object HolderCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "What is the consignee’s address?"
-
-  override val addressLine1: String = "1 Merry Lane"
-  override val addressLine2: String = "Godrics Hollow"
-  override val postalCode: String   = "CA1 9AA"
+  override def title(args: String*): String = "Which country is the transit holder based in?"
 
 }

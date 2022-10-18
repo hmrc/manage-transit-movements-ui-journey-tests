@@ -45,6 +45,12 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?select (.+) on the holder country page$""") { (answer: String) =>
+    HolderCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
   And("""^(?:I )?fill in the holder address page$""") { () =>
     HolderAddressPage
       .loadPage()
@@ -155,7 +161,12 @@ class TraderDetailsStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-
+  And("""^(?:I )?select (.+) on the consignee country page$""") { (answer: String) =>
+    ConsigneeCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
   And("""^(?:I )?fill in the consignor address page$""") { () =>
     ConsignorAddressPage
       .loadPage()
@@ -211,6 +222,13 @@ class TraderDetailsStepDef extends BaseStepDef {
     ConsigneeNamePage
       .loadPage()
       .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the consignor country page$""") { (answer: String) =>
+    ConsignorCountryPage
+      .loadPage()
+      .select(answer)
       .submitPage()
   }
 

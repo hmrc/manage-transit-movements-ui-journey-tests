@@ -1,5 +1,6 @@
 @traderDetails @departure
 
+
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
   Background:
@@ -7,7 +8,6 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
-
 
   Scenario: 01 TraderDetails - GB Normal - No Security - Reduced Data Set - Not more than 1 consignee
     And I select GB on the office of departure page
@@ -20,8 +20,9 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Transit holder details
     When I click the link with visible text: Add trader details
     And I choose radio option Yes on the is eori known type page
-    And I enter GB123456123456 on the holder eori number or tin page
+    And I enter GB123456789000 on the holder eori number or tin page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
 
     #Holder's contact person's details
@@ -40,6 +41,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the is consignee eori number or tin known page
     And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
+    And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
     And I submit on the CYA page
     Then I should be on the task list page
@@ -56,6 +58,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
 
     #Holder's contact person's details
@@ -75,6 +78,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
 
     #Consignor contact
@@ -101,6 +105,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     When I click the link with visible text: Add trader details
     And I choose radio option No on the is TIR id known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
 
     #Holder's contact person's details
@@ -116,6 +121,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Consignor
     And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
 
     #Consignor contact
@@ -141,6 +147,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the is TIR id known type page
     And I enter ABC/123/12345 on the TIR holder id page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
 
    #Holder's contact person's details
@@ -152,6 +159,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     #Consignor
     And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
 
     #Consignor contact
@@ -175,6 +183,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
 
     #Holder's contact person's details
@@ -190,6 +199,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
 
     #Consignor contact
@@ -208,6 +218,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Yes on the is consignee eori number or tin known page
     And I enter GB123456123456 on the consignee eori number or tin page
     And I enter Simpson Blog Consignee on the consignee name page
+    And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
     And I submit on the CYA page
     Then I should be on the task list page
