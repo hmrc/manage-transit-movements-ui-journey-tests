@@ -1,4 +1,5 @@
 @departureXIe2e
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -18,6 +19,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
     #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -33,6 +35,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the is consignor eori number or tin known page
     And I enter GB123456789000 on the consignor eori number or tin page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     #Consignor contact
     And I choose radio option Yes on adding contact for consignor page
@@ -119,6 +122,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the is TIR id known type page
     And I enter ABC/123/12345 on the TIR holder id page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
    #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -127,6 +131,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Consignor
     And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     #Consignor contact
     And I choose radio option No on adding contact for consignor page
@@ -182,6 +187,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
    #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -192,6 +198,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Consignor
     And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     #Consignor contact
     And I choose radio option No on adding contact for consignor page
@@ -272,6 +279,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the is TIR id known type page
     And I enter ABC/123/12345 on the TIR holder id page
     And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
     And I fill in the holder address page
    #Holder's contact person's details
     And I choose radio option No on the add contact page
@@ -280,6 +288,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Consignor
     And I choose radio option No on the is consignor eori number or tin known page
     And I enter Lewies Blog Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     #Consignor contact
     And I choose radio option No on adding contact for consignor page
@@ -318,6 +327,3 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-
-
-
