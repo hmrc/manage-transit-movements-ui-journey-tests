@@ -1,5 +1,5 @@
 @departureGBe2e
-  @wip
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -336,6 +336,7 @@ Feature: End to end journey for Great Britain office of departure
   #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Address on the departure location of goods identification page
+
     And I fill in address on the departure location of goods address page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
