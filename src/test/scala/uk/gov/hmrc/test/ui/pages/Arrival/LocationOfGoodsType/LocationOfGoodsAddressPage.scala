@@ -25,6 +25,5 @@ object LocationOfGoodsAddressPage extends AddressPage {
   override val addressLine1: String = "1 Old Lane"
   override val addressLine2: String = "Hull"
   override val postalCode: String   = "H1 0AA"
-  //override val country: String      = "United Kingdom"
 
 }

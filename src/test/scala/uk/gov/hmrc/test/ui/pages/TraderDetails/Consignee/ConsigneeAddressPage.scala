@@ -25,6 +25,5 @@ object ConsigneeAddressPage extends AddressPage {
   override val addressLine1: String = "1 Merry Lane"
   override val addressLine2: String = "Godrics Hollow"
   override val postalCode: String   = "CA1 9AA"
-  //override val country: String      = "United Kingdom"
 
 }
