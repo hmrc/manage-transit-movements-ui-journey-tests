@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object BindingItineraryPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want the transit to follow a binding itinerary?"
+  override def title(args: String*): String = "Are you using a binding itinerary?"
 }
