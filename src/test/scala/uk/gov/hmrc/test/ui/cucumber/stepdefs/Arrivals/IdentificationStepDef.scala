@@ -21,6 +21,20 @@ import uk.gov.hmrc.test.ui.pages.Arrival.Identification._
 
 class IdentificationStepDef extends BaseStepDef {
 
+  And("""^(?:I )?select (.+) on the arrival office of destination page$""") { (answer: String) =>
+    OfficeOfDestinationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the consignee eori tin page$""") { (answer: String) =>
+    ConsigneeEoriTinPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?enter (.+) on the movement reference number page$""") { (answer: String) =>
     MovementReferenceNumberPage
       .loadPage()

@@ -1,5 +1,4 @@
 @departureXIe2e
-
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -74,7 +73,7 @@ Feature: End to end journey for Northern Ireland office of departure
    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page
@@ -156,7 +155,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Route details: Binding Itinerary set to No
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page
@@ -238,7 +237,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the link with visible text: Add route details
    #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Germany on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page
@@ -322,7 +321,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Route details: Binding Itinerary set to No
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page

@@ -27,7 +27,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select United Kingdom on the country of destination page
-    And I select GB on the office of destination page
+    And I select GB on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -72,7 +72,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select United Kingdom on the country of destination page
-    And I select GB on the office of destination page
+    And I select GB on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -122,7 +122,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -181,7 +181,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -231,7 +231,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
    #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -273,7 +273,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page
@@ -319,7 +319,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Germany on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page
@@ -384,7 +384,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the office of destination page
+    And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country to transit route added on the transit route add another country page

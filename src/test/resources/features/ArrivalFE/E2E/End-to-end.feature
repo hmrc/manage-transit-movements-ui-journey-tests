@@ -5,6 +5,7 @@ Feature: End to end journey Arrival notification feature
     Given I login with ID 12345678
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make an arrival notification link
+    When I enter 21GB00014210026352 on the movement reference number page
 
 
 
@@ -13,14 +14,14 @@ Feature: End to end journey Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 01 - Simplified
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -42,14 +43,14 @@ Feature: End to end journey Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 02 - Simplified
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select XI on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-    And I submit on the CYA page
 #Location Of goods [697] Location of goods - X Eori Number
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option EORI number on the arrival location of goods identification page
@@ -79,9 +80,9 @@ Feature: End to end journey Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements
   Scenario: 03 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Coordinates on the arrival location of goods identification page
