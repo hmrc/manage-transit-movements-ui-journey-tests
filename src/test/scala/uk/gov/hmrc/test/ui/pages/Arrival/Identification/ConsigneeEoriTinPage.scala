@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages.Arrival.Identification
 
-import uk.gov.hmrc.test.ui.pages.AddressCountryPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsAddressPage extends AddressCountryPage {
+object ConsigneeEoriTinPage extends StringPage {
 
-  override def title(args: String*): String = "What is the address for the location of goods?"
-
-  override val addressLine1: String = "1 Old Lane"
-  override val addressLine2: String = "Hull"
-  override val postalCode: String   = "H1 0AA"
-  override val country: String      = "United Kingdom"
+  override def title(args: String*): String = "What is the consignee’s EORI number or TIN?"
 }

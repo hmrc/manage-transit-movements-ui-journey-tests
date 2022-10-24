@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.AddressCountryPage
+trait AddressCountryPage extends SelectPage {
 
-object LocationOfGoodsAddressPage extends AddressCountryPage {
+  val addressLine1: String
+  val addressLine2: String
+  val postalCode: String
+  val country: String
 
-  override def title(args: String*): String = "What is the address for the location of goods?"
 
-  override val addressLine1: String = "1 Old Lane"
-  override val addressLine2: String = "Hull"
-  override val postalCode: String   = "H1 0AA"
-  override val country: String      = "United Kingdom"
+   def fillInputs(): this.type = {
+    fillInputById("addressLine1", addressLine1)
+    fillInputById("addressLine2", addressLine2)
+    fillInputById("postalCode", postalCode)
+    selectValueFromDropDown (country, "country")
+    this
+  }
 }

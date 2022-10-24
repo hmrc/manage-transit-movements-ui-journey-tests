@@ -5,15 +5,17 @@ Feature: Arrival notification feature
     Given I login with ID 12345678
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make an arrival notification link
+      And I enter 21GB00014210026352 on the movement reference number page
+
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - Customs office identifier [V]
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 01 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Customs office identifier on the arrival location of goods identification page
@@ -28,20 +30,19 @@ Feature: Arrival notification feature
 
 
 
-
 #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
 #[CTCP-697] : Location of goods - Address [Z]
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 02 - Simplified
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select XI on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -56,20 +57,20 @@ Feature: Arrival notification feature
     And I choose radio option No on the incidents add endorsement page
 
 
-
+  @wip
 #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
 #[CTCP-697] : Location of goods - Eori Number [X]
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 03 - Simplified
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-    And I submit on the CYA page
 #Location Of goods [697] Location of goods - X Eori Number
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option EORI number on the arrival location of goods identification page
@@ -99,9 +100,9 @@ Feature: Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 04 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select XI on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Designated location on the arrival location of goods type page
     And I choose radio option Authorisation number on the arrival location of goods identification page
@@ -123,9 +124,9 @@ Feature: Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 05 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Coordinates on the arrival location of goods identification page
@@ -147,9 +148,9 @@ Feature: Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 06 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select XI on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option UN/LOCODE on the arrival location of goods identification page
@@ -171,9 +172,9 @@ Feature: Arrival notification feature
 #[CTCP-698] : Incidents and Endorsements -
   Scenario: 07 - Normal
  # Identification
-    When I enter 21GB00014210026352 on the movement reference number page
+    When I select GB on the arrival office of destination page
+    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-    And I submit on the CYA page
 #Location Of goods [697]
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Postal code on the arrival location of goods identification page

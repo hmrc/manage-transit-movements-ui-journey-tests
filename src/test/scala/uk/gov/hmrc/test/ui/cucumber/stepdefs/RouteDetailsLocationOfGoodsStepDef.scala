@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.pages.RouteDetails.LocationOfGoods._
-import uk.gov.hmrc.test.ui.pages.TraderDetails.Consignee.ConsigneeCountryPage
 
 class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
 
