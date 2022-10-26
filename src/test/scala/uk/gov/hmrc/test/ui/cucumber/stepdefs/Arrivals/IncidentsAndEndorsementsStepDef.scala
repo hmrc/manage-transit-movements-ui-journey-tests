@@ -83,9 +83,4 @@ class IncidentsAndEndorsementsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?wait for (.*) seconds$""") {
-    t: Int =>
-      val time = t * 1000
-      Thread.sleep(time)
-  }
 }

@@ -5,7 +5,8 @@ OS="linux64"
 #OS="mac64"
 
 #These match the configuration on Jenkins - you should only have to adjust these values when the platform makes changes
-CHROME_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_106.0.5249`
+#Line below commented out as currently pointing to wrong version. Check the version before uncommenting.
+#CHROME_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
 CHROME_PARENT_DIR="/usr/local/bin/"
 
 CHROME_DOWNLOAD_URL="http://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_${OS}.zip"
