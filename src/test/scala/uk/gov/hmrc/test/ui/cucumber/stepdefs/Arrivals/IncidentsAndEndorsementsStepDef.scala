@@ -82,4 +82,5 @@ class IncidentsAndEndorsementsStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
+
 }
