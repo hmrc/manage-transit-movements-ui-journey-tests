@@ -20,6 +20,11 @@ import uk.gov.hmrc.test.ui.pages.CYAPage
 
 class CYAStepDef extends BaseStepDef {
 
+  And("""^(?:I )?should be on the CYA page""") { () =>
+    CYAPage
+      .loadPage()
+  }
+
   And("""^(?:I )?submit on the CYA page""") { () =>
     CYAPage
       .loadPage()
