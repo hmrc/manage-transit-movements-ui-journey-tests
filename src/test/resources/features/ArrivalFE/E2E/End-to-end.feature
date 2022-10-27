@@ -34,7 +34,8 @@ Feature: End to end journey Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-    And I submit on the CYA page
+    #And I submit on the CYA page
+    And I should be on the CYA page
 
 
 @a11y
@@ -72,7 +73,8 @@ Feature: End to end journey Arrival notification feature
     And I enter test data on the incidents endorsement authority page
     And I select France on the incidents endorsement country page
     And I enter Incident test data on the incidents endorsement location page
-    And I submit on the CYA page
+    #And I submit on the CYA page
+    And I should be on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
@@ -96,4 +98,5 @@ Feature: End to end journey Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-    And I submit on the CYA page
+    #And I submit on the CYA page
+    And I should be on the CYA page
