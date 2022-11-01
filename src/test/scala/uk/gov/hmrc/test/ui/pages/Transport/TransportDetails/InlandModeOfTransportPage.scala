@@ -24,14 +24,14 @@ object InlandModeOfTransportPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     val modeOfTransportCSSValue = answer match {
-      case "Maritime"                     => "maritime"
-      case "Rail"                         => "rail"
-      case "Road"                         => "exitSummaryDeclaration"
-      case "Air"                          => "air"
-      case "Mail"                         => "mail"
-      case "Fixed transport"              => "fixed"
-      case "Inland waterway"              => "waterway"
-      case "Unknown (own propulsion)"     => "unknown"
+      case "Maritime"                 => "maritime"
+      case "Rail"                     => "rail"
+      case "Road"                     => "exitSummaryDeclaration"
+      case "Air"                      => "air"
+      case "Mail"                     => "mail"
+      case "Fixed transport"          => "fixed"
+      case "Inland waterway"          => "waterway"
+      case "Unknown (own propulsion)" => "unknown"
     }
     clickRadioBtn(modeOfTransportCSSValue)
     this

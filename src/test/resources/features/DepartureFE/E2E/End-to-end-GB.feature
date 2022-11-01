@@ -132,6 +132,14 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
+    And I enter GB1234567 as name of the sea-going vehicle on the transport identification number page
+    And I select United Kingdom on the Transport country page
+
+
+
+
+
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
     And I choose radio option Normal on the procedure type page
@@ -256,7 +264,11 @@ Feature: End to end journey for Great Britain office of departure
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Rail on the Inland Mode of Transport page
+    And I choose radio option Train number on the Transport Identification page
+    And I enter 1234567 as train number on the transport identification number page
+
+
 
   Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
     And I choose radio option Simplified on the procedure type page
@@ -374,7 +386,10 @@ Feature: End to end journey for Great Britain office of departure
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Mail on the Inland Mode of Transport page
+
+
+
 
   Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
     And I choose radio option Normal on the procedure type page
@@ -493,4 +508,4 @@ Feature: End to end journey for Great Britain office of departure
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Mail on the Inland Mode of Transport page

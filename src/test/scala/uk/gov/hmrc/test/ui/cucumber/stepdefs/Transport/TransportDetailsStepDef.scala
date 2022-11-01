@@ -17,8 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.PreTaskList.{DeclarationTypePage, SecurityDetailsPage}
-import uk.gov.hmrc.test.ui.pages.Transport.IdentificationNumberDetailsPage._
 import uk.gov.hmrc.test.ui.pages.Transport.TransportDetails._
 
 class TransportDetailsStepDef extends BaseStepDef {
@@ -85,10 +83,10 @@ class TransportDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the transport identification number page$""") { (answer: String) =>
-
-      IdentificationSeaGoingVehiclePage
-        .loadPage()
+  And("""^(?:I )?enter (.+) as (.+) on the transport identification number page$""") {
+    (answer: String, meansOfTransport: String) =>
+      IdentificationNumberPage
+        .loadPage(meansOfTransport)
         .fillInput(answer)
         .submitPage()
   }

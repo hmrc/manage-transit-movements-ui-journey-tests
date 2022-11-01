@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.IdentificationNumberDetailsPage
+package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IdentificationIATAPage extends StringPage {
+object IdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the IATA flight number?"
+  override def title(args: String*): String = String.format("What is the %s?", args: _*)
 
 }

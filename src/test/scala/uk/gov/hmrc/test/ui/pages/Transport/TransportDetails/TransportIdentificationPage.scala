@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
-import uk.gov.hmrc.test.ui.pages.Transport.TransportDetails.InlandModeOfTransportPage.clickRadioBtn
 
 object TransportIdentificationPage extends RadioPage {
 
@@ -26,17 +25,17 @@ object TransportIdentificationPage extends RadioPage {
   override def select(answer: String): this.type = {
     val vehicleIdentyCSSValue = answer match {
 
-      case "Name of a sea-going vehicle" => "seaGoingVehicle"
-      case "IMO ship identification number" => "imoShipIdNumber"
-      case "Wagon number" => "wagonNumber"
-      case "Train number" => "trainNumber"
+      case "Name of a sea-going vehicle"           => "seaGoingVehicle"
+      case "IMO ship identification number"        => "imoShipIdNumber"
+      case "Wagon number"                          => "wagonNumber"
+      case "Train number"                          => "trainNumber"
       case "Registration number of a road vehicle" => "regNumberRoadVehicle"
       case "Registration number of a road trailer" => "regNumberRoadTrailer"
-      case "IATA flight number" => "iataFlightNumber"
-      case "Name of an inland waterways vehicle" => "inlandWaterwaysVehicle"
-      case "Registration number of an aircraft" => "regNumberAircraft"
-      case "European" => "europeanVesselIdNumber"
-      case "Unknown" => "unknown"
+      case "IATA flight number"                    => "iataFlightNumber"
+      case "Name of an inland waterways vehicle"   => "inlandWaterwaysVehicle"
+      case "Registration number of an aircraft"    => "regNumberAircraft"
+      case "European"                              => "europeanVesselIdNumber"
+      case "Unknown"                               => "unknown"
 
     }
     clickRadioBtn(vehicleIdentyCSSValue)

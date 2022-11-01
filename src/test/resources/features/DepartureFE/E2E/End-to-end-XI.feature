@@ -117,6 +117,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
+    And I enter GB1234567 as name of the sea-going vehicle on the transport identification number page
+
+
+
+
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
     And I choose radio option Normal on the procedure type page
@@ -193,7 +199,11 @@ Feature: End to end journey for Northern Ireland office of departure
   #Container details
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Rail on the Inland Mode of Transport page
+    And I choose radio option Train number on the Transport Identification page
+    And I enter 1234567 as train number on the transport identification number page
+
+
 
   Scenario: 03 Pre Task list - XI Normal - T2 - Guarantee Comprehensive guarantee
     And I choose radio option Normal on the procedure type page
@@ -283,6 +293,17 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
+   #Transport details
+    When I click the link with visible text: Add transport details
+    And I choose radio option No on the apply ucr item page
+    And I choose radio option No on the same destination country page
+   #Container details
+    And I choose radio option No on the containers page
+   #Inland Mode Of Transport
+    And I choose radio option Mail on the Inland Mode of Transport page
+
+
+
 
   @a11y
   Scenario: 04 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
@@ -345,7 +366,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-    
   #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
@@ -356,6 +376,4 @@ Feature: End to end journey for Northern Ireland office of departure
   #Container details
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
-
-
+    And I choose radio option Mail on the Inland Mode of Transport page

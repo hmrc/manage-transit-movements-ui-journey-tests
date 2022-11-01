@@ -57,7 +57,7 @@ Feature: Arrival notification feature
     And I choose radio option No on the incidents add endorsement page
 
 
-  @wip
+
 #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
 #[CTCP-697] : Location of goods - Eori Number [X]
 #[CTCP-698] : Incidents and Endorsements -
