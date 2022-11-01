@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.PreTaskList.{DeclarationTypePage, SecurityDetailsPage}
+import uk.gov.hmrc.test.ui.pages.Transport.IdentificationNumberDetailsPage._
 import uk.gov.hmrc.test.ui.pages.Transport.TransportDetails._
 
 class TransportDetailsStepDef extends BaseStepDef {
@@ -65,6 +67,34 @@ class TransportDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the same destination country page$""") { (answer: String) =>
     ItemsSameDestinationCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the Inland Mode of Transport page$""") { (answer: String) =>
+    InlandModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the Transport Identification page$""") { (answer: String) =>
+    TransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the transport identification number page$""") { (answer: String) =>
+
+      IdentificationSeaGoingVehiclePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the Transport country page$""") { (answer: String) =>
+    TransportCountryPage
       .loadPage()
       .select(answer)
       .submitPage()

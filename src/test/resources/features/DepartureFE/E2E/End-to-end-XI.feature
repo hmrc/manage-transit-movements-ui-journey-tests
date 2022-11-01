@@ -113,9 +113,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter GB123456123456 on the UCR page
     And I choose radio option Yes on the items same destination country page
     And I select United Kingdom on the items destination country page
-
-    #Container details
+  #Container details
     And I choose radio option Yes on the containers page
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
     And I choose radio option Normal on the procedure type page
@@ -191,7 +192,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the items destination country page
   #Container details
     And I choose radio option Yes on the containers page
-
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
   Scenario: 03 Pre Task list - XI Normal - T2 - Guarantee Comprehensive guarantee
     And I choose radio option Normal on the procedure type page
@@ -351,9 +353,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the country of dispatch page
     And I choose radio option Yes on the same destination country page
     And I select United Kingdom on the items destination country page
-
-    #Container details
+  #Container details
     And I choose radio option Yes on the containers page
-
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
 

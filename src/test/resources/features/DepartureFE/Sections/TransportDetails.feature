@@ -1,6 +1,5 @@
 @TransportDetails @departure
 
-
 Feature: Transport details - includes Pre-task list, Transport details, Containers details
 
   Background:
@@ -8,7 +7,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     Then I am on the Manage Transit Movements Hub service
     Given I click on the Make a departure declaration link
     And I input a random LRN on the LocalReferenceNumber page
-
+  @wip
   Scenario: 01 Transport Details - GB Normal - No Security
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -26,7 +25,11 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
 
     #Container details
     And I choose radio option Yes on the containers page
-
+    #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
+    And I enter GB1234567 on the transport identification number page
+    And I select United Kingdom on the Transport country page
 
   Scenario: 02 Transport Details - XI Normal - No Security
     And I select XI on the office of departure page
@@ -48,6 +51,11 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
 
     #Container details
     And I choose radio option Yes on the containers page
+    #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
+    And I enter 1234567 on the transport identification number page
+    And I select United Kingdom on the Transport country page
 
   Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers
     And I select XI on the office of departure page
@@ -65,3 +73,8 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
 
     #Container details
     And I choose radio option No on the containers page
+    #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
+    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
+    And I enter 1234567 on the transport identification number page
+    And I select United Kingdom on the Transport country page

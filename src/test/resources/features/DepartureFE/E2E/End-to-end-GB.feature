@@ -130,6 +130,8 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the items destination country page
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
     And I choose radio option Normal on the procedure type page
@@ -253,6 +255,8 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the items destination country page
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
   Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
     And I choose radio option Simplified on the procedure type page
@@ -369,7 +373,8 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the items destination country page
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
-
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
 
   Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
     And I choose radio option Normal on the procedure type page
@@ -487,4 +492,5 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the items destination country page
   #Transport details -> Container details
     And I choose radio option Yes on the containers page
-
+  #Inland Mode Of Transport
+    And I choose radio option Maritime on the Inland Mode of Transport page
