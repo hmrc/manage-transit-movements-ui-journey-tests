@@ -10,7 +10,8 @@ Feature: Arrival notification feature
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - Customs office identifier [V]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 01 - Normal
  # Identification
     When I select GB on the arrival office of destination page
@@ -27,12 +28,13 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
 #[CTCP-697] : Location of goods - Address [Z]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 02 - Simplified
  # Identification
     When I select XI on the arrival office of destination page
@@ -55,12 +57,13 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
 #[CTCP-697] : Location of goods - Eori Number [X]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 03 - Simplified
  # Identification
     When I select GB on the arrival office of destination page
@@ -91,13 +94,13 @@ Feature: Arrival notification feature
     And I enter test data on the incidents endorsement authority page
     And I select France on the incidents endorsement country page
     And I enter Incident test data on the incidents endorsement location page
-
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - Authorisation [Y]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 04 - Normal
  # Identification
     When I select XI on the arrival office of destination page
@@ -116,12 +119,13 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - Coordinates [W]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 05 - Normal
  # Identification
     When I select GB on the arrival office of destination page
@@ -139,13 +143,13 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - UN/LOCODE [U]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 06 - Normal
  # Identification
     When I select XI on the arrival office of destination page
@@ -163,13 +167,13 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-
-
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
 #[CTCP-697] : Location of goods - Postal code [T]
-#[CTCP-698] : Incidents and Endorsements -
+#[CTCP-698] : Incidents and Endorsements
+#[CTCP-702] : Summary CYA
   Scenario: 07 - Normal
  # Identification
     When I select GB on the arrival office of destination page
@@ -187,3 +191,4 @@ Feature: Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
+    And I submit on the CYA page

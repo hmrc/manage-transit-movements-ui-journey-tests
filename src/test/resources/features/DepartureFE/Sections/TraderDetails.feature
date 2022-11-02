@@ -1,6 +1,4 @@
 @traderDetails @departure
-
-
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
   Background:

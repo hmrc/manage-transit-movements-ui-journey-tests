@@ -16,24 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.CYAPage
+class CommonStepDef extends BaseStepDef {
 
-class CYAStepDef extends BaseStepDef {
-
-  And("""^(?:I )?should be on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
+  And("""^(?:I )?wait for (.*) seconds$""") {
+    t: Int =>
+      val time = t * 1000
+      Thread.sleep(time)
   }
-
-  And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
-      .submitPage()
-  }
-
-  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
-    CYAPage
-      .clickChangeLink(text)
-  }
-
 }
