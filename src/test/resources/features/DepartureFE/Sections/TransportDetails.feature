@@ -1,5 +1,4 @@
 @TransportDetails @departure
-@wip
 Feature: Transport details - includes Pre-task list, Transport details, Containers details
 
   Background:
