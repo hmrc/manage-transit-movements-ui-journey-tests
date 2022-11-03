@@ -23,12 +23,11 @@ trait AddressCountryPage extends SelectPage {
   val postalCode: String
   val country: String
 
-
-   def fillInputs(): this.type = {
+  def fillInputs(): this.type = {
     fillInputById("addressLine1", addressLine1)
     fillInputById("addressLine2", addressLine2)
     fillInputById("postalCode", postalCode)
-    selectValueFromDropDown (country, "country")
+    selectValueFromDropDown(country, "country")
     this
   }
 }

@@ -69,4 +69,32 @@ class TransportDetailsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+  And("""^(?:I )?choose radio option (.*) on the Inland Mode of Transport page$""") { (answer: String) =>
+    InlandModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the Transport Identification page$""") { (answer: String) =>
+    TransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) as (.+) on the transport identification number page$""") {
+    (answer: String, meansOfTransport: String) =>
+      IdentificationNumberPage
+        .loadPage(meansOfTransport)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the Transport country page$""") { (answer: String) =>
+    TransportCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
 }

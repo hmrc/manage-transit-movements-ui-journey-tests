@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
 
-import uk.gov.hmrc.test.ui.pages.AddressCountryPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsAddressPage extends AddressCountryPage {
+object IdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the address for the location of goods?"
+  override def title(args: String*): String = String.format("What is the %s?", args: _*)
 
-  override val addressLine1: String = "1 Old Lane"
-  override val addressLine2: String = "Hull"
-  override val postalCode: String   = "H1 0AA"
-  override val country: String      = "United Kingdom"
 }
