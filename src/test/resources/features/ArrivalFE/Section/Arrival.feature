@@ -8,12 +8,13 @@ Feature: Arrival notification feature
     Given I click on the Make an arrival notification link
     And I enter 21GB00014210026352 on the movement reference number page
 
+
+
   #[CTCP-687] : Identification - Normal
   #[CTCP-697] : Location of goods - Customs office identifier [V]
   #[CTCP-698] : Incidents and Endorsements
-  #[CTCP-699-700] : Incident location -  Incident transport equipment and containers
+  #[CTCP-699-700] : Incident location - Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-
   Scenario: 01 - Normal
   #Identification
     When I select GB on the arrival office of destination page
@@ -35,12 +36,13 @@ Feature: Arrival notification feature
     And I enter 50.96622 and 50.96622 on the incident coordinates page
     And I submit on the CYA page
 
+
+
   #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
   #[CTCP-697] : Location of goods - Address [Z]
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] : Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-
   Scenario: 02 - Simplified
   # Identification
     When I select XI on the arrival office of destination page
@@ -70,10 +72,12 @@ Feature: Arrival notification feature
     And I enter GBID12345 on the container identification number page
     And I submit on the CYA page
 
+
+
   #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
   #[CTCP-697] : Location of goods - Eori Number [X]
   #[CTCP-698] : Incidents and Endorsements
-  #[CTCP-699-700] : Incident location -  Incident transport equipment and containers
+  #[CTCP-699-700] : Incident location - Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
   Scenario: 03 - Simplified
   #Identification
@@ -110,6 +114,8 @@ Feature: Arrival notification feature
     And I fill in address on the incident address page
     And I submit on the CYA page
 
+
+
   #[CTCP-687] : Identification - Normal
   #[CTCP-697] : Location of goods - Authorisation [Y]
   #[CTCP-698] : Incidents and Endorsements
@@ -142,6 +148,8 @@ Feature: Arrival notification feature
     And I enter GBID12345 on the container identification number page
     And I submit on the CYA page
 
+
+
   #[CTCP-687] : Identification - Normal
   #[CTCP-697] : Location of goods - Coordinates [W]
   #[CTCP-698] : Incidents and Endorsements
@@ -169,6 +177,8 @@ Feature: Arrival notification feature
     And I fill in address on the incident address page
     And I submit on the CYA page
 
+
+
   #[CTCP-687] : Identification - Normal
   #[CTCP-697] : Location of goods - UN/LOCODE [U]
   #[CTCP-698] : Incidents and Endorsements
@@ -195,6 +205,8 @@ Feature: Arrival notification feature
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
     And I submit on the CYA page
+
+
 
   #[CTCP-687] : Identification - Normal
   #[CTCP-697] : Location of goods - Postal code [T]

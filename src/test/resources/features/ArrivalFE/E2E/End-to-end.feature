@@ -39,6 +39,8 @@ Feature: End to end journey Arrival notification feature
     And I enter 50.96622 and 50.96622 on the incident coordinates page
     And I submit on the CYA page
 
+
+
   @a11y
   #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
   #[CTCP-697] : Location of goods - Eori Number [X]
