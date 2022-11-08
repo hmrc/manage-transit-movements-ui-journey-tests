@@ -14,23 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IncidentsCodePage extends YesNoPage {
+object ContainerIndicatorPage extends YesNoPage {
 
-  override def title(args: String*): String = "Which type of incident was it?"
+  override def title(args: String*): String = "Did the incident involve a container?"
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "1 - The carrier" => clickById("value")
-      case "2 - The seals"   => clickById("value_1")
-      case "3 - The goods"   => clickById("value_2")
-      case "4 - The goods were partially "   => clickById("value_3")
-      case "5 - The holder"  => clickById("value_4")
-      case "6 - The means"   => clickById("value_5")
-    }
-    this
-  }
 }

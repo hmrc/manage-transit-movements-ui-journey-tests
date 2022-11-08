@@ -1,4 +1,5 @@
 @arrivalE2e
+
 Feature: End to end journey Arrival notification feature
 
   Background:
@@ -7,13 +8,12 @@ Feature: End to end journey Arrival notification feature
     Given I click on the Make an arrival notification link
     When I enter 21GB00014210026352 on the movement reference number page
 
-
-#[CTCP-687] : Identification - Simplified -> ACE Authorisations type
-#[CTCP-697] : Location of goods - Address [Z]
-#[CTCP-698] : Incidents and Endorsements
-#[CTCP-702] : Summary CYA
+  #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
+  #[CTCP-697] : Location of goods - Address [Z]
+  #[CTCP-698] : Incidents and Endorsements
+  #[CTCP-702] : Summary CYA
   Scenario: 01 - Simplified
- # Identification
+  #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
@@ -22,29 +22,32 @@ Feature: End to end journey Arrival notification feature
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-#Location Of goods [697]
+  #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
     And I fill in address on the arrival location of goods address page
     And I choose radio option No on the arrival location of goods add contact page
-#Incidents [CTCP-698]
+  #Incidents
     And I choose radio option Yes on the incidents add page
     And I select France on the incidents country page
     And I choose radio option 1 - The carrier on the incidents code page
     And I enter Test Incident Happened text on the incidents description page
-#Endorsements [CTCP-698]
+  #Endorsements
     And I choose radio option No on the incidents add endorsement page
-    #And I submit on the CYA page
-    And I should be on the CYA page
+  #Incidents Identify Location
+    And I choose radio option Coordinates on the incident identify location page
+    And I enter 50.96622 and 50.96622 on the incident coordinates page
+    And I submit on the CYA page
 
 
-@a11y
-#[CTCP-687] : Identification - Simplified -> ACT Authorisations type
-#[CTCP-697] : Location of goods - Eori Number [X]
-#[CTCP-698] : Incidents and Endorsements
-#[CTCP-702] : Summary CYA
+
+  @a11y
+  #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
+  #[CTCP-697] : Location of goods - Eori Number [X]
+  #[CTCP-698] : Incidents and Endorsements
+  #[CTCP-702] : Summary CYA
   Scenario: 02 - Simplified
- # Identification
+  #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
@@ -53,7 +56,7 @@ Feature: End to end journey Arrival notification feature
     And I submit on the CYA page
     Then I should have 1 authorisation on the authorisations add another page
     When I choose radio option No on the authorisations add another page
-#Location Of goods [697] Location of goods - X Eori Number
+  #Location Of goods - Location of goods - X Eori Number
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option EORI number on the arrival location of goods identification page
     And I enter GB123456789000 on the arrival location of goods eori tin page
@@ -62,19 +65,21 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Yes on the arrival location of goods add contact page
     And I enter John Joe on the arrival location of goods contact page
     And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
-#Incidents [CTCP-698]
+  #Incidents
     And I choose radio option Yes on the incidents add page
     And I select France on the incidents country page
     And I choose radio option 1 - The carrier on the incidents code page
     And I enter Test Incident Happened text on the incidents description page
-#Endorsements [CTCP-698]
+  #Endorsements
     And I choose radio option Yes on the incidents add endorsement page
     And I choose fill in the date on the incidents endorsement date page
     And I enter test data on the incidents endorsement authority page
     And I select France on the incidents endorsement country page
     And I enter Incident test data on the incidents endorsement location page
-    #And I submit on the CYA page
-    And I should be on the CYA page
+  #Incidents Identify Location
+    And I choose radio option UN/LOCODE on the incident identify location page
+    And I select Aalen on the incident un locode page
+    And I submit on the CYA page
 
 
 #[CTCP-687] : Identification - Normal
@@ -98,5 +103,7 @@ Feature: End to end journey Arrival notification feature
     And I enter Test Incident Happened text on the incidents description page
 #Endorsements [CTCP-698]
     And I choose radio option No on the incidents add endorsement page
-    #And I submit on the CYA page
-    And I should be on the CYA page
+#Incidents Identify Location
+    And I choose radio option Address on the incident identify location page
+    And I fill in address on the incident address page
+    And I submit on the CYA page
