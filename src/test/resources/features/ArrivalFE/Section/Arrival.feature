@@ -15,7 +15,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] : Incident location - Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 01 - Normal
+  Scenario: 01 - Normal - Authorised place - Address id - No contact - Incident code 1 -
+  No endorsements - Location id Coordinates
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -43,7 +44,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] : Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 02 - Simplified
+  Scenario: 02 - Simplified - ACE Authorisations - Authorised place - Address id - No contact - Incident code 3 -
+  No endorsements - Location id UN/LOCODE - Yes container indicator
   # Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -79,7 +81,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] : Incident location - Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 03 - Simplified
+  Scenario: 03 - Simplified - ACT Authorisations - Authorised place - EORI id - Yes additional id - Yes contact - Incident code 1 -
+  Yes endorsement - Location id Address
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -121,7 +124,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] : Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 04 - Normal
+  Scenario: 04 - Normal - Designated location - Authorisation number id - No additional identifier - No contact - Incident code 3 -
+  No endorsements - Location id Coordinates - No container indicator - Yes transport equipment - Yes container id
   #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -155,7 +159,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] -  Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 05 - Normal
+  Scenario: 05 - Normal - Authorised place - Coordinates id - No contact - Incident code 1 -
+  No endorsements - Location id Address
   # Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -184,7 +189,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   # [CTCP-699-700] -  Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 06 - Normal
+  Scenario: 06 - Normal- Authorised place - UN/LOCODE id - No contact - Incident code 1 -
+  No endorsement - Location id Address
   # Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -213,7 +219,8 @@ Feature: Arrival notification feature
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-699-700] -  Incident location -  Incident transport equipment and containers
   #[CTCP-702] : Summary CYA
-  Scenario: 07 - Normal
+  Scenario: 07 - Normal - Authorised place - Postal code id - No contact - Incident code 1 -
+  No endorsements - Location id UN/LOCODE
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page

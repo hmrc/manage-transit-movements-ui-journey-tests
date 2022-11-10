@@ -12,7 +12,8 @@ Feature: End to end journey Arrival notification feature
   #[CTCP-697] : Location of goods - Address [Z]
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-702] : Summary CYA
-  Scenario: 01 - Simplified
+  Scenario: 01 - Simplified - ACE Authorisations - Authorised place - Address id - No contact - Incident code 1 -
+  No endorsements - Location id Coordinates
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -46,7 +47,8 @@ Feature: End to end journey Arrival notification feature
   #[CTCP-697] : Location of goods - Eori Number [X]
   #[CTCP-698] : Incidents and Endorsements
   #[CTCP-702] : Summary CYA
-  Scenario: 02 - Simplified
+  Scenario: 02 - Simplified - ACT Authorisations - Authorised place - EORI id - Yes additional id - Yes contact - Incident code 1 -
+  Yes endorsement - Location id UN/LOCODE
   #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -86,7 +88,8 @@ Feature: End to end journey Arrival notification feature
 #[CTCP-697] : Location of goods - Coordinates [W]
 #[CTCP-698] : Incidents and Endorsements
 #[CTCP-702] : Summary CYA
-  Scenario: 03 - Normal
+  Scenario: 03 - Normal - Authorised place - Coordinates id - No contact - Incident code 1 -
+  No endorsements - Location id Address
  # Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
