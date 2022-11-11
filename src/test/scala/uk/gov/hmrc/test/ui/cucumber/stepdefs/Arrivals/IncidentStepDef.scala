@@ -80,4 +80,34 @@ class IncidentStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?choose radio option (.*) on the add container seal page$""") { (answer: String) =>
+    AddContainerSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) as (.+) on the container seal identification number page$""") {
+    (answer: String, identyNumber: String) =>
+    ContainerSealIdentificationNumberPage
+      .loadPage(identyNumber)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  Then("""^(?:I )?(?:should )?have (.+) as (.*) (?:seal|seals) container added on the add another container seal page$""") {
+    (numberOfSeals: String, identyNumInfo: String) =>
+    AddAnotherContainerSealPage
+      .loadPage(numberOfSeals,identyNumInfo)
+  }
+
+  When("""^(?:I )?choose radio option (.*) as (.*)  on the add another container seal page$""") {
+    (answer: String, identyNumInfo: String) =>
+    AddAnotherContainerSealPage
+      .loadPage(identyNumInfo)
+      .select(answer)
+      .submitPage()
+  }
+
 }
