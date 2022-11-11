@@ -8,6 +8,7 @@ Feature: Arrival notification feature
     Given I click on the Make an arrival notification link
     And I enter 21GB00014210026352 on the movement reference number page
 
+
   Scenario: 01 - GB - Normal - Customs office identifier - Incident Flag 'No'
   #Identification
     When I select GB on the arrival office of destination page
@@ -21,8 +22,8 @@ Feature: Arrival notification feature
     And I choose radio option No on the incidents add page
     And I submit on the CYA page
 
-  Scenario: 02 - GB - Normal - Customs office identifier - Incident Flag 'Yes' - Incident Code '1' - Add Endorsement 'No'
 
+  Scenario: 02 - GB - Normal - Customs office identifier - Incident Flag 'Yes' - Incident Code '1' - Add Endorsement 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -42,11 +43,11 @@ Feature: Arrival notification feature
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
     And I submit on the CYA page
-
    # And I choose radio option Yes on the add container seal page
+
+
   @wip
   Scenario: 03 - GB - Normal - Customs office identifier - Incident Flag 'Yes'- Incident Code '2' - Add Endorsement 'Yes'  - Container Identification 'Yes'
-
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -72,15 +73,15 @@ Feature: Arrival notification feature
     And I choose radio option Yes on the add container identification number page
     And I enter 12345 on the container identification number page
     And I enter 76545 as 12345 on the container seal identification number page
-    Then I should have 1 as 12345 seal container added on the add another container seal page
-    When I choose radio option No as 12345 on the add another container seal page
+    Then I should have 1 seal container added with identification number 12345 on the add another container seal page
+
+#    When I choose radio option No as 12345 on the add another container seal page
     #And I submit on the CYA page
     #And I choose radio option Yes on the container indicator page
     #And I enter GBID12345 on the container identification number page
-
     #And I submit on the CYA page
-
    # And I choose radio option Yes on the add container seal page
+
 
   Scenario: 04 - Simplified - Address - Incident Flag 'Yes'- Incident Code '2' - Add Endorsement 'Yes'
   # Identification
@@ -110,6 +111,7 @@ Feature: Arrival notification feature
     And I choose radio option Yes on the container indicator page
     And I enter GBID12345 on the container identification number page
     And I submit on the CYA page
+
 
   Scenario: 05 - Simplified - EORI Number - Incident Flag 'Yes'- Incident Code '5' - Add Endorsement 'Yes'
   #Identification
@@ -174,6 +176,7 @@ Feature: Arrival notification feature
     And I enter GBID12345 on the container identification number page
     And I submit on the CYA page
 
+
   Scenario: 07 - GB - Normal - Postal Code - Incident Flag 'Yes' - Incident code (1) - Endorsement 'No'
   # Identification
     When I select GB on the arrival office of destination page
@@ -196,6 +199,7 @@ Feature: Arrival notification feature
     And I fill in address on the incident address page
     And I submit on the CYA page
 
+
   Scenario: 08 - XI - Normal - Postal Code - Incident Flag 'Yes' - Incident code (1) - Endorsement 'No'
   # Identification
     When I select XI on the arrival office of destination page
@@ -217,6 +221,7 @@ Feature: Arrival notification feature
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
     And I submit on the CYA page
+
 
   Scenario: 09 - GB - Normal - Postal Code - Incident Flag 'Yes' - Incident code (1) - Endorsement 'No'
   #Identification

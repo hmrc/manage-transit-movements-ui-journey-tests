@@ -89,25 +89,24 @@ class IncidentStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?enter (.+) as (.+) on the container seal identification number page$""") {
-    (answer: String, identyNumber: String) =>
+    (answer: String, identificationVal: String) =>
     ContainerSealIdentificationNumberPage
-      .loadPage(identyNumber)
+      .loadPage(identificationVal)
       .fillInput(answer)
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as (.*) (?:seal|seals) container added on the add another container seal page$""") {
-    (numberOfSeals: String, identyNumInfo: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added with identification number (.*) on the add another container seal page$""") {
+    (numberOfSeals: String, identificationVal: String) =>
     AddAnotherContainerSealPage
-      .loadPage(numberOfSeals,identyNumInfo)
+      .loadPage(numberOfSeals,identificationVal)
   }
 
   When("""^(?:I )?choose radio option (.*) as (.*)  on the add another container seal page$""") {
-    (answer: String, identyNumInfo: String) =>
+    (answer: String, identificationVal: String) =>
     AddAnotherContainerSealPage
-      .loadPage(identyNumInfo)
+      .loadPage(identificationVal)
       .select(answer)
       .submitPage()
   }
-
 }
