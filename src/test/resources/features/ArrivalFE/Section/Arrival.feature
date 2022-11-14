@@ -241,3 +241,15 @@ Feature: Arrival notification feature
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
     And I submit on the CYA page
+
+    And I choose radio option Yes on the Do you want to add a goods item number page
+    And I enter 12345 on the What is the goods item number page
+    And I choose radio option Yes on the Do you want to add another goods item number page
+    And I choose radio option Yes on the Do you want to add any other transport equipment page
+
+
+
+#  Do you want to add a goods item number?              Yes   No - go to to add any other transport equipment
+#  What is the goods item number?
+#  Do you want to add another goods item number?        Yes - go back to What is the goods item number
+#  Do you want to add any other transport equipment?    Yes - go to Container id no page No - check if code is 2 (seals) go to equipment seal id if 2. If not 2 ask if want to add seal
