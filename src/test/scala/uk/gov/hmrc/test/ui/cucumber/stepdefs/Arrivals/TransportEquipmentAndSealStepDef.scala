@@ -31,7 +31,7 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
   }
 
 
-  And("""^(?:I )?choose radio option (.*) as (.+) on the add container seal page$""") {
+  And("""^(?:I )?choose radio option (.*) for container identification number (.+) on the add container seal page$""") {
     (answer: String,identificationVal: String) =>
     AddContainerSealPage
       .loadPage(identificationVal)
@@ -39,7 +39,7 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) as (.*) on the container seal identification number page$""") {
+  And("""^(?:I )?enter (.+) for container identification number (.*) on the container seal identification number page$""") {
     (answer: String, identificationVal: String) =>
     ContainerSealIdentificationNumberPage
       .loadPage(identificationVal)
@@ -47,7 +47,7 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added with identification number (.*) on the add another container seal page$""") {
+  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number (.*) on the add another container seal page$""") {
     (numberOfSeals: String, identificationVal: String) =>
       AddAnotherContainerSealPage
         .loadPage(numberOfSeals, identificationVal)

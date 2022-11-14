@@ -22,6 +22,6 @@ object AddAnotherContainerSealPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => String.format("You have added 1 seal for container %s", args: _*)
-    case _        => String.format("You have added %s seal for container %s", args: _*)
+    case _        => String.format("You have added %s seals for container %s", args: _*)
   }
 }
