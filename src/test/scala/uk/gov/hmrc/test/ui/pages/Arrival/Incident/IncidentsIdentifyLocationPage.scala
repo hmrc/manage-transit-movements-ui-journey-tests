@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
-import uk.gov.hmrc.test.ui.pages.CoordinatesPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object IncidentsCoordinatesPage extends CoordinatesPage {
+object IncidentsIdentifyLocationPage extends RadioPage {
 
-  override def title(args: String*): String = "What are the coordinates for the incident?"
+  override def title(args: String*): String = "How do you want to identify where the incident happened?"
 
-
+  override def select(answer: String): this.type = {
+    answer match {
+      case "UN/LOCODE" => clickById("value")
+      case "Coordinates"   => clickById("value_1")
+      case "Address"     => clickById("value_2")
+    }
+    this
+  }
 }

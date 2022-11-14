@@ -14,20 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IncidentsIdentifyLocationPage extends RadioPage {
+object AddContainerSealPage extends YesNoPage {
 
-  override def title(args: String*): String = "How do you want to identify where the incident happened?"
+  override def title(args: String*): String = String.format("Do you want to add a seal for container %s?", args: _*)
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "UN/LOCODE" => clickById("value")
-      case "Coordinates"   => clickById("value_1")
-      case "Address"     => clickById("value_2")
-    }
-    this
-  }
 }

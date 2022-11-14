@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Container
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsUnLocodePage extends SelectPage {
+object ContainerIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the incident?"
+  override def title(args: String*): String = "What’s the container identification number?"
+
 }

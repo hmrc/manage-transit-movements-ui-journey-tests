@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsEndorsementAuthorityPage extends StringPage {
+object IncidentDescriptionPage extends StringPage {
 
-  override def title(args: String*): String = "What authority made the endorsement?"
+  override def title(args: String*): String = "What happened during the incident?"
 
 }

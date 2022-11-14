@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ContainerIdentificationNumberPage extends StringPage {
+object AddIncidentPage extends YesNoPage {
 
-  override def title(args: String*): String = "What’s the container identification number?"
+  override def title(args: String*): String = "Were there any incidents during the transit?"
 
 }

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IncidentsEndorsementLocationPage extends StringPage {
+object AddAnotherContainerSealPage extends YesNoPage {
 
-  override def title(args: String*): String = "Where in France was the endorsement made?"
-
+  override def title(args: String*): String = args match {
+    case Seq("1") => String.format("You have added 1 seal for container %s", args: _*)
+    case _        => String.format("You have added %s seal for container %s", args: _*)
+  }
 }

@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object AddContainerSealPage extends YesNoPage {
+object IncidentCountryPage extends SelectPage {
 
-  override def title(args: String*): String = String.format("Do you want to add a seal for container as %s ?", args: _*)
-
+  override def title(args: String*): String = "In which country did the incident happen?"
 
 }

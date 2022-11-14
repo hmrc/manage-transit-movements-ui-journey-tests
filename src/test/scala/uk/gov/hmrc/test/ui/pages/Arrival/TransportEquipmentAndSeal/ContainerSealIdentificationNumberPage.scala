@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsDescriptionPage extends StringPage {
+object ContainerSealIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What happened during the incident?"
+  override def title(args: String*): String = String.format("What’s the seal identification number for container %s?", args: _*)
 
 }

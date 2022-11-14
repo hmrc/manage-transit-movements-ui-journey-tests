@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Endorsement
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherContainerSealPage extends YesNoPage {
+object AddEndorsementPage extends YesNoPage {
 
-  override def title(args: String*): String = args match {
-    case Seq("1") => String.format("You have added 1 seal for container %s", args: _*)
-    case _ => String.format("You have added %s seal for container %s", args: _*)
-  }
+  override def title(args: String*): String = "Do you need to add an endorsement for the incident?"
+
 }

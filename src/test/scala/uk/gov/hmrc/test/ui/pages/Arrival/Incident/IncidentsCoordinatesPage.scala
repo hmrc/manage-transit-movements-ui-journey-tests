@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.CoordinatesPage
 
-object ContainerIndicatorPage extends YesNoPage {
+object IncidentsCoordinatesPage extends CoordinatesPage {
 
-  override def title(args: String*): String = "Did the incident involve a container?"
+  override def title(args: String*): String = "What are the coordinates for the incident?"
+
 
 }
