@@ -21,14 +21,14 @@ class IncidentTransportEquipmentStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?choose radio option (.*) on the Do you want to add another goods item number page$""") { (answer: String) =>
-    AddGoodsItemNumberPage
+    AddAnotherGoodsItemNumberPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the Do you want to add any other transport equipment page$""") { (answer: String) =>
-    AddGoodsItemNumberPage
+    AddAnotherTransportEquipmentPage
       .loadPage()
       .select(answer)
       .submitPage()
