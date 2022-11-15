@@ -247,9 +247,12 @@ Feature: Arrival notification feature
     And I choose radio option Yes on the Do you want to add another goods item number page
     And I choose radio option Yes on the Do you want to add any other transport equipment page
 
-
-
 #  Do you want to add a goods item number?              Yes   No - go to to add any other transport equipment
 #  What is the goods item number?
 #  Do you want to add another goods item number?        Yes - go back to What is the goods item number
 #  Do you want to add any other transport equipment?    Yes - go to Container id no page No - check if code is 2 (seals) go to equipment seal id if 2. If not 2 ask if want to add seal
+
+    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
+    And I enter Titanic for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
+    And I select France on the What country is the replacement transport registered to page
+    And I choose radio option Yes on the Do you want to add another incident page
