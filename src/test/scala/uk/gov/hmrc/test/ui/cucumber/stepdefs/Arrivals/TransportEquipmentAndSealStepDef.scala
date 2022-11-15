@@ -47,10 +47,10 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number 12345 on the add another container seal page$""") {
-    (numberOfSeals: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number (.+) on the add another container seal page$""") {
+    (numberOfSeals: String, identificationVal: String) =>
       AddAnotherContainerSealPage
-        .loadPage(numberOfSeals)
+        .loadPage(numberOfSeals, identificationVal)
   }
 
   When("""^(?:I )?choose to click on (.*) link on the add another container seal page$""") {

@@ -21,8 +21,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AddAnotherContainerSealPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-
-    case Seq("1") => "You have added 1 seal for container 12345"
-    case _ => String.format("You have added %s seals for container 12345", args: _*)
+    case Seq(numberOfSeals, identificationVal) if(numberOfSeals == "1") => String.format("You have added %s seal for container %s", numberOfSeals, identificationVal)
+    case Seq(numberOfSeals, identificationVal) => String.format("You have added %s seals for container %s", numberOfSeals, identificationVal)
   }
 }
