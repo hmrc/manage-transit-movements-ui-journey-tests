@@ -34,7 +34,6 @@ Feature: End to end journey Arrival notification feature
 
 
   @a11y
-    @wip
   Scenario: 02 - XI - Simplified - ACT Authorisations - Goods Identification Location 'EORI id' - Add additional identifier 'Yes' - Add Contact 'Yes' - Incident Code '4' - Add Endorsement 'Yes'
   #Identification
     And I select XI on the arrival office of destination page
