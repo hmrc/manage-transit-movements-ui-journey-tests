@@ -128,7 +128,7 @@ Feature: Arrival notification feature
     And I choose radio option Yes on the add container identification number page
     And I enter 12345 on the container identification number page
   #Add Container Seal
-    And I choose radio option Yes as 12345 on the add container seal page
+    And I choose radio option Yes for container identification number 12345 on the add container seal page
     And I enter 98765 for container identification number 12345 on the container seal identification number page
     Then I should have 1 seal container added for container identification number 12345 on the add another container seal page
   #Add Another Container Seal

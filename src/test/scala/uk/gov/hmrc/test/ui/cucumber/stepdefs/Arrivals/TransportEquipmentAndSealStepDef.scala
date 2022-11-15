@@ -47,10 +47,10 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number (.*) on the add another container seal page$""") {
-    (numberOfSeals: String, identificationVal: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number 12345 on the add another container seal page$""") {
+    (numberOfSeals: String) =>
       AddAnotherContainerSealPage
-        .loadPage(numberOfSeals, identificationVal)
+        .loadPage(numberOfSeals)
   }
 
   When("""^(?:I )?choose to click on (.*) link on the add another container seal page$""") {
@@ -59,14 +59,21 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  When("""^(?:I )?choose radio option (.*) on the add another container seal page$""") {
-    (answer: String)=>
-    AddAnotherContainerSealPage
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add another container seal page$""") {
+    (answer: String) =>
+      AddAnotherContainerSealPage
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) as (.+) on the remove seal page$""") {
+  And("""^(?:I )?click the (.*) on the add another container seal page$""") {
+    (identificationVal: String) =>
+      AddAnotherContainerSealPage
+        .loadPage()
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) for container identification number (.+) on the remove seal page$""") {
     (answer: String, identificationVal: String) =>
     RemoveSealPage
       .loadPage(identificationVal)
