@@ -8,49 +8,35 @@ Feature: End to end journey Arrival notification feature
     Given I click on the Make an arrival notification link
     When I enter 21GB00014210026352 on the movement reference number page
 
-  #[CTCP-687] : Identification - Simplified -> ACE Authorisations type
-  #[CTCP-697] : Location of goods - Address [Z]
-  #[CTCP-698] : Incidents and Endorsements
-  #[CTCP-702] : Summary CYA
-  Scenario: 01 - Simplified - ACE Authorisations - Authorised place - Address id - No contact - Incident code 1 -
-  No endorsements - Location id Coordinates
+
+  Scenario: 01 - GB - Normal - Postal Code - Incident Flag 'Yes' - Incident code (1) - Endorsement 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the procedure type page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026352 on the ACE authorisations reference number page
-    And I submit on the CYA page
-    Then I should have 1 authorisation on the authorisations add another page
-    When I choose radio option No on the authorisations add another page
+    And I choose radio option Normal on the procedure type page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Address on the arrival location of goods identification page
-    And I fill in address on the arrival location of goods address page
+    And I choose radio option Postal code on the arrival location of goods identification page
+    And I fill in address on the arrival location of goods postal code page
     And I choose radio option No on the arrival location of goods add contact page
-  #Incidents
-    And I choose radio option Yes on the incidents add page
-    And I select France on the incidents country page
-    And I choose radio option 1 - The carrier on the incidents code page
-    And I enter Test Incident Happened text on the incidents description page
-  #Endorsements
-    And I choose radio option No on the incidents add endorsement page
-  #Incidents Identify Location
-    And I choose radio option Coordinates on the incident identify location page
-    And I enter 50.96622 and 50.96622 on the incident coordinates page
+  #Add Incident
+    And I choose radio option Yes on the add incident page
+    And I select France on the incident country page
+  #Incident Code
+    And I choose radio option 1 - The carrier on the incident code page
+    And I enter Test Incident Happened text on the incident description page
+  #Endorsement
+    And I choose radio option No on the add endorsement page
+  #Incident Identify Location
+    And I choose radio option UN/LOCODE on the incident identify location page
+    And I select Aalen on the incident un locode page
     And I submit on the CYA page
-
 
 
   @a11y
-  #[CTCP-687] : Identification - Simplified -> ACT Authorisations type
-  #[CTCP-697] : Location of goods - Eori Number [X]
-  #[CTCP-698] : Incidents and Endorsements
-  #[CTCP-702] : Summary CYA
-  Scenario: 02 - Simplified - ACT Authorisations - Authorised place - EORI id - Yes additional id - Yes contact - Incident code 1 -
-  Yes endorsement - Location id UN/LOCODE
+  Scenario: 02 - XI - Simplified - ACT Authorisations - Goods Identification Location 'EORI id' - Add additional identifier 'Yes' - Add Contact 'Yes' - Incident Code '4' - Add Endorsement 'Yes'
   #Identification
-    When I select XI on the arrival office of destination page
+    And I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACT on the authorisations type page
@@ -62,51 +48,77 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option EORI number on the arrival location of goods identification page
     And I enter GB123456789000 on the arrival location of goods eori tin page
+  #Add Additional Identifier
     And I choose radio option Yes on the arrival location of goods add additional identifier page
     And I enter 1234 on the arrival location of goods additional identifier page
+  #Add Contact
     And I choose radio option Yes on the arrival location of goods add contact page
     And I enter John Joe on the arrival location of goods contact page
     And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
-  #Incidents
-    And I choose radio option Yes on the incidents add page
-    And I select France on the incidents country page
-    And I choose radio option 1 - The carrier on the incidents code page
-    And I enter Test Incident Happened text on the incidents description page
-  #Endorsements
-    And I choose radio option Yes on the incidents add endorsement page
-    And I choose fill in the date on the incidents endorsement date page
-    And I enter test data on the incidents endorsement authority page
-    And I select France on the incidents endorsement country page
-    And I enter Incident test data on the incidents endorsement location page
-  #Incidents Identify Location
+  #Add Incident
+    And I choose radio option Yes on the add incident page
+    And I select France on the incident country page
+  #Incident Code
+    And I choose radio option 4 - The goods were partially on the incident code page
+    And I enter Test Incident Happened text on the incident description page
+  #Endorsement
+    And I choose radio option No on the add endorsement page
+  #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
-    And I submit on the CYA page
+  #Container Identification Number
+    And I choose radio option Yes on the add container identification number page
+    And I enter 12345 on the container identification number page
+  #Add Container Seal
+    And I choose radio option Yes for container identification number 12345 on the add container seal page
+    And I enter 1 for container identification number 12345 on the container seal identification number page
+    Then I should have 1 seal container added for container identification number 12345 on the add another container seal page
+  #Add Another Container Seal
+    When I choose radio option Yes on the add another container seal page
+    And I enter 2 for container identification number 12345 on the container seal identification number page
+    Then I should have 2 seals container added for container identification number 12345 on the add another container seal page
+    When I choose radio option No on the add another container seal page
+    Then I submit on the CYA page
 
 
-#[CTCP-687] : Identification - Normal
-#[CTCP-697] : Location of goods - Coordinates [W]
-#[CTCP-698] : Incidents and Endorsements
-#[CTCP-702] : Summary CYA
-  Scenario: 03 - Normal - Authorised place - Coordinates id - No contact - Incident code 1 -
-  No endorsements - Location id Address
- # Identification
-    When I select GB on the arrival office of destination page
+  Scenario: 03 - XI - XI - Normal - Authorisation number - Incident Flag 'Yes' - Incident code (6) - Endorsement 'No'
+  #Identification
+    When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Normal on the procedure type page
-#Location Of goods [697]
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Coordinates on the arrival location of goods identification page
-    And I enter 60.96622 and 50.96622 on the arrival location of goods coordinates page
+  #Location Of goods
+    And I choose radio option Designated location on the arrival location of goods type page
+    And I choose radio option Authorisation number on the arrival location of goods identification page
+    And I enter 1234567890 on the arrival location of goods authorisation number page
+    And I choose radio option No on the arrival location of goods add additional identifier page
     And I choose radio option No on the arrival location of goods add contact page
-#Incidents [CTCP-698]
-    And I choose radio option Yes on the incidents add page
-    And I select France on the incidents country page
-    And I choose radio option 1 - The carrier on the incidents code page
-    And I enter Test Incident Happened text on the incidents description page
-#Endorsements [CTCP-698]
-    And I choose radio option No on the incidents add endorsement page
-#Incidents Identify Location
-    And I choose radio option Address on the incident identify location page
-    And I fill in address on the incident address page
+  #Add Incident
+    And I choose radio option Yes on the add incident page
+    And I select France on the incident country page
+  #Incident code
+    And I choose radio option 6 - The means on the incident code page
+    And I enter Test Incident Happened text on the incident description page
+  #Endorsement
+    And I choose radio option No on the add endorsement page
+  #Incident Identify Location
+    And I choose radio option Coordinates on the incident identify location page
+    And I enter 50.96622 and 50.96622 on the incident coordinates page
+  #Container Indicator
+    And I choose radio option No on the container indicator page
+  #Add Transport Equipment
+    And I choose radio option Yes on the add transport equipment page
+  #Add Container Identification Number
+    And I choose radio option Yes on the add container identification number page
+    And I enter 12345 on the container identification number page
+  #Add Container Seal
+    And I choose radio option Yes for container identification number 12345 on the add container seal page
+    And I enter 76545 for container identification number 12345 on the container seal identification number page
+  #Add Another Container Seal
+    Then I should have 1 seal container added for container identification number 12345 on the add another container seal page
+    When I choose to click on Remove link on the add another container seal page
+    And I choose radio option Yes for container identification number 76545 on the remove seal page
+    And I choose radio option Yes for container identification number 12345 on the add container seal page
+    And I enter 998877 for container identification number 12345 on the container seal identification number page
+    Then I should have 1 seal container added for container identification number 12345 on the add another container seal page
+    And I choose radio option No on the add another container seal page
     And I submit on the CYA page

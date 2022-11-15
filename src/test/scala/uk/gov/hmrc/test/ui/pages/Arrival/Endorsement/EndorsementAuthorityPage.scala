@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Endorsement
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsEndorsementCountryPage extends SelectPage {
+object EndorsementAuthorityPage extends StringPage {
 
-  override def title(args: String*): String = "In which country was the endorsement made?"
+  override def title(args: String*): String = "What authority made the endorsement?"
 
 }
