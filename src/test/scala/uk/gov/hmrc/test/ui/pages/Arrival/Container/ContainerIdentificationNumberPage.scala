@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Container
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsEndorsementLocationPage extends StringPage {
+object ContainerIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "Where in France was the endorsement made?"
+  override def title(args: String*): String = "What’s the container identification number?"
 
 }

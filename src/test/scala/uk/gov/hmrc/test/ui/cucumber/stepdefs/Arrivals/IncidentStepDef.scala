@@ -17,9 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-
-import uk.gov.hmrc.test.ui.pages.Arrival.Incidents._
-
+import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
 
 class IncidentStepDef extends BaseStepDef {
 
@@ -53,31 +51,31 @@ class IncidentStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the container indicator page$""") { (answer: String) =>
-    ContainerIndicatorPage
+  And("""^(?:I )?choose radio option (.*) on the add incident page$""") { (answer: String) =>
+    AddIncidentPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the container identification number page$""") { (answer: String) =>
-    ContainerIdentificationNumberPage
+  And("""^(?:I )?select (.+) on the incident country page$""") { (answer: String) =>
+    IncidentCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the incident code page$""") { (answer: String) =>
+    IncidentCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the incident description page$""") { (answer: String) =>
+    IncidentDescriptionPage
       .loadPage()
       .fillInput(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the add transport equipment page$""") { (answer: String) =>
-    AddTransportEquipmentPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the add container identification number page$""") { (answer: String) =>
-    AddContainerIdentificationNumberPage
-      .loadPage()
-      .select(answer)
       .submitPage()
   }
 }

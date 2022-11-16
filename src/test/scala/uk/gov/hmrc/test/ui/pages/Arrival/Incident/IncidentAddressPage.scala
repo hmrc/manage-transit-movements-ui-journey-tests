@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
 import uk.gov.hmrc.test.ui.pages.AddressPage
 

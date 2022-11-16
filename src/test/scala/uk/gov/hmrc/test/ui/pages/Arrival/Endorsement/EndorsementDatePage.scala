@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Endorsement
 
 import uk.gov.hmrc.test.ui.pages.DatePage
 
 import java.time.LocalDateTime
 
-object IncidentsEndorsementDatePage extends DatePage {
+object EndorsementDatePage extends DatePage {
 
   override def title(args: String*): String = "When was the endorsement made?"
 

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ContainerIndicatorPage extends YesNoPage {
+object AddAnotherContainerSealPage extends YesNoPage {
 
-  override def title(args: String*): String = "Did the incident involve a container?"
-
+  override def title(args: String*): String = args match {
+    case Seq(numberOfSeals, identificationVal) if(numberOfSeals == "1") => String.format("You have added %s seal for container %s", numberOfSeals, identificationVal)
+    case Seq(numberOfSeals, identificationVal) => String.format("You have added %s seals for container %s", numberOfSeals, identificationVal)
+  }
 }
