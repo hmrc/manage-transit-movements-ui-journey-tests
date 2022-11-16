@@ -259,7 +259,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Germany on the office of transit country page
     Then I should have Germany as office of transit on the office of transit page
     When I select Berlin on the office of transit page
-    Then I should have Berlin, Berlin-Flughafen-Tegel (DE002105) arrival time title on the office of transit add eta page
+    Then I should have Berlin-Flughafen Schönefeld (DE002102) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
