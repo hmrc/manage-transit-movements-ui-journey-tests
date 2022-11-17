@@ -73,7 +73,7 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) for container identification number (.+) on the remove seal page$""") {
+  And("""^(?:I )?choose radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
     (answer: String, identificationVal: String) =>
     RemoveSealPage
       .loadPage(identificationVal)
