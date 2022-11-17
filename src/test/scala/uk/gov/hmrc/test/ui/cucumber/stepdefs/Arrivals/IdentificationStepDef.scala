@@ -57,7 +57,7 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:authorisation|authorisations) on the authorisations add another page$""") {
+  Then("""^(?:I )?should have (.*) authorisations? on the authorisations add another page$""") {
     (numberOfOffices: String) =>
       AuthorisationsAddAnotherPage
         .loadPage(numberOfOffices)

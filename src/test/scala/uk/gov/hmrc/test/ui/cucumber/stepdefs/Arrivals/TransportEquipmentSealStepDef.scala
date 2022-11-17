@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
 import uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal.{AddAnotherContainerSealPage, AddContainerSealPage, AddTransportEquipmentPage, ContainerSealIdentificationNumberPage}
 
-class TransportEquipmentAndSealStepDef extends BaseStepDef {
+class TransportEquipmentSealStepDef extends BaseStepDef {
 
 
   And("""^(?:I )?choose radio option (.*) on the add transport equipment page$""") { (answer: String) =>
@@ -47,7 +47,7 @@ class TransportEquipmentAndSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:seal|seals) container added for container identification number (.+) on the add another container seal page$""") {
+  Then("""^(?:I )?should have (.*) container seals? added for container identification number (.+) on the add another container seal page$""") {
     (numberOfSeals: String, identificationVal: String) =>
       AddAnotherContainerSealPage
         .loadPage(numberOfSeals, identificationVal)
