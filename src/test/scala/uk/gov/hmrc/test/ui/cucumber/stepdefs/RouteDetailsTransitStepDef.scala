@@ -77,9 +77,8 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then(
-    """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of transit page$"""
-  ) { (numberOfOffices: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) offices? of transit added on the add another office of transit page$""") {
+    (numberOfOffices: String) =>
     AddAnotherOfficeOfTransitPage
       .loadPage(numberOfOffices)
   }

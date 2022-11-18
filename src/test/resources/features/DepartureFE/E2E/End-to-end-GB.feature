@@ -91,12 +91,12 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     When I choose to click on Remove link on the transit route add another country page
     And I choose radio option Yes on the transit route remove country page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
@@ -135,10 +135,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Name of a sea-going vehicle on the Transport Identification page
     And I enter GB1234567 as name of the sea-going vehicle on the transport identification number page
     And I select United Kingdom on the Transport country page
-
-
-
-
 
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
@@ -213,10 +209,10 @@ Feature: End to end journey for Great Britain office of departure
     And I select Bari on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     When I choose radio option Yes on the transit route add another country page
     And I select Argentina on the transit route country page
-    Then I should have 2 countries to transit route added on the transit route add another country page
+    Then I should have 2 countries added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is [Office of transit country]
@@ -267,7 +263,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Rail on the Inland Mode of Transport page
     And I choose radio option Train number on the Transport Identification page
     And I enter 1234567 as train number on the transport identification number page
-
 
 
   Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
@@ -352,12 +347,12 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     When I choose to click on Remove link on the transit route add another country page
     And I choose radio option Yes on the transit route remove country page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
@@ -387,8 +382,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
-
-
 
 
   Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
@@ -473,12 +466,12 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     When I choose to click on Remove link on the transit route add another country page
     And I choose radio option Yes on the transit route remove country page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is -> Add office of transit [No]
@@ -498,7 +491,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-    
   #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page

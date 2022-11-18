@@ -40,7 +40,7 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
   }
 
   Then(
-    """^(?:I )?(?:should )?have (.+) (?:office|offices) of transit added on the add another office of exit page$"""
+    """^(?:I )?(?:should )?have (.+) offices? of transit added on the add another office of exit page$"""
   ) { (numberOfOffices: String) =>
     AddAnotherOfficeOfExitPage
       .loadPage(numberOfOffices)
