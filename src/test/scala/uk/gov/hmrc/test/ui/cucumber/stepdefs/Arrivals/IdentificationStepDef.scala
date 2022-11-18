@@ -57,15 +57,29 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) (?:authorisation|authorisations) on the authorisations add another page$""") {
+  Then("""^(?:I )?should have (.*) authorisations? on the add another authorisation page$""") {
     (numberOfOffices: String) =>
       AuthorisationsAddAnotherPage
         .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the authorisations add another page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the add another authorisation page$""") { (answer: String) =>
     AuthorisationsAddAnotherPage
       .select(answer)
       .submitPage()
+  }
+
+  When("""^(?:I )?choose to click on (.*) link on the add another authorisation page$""") {
+    (sectionLink: String) =>
+      AuthorisationsAddAnotherPage
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) for the (.+) authorisation (.+) on the remove authorisation page$""") {
+    (answer: String, authorisationType: String, identificationVal: String) =>
+      RemoveAuthorisationPage
+        .loadPage(authorisationType, identificationVal)
+        .select(answer)
+        .submitPage()
   }
 }

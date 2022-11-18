@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Endorsement
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IncidentsUnLocodePage extends SelectPage {
+object AddEndorsementPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the incident?"
+  override def title(args: String*): String = "Do you need to add an endorsement for the incident?"
+
 }

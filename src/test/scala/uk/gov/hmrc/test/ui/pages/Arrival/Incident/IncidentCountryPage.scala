@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentsAndEndorsements
+package uk.gov.hmrc.test.ui.pages.Arrival.Incident
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object IncidentsAddEndorsementPage extends YesNoPage {
+object IncidentCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "Do you need to add an endorsement for the incident?"
+  override def title(args: String*): String = "In which country did the incident happen?"
 
 }

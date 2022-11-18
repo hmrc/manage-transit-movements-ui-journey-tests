@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.Incidents
+package uk.gov.hmrc.test.ui.pages.Arrival.Endorsement
 
-import uk.gov.hmrc.test.ui.pages.CoordinatesPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsCoordinatesPage extends CoordinatesPage {
+object EndorsementLocationPage extends StringPage {
 
-  override def title(args: String*): String = "What are the coordinates for the incident?"
-
+  override def title(args: String*): String = "Where in France was the endorsement made?"
 
 }

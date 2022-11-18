@@ -4,7 +4,7 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrival.IncidentTransportEquipment._
 
 
-class IncidentTransportEquipmentStepDef extends BaseStepDef {
+class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number page$""") { (answer: String) =>
     AddGoodsItemNumberPage
