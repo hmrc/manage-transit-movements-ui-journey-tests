@@ -47,9 +47,8 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then(
-    """^(?:I )?(?:should )?have (.+) (?:country|countries) to transit route added on the transit route add another country page$"""
-  ) { (numberOfCountries: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the transit route add another country page$""") {
+    (numberOfCountries: String) =>
     TransitRouteAddAnotherCountryPage
       .loadPage(numberOfCountries)
   }
