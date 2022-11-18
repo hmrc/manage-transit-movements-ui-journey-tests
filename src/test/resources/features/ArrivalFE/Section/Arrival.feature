@@ -9,7 +9,8 @@ Feature: Arrival notification feature
     And I enter 21GB00014210026352 on the movement reference number page
 
 
-  Scenario: 01 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes' - Incident Code '1' - Add Endorsement 'Yes'
+  Scenario: 01 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes' - Incident Code '1' -
+  Add Endorsement 'Yes' - Add Another Incident 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -33,12 +34,14 @@ Feature: Arrival notification feature
   #Incident Identify Location
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
-  #Goes to Do you want to add another incident CTCP-701
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
 
   Scenario: 02 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes'- Incident Code '2' - Add Endorsement 'No' -
-  Add Container 'Yes' - Add Goods Item 'No' - Add Transport Equipment 'No'
+  Add Container 'Yes' - Add Goods Item 'No' - Add Transport Equipment 'No' - Add Another Incident 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -69,12 +72,15 @@ Feature: Arrival notification feature
     And I choose radio option No on the Do you want to add a goods item number page
   #Add Transport Equipment
     And I choose radio option No on the Do you want to add any other transport equipment page
-  #Goes to Do you want to add another incident CTCP-701
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
 
   Scenario: 03 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
-  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Remove Authorisation & Seal
+  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Remove Authorisation & Seal -
+  Add Another Incident 'Yes'
   #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -103,13 +109,14 @@ Feature: Arrival notification feature
     And I select France on the incident country page
   #Incident Code
     And I choose radio option 3 - The goods on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I enter Hit an iceburg on the incident description page
   #Endorsement
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
   #Add Container Indicator
+    And I wait for 1000 seconds
     And I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
   #Add Container Seal
@@ -153,13 +160,39 @@ Feature: Arrival notification feature
     And I choose radio option No on the Do you want to add another goods item number page
   #Add Transport Equipment
     And I choose radio option No on the Do you want to add any other transport equipment page
-  #Goes to Type of Identification CTCP-701 then choose 'Yes' to iterate another incident
+  #Type of Identification
+    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
+    And I enter Titanic for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
+    And I select France on the What country is the replacement transport registered to page
+  #Add Another Incident
+    And I choose radio option Yes on the Do you want to add another incident page
+  #Add Incident - 2nd iteration
+    And I select Uruguay on the incident country page
+  #Incident Code
+    And I choose radio option 3 - The goods on the incident code page
+    And I enter The ship sank on the incident description page
+  #Endorsement
+    And I choose radio option No on the add endorsement page
+  #Incident Identify Location
+    And I choose radio option UN/LOCODE on the incident identify location page
+    And I select Aalen on the incident un locode page
+  #Add Container Indicator
+    And I choose radio option No on the container indicator page
+  #Add Transport Equipment
+    And I choose radio option No on the Do you want to add any other transport equipment page
+  #Type of Identification
+    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
+    And I enter Bismarck for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
+    And I select Uruguay on the What country is the replacement transport registered to page
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
 
   Scenario: 04 - Simplified - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
   Add Endorsement 'No' - Incident Location 'UN/LOCODE' - Container Id 'Yes' - Add Seal 'Yes' x2 - Add Goods Item 'No' -
-  Add Transport Equipment 'No'
+  Add Transport Equipment 'No' - Add Another Incident 'No'
   # Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -202,12 +235,13 @@ Feature: Arrival notification feature
     And I enter G001 on the What is the goods item number page
     And I choose radio option No on the Do you want to add another goods item number page
     And I choose radio option No on the Do you want to add any other transport equipment page
-  #Goes to Do you want to add another incident CTCP-701
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
-
   Scenario: 05 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'Yes' -
-  Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'Yes' - Incident Location 'Address'
+  Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'Yes' - Incident Location 'Address' - Add Another Incident 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -241,11 +275,14 @@ Feature: Arrival notification feature
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
 
   Scenario: 06 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
-  Endorsement 'No' - Incident Location 'Address'
+  Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
   # Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -275,7 +312,13 @@ Feature: Arrival notification feature
     And I choose radio option No on the Do you want to add a goods item number page
   #Add Transport Equipment
     And I choose radio option No on the Do you want to add any other transport equipment page
-  #Goes to Type of Identification CTCP-701 then choose 'No' for another incident to go to Summary CYA page
+ #Type of Identification
+    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
+    And I enter Bismarck for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
+    And I select Uruguay on the What country is the replacement transport registered to page
+  #Add Another Incident
+    And I choose radio option No on the Do you want to add another incident page
+  #Goes to Summary CYA page when built
     And I submit on the CYA page
 
 
@@ -293,18 +336,3 @@ Feature: Arrival notification feature
     And I choose radio option No on the add incident page
   #This goes to the Summary CYA page for Arrivals when built
     And I submit on the CYA page
-
-    And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter 12345 on the What is the goods item number page
-    And I choose radio option Yes on the Do you want to add another goods item number page
-    And I choose radio option Yes on the Do you want to add any other transport equipment page
-
-#  Do you want to add a goods item number?              Yes   No - go to to add any other transport equipment
-#  What is the goods item number?
-#  Do you want to add another goods item number?        Yes - go back to What is the goods item number
-#  Do you want to add any other transport equipment?    Yes - go to Container id no page No - check if code is 2 (seals) go to equipment seal id if 2. If not 2 ask if want to add seal
-
-    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
-    And I enter Titanic for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
-    And I select France on the What country is the replacement transport registered to page
-    And I choose radio option Yes on the Do you want to add another incident page
