@@ -1,4 +1,4 @@
-@guaranteeDetails @departure
+@guaranteeDetails @departure @wip
 Feature: Guarantee journeys includes pre task list
 
   Background:

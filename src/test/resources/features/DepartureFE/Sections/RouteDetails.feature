@@ -1,4 +1,4 @@
-@routeDetails @departure
+@routeDetails @departure @wip
 Feature: Route details transit journeys
 
   Background:
@@ -276,7 +276,7 @@ Feature: Route details transit journeys
     And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Exit -> Qualifier of the identification V [Customs office identifier]
@@ -322,7 +322,7 @@ Feature: Route details transit journeys
     And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Germany on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is [Office of transit country]
@@ -387,7 +387,7 @@ Feature: Route details transit journeys
     And I select Bari on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Andorra on the transit route country page
-    Then I should have 1 country to transit route added on the transit route add another country page
+    Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
