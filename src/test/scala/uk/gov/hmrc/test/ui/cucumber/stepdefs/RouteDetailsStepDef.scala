@@ -49,8 +49,8 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the transit route add another country page$""") {
     (numberOfCountries: String) =>
-    TransitRouteAddAnotherCountryPage
-      .loadPage(numberOfCountries)
+      TransitRouteAddAnotherCountryPage
+        .loadPage(numberOfCountries)
   }
 
   And("""^(?:I )?choose radio option (.*) on the transit route add another country page$""") { (answer: String) =>

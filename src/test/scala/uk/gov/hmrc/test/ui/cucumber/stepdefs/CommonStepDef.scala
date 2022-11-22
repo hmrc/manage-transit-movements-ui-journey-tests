@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 class CommonStepDef extends BaseStepDef {
 
-  And("""^(?:I )?wait for (.*) seconds$""") {
-    t: Int =>
-      val time = t * 1000
-      Thread.sleep(time)
+  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
+    val time = t * 1000
+    Thread.sleep(time)
   }
 }

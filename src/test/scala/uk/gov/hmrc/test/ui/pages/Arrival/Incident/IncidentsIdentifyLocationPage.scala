@@ -24,8 +24,8 @@ object IncidentsIdentifyLocationPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "UN/LOCODE" => clickById("value")
-      case "Coordinates"   => clickById("value_1")
+      case "UN/LOCODE"   => clickById("value")
+      case "Coordinates" => clickById("value_1")
       case "Address"     => clickById("value_2")
     }
     this

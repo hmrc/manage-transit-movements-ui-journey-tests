@@ -22,5 +22,4 @@ object IncidentsCoordinatesPage extends CoordinatesPage {
 
   override def title(args: String*): String = "What are the coordinates for the incident?"
 
-
 }
