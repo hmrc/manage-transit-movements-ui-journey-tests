@@ -21,7 +21,7 @@ object CYAPage extends Page {
   override def title(args: String*): String = "Check your answers"
 
   def clickChangeLink(text: String): Unit = {
-    val id = text.replace(" ", "-").toLowerCase
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
     clickById(id)
   }
 }

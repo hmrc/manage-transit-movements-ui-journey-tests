@@ -1,4 +1,4 @@
-@arrival
+@arrival @wip
 
 Feature: Arrival notification feature
 
@@ -34,7 +34,6 @@ Feature: Arrival notification feature
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
   #Goes to Do you want to add another incident CTCP-701
-    And I submit on the CYA page
 
 
   Scenario: 02 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes'- Incident Code '2' - Add Endorsement 'No' -
@@ -62,19 +61,20 @@ Feature: Arrival notification feature
     And I choose radio option Yes on the add container identification number page
     And I enter C001 on the container identification number page
   #Add Seal
-    And I enter S001 for container identification number C001 on the container seal identification number page
+    When I enter S001 for container identification number C001 on the container seal identification number page
     Then I should have 1 container seal added for container identification number C001 on the add another container seal page
     When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option No on the Do you want to add a goods item number page
+    Then I submit on the CYA page
   #Add Transport Equipment
-    And I choose radio option No on the Do you want to add any other transport equipment page
+    When I choose radio option No on the You have added 1 transport equipment page
   #Goes to Do you want to add another incident CTCP-701
-    And I submit on the CYA page
 
 
   Scenario: 03 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
-  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Remove Authorisation & Seal
+  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Remove 'Authorisation, Seal, Goods & Equipment' -
+  Change 'Good & Equipment'
   #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -92,7 +92,7 @@ Feature: Arrival notification feature
   #Remove Authorisation
     When I choose to click on Remove link on the add another authorisation page
     And I choose radio option Yes for the ACE authorisation 1200014210026351 on the remove authorisation page
-    When I choose radio option No on the add another authorisation page
+    Then I choose radio option No on the add another authorisation page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -110,7 +110,7 @@ Feature: Arrival notification feature
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
   #Add Container Indicator
-    And I choose radio option Yes on the container indicator page
+    When I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
   #Add Container Seal
     And I choose radio option Yes for container identification number C001 on the add container seal page
@@ -121,18 +121,19 @@ Feature: Arrival notification feature
     And I enter S002 for container identification number C001 on the container seal identification number page
     Then I should have 2 container seals added for container identification number C001 on the add another container seal page
   #Remove A Container Seal
-    When I choose to click on Remove link on the add another container seal page
-    And I choose radio option Yes for container seal identification number S001 on the remove seal page
-    When I choose radio option No on the add another container seal page
+    When I click the Remove link on the add another container seal page
+    And I click radio option Yes for container seal identification number S001 on the remove seal page
+    Then I choose radio option No on the add another container seal page
   #Add Goods Item
-    And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter G001 on the What is the goods item number page
+    When I choose radio option Yes on the Do you want to add a goods item number page
+    And I enter 00001 on the What is the goods item number page
   #Add Another Goods Item
-    And I choose radio option Yes on the Do you want to add another goods item number page
-    And I enter G002 on the What is the goods item number page
-    And I choose radio option No on the Do you want to add another goods item number page
+    When I choose radio option Yes on the You have added 1 goods item number page
+    And I enter 00002 on the What is the goods item number page
+    And I choose radio option No on the You have added 2 goods item numbers page
+    Then I submit on the CYA page
   #Add Transport Equipment
-    And I choose radio option Yes on the Do you want to add any other transport equipment page
+    When I choose radio option Yes on the You have added 1 transport equipment page
   #Add Container Indicator - 2nd transport equipment iteration
     And I enter C002 on the container identification number page
   #Add Container Seal
@@ -146,15 +147,28 @@ Feature: Arrival notification feature
     When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter G003 on the What is the goods item number page
+    And I enter 00003 on the What is the goods item number page
   #Add Another Goods Item
-    And I choose radio option Yes on the Do you want to add another goods item number page
-    And I enter G004 on the What is the goods item number page
-    And I choose radio option No on the Do you want to add another goods item number page
-  #Add Transport Equipment
-    And I choose radio option No on the Do you want to add any other transport equipment page
+    And I choose radio option Yes on the You have added 1 goods item number page
+    And I enter 00004 on the What is the goods item number page
+  #Change Goods Item
+    When I click the Change link on the You have added 2 goods item numbers page
+    Then I enter 00005 on the What is the goods item number page
+  #Remove Goods Item
+    When I click the Remove link on the You have added 2 goods item numbers page
+    And I click radio option Yes on the Are you sure you want to remove goods item number 00005 page
+    And I choose radio option No on the You have added 1 goods item number page
+    Then I submit on the CYA page
+  #Change Transport Equipment
+    When I click the Change link on the You have added 2 transport equipment page
+    And I click the change link for Container identification number on the CYA page
+    And I enter C003 on the container identification number page
+    Then I submit on the CYA page
+  #Remove Transport Equipment
+    When I click the Remove link on the You have added 2 transport equipment page
+    And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
+    And I choose radio option No on the You have added 1 transport equipment page
   #Goes to Type of Identification CTCP-701 then choose 'Yes' to iterate another incident
-    And I submit on the CYA page
 
 
   Scenario: 04 - Simplified - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
@@ -166,9 +180,9 @@ Feature: Arrival notification feature
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
-    And I submit on the CYA page
-    Then I should have 1 authorisation on the add another authorisation page
-    When I choose radio option No on the add another authorisation page
+    Then I submit on the CYA page
+    When I should have 1 authorisation on the add another authorisation page
+    And I choose radio option No on the add another authorisation page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -199,11 +213,11 @@ Feature: Arrival notification feature
     When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter G001 on the What is the goods item number page
-    And I choose radio option No on the Do you want to add another goods item number page
-    And I choose radio option No on the Do you want to add any other transport equipment page
+    And I enter 00001 on the What is the goods item number page
+    And I choose radio option No on the You have added 1 goods item number page
+    Then I submit on the CYA page
+    And I choose radio option No on the You have added 1 transport equipment page
   #Goes to Do you want to add another incident CTCP-701
-    And I submit on the CYA page
 
 
   Scenario: 05 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'Yes' -
@@ -214,8 +228,8 @@ Feature: Arrival notification feature
     And I choose radio option Simplified on the procedure type page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
-    And I submit on the CYA page
-    Then I should have 1 authorisation on the add another authorisation page
+    Then I submit on the CYA page
+    And I should have 1 authorisation on the add another authorisation page
     When I choose radio option No on the add another authorisation page
   #Location Of goods - Location of goods - X Eori Number
     And I choose radio option Authorised place on the arrival location of goods type page
@@ -242,7 +256,6 @@ Feature: Arrival notification feature
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
   #Goes to Do you want to add another incident CTCP-701
-    And I submit on the CYA page
 
 
   Scenario: 06 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
@@ -268,16 +281,19 @@ Feature: Arrival notification feature
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
   #Add Container Indicator
-    And I choose radio option Yes on the container indicator page
-    And I enter C001 on the container identification number page
+    And I choose radio option No on the container indicator page
+    And I choose radio option Yes on the add transport equipment page
+    And I choose radio option No on the add container identification number page
   #Add Container Seal
-    And I choose radio option No for container identification number C001 on the add container seal page
+    And I enter S001 on the What is the seal identification number page
+    And I should have 1 seal added on the add another seal page
+    When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option No on the Do you want to add a goods item number page
+    Then I submit on the CYA page
   #Add Transport Equipment
-    And I choose radio option No on the Do you want to add any other transport equipment page
+    And I choose radio option No on the You have added 1 transport equipment page
   #Goes to Type of Identification CTCP-701 then choose 'No' for another incident to go to Summary CYA page
-    And I submit on the CYA page
 
 
   Scenario: 07 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
@@ -293,4 +309,3 @@ Feature: Arrival notification feature
   #Add Incident
     And I choose radio option No on the add incident page
   #This goes to the Summary CYA page for Arrivals when built
-    And I submit on the CYA page

@@ -2,6 +2,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrival.IncidentTransportEquipment._
+import uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal.{RemoveGoodsItemNumberPage, RemoveTransportEquipmentPage}
 
 
 class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
@@ -20,17 +21,49 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add another goods item number page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the You have added (.*) goods item numbers? page$""") {
+    (answer: String, numberOfGoodsItems: String) =>
     AddAnotherGoodsItemNumberPage
-      .loadPage()
+      .loadPage(numberOfGoodsItems)
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add any other transport equipment page$""") { (answer: String) =>
+  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page""") {
+    (sectionLink: String, numberOfGoodsItems: String) =>
+      AddAnotherGoodsItemNumberPage
+        .loadPage(numberOfGoodsItems)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove goods item number (.*) page""") {
+    (answer: String, numberOfGoodsItems: String) =>
+      RemoveGoodsItemNumberPage
+        .loadPage(numberOfGoodsItems)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the You have added (.*) transport equipment page$""") {
+    (answer: String, numberOfTransportEquipment: String) =>
     AddAnotherTransportEquipmentPage
-      .loadPage()
+      .loadPage(numberOfTransportEquipment)
       .select(answer)
       .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the You have added (.*) transport equipment page""") {
+    (sectionLink: String, numberOfTransportEquipment: String) =>
+    AddAnotherTransportEquipmentPage
+      .loadPage(numberOfTransportEquipment)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove transport equipment (.*) page""") {
+    (answer: String, numberOfTransportEquipment: String) =>
+        RemoveTransportEquipmentPage
+          .loadPage(numberOfTransportEquipment)
+          .select(answer)
+          .submitPage()
   }
 }
