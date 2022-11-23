@@ -25,8 +25,8 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option Yes on the containers page
     #Inland Mode Of Transport
     And I choose radio option Maritime on the Inland Mode of Transport page
-    And I choose radio option Name of a sea-going vehicle on the Transport Identification page
-    And I enter GB1234567 as name of the sea-going vehicle on the transport identification number page
+    And I choose radio option Name of a sea-going vessel on the Transport Identification page
+    And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
     And I select United Kingdom on the Transport country page
 
 

@@ -25,7 +25,7 @@ object TransportIdentificationPage extends RadioPage {
   override def select(answer: String): this.type = {
     val vehicleIdentyCSSValue = answer match {
 
-      case "Name of a sea-going vehicle"           => "seaGoingVehicle"
+      case "Name of a sea-going vessel"            => "seaGoingVessel"
       case "IMO ship identification number"        => "imoShipIdNumber"
       case "Wagon number"                          => "wagonNumber"
       case "Train number"                          => "trainNumber"
