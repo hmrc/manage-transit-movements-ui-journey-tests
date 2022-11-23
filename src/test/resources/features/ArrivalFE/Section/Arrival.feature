@@ -1,4 +1,4 @@
-@arrival @wip
+@arrival
 
 Feature: Arrival notification feature
 
