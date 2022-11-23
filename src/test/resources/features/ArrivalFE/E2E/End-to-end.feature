@@ -31,7 +31,7 @@ Feature: End to end journey Arrival notification feature
     And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
   #Incident
     And I choose radio option Yes on the add incident page
-    And I select France on the incident country page
+    And I select France on the In which country did the incident happen page
   #Incident code
     And I choose radio option 5 - The holder on the incident code page
     And I enter Test Incident Happened text on the incident description page
@@ -44,8 +44,9 @@ Feature: End to end journey Arrival notification feature
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
+    And I submit on the CYA page
   #Add Another Incident
-    And I choose radio option No on the Do you want to add another incident page
+    And I choose radio option No on the You have added 1 incident page
   #Goes to Summary CYA page when built
     And I submit on the CYA page
 
@@ -69,7 +70,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
     And I choose radio option Yes on the add incident page
-    And I select France on the incident country page
+    And I select France on the In which country did the incident happen page
   #Incident Code
     And I choose radio option 4 - The goods were partially on the incident code page
     And I enter Test Incident Happened text on the incident description page
@@ -96,8 +97,9 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option No on the You have added 1 goods item number page
     Then I submit on the CYA page
     And I choose radio option No on the You have added 1 transport equipment page
+    Then I submit on the CYA page
   #Add Another Incident
-    And I choose radio option No on the Do you want to add another incident page
+    And I choose radio option No on the You have added 1 incident page
   #Goes to Summary CYA page when built
     And I submit on the CYA page
 
@@ -130,7 +132,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
     And I choose radio option Yes on the add incident page
-    And I select France on the incident country page
+    And I select France on the In which country did the incident happen page
   #Incident Code
     And I choose radio option 3 - The goods on the incident code page
     And I enter Hit an iceburg on the incident description page
@@ -198,33 +200,33 @@ Feature: End to end journey Arrival notification feature
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
     And I choose radio option No on the You have added 1 transport equipment page
-  #Goes to Type of Identification CTCP-701 then choose 'Yes' to iterate another incident
-    And I choose radio option Yes on the Do you want to add another incident page
-  #Type of Identification
-    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
-    And I enter Titanic for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
+  #Type of Identification 1
+    And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
+    And I enter Titanic for the name of the sea-going vessel on the What is the identification number for the replacement transport page
     And I select France on the What country is the replacement transport registered to page
+    Then I submit on the CYA page
   #Add Another Incident
-    And I choose radio option Yes on the Do you want to add another incident page
+    And I choose radio option Yes on the You have added 1 incident page
   #Add Incident - 2nd iteration
-    And I select Uruguay on the incident country page
-  #Incident Code
+    And I select Argentina on the In which country did the incident happen page
+  #Incident Code - Second Incident
     And I choose radio option 3 - The goods on the incident code page
     And I enter The ship sank on the incident description page
-  #Endorsement
+  #Endorsement - Second Incident
     And I choose radio option No on the add endorsement page
-  #Incident Identify Location
+  #Incident Identify Location - Second Incident
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
-  #Add Container Indicator
+  #Add Container Indicator - Second Incident
     And I choose radio option No on the container indicator page
-  #Add Transport Equipment
-    When I choose radio option No on the You have added 1 transport equipment page
-  #Type of Identification
-    And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
-    And I enter Bismarck for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
-    And I select Uruguay on the What country is the replacement transport registered to page
+  #Add Transport Equipment - Second Incident
+    And I choose radio option No on the add transport equipment page
+  #Type of Identification - Second Incident
+    And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
+    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I select Argentina on the What country is the replacement transport registered to page
+    Then I submit on the CYA page
   #Add Another Incident
-    And I choose radio option No on the Do you want to add another incident page
+    And I choose radio option No on the You have added 2 incidents page
   #Goes to Summary CYA page when built
     And I submit on the CYA page

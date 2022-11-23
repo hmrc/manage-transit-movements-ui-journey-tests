@@ -4,11 +4,11 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object ReplacementTransportTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of identification do you want to use for the replacement means of transport?"
+  override def title(args: String*): String = "Which identification do you want to use for the replacement means of transport?"
 
   override def select(answer: String): this.type = {
     answer match {
-      case "Name of a sea-going vehicle" => clickById("value")
+      case "Name of a sea-going vessel" => clickById("value")
       case "IATA flight number" => clickById("value_1")
       case "Name of an inland waterways vehicle" => clickById("value_2")
       case "IMO ship identification number" => clickById("value_3")

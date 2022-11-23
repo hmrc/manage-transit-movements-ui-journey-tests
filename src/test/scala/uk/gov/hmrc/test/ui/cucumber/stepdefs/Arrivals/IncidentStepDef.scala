@@ -57,7 +57,7 @@ class IncidentStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the incident country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the In which country did the incident happen page$""") { (answer: String) =>
     IncidentCountryPage
       .loadPage()
       .select(answer)
@@ -78,9 +78,10 @@ class IncidentStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add another incident page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the You have added (.*) incidents? page$""") {
+    (answer: String, numberOfIncidents: String) =>
     AddAnotherIncidentPage
-      .loadPage()
+      .loadPage(numberOfIncidents)
       .select(answer)
       .submitPage()
   }

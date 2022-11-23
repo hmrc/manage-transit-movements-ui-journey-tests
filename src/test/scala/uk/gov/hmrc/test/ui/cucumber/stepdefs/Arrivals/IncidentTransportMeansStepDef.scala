@@ -6,7 +6,7 @@ import uk.gov.hmrc.test.ui.pages.Arrival.IncidentTransportMeans._
 
 class IncidentTransportMeansStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the Which type of identification do you want to use for the replacement means of transport page$""") {
+  And("""^(?:I )?choose radio option (.*) on the Which identification do you want to use for the replacement means of transport page$""") {
     (answer: String) =>
     ReplacementTransportTypePage
       .loadPage()
@@ -15,9 +15,9 @@ class IncidentTransportMeansStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?enter (.+) for the (.+) on the What is the identification number for the replacement transport page$""") {
-    (answer: String) =>
+    (answer: String, identificationVal: String) =>
     ReplacementTransportIdentificationNumberPage
-      .loadPage()
+      .loadPage(identificationVal)
       .fillInput(answer)
       .submitPage()
   }
