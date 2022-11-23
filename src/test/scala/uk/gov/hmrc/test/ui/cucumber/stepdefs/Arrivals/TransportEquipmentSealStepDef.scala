@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
-import uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal.{AddAnotherContainerSealPage, AddContainerSealPage, AddTransportEquipmentPage, ContainerSealIdentificationNumberPage}
+import uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal.{AddAnotherContainerSealPage, AddContainerSealPage, AddTransportEquipmentPage, ContainerSealIdentificationNumberPage, SealIdentificationNumberPage}
 
 class TransportEquipmentSealStepDef extends BaseStepDef {
 
@@ -53,31 +53,38 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .loadPage(numberOfSeals, identificationVal)
   }
 
-  When("""^(?:I )?choose to click on (.*) link on the add another container seal page$""") {
+  Then("""^(?:I )?should have (.*) seals? added on the add another seal page$""") {
+    (numberOfSeals: String) =>
+      AddAnotherContainerSealPage
+        .loadPage(numberOfSeals)
+  }
+
+  When("""^(?:I )?click the (.*) link on the add another container seal page$""") {
     (sectionLink: String) =>
       AddAnotherContainerSealPage
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add another container seal page$""") {
+  And("""^(?:I )?choose radio option (.*) on the add another (?:container seal|seal) page$""") {
     (answer: String) =>
       AddAnotherContainerSealPage
         .select(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) on the add another container seal page$""") {
-    (identificationVal: String) =>
-      AddAnotherContainerSealPage
-        .loadPage()
-        .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
+  And("""^(?:I )?click radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
     (answer: String, identificationVal: String) =>
     RemoveSealPage
       .loadPage(identificationVal)
       .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") {
+    (answer: String) =>
+    SealIdentificationNumberPage
+      .loadPage()
+      .fillInput(answer)
       .submitPage()
   }
 }

@@ -21,12 +21,11 @@ import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
 
 class IncidentStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the incident identify location page$""") {
-    (answer: String) =>
-      IncidentsIdentifyLocationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the incident identify location page$""") { (answer: String) =>
+    IncidentsIdentifyLocationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) and (.+) on the incident coordinates page$""") {
