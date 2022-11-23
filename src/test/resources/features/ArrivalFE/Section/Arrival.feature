@@ -177,9 +177,7 @@ Feature: Arrival notification feature
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
     And I choose radio option No on the You have added 1 transport equipment page
   #Goes to Type of Identification CTCP-701 then choose 'Yes' to iterate another incident
-
-        And I choose radio option Yes on the Do you want to add another incident page
-
+    And I choose radio option Yes on the Do you want to add another incident page
   #Type of Identification
     And I choose radio option Name of a sea-going vehicle on the Which type of identification do you want to use for the replacement means of transport page
     And I enter Titanic for the name of the sea-going vehicle on the What is the identification number for the replacement transport page
