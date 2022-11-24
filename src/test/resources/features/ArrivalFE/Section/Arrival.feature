@@ -82,8 +82,8 @@ Feature: Arrival notification feature
 
 
   Scenario: 03 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
-  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Remove 'Authorisation, Seal, Goods & Equipment' -
-  Change 'Good & Equipment' - Add Another Incident 'Yes'
+  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
+  Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
   #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -203,8 +203,19 @@ Feature: Arrival notification feature
     And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
     And I select Argentina on the What country is the replacement transport registered to page
     Then I submit on the CYA page
-  #Add Another Incident
-    And I choose radio option No on the You have added 2 incidents page
+  #Change an incident
+    When I click the Change link on the You have added 2 incidents page
+    And I click the change link for add endorsement on the CYA page
+    And I choose radio option Yes on the add endorsement page
+    And I choose fill in the date on the endorsement date page
+    And I enter Border Patrol on the endorsement authority page
+    And I select France on the endorsement country page
+    And I enter Route 1A junction 6 on the endorsement location page
+    Then I submit on the CYA page
+  #Remove an incident
+    When I click the Remove link on the You have added 2 incidents page
+    And I click radio option Yes on the Are you sure you want to remove incident 1 page
+    And I choose radio option No on the You have added 1 incident page
   #Goes to Summary CYA page when built
     And I submit on the CYA page
 

@@ -85,4 +85,20 @@ class IncidentStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?click the (.*) link on the You have added (.*) incidents? page""") {
+    (sectionLink: String, numberOfIncidentsItems: String) =>
+      AddAnotherIncidentPage
+        .loadPage(numberOfIncidentsItems)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove incident (.*) page""") {
+    (answer: String, numberOfIncidentsItems: String) =>
+      RemoveIncidentPage
+        .loadPage(numberOfIncidentsItems)
+        .select(answer)
+        .submitPage()
+  }
+
 }
