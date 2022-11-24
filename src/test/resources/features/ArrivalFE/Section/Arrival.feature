@@ -37,7 +37,7 @@ Feature: Arrival notification feature
     And I submit on the CYA page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -77,7 +77,7 @@ Feature: Arrival notification feature
     Then I submit on the CYA page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -216,7 +216,7 @@ Feature: Arrival notification feature
     When I click the Remove link on the You have added 2 incidents page
     And I click radio option Yes on the Are you sure you want to remove incident 1 page
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -269,7 +269,7 @@ Feature: Arrival notification feature
     Then I submit on the CYA page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -311,7 +311,7 @@ Feature: Arrival notification feature
     And I submit on the CYA page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -357,7 +357,7 @@ Feature: Arrival notification feature
     And I submit on the CYA page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
-  #Goes to Summary CYA page when built
+  #Summary CYA page
     And I submit on the CYA page
 
 
@@ -373,4 +373,5 @@ Feature: Arrival notification feature
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
     And I choose radio option No on the add incident page
-  #This goes to the Summary CYA page for Arrivals when built
+  #Summary CYA page
+    And I submit on the CYA page
