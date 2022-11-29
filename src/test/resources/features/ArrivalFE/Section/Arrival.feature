@@ -39,6 +39,9 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+  #Confirmation
+    And I click the Check the status of arrival notifications link on the Arrival notification sent page
+    And I sign out
 
 
   Scenario: 02 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes'- Incident Code '2' - Add Endorsement 'No' -
@@ -79,6 +82,9 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+  #Confirmation
+    And I click the Create another arrival notification link on the Arrival notification sent page
+    And I sign out
 
 
   Scenario: 03 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
@@ -197,7 +203,7 @@ Feature: Arrival notification feature
   #Add Container Indicator - Second Incident
     And I choose radio option No on the container indicator page
   #Add Transport Equipment - Second Incident
-  And I choose radio option No on the add transport equipment page
+    And I choose radio option No on the add transport equipment page
   #Type of Identification - Second Incident
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
@@ -218,6 +224,7 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+    And I sign out
 
 
   Scenario: 04 - Simplified - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
@@ -271,6 +278,9 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+  #Confirmation
+    And I click the Check the status of arrival notifications link on the Arrival notification sent page
+    And I sign out
 
 
   Scenario: 05 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'Yes' -
@@ -313,6 +323,9 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+  #Confirmation
+    And I click the Create another arrival notification link on the Arrival notification sent page
+    And I sign out
 
 
   Scenario: 06 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
@@ -359,6 +372,8 @@ Feature: Arrival notification feature
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
+  #Confirmation
+    And I sign out
 
 
   Scenario: 07 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
@@ -375,3 +390,5 @@ Feature: Arrival notification feature
     And I choose radio option No on the add incident page
   #Summary CYA page
     And I submit on the CYA page
+ #Confirmation
+    And I sign out
