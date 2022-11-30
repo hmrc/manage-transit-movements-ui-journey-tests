@@ -122,4 +122,11 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .fillInputs()
       .submitPage()
   }
+
+  And("""^(?:I )?select (.+) on the In which country is the location of goods page$""") { (answer: String) =>
+    LocationOfGoodsCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
 }

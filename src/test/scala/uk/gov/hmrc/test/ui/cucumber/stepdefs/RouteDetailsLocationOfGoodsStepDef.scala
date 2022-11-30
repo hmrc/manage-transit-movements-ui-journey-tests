@@ -70,6 +70,7 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
   And("""^(?:I )?fill in address on the departure location of goods address page$""") { () =>
     LocationOfGoodsAddressPage
       .loadPage()
