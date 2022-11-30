@@ -18,16 +18,14 @@ package uk.gov.hmrc.test.ui.pages
 
 trait AddressCountryPage extends SelectPage {
 
-  val addressLine1: String
-  val addressLine2: String
+  val numberAndStreet: String
+  val city: String
   val postalCode: String
-  val country: String
 
   def fillInputs(): this.type = {
-    fillInputById("addressLine1", addressLine1)
-    fillInputById("addressLine2", addressLine2)
+    fillInputById("numberAndStreet", numberAndStreet)
+    fillInputById("city", city)
     fillInputById("postalCode", postalCode)
-    selectValueFromDropDown(country, "country")
     this
   }
 }

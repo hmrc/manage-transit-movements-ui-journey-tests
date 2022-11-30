@@ -113,6 +113,7 @@ Feature: Arrival notification feature
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
+    And I select United Arab Emirates on the In which country is the location of goods page
     And I fill in address on the arrival location of goods address page
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
@@ -246,6 +247,7 @@ Feature: Arrival notification feature
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
+   And I select France on the In which country is the location of goods page
     And I fill in address on the arrival location of goods address page
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
