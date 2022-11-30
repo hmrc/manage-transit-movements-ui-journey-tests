@@ -82,4 +82,9 @@ class IdentificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+   Then("""^(?:I )?(?:should )?be on the What is the Movement Reference Number page$""") { () =>
+    MovementReferenceNumberPage
+      .loadPage()
+  }
 }

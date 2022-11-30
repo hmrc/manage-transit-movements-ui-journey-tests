@@ -146,6 +146,8 @@ Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equip
   And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
   And I submit on the CYA page
+ #Confirmation
+  And I should be on the Arrival notification sent page
   And I sign out
 
 
@@ -200,8 +202,9 @@ Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equip
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the CYA page
-  #Confirmation
+ #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
+    And I should be on the Arrival notifications page
     And I sign out
 
 
@@ -247,4 +250,5 @@ Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equip
     And I submit on the CYA page
   #Confirmation
     And I click the Create another arrival notification link on the Arrival notification sent page
+    And I should be on the What is the Movement Reference Number page
     And I sign out

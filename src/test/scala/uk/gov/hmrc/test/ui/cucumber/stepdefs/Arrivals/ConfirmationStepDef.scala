@@ -16,5 +16,10 @@ class ConfirmationStepDef extends BaseStepDef {
       .selectSignOutLink("Sign out")
   }
 
+  Then("""^(?:I )?(?:should )?be on the Arrival notification sent page$""") { () =>
+    ConfirmationPage
+      .loadPage()
+  }
+
 }
 
