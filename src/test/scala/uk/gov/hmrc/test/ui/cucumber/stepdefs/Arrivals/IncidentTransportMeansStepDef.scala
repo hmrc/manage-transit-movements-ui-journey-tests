@@ -26,7 +26,7 @@ class IncidentTransportMeansStepDef extends BaseStepDef {
     (answer: String) =>
       ReplacementTransportCountryPage
         .loadPage()
-        .fillInput(answer)
+        .select(answer)
         .submitPage()
   }
 
