@@ -1,4 +1,5 @@
 @departureGBe2e
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -9,6 +10,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the office of departure page
 
   @a11y
+
   Scenario: 01 GB Simplified - T1 - NO Safety and Security, Guarantees [0,3,5,9,R],Transport
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -136,6 +138,13 @@ Feature: End to end journey for Great Britain office of departure
     And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
     And I select United Kingdom on the Transport country page
 
+  #Border Means Of Transport
+    And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
+    And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select GB000142 on the border means of transport office of transit page
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
     And I choose radio option Normal on the procedure type page
@@ -263,6 +272,14 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Rail on the Inland Mode of Transport page
     And I choose radio option Train number on the Transport Identification page
     And I enter 1234567 as train number on the transport identification number page
+    And I select United Kingdom on the Transport country page
+
+  #Border Means Of Transport
+    And I choose radio option Train number on the border means of transport identification page
+    And I enter 1234567 as train number on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select BARI on the border means of transport office of transit page
 
 
   Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
@@ -382,6 +399,13 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
+  #Transport Means
+    And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
+    And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select GB000142 on the border means of transport office of transit page
 
 
   Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
@@ -501,3 +525,11 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
+  #Transport Means
+    And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
+    And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select GB000142 on the border means of transport office of transit page
+

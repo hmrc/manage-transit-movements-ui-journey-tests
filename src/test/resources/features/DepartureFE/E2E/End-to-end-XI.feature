@@ -1,4 +1,5 @@
 @departureXIe2e
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -119,9 +120,14 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Maritime on the Inland Mode of Transport page
     And I choose radio option Name of a sea-going vessel on the Transport Identification page
     And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
-
-
-
+    And I select United Kingdom on the Transport country page
+  #Border Means Of Transport
+    And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option IMO ship identification number on the border means of transport identification page
+    And I enter GB1234567 as IMO ship identification number on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select BARI on the border means of transport office of transit page
 
 
   Scenario: 02 Pre Task list - XI Normal - TIR - Both - TIR Guarantee B
@@ -202,7 +208,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Rail on the Inland Mode of Transport page
     And I choose radio option Train number on the Transport Identification page
     And I enter 1234567 as train number on the transport identification number page
-
+    And I select United Kingdom on the Transport country page
+  #Border Means Of Transport
+    And I choose radio option registration number of the aircraft on the border means of transport identification page
+    And I enter GB1234567 as registration number of the aircraft on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select BARI on the border means of transport office of transit page
 
 
   Scenario: 03 Pre Task list - XI Normal - T2 - Guarantee Comprehensive guarantee
@@ -301,8 +313,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the containers page
    #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
-
-
+  #Border Means Of Transport
+    And I choose radio option IATA flight number on the border means of transport identification page
+    And I enter GB1234567 as IATA flight number on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select BARI on the border means of transport office of transit page
 
 
   @a11y
@@ -377,3 +393,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the containers page
   #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
+  #Border Means Of Transport
+    And I choose radio option name of an inland waterways vehicle on the border means of transport identification page
+    And I enter GB1234567 as name of the inland waterways vehicle on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select BARI on the border means of transport office of transit page

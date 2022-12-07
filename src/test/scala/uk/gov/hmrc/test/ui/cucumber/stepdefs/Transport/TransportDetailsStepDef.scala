@@ -97,4 +97,47 @@ class TransportDetailsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?choose radio option (.*) on the add border mode of transport page$""") { (answer: String) =>
+    AddBorderModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the border means of transport identification page$""") { (answer: String) =>
+    BorderMeansOftransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) as (.+) on the border means of transport identification number page$""") {
+    (answer: String, bordermeansOfTransport: String) =>
+      BorderMeansOfTransportIdentificationNumberPage
+        .loadPage(bordermeansOfTransport)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the border means of transport country page$""") { (answer: String) =>
+    BorderMeansOfTransportCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the add border means of transport country page$""") { (answer: String) =>
+    AddBorderMeansOfTransportCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the border means of transport office of transit page$""") { (answer: String) =>
+    BorderMeansOfTransportOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
 }
