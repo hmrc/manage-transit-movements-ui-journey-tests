@@ -105,6 +105,13 @@ class TransportDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the border mode of transport page$""") { (answer: String) =>
+    BorderModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the border means of transport identification page$""") { (answer: String) =>
     BorderMeansOftransportIdentificationPage
       .loadPage()
