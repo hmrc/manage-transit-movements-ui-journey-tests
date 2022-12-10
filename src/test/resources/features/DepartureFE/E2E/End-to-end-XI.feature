@@ -123,6 +123,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the Transport country page
   #Border Means Of Transport
     And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Maritime on the border mode of transport page
     And I choose radio option IMO ship identification number on the border means of transport identification page
     And I enter GB1234567 as IMO ship identification number on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
@@ -210,6 +211,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 1234567 as train number on the transport identification number page
     And I select United Kingdom on the Transport country page
   #Border Means Of Transport
+    And I choose radio option Air on the border mode of transport page
     And I choose radio option registration number of the aircraft on the border means of transport identification page
     And I enter GB1234567 as registration number of the aircraft on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
@@ -314,6 +316,7 @@ Feature: End to end journey for Northern Ireland office of departure
    #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
   #Border Means Of Transport
+    And I choose radio option Air on the border mode of transport page
     And I choose radio option IATA flight number on the border means of transport identification page
     And I enter GB1234567 as IATA flight number on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
@@ -394,6 +397,7 @@ Feature: End to end journey for Northern Ireland office of departure
   #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
   #Border Means Of Transport
+    And I choose radio option Inland waterway on the border mode of transport page
     And I choose radio option name of an inland waterways vehicle on the border means of transport identification page
     And I enter GB1234567 as name of the inland waterways vehicle on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page

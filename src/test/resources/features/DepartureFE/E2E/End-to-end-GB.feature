@@ -140,6 +140,7 @@ Feature: End to end journey for Great Britain office of departure
 
   #Border Means Of Transport
     And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Maritime on the border mode of transport page
     And I choose radio option Name of a sea-going vessel on the border means of transport identification page
     And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
@@ -275,7 +276,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the Transport country page
 
   #Border Means Of Transport
-    And I choose radio option Train number on the border means of transport identification page
+    And I choose radio option Rail on the border mode of transport page
     And I enter 1234567 as train number on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
@@ -401,7 +402,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Mail on the Inland Mode of Transport page
   #Transport Means
     And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
+    And I choose radio option Road on the border mode of transport page
     And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
@@ -527,7 +528,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Mail on the Inland Mode of Transport page
   #Transport Means
     And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
+    And I choose radio option Road on the border mode of transport page
     And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page

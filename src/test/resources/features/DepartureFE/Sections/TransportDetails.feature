@@ -30,6 +30,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I select United Kingdom on the Transport country page
     #Transport Means
     And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Maritime on the border mode of transport page
     And I choose radio option Name of a sea-going vessel on the border means of transport identification page
     And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
