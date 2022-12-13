@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object BorderMeansOfTransportCountryPage extends SelectPage {
+object AddAnotherBorderMeansOfTransportPage extends YesNoPage {
 
-  override def title(args: String*): String = "What country is this vehicle registered to?"
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 border means of transport"
+    case _        => String.format("You have added %s border means of transport", args: _*)
+  }
 
 }

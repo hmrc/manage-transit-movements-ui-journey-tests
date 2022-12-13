@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddBorderMeansOfTransportCountryPage extends YesNoPage {
+object AddBorderModeOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add the registered country for this vehicle?"
+    "Are you using another vehicle to cross the border?"
 
 }
