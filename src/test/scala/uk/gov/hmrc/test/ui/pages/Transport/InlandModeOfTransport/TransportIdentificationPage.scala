@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.InlandModeOfTransport
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
 
@@ -33,7 +33,7 @@ object TransportIdentificationPage extends RadioPage {
       case "Registration number of a road trailer" => "regNumberRoadTrailer"
       case "IATA flight number"                    => "iataFlightNumber"
       case "Name of an inland waterways vehicle"   => "inlandWaterwaysVehicle"
-      case "Registration number of an aircraft"    => "regNumberAircraft"
+      case "Registration number of a aircraft"    => "regNumberAircraft"
       case "European"                              => "europeanVesselIdNumber"
       case "Unknown"                               => "unknown"
 

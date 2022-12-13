@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.InlandModeOfTransport
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object AddBorderModeOfTransportPage extends YesNoPage {
+object TransportCountryPage extends SelectPage {
 
-  override def title(args: String*): String =
-    "Are you using another vehicle to cross the border?"
+  override def title(args: String*): String = "What country is this vehicle registered to?"
 
 }

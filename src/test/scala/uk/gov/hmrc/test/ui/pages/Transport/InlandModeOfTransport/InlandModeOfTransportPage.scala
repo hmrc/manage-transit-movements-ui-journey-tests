@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.InlandModeOfTransport
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
 
@@ -26,7 +26,7 @@ object InlandModeOfTransportPage extends RadioPage {
     val modeOfTransportCSSValue = answer match {
       case "Maritime"                 => "maritime"
       case "Rail"                     => "rail"
-      case "Road"                     => "exitSummaryDeclaration"
+      case "Road"                     => "road"
       case "Air"                      => "air"
       case "Mail"                     => "mail"
       case "Fixed transport"          => "fixed"
