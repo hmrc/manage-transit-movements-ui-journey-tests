@@ -259,24 +259,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select BARI on the border means of transport office of transit page
   #Conveyance Reference Number
     And I enter GB123456123456 on the conveyance reference number page
-  #Border Means of Transport - Add Another
-    Then I should have 1 border means of transport added on the add another border means of transport page
-    When I choose radio option Yes on the add another border means of transport page
-    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
-    And I enter 0987654 as name of the sea-going vessel on the border means of transport identification number page
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    And I select BARI on the border means of transport office of transit page
-  #Conveyance Reference Number
-    And I enter GB123456123456 on the conveyance reference number page
-    Then I should have 2 border means of transport added on the add another border means of transport page
-    When I choose radio option No on the add another border means of transport page
-  #Transport Means Inland Mode - Change
-    And I click the change link for transport means inland mode on the CYA page
-    And I choose radio option Air on the Inland Mode of Transport page
-    And I choose radio option Registration number of a aircraft on the Transport Identification page
-    And I enter GB1234567 as registration number of the aircraft on the transport identification number page
-    And I select United Kingdom on the Transport country page
   #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
 
@@ -470,25 +452,5 @@ Feature: End to end journey for Northern Ireland office of departure
   #Conveyance Reference Number
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
-  #Border Means of Transport - Add
-    Then I should have 1 border means of transport added on the add another border means of transport page
-    When I choose radio option Yes on the add another border means of transport page
-    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
-    And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    And I select BARI on the border means of transport office of transit page
-  #Conveyance Reference Number
-    And I choose radio option Yes on the add conveyance reference number page
-    And I enter GB123456123456 on the conveyance reference number page
-  #Border Means of Transport - Add Another
-    Then I should have 2 border means of transport added on the add another border means of transport page
-    When I choose radio option No on the add another border means of transport page
-  #Transport Means Inland Mode - Change
-    And I click the change link for transport means inland mode on the CYA page
-    And I choose radio option Rail on the Inland Mode of Transport page
-    And I choose radio option Train number on the Transport Identification page
-    And I enter GB1234567 as train number on the transport identification number page
-    And I select United Kingdom on the Transport country page
   #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
