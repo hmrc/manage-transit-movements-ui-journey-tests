@@ -27,7 +27,7 @@ object BorderMeansOftransportIdentificationPage extends RadioPage {
 
       case "IMO ship identification number"        => "imoShipIdNumber"
       case "Name of a sea-going vessel"            => "seaGoingVessel"
-      case "Train number"                          => "trainNumber"
+      case "Train Number"                          => "trainNumber"
       case "Registration number of the road vehicle" => "regNumberRoadVehicle"
       case "IATA flight number"                    => "iataFlightNumber"
       case "registration number of the aircraft"    => "regNumberAircraft"
