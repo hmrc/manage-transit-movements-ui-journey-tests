@@ -1,5 +1,5 @@
 @departureXIe2e
-@wip
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
