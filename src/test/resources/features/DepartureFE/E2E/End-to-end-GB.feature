@@ -1,5 +1,5 @@
 @departureGBe2e
-
+@wip
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -291,14 +291,10 @@ Feature: End to end journey for Great Britain office of departure
   #Conveyance Reference Number
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
-  #Border Means of Transport
-    #When I choose radio option No on the add another border means of transport page
-  #Transport - Inland Mode - Border Means [ CYA ]
-    #And I submit on the CYA page
   #Border Means of Transport - Add Another
     Then I should have 1 border means of transport added on the add another border means of transport page
     When I choose radio option Yes on the add another border means of transport page
-    And I choose radio option Train Number on the border means of transport identification page
+    And I choose radio option Train number on the border means of transport identification page
     And I enter 0987654 as train number on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
