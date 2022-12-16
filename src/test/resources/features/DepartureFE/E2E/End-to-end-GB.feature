@@ -137,7 +137,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Name of a sea-going vessel on the Transport Identification page
     And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
     And I select United Kingdom on the Transport country page
-
   #Border Means Of Transport
     And I choose radio option Yes on the add border mode of transport page
     And I choose radio option Name of a sea-going vessel on the border means of transport identification page
@@ -145,6 +144,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
     And I select GB000142 on the border means of transport office of transit page
+
 
   Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
     And I choose radio option Normal on the procedure type page

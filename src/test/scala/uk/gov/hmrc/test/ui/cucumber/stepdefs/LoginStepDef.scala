@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizard, ManageTransitMovementsHomePage}
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizard}
 
 class LoginStepDef extends BaseStepDef {
 
@@ -25,16 +25,6 @@ class LoginStepDef extends BaseStepDef {
       .loadPage()
       .fillInputs(id)
       .submitPage()
-  }
-
-  Then("""I am on the Manage Transit Movements Hub service""") { () =>
-    ManageTransitMovementsHomePage
-      .loadPage()
-  }
-
-  Given("""^(?:I )?click on the (.+) link$""") { (link: String) =>
-    ManageTransitMovementsHomePage
-      .selectAction(link)
   }
 
 }
