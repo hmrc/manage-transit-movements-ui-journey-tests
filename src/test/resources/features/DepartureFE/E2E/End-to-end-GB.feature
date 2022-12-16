@@ -10,7 +10,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the office of departure page
 
   @a11y
-  Scenario: 01 GB Simplified - T1 - NO Safety and Security, Guarantees [0,3,5,9,R],Transport - InlandMode As Maritime
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T1' - Security 'No' - Guarantees '0,3,5,9,R' - Inland Mode 'Maritime'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -153,7 +153,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
 
-  Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
+  Scenario: 02 PProcedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '1,2,4,8' - Inland Mode 'Rail changed to Raod'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
@@ -313,7 +313,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
 
-  Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
+  Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '0' -  Inland Mode 'Mail'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option No security on the security type page
@@ -366,27 +366,6 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 10000 on the amount to be covered page
     And I submit on the CYA page
     Then I should have 1 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (3) Individual guarantee in cash on the guarantee type page
-    And I choose radio option Yes on the do you want to add a reference for the guarantee page
-    And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 4 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 5 guarantees added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
     #Route details: Binding Itinerary set to Yes
@@ -434,7 +413,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
 
-  Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R] - Office of Transit [No]
+  Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -487,27 +466,6 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 10000 on the amount to be covered page
     And I submit on the CYA page
     Then I should have 1 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (3) Individual guarantee in cash on the guarantee type page
-    And I choose radio option Yes on the do you want to add a reference for the guarantee page
-    And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 4 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 5 guarantees added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
     #Route details: Binding Itinerary set to Yes
