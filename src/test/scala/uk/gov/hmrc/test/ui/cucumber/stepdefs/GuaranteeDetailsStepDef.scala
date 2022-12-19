@@ -48,7 +48,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) guarantees added on the add another guarantee page$""") {
+  Then("""^(?:I )?(?:should )?have (.+) guarantees? added on the add another guarantee page$""") {
     (numberOfGuarantees: String) =>
       AddAnotherGuaranteePage
         .loadPage(numberOfGuarantees)
