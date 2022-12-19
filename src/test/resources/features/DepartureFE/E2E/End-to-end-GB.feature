@@ -153,7 +153,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
 
-  Scenario: 02 PProcedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '1,2,4,8' - Inland Mode 'Rail changed to Raod'
+  Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '1,2,4,8' - Inland Mode 'Rail changed to Road'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
