@@ -29,7 +29,7 @@ Feature: Manage transit movements feature
     And I click on the View errors link for MRN 99IT9876AB88901209 on the Arrival notifications page
 #  And I wait for 1000 seconds
 #    And I should be on the arrival rejection page GOES TO PAGE NOT FOUND. IF IN UNLOADING IT IS NOT DEVELOPED YET
-#    And I should see the page with the title: There is a problem with this arrival notification
+#    And I should be on the There is a problem with this arrival notification page
 
 
   Scenario: 05 - Trader is able to view arrival notification with generic errors
@@ -37,7 +37,7 @@ Feature: Manage transit movements feature
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 19IT02110010007A33 on the Arrival notifications page
 #    And I should be on the arrival rejection page GOES TO PAGE NOT FOUND. IF IN UNLOADING IT IS NOT DEVELOPED YET
-#    And I should see the page with the title: There is a problem with this arrival notification
+#    And I should be on the There is a problem with this arrival notification page
 
 
   Scenario: 06 - Trader is able to view unloading remarks with specific error for Vehicle Registration Number
@@ -69,7 +69,7 @@ Feature: Manage transit movements feature
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I click on the View errors link for MRN 74WWQIVU856KEG5U37 on the Arrival notifications page
 #    And I should be on the arrival rejection page GOES TO PAGE NOT FOUND. IF IN UNLOADING IT IS NOT DEVELOPED YET
-#    And I should see the page with the title: There is a problem with this arrival notification
+#    And I should be on the There is a problem with this arrival notification page
 
 
   Scenario: 10 - Trader is able to make an arrival notifications from home page
@@ -97,14 +97,14 @@ Feature: Manage transit movements feature
     And I should be on the No release for transit page
   #    And I should see the content '????'
 
+
+  Scenario: 14 - Trader is able to see the negative acknowledgement for arrivals
+    When I click on the View arrival notifications link on the Manage your transit movements page
+    Then I click on the View errors link for MRN 67QJPVXD78GHIJYQT on the Arrival notifications page
+    And I should be on the Negative acknowledgement page
+  #    And I should see the content '????'
+
   @wip
-#  Scenario: 14 - Trader is able to see the negative acknowledgement for arrivals
-#    When I click on the View arrival notifications link on the Manage your transit movements page
-#    Then I click on the View errors link for MRN 67QJPVXD78GHIJYQT on the Arrival notifications page
-#    And I should be on the Negative acknowledgement page
-##    And I should see the page with the title: There is a problem with this arrival notification
-#
-#
 #  Scenario: 15 - Trader is able to see Control decision for departure declaration
 #    When I click on the View departure declarations link on the Manage your transit movements page
 #    And I click on the View details link for LRN LRN123471 on the Departure delcarations page

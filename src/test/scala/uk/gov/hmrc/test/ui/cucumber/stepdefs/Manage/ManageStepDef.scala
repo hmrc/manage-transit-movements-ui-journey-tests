@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
-
-import uk.gov.hmrc.test.ui.pages.Manage.{ArrivalNotificationsPage, DepartureDeclarationFailPage, DepartureDeclarationsPage, GuaranteeRejectionPage, ManageTransitMovementsPage, NoReleaseForTransitage}
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Manage._
 
 class ManageStepDef extends BaseStepDef {
 
@@ -74,7 +74,12 @@ class ManageStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?should be on the No release for transit page""") { () =>
-    NoReleaseForTransitage
+    NoReleaseForTransitPage
+      .loadPage()
+  }
+
+ Then("""^(?:I )?should be on the Negative acknowledgement page""") { () =>
+    NegativeAcknowledgementPage
       .loadPage()
   }
 }
