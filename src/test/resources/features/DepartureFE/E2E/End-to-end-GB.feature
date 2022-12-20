@@ -10,8 +10,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the office of departure page
 
   @a11y
-
-  Scenario: 01 GB Simplified - T1 - NO Safety and Security, Guarantees [0,3,5,9,R],Transport
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T1' - Security 'No' - Guarantees '3, R' - Inland Mode 'Maritime'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -57,37 +56,18 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
-  #Guarantee details
-    And I choose radio option (0) Guarantee waiver on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 1 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
+    #Guarantee details
     And I choose radio option (3) Individual guarantee in cash on the guarantee type page
     And I choose radio option Yes on the do you want to add a reference for the guarantee page
     And I enter 01GB123456789012 on the other reference for the guarantee 3 page
     And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 4 guarantees added on the add another guarantee page
+    Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option Yes on the add another guarantee page
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 5 guarantees added on the add another guarantee page
+    Then I should have 2 guarantees added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
-  #Route details: Binding Itinerary set to Yes
+    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select United Kingdom on the country of destination page
     And I select GB on the departure office of destination page
@@ -101,9 +81,9 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-  #Route Details Transit -> Entry point is -> Add office of transit [No]
+    #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
+    #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
     And I choose radio option Authorised place on the departure location of goods type page
     And I choose radio option EORI number or TIN on the departure location of goods identification page
     And I enter GB123456789000 on the departure location of goods eori tin page
@@ -113,40 +93,48 @@ Feature: End to end journey for Great Britain office of departure
     And I enter HMRC Test on the departure location of goods contact page
     And I enter +44 2345 82 83 on the departure location of goods contact telephone number page
     And I submit on the CYA page
-  #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
+    #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Aalen on the place of loading un locode page
     And I choose radio option Yes on the place of loading add extra information page
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-  #Route Details Unloading -> [Set 0]
+    #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-  #Transport details
+    #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
     And I enter GB123456123456 on the UCR page
     And I choose radio option Yes on the items same destination country page
     And I select United Kingdom on the items destination country page
-  #Transport details -> Container details
+    #Transport details -> Container details
     And I choose radio option Yes on the containers page
-  #Inland Mode Of Transport
+    #Inland Mode Of Transport
     And I choose radio option Maritime on the Inland Mode of Transport page
     And I choose radio option Name of a sea-going vessel on the Transport Identification page
     And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
     And I select United Kingdom on the Transport country page
-  #Border Means Of Transport
+    #Border Means Of Transport
     And I choose radio option Yes on the add border mode of transport page
+    And I choose radio option Maritime on the border mode of transport page
     And I choose radio option Name of a sea-going vessel on the border means of transport identification page
     And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
+    #Border Means of Transport - Add Country
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
+    #Border Means of Transport - Office of Transit
     And I select GB000142 on the border means of transport office of transit page
+    And I choose radio option Yes on the add conveyance reference number page
+    #Conveyance Reference Number
+    And I enter GB123456123456 on the conveyance reference number page
+    #Transport - Inland Mode - Border Means [ CYA ]
+    And I submit on the CYA page
 
 
-  Scenario: 02 Pre Task List - GB Normal - T2 - ENS, Guarantees [1,2,4,8],Transport
+  Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
@@ -182,37 +170,15 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
+    When I click the link with visible text: Add guarantee details
     #Guarantee details
-    And I click the link with visible text: Add guarantee details
-    And I choose radio option (1) Comprehensive guarantee on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 1 guarantees added on the add another guarantee page
-    And I choose radio option Yes on the add another guarantee page
-    #Guarantee details
-    And I choose radio option (2) Individual guarantee as an undertaking by a guarantor on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    And I choose radio option Yes on the add another guarantee page
-    #Guarantee details
-    And I choose radio option (4) Individual guarantee in the form of vouchers on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 40000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    And I choose radio option Yes on the add another guarantee page
     And I choose radio option (8) Guarantee not required – exempt public body on the guarantee type page
     And I enter 01GB123456789012 on the other reference for the guarantee 8 page
     And I submit on the CYA page
+    Then I should have 1 guarantee added on the add another guarantee page
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
-  #Route details: Binding Itinerary set to No and additional route
+    #Route details: Binding Itinerary set to No and additional route
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
     And I select Bari on the departure office of destination page
@@ -224,7 +190,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 2 countries added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-  #Route Details Transit -> Entry point is [Office of transit country]
+    #Route Details Transit -> Entry point is [Office of transit country]
     And I select Andorra on the office of transit country page
     Then I should have Andorra as office of transit on the office of transit page
     When I select DCNJ PORTA on the office of transit page
@@ -243,46 +209,70 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
     Then I should have 2 offices of transit added on the add another office of transit page
     And I choose radio option No on the add another office of transit page
-  #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
+    #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Coordinates on the departure location of goods identification page
     And I enter 50.96622 and 50.96622 on the departure location of goods coordinates page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
-  #Route Details Loading -> place of loading add un locode [No]
+    #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-  #Route Details Unloading -> [Set 1]
+    #Route Details Unloading -> [Set 1]
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
     And I enter Manchester on the United Kingdom place of unloading location page
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-  #Transport details
+    #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
     And I enter GB123456123456 on the UCR page
     And I choose radio option Yes on the items same destination country page
     And I select United Kingdom on the items destination country page
-  #Transport details -> Container details
+    #Transport details -> Container details
     And I choose radio option Yes on the containers page
-  #Inland Mode Of Transport
+    #Inland Mode Of Transport
     And I choose radio option Rail on the Inland Mode of Transport page
     And I choose radio option Train number on the Transport Identification page
     And I enter 1234567 as train number on the transport identification number page
     And I select United Kingdom on the Transport country page
-
-  #Border Means Of Transport
-    And I choose radio option Train number on the border means of transport identification page
+    #Border Means Of Transport
+    And I choose radio option Rail on the border mode of transport page
     And I enter 1234567 as train number on the border means of transport identification number page
+    #Border Means of Transport - Add Country
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
+    #Border Means of Transport - Office of Transit
     And I select BARI on the border means of transport office of transit page
+    #Conveyance Reference Number
+    And I choose radio option Yes on the add conveyance reference number page
+    And I enter GB123456123456 on the conveyance reference number page
+    #Border Means of Transport - Add Another
+    Then I should have 1 border means of transport added on the add another border means of transport page
+    When I choose radio option Yes on the add another border means of transport page
+    And I choose radio option Train number on the border means of transport identification page
+    And I enter 0987654 as train number on the border means of transport identification number page
+    And I choose radio option Yes on the add border means of transport country page
+    And I select United Kingdom on the border means of transport country page
+    And I select AD000002 on the border means of transport office of transit page
+    And I choose radio option Yes on the add conveyance reference number page
+    And I enter GB123456123456 on the conveyance reference number page
+    Then I should have 2 border means of transport added on the add another border means of transport page
+    When I choose radio option No on the add another border means of transport page
+    #Transport Means Inland Mode - Change
+    And I click the change link for transport means inland mode on the CYA page
+    And I choose radio option Road on the Inland Mode of Transport page
+    And I choose radio option Registration number of a road trailer on the Transport Identification page
+    And I enter GB1234567 as registration number of the road trailer on the transport identification number page
+    And I select United Kingdom on the Transport country page
+    #Transport - Inland Mode - Border Means [ CYA ]
+    And I submit on the CYA page
 
 
-  Scenario: 03 GB Simplified - T2 - NO Safety and Security, Guarantees [0,3,5,9,R], Transport
+  Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option No security on the security type page
@@ -328,37 +318,14 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
-  #Guarantee details
-    And I choose radio option (0) Guarantee waiver on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 1 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (3) Individual guarantee in cash on the guarantee type page
-    And I choose radio option Yes on the do you want to add a reference for the guarantee page
-    And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
+    #Guarantee details
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 4 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 5 guarantees added on the add another guarantee page
+    Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
-  #Route details: Binding Itinerary set to Yes
+    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select United Kingdom on the country of destination page
     And I select GB on the departure office of destination page
@@ -372,43 +339,38 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-  #Route Details Transit -> Entry point is -> Add office of transit [No]
+    #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
+    #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Address on the departure location of goods identification page
     And I select United Kingdom on the location of goods country page
     And I fill in address on the departure location of goods address page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
-  #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
+    #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-  #Route Details Unloading -> [Set 0]
+    #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-  #Transport details
+    #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
     And I enter GB123456123456 on the UCR page
     And I choose radio option Yes on the items same destination country page
     And I select United Kingdom on the items destination country page
-  #Transport details -> Container details
+    #Transport details -> Container details
     And I choose radio option Yes on the containers page
-  #Inland Mode Of Transport
+    #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
-  #Transport Means
-    And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
-    And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    And I select GB000142 on the border means of transport office of transit page
+    #Transport - Inland Mode [ CYA ]
+    And I submit on the CYA page
 
 
-  Scenario: 04 GB Normal - T1 - NO Safety and Security, Guarantees [0,3,5,9,R]
+  Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -454,37 +416,16 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
-  #Guarantee details
+    #Guarantee details
     And I choose radio option (0) Guarantee waiver on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I enter AC01 on the access code page
     And I enter 10000 on the amount to be covered page
     And I submit on the CYA page
-    Then I should have 1 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (3) Individual guarantee in cash on the guarantee type page
-    And I choose radio option Yes on the do you want to add a reference for the guarantee page
-    And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the CYA page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I submit on the CYA page
-    Then I should have 3 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (9) Individual guarantee with multiple usage on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
-    Then I should have 4 guarantees added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 5 guarantees added on the add another guarantee page
+    Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
-  #Route details: Binding Itinerary set to Yes
+    #Route details: Binding Itinerary set to Yes
     When I click the link with visible text: Add route details
     And I select United Kingdom on the country of destination page
     And I select GB on the departure office of destination page
@@ -498,38 +439,48 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
     And I submit on the CYA page
-  #Route Details Transit -> Entry point is -> Add office of transit [No]
+    #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
-  #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
+    #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
     And I choose radio option Authorised place on the departure location of goods type page
     And I choose radio option Postal code on the departure location of goods identification page
     And I fill in address on the departure location of goods postal code page
     And I choose radio option No on the departure location of goods add contact page
     And I submit on the CYA page
-  #Route Details Loading -> place of loading add un locode [No]
+    #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
-  #Route Details Unloading -> [Set 0]
+    #Route Details Unloading -> [Set 0]
     And I submit on the CYA page
     And I submit on the CYA page
     Then I should be on the task list page
-  #Transport details
+    #Transport details
     When I click the link with visible text: Add transport details
     And I choose radio option Yes on the apply ucr item page
     And I enter GB123456123456 on the UCR page
     And I choose radio option Yes on the items same destination country page
     And I select United Kingdom on the items destination country page
-  #Transport details -> Container details
+    #Transport details -> Container details
     And I choose radio option Yes on the containers page
-  #Inland Mode Of Transport
-    And I choose radio option Mail on the Inland Mode of Transport page
-  #Transport Means
+    #Inland Mode Of Transport
+    And I choose radio option Road on the Inland Mode of Transport page
+    And I choose radio option Registration number of a road trailer on the Transport Identification page
+    And I enter GB1234567 as registration number of the road trailer on the transport identification number page
+    And I select United Kingdom on the Transport country page
+    #Border Means Of Transport
     And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Registration number of the road vehicle on the border means of transport identification page
-    And I enter 1234567 as registration number of the road vehicle on the border means of transport identification number page
+    And I choose radio option Maritime on the border mode of transport page
+    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
+    And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
+    #Border Means of Transport - Add Country
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
+    #Border Means of Transport - Office of Transit
     And I select GB000142 on the border means of transport office of transit page
-
+    #Conveyance Reference Number
+    And I choose radio option Yes on the add conveyance reference number page
+    And I enter GB123456123456 on the conveyance reference number page
+    #Transport - Inland Mode - Border Means [ CYA ]
+    And I submit on the CYA page

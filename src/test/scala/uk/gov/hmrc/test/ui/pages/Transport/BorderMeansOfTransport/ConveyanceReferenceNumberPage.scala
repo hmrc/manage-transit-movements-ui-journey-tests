@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object BorderMeansOfTransportOfficeOfTransitPage extends SelectPage  {
+object ConveyanceReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String = "Where is the office of transit?"
+  override def title(args: String*): String = "What is the conveyance reference number?"
 
 }
-

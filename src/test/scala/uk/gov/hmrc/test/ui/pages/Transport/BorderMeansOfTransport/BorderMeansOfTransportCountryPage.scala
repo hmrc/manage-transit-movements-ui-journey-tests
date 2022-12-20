@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
 import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object TransportCountryPage extends SelectPage {
+object BorderMeansOfTransportCountryPage extends SelectPage {
 
   override def title(args: String*): String = "What country is this vehicle registered to?"
 

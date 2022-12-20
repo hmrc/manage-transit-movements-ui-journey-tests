@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentTransportMeans
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ReplacementTransportIdentificationNumberPage extends StringPage {
+object AddConveyanceReferenceNumberPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("What is the %s?", args: _*)
+  override def title(args: String*): String =
+    "Do you want to add a conveyance reference number?"
 
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
 
@@ -32,7 +32,7 @@ object BorderMeansOftransportIdentificationPage extends RadioPage {
       case "IATA flight number"                    => "iataFlightNumber"
       case "registration number of the aircraft"    => "regNumberAircraft"
       case "European"                              => "europeanVesselIdNumber"
-      case "name of an inland waterways vehicle"   => "inlandWaterwaysVehicle"
+      case "Name of an inland waterways vehicle"   => "inlandWaterwaysVehicle"
 
     }
     clickRadioBtn(vehicleIdentyCSSValue)

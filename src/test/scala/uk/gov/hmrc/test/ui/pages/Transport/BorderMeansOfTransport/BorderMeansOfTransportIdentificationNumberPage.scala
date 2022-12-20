@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrival.IncidentTransportMeans
+package uk.gov.hmrc.test.ui.pages.Transport.BorderMeansOfTransport
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ReplacementTransportIdentificationNumberPage extends StringPage {
+object BorderMeansOfTransportIdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = String.format("What is the %s?", args: _*)
 

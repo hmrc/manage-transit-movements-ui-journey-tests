@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Transport.InlandModeOfTransport
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
 
