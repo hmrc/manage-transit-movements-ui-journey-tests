@@ -82,4 +82,11 @@ class ManageStepDef extends BaseStepDef {
     NegativeAcknowledgementPage
       .loadPage()
   }
+
+
+  Then("""^(?:I )?should be on the Your goods have been selected for control page""") { () =>
+    ControlDecisionPage
+      .loadPage()
+  }
+
 }

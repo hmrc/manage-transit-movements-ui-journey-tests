@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Manage.{ArrivalNotificationsPage, DepartureDeclarationsPage, ManageTransitMovementsPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingRejectionPage}
+import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingRejectionPage, UnloadingRemarksNegativeAcknowledgementPage}
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -27,10 +27,19 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the There is a problem with these unloading remarks page""") { () =>
+  Then("""^(?:I )?should be on the Unloading rejection page""") { () =>
     UnloadingRejectionPage
       .loadPage()
   }
 
+  Then("""^(?:I )?should be on the Unloading remarks negative acknowledgement page""") { () =>
+    UnloadingRejectionPage
+      .loadPage()
+  }
+
+  Given("""^(?:I )?click the create new unloading remarks link$""") { () =>
+    UnloadingRemarksNegativeAcknowledgementPage
+      .CreateNewUnloadingRemarks
+  }
 
 }

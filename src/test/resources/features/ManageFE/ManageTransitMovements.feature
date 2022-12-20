@@ -52,16 +52,15 @@ Feature: Manage transit movements feature
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 35YJ28Z73FNSUQK6M9 on the Arrival notifications page
-    And I should be on the There is a problem with these unloading remarks page
+    And I should be on the Unloading rejection page
 #    And I should see the content 'Unloading date'
-
 
 
   Scenario: 08 - Trader is able to view unloading remarks for multiple errors
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 31KYA7YO4FVSIJK911 on the Arrival notifications page
-    And I should be on the There is a problem with these unloading remarks page
+    And I should be on the Unloading rejection page
 #    And I should see the content 'Send new unloading remarks with the right information'
 
 
@@ -84,7 +83,6 @@ Feature: Manage transit movements feature
   #    And I should see the content '????'
 
 
-
   Scenario: 12 - Trader is able to view declaration rejection for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the View errors link for LRN LRN123459 on the Departure declarations page
@@ -93,7 +91,7 @@ Feature: Manage transit movements feature
 
   Scenario: 13 - Trader is able to see Goods not released for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
-    Then I click on the View details link for LRN LRN123470 on the Departure declarations page
+    And I click on the View details link for LRN LRN123470 on the Departure declarations page
     And I should be on the No release for transit page
   #    And I should see the content '????'
 
@@ -104,24 +102,21 @@ Feature: Manage transit movements feature
     And I should be on the Negative acknowledgement page
   #    And I should see the content '????'
 
+
+  Scenario: 15 - Trader is able to see Control decision for departure declaration
+    When I click on the View departure declarations link on the Manage your transit movements page
+    And I click on the View details link for LRN LRN123471 on the Departure declarations page
+    And I should be on the Your goods have been selected for control page
+
+
+  Scenario: 16 - Trader is able to view unloading remarks for negative submission acknowledgement error
+    When I click on the View arrival notifications link on the Manage your transit movements page
+    And I click on the View errors link for MRN 99QJPVXD78GHIJYQT on the Arrival notifications page
+    Then I should be on the Unloading remarks negative acknowledgement page
+    When I click the create new unloading remarks link
+    Then I should be on the Unload the goods before you send the unloading remarks page
+
   @wip
-#  Scenario: 15 - Trader is able to see Control decision for departure declaration
-#    When I click on the View departure declarations link on the Manage your transit movements page
-#    And I click on the View details link for LRN LRN123471 on the Departure delcarations page
-#    And I should be on the control decision page
-##    And I should see the page with the title: Your goods have been selected for control
-#
-#
-#  Scenario: 16 - Trader is able to view unloading remarks for negative submission acknowledgement error
-#    When I click on the View arrival notifications link on the Manage your transit movements page
-#    Then I click on the View-errors link for MRN 99QJPVXD78GHIJYQT on the Arrival notifications page
-#    And I should be on the unloading remarks negative acknowledgement page
-##    And I should see the page with the title: There is a problem with these unloading remarks
-#    When I click on the create new Unloading Remarks link
-#    Then I should be on the unloading guidance page
-##    And I should see the page with the title: Unload the goods before you send the unloading remarks
-#
-#
 #  Scenario: 17 - Trader is unable to cancel their declaration for departure declaration due to a data error
 #    When I click on the View departure declarations link on the Manage your transit movements page
 #    Then I click on the Cancel declaration link for LRN LRN123457 on the Departure declarations page
