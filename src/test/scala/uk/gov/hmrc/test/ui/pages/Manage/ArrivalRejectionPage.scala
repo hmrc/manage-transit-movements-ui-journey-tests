@@ -18,22 +18,16 @@ package uk.gov.hmrc.test.ui.pages.Manage
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ArrivalNotificationsPage extends StringPage {
+object ArrivalRejectionPage extends StringPage {
 
-   override def title(args: String*): String = "Arrival notifications"
+   override def title(args: String*): String = "There is a problem with this arrival notification"
 
   def selectAction(link: String): this.type = {
     link match {
-      case "Make an arrival notification" => clickById("make-arrival-notification")
-      case "Go to manage transit movements"  => clickById("go-to-manage-transit-movements")
-      case "View all movements"  => clickById("go-to-view-all-movements")
+      case "Change" => clickByPartialLinkText("Change")
+      case "send a new arrival notification with the right information" => clickByPartialLinkText("send a new arrival notification with the right information")
     }
     this
-  }
-
-  def selectArrivalAction(linkText: String, mrn: String): Unit = {
-    val id = s"${linkText.replace (" ", "-")}-$mrn"
-    clickById (id)
   }
 
 }

@@ -14,26 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.pages.BasePage
 
-class CYAStepDef extends BaseStepDef {
+object EoriNumberPage extends BasePage {
 
-  And("""^(?:I )?should be on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
-  }
-
-  And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
-      .submitPage()
-  }
-
-  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
-    CYAPage
-      .clickChangeLink(text)
-  }
-
+  assert(driver.getTitle == "What is your EORI number? - Check your transit guarantee balance - GOV.UK")
 }

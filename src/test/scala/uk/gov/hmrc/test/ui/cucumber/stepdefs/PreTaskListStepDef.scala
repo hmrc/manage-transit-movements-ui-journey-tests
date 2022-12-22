@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.PreTaskList._
 
 class PreTaskListStepDef extends BaseStepDef {
 
-  When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
+  When("""^I input a random LRN on the What is the Local Reference Number page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
       .fillInput()

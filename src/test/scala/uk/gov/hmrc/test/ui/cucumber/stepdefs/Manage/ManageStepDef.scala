@@ -26,41 +26,10 @@ class ManageStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Given("""^(?:I )?click on the (.+) link$""") { (link: String) =>
-    ManageTransitMovementsPage
-      .selectAction(link)
-  }
-
   Given("""^(?:I )?click on the (.+) link on the Manage your transit movements page$""") { (link: String) =>
     ManageTransitMovementsPage
       .loadPage()
       .selectAction(link)
-  }
-
-  Given("""^(?:I )?click on the (.+) link on the Arrival notifications page$""") { (link: String) =>
-    ArrivalNotificationsPage
-      .loadPage()
-      .selectAction(link)
-  }
-
-  Given("""^(?:I )?click on the (.+) link on the Departure Declarations page$""") { (link: String) =>
-    DepartureDeclarationsPage
-      .loadPage()
-      .selectAction(link)
-  }
-
-  And("""^(?:I )?click on the (.*) link for MRN (.*) on the Arrival notifications page""") {
-    (linkText: String, mrn: String) =>
-      ArrivalNotificationsPage
-        .loadPage()
-        .selectActionType(linkText, mrn)
-  }
-
-  And("""^(?:I )?click on the (.*) link for LRN (.*) on the Departure declarations page""") {
-    (linkText: String, lrn: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .selectActionType(linkText, lrn)
   }
 
   Then("""^(?:I )?should be on the There is a problem with the guarantee for this departure declaration page""") { () =>
@@ -87,6 +56,13 @@ class ManageStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the Your goods have been selected for control page""") { () =>
     ControlDecisionPage
       .loadPage()
+  }
+
+  And("""^(?:I )?should see the content (.*) on the No release for transit page$""") {
+    (content: String) =>
+      NoReleaseForTransitPage
+        .loadPage()
+        .checkForContent(content)
   }
 
 }

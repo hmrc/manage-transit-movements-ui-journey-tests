@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object LocalReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the local reference number (LRN)?"
+  override def title(args: String*): String = "What is the Local Reference Number (LRN)?"
 
   def fillInput(): this.type = {
     val randomLRN = randomAlphaNumericString(15)

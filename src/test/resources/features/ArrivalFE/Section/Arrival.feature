@@ -3,9 +3,9 @@
 Feature: Arrival notification feature
 
   Background:
-    Given I login with ID 12345678
-    Then I am on the Manage Transit Movements Hub service
-    Given I click on the Make an arrival notification link
+    Given I login with ID 1234567890
+    Then I should be on the Manage your transit movements page
+    And I click on the Make an arrival notification link on the Manage your transit movements page
     And I enter 21GB00014210026352 on the movement reference number page
 
 

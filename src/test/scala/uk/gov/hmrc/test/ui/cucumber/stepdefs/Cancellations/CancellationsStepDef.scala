@@ -14,26 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Cancellations
 
-import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Cancellations.DeclarationNotFoundPage
+import uk.gov.hmrc.test.ui.pages.Manage.ArrivalNotificationsPage
 
-class CYAStepDef extends BaseStepDef {
+class CancellationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?should be on the CYA page""") { () =>
-    CYAPage
+   Then("""^(?:I )?(?:should )?be on the You cannot cancel this departure declaration page$""") { () =>
+    DeclarationNotFoundPage
       .loadPage()
   }
 
-  And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage
+  Given("""^(?:I )?click on the Back to departure declarations link on the Declaration not found page$""") { (link: String) =>
+    DeclarationNotFoundPage
       .loadPage()
-      .submitPage()
-  }
-
-  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
-    CYAPage
-      .clickChangeLink(text)
+      .BackToDepartureDeclarations
   }
 
 }

@@ -14,26 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 
-import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.EoriNumberPage
 
-class CYAStepDef extends BaseStepDef {
+class GuranteeBalanceStepDef extends BaseStepDef {
 
-  And("""^(?:I )?should be on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
+   Then("""^(?:I )?(?:should )?be on the What is your EORI number page$""") { () =>
+    EoriNumberPage
   }
-
-  And("""^(?:I )?submit on the CYA page""") { () =>
-    CYAPage
-      .loadPage()
-      .submitPage()
-  }
-
-  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
-    CYAPage
-      .clickChangeLink(text)
-  }
-
 }

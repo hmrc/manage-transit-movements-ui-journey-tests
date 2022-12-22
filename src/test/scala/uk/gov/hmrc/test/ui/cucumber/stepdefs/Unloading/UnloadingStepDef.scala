@@ -27,19 +27,17 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the Unloading rejection page""") { () =>
-    UnloadingRejectionPage
-      .loadPage()
-  }
-
-  Then("""^(?:I )?should be on the Unloading remarks negative acknowledgement page""") { () =>
-    UnloadingRejectionPage
-      .loadPage()
-  }
-
-  Given("""^(?:I )?click the create new unloading remarks link$""") { () =>
+  Given("""^(?:I )?click the create new unloading remarks link on the Unloading remarks negative acknowledgement page$""") { () =>
     UnloadingRemarksNegativeAcknowledgementPage
+      .loadPage()
       .CreateNewUnloadingRemarks
+  }
+
+   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") {
+    (content: String) =>
+    UnloadingRejectionPage
+      .loadPage()
+      .checkForContent(content)
   }
 
 }
