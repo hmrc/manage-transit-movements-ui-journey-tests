@@ -134,6 +134,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the CYA page
 
 
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
@@ -181,7 +182,7 @@ Feature: End to end journey for Great Britain office of departure
     #Route details: Binding Itinerary set to No and additional route
     When I click the link with visible text: Add route details
     And I select Italy on the country of destination page
-    And I select Bari on the departure office of destination page
+    And I select BARI (IT018100) on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
@@ -251,25 +252,22 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
     #Border Means of Transport - Add Another
+    And I submit on the CYA page
     Then I should have 1 border means of transport added on the add another border means of transport page
     When I choose radio option Yes on the add another border means of transport page
     And I choose radio option Train number on the border means of transport identification page
     And I enter 0987654 as train number on the border means of transport identification number page
     And I choose radio option Yes on the add border means of transport country page
     And I select United Kingdom on the border means of transport country page
-    And I select AD000002 on the border means of transport office of transit page
+    And I select DCNJ PORTA on the border means of transport office of transit page
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
+    And I submit on the CYA page
     Then I should have 2 border means of transport added on the add another border means of transport page
     When I choose radio option No on the add another border means of transport page
-    #Transport Means Inland Mode - Change
-    And I click the change link for transport means inland mode on the CYA page
-    And I choose radio option Road on the Inland Mode of Transport page
-    And I choose radio option Registration number of a road trailer on the Transport Identification page
-    And I enter GB1234567 as registration number of the road trailer on the transport identification number page
-    And I select United Kingdom on the Transport country page
-    #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
+
+
 
 
   Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
@@ -368,6 +366,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Mail on the Inland Mode of Transport page
     #Transport - Inland Mode [ CYA ]
     And I submit on the CYA page
+
 
 
   Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No'

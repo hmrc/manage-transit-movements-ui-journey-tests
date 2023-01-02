@@ -64,10 +64,10 @@ Feature: Route details transit journeys
   #Route Details Transit -> Entry point is -> Add office of transit [Yes]
     And I choose radio option Yes on the add office of transit page
     Then I should have United Kingdom as office of transit on the office of transit page
-    When I select Dover on the office of transit page
-    Then I should have Dover/Folkestone Eurotunnel Freight (GB000060) arrival time title on the office of transit add eta page
+    When I select London Gateway Port (GB000219) on the office of transit page
+    Then I should have London Gateway Port (GB000219) arrival time title on the office of transit add eta page
     When I choose radio option Yes on the office of transit add eta page
-    Then I should have Dover/Folkestone Eurotunnel Freight, United Kingdom as transit to arrive on the office of transit eta page
+    Then I should have London Gateway Port, United Kingdom as transit to arrive on the office of transit eta page
     And I choose fill in the date and time on the office of transit eta page
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
@@ -99,7 +99,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the departure office of destination page
+    And I select BARI on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
@@ -107,8 +107,8 @@ Feature: Route details transit journeys
     And I choose radio option No on the t2 declaration page
     And I select Italy on the office of transit country page
     Then I should have Italy as office of transit on the office of transit page
-    When I select Bari on the office of transit page
-    Then I should have Bari (IT018100) arrival time title on the office of transit add eta page
+    When I select BARI (IT018100) on the office of transit page
+    Then I should have BARI (IT018100) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
@@ -151,15 +151,15 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the departure office of destination page
+    And I select BARI on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
     And I submit on the CYA page
   #Route Details Transit -> Entry point is [Office of transit]
     And I select Italy on the office of transit country page
     Then I should have Italy as office of transit on the office of transit page
-    When I select Bari on the office of transit page
-    Then I should have Bari (IT018100) arrival time title on the office of transit add eta page
+    When I select BARI (IT018100) on the office of transit page
+    Then I should have BARI (IT018100) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
@@ -265,7 +265,7 @@ Feature: Route details transit journeys
     When I click the link with visible text: Add route details
   #Office of Destination Declared
     And I select Italy on the country of destination page
-    And I select Bari on the departure office of destination page
+    And I select BARI (IT018100) on the departure office of destination page
     And I choose radio option Yes on the binding itinerary page
     And I select Germany on the transit route country page
     Then I should have 1 country added to the transit route add another country page
@@ -274,8 +274,8 @@ Feature: Route details transit journeys
   #Route Details Transit -> Entry point is [Office of transit country]
     And I select Germany on the office of transit country page
     Then I should have Germany as office of transit on the office of transit page
-    When I select Berlin on the office of transit page
-    Then I should have Berlin, Berlin-Flughafen-Tegel (DE002105) arrival time title on the office of transit add eta page
+    When I select Berlin-Flughafen-Tegel on the office of transit page
+    Then I should have Berlin-Flughafen-Tegel (DE002105) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
     And I submit on the CYA page
     Then I should have 1 office of transit added on the add another office of transit page
