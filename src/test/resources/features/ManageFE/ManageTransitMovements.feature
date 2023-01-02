@@ -68,9 +68,9 @@ Feature: Manage transit movements feature
 #    Then I should be on the What is the Movement Reference Number page
 
 
-  Scenario: 10 - Trader is able to make an arrival notifications from home page
+  Scenario: 10 - Trader is able to make a depature declaration from home page
     When I click on the Make a departure declaration link on the Manage your transit movements page
-    Then I should be on the What is the local reference number page
+    Then I should be on the What is the Local Reference Number page
 
 
   Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
@@ -142,4 +142,4 @@ Feature: Manage transit movements feature
   Scenario: 21 - Trader is able to departure declaration from the Departure declarations page
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the Make a departure declaration link on the Departure declarations page
-    And I should be on the What is the local reference number page
+    And I should be on the What is the Local Reference Number page

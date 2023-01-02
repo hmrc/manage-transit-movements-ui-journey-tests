@@ -6,7 +6,7 @@ Feature: End to end journey Arrival notification feature
     Given I login with ID 1234567890
     Then I should be on the Manage your transit movements page
     And I click on the Make an arrival notification link on the Manage your transit movements page
-    And I enter 21GB00014210026352 on the movement reference number page
+    And I enter 21GB00014210026352 on the Movement Reference Number page
 
   @ally
   Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -

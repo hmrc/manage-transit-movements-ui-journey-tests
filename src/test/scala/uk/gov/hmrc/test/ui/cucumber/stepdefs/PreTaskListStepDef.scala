@@ -27,7 +27,7 @@ class PreTaskListStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?should be on the What is the local reference number page$""") { () =>
+  Then("""^(?:I )?should be on the What is the Local Reference Number page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
   }
