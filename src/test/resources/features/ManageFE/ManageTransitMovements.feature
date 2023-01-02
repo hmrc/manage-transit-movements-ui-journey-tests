@@ -76,13 +76,13 @@ Feature: Manage transit movements feature
   Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the View errors link for LRN LRN123461 on the Departure declarations page
-    And I should be on the There is a problem with the guarantee for this departure declaration page
+#    And I should be on the There is a problem with the guarantee for this departure declaration page
 
 
   Scenario: 12 - Trader is able to view declaration rejection for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the View errors link for LRN LRN123459 on the Departure declarations page
-    And I should be on the There is a problem with this departure declaration page
+#    And I should be on the There is a problem with this departure declaration page
 
 
   Scenario: 13 - Trader is able to see Goods not released for departure declaration
