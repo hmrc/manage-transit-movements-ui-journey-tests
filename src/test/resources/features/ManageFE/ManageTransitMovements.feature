@@ -28,6 +28,7 @@ Feature: Manage transit movements feature
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 99IT9876AB88901209 on the Arrival notifications page
+#  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/3/arrival-rejection page
 #    And I click on the Change link on the There is a problem with this arrival notification page
 #    Then I should be on the What is the Movement Reference Number page
 
@@ -36,7 +37,8 @@ Feature: Manage transit movements feature
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 19IT02110010007A33 on the Arrival notifications page
-#    And I should see the content Error code on the There is a problem with this arrival notification page
+  #  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/7/arrival-rejection page
+#  And I should see the content Error code on the There is a problem with this arrival notification page
 
 
   Scenario: 06 - Trader is able to view unloading remarks with specific error for Vehicle Registration Number
@@ -63,6 +65,7 @@ Feature: Manage transit movements feature
   Scenario: 09 - Trader is able to view invalid arrival notification
     When I click on the View arrival notifications link on the Manage your transit movements page
     Then I click on the View errors link for MRN 74WWQIVU856KEG5U37 on the Arrival notifications page
+    #  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/11/arrival-rejection page
 #    And I should see the content You must review the error on the There is a problem with this arrival notification page
 #    And I click on the send a new arrival notification with the right information link on the There is a problem with this arrival notification page
 #    Then I should be on the What is the Movement Reference Number page
@@ -76,12 +79,14 @@ Feature: Manage transit movements feature
   Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the View errors link for LRN LRN123461 on the Departure declarations page
+#    FOUND 10120/manage-transit-movements/departures/not-found EXPECTED manage-transit-movements-departures/27/guarantee-rejection page
 #    And I should be on the There is a problem with the guarantee for this departure declaration page
 
 
   Scenario: 12 - Trader is able to view declaration rejection for departure declaration
     When I click on the View departure declarations link on the Manage your transit movements page
     Then I click on the View errors link for LRN LRN123459 on the Departure declarations page
+#    FOUND 10122/manage-transit-movements/cancellation/technical-difficulties EXPECTED manage-transit-movements-departures/33/departure-declaration-fail page
 #    And I should be on the There is a problem with this departure declaration page
 
 
