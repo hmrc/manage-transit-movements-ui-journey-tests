@@ -68,7 +68,7 @@ Feature: Manage transit movements feature
 #    Then I should be on the What is the Movement Reference Number page
 
 
-  Scenario: 10 - Trader is able to make a depature declaration from home page
+  Scenario: 10 - Trader is able to make a departure declaration from home page
     When I click on the Make a departure declaration link on the Manage your transit movements page
     Then I should be on the What is the Local Reference Number page
 
