@@ -132,6 +132,13 @@ Feature: End to end journey for Great Britain office of departure
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
+    #Supply chain actor
+    And I choose radio option Yes on the supply chain actor add page
+    And I choose radio option Consolidator on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option No on the supply chain actor add another page
+
 
 
 
@@ -266,6 +273,19 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have 2 border means of transport added on the add another border means of transport page
     When I choose radio option No on the add another border means of transport page
     And I submit on the CYA page
+    #Supply chain actor: Add Another supply chain actor
+    And I choose radio option Yes on the supply chain actor add page
+    And I choose radio option Consolidator on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option Yes on the supply chain actor add another page
+    And I choose radio option Freight forwarder on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
+    Then I should have 2 supply chain actors on the supply chain actor add another page
+    When I choose to click on Remove link on the supply chain actor add another page
+    And I choose radio option Yes on the supply chain actor remove page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option No on the supply chain actor add another page
 
 
 
@@ -366,6 +386,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Mail on the Inland Mode of Transport page
     #Transport - Inland Mode [ CYA ]
     And I submit on the CYA page
+    #Supply chain actor
+    And I choose radio option Yes on the supply chain actor add page
+    And I choose radio option Consolidator on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option No on the supply chain actor add another page
 
 
 
@@ -483,3 +509,16 @@ Feature: End to end journey for Great Britain office of departure
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
+    #Supply chain actor: Add Another supply chain actor
+    And I choose radio option Yes on the supply chain actor add page
+    And I choose radio option Consolidator on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option Yes on the supply chain actor add another page
+    And I choose radio option Freight forwarder on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
+    Then I should have 2 supply chain actors on the supply chain actor add another page
+    When I choose to click on Remove link on the supply chain actor add another page
+    And I choose radio option Yes on the supply chain actor remove page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option No on the supply chain actor add another page
