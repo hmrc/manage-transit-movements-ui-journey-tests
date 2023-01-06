@@ -9,8 +9,6 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     Then I input a random LRN on the What is the Local Reference Number page
 
 
-
-
   Scenario: 01 Transport Details - GB Normal - No Security
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -77,8 +75,6 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     When I choose radio option No on the supply chain actor add another page
 
 
-
-
   Scenario: 02 Transport Details - XI Normal - No Security
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -138,20 +134,9 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Transport - Inland Mode - Border Means [CYA]
     And I submit on the CYA page
     #Supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
+    And I choose radio option No on the supply chain actor add page
 
 
-
-
-#    #Transport Means
-#    And I choose radio option European on the border means of transport identification page
-#    And I enter GB1234567 as European vessel identification number (ENI code) on the border means of transport identification number page
-#    And I choose radio option Yes on the add border means of transport country page
-#    And I select United Kingdom on the border means of transport country page
   Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
