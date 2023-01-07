@@ -68,9 +68,16 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Transport - Inland Mode - Border Means [CYA]
     And I submit on the CYA page
     #Supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
+    When I choose radio option Yes on the supply chain actor add another page
     And I choose radio option Consolidator on the supply chain actor type page
     And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option Yes on the supply chain actor add another page
+    And I choose radio option Freight forwarder on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
+    Then I should have 2 supply chain actors on the supply chain actor add another page
+    When I choose to click on Remove link on the supply chain actor add another page
+    And I choose radio option Yes on the supply chain actor remove page
     Then I should have 1 supply chain actor on the supply chain actor add another page
     When I choose radio option No on the supply chain actor add another page
 
@@ -175,15 +182,4 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option Mail on the Inland Mode of Transport page
     And I submit on the CYA page
     #Supply chain actor: Add Another supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option Yes on the supply chain actor add another page
-    And I choose radio option Freight forwarder on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
-    Then I should have 2 supply chain actors on the supply chain actor add another page
-    When I choose to click on Remove link on the supply chain actor add another page
-    And I choose radio option Yes on the supply chain actor remove page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
+    And I choose radio option No on the supply chain actor add page
