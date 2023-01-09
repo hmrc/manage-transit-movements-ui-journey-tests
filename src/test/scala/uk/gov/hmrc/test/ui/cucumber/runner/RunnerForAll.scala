@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-<<<<<<< HEAD
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizard}
-=======
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsHomePage
->>>>>>> main
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-class LoginStepDef extends BaseStepDef {
-
-  And("""^I login with ID (.*)$""") { (id: String) =>
-    AuthorityWizard
-      .loadPage()
-      .fillInputs(id)
-      .submitPage()
-  }
-
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@departureGBe2e or @departureXIe2e or @arrivalE2e or @cancellation or @managehub or @unloading_remarks"
+)
+class RunnerForAll {}

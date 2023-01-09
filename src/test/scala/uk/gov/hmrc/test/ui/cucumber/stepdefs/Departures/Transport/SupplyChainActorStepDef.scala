@@ -17,6 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+<<<<<<< HEAD
+=======
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor.{AddAnotherSupplyChainActorPage, AddSupplyChainActorPage, EoriTinSupplyChainActorPage, RemoveSupplyChainActorPage, TypeSupplyChainActorPage}
+>>>>>>> main
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor._
 
 class SupplyChainActorStepDef extends BaseStepDef {
