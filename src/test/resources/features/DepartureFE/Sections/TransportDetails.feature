@@ -9,7 +9,6 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I input a random LRN on the LocalReferenceNumber page
 
 
-
   Scenario: 01 Transport Details - GB Normal - No Security - Inland Mode 'Maratime' - Border Means 'Maratime' -
     Supply Chain Actor 'Add & Remove'
     And I select GB on the office of departure page
@@ -70,18 +69,15 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Transport - Inland Mode - Border Means [CYA]
     And I submit on the CYA page
     #Supply chain actor
-    When I choose radio option Yes on the supply chain actor add another page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option Yes on the supply chain actor add another page
-    And I choose radio option Freight forwarder on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
-    Then I should have 2 supply chain actors on the supply chain actor add another page
-    When I choose to click on Remove link on the supply chain actor add another page
-    And I choose radio option Yes on the supply chain actor remove page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
+    When I choose radio option Yes on the Do you want to add a supply chain actor page
+    And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
+    And I enter GB98472189002 on the What is the EORI number or Trader Identification Number for the consolidator page
+    When I choose radio option Yes on the You have added 1 supply chain actor page
+    And I choose radio option Freight forwarder on the Which type of supply chain actor do you want to add page
+    And I enter GB98472189002 on the What is the EORI number or Trader Identification Number for the freight forwarder page
+    When I choose to click on the Remove link on the You have added 2 supply chain actors page
+    And I choose radio option Yes on the Are you sure you want to remove this supply chain actor page
+    When I choose radio option No on the You have added 1 supply chain actor page
 
 
   Scenario: 02 Transport Details - XI Normal - No Security - Inland Mode 'Rail' - Border Means 'Air'
@@ -143,7 +139,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Transport - Inland Mode - Border Means [CYA]
     And I submit on the CYA page
     #Supply chain actor
-    And I choose radio option No on the supply chain actor add page
+    When I choose radio option No on the Do you want to add a supply chain actor page
 
 
   Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers - Inland Mode 'Mail'
@@ -184,4 +180,5 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option Mail on the Inland Mode of Transport page
     And I submit on the CYA page
     #Supply chain actor: Add Another supply chain actor
-    And I choose radio option No on the supply chain actor add page
+    When I choose radio option No on the Do you want to add a supply chain actor page
+

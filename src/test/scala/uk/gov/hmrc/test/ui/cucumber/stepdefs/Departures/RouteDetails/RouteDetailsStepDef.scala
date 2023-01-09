@@ -61,7 +61,7 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose to click on (.*) link on the transit route add another country page$""") {
+  And("""^(?:I )?choose to click on the (.*) link on the transit route add another country page$""") {
     (sectionLink: String) =>
       TransitRouteAddAnotherCountryPage
         .clickByPartialLinkText(sectionLink)
