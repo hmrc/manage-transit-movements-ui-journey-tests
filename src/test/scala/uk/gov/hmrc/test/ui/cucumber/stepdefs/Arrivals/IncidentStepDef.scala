@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
+import uk.gov.hmrc.test.ui.pages.Arrivals.Incident._
 
 class IncidentStepDef extends BaseStepDef {
 
