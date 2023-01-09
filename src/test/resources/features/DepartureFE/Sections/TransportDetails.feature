@@ -1,4 +1,4 @@
-@TransportDetails @departure
+@TransportDetails @departure @wip
 
 Feature: Transport details - includes Pre-task list, Transport details, Containers details
 
@@ -10,7 +10,8 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
 
 
 
-  Scenario: 01 Transport Details - GB Normal - No Security
+  Scenario: 01 Transport Details - GB Normal - No Security - Inland Mode 'Maratime' - Border Means 'Maratime' -
+    Supply Chain Actor 'Add & Remove'
     And I select GB on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
@@ -83,7 +84,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     When I choose radio option No on the supply chain actor add another page
 
 
-  Scenario: 02 Transport Details - XI Normal - No Security
+  Scenario: 02 Transport Details - XI Normal - No Security - Inland Mode 'Rail' - Border Means 'Air'
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page
@@ -145,7 +146,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option No on the supply chain actor add page
 
 
-  Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers
+  Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers - Inland Mode 'Mail'
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
