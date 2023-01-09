@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrival.Incident._
-import uk.gov.hmrc.test.ui.pages.Arrival.TransportEquipmentAndSeal.{AddAnotherContainerSealPage, AddContainerSealPage, AddTransportEquipmentPage, ContainerSealIdentificationNumberPage, RemoveSealPage, SealIdentificationNumberPage}
+import uk.gov.hmrc.test.ui.pages.Arrivals.Incident._
+import uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal.{AddAnotherContainerSealPage, AddContainerSealPage, AddTransportEquipmentPage, ContainerSealIdentificationNumberPage, RemoveSealPage, SealIdentificationNumberPage}
 
 class TransportEquipmentSealStepDef extends BaseStepDef {
 
