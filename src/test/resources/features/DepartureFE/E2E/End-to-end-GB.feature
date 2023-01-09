@@ -10,7 +10,8 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the office of departure page
 
   @a11y
-  Scenario: 01 Procedure 'Simplified' - Declaration 'T1' - Security 'No' - Guarantees '3, R' - Inland Mode 'Maritime'
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T1' - Security 'No' - Guarantees '3, R' - Inland Mode 'Maritime' -
+    Border Means 'Maritime' - Supply Chain Actor - 'Add & Remove'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -133,16 +134,22 @@ Feature: End to end journey for Great Britain office of departure
     #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
     #Supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
+    When I choose radio option Yes on the supply chain actor add another page
     And I choose radio option Consolidator on the supply chain actor type page
     And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
+    Then I should have 1 supply chain actor on the supply chain actor add another page
+    When I choose radio option Yes on the supply chain actor add another page
+    And I choose radio option Freight forwarder on the supply chain actor type page
+    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
+    Then I should have 2 supply chain actors on the supply chain actor add another page
+    When I choose to click on Remove link on the supply chain actor add another page
+    And I choose radio option Yes on the supply chain actor remove page
     Then I should have 1 supply chain actor on the supply chain actor add another page
     When I choose radio option No on the supply chain actor add another page
 
 
-
-
-  Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road'
+  Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road' -
+    Border Means 'Rail'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
@@ -274,20 +281,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the add another border means of transport page
     And I submit on the CYA page
     #Supply chain actor: Add Another supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option Yes on the supply chain actor add another page
-    And I choose radio option Freight forwarder on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
-    Then I should have 2 supply chain actors on the supply chain actor add another page
-    When I choose to click on Remove link on the supply chain actor add another page
-    And I choose radio option Yes on the supply chain actor remove page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
-
-
+    And I choose radio option No on the supply chain actor add page
 
 
   Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
@@ -387,15 +381,11 @@ Feature: End to end journey for Great Britain office of departure
     #Transport - Inland Mode [ CYA ]
     And I submit on the CYA page
     #Supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
+    And I choose radio option No on the supply chain actor add page
 
 
-
-  Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No'
+  Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No' - Inland Mode 'Road' -
+    Border Means 'Maratime'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -510,15 +500,4 @@ Feature: End to end journey for Great Britain office of departure
     #Transport - Inland Mode - Border Means [ CYA ]
     And I submit on the CYA page
     #Supply chain actor: Add Another supply chain actor
-    And I choose radio option Yes on the supply chain actor add page
-    And I choose radio option Consolidator on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for consolidator on the supply chain actor eori tin page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option Yes on the supply chain actor add another page
-    And I choose radio option Freight forwarder on the supply chain actor type page
-    And I enter GB98472189002 for eori number or tin number for freight forwarder on the supply chain actor eori tin page
-    Then I should have 2 supply chain actors on the supply chain actor add another page
-    When I choose to click on Remove link on the supply chain actor add another page
-    And I choose radio option Yes on the supply chain actor remove page
-    Then I should have 1 supply chain actor on the supply chain actor add another page
-    When I choose radio option No on the supply chain actor add another page
+    And I choose radio option No on the supply chain actor add page
