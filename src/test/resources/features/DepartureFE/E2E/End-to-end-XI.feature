@@ -10,7 +10,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select XI on the office of departure page
 
 
-  Scenario: 01 Procedure 'Simplified' - Declaration 'T' - Security 'No' - Guarantee 'A' - T2 declarations 'Yes'
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T' - Security 'No' - Guarantee 'A' - T2 declarations 'Yes' -
+  Inland Mode 'Maratime' - Border Means 'Maratime' - Supply Chain Actor - 'Add'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T on the declaration type page
     And I choose radio option No security on the security type page
@@ -130,7 +131,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
     And I submit on the CYA page
-   Then I should have 1 border means of transport added on the add another border means of transport page
+    Then I should have 1 border means of transport added on the add another border means of transport page
     #Border Means of Transport - Add Another
     When I choose radio option Yes on the add another border means of transport page
     And I choose radio option Train number on the border means of transport identification page
@@ -153,7 +154,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
 
   @a11y
-  Scenario: 02 Procedure 'Normal' - Delcaration 'TIR' - Security 'ENS' - Guarantee 'B'
+  Scenario: 02 Procedure 'Normal' - Delcaration 'TIR' - Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air'
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
@@ -249,7 +250,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the supply chain actor add page
 
 
-  Scenario: 03 Procedure 'Normal' - Declaration 'T2' - Security 'EXS' - Guarantee '1' - Office of Exit
+  Scenario: 03 Procedure 'Normal' - Declaration 'T2' - Security 'EXS' - Guarantee '1' - Office of Exit - Inland Mode 'Mail'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Exit summary declaration (EXS) on the security type page
