@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrival.Container._
+import uk.gov.hmrc.test.ui.pages.Arrivals.Container._
 class ContainerStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the container indicator page$""") { (answer: String) =>
