@@ -15,7 +15,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the CYA page
+    And I submit on the Pre-task list Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -53,7 +53,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Simpson Blog Consignee on the consignee name page
     And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
-    And I submit on the CYA page
+    And I submit on the Trader details Check your answers page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
@@ -61,7 +61,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option (3) Individual guarantee in cash on the guarantee type page
     And I choose radio option Yes on the do you want to add a reference for the guarantee page
     And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the CYA page
+    And I submit on the Guarantee details Check your answers page
     Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option Yes on the add another guarantee page
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
@@ -81,7 +81,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
-    And I submit on the CYA page
+    And I submit on the Transit route Check your answers page
     #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
     #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
@@ -93,7 +93,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the departure location of goods add contact page
     And I enter HMRC Test on the departure location of goods contact page
     And I enter +44 2345 82 83 on the departure location of goods contact telephone number page
-    And I submit on the CYA page
+    And I submit on the Location of goods Check your answers page
     #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Aalen on the place of loading un locode page
@@ -102,8 +102,8 @@ Feature: End to end journey for Great Britain office of departure
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
     #Route Details Unloading -> [Set 0]
-    And I submit on the CYA page
-    And I submit on the CYA page
+    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
     When I click the link with visible text: Add transport details
@@ -132,7 +132,7 @@ Feature: End to end journey for Great Britain office of departure
     #Conveyance Reference Number
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [ CYA ]
-    And I submit on the CYA page
+    And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option Yes on the Do you want to add a supply chain actor page
     And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
@@ -150,7 +150,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the CYA page
+    And I submit on the Pre-task list Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -179,14 +179,14 @@ Feature: End to end journey for Great Britain office of departure
     And I enter +348756374563 on the consignor contact number page
     #Consignee at header level
     When I choose radio option Yes on the more than one consignee page
-    And I submit on the CYA page
+    And I submit on the Trader details Check your answers page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
     #Guarantee details
     And I choose radio option (8) Guarantee not required – exempt public body on the guarantee type page
     And I enter 01GB123456789012 on the other reference for the guarantee 8 page
-    And I submit on the CYA page
+    And I submit on the Guarantee details Check your answers page
     Then I should have 1 guarantee added on the add another guarantee page
     And I choose radio option No on the add another guarantee page
     Then I should be on the task list page
@@ -201,7 +201,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Argentina on the transit route country page
     Then I should have 2 countries added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
-    And I submit on the CYA page
+    And I submit on the Transit route Check your answers page
     #Route Details Transit -> Entry point is [Office of transit country]
     And I select Andorra on the office of transit country page
     Then I should have Andorra as office of transit on the office of transit page
@@ -210,7 +210,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option Yes on the office of transit add eta page
     Then I should have DCNJ PORTA, Andorra as transit to arrive on the office of transit eta page
     And I choose fill in the date and time on the office of transit eta page
-    And I submit on the CYA page
+    And I submit on the Office of transit Check your answers page
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option Yes on the add another office of transit page
     And I select Andorra on the office of transit country page
@@ -218,7 +218,7 @@ Feature: End to end journey for Great Britain office of departure
     When I select CUSTOMS OFFICE on the office of transit page
     Then I should have CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
-    And I submit on the CYA page
+    And I submit on the Office of transit Check your answers page
     Then I should have 2 offices of transit added on the add another office of transit page
     And I choose radio option No on the add another office of transit page
     #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
@@ -226,7 +226,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Coordinates on the departure location of goods identification page
     And I enter 50.96622 and 50.96622 on the departure location of goods coordinates page
     And I choose radio option No on the departure location of goods add contact page
-    And I submit on the CYA page
+    And I submit on the Office of transit Check your answers page
     #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
@@ -235,8 +235,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
     And I enter Manchester on the United Kingdom place of unloading location page
-    And I submit on the CYA page
-    And I submit on the CYA page
+    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
     When I click the link with visible text: Add transport details
@@ -263,7 +263,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
     #Border Means of Transport - Add Another
-    And I submit on the CYA page
+    And I submit on the Border means of transport Check your answers page
     Then I should have 1 border means of transport added on the add another border means of transport page
     When I choose radio option Yes on the add another border means of transport page
     And I choose radio option Train number on the border means of transport identification page
@@ -273,10 +273,10 @@ Feature: End to end journey for Great Britain office of departure
     And I select DCNJ PORTA on the border means of transport office of transit page
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
-    And I submit on the CYA page
+    And I submit on the Border means of transport Check your answers page
     Then I should have 2 border means of transport added on the add another border means of transport page
     When I choose radio option No on the add another border means of transport page
-    And I submit on the CYA page
+    And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
 
@@ -285,7 +285,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the CYA page
+    And I submit on the Pre-task list Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -323,14 +323,14 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Simpson Blog Consignee on the consignee name page
     And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
-    And I submit on the CYA page
+    And I submit on the Trader details Check your answers page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
     #Guarantee details
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I submit on the CYA page
+    And I submit on the Guarantee details Check your answers page
     Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
@@ -347,7 +347,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
-    And I submit on the CYA page
+    And I submit on the Transit route Check your answers page
     #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
     #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
@@ -356,14 +356,14 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the location of goods country page
     And I fill in address on the departure location of goods address page
     And I choose radio option No on the departure location of goods add contact page
-    And I submit on the CYA page
+    And I submit on the Location of goods Check your answers page
     #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
     #Route Details Unloading -> [Set 0]
-    And I submit on the CYA page
-    And I submit on the CYA page
+    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
     When I click the link with visible text: Add transport details
@@ -376,7 +376,7 @@ Feature: End to end journey for Great Britain office of departure
     #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
     #Transport - Inland Mode [ CYA ]
-    And I submit on the CYA page
+    And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
 
@@ -386,7 +386,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the CYA page
+    And I submit on the Pre-task list Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -424,7 +424,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Simpson Blog Consignee on the consignee name page
     And I select United Kingdom on the consignee country page
     And I fill in the consignee address page
-    And I submit on the CYA page
+    And I submit on the Trader details Check your answers page
     Then I should be on the task list page
     And I should see COMPLETED status for trader details
     When I click the link with visible text: Add guarantee details
@@ -433,7 +433,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
     And I enter AC01 on the access code page
     And I enter 10000 on the amount to be covered page
-    And I submit on the CYA page
+    And I submit on the Guarantee details Check your answers page
     Then I should have 1 guarantee added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
@@ -450,7 +450,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
-    And I submit on the CYA page
+    And I submit on the Transit route Check your answers page
     #Route Details Transit -> Entry point is -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
     #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
@@ -458,15 +458,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Postal code on the departure location of goods identification page
     And I fill in address on the departure location of goods postal code page
     And I choose radio option No on the departure location of goods add contact page
-    And I submit on the CYA page
+    And I submit on the Location of goods Check your answers page
     #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
     And I select United Kingdom on the place of loading country page
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
     #Route Details Unloading -> [Set 0]
-    And I submit on the CYA page
-    And I submit on the CYA page
+    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
     When I click the link with visible text: Add transport details
@@ -495,6 +495,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [ CYA ]
-    And I submit on the CYA page
+    And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
