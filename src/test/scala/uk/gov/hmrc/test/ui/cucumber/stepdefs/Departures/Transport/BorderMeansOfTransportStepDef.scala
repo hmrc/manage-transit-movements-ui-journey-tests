@@ -17,10 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-<<<<<<< HEAD
-=======
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport.{AddAnotherBorderMeansOfTransportPage, AddBorderMeansOfTransportCountryPage, AddBorderModeOfTransportPage, AddConveyanceReferenceNumberPage, BorderMeansOfTransportCountryPage, BorderMeansOfTransportIdentificationNumberPage, BorderMeansOfTransportOfficeOfTransitPage, BorderMeansOftransportIdentificationPage, BorderModeOfTransportPage, ConveyanceReferenceNumberPage, RemoveBorderMeansOfTransportPage}
->>>>>>> main
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport._
 
 class BorderMeansOfTransportStepDef extends BaseStepDef {

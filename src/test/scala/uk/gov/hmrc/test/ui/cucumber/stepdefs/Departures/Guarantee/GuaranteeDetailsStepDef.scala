@@ -17,11 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Guarantee
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-<<<<<<< HEAD
-import uk.gov.hmrc.test.ui.pages.Departures.Guarantee._
-=======
 import uk.gov.hmrc.test.ui.pages.Departures.Guarantee.{AddAnotherGuaranteePage, GuaranteeAccessCodePage, GuaranteeBForTIRDeclarationPage, GuaranteeLiabilityAmount, GuaranteeReferenceNumberPage, GuaranteeTypePage, OtherGuarantee3ReferencePage, OtherGuarantee8ReferencePage, WantToAddReferenceForGuaranteePage}
->>>>>>> main
 
 class GuaranteeDetailsStepDef extends BaseStepDef {
 

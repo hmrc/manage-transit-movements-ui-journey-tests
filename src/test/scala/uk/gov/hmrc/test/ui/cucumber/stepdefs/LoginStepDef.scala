@@ -16,12 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-<<<<<<< HEAD
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizard}
-=======
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsHomePage
->>>>>>> main
 
 class LoginStepDef extends BaseStepDef {
 

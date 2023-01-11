@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Cancellations
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Cancellations.DeclarationNotFoundPage
-import uk.gov.hmrc.test.ui.pages.Manage.ArrivalNotificationsPage
 
 class CancellationsStepDef extends BaseStepDef {
 

@@ -17,11 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.RouteDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-<<<<<<< HEAD
-import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit.{AddAnotherOfficeOfExitPage, OfficeOfExitCountryPage, OfficeOfExitPage}
-=======
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit._
->>>>>>> main
 
 class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 

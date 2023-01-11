@@ -18,10 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.{IdentificationNumberPage, InlandModeOfTransportPage, TransportCountryPage, TransportIdentificationPage}
-<<<<<<< HEAD
-=======
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport._
->>>>>>> main
 
 class InlandModeOfTransportStepDef extends BaseStepDef {
 

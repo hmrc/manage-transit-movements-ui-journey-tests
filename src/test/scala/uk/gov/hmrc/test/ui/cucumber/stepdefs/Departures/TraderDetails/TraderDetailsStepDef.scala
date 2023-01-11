@@ -17,19 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.TraderDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-<<<<<<< HEAD
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee._
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignor._
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative._
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.SetReducedDataSetIndicatorPage
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder._
-=======
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.{ConsigneeAddressPage, ConsigneeCountryPage, ConsigneeEoriNumberOrTinPage, ConsigneeNamePage, IsConsigneeEoriNumberOrTinKnownPage, MoreThanOneConsigneePage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignor.{AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsignorAddressPage, ConsignorCountryPage, ConsignorEoriNumberOrTinPage, ConsignorNamePage, IsConsignorEoriNumberOrTinKnownPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative.{ActingAsRepresentativePage, RepresentativeCapacityPage, RepresentativeEoriNumbeOrTinPage, RepresentativeNamePage, RepresentativePhoneNumberPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.SetReducedDataSetIndicatorPage
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder.{AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, HolderAddressPage, HolderCountryPage, HolderEoriNumberOrTinPage, HolderNamePage, IsHolderEoriKnownPage, IsTIRidKnownPage, TirHolderIdPage}
->>>>>>> main
 
 class TraderDetailsStepDef extends BaseStepDef {
 
