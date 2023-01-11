@@ -75,6 +75,9 @@ trait BasePage extends BrowserDriver with Matchers {
     jse.executeScript("arguments[0].scrollIntoView()", element)
     action(element)
   }
+
+  def checkForContent(content: String): Unit =
+    findBy(By.id("main-content")).getText.contains(content)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

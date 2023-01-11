@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-trait Page extends BasePage {
+import uk.gov.hmrc.test.ui.pages.Page
 
-  def title(args: String*): String
+trait GuaranteeBalancePage {
+  this: Page =>
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
-    this
-  }
-
-  val serviceName: String = "Manage your transit movements"
-
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
+  override val serviceName: String = "Check your transit guarantee balance"
 }

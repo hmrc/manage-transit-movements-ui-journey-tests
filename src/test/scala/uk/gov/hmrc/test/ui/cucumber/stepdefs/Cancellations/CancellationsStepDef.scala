@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.cucumber.stepdefs.Cancellations
 
-trait Page extends BasePage {
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Cancellations.DeclarationNotFoundPage
 
-  def title(args: String*): String
+class CancellationsStepDef extends BaseStepDef {
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
-    this
+   Then("""^(?:I )?(?:should )?be on the You cannot cancel this departure declaration page$""") { () =>
+    DeclarationNotFoundPage
+      .loadPage()
   }
 
-  val serviceName: String = "Manage your transit movements"
+  Given("""^(?:I )?click on the Back to departure declarations link on the Declaration not found page$""") { (link: String) =>
+    DeclarationNotFoundPage
+      .loadPage()
+      .backToDepartureDeclarations()
+  }
 
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
 }

@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Unloading
 
-trait Page extends BasePage {
+import uk.gov.hmrc.test.ui.pages.Page
 
-  def title(args: String*): String
+object UnloadingRejectionPage extends Page {
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
-    this
-  }
+   override def title(args: String*): String = "There is a problem with these unloading remarks"
 
-  val serviceName: String = "Manage your transit movements"
-
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
 }

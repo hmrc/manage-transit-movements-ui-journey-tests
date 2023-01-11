@@ -2,10 +2,10 @@
 Feature: Guarantee journeys includes pre task list
 
   Background:
-    Given I login with ID 1234567
-    Then I am on the Manage Transit Movements Hub service
-    Given I click on the Make a departure declaration link
-    And I input a random LRN on the LocalReferenceNumber page
+    Given I login with ID 1234567890
+    Then I should be on the Manage your transit movements page
+    When I click on the Make a departure declaration link on the Manage your transit movements page
+    Then I input a random LRN on the What is the Local Reference Number page
 
   @a11y
     Scenario: 01 GB declaration with multiple guarantees [0,3,5,9,R]

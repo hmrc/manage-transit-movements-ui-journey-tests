@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Manage
 
-trait Page extends BasePage {
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-  def title(args: String*): String
+object ArrivalRejectionPage extends StringPage {
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
+   override def title(args: String*): String = "There is a problem with this arrival notification"
+
+  def selectAction(link: String): this.type = {
+    link match {
+      case "Change" => clickByPartialLinkText("Change")
+      case "send a new arrival notification with the right information" => clickByPartialLinkText("send a new arrival notification with the right information")
+    }
     this
   }
 
-  val serviceName: String = "Manage your transit movements"
-
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
 }

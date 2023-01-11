@@ -39,9 +39,4 @@ class CYAStepDef extends BaseStepDef {
       .clickChangeLink(text)
   }
 
-  And("""^(?:I )?view the CYA page""") { () =>
-    CYAPage
-      .loadPage()
-  }
-
 }

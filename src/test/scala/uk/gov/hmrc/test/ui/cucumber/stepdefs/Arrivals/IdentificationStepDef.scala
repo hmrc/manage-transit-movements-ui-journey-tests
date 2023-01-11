@@ -35,7 +35,7 @@ class IdentificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the movement reference number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the Movement Reference Number page$""") { (answer: String) =>
     MovementReferenceNumberPage
       .loadPage()
       .fillInput(answer)

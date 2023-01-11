@@ -14,22 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Cancellations
 
-trait Page extends BasePage {
+import uk.gov.hmrc.test.ui.pages.Page
 
-  def title(args: String*): String
+object DeclarationNotFoundPage extends Page {
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
-    this
+  override def title(args: String*): String = "You cannot cancel this departure declaration"
+
+  def backToDepartureDeclarations(): Unit = {
+    clickById("manage-transit-movements")
   }
-
-  val serviceName: String = "Manage your transit movements"
-
-  private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
 }

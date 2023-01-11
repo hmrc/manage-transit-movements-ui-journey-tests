@@ -21,11 +21,16 @@ import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.{DeclarationTypePage, Lo
 
 class PreTaskListStepDef extends BaseStepDef {
 
-  When("""^I input a random LRN on the LocalReferenceNumber page$""") { () =>
+  When("""^I input a random LRN on the What is the Local Reference Number page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
       .fillInput()
       .submitPage()
+  }
+
+  Then("""^(?:I )?should be on the What is the Local Reference Number page$""") { () =>
+    LocalReferenceNumberPage
+      .loadPage()
   }
 
   And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>

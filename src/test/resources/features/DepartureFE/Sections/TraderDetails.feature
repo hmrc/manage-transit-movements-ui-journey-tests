@@ -2,10 +2,11 @@
 Feature: Trader details - includes Pre-task list, Holder of transit, Representative, Consignor, Consignee
 
   Background:
-    Given I login with ID 1234567
-    Then I am on the Manage Transit Movements Hub service
-    Given I click on the Make a departure declaration link
-    And I input a random LRN on the LocalReferenceNumber page
+    Given I login with ID 1234567890
+    Then I should be on the Manage your transit movements page
+    When I click on the Make a departure declaration link on the Manage your transit movements page
+    Then I input a random LRN on the What is the Local Reference Number page
+
 
   Scenario: 01 TraderDetails - GB Normal - No Security - Reduced Data Set - Not more than 1 consignee
     And I select GB on the office of departure page
