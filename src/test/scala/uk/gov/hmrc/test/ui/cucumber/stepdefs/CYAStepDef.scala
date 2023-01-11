@@ -28,7 +28,7 @@ class CYAStepDef extends BaseStepDef {
   And(
     """^(?:I )?submit on the (?:Pre-task list|Trader details|Transit route|Office of transit|Location of goods|
     |Places of loading and unloading|Office of exit|Route details|Border means of transport|Modes and means of transport|
-    |Guarantee details|Authorisations|Incidents|Arrivals) Check your answers page""") { () =>
+    |Guarantee details|Authorisations|Transport equipment|Incidents|Arrivals) Check your answers page""") { () =>
     CYAPage
       .loadPage()
       .submitPage()
