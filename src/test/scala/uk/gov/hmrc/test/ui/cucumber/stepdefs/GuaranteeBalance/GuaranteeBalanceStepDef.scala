@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.EoriNumberPage
 
-class GuranteeBalanceStepDef extends BaseStepDef {
+class GuaranteeBalanceStepDef extends BaseStepDef {
 
    Then("""^(?:I )?(?:should )?be on the What is your EORI number page$""") { () =>
-    EoriNumberPage
+     EoriNumberPage
+       .loadPage()
   }
 }

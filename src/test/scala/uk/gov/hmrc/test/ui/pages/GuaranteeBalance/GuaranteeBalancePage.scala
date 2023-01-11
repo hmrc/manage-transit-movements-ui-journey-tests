@@ -14,22 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.Cancellations
+package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Cancellations.DeclarationNotFoundPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-class CancellationsStepDef extends BaseStepDef {
+trait GuaranteeBalancePage {
+  this: Page =>
 
-   Then("""^(?:I )?(?:should )?be on the You cannot cancel this departure declaration page$""") { () =>
-    DeclarationNotFoundPage
-      .loadPage()
-  }
-
-  Given("""^(?:I )?click on the Back to departure declarations link on the Declaration not found page$""") { (link: String) =>
-    DeclarationNotFoundPage
-      .loadPage()
-      .backToDepartureDeclarations()
-  }
-
+  override val serviceName: String = "Check your transit guarantee balance"
 }

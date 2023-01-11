@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object EoriNumberPage extends BasePage {
+object EoriNumberPage extends StringPage with GuaranteeBalancePage {
 
-  assert(driver.getTitle == "What is your EORI number? - Check your transit guarantee balance - GOV.UK")
+  override def title(args: String*): String = "What is your EORI number?"
 }

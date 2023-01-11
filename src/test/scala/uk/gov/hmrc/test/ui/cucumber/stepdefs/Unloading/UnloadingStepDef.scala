@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.{ArrivalNotificationsPage, DepartureDeclarationsPage, ManageTransitMovementsPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingRejectionPage, UnloadingRemarksNegativeAcknowledgementPage}
 
 class UnloadingStepDef extends BaseStepDef {
@@ -30,7 +29,7 @@ class UnloadingStepDef extends BaseStepDef {
   Given("""^(?:I )?click the create new unloading remarks link on the Unloading remarks negative acknowledgement page$""") { () =>
     UnloadingRemarksNegativeAcknowledgementPage
       .loadPage()
-      .CreateNewUnloadingRemarks
+      .createNewUnloadingRemarks()
   }
 
    And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") {
