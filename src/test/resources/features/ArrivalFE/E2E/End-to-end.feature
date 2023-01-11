@@ -69,7 +69,7 @@ Feature: End to end journey Arrival notification feature
     When I choose radio option Yes on the You have added 1 goods item number page
     And I enter 0002 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
-    And I submit on the Incidents Check your answers page
+    And I submit on the Transport equipment Check your answers page
     #Add Transport Equipment
     When I choose radio option Yes on the You have added 1 transport equipment page
     #Add Container Indicator - 2nd transport equipment iteration
@@ -96,12 +96,12 @@ Feature: End to end journey Arrival notification feature
     When I click the Remove link on the You have added 2 goods item numbers page
     And I click radio option Yes on the Are you sure you want to remove goods item number 0005 page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the Incidents Check your answers page
+    And I submit on the Transport equipment Check your answers page
     #Change Transport Equipment
     When I click the Change link on the You have added 2 transport equipment page
     And I click the change link for Container identification number on the CYA page
     And I enter C003 on the container identification number page
-    And I submit on the Incidents Check your answers page
+    And I submit on the Transport equipment Check your answers page
     #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
@@ -197,7 +197,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 0001 on the What is the goods item number page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the Incidents Check your answers page
+    And I submit on the Transport equipment Check your answers page
     And I choose radio option No on the You have added 1 transport equipment page
     And I submit on the Incidents Check your answers page
   #Add Another Incident
