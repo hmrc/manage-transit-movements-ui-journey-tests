@@ -79,6 +79,15 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     When I choose radio option No on the You have added 1 supply chain actor page
 
 
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option Yes on the Do you want to add a contact for the carrier page
+    And I enter Jim Morrison on the Who is the contact for the carrier page
+    And I enter +348756374563 on the What is the Carrier Contact's telephone number page
+
+
   Scenario: 02 Transport Details - XI Normal - No Security - Inland Mode 'Rail' - Border Means 'Air'
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -141,6 +150,13 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     When I choose radio option No on the Do you want to add a supply chain actor page
 
 
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
+
+
   Scenario: 03 Transport Details - XI NON TIR - NO Security, NO UCR, NO containers - Inland Mode 'Mail'
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page
@@ -180,4 +196,11 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
 

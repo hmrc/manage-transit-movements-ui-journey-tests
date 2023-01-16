@@ -145,6 +145,17 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the You have added 1 supply chain actor page
 
 
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option Yes on the Do you want to add a contact for the carrier page
+    And I enter Jim Morrison on the Who is the contact for the carrier page
+    And I enter +348756374563 on the What is the Carrier Contact's telephone number page
+
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road' -
     Border Means 'Rail'
     And I choose radio option Normal on the procedure type page
@@ -281,6 +292,12 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the Do you want to add a supply chain actor page
 
 
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
+
   Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
@@ -379,6 +396,13 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
 
 
   Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No' - Inland Mode 'Road' -
@@ -498,3 +522,10 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page

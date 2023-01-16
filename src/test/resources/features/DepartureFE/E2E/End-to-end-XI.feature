@@ -152,6 +152,13 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the You have added 1 supply chain actor page
 
 
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
+
+
   @a11y
   Scenario: 02 Procedure 'Normal' - Delcaration 'TIR' - Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air'
     And I choose radio option Normal on the procedure type page
@@ -247,6 +254,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
 
 
   Scenario: 03 Procedure 'Normal' - Declaration 'T2' - Security 'EXS' - Guarantee '1' - Office of Exit - Inland Mode 'Mail'
@@ -349,3 +363,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+
+
+
+
+    #Carrier Details
+    When I enter GB123456789000 on the What is the carrier’s EORI number or Trader Identification Number page
+    Then I choose radio option No on the Do you want to add a contact for the carrier page
