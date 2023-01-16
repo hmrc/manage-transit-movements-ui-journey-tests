@@ -21,13 +21,14 @@ Tests can be run in Chrome or Firefox using a GUI or headless browser
 ```
 
 ### Start service manager
-For Departure and Cancellation tests run -
+For all tests run -
 
-    `sm --start CTC_TRADERS_DEPARTURE_ACCEPTANCE -r`
+    `sm --start CTC_TRADERS_P5_ACCEPTANCE -r`
 
-For all other tests (Arrivals, Manage, Unloading) run -
+or if using service manager 2 run - 
 
-    `sm --start CTC_TRADERS_ARRIVAL_P5_ACCEPTANCE -r`
+    `sm2 --start CTC_TRADERS_P5_ACCEPTANCE`
+
 
 
 ### Driver/Browser Config
