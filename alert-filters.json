@@ -63,6 +63,14 @@
       "ruleId": 10021,
       "urlIsRegex": "true",
       "newLevel": 0
+    },
+    {
+      "reason": "PII Disclosure - False positive",
+      "contextId": 1,
+      "url": "https:\\/\\/update.googleapis.com\\/.*",
+      "ruleId": 10062,
+      "urlIsRegex": "true",
+      "newLevel": 0
     }
   ]
 }
