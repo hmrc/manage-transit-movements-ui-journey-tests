@@ -45,7 +45,7 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page""") {
+  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page$""") {
     (sectionLink: String, numberOfGoodsItems: String) =>
       AddAnotherGoodsItemNumberPage
         .loadPage(numberOfGoodsItems)

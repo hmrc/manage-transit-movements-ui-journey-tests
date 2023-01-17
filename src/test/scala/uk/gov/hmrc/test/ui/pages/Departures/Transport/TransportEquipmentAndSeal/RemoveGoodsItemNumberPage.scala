@@ -16,10 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object RemoveGoodsItemNumberPage extends YesNoPage {
-
-  override def title(goodsItemNo: String, containerNo: String): String = String.format("Are you sure you want to remove goods item number %s from container %s?", goodsItemNo, containerNo)
-
+   override def title(args: String*): String = args match {
+      case Seq(goodsItemNo, containerNo) =>
+        String.format(
+          "Are you sure you want to remove goods item number %s from container %s?",
+          goodsItemNo,
+          containerNo
+        )
+      case _ => throw InvalidTitleArgsException(s"Expected a goods item number and a container number but got: $args")
+    }
 }
