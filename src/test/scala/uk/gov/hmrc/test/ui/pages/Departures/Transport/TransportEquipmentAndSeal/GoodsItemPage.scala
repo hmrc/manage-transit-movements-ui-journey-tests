@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GoodsItemNumberPage extends StringPage {
+object GoodsItemPage extends StringPage {
 
   override def title(args: String*): String = String.format("What is the goods item number for container %s?", args: _*)
 

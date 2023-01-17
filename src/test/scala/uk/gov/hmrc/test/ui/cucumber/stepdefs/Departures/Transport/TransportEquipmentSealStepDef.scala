@@ -29,6 +29,13 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the Do you want to add a container identification number page$""") {
+    (answer: String) =>
+      AddContainerIdentificationNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
 
   And("""^(?:I )?choose radio option (.*) on the Do you want to add a seal for container (.*) page$""") {
     (answer: String, containerIdNumber: String) =>
@@ -38,12 +45,25 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the What is the seal identification number for container (.+) page$""") {
+  And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number for container (.*) page$""") {
     (answer: String, containerIdNumber: String) =>
-    SealIdentificationNumberPage
-      .loadPage(containerIdNumber)
-      .fillInput(answer)
-      .submitPage()
+      AddGoodsItemNumberPage
+        .loadPage(containerIdNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+
+
+
+
+
+
+  And("""^(?:I )?click the (.*) link on the You have added (.*) container identification numbers? page$""") {
+    (sectionLink: String, numberOfContainers: String) =>
+      AddAnotherContainerPage
+        .loadPage(numberOfContainers)
+        .clickByPartialLinkText(sectionLink)
   }
 
   When("""^(?:I )?click the (.*) link  on the You have added (.*) seals? for container (.*) page$""") {
@@ -51,6 +71,27 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       AddAnotherSealPage
         .loadPage(numberOfSeals, containerIdNumber)
         .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? for container (.*) page$""") {
+    (sectionLink: String, numberOfGoodsItems: String, containerIdNumber: String) =>
+      AddAnotherGoodsItemPage
+        .loadPage(numberOfGoodsItems, containerIdNumber)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+
+
+
+
+
+
+  And("""^(?:I )?choose radio option (.*) on the You have added (.*) container identification numbers? page$""") {
+    (answer: String, numberOfContainers: String) =>
+      AddAnotherContainerPage
+        .loadPage(numberOfContainers)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) seals? for container (.*) page$""") {
@@ -61,37 +102,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove seal (.*) page$""") {
-    (answer: String, sealIdNumber: String) =>
-    RemoveSealPage
-      .loadPage(sealIdNumber)
-      .select(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") {
-    (answer: String) =>
-    SealIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the You have added (.*) container identification numbers? page$""") {
-    (answer: String, numberOfContainers: String) =>
-      AddAnotherContainerPage
-        .loadPage(numberOfContainers)
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?click the (.*) link on the You have added (.*) container identification numbers? page$""") {
-    (sectionLink: String, numberOfContainers: String) =>
-      AddAnotherContainerPage
-        .loadPage(numberOfContainers)
-        .clickByPartialLinkText(sectionLink)
-  }
-
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) goods item numbers? for container (.*) page$""") {
     (answer: String, numberOfGoodsItems: String, containerIdNumber: String) =>
       AddAnotherGoodsItemPage
@@ -100,28 +110,13 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? for container (.*) page$""") {
-    (sectionLink: String, numberOfGoodsItems: String, containerIdNumber: String) =>
-      AddAnotherGoodsItemPage
-        .loadPage(numberOfGoodsItems, containerIdNumber)
-        .clickByPartialLinkText(sectionLink)
-  }
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add a container identification number page$""") {
-    (answer: String) =>
-    AddContainerIdentificationNumberPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number for container (.*) page$""") {
-    (answer: String, containerIdNumber: String) =>
-    AddGoodsItemNumberPage
-      .loadPage(containerIdNumber)
-      .select(answer)
-      .submitPage()
-  }
+
+
+
+
+
 
   And("""^(?:I )?enter (.+) on the What is the container identification number page$""") { (answer: String) =>
     ContainerIdentificationNumberPage
@@ -130,13 +125,28 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?enter (.+) on the What is the seal identification number for container (.+) page$""") {
+    (answer: String, containerIdNumber: String) =>
+      SealIdentificationNumberPage
+        .loadPage(containerIdNumber)
+        .fillInput(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?enter (.*) on the What is the goods item number for container (.*) page$""") {
     (answer: String, containerIdNumber: String) =>
-    GoodsItemNumberPage
+    GoodsItemPage
       .loadPage(containerIdNumber)
       .fillInput(answer)
       .submitPage()
   }
+
+
+
+
+
+
+
 
   And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove container (.*) page$""") {
     (answer: String, containerIdNumber: String) =>
@@ -146,9 +156,17 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove goods item number (.*) from container (.*) page$""") {
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove seal (.*) page$""") {
+    (answer: String, sealIdNumber: String) =>
+      RemoveSealPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove goods item (.*) from container (.*) page$""") {
     (answer: String, goodsIdNumber: String, containerIdNumber: String) =>
-      RemoveGoodsItemNumberPage
+      RemoveGoodsItemPage
         .loadPage(goodsIdNumber, containerIdNumber)
         .select(answer)
         .submitPage()

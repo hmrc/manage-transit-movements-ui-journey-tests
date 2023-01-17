@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
 
 import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
-object RemoveGoodsItemNumberPage extends YesNoPage {
+object RemoveGoodsItemPage extends YesNoPage {
    override def title(args: String*): String = args match {
       case Seq(goodsItemNo, containerNo) =>
         String.format(
