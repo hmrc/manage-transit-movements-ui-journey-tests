@@ -281,6 +281,17 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the Do you want to add a supply chain actor page
 
 
+
+
+
+    #Payment Method
+    And I choose radio option Yes on the Do you want to add a method of payment for transport charges page
+    And I choose radio option Credit card on the Which method of payment do you want to use for transport charges page
+    And I submit on the Transport equipment Check your answers page
+    And I submit on the Transport details Check your answers page
+
+
+
   Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
