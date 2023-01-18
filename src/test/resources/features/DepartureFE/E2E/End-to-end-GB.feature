@@ -169,7 +169,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the You have added 1 goods item number for container 0001 page
 
 #    Container Id number
-      And I enter C001 on the What is the container identification number page
+    And I enter C001 on the What is the container identification number page
 
 #    Seal Id number
     And I enter S001 on the What is the seal identification number for container C001 page
@@ -177,14 +177,23 @@ Feature: End to end journey for Great Britain office of departure
 #    Goods Item number
     And I enter 0001 on the What is the goods item number for container C001 page
 
-#    Remove/Change Container
-      And I click radio option Yes on the Are you sure you want to remove container C001 page
+#    Remove Container
+    And I click radio option Yes on the Are you sure you want to remove container C001 page
 
-#    Remove/Change Seal
+#    Remove Seal
     And I click radio option Yes on the Are you sure you want to remove seal S001 page
 
-#   Remove/Change Goods Item
+#   Remove Goods Item
     And I click radio option Yes on the Are you sure you want to remove goods item 0001 from container C001 page
+
+#    Change Container
+    And I click the Change link on the You have added 1 container identification number page
+
+#    Change Seal
+    And I click the Change link  on the You have added 1 seal for container C001 page
+
+#    Change Goods Item
+    And I click the Change link on the You have added 1 goods item number for container C001 page
 
 #   CYA Page for Transport details - Container, seals and goods item numbers
     And I submit on the Transport equipment Check your answers page

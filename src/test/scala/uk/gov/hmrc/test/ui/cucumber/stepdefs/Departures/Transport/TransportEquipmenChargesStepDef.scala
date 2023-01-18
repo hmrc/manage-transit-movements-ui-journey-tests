@@ -17,9 +17,9 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal._
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges._
 
-class TransportEquipmentSealStepDef extends BaseStepDef {
+class TransportEquipmenChargesStepDef extends BaseStepDef {
 
 
   And("""^(?:I )?choose radio option (.*) on the Do you need to add any transport equipment page$""") { (answer: String) =>
@@ -53,12 +53,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-
-
-
-
-
-
   And("""^(?:I )?click the (.*) link on the You have added (.*) container identification numbers? page$""") {
     (sectionLink: String, numberOfContainers: String) =>
       AddAnotherContainerPage
@@ -66,7 +60,7 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  When("""^(?:I )?click the (.*) link  on the You have added (.*) seals? for container (.*) page$""") {
+  And("""^(?:I )?click the (.*) link  on the You have added (.*) seals? for container (.*) page$""") {
     (sectionLink: String, numberOfSeals: String, containerIdNumber: String) =>
       AddAnotherSealPage
         .loadPage(numberOfSeals, containerIdNumber)
@@ -79,12 +73,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .loadPage(numberOfGoodsItems, containerIdNumber)
         .clickByPartialLinkText(sectionLink)
   }
-
-
-
-
-
-
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) container identification numbers? page$""") {
     (answer: String, numberOfContainers: String) =>
@@ -110,14 +98,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-
-
-
-
-
-
-
-
   And("""^(?:I )?enter (.+) on the What is the container identification number page$""") { (answer: String) =>
     ContainerIdentificationNumberPage
       .loadPage()
@@ -140,13 +120,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-
-
-
-
-
-
-
 
   And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove container (.*) page$""") {
     (answer: String, containerIdNumber: String) =>

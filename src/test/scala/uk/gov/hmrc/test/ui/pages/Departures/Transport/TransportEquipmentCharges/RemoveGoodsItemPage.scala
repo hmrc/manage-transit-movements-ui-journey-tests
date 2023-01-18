@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
-object AddGoodsItemNumberPage extends YesNoPage {
-
-  override def title(args: String*): String = String.format("Do you want to add a goods item number for container %s?", args: _*)
-
+object RemoveGoodsItemPage extends YesNoPage {
+   override def title(args: String*): String = args match {
+      case Seq(goodsItemNo, containerNo) =>
+        String.format(
+          "Are you sure you want to remove goods item number %s from container %s?",
+          goodsItemNo,
+          containerNo
+        )
+      case _ => throw InvalidTitleArgsException(s"Expected a goods item number and a container number but got: $args")
+    }
 }

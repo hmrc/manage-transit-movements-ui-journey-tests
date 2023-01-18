@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherGoodsItemPage extends YesNoPage {
+object AddContainerIdentificationNumberPage extends YesNoPage {
 
-      override def title(args: String*): String = args match {
-        case Seq("1", identificationVal) => String.format("You have added 1 goods item number for container %s", identificationVal)
-        case Seq(numberOfSeals, identificationVal) => String.format("You have added %s goods item numbers for container %s", numberOfSeals, identificationVal)
-      }
+  override def title(args: String*): String = "Do you want to add a container identification number?"
+
 }

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddContainerIdentificationNumberPage extends YesNoPage {
+object RemoveSealPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a container identification number?"
+  override def title(args: String*): String = String.format("Are you sure you want to remove seal %s?", args: _*)
 
 }

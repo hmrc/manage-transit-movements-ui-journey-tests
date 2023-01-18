@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentAndSeal
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RemoveSealPage extends YesNoPage {
+object RemoveContainerPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove seal %s?", args: _*)
+  override def title(args: String*): String = String.format("Are you sure you want to remove container %s?", args: _*)
 
 }
