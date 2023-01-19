@@ -12,7 +12,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Transit holder details
     When I click the link with visible text: Add trader details
@@ -46,7 +46,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Both entry and exit summary declarations (ENS and EXS) on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -86,7 +86,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
     And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Transit holder details
     When I click the link with visible text: Add trader details
@@ -122,7 +122,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
     And I choose radio option Both entry and exit summary declarations (ENS and EXS) on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Transit holder details
     When I click the link with visible text: Add trader details
@@ -154,7 +154,7 @@ Feature: Trader details - includes Pre-task list, Holder of transit, Representat
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Holder of transit
     And I click the link with visible text: Add trader details

@@ -15,7 +15,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Route Details -> Binding Itinerary set to NO
     When I click the link with visible text: Add route details
@@ -24,7 +24,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I select GB on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Transit
     And I choose radio option No on the add office of transit page
     #Route Details Location Of Goods
@@ -33,12 +33,12 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I enter GB123456789000 on the departure location of goods eori tin page
     And I choose radio option No on the departure location of goods add identifier page
     And I choose radio option No on the departure location of goods add contact page
-    And I submit on the Location of goods Check your answers page
+    And I submit on the Route details - Location of goods Check your answers page
     #Route Details Loading
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
     And I choose radio option No on the place of loading add extra information page
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
@@ -67,7 +67,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Conveyance Reference Number
     And I enter 123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [CYA]
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option Yes on the Do you want to add a supply chain actor page
     And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
@@ -86,7 +86,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
     And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Route details section
     When I click the link with visible text: Add route details
@@ -96,7 +96,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Location Of Goods
     And I choose radio option No on the departure add location of goods page
     #Route Details Loading
@@ -108,7 +108,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
     And I enter Birmingham on the United Kingdom place of unloading location page
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details section
@@ -137,7 +137,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     #Conveyance Reference Number
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [CYA]
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
 
@@ -147,7 +147,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Route Details section
     When I click the link with visible text: Add route details
@@ -156,7 +156,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I select BARI on the departure office of destination page
     And I choose radio option No on the binding itinerary page
     And I choose radio option No on the transit route add country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Transit -> Add office of transit [No]
     And I choose radio option No on the add office of transit page
     #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
@@ -167,7 +167,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     Then I should have Italy as loading location on the place of loading location page
     When I enter Rome on the place of loading location page
     #Route Details Unloading -> [Set 0]
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details section
@@ -178,7 +178,7 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     And I choose radio option No on the containers page
     #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
 
