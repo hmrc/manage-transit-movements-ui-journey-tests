@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.Identification
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AuthorisationsReferenceNumberPage extends StringPage {
-  override def title(args: String*): String =
-    String.format("What’s the reference number for the %s?", args: _*)
+object AddAnAuthorisationPage extends YesNoPage {
+
+  override def title(args: String*): String = "Do you want to add an authorisation?"
+
 }

@@ -14,11 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.Identification
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.{RadioPage, YesNoPage}
 
-object AuthorisationsReferenceNumberPage extends StringPage {
-  override def title(args: String*): String =
-    String.format("What’s the reference number for the %s?", args: _*)
+object TypeOfAuthorisationPage extends YesNoPage {
+
+  override def title(args: String*): String = "Which type of authorisation do you want to add?"
+
+  override def select(answer: String): this.type = {
+    val typeOfAuthorisation = answer match {
+      case "ACR authorisation" => "ACR"
+      case "SSE authorisation" => "SSE"
+      case "TRD authorisation" => "TRD"
+    }
+    clickRadioBtn(typeOfAuthorisation)
+    this
+  }
+
 }
