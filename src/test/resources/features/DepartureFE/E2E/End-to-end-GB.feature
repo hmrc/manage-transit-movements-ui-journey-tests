@@ -143,6 +143,8 @@ Feature: End to end journey for Great Britain office of departure
     When I choose to click on the Remove link on the You have added 2 supply chain actors page
     And I choose radio option Yes on the Are you sure you want to remove this supply chain actor page
     When I choose radio option No on the You have added 1 supply chain actor page
+    #Transport details - Authorisations - AuthorisationTypeDeparture should be Optional: Yes/No
+    When I choose radio option No for Do you want to add an authorisation page
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road' -
@@ -279,9 +281,13 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+    #Transport details - Authorisations
+    When I choose radio option No for Do you want to add an authorisation page
 
 
-  Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
+  Scenario: 03 Transport Details - Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail' - Authorisations
+  Authorisations: Procedure type = Simplified, Reduced Data Set Indicator = 1, InlandMode != 1-Maritime, 2-Rail or 4-Air, AuthorisationTypeDeparture should be C521 ACR
+
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option No security on the security type page
@@ -297,11 +303,6 @@ Feature: End to end journey for Great Britain office of departure
     #Representative details
     And I choose radio option No on the acting as representative page
     #Reduced data set
-    And I choose radio option Yes on the approved operator page
-    #Consignee at header level
-    And I choose radio option Yes on the more than one consignee page
-    #Change reduced data set indicator
-    And I click the change link for has reduced data set on the CYA page
     And I choose radio option No on the approved operator page
     #Add consignor
     And I choose radio option Yes on the is consignor eori number or tin known page
@@ -310,11 +311,11 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the consignor country page
     And I fill in the consignor address page
     And I choose radio option No on adding contact for consignor page
-    #Change and add contact
-    And I click the change link for has consignor contact on the CYA page
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
+    #Consignee at header level
+    And I choose radio option Yes on the more than one consignee page
+    #Change reduced data set indicator
+    And I click the change link for has reduced data set on the CYA page
+    And I choose radio option Yes on the approved operator page
     #Change has more than one consignee
     And I click the change link for has more than one consignee on the CYA page
     And I choose radio option No on the more than one consignee page
@@ -379,10 +380,14 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+   #Transport details - Authorisations - AuthorisationTypeDeparture should be C521 ACR
+    And I enter 987654321012345 for What is the reference number for the ACR authorisation page
+    And I choose radio option No for You have added 1 authorisation page
+    And I enter the date on the limit date page
 
 
   Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No' - Inland Mode 'Road' -
-    Border Means 'Maratime'
+    Border Means 'Maritime'
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -498,3 +503,5 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+    #Transport details - Authorisations
+    When I choose radio option No for Do you want to add an authorisation page

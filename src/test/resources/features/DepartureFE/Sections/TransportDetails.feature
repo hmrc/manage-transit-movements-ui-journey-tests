@@ -215,82 +215,10 @@ Feature: Transport details - includes Pre-task list, Transport details, Containe
     When I choose to click on the Change link on You have added 1 authorisations page
     And I enter 123451234512345 for What is the reference number for the ACR authorisation page
     And I choose radio option No for You have added 1 authorisation page
-    And I enter date on the limit date page
+    And I enter the date on the limit date page
 
 
-  Scenario: 03 Transport Details - XI NON TIR - Goods not-in free circulation with EU - NO Security, NO UCR, NO containers - Inland Mode 'Mail' - Authorisations 'Add & Remove'
-  Authorisations: Procedure type = Simplified, Reduced Data Set Indicator = 1, InlandMode != 1-Maritime, 2-Rail or 4-Air, AuthorisationTypeDeparture should be C521 ACR
-
-    And I select XI on the office of departure page
-    And I choose radio option Simplified on the procedure type page
-    And I choose radio option T1 on the declaration type page
-    And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
-    Then I should be on the task list page
-    #Transit holder details
-    When I click the link with visible text: Add trader details
-    And I choose radio option No on the is eori known type page
-    And I enter Joe Blog on the holder name page
-    And I select United Kingdom on the holder country page
-    And I fill in the holder address page
-    #Holder's contact person's details
-    And I choose radio option No on the add contact page
-    #Representative details
-    And I choose radio option No on the acting as representative page
-    #Reduced data set - YES
-    And I choose radio option Yes on the approved operator page
-    #Consignee at header level
-    And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori number or tin known page
-    And I enter GB123456123456 on the consignee eori number or tin page
-    And I enter Simpson Blog Consignee on the consignee name page
-    And I select United Kingdom on the consignee country page
-    And I fill in the consignee address page
-    And I submit on the Trader details Check your answers page
-    #Route Details section
-    When I click the link with visible text: Add route details
-    #Office of Destination Declared
-    And I select Italy on the country of destination page
-    And I select BARI on the departure office of destination page
-    And I choose radio option No on the binding itinerary page
-    And I choose radio option No on the transit route add country page
-    And I submit on the Transit route Check your answers page
-    #Route Details Transit -> Add office of transit [No]
-    And I choose radio option No on the add office of transit page
-    #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
-    And I choose radio option No on the departure add location of goods page
-    #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
-    And I choose radio option No on the place of loading add un locode page
-    And I select Italy on the place of loading country page
-    Then I should have Italy as loading location on the place of loading location page
-    When I enter Rome on the place of loading location page
-    #Route Details Unloading -> [Set 0]
-    And I submit on the Places of loading and unloading Check your answers page
-    And I submit on the Route details Check your answers page
-    Then I should be on the task list page
-    #Transport details section
-    When I click the link with visible text: Add transport details
-    And I choose radio option No on the apply ucr item page
-    And I choose radio option No on the same destination country page
-    #Container details
-    And I choose radio option No on the containers page
-    #Inland Mode Of Transport
-    And I choose radio option Mail on the Inland Mode of Transport page
-    And I submit on the Modes and means of transport Check your answers page
-    #Supply chain actor: Add Another supply chain actor
-    When I choose radio option No on the Do you want to add a supply chain actor page
-    #Transport details - Authorisations - AuthorisationTypeDeparture should be C521 ACR
-    And I enter 987654321012345 for What is the reference number for the ACR authorisation page
-    When I choose radio option Yes for You have added 1 authorisation page
-    And I choose radio option SSE authorisation for Which type of authorisation do you want to add page
-    #authorisation ref no.
-    And I enter 987654321012345 for What is the reference number for the SSE authorisation page
-    When I choose to click on the Remove link on You have added 2 authorisations page
-    And I choose radio option Yes for Are you sure you want to remove SSE authorisation 987654321012345 page
-    And I choose radio option No for You have added 1 authorisation page
-
-
-  Scenario: 04 Transport Details - XI NON TIR - Goods not-in free circulation with EU - NO Security, NO UCR, NO containers - Inland Mode 'Mail' - Authorisations 'Add & Change'
+  Scenario: 03 Transport Details - XI NON TIR - Goods not-in free circulation with EU - NO Security, NO UCR, NO containers - Inland Mode 'Mail' - Authorisations 'Add & Change'
   Authorisations: Procedure type = Normal, Reduced Data Set Indicator = 1, InlandMode != 1-Maritime, 2-Rail or 4-Air, AuthorisationTypeDeparture should be = user to choose the type of authorisation
     And I select XI on the office of departure page
     And I choose radio option Normal on the procedure type page

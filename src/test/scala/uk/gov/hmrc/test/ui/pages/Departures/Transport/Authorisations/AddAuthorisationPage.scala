@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RemoveAnAuthorisationPage extends YesNoPage {
+object AddAuthorisationPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("Are you sure you want to remove %s?", args: _*)
+  override def title(args: String*): String = "Do you want to add an authorisation?"
 
 }

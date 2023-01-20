@@ -9,9 +9,8 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I input a random LRN on the What is the Local Reference Number page
     And I select XI on the office of departure page
 
-
   Scenario: 01 Procedure 'Simplified' - Declaration 'T' - Security 'No' - Guarantee 'A' - T2 declarations 'Yes' -
-  Inland Mode 'Maratime' - Border Means 'Maratime' - Supply Chain Actor - 'Add'
+  Inland Mode 'Maratime' - Border Means 'Maratime' - Supply Chain Actor - 'Add', Authorisations - 'Yes for ACR'
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T on the declaration type page
     And I choose radio option No security on the security type page
@@ -150,10 +149,16 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
     And I enter GB98472189002 on the What is the EORI number or Trader Identification Number for the consolidator page
     When I choose radio option No on the You have added 1 supply chain actor page
-
+    #Transport details - Authorisations - AuthorisationTypeDeparture should be Optional: Yes/No
+    When I choose radio option Yes for Do you want to add an authorisation page
+    And I choose radio option ACR authorisation for Which type of authorisation do you want to add page
+    #authorisation ref no.
+    And I enter 987654321012345 for What is the reference number for the ACR authorisation page
+    And I choose radio option No for You have added 1 authorisation page
+    And I enter the date on the limit date page
 
   @a11y
-  Scenario: 02 Procedure 'Normal' - Delcaration 'TIR' - Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air'
+  Scenario: 02 Procedure 'Normal' - Delcaration 'TIR' - Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air', Confirmation of pre-requisite of Reduced data set for transport details.
     And I choose radio option Normal on the procedure type page
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
@@ -247,6 +252,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+    #Confrmation to add Reduced data set as a pre-requisite - NO
+    And I choose radio option No on the approved operator page
+    And I submit on the Trader details Check your answers page
+    #Transport details - Edit
+    When I click the link with visible text: Edit transport details
+    #Transport details - Authorisations
+    When I choose radio option No for Do you want to add an authorisation page
 
 
   Scenario: 03 Procedure 'Normal' - Declaration 'T2' - Security 'EXS' - Guarantee '1' - Office of Exit - Inland Mode 'Mail'
@@ -349,3 +361,5 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
+    #Transport details - Authorisations
+    When I choose radio option No for Do you want to add an authorisation page

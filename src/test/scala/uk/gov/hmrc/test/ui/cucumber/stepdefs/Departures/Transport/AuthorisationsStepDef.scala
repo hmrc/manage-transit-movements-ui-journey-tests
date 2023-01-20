@@ -17,13 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrivals.Identification.AuthorisationsReferenceNumberPage
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{AddAnAuthorisationPage, AddAnotherAuthorisationPage, LimitDatePage, RemoveAnAuthorisationPage, TypeOfAuthorisationPage}
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{AddAnotherAuthorisationPage, AddAuthorisationPage, LimitDatePage, ReferenceNumberAuthorisationPage, RemoveAuthorisationPage, TypeOfAuthorisationPage}
 
 class AuthorisationsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) for Do you want to add an authorisation page$""") { (answer: String) =>
-    AddAnAuthorisationPage
+    AddAuthorisationPage
       .loadPage()
       .select(answer)
       .submitPage()
@@ -38,13 +37,13 @@ class AuthorisationsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.+) for What is the reference number for the (.*) page$""") {
     (answer: String, typeOfAuthorisation: String) =>
-      AuthorisationsReferenceNumberPage
+      ReferenceNumberAuthorisationPage
         .loadPage(typeOfAuthorisation)
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) for You have added (.+) authorisation page$""") {
+  And("""^(?:I )?choose radio option (.*) for You have added (.+) authorisations? page$""") {
     (answer: String, numberOfAuthorisations: String) =>
       AddAnotherAuthorisationPage
         .loadPage(numberOfAuthorisations)
@@ -52,7 +51,7 @@ class AuthorisationsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  When("""^(?:I )?choose to click on the (.*) link on You have added (.+) authorisations page$""") {
+  When("""^(?:I )?choose to click on the (.*) link on You have added (.+) authorisations? page$""") {
     (sectionLink: String, numberOfAuthorisations: String) =>
       AddAnotherAuthorisationPage
         .loadPage(numberOfAuthorisations)
@@ -61,13 +60,13 @@ class AuthorisationsStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.+) for Are you sure you want to remove (.*) page$""") {
     (answer: String, typeOfAuthorisation: String) =>
-      RemoveAnAuthorisationPage
+      RemoveAuthorisationPage
         .loadPage(typeOfAuthorisation)
         .select(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?enter date on the limit date page$""") { () =>
+  And("""^(?:I )?enter the date on the limit date page$""") { () =>
     LimitDatePage
       .fillInputs()
       .submitPage()
