@@ -9,7 +9,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the What is the Local Reference Number page
     And I select GB on the office of departure page
 
-  @a11y
+  @a11y 
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
@@ -143,6 +143,18 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option Yes on the add another guarantee page
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
     Then I should have 2 guarantees added on the add another guarantee page
+    When I choose radio option Yes on the add another guarantee page
+    And I choose radio option (8) Guarantee not required – exempt public body on the guarantee type page
+    And I enter 01GB123456789012 on the other reference for the guarantee 8 page
+    And I submit on the Guarantee details Check your answers page
+    Then I should have 3 guarantees added on the add another guarantee page
+    When I choose radio option Yes on the add another guarantee page
+    And I choose radio option (1) Comprehensive guarantee on the guarantee type page
+    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
+    And I enter AC01 on the access code page
+    And I enter 10000 on the amount to be covered page
+    And I submit on the Guarantee details Check your answers page
+    Then I should have 4 guarantees added on the add another guarantee page
     When I choose radio option No on the add another guarantee page
     Then I should be on the task list page
 
@@ -209,8 +221,8 @@ Feature: End to end journey for Great Britain office of departure
 
     #TODO the rest of transport
 
-  @wip
-  Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0'
+
+  Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
     And I choose radio option Normal on the procedure type page
     And I choose radio option T1 on the declaration type page
     And I choose radio option No security on the security type page
@@ -322,6 +334,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the Do you want to add an authorisation page
 
       ##Carrier
+    #TODO change the step to be using the h1, add the quotes
     When I enter GB123456123456 on the carrier eori number or tin page
     And I choose radio option No on the add carrier contact page
 
