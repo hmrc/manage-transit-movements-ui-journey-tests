@@ -1,4 +1,4 @@
-@departureGBe2e @wip
+@departureGBe2e
 
 Feature: End to end journey for Great Britain office of departure
 
@@ -10,7 +10,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select GB on the office of departure page
 
   @a11y
-  Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS'
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Exit summary declaration (EXS) on the security type page
@@ -208,6 +208,125 @@ Feature: End to end journey for Great Britain office of departure
     And I enter +88 888 888 on the carrier's contact phone number page
 
     #TODO the rest of transport
+
+  @wip
+  Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0'
+    And I choose radio option Normal on the procedure type page
+    And I choose radio option T1 on the declaration type page
+    And I choose radio option No security on the security type page
+    And I submit the Check your answers page
+
+    # Trader details
+    And I click the link with visible text: Add trader details
+      ## Transit Holder
+    And I choose radio option No on the is eori known type page
+    And I enter Joe Blog on the holder name page
+    And I select United Kingdom on the holder country page
+    And I fill in the holder address page
+
+     ## Transit holder's contact person's details
+
+    And I choose radio option No on the add contact page
+
+    ## Representative details
+    And I choose radio option No on the acting as representative page
+
+    ## Reduced data set operator
+    And I choose radio option No on the approved operator page
+
+    ## Consignor
+    And I choose radio option No on the is consignor eori number or tin known page
+    And I enter Pip Consignor on the consignor name page
+    And I select United Kingdom on the consignor country page
+    And I fill in the consignor address page
+    And I choose radio option No on adding contact for consignor page
+
+    ## Consignee
+    And I choose radio option Yes on the more than one consignee page
+    And I submit on the Trader details Check your answers page
+    Then I should be on the task list page
+    And I should see COMPLETED status for trader details
+
+    # Route details
+    When I click the link with visible text: Add route details
+
+     ## Transit route
+    And I select Italy on the country of destination page
+    And I select IT on the office of destination page
+
+      ## Binding itinerary indicator
+    And I choose radio option No on the binding itinerary page
+
+      ## Transit route country optional
+    And I choose radio option No on the transit route add country page
+    And I submit on the Route details - Transit route Check your answers page
+
+      ## Country of Transit
+    And I select France on the office of transit country page
+    When I select Brest bureau (FR000690) on the office of transit page
+    And I choose radio option No on the office of transit add eta page
+    And I submit on the Route details - Office of transit Check your answers page
+    Then I should have 1 office of transit added on the add another office of transit page
+    And I choose radio option No on the add another office of transit page
+
+      ## Location of goods
+    And I choose radio option Approved place on the departure location of goods type page
+    And I choose radio option Coordinates on the departure location of goods identification page
+    And I enter 50.96622 and 1.86201 on the arrival location of goods coordinates page
+    And I choose radio option No on the departure location of goods add contact page
+    And I submit on the Route details - Location of goods Check your answers page
+
+    ## Place of loading UN LOCODE
+    And I choose radio option No on the place of loading add un locode page
+
+    And I select United Kingdom on the place of loading country page
+    Then I should have United Kingdom as loading location on the place of loading location page
+    When I enter London on the place of loading location page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
+    And I submit on the Route details Check your answers page
+    Then I should be on the task list page
+
+
+    #Guarantee details
+    When I click the link with visible text: Add guarantee details
+
+    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
+    Then I should have 1 guarantees added on the add another guarantee page
+    When I choose radio option No on the add another guarantee page
+    Then I should be on the task list page
+
+
+    #Transport details
+    When I click the link with visible text: Add transport details
+
+    And I choose radio option No on the apply ucr item page
+    And I choose radio option No on the items same destination country page
+
+      ## Container indicator
+    And I choose radio option No on the containers page
+
+    ## Inland mode of transport
+    And I choose radio option Road on the Inland Mode of Transport page
+    And I choose radio option Registration number of a road trailer on the Transport Identification page
+    And I enter GB1234567 as registration number of the road trailer on the transport identification number page
+    And I select United Kingdom on the Transport country page
+
+      ## Border mode of transport
+    And I choose radio option No on the add border mode of transport page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
+
+      ## Supply chain actor
+    When I choose radio option No on the Do you want to add a supply chain actor page
+
+      ## Authorisation
+    And I choose radio option No on the Do you want to add an authorisation page
+
+      ##Carrier
+    When I enter GB123456123456 on the carrier eori number or tin page
+    And I choose radio option No on the add carrier contact page
+
+
+
 
 
 
