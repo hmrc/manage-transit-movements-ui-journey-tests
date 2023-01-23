@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.PreTaskList
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object LocalReferenceNumberPage extends StringPage {
+object AuthorisationAddAnotherPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is the Local Reference Number (LRN)?"
-  val randomLRN                             = randomAlphaNumericString(15)
-  def fillInput(): this.type = {
-    fillInputById("value", randomLRN)
-    println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
-    this
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 authorisation"
+    case _        => String.format("You have added %s authorisations", args: _*)
   }
 }

@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.PreTaskList
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocalReferenceNumberPage extends StringPage {
+object CarrierEoriNumberOrTinPage extends StringPage {
 
-  override def title(args: String*): String = "What is the Local Reference Number (LRN)?"
-  val randomLRN                             = randomAlphaNumericString(15)
-  def fillInput(): this.type = {
-    fillInputById("value", randomLRN)
-    println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
-    this
-  }
+  override def title(args: String*): String =
+    "What is the carrier’s EORI number or Trader Identification Number (TIN)?"
+
 }

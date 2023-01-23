@@ -1,4 +1,3 @@
-@departureGBe2e
 
 Feature: End to end journey for Great Britain office of departure
 

@@ -28,7 +28,7 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the departure office of destination page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the office of destination page$""") { (answer: String) =>
     OfficeOfDestinationPage
       .loadPage()
       .select(answer)

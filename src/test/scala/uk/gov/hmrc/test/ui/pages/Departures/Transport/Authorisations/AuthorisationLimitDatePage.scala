@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.PreTaskList
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.DatePage
 
-object LocalReferenceNumberPage extends StringPage {
+import java.time.LocalDateTime
 
-  override def title(args: String*): String = "What is the Local Reference Number (LRN)?"
-  val randomLRN                             = randomAlphaNumericString(15)
-  def fillInput(): this.type = {
-    fillInputById("value", randomLRN)
-    println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
+object AuthorisationLimitDatePage extends DatePage {
+
+  override def title(args: String*): String = "When is the limit date?"
+
+  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(13)
+
+  override def fillInputs(): this.type = {
+    fillInputById("valueDay", day)
+    fillInputById("valueMonth", month)
+    fillInputById("valueYear", year)
+
     this
   }
+
 }
