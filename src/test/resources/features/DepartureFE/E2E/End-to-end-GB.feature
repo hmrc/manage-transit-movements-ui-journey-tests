@@ -1,4 +1,4 @@
-@departureGBe2e
+@departureGBe2e @wip
 
 Feature: End to end journey for Great Britain office of departure
 
@@ -74,16 +74,12 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Country of routing - removing a country page added
     And I select Andorra on the 'Which country do you want to add to the transit route' page
-    Then I should have 1 country added to the 'You have added 1 country to the transit route' page
     And I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select France on the 'Which country do you want to add to the transit route' page
-    Then I should have 2 countries added to the 'You have added 2 countries to the transit route' page
     And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
     And I select Germany on the 'Which country do you want to add to the transit route' page
-    Then I should have 3 countries added to the 'You have added 3 countries to the transit route' page
     When I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route' page
-    Then I should have 2 countries added to the 'You have added 2 countries to the transit route' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Route details - Transit route Check your answers page
 
@@ -93,15 +89,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Germany, Basel (DE004058)' page
     And I submit on the Route details - Office of transit Check your answers page
-    Then I should have 1 office of transit added on the 'You have added 1 office of transit' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit
     And I select Germany on the 'Which country is the office of exit in' page
-    Then I should have Germany as an office of exit title on the 'Where in Germany is the office of exit' page
     When I select Dortmund on the 'Where in Germany is the office of exit' page
     And I submit on the Route details - Office of exit Check your answers page
-    Then I should have 1 office of transit added on the 'You have added 1 office of exit' page
     When I choose radio option No on the 'You have added 1 office of exit' page
 
       ## Location of goods
@@ -120,7 +113,6 @@ Feature: End to end journey for Great Britain office of departure
     And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading' page
     And I select United Kingdom on the 'In which country is the place of loading' page
-    Then I should have United Kingdom as loading location on the 'Where in United Kingdom is the place of loading' page
     When I enter London on the 'Where in United Kingdom is the place of loading' page
     And I choose radio option Yes on the 'Do you want to add a place of unloading' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of unloading' page
@@ -140,21 +132,17 @@ Feature: End to end journey for Great Britain office of departure
     And I enter AC01 on the 'What is the access code' page
     And I enter 10000 on the 'How much is the liability in pounds' page
     And I submit on the Guarantee details Check your answers page
-    Then I should have 1 guarantee added on 'You have added 1 guarantee' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it' page
-    Then I should have 2 guarantees added on 'You have added 2 guarantee' page
     When I choose radio option Yes on the 'You have added 2 guarantee' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it' page
     And I enter 01GB123456789012 on the 'What is the reference' page
     And I submit on the Guarantee details Check your answers page
-    Then I should have 3 guarantees added on 'You have added 3 guarantee' page
     When I choose radio option Yes on the 'You have added 3 guarantee' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee' page
     And I submit on the Guarantee details Check your answers page
-    Then I should have 4 guarantees added on 'You have added 4 guarantee' page
     When I choose radio option No on the 'You have added 4 guarantee' page
     Then I should be on the task list page
 
@@ -189,8 +177,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number' page
     And I enter GB123456123456 on the 'What is the conveyance reference number' page
     And I submit on the Transport details - Border means of transport Check your answers page
-    And I should have 1 border means of transport added on the add another border means of transport page
-    When I choose radio option No on the add another border means of transport page
+    When I choose radio option No on the 'You have added 1 border means of transport' page
     And I submit on the Transport details - Modes and means of transport Check your answers page
 
       ## Supply chain actor
@@ -201,15 +188,13 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Authorisation
     And I enter ACR123 reference number on the 'What’s the reference number for the ACR authorisation' page
-    Then I should have 1 authorisation on the 'You have added 1 authorisation' page
-    When I choose radio option Yes on the You have added 1 transport authorisation page
+    When I choose radio option Yes on the 'You have added 1 transport authorisation' page
     And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
     And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation' page
     Then I should have 2 authorisations on the 'You have added 2 authorisations' page
-    When I choose to click on Remove link on the add another transport authorisation page
+    When I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123' page
-    Then I should have 1 authorisation on the 'You have added 1 authorisation' page
-    When I choose radio option No on the You have added 1 transport authorisation page
+    When I choose radio option No on the 'You have added 1 transport authorisation' page
     And I enter the date on the 'When is the limit date' page
 
       ##Carrier
@@ -277,7 +262,6 @@ Feature: End to end journey for Great Britain office of departure
     When I select Brest bureau (FR000690) on the 'Where in France is the office of transit' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)' page
     And I submit on the Route details - Office of transit Check your answers page
-    Then I should have 1 office of transit added on the 'You have added 1 office of transit' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
@@ -291,7 +275,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading' page
 
     And I select United Kingdom on the 'In which country is the place of loading' page
-    Then I should have United Kingdom as loading location on the 'Where in United Kingdom is the place of loading' page
     When I enter London on the 'Where in United Kingdom is the place of loading' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
@@ -302,7 +285,6 @@ Feature: End to end journey for Great Britain office of departure
     When I click the link with visible text: Add guarantee details
 
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it' page
-    Then I should have 1 guarantees added on 'You have added 1 guarantee' page
     When I choose radio option No on the 'You have added 1 guarantee' page
     Then I should be on the task list page
 

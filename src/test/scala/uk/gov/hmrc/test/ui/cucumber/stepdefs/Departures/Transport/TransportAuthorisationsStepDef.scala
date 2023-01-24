@@ -35,7 +35,7 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
         .loadPage(numberOfAuthorisations)
   }
 
-  When("""^(?:I )?choose radio option (.*) on the You have added (.+) transport authorisations? page$""") {
+  When("""^(?:I )?choose radio option (.*) on the 'You have added (.+) transport authorisations?' page$""") {
     (answer: String, numberOfActors: String) =>
       AuthorisationAddAnotherPage
         .loadPage(numberOfActors)
@@ -51,8 +51,8 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  When("""^(?:I )?choose to click on (.*) link on the add another transport authorisation page$""") {
-    (sectionLink: String) =>
+  When("""^(?:I )?choose to click on (.*) link on the 'You have added (.*) authorisations' page$""") {
+    (sectionLink: String, numberOfAuthsInTitle: String) =>
       AuthorisationAddAnotherPage
         .clickByPartialLinkText(sectionLink)
   }

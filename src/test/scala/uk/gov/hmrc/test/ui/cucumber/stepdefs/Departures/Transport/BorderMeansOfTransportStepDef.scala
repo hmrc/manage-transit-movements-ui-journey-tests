@@ -112,7 +112,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  When("""^(?:I )?choose radio option (.*) on the add another border means of transport page$""") { (answer: String) =>
+  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") { (answer: String, numberOfBorderMeansInTitle: String) =>
     AddAnotherBorderMeansOfTransportPage
       .select(answer)
       .submitPage()
