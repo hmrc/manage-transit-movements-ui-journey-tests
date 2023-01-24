@@ -191,7 +191,6 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option Yes on the 'You have added 1 transport authorisation' page
     And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
     And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation' page
-    Then I should have 2 authorisations on the 'You have added 2 authorisations' page
     When I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page

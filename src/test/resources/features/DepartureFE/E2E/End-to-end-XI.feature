@@ -123,3 +123,15 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor' page
+
+    #Authorisation
+    And I choose radio option Yes on the 'Do you want to add an authorisation' page
+    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
+    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation' page
+    When I choose radio option No on the 'You have added 1 transport authorisation' page
+
+    #Carrier
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the carrier' page
+    And I enter Carry on the 'Who is the contact for the carrier' page
+    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact' page
