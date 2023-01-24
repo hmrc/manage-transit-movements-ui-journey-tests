@@ -35,7 +35,7 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the office of transit country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Which country is the office of transit in' page$""") { (answer: String) =>
     OfficeOfTransitCountryPage
       .loadPage()
       .select(answer)
@@ -48,10 +48,11 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?select (.+) on the office of transit page$""") { (answer: String) =>
-    OfficeOfTransitPage
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of transit' page$""") {
+    (answer: String, countryInTitle: String) =>
+      OfficeOfTransitPage
+        .select(answer)
+        .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+) arrival time title on the office of transit add eta page$""") {
@@ -60,10 +61,11 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(office)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the office of transit add eta page$""") { (answer: String) =>
-    OfficeOfTransitAddEtaPage
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a time of arrival in (.*)' page$""") {
+    (answer: String, officeInTitle: String) =>
+      OfficeOfTransitAddEtaPage
+        .select(answer)
+        .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+), (.+) as transit to arrive on the office of transit eta page$""") {
@@ -72,22 +74,25 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(office, country)
   }
 
-  And("""^(?:I )?choose fill in the date and time on the office of transit eta page$""") { () =>
-    OfficeOfTransitEtaPage
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)' page$""") {
+    (country: String, office: String) =>
+      OfficeOfTransitEtaPage
+        .fillInputs()
+        .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) offices? of transit added on the add another office of transit page$""") {
-    (numberOfOffices: String) =>
-      AddAnotherOfficeOfTransitPage
-        .loadPage(numberOfOffices)
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the add another office of transit page$""") { (answer: String) =>
+  Then(
+    """^(?:I )?(?:should )?have (.+) offices? of transit added on the 'You have added (.*) offices? of transit' page$"""
+  ) { (numberOfOffices: String, numberOfCountriesInTitle: String) =>
     AddAnotherOfficeOfTransitPage
-      .select(answer)
-      .submitPage()
+      .loadPage(numberOfOffices)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) offices? of transit' page$""") {
+    (answer: String, numberOfCountriesInTitle: String) =>
+      AddAnotherOfficeOfTransitPage
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose to click on (.*) link on the add another office of transit page$""") { (sectionLink: String) =>

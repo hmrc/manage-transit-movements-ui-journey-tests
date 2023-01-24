@@ -21,47 +21,50 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor._
 
 class SupplyChainActorStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add a supply chain actor page$""") { (answer: String) =>
-    AddSupplyChainActorPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a supply chain actor' page$""") {
+    (answer: String) =>
+      AddSupplyChainActorPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Which type of supply chain actor do you want to add page$""") { (answer: String) =>
-    TypeSupplyChainActorPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of supply chain actor do you want to add' page$""") {
+    (answer: String) =>
+      TypeSupplyChainActorPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the What is the EORI number or Trader Identification Number for the (.*) page$""") {
+  And("""^(?:I )?enter (.+) on the 'What’s the EORI number or TIN for the (.*)' page$""") {
     (answer: String, typeVal: String) =>
-    EoriTinSupplyChainActorPage
-      .loadPage(typeVal)
-      .fillInput(answer)
-      .submitPage()
+      EoriTinSupplyChainActorPage
+        .loadPage(typeVal)
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the You have added (.+) supply chain actors? page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.+) supply chain actors?' page$""") {
     (answer: String, numberOfActors: String) =>
-    AddAnotherSupplyChainActorPage
-      .loadPage(numberOfActors)
-      .select(answer)
-      .submitPage()
+      AddAnotherSupplyChainActorPage
+        .loadPage(numberOfActors)
+        .select(answer)
+        .submitPage()
   }
 
   When("""^(?:I )?choose to click on the (.*) link on the You have added (.+) supply chain actors? page$""") {
     (sectionLink: String, numberOfActors: String) =>
-    AddAnotherSupplyChainActorPage
-      .loadPage(numberOfActors)
-      .clickByPartialLinkText(sectionLink)
+      AddAnotherSupplyChainActorPage
+        .loadPage(numberOfActors)
+        .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Are you sure you want to remove this supply chain actor page$""") { (answer: String) =>
-    RemoveSupplyChainActorPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the Are you sure you want to remove this supply chain actor page$""") {
+    (answer: String) =>
+      RemoveSupplyChainActorPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 }

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{Authorisat
 
 class TransportAuthorisationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?enter (.+) reference number on the (.+) transport authorisations number page$""") {
+  And("""^(?:I )?enter (.+) reference number on the 'What’s the reference number for the (.+) authorisation' page$""") {
     (answer: String, authorisation: String) =>
       AuthorisationRefNumberPage
         .loadPage(authorisation)
@@ -29,10 +29,10 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?should have (.*) authorisations? on the add another transport authorisation page$""") {
-    (numberOfOffices: String) =>
+  Then("""^(?:I )?should have (.*) authorisations? on the 'You have added (.*) authorisations?' page$""") {
+    (numberOfAuthorisations: String, authorisationsInTitle: String) =>
       AuthorisationAddAnotherPage
-        .loadPage(numberOfOffices)
+        .loadPage(numberOfAuthorisations)
   }
 
   When("""^(?:I )?choose radio option (.*) on the You have added (.+) transport authorisations? page$""") {
@@ -43,11 +43,12 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the transport authorisations type page$""") { (answer: String) =>
-    AuthorisationTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of authorisation do you want to add' page$""") {
+    (answer: String) =>
+      AuthorisationTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   When("""^(?:I )?choose to click on (.*) link on the add another transport authorisation page$""") {
@@ -57,7 +58,7 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the (.+) transport authorisation (.+) on the remove page$"""
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove (.+) authorisation (.+)' page$"""
   ) { (answer: String, authorisationType: String, identificationVal: String) =>
     RemoveAuthPage
       .loadPage(authorisationType, identificationVal)
@@ -65,14 +66,14 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter the date on the limit date page$""") { () =>
+  And("""^(?:I )?enter the date on the 'When is the limit date' page$""") { () =>
     LimitDatePage
       .fillInputs()
       .submitPage()
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the Do you want to add an authorisation page$"""
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page$"""
   ) { (answer: String) =>
     WantToAddAuthorisation
       .loadPage()

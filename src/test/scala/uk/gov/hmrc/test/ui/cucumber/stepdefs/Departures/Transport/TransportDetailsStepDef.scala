@@ -21,35 +21,37 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails._
 
 class TransportDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the apply ucr item page$""") { (answer: String) =>
-    ApplyUcrToAllItemsPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to use the same UCR for all items' page$""") {
+    (answer: String) =>
+      ApplyUcrToAllItemsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the UCR page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the UCR' page$""") { (answer: String) =>
     UniqueConsignmentReferencePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the items same destination country page$""") { (answer: String) =>
-    ItemsSameDestinationCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Are all the items being transported to the same country' page$""") {
+    (answer: String) =>
+      ItemsSameDestinationCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the items destination country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What country are the items being transported to' page$""") { (answer: String) =>
     ItemsDestinationCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the containers page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Are you using any containers' page$""") { (answer: String) =>
     ContainersPage
       .loadPage()
       .select(answer)

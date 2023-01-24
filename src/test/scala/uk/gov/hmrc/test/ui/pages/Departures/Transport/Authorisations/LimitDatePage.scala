@@ -24,7 +24,7 @@ object LimitDatePage extends DatePage {
 
   override def title(args: String*): String = "When is the limit date?"
 
-  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(13)
+  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
 
   override def fillInputs(): this.type = {
     fillInputById("valueDay", day)

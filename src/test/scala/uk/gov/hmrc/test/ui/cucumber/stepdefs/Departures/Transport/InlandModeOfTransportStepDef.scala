@@ -21,34 +21,37 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.{Ide
 
 class InlandModeOfTransportStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the Inland Mode of Transport page$""") { (answer: String) =>
-    InlandModeOfTransportPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Which inland mode of transport are you using' page$""") {
+    (answer: String) =>
+      InlandModeOfTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
-
-  And("""^(?:I )?choose radio option (.*) on the Transport Identification page$""") { (answer: String) =>
+  //"""^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for this vehicle' page$"""
+  And(
+    """^(?:I )?choose radio option (.*) on the inland mode 'Which identification do you want to use for this vehicle' page$"""
+  ) { (answer: String) =>
     TransportIdentificationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) as (.+) on the transport identification number page$""") {
-    (answer: String, meansOfTransport: String) =>
+  And("""^(?:I )?enter (.+) as (.+) on the 'What is the (.*)' page$""") {
+    (answer: String, meansOfTransport: String, meansInTitle: String) =>
       IdentificationNumberPage
         .loadPage(meansOfTransport)
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the Transport country page$""") { (answer: String) =>
-    TransportCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the inland mode 'What country is this vehicle registered to' page$""") {
+    (answer: String) =>
+      TransportCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
-
 
 }

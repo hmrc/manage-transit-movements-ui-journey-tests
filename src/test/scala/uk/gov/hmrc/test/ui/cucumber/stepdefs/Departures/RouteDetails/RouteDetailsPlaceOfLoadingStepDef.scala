@@ -21,43 +21,47 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfLoading._
 
 class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the place of loading add un locode page$""") { (answer: String) =>
-    PlaceOfLoadingAddUnLocodePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of loading' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingAddUnLocodePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the place of loading un locode page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of loading' page$""") { (answer: String) =>
     PlaceOfLoadingUnLocodePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the place of loading add extra information page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of loading' page$"""
+  ) { (answer: String) =>
     PlaceOfLoadingAddExtraInformationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the place of loading country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'In which country is the place of loading' page$""") { (answer: String) =>
     PlaceOfLoadingCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as loading location on the place of loading location page$""") {
-    (answer: String) =>
+  Then("""^(?:I )?(?:should )?have (.+) as loading location on the 'Where in (.*) is the place of loading' page$""") {
+    (answer: String, countryInTitle: String) =>
       PlaceOfLoadingLocationPage
         .loadPage(answer)
   }
 
-  And("""^(?:I )?enter (.+) on the place of loading location page$""") { (answer: String) =>
-    PlaceOfLoadingLocationPage
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of loading' page$""") {
+    (answer: String, countryInTitle: String) =>
+      PlaceOfLoadingLocationPage
+        .fillInput(answer)
+        .submitPage()
   }
 }

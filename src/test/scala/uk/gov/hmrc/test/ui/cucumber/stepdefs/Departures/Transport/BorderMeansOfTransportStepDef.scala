@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport._
 
 class BorderMeansOfTransportStepDef extends BaseStepDef {
 
-
   And("""^(?:I )?choose radio option (.*) on the add border mode of transport page$""") { (answer: String) =>
     AddBorderModeOfTransportPage
       .loadPage()
@@ -29,14 +28,17 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the border mode of transport page$""") { (answer: String) =>
-    BorderModeOfTransportPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Which mode of transport are you using to cross the border' page$""") {
+    (answer: String) =>
+      BorderModeOfTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the border means of transport identification page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the border mode 'Which identification do you want to use for this vehicle' page$"""
+  ) { (answer: String) =>
     BorderMeansOftransportIdentificationPage
       .loadPage()
       .select(answer)
@@ -51,45 +53,50 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the border means of transport country page$""") { (answer: String) =>
-    BorderMeansOfTransportCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the border mode 'What country is this vehicle registered to' page$""") {
+    (answer: String) =>
+      BorderMeansOfTransportCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add border means of transport country page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle' page$"""
+  ) { (answer: String) =>
     AddBorderMeansOfTransportCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the border means of transport office of transit page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the office of transit' page$""") { (answer: String) =>
     BorderMeansOfTransportOfficeOfTransitPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add conveyance reference number page$""") { (answer: String) =>
-    AddConveyanceReferenceNumberPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a conveyance reference number' page$""") {
+    (answer: String) =>
+      AddConveyanceReferenceNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the conveyance reference number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the conveyance reference number' page$""") { (answer: String) =>
     ConveyanceReferenceNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) border means of transport added on the add another border means of transport page$""") {
-    (numberOfBorderMeansTransport: String) =>
-      AddAnotherBorderMeansOfTransportPage
-        .loadPage(numberOfBorderMeansTransport)
+  Then(
+    """^(?:I )?(?:should )?have (.+) border means of transport added on the add another border means of transport page$"""
+  ) { (numberOfBorderMeansTransport: String) =>
+    AddAnotherBorderMeansOfTransportPage
+      .loadPage(numberOfBorderMeansTransport)
   }
 
   And("""^(?:I )?choose to click on (.*) link on the add another border means of transport page$""") {
