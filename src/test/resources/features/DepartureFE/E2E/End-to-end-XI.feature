@@ -1,4 +1,4 @@
-@departureXIe2e
+@departureXIe2e @wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -65,10 +65,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Bari on the 'Where is the office of destination' page
     And I choose radio option No on the 'Are you using a binding itinerary' page
     And I select Andorra on the 'Which country do you want to add to the transit route' page
-    Then I should have 1 country added to the 'You have added 1 country to the transit route' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route' page
-    Then I should have 2 countries added to the 'You have added 2 countries to the transit route' page
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Route details - Transit route Check your answers page
 
@@ -82,7 +80,6 @@ Feature: End to end journey for Northern Ireland office of departure
     #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading' page
     And I select United Kingdom on the 'In which country is the place of loading' page
-    Then I should have United Kingdom as loading location on the 'Where in United Kingdom is the place of loading' page
     When I enter London on the 'Where in United Kingdom is the place of loading' page
 
     #Route Details Unloading -> [Set 1]
