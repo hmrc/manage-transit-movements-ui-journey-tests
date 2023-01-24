@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{Authorisat
 
 class TransportAuthorisationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?enter (.+) reference number on the 'What’s the reference number for the (.+) authorisation' page$""") {
+  And("""^(?:I )?enter (.+) reference number on the 'What’s the reference number for the (.+) authorisation\?' page$""") {
     (answer: String, authorisation: String) =>
       AuthorisationRefNumberPage
         .loadPage(authorisation)
@@ -51,14 +51,15 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  When("""^(?:I )?choose to click on (.*) link on the 'You have added (.*) authorisations' page$""") {
+  When("""^(?:I )?choose to click on (.*) link on the 'You have added (.*) authorisations?' page$""") {
     (sectionLink: String, numberOfAuthsInTitle: String) =>
       AuthorisationAddAnotherPage
+        .loadPage(numberOfAuthsInTitle)
         .clickByPartialLinkText(sectionLink)
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove (.+) authorisation (.+)' page$"""
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove (.+) authorisation (.+)\?' page$"""
   ) { (answer: String, authorisationType: String, identificationVal: String) =>
     RemoveAuthPage
       .loadPage(authorisationType, identificationVal)

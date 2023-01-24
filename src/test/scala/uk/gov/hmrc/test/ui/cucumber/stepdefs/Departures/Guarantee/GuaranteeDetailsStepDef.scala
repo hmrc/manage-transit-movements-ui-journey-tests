@@ -21,21 +21,21 @@ import uk.gov.hmrc.test.ui.pages.Departures.Guarantee.{AddAnotherGuaranteePage, 
 
 class GuaranteeDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which type of guarantee is it' page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of guarantee is it\?' page$""") { (answer: String) =>
     GuaranteeTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the access code' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the access code\?' page$""") { (answer: String) =>
     GuaranteeAccessCodePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'How much is the liability in pounds' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'How much is the liability in pounds\?' page$""") { (answer: String) =>
     GuaranteeLiabilityAmount
       .loadPage()
       .fillInput(answer)
@@ -48,13 +48,14 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
         .loadPage(numberOfGuarantees)
   }
 
-  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) guarantee' page$""") { (answer: String, guaranteesInTitle: String) =>
+  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) guarantees?' page$""") { (answer: String, guaranteesInTitle: String) =>
     AddAnotherGuaranteePage
+      .loadPage(guaranteesInTitle)
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a reference for the guarantee' page""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a reference for the guarantee\?' page""") {
     (answer: String) =>
       WantToAddReferenceForGuaranteePage
         .loadPage()
@@ -62,21 +63,21 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the reference for the guarantee' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the reference for the guarantee\?' page$""") { (answer: String) =>
     OtherGuarantee3ReferencePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the reference' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the reference\?' page$""") { (answer: String) =>
     OtherGuarantee8ReferencePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the Guarantee Reference Number' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page$""") { (answer: String) =>
     GuaranteeReferenceNumberPage
       .loadPage()
       .fillInput(answer)

@@ -28,7 +28,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which mode of transport are you using to cross the border' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Which mode of transport are you using to cross the border\?' page$""") {
     (answer: String) =>
       BorderModeOfTransportPage
         .loadPage()
@@ -37,7 +37,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the border mode 'Which identification do you want to use for this vehicle' page$"""
+    """^(?:I )?choose radio option (.*) on the border mode 'Which identification do you want to use for this vehicle\?' page$"""
   ) { (answer: String) =>
     BorderMeansOftransportIdentificationPage
       .loadPage()
@@ -45,7 +45,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) as (.+) on the border means of transport identification number page$""") {
+  And("""^(?:I )?enter identification (.+) on the 'What is the (.*)\?' page$""") {
     (answer: String, bordermeansOfTransport: String) =>
       BorderMeansOfTransportIdentificationNumberPage
         .loadPage(bordermeansOfTransport)
@@ -53,7 +53,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the border mode 'What country is this vehicle registered to' page$""") {
+  And("""^(?:I )?select (.+) on the border mode 'What country is this vehicle registered to\?' page$""") {
     (answer: String) =>
       BorderMeansOfTransportCountryPage
         .loadPage()
@@ -62,7 +62,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle\?' page$"""
   ) { (answer: String) =>
     AddBorderMeansOfTransportCountryPage
       .loadPage()
@@ -70,14 +70,14 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the office of transit' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the office of transit\?' page$""") { (answer: String) =>
     BorderMeansOfTransportOfficeOfTransitPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a conveyance reference number' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a conveyance reference number\?' page$""") {
     (answer: String) =>
       AddConveyanceReferenceNumberPage
         .loadPage()
@@ -85,7 +85,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the conveyance reference number' page$""") { (answer: String) =>
+  And("""^(?:I )?enter conveyance number (.+) on the 'What is the conveyance reference number\?' page$""") { (answer: String) =>
     ConveyanceReferenceNumberPage
       .loadPage()
       .fillInput(answer)
@@ -114,6 +114,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
 
   When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") { (answer: String, numberOfBorderMeansInTitle: String) =>
     AddAnotherBorderMeansOfTransportPage
+      .loadPage(numberOfBorderMeansInTitle)
       .select(answer)
       .submitPage()
   }

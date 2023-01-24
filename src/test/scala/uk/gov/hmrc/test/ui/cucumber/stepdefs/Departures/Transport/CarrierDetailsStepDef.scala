@@ -21,14 +21,14 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier.{AddCarrierContact
 
 class CarrierDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or TIN' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or TIN\?' page$""") { (answer: String) =>
     CarrierEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier\?' page$""") {
     (answer: String) =>
       AddCarrierContactPersonPage
         .loadPage()
@@ -36,14 +36,14 @@ class CarrierDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Who is the contact for the carrier' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'Who is the contact for the carrier\?' page$""") { (answer: String) =>
     AddCarrierContactNamePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the phone number for the carrier’s contact' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the phone number for the carrier’s contact\?' page$""") { (answer: String) =>
     CarrierContactPhoneNumberPage
       .loadPage()
       .fillInput(answer)

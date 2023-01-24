@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfLoading._
 
 class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of loading' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of loading\?' page$""") {
     (answer: String) =>
       PlaceOfLoadingAddUnLocodePage
         .loadPage()
@@ -29,7 +29,7 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of loading' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
     PlaceOfLoadingUnLocodePage
       .loadPage()
       .select(answer)
@@ -37,7 +37,7 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of loading' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of loading\?' page$"""
   ) { (answer: String) =>
     PlaceOfLoadingAddExtraInformationPage
       .loadPage()
@@ -45,7 +45,7 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'In which country is the place of loading' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'In which country is the place of loading\?' page$""") { (answer: String) =>
     PlaceOfLoadingCountryPage
       .loadPage()
       .select(answer)
@@ -58,7 +58,7 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .loadPage(answer)
   }
 
-  And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of loading' page$""") {
+  And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of loading\?' page$""") {
     (answer: String, countryInTitle: String) =>
       PlaceOfLoadingLocationPage
         .fillInput(answer)

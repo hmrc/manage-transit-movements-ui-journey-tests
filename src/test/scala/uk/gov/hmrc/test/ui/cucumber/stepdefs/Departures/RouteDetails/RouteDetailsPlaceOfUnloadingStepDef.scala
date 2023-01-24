@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfUnloading._
 
 class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a place of unloading' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a place of unloading\?' page$""") {
     (answer: String) =>
       AddPlaceOfUnloadingPage
         .loadPage()
@@ -29,7 +29,7 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of unloading' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of unloading\?' page$""") {
     (answer: String) =>
       PlaceOfUnloadingAddUnLocodePage
         .loadPage()
@@ -37,7 +37,7 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of unloading' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>
     PlaceOfUnloadingUnLocodePage
       .loadPage()
       .select(answer)
@@ -45,7 +45,7 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of unloading' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of unloading\?' page$"""
   ) { (answer: String) =>
     PlaceOfUnloadingAddExtraInformationPage
       .loadPage()
@@ -53,14 +53,14 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the place of unloading in' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Which country is the place of unloading in\?' page$""") { (answer: String) =>
     PlaceOfUnloadingCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of unloading' page$""") {
+  And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of unloading\?' page$""") {
     (answer: String, country: String) =>
       PlaceOfUnloadingLocationPage
         .loadPage(country)

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor._
 
 class SupplyChainActorStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a supply chain actor' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a supply chain actor\?' page$""") {
     (answer: String) =>
       AddSupplyChainActorPage
         .loadPage()
@@ -29,7 +29,7 @@ class SupplyChainActorStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which type of supply chain actor do you want to add' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of supply chain actor do you want to add\?' page$""") {
     (answer: String) =>
       TypeSupplyChainActorPage
         .loadPage()
@@ -37,7 +37,7 @@ class SupplyChainActorStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What’s the EORI number or TIN for the (.*)' page$""") {
+  And("""^(?:I )?enter (.+) on the 'What’s the EORI number or TIN for the (.*)\?' page$""") {
     (answer: String, typeVal: String) =>
       EoriTinSupplyChainActorPage
         .loadPage(typeVal)

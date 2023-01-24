@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit._
 
 class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the 'Which country is the office of exit in' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Which country is the office of exit in\?' page$""") { (answer: String) =>
     OfficeOfExitCountryPage
       .loadPage()
       .select(answer)
@@ -35,9 +35,10 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
       .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of exit' page$""") {
+  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of exit\?' page$""") {
     (answer: String, countryInTitle: String) =>
       OfficeOfExitPage
+        .loadPage(countryInTitle)
         .select(answer)
         .submitPage()
   }
@@ -51,6 +52,7 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.) office of exit' page$""") { (answer: String, officesInTitle: String) =>
     AddAnotherOfficeOfExitPage
+      .loadPage(officesInTitle)
       .select(answer)
       .submitPage()
   }

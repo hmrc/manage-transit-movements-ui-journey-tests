@@ -35,7 +35,7 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the office of transit in' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Which country is the office of transit in\?' page$""") { (answer: String) =>
     OfficeOfTransitCountryPage
       .loadPage()
       .select(answer)
@@ -48,9 +48,10 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of transit' page$""") {
+  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of transit\?' page$""") {
     (answer: String, countryInTitle: String) =>
       OfficeOfTransitPage
+        .loadPage(countryInTitle)
         .select(answer)
         .submitPage()
   }
@@ -61,9 +62,10 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(office)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a time of arrival in (.*)' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a time of arrival in (.*)\?' page$""") {
     (answer: String, officeInTitle: String) =>
       OfficeOfTransitAddEtaPage
+        .loadPage(officeInTitle)
         .select(answer)
         .submitPage()
   }
@@ -74,9 +76,10 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(office, country)
   }
 
-  And("""^(?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)' page$""") {
-    (country: String, office: String) =>
+  And("""^(?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)\?' page$""") {
+    (office: String, country: String) =>
       OfficeOfTransitEtaPage
+        .loadPage(office,country)
         .fillInputs()
         .submitPage()
   }
@@ -91,6 +94,7 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) offices? of transit' page$""") {
     (answer: String, numberOfCountriesInTitle: String) =>
       AddAnotherOfficeOfTransitPage
+        .loadPage(numberOfCountriesInTitle)
         .select(answer)
         .submitPage()
   }
