@@ -83,7 +83,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the guarantee B added for TIR declaration page$""") { () =>
+  Then("""^(?:I )?(?:should )?be on the 'Guarantee added for TIR declaration' page$""") { () =>
     GuaranteeBForTIRDeclarationPage
       .loadPage()
   }

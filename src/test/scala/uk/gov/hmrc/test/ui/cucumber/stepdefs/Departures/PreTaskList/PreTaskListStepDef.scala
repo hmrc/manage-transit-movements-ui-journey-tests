@@ -55,7 +55,7 @@ class PreTaskListStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the tir carnet page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the TIR carnet reference' page$""") { (answer: String) =>
     TIRCarnetPage
       .loadPage()
       .fillInput(answer)
