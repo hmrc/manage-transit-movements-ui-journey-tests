@@ -99,6 +99,23 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) offices? of transit' page$"""
+  ) { (sectionLink: String, numberOfOfficeInTitle: String) =>
+    AddAnotherOfficeOfTransitPage
+      .loadPage(numberOfOfficeInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove (.*) as an office of transit\?' page$"""
+  ) { (answer: String, transitOfficeInTitle: String) =>
+    ConfirmRemoveOfficeOfTransitPage
+      .loadPage(transitOfficeInTitle)
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?choose to click on (.*) link on the add another office of transit page$""") { (sectionLink: String) =>
     AddAnotherOfficeOfTransitPage
       .clickByPartialLinkText(sectionLink)

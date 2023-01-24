@@ -67,8 +67,9 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter the date on the 'When is the limit date' page$""") { () =>
+  And("""^(?:I )?enter the date on the 'When is the limit date\?' page$""") { () =>
     LimitDatePage
+      .loadPage()
       .fillInputs()
       .submitPage()
   }

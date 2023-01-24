@@ -13,7 +13,7 @@ Feature: End to end journey for Great Britain office of departure
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option T2 on the 'What declaration do you want to create' page
-    And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add' page
+    And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
     And I submit the Check your answers page
 
     # Trader details
@@ -72,7 +72,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
 
-      ## Country of routing - removing a country page added
+      ## Country of routing - removing a transit country
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     And I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select France on the 'Which country do you want to add to the transit route?' page
@@ -83,18 +83,31 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Route details - Transit route Check your answers page
 
-      ## Office of transit country page
+      ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
     When I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
     And I submit on the Route details - Office of transit Check your answers page
+    And I choose radio option Yes on the 'You have added 1 office of transit' page
+    And I select France on the 'Which country is the office of transit in?' page
+    When I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
+    And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
+    And I submit on the Route details - Office of transit Check your answers page
+    And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
-      ## Office of exit
+      ## Office of exit - removing an office of exit
     And I select Germany on the 'Which country is the office of exit in?' page
     When I select Dortmund on the 'Where in Germany is the office of exit?' page
     And I submit on the Route details - Office of exit Check your answers page
+    When I choose radio option Yes on the 'You have added 1 office of exit' page
+    And I select France on the 'Which country is the office of exit in?' page
+    When I select Agen bureau on the 'Where in France is the office of exit?' page
+    And I submit on the Route details - Office of exit Check your answers page
+    And I choose to click on the Remove link on the 'You have added 2 offices of exit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit?' page
     When I choose radio option No on the 'You have added 1 office of exit' page
 
       ## Location of goods
@@ -124,14 +137,17 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
 
-    #Guarantee details
+    #Guarantee details - remove guarantee
     When I click the link with visible text: Add guarantee details
-
+    And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
+    When I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
     And I enter AC01 on the 'What is the access code?' page
     And I enter 10000 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
+    And I choose to click on the Remove link on the 'You have added 2 guarantees' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
     When I choose radio option Yes on the 'You have added 2 guarantees' page
@@ -163,7 +179,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
-      ## Border mode of transport
+      ## Border means of transport
     And I choose radio option Maritime on the 'Which mode of transport are you using to cross the border?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
@@ -194,7 +210,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When is the limit date' page
+    And I enter the date on the 'When is the limit date?' page
 
       ##Carrier
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
@@ -208,7 +224,7 @@ Feature: End to end journey for Great Britain office of departure
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
     And I choose radio option Normal on the 'What type of procedure are you using' page
     And I choose radio option T1 on the 'What declaration do you want to create' page
-    And I choose radio option No security on the 'What type of safety and security details do you need to add' page
+    And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
     And I submit the Check your answers page
 
     # Trader details
@@ -316,6 +332,8 @@ Feature: End to end journey for Great Britain office of departure
       ##Carrier
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
+
+    #TODO the rest of transport
 
 
 

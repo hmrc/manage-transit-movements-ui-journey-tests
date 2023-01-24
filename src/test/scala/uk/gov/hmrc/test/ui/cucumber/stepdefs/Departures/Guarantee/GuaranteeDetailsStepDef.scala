@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Guarantee
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Guarantee.{AddAnotherGuaranteePage, GuaranteeAccessCodePage, GuaranteeBForTIRDeclarationPage, GuaranteeLiabilityAmount, GuaranteeReferenceNumberPage, GuaranteeTypePage, OtherGuarantee3ReferencePage, OtherGuarantee8ReferencePage, WantToAddReferenceForGuaranteePage}
+import uk.gov.hmrc.test.ui.pages.Departures.Guarantee.{AddAnotherGuaranteePage, ConfirmRemoveGuaranteePage, GuaranteeAccessCodePage, GuaranteeBForTIRDeclarationPage, GuaranteeLiabilityAmount, GuaranteeReferenceNumberPage, GuaranteeTypePage, OtherGuarantee3ReferencePage, OtherGuarantee8ReferencePage, WantToAddReferenceForGuaranteePage}
 
 class GuaranteeDetailsStepDef extends BaseStepDef {
 
@@ -42,7 +42,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) guarantees? added on 'You have added (.*) guarantee' page$""") {
+  Then("""^(?:I )?(?:should )?have (.+) guarantees? added on 'You have added (.*) guarantees?' page$""") {
     (numberOfGuarantees: String, guaranteesInTitle: String) =>
       AddAnotherGuaranteePage
         .loadPage(numberOfGuarantees)
@@ -53,6 +53,21 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .loadPage(guaranteesInTitle)
       .select(answer)
       .submitPage()
+  }
+
+  And("""^(?:I )?choose to click on the (.*) link on the 'You have added (.*) guarantees?' page$"""){
+    (linkText: String, numberOfGuaranteeTitle: String)=>
+      AddAnotherGuaranteePage
+        .loadPage(numberOfGuaranteeTitle)
+        .clickByPartialLinkText(linkText)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this guarantee\?' page$""") {
+    (answer: String) =>
+      ConfirmRemoveGuaranteePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a reference for the guarantee\?' page""") {

@@ -129,14 +129,14 @@ class TraderDetailsStepDef extends BaseStepDef {
   }
 
   //Consignor
-  And("""^(?:I )?choose radio option (.*) on the 'Is the TIR holder’s identification number known' page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Is the TIR holder’s identification number known\?' page$""") { (answer: String) =>
     IsTIRidKnownPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the TIR holder’s identification number' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the TIR holder’s identification number\?' page$""") { (answer: String) =>
     TirHolderIdPage
       .loadPage()
       .fillInput(answer)

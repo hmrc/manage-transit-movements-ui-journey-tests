@@ -43,6 +43,23 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) offices? of exit' page$"""
+  ) { (sectionLink: String, officesOfExitInTitle: String) =>
+    AddAnotherOfficeOfExitPage
+      .loadPage(officesOfExitInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove (.*) as an office of exit\?' page$"""
+  ) { (answer: String, exitOfficeInTitle: String) =>
+    ConfirmRemoveOfficeOfExitPage
+      .loadPage(exitOfficeInTitle)
+      .select(answer)
+      .submitPage()
+  }
+
   Then(
     """^(?:I )?(?:should )?have (.+) offices? of transit added on the 'You have added (.*) offices? of exit' page$"""
   ) { (numberOfOffices: String, numberOfCountriesInTitle: String) =>
@@ -50,7 +67,7 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
       .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.) office of exit' page$""") { (answer: String, officesInTitle: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit' page$""") { (answer: String, officesInTitle: String) =>
     AddAnotherOfficeOfExitPage
       .loadPage(officesInTitle)
       .select(answer)
