@@ -15,7 +15,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Simplified on the procedure type page
     And I choose radio option T on the declaration type page
     And I choose radio option No security on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     #Holder of transit
     And I click the link with visible text: Add trader details
     And I choose radio option No on the is eori known type page
@@ -66,7 +66,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Andorra on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     And I choose radio option No on the transit route add another country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Transit -> Entry point is [T2 declarations] -> T2 declarations [Yes]
     And I choose radio option Yes on the t2 declaration page
     And I select Andorra on the office of transit country page
@@ -74,7 +74,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I select DCNJ PORTA on the office of transit page
     Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
-    And I submit on the Office of transit Check your answers page
+    And I submit on the Route details - Office of transit Check your answers page
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
     #Route Details Location Of Goods -> Do you need to add a location of goods [NO]
@@ -87,7 +87,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should have United Kingdom as loading location on the place of loading location page
     When I enter London on the place of loading location page
     #Route Details Unloading -> [Set 0]
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
@@ -116,7 +116,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the add conveyance reference number page
     #Conveyance Reference Number
     And I enter GB123456123456 on the conveyance reference number page
-    And I submit on the Border means of transport Check your answers page
+    And I submit on the Transport details - Border means of transport Check your answers page
     #Border Means of Transport - Remove
     Then I should have 1 border means of transport added on the add another border means of transport page
     When I choose to click on Remove link on the add another border means of transport page
@@ -130,7 +130,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select BARI on the border means of transport office of transit page
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
-    And I submit on the Border means of transport Check your answers page
+    And I submit on the Transport details - Border means of transport Check your answers page
     Then I should have 1 border means of transport added on the add another border means of transport page
     #Border Means of Transport - Add Another
     When I choose radio option Yes on the add another border means of transport page
@@ -141,10 +141,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select DCNJ PORTA on the border means of transport office of transit page
     And I choose radio option Yes on the add conveyance reference number page
     And I enter GB123456123456 on the conveyance reference number page
-    And I submit on the Border means of transport Check your answers page
+    And I submit on the Transport details - Border means of transport Check your answers page
     Then I should have 2 border means of transport added on the add another border means of transport page
     When I choose radio option No on the add another border means of transport page
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option Yes on the Do you want to add a supply chain actor page
     And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
@@ -158,8 +158,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option TIR on the declaration type page
     And I enter 1234567 on the tir carnet page
     And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit on the Pre-task list Check your answers page
-    Then I should be on the task list page
+    And I submit the Check your answers page
     #Transit holder details
     When I click the link with visible text: Add trader details
     And I choose radio option Yes on the is TIR id known type page
@@ -199,13 +198,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Argentina on the transit route country page
     Then I should have 2 countries added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Location Of Goods -> Qualifier of the identification V [Customs office identifier]
     And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Designated location on the departure location of goods type page
     And I choose radio option Customs office identifier on the departure location of goods identification page
     And I select XI on the departure location of goods customs office identification page
-    And I submit on the Office of transit Check your answers page
+    And I submit on the Route details - Location of goods Check your answers page
     #Route Details Loading -> place of loading add un locode [No]
     And I choose radio option No on the place of loading add un locode page
     And I select United Kingdom on the place of loading country page
@@ -215,7 +214,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the place of unloading add un locode page
     And I select United Kingdom on the place of unloading country page
     And I enter London on the United Kingdom place of unloading location page
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
@@ -244,7 +243,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Conveyance Reference Number
     And I enter GB123456123456 on the conveyance reference number page
     #Transport - Inland Mode - Border Means [ CYA ]
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page
 
@@ -253,7 +252,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Normal on the procedure type page
     And I choose radio option T2 on the declaration type page
     And I choose radio option Exit summary declaration (EXS) on the security type page
-    And I submit on the Pre-task list Check your answers page
+    And I submit the Check your answers page
     Then I should be on the task list page
     #Transit holder details
     When I click the link with visible text: Add trader details
@@ -298,21 +297,21 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select Germany on the transit route country page
     Then I should have 1 country added to the transit route add another country page
     When I choose radio option No on the transit route add another country page
-    And I submit on the Transit route Check your answers page
+    And I submit on the Route details - Transit route Check your answers page
     #Route Details Transit -> Entry point is [Office of transit country]
     And I select Germany on the office of transit country page
     Then I should have Germany as office of transit on the office of transit page
     When I select Berlin on the office of transit page
     Then I should have Berlin-Flughafen Schönefeld (DE002102) arrival time title on the office of transit add eta page
     When I choose radio option No on the office of transit add eta page
-    And I submit on the Office of transit Check your answers page
+    And I submit on the Route details - Office of transit Check your answers page
     Then I should have 1 office of transit added on the add another office of transit page
     When I choose radio option No on the add another office of transit page
     #Route Details Exit -> Set CL147 country security and custom office Transit declared is present [False]
     And I select Germany on the office of exit country page
     Then I should have Germany as an office of exit title on the office of exit page
     When I select Dortmund on the office of exit page
-    And I submit on the Office of exit Check your answers page
+    And I submit on the Route details - Office of exit Check your answers page
     Then I should have 1 office of transit added on the add another office of exit page
     When I choose radio option No on the add another office of exit page
     #Route Details Location Of Goods -> Qualifier of the identification Y [Authorisation number] -> [No] -> [No]
@@ -322,7 +321,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 1234567890 on the departure location of goods authorisation number page
     And I choose radio option No on the departure location of goods add identifier page
     And I choose radio option No on the departure location of goods add contact page
-    And I submit on the Office of transit Check your answers page
+    And I submit on the Route details - Location of goods Check your answers page
     #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
     And I choose radio option Yes on the place of loading add un locode page
     And I select Andorra la Vella on the place of loading un locode page
@@ -334,7 +333,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the place of unloading add extra information page
     And I select United Kingdom on the place of unloading country page
     And I enter Birmingham on the United Kingdom place of unloading location page
-    And I submit on the Places of loading and unloading Check your answers page
+    And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the task list page
     #Transport details
@@ -346,6 +345,6 @@ Feature: End to end journey for Northern Ireland office of departure
     #Inland Mode Of Transport
     And I choose radio option Mail on the Inland Mode of Transport page
     #Transport - Inland Mode [ CYA ]
-    And I submit on the Modes and means of transport Check your answers page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
     #Supply chain actor: Add Another supply chain actor
     When I choose radio option No on the Do you want to add a supply chain actor page

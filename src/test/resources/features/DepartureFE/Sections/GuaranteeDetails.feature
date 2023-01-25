@@ -13,7 +13,7 @@ Feature: Guarantee journeys includes pre task list
       And I choose radio option Normal on the procedure type page
       And I choose radio option T1 on the declaration type page
       And I choose radio option No security on the security type page
-      And I submit on the Pre-task list Check your answers page
+      And I submit the Check your answers page
       Then I should be on the task list page
       When I click the link with visible text: Add guarantee details
       #Guarantee details
@@ -53,7 +53,7 @@ Feature: Guarantee journeys includes pre task list
       And I choose radio option Normal on the procedure type page
       And I choose radio option T2F on the declaration type page
       And I choose radio option No security on the security type page
-      And I submit on the Pre-task list Check your answers page
+      And I submit the Check your answers page
       And I click the link with visible text: Add guarantee details
       #Guarantee details
       And I choose radio option (1) Comprehensive guarantee on the guarantee type page
@@ -87,7 +87,7 @@ Feature: Guarantee journeys includes pre task list
       And I choose radio option TIR on the declaration type page
       And I enter 1234567 on the tir carnet page
       And I choose radio option Both entry and exit summary declarations (ENS and EXS) on the security type page
-      And I submit on the Pre-task list Check your answers page
+      And I submit the Check your answers page
       And I click the link with visible text: Add guarantee details
       Then I should be on the guarantee B added for TIR declaration page
 
