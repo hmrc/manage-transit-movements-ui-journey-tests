@@ -28,13 +28,6 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then(
-    """^(?:I )?(?:should )?have (.+) as an office of exit title on the 'Where in (.*) is the office of exit' page$"""
-  ) { (numberOfOffices: String, countryInTitle: String) =>
-    OfficeOfExitPage
-      .loadPage(numberOfOffices)
-  }
-
   And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of exit\?' page$""") {
     (answer: String, countryInTitle: String) =>
       OfficeOfExitPage
@@ -58,13 +51,6 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
       .loadPage(exitOfficeInTitle)
       .select(answer)
       .submitPage()
-  }
-
-  Then(
-    """^(?:I )?(?:should )?have (.+) offices? of transit added on the 'You have added (.*) offices? of exit' page$"""
-  ) { (numberOfOffices: String, numberOfCountriesInTitle: String) =>
-    AddAnotherOfficeOfExitPage
-      .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit' page$""") { (answer: String, officesInTitle: String) =>

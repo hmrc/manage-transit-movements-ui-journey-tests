@@ -92,13 +92,6 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  Then(
-    """^(?:I )?(?:should )?have (.+) border means of transport added on the add another border means of transport page$"""
-  ) { (numberOfBorderMeansTransport: String) =>
-    AddAnotherBorderMeansOfTransportPage
-      .loadPage(numberOfBorderMeansTransport)
-  }
-
   And("""^(?:I )?choose to click on (.*) link on the add another border means of transport page$""") {
     (sectionLink: String) =>
       AddAnotherBorderMeansOfTransportPage

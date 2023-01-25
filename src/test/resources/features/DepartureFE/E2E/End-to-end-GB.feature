@@ -17,7 +17,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit the Check your answers page
 
     # Trader details
-    And I click the link with visible text: Add trader details
+    And I click the link with visible text: Add trader details on the 'Declaration summary' page
       ## Transit Holder
     And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
@@ -59,11 +59,11 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
     And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
+    Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
     # Route details
-    When I click the link with visible text: Add route details
+    When I click the link with visible text: Add route details on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -135,10 +135,10 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Milano on the 'Where in Italy is the place of unloading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
-    Then I should be on the task list page
+    Then I should be on the 'Declaration summary' page
 
     #Guarantee details - remove guarantee
-    When I click the link with visible text: Add guarantee details
+    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
     And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
@@ -160,10 +160,10 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I submit on the Guarantee details Check your answers page
     When I choose radio option No on the 'You have added 4 guarantees' page
-    Then I should be on the task list page
+    Then I should be on the 'Declaration summary' page
 
     #Transport details
-    When I click the link with visible text: Add transport details
+    When I click the link with visible text: Add transport details on the 'Declaration summary' page
 
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page
@@ -228,7 +228,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit the Check your answers page
 
     # Trader details
-    And I click the link with visible text: Add trader details
+    And I click the link with visible text: Add trader details on the 'Declaration summary' page
       ## Transit Holder
     And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
@@ -255,11 +255,11 @@ Feature: End to end journey for Great Britain office of departure
     ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
     And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
+    Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
     # Route details
-    When I click the link with visible text: Add route details
+    When I click the link with visible text: Add route details on the 'Declaration summary' page
 
      ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -293,19 +293,19 @@ Feature: End to end journey for Great Britain office of departure
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
-    Then I should be on the task list page
+    Then I should be on the 'Declaration summary' page
 
 
     #Guarantee details
-    When I click the link with visible text: Add guarantee details
+    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
 
     And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
     When I choose radio option No on the 'You have added 1 guarantee' page
-    Then I should be on the task list page
+    Then I should be on the 'Declaration summary' page
 
 
     #Transport details
-    When I click the link with visible text: Add transport details
+    When I click the link with visible text: Add transport details on the 'Declaration summary' page
 
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page

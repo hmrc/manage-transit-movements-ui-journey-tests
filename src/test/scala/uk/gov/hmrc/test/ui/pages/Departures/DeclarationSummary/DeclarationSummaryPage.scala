@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TaskList
+package uk.gov.hmrc.test.ui.pages.Departures.DeclarationSummary
 
 import org.openqa.selenium.By
 import org.scalatest.compatible.Assertion
 import uk.gov.hmrc.test.ui.pages.Page
 
-object TaskListPage extends Page {
+object DeclarationSummaryPage extends Page {
 
   override def title(args: String*): String = "Declaration summary"
 

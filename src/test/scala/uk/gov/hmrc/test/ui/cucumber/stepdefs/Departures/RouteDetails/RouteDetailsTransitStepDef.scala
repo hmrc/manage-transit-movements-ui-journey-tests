@@ -56,11 +56,7 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) arrival time title on the office of transit add eta page$""") {
-    (office: String) =>
-      OfficeOfTransitAddEtaPage
-        .loadPage(office)
-  }
+
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a time of arrival in (.*)\?' page$""") {
     (answer: String, officeInTitle: String) =>
@@ -68,12 +64,6 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
         .loadPage(officeInTitle)
         .select(answer)
         .submitPage()
-  }
-
-  Then("""^(?:I )?(?:should )?have (.+), (.+) as transit to arrive on the office of transit eta page$""") {
-    (office: String, country: String) =>
-      OfficeOfTransitEtaPage
-        .loadPage(office, country)
   }
 
   And("""^(?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)\?' page$""") {

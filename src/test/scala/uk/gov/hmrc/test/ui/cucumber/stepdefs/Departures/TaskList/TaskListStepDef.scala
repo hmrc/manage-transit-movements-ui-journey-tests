@@ -17,23 +17,23 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.TaskList
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.TaskList.TaskListPage
+import uk.gov.hmrc.test.ui.pages.Departures.DeclarationSummary.DeclarationSummaryPage
 
 class TaskListStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(?:should )?be on the task list page$""") { () =>
-    TaskListPage
+  Then("""^(?:I )?(?:should )?be on the 'Declaration summary' page$""") { () =>
+    DeclarationSummaryPage
       .loadPage()
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+)$""") { (answer: String) =>
-    TaskListPage
+  Then("""^(?:I )?click the link with visible text: (.+) on the 'Declaration summary' page$""") { (answer: String) =>
+    DeclarationSummaryPage
       .loadPage()
       .selectDeclarationSection(answer)
   }
 
-  And("""^(?:I )?should see (.*) status for trader details$""") { (status: String) =>
-    TaskListPage
+  And("""^(?:I )?should see (.*) status for trader details on the 'Declaration summary' page$""") { (status: String) =>
+    DeclarationSummaryPage
       .checkTraderDetailsStatus(status)
   }
 }
