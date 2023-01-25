@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.{DeclarationTypePage, Lo
 
 class PreTaskListStepDef extends BaseStepDef {
 
-  When("""^I input a random LRN on the What is the Local Reference Number page$""") { () =>
+  When("""^I input a random LRN on the 'What is the Local Reference Number' page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
       .fillInput()
@@ -33,35 +33,38 @@ class PreTaskListStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  And("""^(?:I )?select (.+) on the office of departure page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the office of departure' page$""") { (answer: String) =>
     OfficeOfDeparturePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the procedure type page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using' page$""") { (answer: String) =>
     ProcedureTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the declaration type page$""") { (answer: String) =>
-    DeclarationTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'What declaration do you want to create' page$""") {
+    (answer: String) =>
+      DeclarationTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the tir carnet page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the TIR carnet reference\?' page$""") { (answer: String) =>
     TIRCarnetPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the security type page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'What type of safety and security details do you need to add\?' page$"""
+  ) { (answer: String) =>
     SecurityDetailsPage
       .loadPage()
       .select(answer)

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ConfirmRemoveOfficeOfTransitPage extends YesNoPage {
+object AddCarrierContactPersonPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove %s as an office of transit?", args: _*)
+  override def title(args: String*): String = "Do you want to add a contact for the carrier?"
 
 }

@@ -14,12 +14,24 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.DatePage
 
-object ConfirmRemoveOfficeOfTransitPage extends YesNoPage {
+import java.time.LocalDateTime
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove %s as an office of transit?", args: _*)
+object LimitDatePage extends DatePage {
+
+  override def title(args: String*): String = "When is the limit date?"
+
+  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
+
+  override def fillInputs(): this.type = {
+    fillInputById("valueDay", day)
+    fillInputById("valueMonth", month)
+    fillInputById("valueYear", year)
+
+    this
+  }
 
 }
