@@ -28,14 +28,14 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods type page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of location is it\?' page$""") { (answer: String) =>
     LocationOfGoodsTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods identification page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'How do you want to identify the location of goods\?' page$""") {
     (answer: String) =>
       LocationOfGoodsIdentificationPage
         .loadPage()
@@ -58,11 +58,12 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the departure location of goods authorisation number page$""") { (answer: String) =>
-    LocationOfGoodsAuthorisationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the authorisation number for the location of goods\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsAuthorisationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the location of goods country page$""") { (answer: String) =>
@@ -86,29 +87,32 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods add identifier page$""") {
-    (answer: String) =>
-      LocationOfGoodsAddIdentificationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the departure location of goods additional identifier page$""") { (answer: String) =>
-    LocationOfGoodsAdditionalIdentifierPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the departure location of goods add contact page$""") { (answer: String) =>
-    LocationOfGoodsAddContactPage
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add another identifier for the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsAddIdentificationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) and (.+) on the departure location of goods coordinates page$""") {
+  And("""^(?:I )?enter (.+) on the 'What is the additional identifier for the location of goods\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsAdditionalIdentifierPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the location of goods\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsAddContactPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) and (.+) on the 'What are the coordinates for the location of goods' page$""") {
     (latitudeNo: String, longitudeNo: String) =>
       LocationOfGoodsCoordinatesPage
         .loadPage()
@@ -123,17 +127,18 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the departure location of goods contact page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'Who is the contact for the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsContactPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the departure location of goods contact telephone number page$""") { (answer: String) =>
-    LocationOfGoodsContactTelephoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the contact for the location of goods’ telephone number\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsContactTelephoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 }

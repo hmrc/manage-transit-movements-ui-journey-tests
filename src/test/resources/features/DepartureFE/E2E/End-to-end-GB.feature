@@ -6,495 +6,347 @@ Feature: End to end journey for Great Britain office of departure
     Given I login with ID 1234567890
     Then I should be on the Manage your transit movements page
     When I click on the Make a departure declaration link on the Manage your transit movements page
-    Then I input a random LRN on the What is the Local Reference Number page
-    And I select GB on the office of departure page
+    Then I input a random LRN on the 'What is the Local Reference Number' page
+    And I select GB on the 'Where is the office of departure' page
 
   @a11y
-  Scenario: 01 Procedure 'Simplified' - Declaration 'T1' - Security 'No' - Guarantees '3, R' - Inland Mode 'Maritime' -
-    Border Means 'Maritime' - Supply Chain Actor - 'Add & Remove'
-    And I choose radio option Simplified on the procedure type page
-    And I choose radio option T1 on the declaration type page
-    And I choose radio option No security on the security type page
+  Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
+    And I choose radio option Simplified on the 'What type of procedure are you using' page
+    And I choose radio option T2 on the 'What declaration do you want to create' page
+    And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
     And I submit the Check your answers page
-    #Holder of transit
-    And I click the link with visible text: Add trader details
-    And I choose radio option No on the is eori known type page
-    And I enter Joe Blog on the holder name page
-    And I select United Kingdom on the holder country page
-    And I fill in the holder address page
-    #Holder's contact person's details
-    And I choose radio option No on the add contact page
-    #Representative details
-    And I choose radio option No on the acting as representative page
-    #Reduced data set
-    And I choose radio option Yes on the approved operator page
-    #Consignee at header level
-    And I choose radio option Yes on the more than one consignee page
-    #Change reduced data set indicator
-    And I click the change link for has reduced data set on the CYA page
-    And I choose radio option No on the approved operator page
-    #Add consignor
-    And I choose radio option Yes on the is consignor eori number or tin known page
-    And I enter GB123456789000 on the consignor eori number or tin page
-    And I enter Lewies Blog Consignor on the consignor name page
-    And I select United Kingdom on the consignor country page
-    And I fill in the consignor address page
-    And I choose radio option No on adding contact for consignor page
-    #Change and add contact
-    And I click the change link for has consignor contact on the CYA page
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
-    #Change has more than one consignee
-    And I click the change link for has more than one consignee on the CYA page
-    And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori number or tin known page
-    And I enter GB123456123456 on the consignee eori number or tin page
-    And I enter Simpson Blog Consignee on the consignee name page
-    And I select United Kingdom on the consignee country page
-    And I fill in the consignee address page
-    And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
-    When I click the link with visible text: Add guarantee details
-    #Guarantee details
-    And I choose radio option (3) Individual guarantee in cash on the guarantee type page
-    And I choose radio option Yes on the do you want to add a reference for the guarantee page
-    And I enter 01GB123456789012 on the other reference for the guarantee 3 page
-    And I submit on the Guarantee details Check your answers page
-    Then I should have 1 guarantee added on the add another guarantee page
-    When I choose radio option Yes on the add another guarantee page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the guarantee type page
-    Then I should have 2 guarantees added on the add another guarantee page
-    When I choose radio option No on the add another guarantee page
-    Then I should be on the task list page
-    #Route details: Binding Itinerary set to Yes
-    When I click the link with visible text: Add route details
-    And I select United Kingdom on the country of destination page
-    And I select GB on the departure office of destination page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    When I choose to click on the Remove link on the transit route add another country page
-    And I choose radio option Yes on the transit route remove country page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    And I choose radio option No on the transit route add another country page
-    And I submit on the Route details - Transit route Check your answers page
-    #Route Details Transit -> Entry point is -> Add office of transit [No]
-    And I choose radio option No on the add office of transit page
-    #Route Details Location Of Goods -> Qualifier of the identification X [EORI number] -> [YES]
-    And I choose radio option Authorised place on the departure location of goods type page
-    And I choose radio option EORI number or TIN on the departure location of goods identification page
-    And I enter GB123456789000 on the departure location of goods eori tin page
-    And I choose radio option Yes on the departure location of goods add identifier page
-    And I enter 1000 on the departure location of goods additional identifier page
-    And I choose radio option Yes on the departure location of goods add contact page
-    And I enter HMRC Test on the departure location of goods contact page
-    And I enter +44 2345 82 83 on the departure location of goods contact telephone number page
-    And I submit on the Route details - Location of goods Check your answers page
-    #Route Details Loading -> place of loading add un locode [Yes] -> Add Extra Info [Yes]
-    And I choose radio option Yes on the place of loading add un locode page
-    And I select Aalen on the place of loading un locode page
-    And I choose radio option Yes on the place of loading add extra information page
-    And I select United Kingdom on the place of loading country page
-    Then I should have United Kingdom as loading location on the place of loading location page
-    When I enter London on the place of loading location page
-    #Route Details Unloading -> [Set 0]
-    And I submit on the Route details - Places of loading and unloading Check your answers page
-    And I submit on the Route details Check your answers page
-    Then I should be on the task list page
-    #Transport details
-    When I click the link with visible text: Add transport details
-    And I choose radio option Yes on the apply ucr item page
-    And I enter GB123456123456 on the UCR page
-    And I choose radio option Yes on the items same destination country page
-    And I select United Kingdom on the items destination country page
-    #Transport details -> Container details
-    And I choose radio option Yes on the containers page
-    #Inland Mode Of Transport
-    And I choose radio option Maritime on the Inland Mode of Transport page
-    And I choose radio option Name of a sea-going vessel on the Transport Identification page
-    And I enter GB1234567 as name of the sea-going vessel on the transport identification number page
-    And I select United Kingdom on the Transport country page
-    #Border Means Of Transport
-    And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Maritime on the border mode of transport page
-    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
-    And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
-    #Border Means of Transport - Add Country
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    #Border Means of Transport - Office of Transit
-    And I select GB000142 on the border means of transport office of transit page
-    And I choose radio option Yes on the add conveyance reference number page
-    #Conveyance Reference Number
-    And I enter GB123456123456 on the conveyance reference number page
-    #Transport - Inland Mode - Border Means [ CYA ]
-    And I submit on the Transport details - Modes and means of transport Check your answers page
-    #Supply chain actor
-    When I choose radio option Yes on the Do you want to add a supply chain actor page
-    And I choose radio option Consolidator on the Which type of supply chain actor do you want to add page
-    And I enter GB98472189002 on the What is the EORI number or Trader Identification Number for the consolidator page
-    When I choose radio option Yes on the You have added 1 supply chain actor page
-    And I choose radio option Freight forwarder on the Which type of supply chain actor do you want to add page
-    And I enter GB98472189002 on the What is the EORI number or Trader Identification Number for the freight forwarder page
-    When I choose to click on the Remove link on the You have added 2 supply chain actors page
-    And I choose radio option Yes on the Are you sure you want to remove this supply chain actor page
-    When I choose radio option No on the You have added 1 supply chain actor page
 
+    # Trader details
+    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+      ## Transit Holder
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I enter Joe Blog on the 'What is the transit holder’s name?' page
+    And I select United Kingdom on the 'Which country is the transit holder based in?' page
+    And I fill in the address on the 'What is the transit holder’s address?' page
 
-  Scenario: 02 Procedure 'Normal' - Declaration 'T2' - Security 'ENS' - Guarantees '8' - Inland Mode 'Rail changed to Road' -
-    Border Means 'Rail'
-    And I choose radio option Normal on the procedure type page
-    And I choose radio option T2 on the declaration type page
-    And I choose radio option Entry summary declaration (ENS) on the security type page
-    And I submit the Check your answers page
-    #Holder of transit
-    And I click the link with visible text: Add trader details
-    And I choose radio option No on the is eori known type page
-    And I enter Joe Blog on the holder name page
-    And I select United Kingdom on the holder country page
-    And I fill in the holder address page
-    #Holder's contact person's details
-    And I choose radio option No on the add contact page
-    #Representative details
-    And I choose radio option Yes on the acting as representative page
-    And I enter GB123456121111 on the representative eori number or tin page
-    And I enter Rosie Blog Rep on the representative name page
-    And I choose radio option Direct (principal solely liable) on the representative capacity page
-    And I enter +44 4381 82 83 on the representative phone number page
-    #Reduced data set
-    And I choose radio option No on the approved operator page
-    #Consignor
-    And I choose radio option Yes on the is consignor eori number or tin known page
-    And I enter GB123456789000 on the consignor eori number or tin page
-    And I enter Lewies Blog Consignor on the consignor name page
-    And I select United Kingdom on the consignor country page
-    And I fill in the consignor address page
-    #Consignor contact
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
-    #Consignee at header level
-    When I choose radio option Yes on the more than one consignee page
+      ## Transit holder's contact person's details
+
+    And I choose radio option Yes on the 'Do you want to add a contact?' page
+    And I enter John contact on the 'What is the contact’s name?' page
+    And I enter +2112212112 on the 'What is the transit holder’s contact phone number?' page
+
+      ## Representative details
+    And I choose radio option Yes on the 'Are you acting as a representative?' page
+    And I enter FR123123132 on the representative 'What is your EORI number or TIN?' page
+    And I enter Marie Rep on the representative 'What is your name?' page
+    And I choose radio option Indirect (principal and agent jointly liable) on the representative 'What is your capacity?' page
+    And I enter +11 1111 1111 on the representative 'What is your phone number?' page
+
+      ## Reduced data set operator
+    And I choose radio option Yes on the 'Do you want to use a reduced data set?' page
+
+      ## Consignor
+    And I choose radio option Yes on the 'Do you know the consignor’s EORI number or TIN?' page
+    And I enter IT12312313 on the 'What is the consignor’s EORI number or TIN?' page
+    And I enter Pip Consignor on the 'What is the consignor’s name?' page
+    And I select United Kingdom on the 'Which country is the consignor based in?' page
+    And I fill in the address on the 'What is the consignor’s address?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the consignor?' page
+    And I enter Pip Contact on the 'Who is the contact for the consignor?' page
+    And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
+
+      ## Consignee
+    And I choose radio option No on the 'Is there more than one consignee?' page
+    And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
+    And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
+    And I enter Simpson Blog Consignee on the 'What is the consignee’s name?' page
+    And I select United Kingdom on the 'Which country is the consignee based in?' page
+    And I fill in the address on the 'What is the consignee’s address?' page
     And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
-    When I click the link with visible text: Add guarantee details
-    #Guarantee details
-    And I choose radio option (8) Guarantee not required – exempt public body on the guarantee type page
-    And I enter 01GB123456789012 on the other reference for the guarantee 8 page
-    And I submit on the Guarantee details Check your answers page
-    Then I should have 1 guarantee added on the add another guarantee page
-    And I choose radio option No on the add another guarantee page
-    Then I should be on the task list page
-    #Route details: Binding Itinerary set to No and additional route
-    When I click the link with visible text: Add route details
-    And I select Italy on the country of destination page
-    And I select BARI (IT018100) on the departure office of destination page
-    And I choose radio option No on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    When I choose radio option Yes on the transit route add another country page
-    And I select Argentina on the transit route country page
-    Then I should have 2 countries added to the transit route add another country page
-    When I choose radio option No on the transit route add another country page
+    Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+
+    # Route details
+    When I click the link with visible text: Add route details on the 'Declaration summary' page
+
+      ## Transit route
+    And I select Italy on the 'What is the country of destination?' page
+    And I select IT on the 'Where is the office of destination?' page
+
+      ## Binding itinerary indicator
+    And I choose radio option Yes on the 'Are you using a binding itinerary?' page
+
+      ## Country of routing - removing a transit country
+    And I select Andorra on the 'Which country do you want to add to the transit route?' page
+    And I choose radio option Yes on the 'You have added 1 country to the transit route' page
+    And I select France on the 'Which country do you want to add to the transit route?' page
+    And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
+    And I select Germany on the 'Which country do you want to add to the transit route?' page
+    When I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route?' page
+    And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Route details - Transit route Check your answers page
-    #Route Details Transit -> Entry point is [Office of transit country]
-    And I select Andorra on the office of transit country page
-    Then I should have Andorra as office of transit on the office of transit page
-    When I select DCNJ PORTA on the office of transit page
-    Then I should have DCNJ PORTA (AD000002) arrival time title on the office of transit add eta page
-    When I choose radio option Yes on the office of transit add eta page
-    Then I should have DCNJ PORTA, Andorra as transit to arrive on the office of transit eta page
-    And I choose fill in the date and time on the office of transit eta page
+
+      ## Office of transit country page - removing a transit office
+    And I select Germany on the 'Which country is the office of transit in?' page
+    When I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
+    And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
+    And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
     And I submit on the Route details - Office of transit Check your answers page
-    Then I should have 1 office of transit added on the add another office of transit page
-    When I choose radio option Yes on the add another office of transit page
-    And I select Andorra on the office of transit country page
-    Then I should have Andorra as office of transit on the office of transit page
-    When I select CUSTOMS OFFICE on the office of transit page
-    Then I should have CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) arrival time title on the office of transit add eta page
-    When I choose radio option No on the office of transit add eta page
+    And I choose radio option Yes on the 'You have added 1 office of transit' page
+    And I select France on the 'Which country is the office of transit in?' page
+    When I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
+    And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
     And I submit on the Route details - Office of transit Check your answers page
-    Then I should have 2 offices of transit added on the add another office of transit page
-    And I choose radio option No on the add another office of transit page
-    #Route Details Location Of Goods -> Qualifier of the identification W [Coordinate] -> [No]
-    And I choose radio option Designated location on the departure location of goods type page
-    And I choose radio option Coordinates on the departure location of goods identification page
-    And I enter 50.96622 and 50.96622 on the departure location of goods coordinates page
-    And I choose radio option No on the departure location of goods add contact page
+    And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
+    And I choose radio option No on the 'You have added 1 office of transit' page
+
+      ## Office of exit - removing an office of exit
+    And I select Germany on the 'Which country is the office of exit in?' page
+    When I select Dortmund on the 'Where in Germany is the office of exit?' page
+    And I submit on the Route details - Office of exit Check your answers page
+    When I choose radio option Yes on the 'You have added 1 office of exit' page
+    And I select France on the 'Which country is the office of exit in?' page
+    When I select Agen bureau on the 'Where in France is the office of exit?' page
+    And I submit on the Route details - Office of exit Check your answers page
+    And I choose to click on the Remove link on the 'You have added 2 offices of exit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit?' page
+    When I choose radio option No on the 'You have added 1 office of exit' page
+
+      ## Location of goods
+    And I choose radio option Designated location on the 'Which type of location is it?' page
+    And I choose radio option Authorisation number on the 'How do you want to identify the location of goods?' page
+    And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page
+    And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
+    And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
+    And I enter +432 1212 1212 on the 'What is the contact for the location of goods’ telephone number?' page
     And I submit on the Route details - Location of goods Check your answers page
-    #Route Details Loading -> place of loading add un locode [No]
-    And I choose radio option Yes on the place of loading add un locode page
-    And I select Andorra la Vella on the place of loading un locode page
-    And I choose radio option No on the place of loading add extra information page
-    #Route Details Unloading -> [Set 1]
-    And I choose radio option No on the place of unloading add un locode page
-    And I select United Kingdom on the place of unloading country page
-    And I enter Manchester on the United Kingdom place of unloading location page
+
+      ## Place of loading UN LOCODE
+    And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
+    And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
+    And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
+    And I select United Kingdom on the 'In which country is the place of loading?' page
+    When I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I choose radio option Yes on the 'Do you want to add a place of unloading?' page
+    And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of unloading?' page
+    And I select Aalen on the 'What is the UN LOCODE for the place of unloading?' page
+    And I choose radio option Yes on the 'Do you want to add extra information for the place of unloading?' page
+    And I select Italy on the 'Which country is the place of unloading in?' page
+    And I enter Milano on the 'Where in Italy is the place of unloading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
-    Then I should be on the task list page
-    #Transport details
-    When I click the link with visible text: Add transport details
-    And I choose radio option Yes on the apply ucr item page
-    And I enter GB123456123456 on the UCR page
-    And I choose radio option Yes on the items same destination country page
-    And I select United Kingdom on the items destination country page
-    #Transport details -> Container details
-    And I choose radio option Yes on the containers page
-    #Inland Mode Of Transport
-    And I choose radio option Rail on the Inland Mode of Transport page
-    And I choose radio option Train number on the Transport Identification page
-    And I enter 1234567 as train number on the transport identification number page
-    And I select United Kingdom on the Transport country page
-    #Border Means Of Transport
-    And I choose radio option Rail on the border mode of transport page
-    And I enter 1234567 as train number on the border means of transport identification number page
-    #Border Means of Transport - Add Country
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    #Border Means of Transport - Office of Transit
-    And I select BARI on the border means of transport office of transit page
-    #Conveyance Reference Number
-    And I choose radio option Yes on the add conveyance reference number page
-    And I enter GB123456123456 on the conveyance reference number page
-    #Border Means of Transport - Add Another
-    And I submit on the Transport details - Border means of transport Check your answers page
-    Then I should have 1 border means of transport added on the add another border means of transport page
-    When I choose radio option Yes on the add another border means of transport page
-    And I choose radio option Train number on the border means of transport identification page
-    And I enter 0987654 as train number on the border means of transport identification number page
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    And I select DCNJ PORTA on the border means of transport office of transit page
-    And I choose radio option Yes on the add conveyance reference number page
-    And I enter GB123456123456 on the conveyance reference number page
-    And I submit on the Transport details - Border means of transport Check your answers page
-    Then I should have 2 border means of transport added on the add another border means of transport page
-    When I choose radio option No on the add another border means of transport page
-    And I submit on the Transport details - Modes and means of transport Check your answers page
-    #Supply chain actor: Add Another supply chain actor
-    When I choose radio option No on the Do you want to add a supply chain actor page
+    Then I should be on the 'Declaration summary' page
 
-
-  Scenario: 03 Procedure 'Simplified' - Declaration 'T2' - Security 'No' - Guarantee '5' - Inland Mode 'Mail'
-    And I choose radio option Simplified on the procedure type page
-    And I choose radio option T2 on the declaration type page
-    And I choose radio option No security on the security type page
-    And I submit the Check your answers page
-    #Holder of transit
-    And I click the link with visible text: Add trader details
-    And I choose radio option No on the is eori known type page
-    And I enter Joe Blog on the holder name page
-    And I select United Kingdom on the holder country page
-    And I fill in the holder address page
-    #Holder's contact person's details
-    And I choose radio option No on the add contact page
-    #Representative details
-    And I choose radio option No on the acting as representative page
-    #Reduced data set
-    And I choose radio option Yes on the approved operator page
-    #Consignee at header level
-    And I choose radio option Yes on the more than one consignee page
-    #Change reduced data set indicator
-    And I click the change link for has reduced data set on the CYA page
-    And I choose radio option No on the approved operator page
-    #Add consignor
-    And I choose radio option Yes on the is consignor eori number or tin known page
-    And I enter GB123456789000 on the consignor eori number or tin page
-    And I enter Lewies Blog Consignor on the consignor name page
-    And I select United Kingdom on the consignor country page
-    And I fill in the consignor address page
-    And I choose radio option No on adding contact for consignor page
-    #Change and add contact
-    And I click the change link for has consignor contact on the CYA page
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
-    #Change has more than one consignee
-    And I click the change link for has more than one consignee on the CYA page
-    And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori number or tin known page
-    And I enter GB123456123456 on the consignee eori number or tin page
-    And I enter Simpson Blog Consignee on the consignee name page
-    And I select United Kingdom on the consignee country page
-    And I fill in the consignee address page
-    And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
-    When I click the link with visible text: Add guarantee details
-    #Guarantee details
-    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
+    #Guarantee details - remove guarantee
+    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
+    When I choose radio option Yes on the 'You have added 1 guarantee' page
+    And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
+    And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
+    And I enter AC01 on the 'What is the access code?' page
+    And I enter 10000 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
-    Then I should have 1 guarantee added on the add another guarantee page
-    When I choose radio option No on the add another guarantee page
-    Then I should be on the task list page
-    #Route details: Binding Itinerary set to Yes
-    When I click the link with visible text: Add route details
-    And I select United Kingdom on the country of destination page
-    And I select GB on the departure office of destination page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    When I choose to click on the Remove link on the transit route add another country page
-    And I choose radio option Yes on the transit route remove country page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    And I choose radio option No on the transit route add another country page
-    And I submit on the Route details - Transit route Check your answers page
-    #Route Details Transit -> Entry point is -> Add office of transit [No]
-    And I choose radio option No on the add office of transit page
-    #Route Details Location Of Goods ->  Qualifier of the identification Z [Address]
-    And I choose radio option Designated location on the departure location of goods type page
-    And I choose radio option Address on the departure location of goods identification page
-    And I select United Kingdom on the location of goods country page
-    And I fill in address on the departure location of goods address page
-    And I choose radio option No on the departure location of goods add contact page
-    And I submit on the Route details - Location of goods Check your answers page
-    #Route Details Loading -> place of loading add un locode [Yes] -> place of loading add extra information [No]
-    And I choose radio option Yes on the place of loading add un locode page
-    And I select Andorra la Vella on the place of loading un locode page
-    And I choose radio option No on the place of loading add extra information page
-    #Route Details Unloading -> [Set 0]
-    And I submit on the Route details - Places of loading and unloading Check your answers page
-    And I submit on the Route details Check your answers page
-    Then I should be on the task list page
-    #Transport details
-    When I click the link with visible text: Add transport details
-    And I choose radio option Yes on the apply ucr item page
-    And I enter GB123456123456 on the UCR page
-    And I choose radio option Yes on the items same destination country page
-    And I select United Kingdom on the items destination country page
-    #Transport details -> Container details
-    And I choose radio option Yes on the containers page
-    #Inland Mode Of Transport
-    And I choose radio option Mail on the Inland Mode of Transport page
-    #Transport - Inland Mode [ CYA ]
-    And I submit on the Transport details - Modes and means of transport Check your answers page
-    #Supply chain actor
-    When I choose radio option No on the Do you want to add a supply chain actor page
-
-
-  Scenario: 04 Procedure 'Normal' - Declaration 'T1' - Security 'No' - Guarantee '0' - Office of Transit 'No' - Inland Mode 'Road' -
-    Border Means 'Maratime'
-    And I choose radio option Normal on the procedure type page
-    And I choose radio option T1 on the declaration type page
-    And I choose radio option No security on the security type page
-    And I submit the Check your answers page
-    #Holder of transit
-    And I click the link with visible text: Add trader details
-    And I choose radio option No on the is eori known type page
-    And I enter Joe Blog on the holder name page
-    And I select United Kingdom on the holder country page
-    And I fill in the holder address page
-    #Holder's contact person's details
-    And I choose radio option No on the add contact page
-    #Representative details
-    And I choose radio option No on the acting as representative page
-    #Reduced data set
-    And I choose radio option Yes on the approved operator page
-    #Consignee at header level
-    And I choose radio option Yes on the more than one consignee page
-    #Change reduced data set indicator
-    And I click the change link for has reduced data set on the CYA page
-    And I choose radio option No on the approved operator page
-    #Add consignor
-    And I choose radio option Yes on the is consignor eori number or tin known page
-    And I enter GB123456789000 on the consignor eori number or tin page
-    And I enter Lewies Blog Consignor on the consignor name page
-    And I select United Kingdom on the consignor country page
-    And I fill in the consignor address page
-    And I choose radio option No on adding contact for consignor page
-    #Change and add contact
-    And I click the change link for has consignor contact on the CYA page
-    And I choose radio option Yes on adding contact for consignor page
-    And I enter John Blog Consignor Contact on the consignor contact name page
-    And I enter +348756374563 on the consignor contact number page
-    #Change has more than one consignee
-    And I click the change link for has more than one consignee on the CYA page
-    And I choose radio option No on the more than one consignee page
-    And I choose radio option Yes on the is consignee eori number or tin known page
-    And I enter GB123456123456 on the consignee eori number or tin page
-    And I enter Simpson Blog Consignee on the consignee name page
-    And I select United Kingdom on the consignee country page
-    And I fill in the consignee address page
-    And I submit on the Trader details Check your answers page
-    Then I should be on the task list page
-    And I should see COMPLETED status for trader details
-    When I click the link with visible text: Add guarantee details
-    #Guarantee details
-    And I choose radio option (0) Guarantee waiver on the guarantee type page
-    And I enter 01GB1234567890120A123456 on the Guarantee Reference Number page
-    And I enter AC01 on the access code page
-    And I enter 10000 on the amount to be covered page
+    And I choose to click on the Remove link on the 'You have added 2 guarantees' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
+    When I choose radio option Yes on the 'You have added 1 guarantee' page
+    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
+    When I choose radio option Yes on the 'You have added 2 guarantees' page
+    And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
+    And I enter 01GB123456789012 on the 'What is the reference?' page
     And I submit on the Guarantee details Check your answers page
-    Then I should have 1 guarantee added on the add another guarantee page
-    When I choose radio option No on the add another guarantee page
-    Then I should be on the task list page
-    #Route details: Binding Itinerary set to Yes
-    When I click the link with visible text: Add route details
-    And I select United Kingdom on the country of destination page
-    And I select GB on the departure office of destination page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    When I choose to click on the Remove link on the transit route add another country page
-    And I choose radio option Yes on the transit route remove country page
-    And I choose radio option Yes on the binding itinerary page
-    And I select Andorra on the transit route country page
-    Then I should have 1 country added to the transit route add another country page
-    And I choose radio option No on the transit route add another country page
+    When I choose radio option Yes on the 'You have added 3 guarantees' page
+    And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
+    And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
+    And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
+    And I submit on the Guarantee details Check your answers page
+    When I choose radio option No on the 'You have added 4 guarantees' page
+    Then I should be on the 'Declaration summary' page
+
+    #Transport details
+    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+
+    And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
+    And I enter GB123456123456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
+    And I select Italy on the 'What country are the items being transported to?' page
+
+      ## Container indicator
+    And I choose radio option Yes on the 'Are you using any containers?' page
+
+      ## Inland mode of transport
+    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+
+      ## Border means of transport
+    And I choose radio option Maritime on the 'Which mode of transport are you using to cross the border?' page
+    And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+
+      ## Border means office of transit
+    And I select Basel (DE004058) on the 'Where is the office of transit?' page
+
+      ## Conveyance Reference Number
+    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
+    And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
+    And I submit on the Transport details - Border means of transport Check your answers page
+    When I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the Transport details - Modes and means of transport Check your answers page
+
+      ## Supply chain actor
+    When I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
+    And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
+    And I enter FR98472189002 on the 'What’s the EORI number or TIN for the consolidator?' page
+    When I choose radio option No on the 'You have added 1 supply chain actor' page
+
+      ## Authorisation
+    And I enter ACR123 reference number on the 'What’s the reference number for the ACR authorisation?' page
+    When I choose radio option Yes on the 'You have added 1 transport authorisation' page
+    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+    And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
+    When I choose to click on Remove link on the 'You have added 2 authorisations' page
+    And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
+    When I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I enter the date on the 'When is the limit date?' page
+
+      ##Carrier
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
+    And I enter Moseley on the 'Who is the contact for the carrier?' page
+    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
+
+    #TODO the rest of transport
+
+
+  Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
+    And I choose radio option Normal on the 'What type of procedure are you using' page
+    And I choose radio option T1 on the 'What declaration do you want to create' page
+    And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
+    And I submit the Check your answers page
+
+    # Trader details
+    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+      ## Transit Holder
+    And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
+    And I enter Joe Blog on the 'What is the transit holder’s name?' page
+    And I select United Kingdom on the 'Which country is the transit holder based in?' page
+    And I fill in the address on the 'What is the transit holder’s address?' page
+
+     ## Transit holder's contact person's details
+
+    And I choose radio option No on the 'Do you want to add a contact?' page
+
+    ## Representative details
+    And I choose radio option No on the 'Are you acting as a representative?' page
+
+    ## Reduced data set operator
+    And I choose radio option No on the 'Do you want to use a reduced data set?' page
+
+    ## Consignor
+    And I choose radio option No on the 'Do you know the consignor’s EORI number or TIN?' page
+    And I enter Pip Consignor on the 'What is the consignor’s name?' page
+    And I select United Kingdom on the 'Which country is the consignor based in?' page
+    And I fill in the address on the 'What is the consignor’s address?' page
+    And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
+
+    ## Consignee
+    And I choose radio option Yes on the 'Is there more than one consignee?' page
+    And I submit on the Trader details Check your answers page
+    Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+
+    # Route details
+    When I click the link with visible text: Add route details on the 'Declaration summary' page
+
+     ## Transit route
+    And I select Italy on the 'What is the country of destination?' page
+    And I select IT on the 'Where is the office of destination?' page
+
+      ## Binding itinerary indicator
+    And I choose radio option No on the 'Are you using a binding itinerary?' page
+
+      ## Transit route country optional
+    And I choose radio option No on the transit route add country page
     And I submit on the Route details - Transit route Check your answers page
-    #Route Details Transit -> Entry point is -> Add office of transit [No]
-    And I choose radio option No on the add office of transit page
-    #Route Details Location Of Goods -> Qualifier of the identification T [Postal code]
-    And I choose radio option Authorised place on the departure location of goods type page
-    And I choose radio option Postal code on the departure location of goods identification page
-    And I fill in address on the departure location of goods postal code page
-    And I choose radio option No on the departure location of goods add contact page
+
+      ## Country of Transit
+    And I select France on the 'Which country is the office of transit in?' page
+    When I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
+    And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)?' page
+    And I submit on the Route details - Office of transit Check your answers page
+    And I choose radio option No on the 'You have added 1 office of transit' page
+
+      ## Location of goods
+    And I choose radio option Approved place on the 'Which type of location is it?' page
+    And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
+    And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
+    And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the Route details - Location of goods Check your answers page
-    #Route Details Loading -> place of loading add un locode [No]
-    And I choose radio option No on the place of loading add un locode page
-    And I select United Kingdom on the place of loading country page
-    Then I should have United Kingdom as loading location on the place of loading location page
-    When I enter London on the place of loading location page
-    #Route Details Unloading -> [Set 0]
+
+    ## Place of loading UN LOCODE
+    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
+
+    And I select United Kingdom on the 'In which country is the place of loading?' page
+    When I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
-    Then I should be on the task list page
+    Then I should be on the 'Declaration summary' page
+
+
+    #Guarantee details
+    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+
+    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
+    When I choose radio option No on the 'You have added 1 guarantee' page
+    Then I should be on the 'Declaration summary' page
+
+
     #Transport details
-    When I click the link with visible text: Add transport details
-    And I choose radio option Yes on the apply ucr item page
-    And I enter GB123456123456 on the UCR page
-    And I choose radio option Yes on the items same destination country page
-    And I select United Kingdom on the items destination country page
-    #Transport details -> Container details
-    And I choose radio option Yes on the containers page
-    #Inland Mode Of Transport
-    And I choose radio option Road on the Inland Mode of Transport page
-    And I choose radio option Registration number of a road trailer on the Transport Identification page
-    And I enter GB1234567 as registration number of the road trailer on the transport identification number page
-    And I select United Kingdom on the Transport country page
-    #Border Means Of Transport
-    And I choose radio option Yes on the add border mode of transport page
-    And I choose radio option Maritime on the border mode of transport page
-    And I choose radio option Name of a sea-going vessel on the border means of transport identification page
-    And I enter GB1234567 as name of the sea-going vessel on the border means of transport identification number page
-    #Border Means of Transport - Add Country
-    And I choose radio option Yes on the add border means of transport country page
-    And I select United Kingdom on the border means of transport country page
-    #Border Means of Transport - Office of Transit
-    And I select GB000142 on the border means of transport office of transit page
-    #Conveyance Reference Number
-    And I choose radio option Yes on the add conveyance reference number page
-    And I enter GB123456123456 on the conveyance reference number page
-    #Transport - Inland Mode - Border Means [ CYA ]
+    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+
+    And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
+    And I choose radio option No on the 'Are all the items being transported to the same country?' page
+
+      ## Container indicator
+    And I choose radio option No on the 'Are you using any containers?' page
+
+    ## Inland mode of transport
+    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+
+      ## Border mode of transport
+    And I choose radio option No on the add border mode of transport page
     And I submit on the Transport details - Modes and means of transport Check your answers page
-    #Supply chain actor: Add Another supply chain actor
-    When I choose radio option No on the Do you want to add a supply chain actor page
+
+      ## Supply chain actor
+    When I choose radio option No on the 'Do you want to add a supply chain actor?' page
+
+      ## Authorisation
+    And I choose radio option No on the 'Do you want to add an authorisation' page
+
+      ##Carrier
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
+
+    #TODO the rest of transport
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

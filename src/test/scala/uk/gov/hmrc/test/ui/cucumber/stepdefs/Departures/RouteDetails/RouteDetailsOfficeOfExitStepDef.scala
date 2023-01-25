@@ -21,34 +21,41 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit._
 
 class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the office of exit country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Which country is the office of exit in\?' page$""") { (answer: String) =>
     OfficeOfExitCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) as an office of exit title on the office of exit page$""") {
-    (numberOfOffices: String) =>
+  And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of exit\?' page$""") {
+    (answer: String, countryInTitle: String) =>
       OfficeOfExitPage
-        .loadPage(numberOfOffices)
+        .loadPage(countryInTitle)
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the office of exit page$""") { (answer: String) =>
-    OfficeOfExitPage
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) offices? of exit' page$"""
+  ) { (sectionLink: String, officesOfExitInTitle: String) =>
+    AddAnotherOfficeOfExitPage
+      .loadPage(officesOfExitInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove (.*) as an office of exit\?' page$"""
+  ) { (answer: String, exitOfficeInTitle: String) =>
+    ConfirmRemoveOfficeOfExitPage
+      .loadPage(exitOfficeInTitle)
       .select(answer)
       .submitPage()
   }
 
-  Then(
-    """^(?:I )?(?:should )?have (.+) offices? of transit added on the add another office of exit page$"""
-  ) { (numberOfOffices: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit' page$""") { (answer: String, officesInTitle: String) =>
     AddAnotherOfficeOfExitPage
-      .loadPage(numberOfOffices)
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the add another office of exit page$""") { (answer: String) =>
-    AddAnotherOfficeOfExitPage
+      .loadPage(officesInTitle)
       .select(answer)
       .submitPage()
   }
