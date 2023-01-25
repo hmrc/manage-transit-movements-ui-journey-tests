@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges.
 
 class TransportEquipmentChargesStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add a method of payment for transport charges page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a method of payment for transport charges\?' page$""") {
     (answer: String) =>
     AddPaymentMethodPage
       .loadPage()
@@ -30,7 +30,7 @@ class TransportEquipmentChargesStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the Which method of payment do you want to use for transport charges page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$""") {
     (answer: String) =>
     MethodOfPaymentPage
       .loadPage()

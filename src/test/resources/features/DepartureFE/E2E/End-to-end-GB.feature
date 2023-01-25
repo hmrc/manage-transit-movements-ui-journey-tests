@@ -285,8 +285,8 @@ Feature: End to end journey for Great Britain office of departure
 
 
     #Payment Method
-    And I choose radio option Yes on the Do you want to add a method of payment for transport charges page
-    And I choose radio option Credit card on the Which method of payment do you want to use for transport charges page
+    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
+    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the Transport equipment Check your answers page
     And I submit on the Transport details Check your answers page
 
