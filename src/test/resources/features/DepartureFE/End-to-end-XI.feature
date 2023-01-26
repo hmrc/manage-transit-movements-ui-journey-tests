@@ -1,4 +1,4 @@
-@departureXIe2e
+@departureXIe2e @wip
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -11,10 +11,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option TIR on the 'What declaration do you want to create' page
 
   @a11y
-  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air'
+  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'Yes'
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
-    And I submit the Check your answers page
+    And I submit the 'Check your answers' page
 
     # Trader details
     When I click the link with visible text: Add trader details on the 'Declaration summary' page
@@ -54,7 +54,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Simpson Blog Consignee on the 'What is the consignee’s name?' page
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
-    And I submit on the Trader details Check your answers page
+    And I submit on the 'Trader details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
@@ -69,14 +69,14 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route?' page
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Route details - Transit route Check your answers page
+    And I submit on the 'Route details - Transit route Check your answers' page
 
         ## Location of goods
     And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page
-    And I submit on the Route details - Location of goods Check your answers page
+    And I submit on the 'Route details - Location of goods Check your answers' page
 
         ## Place of loading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -87,8 +87,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
     And I select United Kingdom on the 'Which country is the place of unloading in?' page
     And I enter London on the 'Where in United Kingdom is the place of unloading?' page
-    And I submit on the Route details - Places of loading and unloading Check your answers page
-    And I submit on the Route details Check your answers page
+    And I submit on the 'Route details - Places of loading and unloading Check your answers' page
+    And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
      # Guarantee details
@@ -127,15 +127,17 @@ Feature: End to end journey for Northern Ireland office of departure
 
         ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the Transport details - Modes and means of transport Check your answers page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
         ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor?' page
 
         ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
+#    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
+    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+#    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
+    And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
         ## Carrier
@@ -144,4 +146,19 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Carry on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-    #TODO the rest transport section
+       ##Transport Equipement
+
+  ##    1837 Container Id number
+    And I enter C001 on the 'What is the container identification number?' page
+#
+##    1854 Add Seal Id Number
+    And I choose radio option No on the 'Do you want to add a seal for container C001?' page
+#
+  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
+    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+#
+##    1873 Add Another Container
+    And I choose radio option No on the 'You have added 1 container identification number' page
+#
+
+

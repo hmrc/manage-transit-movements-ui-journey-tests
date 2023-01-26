@@ -18,13 +18,13 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026351 on the ACE authorisations reference number page
-    And I submit on the Arrivals - Authorisations Check your answers page
+    And I submit on the 'Arrivals - Authorisations Check your answers' page
     #Add Authorisation
     Then I should have 1 authorisation on the add another authorisation page
     When I choose radio option Yes on the add another authorisation page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
-    And I submit on the Arrivals - Authorisations Check your answers page
+    And I submit on the 'Arrivals - Authorisations Check your answers' page
     Then I should have 2 authorisations on the add another authorisation page
     #Remove Authorisation
     When I choose to click on Remove link on the add another authorisation page
@@ -69,7 +69,7 @@ Feature: End to end journey Arrival notification feature
     When I choose radio option Yes on the You have added 1 goods item number page
     And I enter 0002 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
-    And I submit on the Arrivals - Transport equipment Check your answers page
+    And I submit on the 'Arrivals - Transport equipment Check your answers' page
     #Add Transport Equipment
     When I choose radio option Yes on the You have added 1 transport equipment page
     #Add Container Indicator - 2nd transport equipment iteration
@@ -96,12 +96,12 @@ Feature: End to end journey Arrival notification feature
     When I click the Remove link on the You have added 2 goods item numbers page
     And I click radio option Yes on the Are you sure you want to remove goods item number 0005 page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the Arrivals - Transport equipment Check your answers page
+    And I submit on the 'Arrivals - Transport equipment Check your answers' page
     #Change Transport Equipment
     When I click the Change link on the You have added 2 transport equipment page
     And I click the change link for Container identification number on the CYA page
     And I enter C003 on the container identification number page
-    And I submit on the Arrivals - Transport equipment Check your answers page
+    And I submit on the 'Arrivals - Transport equipment Check your answers' page
     #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
@@ -110,7 +110,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Titanic for the name of the sea-going vessel on the What is the identification number for the replacement transport page
     And I select France on the What country is the replacement transport registered to page
-    And I submit on the Arrivals - Incidents Check your answers page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
     #Add Another Incident
     And I choose radio option Yes on the You have added 1 incident page
     #Add Incident - 2nd iteration
@@ -131,7 +131,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
     And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the Arrivals - Incidents Check your answers page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
     #Change an incident
     When I click the Change link on the You have added 2 incidents page
     And I click the change link for add endorsement on the CYA page
@@ -140,13 +140,13 @@ Feature: End to end journey Arrival notification feature
     And I enter Border Patrol on the endorsement authority page
     And I select France on the endorsement country page
     And I enter Route 1A junction 6 on the endorsement location page
-    And I submit on the Arrivals - Incidents Check your answers page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
     #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
     And I click radio option Yes on the Are you sure you want to remove incident 1 page
     And I choose radio option No on the You have added 1 incident page
     #Summary CYA page
-    And I submit on the Arrivals Check your answers page
+    And I submit on the 'Arrivals Check your answers' page
     #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
@@ -161,7 +161,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
-    And I submit on the Arrivals - Authorisations Check your answers page
+    And I submit on the 'Arrivals - Authorisations Check your answers' page
     When I should have 1 authorisation on the add another authorisation page
     And I choose radio option No on the add another authorisation page
   #Location Of goods
@@ -197,13 +197,13 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 0001 on the What is the goods item number page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the Arrivals - Transport equipment Check your answers page
+    And I submit on the 'Arrivals - Transport equipment Check your answers' page
     And I choose radio option No on the You have added 1 transport equipment page
-    And I submit on the Arrivals - Incidents Check your answers page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the Arrivals Check your answers page
+    And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     #And I should be on the Arrival notifications page
@@ -218,7 +218,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
-    And I submit on the Arrivals - Authorisations Check your answers page
+    And I submit on the 'Arrivals - Authorisations Check your answers' page
     And I should have 1 authorisation on the add another authorisation page
     When I choose radio option No on the add another authorisation page
   #Location Of goods - Location of goods - X Eori Number
@@ -245,11 +245,11 @@ Feature: End to end journey Arrival notification feature
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
-    And I submit on the Arrivals - Incidents Check your answers page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the Arrivals Check your answers page
+    And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Create another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
