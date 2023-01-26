@@ -39,6 +39,7 @@ class CYAStepDef extends BaseStepDef {
     |Route details - Places of loading and unloading|Route details - Office of exit|
     |Route details - Office of transit|Route details|
     |Transport details - Border means of transport|Transport details - Modes and means of transport|
+    |Transport details - Equipment|Transport details|
     |Guarantee details|Arrivals - Authorisations|Arrivals - Transport equipment|
     |Arrivals - Incidents|Arrivals) Check your answers page$""") {
     (subheading: String) =>

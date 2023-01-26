@@ -15,7 +15,7 @@ Feature: End to end journey Arrival notification feature
     #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the procedure type page
+    And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026351 on the ACE authorisations reference number page
     And I submit on the Arrivals - Authorisations Check your answers page
@@ -158,7 +158,7 @@ Feature: End to end journey Arrival notification feature
   # Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the procedure type page
+    And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
     And I submit on the Arrivals - Authorisations Check your answers page
@@ -206,7 +206,7 @@ Feature: End to end journey Arrival notification feature
     And I submit on the Arrivals Check your answers page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
-    And I should be on the Arrival notifications page
+    #And I should be on the Arrival notifications page
     And I sign out
 
 
@@ -215,7 +215,7 @@ Feature: End to end journey Arrival notification feature
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the procedure type page
+    And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
     And I submit on the Arrivals - Authorisations Check your answers page

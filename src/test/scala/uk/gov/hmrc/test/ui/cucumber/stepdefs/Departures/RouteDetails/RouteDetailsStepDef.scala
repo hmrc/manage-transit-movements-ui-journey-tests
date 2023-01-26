@@ -21,53 +21,61 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Routing._
 
 class RouteDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the country of destination page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the country of destination\?' page$""") { (answer: String) =>
     CountryOfDestinationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the departure office of destination page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the office of destination\?' page$""") { (answer: String) =>
     OfficeOfDestinationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the binding itinerary page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Are you using a binding itinerary\?' page$""") { (answer: String) =>
     BindingItineraryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the transit route country page$""") { (answer: String) =>
-    TransitRouteCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Which country do you want to add to the transit route\?' page$""") {
+    (answer: String) =>
+      TransitRouteCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the transit route add another country page$""") {
-    (numberOfCountries: String) =>
-      TransitRouteAddAnotherCountryPage
-        .loadPage(numberOfCountries)
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the transit route add another country page$""") { (answer: String) =>
+  Then(
+    """^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the 'You have added (.+) countr(?:y |ies )to the transit route' page$"""
+  ) { (numberOfCountries: String, numberOfCountriesInTitle: String) =>
     TransitRouteAddAnotherCountryPage
-      .select(answer)
-      .submitPage()
+      .loadPage(numberOfCountries)
   }
 
-  And("""^(?:I )?choose to click on the (.*) link on the transit route add another country page$""") {
-    (sectionLink: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) countr(?:y |ies )to the transit route' page$""") {
+    (answer: String, numberOfCountriesInTitle: String) =>
       TransitRouteAddAnotherCountryPage
-        .clickByPartialLinkText(sectionLink)
+        .loadPage(numberOfCountriesInTitle)
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the transit route remove country page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) countr(?:y |ies )to the transit route' page$"""
+  ) { (sectionLink: String, numberOfCountriesInTitle: String) =>
+    TransitRouteAddAnotherCountryPage
+      .loadPage(numberOfCountriesInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove Andorra from the transit route\?' page$"""
+  ) { (answer: String) =>
     TransitRouteRemoveCountryPage
       .loadPage()
       .select(answer)
