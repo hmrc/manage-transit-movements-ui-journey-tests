@@ -107,7 +107,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the 'What country are the items being transported to?' page
 
         ## Container indicator
-    And I choose radio option Yes on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any containers?' page
 
         ## Inland mode of transport
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
@@ -146,19 +146,10 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Carry on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-       ##Transport Equipement
+      ## Transport equipment
 
-  ##    1837 Container Id number
-    And I enter C001 on the 'What is the container identification number?' page
-#
-##    1854 Add Seal Id Number
-    And I choose radio option No on the 'Do you want to add a seal for container C001?' page
-#
-  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
-#
-##    1873 Add Another Container
-    And I choose radio option No on the 'You have added 1 container identification number' page
-#
+##    1930 Add Transport Equipment
+    And I choose radio option No on the 'Do you need to add any transport equipment?' page
+
 
 

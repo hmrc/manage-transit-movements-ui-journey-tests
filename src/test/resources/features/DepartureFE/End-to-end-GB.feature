@@ -409,7 +409,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option Yes on the 'Are you using any containers?' page
 
     ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
@@ -431,12 +431,21 @@ Feature: End to end journey for Great Britain office of departure
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
-      ## Transport equipment
+      ## Transport equipment Security 0, ContainerID YES, No authorisations
 
-##    1930 Add Transport Equipment
-    And I choose radio option No on the 'Do you need to add any transport equipment?' page
-
-
+  ##    1837 Container Id number
+    And I enter C001 on the 'What is the container identification number?' page
+#
+##    1854 Add Seal Id Number
+    And I choose radio option No on the 'Do you want to add a seal for container C001?' page
+#
+  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
+    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+#
+##    1873 Add Another Container
+    And I choose radio option No on the 'You have added 1 container identification number' page
+#
+#     This path will skip Payment Method and go straight to CYA page 1877 as security = 0
 
 
 
