@@ -144,8 +144,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter Carry on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-    #TODO the rest transport section
+         ## Transport equipment
+    #    1930 Add Transport Equipment
+    And I choose radio option No on the 'Do you need to add any transport equipment?' page
 
-    And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I submit on the 'Transport details - Equipment Check your answers' page
     And I submit on the 'Transport details Check your answers' page

@@ -335,16 +335,28 @@ Feature: End to end journey for Great Britain office of departure
       ## Authorisation
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
-      ##Carrier
+      ## Carrier
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
-    #TODO the rest of transport
+      ## Transport equipment Security 0, ContainerID YES, No authorisations
 
-   #Payment Method
+  ##    1837 Container Id number
+    And I enter C001 on the 'What is the container identification number?' page
+#
+##    1854 Add Seal Id Number
+    And I choose radio option No on the 'Do you want to add a seal for container C001?' page
+#
+  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
+    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+#
+##    1873 Add Another Container
+    And I choose radio option No on the 'You have added 1 container identification number' page
+#
+#     This path will skip Payment Method and go straight to CYA page 1877 as security = 0
+
     And I submit on the 'Transport details - Equipment Check your answers' page
     And I submit on the 'Transport details Check your answers' page
-
 
 
 
