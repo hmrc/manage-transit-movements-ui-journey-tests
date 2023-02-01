@@ -35,7 +35,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Are you acting as a representative?' page
     And I enter FR123123132 on the representative 'What is your EORI number or TIN?' page
     And I enter Marie Rep on the representative 'What is your name?' page
-    And I choose radio option Indirect (principal and agent jointly liable) on the representative 'What is your capacity?' page
     And I enter +11 1111 1111 on the representative 'What is your phone number?' page
 
       ## Reduced data set operator
