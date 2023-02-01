@@ -9,7 +9,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the 'What is the Local Reference Number' page
     And I select GB on the 'Where is the office of departure' page
 
-  @a11y
+  @a11y @browserstack
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option T2 on the 'What declaration do you want to create' page

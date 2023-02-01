@@ -33,6 +33,7 @@ object ManageTransitMovementsPage extends Page {
     link match {
       case "Make an arrival notification" => clickById("make-arrival-notification")
       case "View arrival notifications" => clickById("view-arrival-notifications")
+//      case "Make a departure declaration" => driver.navigate().to("http://bs-local.com:10120/manage-transit-movements/departures/local-reference-number")
       case "Make a departure declaration" => clickById("make-departure-declaration")
       case "View departure declarations"  => clickById("view-departure-declarations")
       case "Check your guarantee balance" => clickById("check-guarantee-balance")
