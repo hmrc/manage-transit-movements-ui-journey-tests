@@ -150,8 +150,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
-#    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
-#    When I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
     And I submit on the Guarantee details Check your answers page
