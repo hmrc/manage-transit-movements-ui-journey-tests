@@ -29,5 +29,5 @@ project/target
 .bsp/
 **/.DS_Store
 
-#Browserstack
-/browserStackConfig.properties
+# Browserstack
+src/test/resources/browserStackConfig.properties
