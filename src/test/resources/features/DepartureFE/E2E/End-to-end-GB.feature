@@ -9,6 +9,8 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the 'What is the Local Reference Number' page
     And I select GB on the 'Where is the office of departure' page
 
+
+
   @a11y
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -Completed Consignee at header level
     And I choose radio option Simplified on the 'What type of procedure are you using' page
@@ -148,17 +150,17 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
-    When I choose radio option Yes on the 'You have added 2 guarantees' page
+#    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
+#    When I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
     And I submit on the Guarantee details Check your answers page
-    When I choose radio option Yes on the 'You have added 3 guarantees' page
+    When I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I submit on the Guarantee details Check your answers page
-    When I choose radio option No on the 'You have added 4 guarantees' page
+    When I choose radio option No on the 'You have added 3 guarantees' page
     Then I should be on the 'Declaration summary' page
 
     #Transport details
@@ -220,6 +222,15 @@ Feature: End to end journey for Great Britain office of departure
     #TODO the rest of transport
 
 
+
+
+
+
+
+
+
+
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
     And I choose radio option Normal on the 'What type of procedure are you using' page
     And I choose radio option T1 on the 'What declaration do you want to create' page
@@ -228,13 +239,14 @@ Feature: End to end journey for Great Britain office of departure
 
     # Trader details
     And I click the link with visible text: Add trader details on the 'Declaration summary' page
-      ## Transit Holder
+
+    ## Transit Holder
     And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
     And I select United Kingdom on the 'Which country is the transit holder based in?' page
     And I fill in the address on the 'What is the transit holder’s address?' page
 
-     ## Transit holder's contact person's details
+    ## Transit holder's contact person's details
 
     And I choose radio option No on the 'Do you want to add a contact?' page
 
@@ -264,10 +276,10 @@ Feature: End to end journey for Great Britain office of departure
     And I select Italy on the 'What is the country of destination?' page
     And I select IT on the 'Where is the office of destination?' page
 
-      ## Binding itinerary indicator
+    ## Binding itinerary indicator
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
-      ## Transit route country optional
+     ## Transit route country optional
     And I choose radio option No on the transit route add country page
     And I submit on the Route details - Transit route Check your answers page
 
@@ -287,29 +299,27 @@ Feature: End to end journey for Great Britain office of departure
 
     ## Place of loading UN LOCODE
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
-
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the 'Declaration summary' page
 
-
     #Guarantee details
     When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
-
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
+    And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
+    And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
+    And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
+    And I submit on the Guarantee details Check your answers page
     When I choose radio option No on the 'You have added 1 guarantee' page
     Then I should be on the 'Declaration summary' page
 
-
     #Transport details
     When I click the link with visible text: Add transport details on the 'Declaration summary' page
-
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
-      ## Container indicator
+    ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
 
     ## Inland mode of transport
