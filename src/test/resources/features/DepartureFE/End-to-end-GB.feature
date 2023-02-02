@@ -11,7 +11,7 @@ Feature: End to end journey for Great Britain office of departure
 
   @a11y
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
-  Completed Consignee at header level - Container Ind 'No'
+  Completed Consignee at header level - Container Ind 'Yes'
     And I choose radio option Simplified on the 'What type of procedure are you using' page
     And I choose radio option T2 on the 'What declaration do you want to create' page
     And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
@@ -173,7 +173,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Italy on the 'What country are the items being transported to?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option Yes on the 'Are you using any containers?' page
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
@@ -222,12 +222,6 @@ Feature: End to end journey for Great Britain office of departure
 
      ##Transport Equipement
 
-##    1930 Add Transport Equipment
-    And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
-#
-  ##    1931 Add Container Id Number
-    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
-#
   ##    1837 Container Id number
     And I enter C001 on the 'What is the container identification number?' page
 #
@@ -277,6 +271,9 @@ Feature: End to end journey for Great Britain office of departure
 #
 ##    1873 Add Another Container
     And I choose radio option Yes on the 'You have added 1 container identification number' page
+#
+      ##    1931 Add Container Id Number
+    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
 #
   ##    1837 Container Id number
     And I enter C002 on the 'What is the container identification number?' page
@@ -409,7 +406,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
       ## Container indicator
-    And I choose radio option Yes on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any containers?' page
 
     ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
@@ -433,8 +430,8 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Transport equipment Security 0, ContainerID YES, No authorisations
 
-  ##    1837 Container Id number
-    And I enter C001 on the 'What is the container identification number?' page
+    ##    1930 Add Transport Equipment
+    And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
 #
 ##    1854 Add Seal Id Number
     And I choose radio option No on the 'Do you want to add a seal for container C001?' page

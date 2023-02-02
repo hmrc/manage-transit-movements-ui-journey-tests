@@ -11,7 +11,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option TIR on the 'What declaration do you want to create' page
 
   @a11y
-  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'Yes'
+  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No'
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
@@ -151,5 +151,4 @@ Feature: End to end journey for Northern Ireland office of departure
 ##    1930 Add Transport Equipment
     And I choose radio option No on the 'Do you need to add any transport equipment?' page
 
-
-
+#     This path bypasses Payment Method
