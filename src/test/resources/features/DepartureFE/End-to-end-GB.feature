@@ -282,7 +282,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a seal for container C002?' page
 #
   ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
 #
 #    Click the remove link
     And I click the Remove link on the 'You have added 2 container identification numbers' page
@@ -437,7 +437,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a seal for container C001?' page
 #
   ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
 #
 ##    1873 Add Another Container
     And I choose radio option No on the 'You have added 1 container identification number' page
