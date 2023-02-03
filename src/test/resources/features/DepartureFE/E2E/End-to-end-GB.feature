@@ -79,20 +79,20 @@ Feature: End to end journey for Great Britain office of departure
     And I select France on the 'Which country do you want to add to the transit route?' page
     And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
     And I select Germany on the 'Which country do you want to add to the transit route?' page
-    When I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
+    And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Route details - Transit route Check your answers page
 
       ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
-    When I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
+    And I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
     And I submit on the Route details - Office of transit Check your answers page
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
-    When I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
+    And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
     And I submit on the Route details - Office of transit Check your answers page
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
@@ -103,13 +103,13 @@ Feature: End to end journey for Great Britain office of departure
     And I select Germany on the 'Which country is the office of exit in?' page
     When I select Dortmund on the 'Where in Germany is the office of exit?' page
     And I submit on the Route details - Office of exit Check your answers page
-    When I choose radio option Yes on the 'You have added 1 office of exit' page
+    And I choose radio option Yes on the 'You have added 1 office of exit' page
     And I select France on the 'Which country is the office of exit in?' page
-    When I select Agen bureau on the 'Where in France is the office of exit?' page
+    And I select Agen bureau on the 'Where in France is the office of exit?' page
     And I submit on the Route details - Office of exit Check your answers page
     And I choose to click on the Remove link on the 'You have added 2 offices of exit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit?' page
-    When I choose radio option No on the 'You have added 1 office of exit' page
+    And I choose radio option No on the 'You have added 1 office of exit' page
 
       ## Location of goods
     And I choose radio option Designated location on the 'Which type of location is it?' page
@@ -127,7 +127,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
-    When I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add a place of unloading?' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of unloading?' page
     And I select Aalen on the 'What is the UN LOCODE for the place of unloading?' page
@@ -141,24 +141,34 @@ Feature: End to end journey for Great Britain office of departure
     #Guarantee details - remove guarantee
     When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
     And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
-    When I choose radio option Yes on the 'You have added 1 guarantee' page
+    And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
+    And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
-    And I enter 10000 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
     And I choose to click on the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
-    When I choose radio option Yes on the 'You have added 1 guarantee' page
+    And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
+    And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 123.00 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
-    When I choose radio option Yes on the 'You have added 2 guarantees' page
+    And I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
+    And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 54.99 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
-    When I choose radio option No on the 'You have added 3 guarantees' page
+    And I choose radio option Yes on the 'You have added 3 guarantees' page
+    And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
+    And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 54.99 on the 'How much is the liability in pounds?' page
+    And I submit on the Guarantee details Check your answers page
+    And I choose radio option No on the 'You have added 4 guarantees' page
     Then I should be on the 'Declaration summary' page
 
     #Transport details
@@ -192,37 +202,32 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit on the Transport details - Border means of transport Check your answers page
-    When I choose radio option No on the 'You have added 1 border means of transport' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
     And I submit on the Transport details - Modes and means of transport Check your answers page
 
       ## Supply chain actor
-    When I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
+    And I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
     And I enter FR98472189002 on the 'What’s the EORI number or TIN for the consolidator?' page
-    When I choose radio option No on the 'You have added 1 supply chain actor' page
+    And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
     And I enter ACR123 reference number on the 'What’s the reference number for the ACR authorisation?' page
-    When I choose radio option Yes on the 'You have added 1 transport authorisation' page
+    And I choose radio option Yes on the 'You have added 1 transport authorisation' page
     And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
     And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
-    When I choose to click on Remove link on the 'You have added 2 authorisations' page
+    And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
-    When I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I choose radio option No on the 'You have added 1 transport authorisation' page
     And I enter the date on the 'When is the limit date?' page
 
       ##Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
     #TODO the rest of transport
-
-
-
-
-
 
 
 
@@ -283,7 +288,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Country of Transit
     And I select France on the 'Which country is the office of transit in?' page
-    When I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
+    And I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)?' page
     And I submit on the Route details - Office of transit Check your answers page
     And I choose radio option No on the 'You have added 1 office of transit' page
@@ -298,7 +303,7 @@ Feature: End to end journey for Great Britain office of departure
     ## Place of loading UN LOCODE
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
-    When I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I submit on the Route details - Places of loading and unloading Check your answers page
     And I submit on the Route details Check your answers page
     Then I should be on the 'Declaration summary' page
@@ -308,8 +313,10 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
+    And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 1299.99 on the 'How much is the liability in pounds?' page
     And I submit on the Guarantee details Check your answers page
-    When I choose radio option No on the 'You have added 1 guarantee' page
+    And I choose radio option No on the 'You have added 1 guarantee' page
     Then I should be on the 'Declaration summary' page
 
     #Transport details
@@ -331,13 +338,13 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the Transport details - Modes and means of transport Check your answers page
 
       ## Supply chain actor
-    When I choose radio option No on the 'Do you want to add a supply chain actor?' page
+    And I choose radio option No on the 'Do you want to add a supply chain actor?' page
 
       ## Authorisation
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
       ##Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
     #TODO the rest of transport

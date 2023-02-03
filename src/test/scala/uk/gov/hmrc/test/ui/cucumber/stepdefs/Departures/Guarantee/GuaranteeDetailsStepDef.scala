@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Guarantee
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Guarantee.{AddAnotherGuaranteePage, ConfirmRemoveGuaranteePage, GuaranteeAccessCodePage, GuaranteeBForTIRDeclarationPage, GuaranteeLiabilityAmount, GuaranteeReferenceNumberPage, GuaranteeTypePage, OtherGuarantee3ReferencePage, OtherGuarantee8ReferencePage, WantToAddReferenceForGuaranteePage}
+import uk.gov.hmrc.test.ui.pages.Departures.Guarantee._
 
 class GuaranteeDetailsStepDef extends BaseStepDef {
 
@@ -32,6 +32,13 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
     GuaranteeAccessCodePage
       .loadPage()
       .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What currency do you want to use for the liability\?' page$""") { (answer: String) =>
+    GuaranteeLiabilityCurrencyPage
+      .loadPage()
+      .select(answer)
       .submitPage()
   }
 
