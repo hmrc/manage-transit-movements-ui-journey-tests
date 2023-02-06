@@ -36,7 +36,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Are you acting as a representative?' page
     And I enter FR123123132 on the representative 'What is your EORI number or TIN?' page
     And I enter Marie Rep on the representative 'What is your name?' page
-    And I choose radio option Indirect (principal and agent jointly liable) on the representative 'What is your capacity?' page
     And I enter +11 1111 1111 on the representative 'What is your phone number?' page
 
       ## Reduced data set operator
@@ -151,17 +150,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     When I choose radio option Yes on the 'You have added 1 guarantee' page
-    And I choose radio option (R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways on the 'Which type of guarantee is it?' page
-    When I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
     And I submit on the 'Guarantee details Check your answers' page
-    When I choose radio option Yes on the 'You have added 3 guarantees' page
+    When I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I submit on the 'Guarantee details Check your answers' page
-    When I choose radio option No on the 'You have added 4 guarantees' page
+    When I choose radio option No on the 'You have added 3 guarantees' page
     Then I should be on the 'Declaration summary' page
 
     #Transport details
@@ -219,55 +216,54 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
-
      ##Transport Equipement
 
   ##    1837 Container Id number
-    And I enter C001 on the 'What is the container identification number?' page
+    And I enter C001 on the 'What is the identification number for the transport equipment?' page
 #
 ##    1854 Add Seal Id Number
-    And I choose radio option Yes on the 'Do you want to add a seal for container C001?' page
+    And I choose radio option Yes on the 'Do you want to add a seal?' page
 #
 ##    1858 Seal Id number
-    And I enter S001 on the 'What is the seal identification number for container C001?' page
+    And I enter S001 on the 'What is the seal identification number?' page
 #
 ##    1859 Add Another Seal
-    And I choose radio option Yes on the 'You have added 1 seal for container C001' page
+    And I choose radio option Yes on the 'You have added 1 seal' page
 #
 ##    1858 Seal Id number
-    And I enter S002 on the 'What is the seal identification number for container C001?' page
+    And I enter S002 on the 'What is the seal identification number?' page
 #
 #    Click the remove link
-     And I click the Remove link  on the 'You have added 2 seals for container C001' page
+     And I click the Remove link  on the 'You have added 2 seals' page
 #
     ##    1860 Remove Seal
     And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
 #
 ##    1859 Add Another Seal
-    And I choose radio option No on the 'You have added 1 seal for container C001' page
+    And I choose radio option No on the 'You have added 1 seal' page
 #
 ##    2084 Add Goods Item Number
-    And I choose radio option Yes on the 'Do you want to add a goods item number for container C001?' page
+    And I choose radio option Yes on the 'Do you want to add a goods item number?' page
 #
   ##    2085 Goods Item number
-    And I enter 0001 on the 'What is the goods item number for container C001?' page
+    And I enter 0001 on the 'What is the goods item number?' page
 #
   ##   2086 Add Another Goods Item
-    And I choose radio option Yes on the 'You have added 1 goods item number for container C001' page
+    And I choose radio option Yes on the 'You have added 1 goods item number' page
 #
   ##    2085 Goods Item number
-    And I enter 0002 on the 'What is the goods item number for container C001?' page
+    And I enter 0002 on the 'What is the goods item number?' page
 #
 #    Click the remove link
-    And I click the Remove link on the 'You have added 2 goods item numbers for container C001' page
+    And I click the Remove link on the 'You have added 2 goods item numbers' page
   ##   2087 Remove Goods Item
-    And I click radio option Yes on the 'Are you sure you want to remove goods item 0001 from container C001?' page
+    And I click radio option Yes on the 'Are you sure you want to remove goods item number 0001?' page
 #
   ##    2086 Add Another Goods Item
-    And I choose radio option No on the 'You have added 1 goods item number for container C001' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
 #
   ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-    And I submit on the 'Transport details - Container, seals and goods item numbers Check your answers' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
 #
 ##    1873 Add Another Container
     And I choose radio option Yes on the 'You have added 1 container identification number' page
@@ -279,7 +275,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter C002 on the 'What is the container identification number?' page
 #
     ##    1854 Add Seal Id Number
-    And I choose radio option No on the 'Do you want to add a seal for container C002?' page
+    And I choose radio option No on the 'Do you want to add a seal?' page
 #
   ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
     And I submit on the 'Transport details - Transport equipment Check your answers' page
@@ -434,7 +430,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
 #
 ##    1854 Add Seal Id Number
-    And I choose radio option No on the 'Do you want to add a seal for container C001?' page
+    And I choose radio option No on the 'Do you want to add a seal?' page
 #
   ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
     And I submit on the 'Transport details - Transport equipment Check your answers' page

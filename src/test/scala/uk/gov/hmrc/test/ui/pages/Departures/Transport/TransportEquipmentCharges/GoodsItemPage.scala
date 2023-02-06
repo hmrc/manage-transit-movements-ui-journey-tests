@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object GoodsItemPage extends StringPage {
 
-  override def title(args: String*): String = String.format("What is the goods item number for container %s?", args: _*)
+  override def title(args: String*): String = "What is the goods item number?"
 
 }

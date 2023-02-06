@@ -37,18 +37,18 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a seal for container (.*)\?' page$""") {
-    (answer: String, containerIdNumber: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page$""") {
+    (answer: String) =>
     AddSealPage
-      .loadPage(containerIdNumber)
+      .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a goods item number for container (.*)\?' page$""") {
-    (answer: String, containerIdNumber: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a goods item number\?' page$""") {
+    (answer: String) =>
       AddGoodsItemNumberPage
-        .loadPage(containerIdNumber)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
@@ -60,17 +60,17 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click the (.*) link  on the 'You have added (.*) seals? for container (.*)' page$""") {
-    (sectionLink: String, numberOfSeals: String, containerIdNumber: String) =>
+  And("""^(?:I )?click the (.*) link  on the 'You have added (.*) seals?' page$""") {
+    (sectionLink: String, numberOfSeals: String) =>
       AddAnotherSealPage
-        .loadPage(numberOfSeals, containerIdNumber)
+        .loadPage(numberOfSeals)
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have added (.*) goods item numbers? for container (.*)' page$""") {
-    (sectionLink: String, numberOfGoodsItems: String, containerIdNumber: String) =>
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) goods item numbers?' page$""") {
+    (sectionLink: String, numberOfGoodsItems: String) =>
       AddAnotherGoodsItemPage
-        .loadPage(numberOfGoodsItems, containerIdNumber)
+        .loadPage(numberOfGoodsItems)
         .clickByPartialLinkText(sectionLink)
   }
 
@@ -82,41 +82,41 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) seals? for container (.*)' page$""") {
-    (answer: String, numberOfSeals: String, containerIdNumber: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) seals?' page$""") {
+    (answer: String, numberOfSeals: String) =>
       AddAnotherSealPage
-        .loadPage(numberOfSeals, containerIdNumber)
+        .loadPage(numberOfSeals)
         .select(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) goods item numbers? for container (.*)' page$""") {
-    (answer: String, numberOfGoodsItems: String, containerIdNumber: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) goods item numbers?' page$""") {
+    (answer: String, numberOfGoodsItems: String) =>
       AddAnotherGoodsItemPage
-        .loadPage(numberOfGoodsItems, containerIdNumber)
+        .loadPage(numberOfGoodsItems)
         .select(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the container identification number\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the transport equipment\?' page$""") { (answer: String) =>
     ContainerIdentificationNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the seal identification number for container (.+)\?' page$""") {
-    (answer: String, containerIdNumber: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the seal identification number\?' page$""") {
+    (answer: String) =>
       SealIdentificationNumberPage
-        .loadPage(containerIdNumber)
+        .loadPage()
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the goods item number for container (.*)\?' page$""") {
-    (answer: String, containerIdNumber: String) =>
+  And("""^(?:I )?enter (.*) on the 'What is the goods item number\?' page$""") {
+    (answer: String) =>
     GoodsItemPage
-      .loadPage(containerIdNumber)
+      .loadPage()
       .fillInput(answer)
       .submitPage()
   }
@@ -137,10 +137,10 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove goods item (.*) from container (.*)\?' page$""") {
-    (answer: String, goodsIdNumber: String, containerIdNumber: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove goods item number (.*)\?' page$""") {
+    (answer: String, goodsIdNumber: String) =>
       RemoveGoodsItemPage
-        .loadPage(goodsIdNumber, containerIdNumber)
+        .loadPage(goodsIdNumber)
         .select(answer)
         .submitPage()
   }

@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object SealIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String =
-    String.format("What is the seal identification number for container %s?", args: _*)
+  override def title(args: String*): String = "What is the seal identification number?"
 
 }
