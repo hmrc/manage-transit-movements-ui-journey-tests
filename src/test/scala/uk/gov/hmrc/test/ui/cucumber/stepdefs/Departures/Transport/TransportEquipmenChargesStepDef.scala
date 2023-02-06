@@ -98,7 +98,7 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the identification number for the transport equipment\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the container identification number\?' page$""") { (answer: String) =>
     ContainerIdentificationNumberPage
       .loadPage()
       .fillInput(answer)

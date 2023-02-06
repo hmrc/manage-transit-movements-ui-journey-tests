@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.TraderDetails
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.{ConsigneeAddressPage, ConsigneeCountryPage, ConsigneeEoriNumberOrTinPage, ConsigneeNamePage, IsConsigneeEoriNumberOrTinKnownPage, MoreThanOneConsigneePage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignor.{AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsignorAddressPage, ConsignorCountryPage, ConsignorEoriNumberOrTinPage, ConsignorNamePage, IsConsignorEoriNumberOrTinKnownPage}
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative.{ActingAsRepresentativePage, RepresentativeCapacityPage, RepresentativeEoriNumbeOrTinPage, RepresentativeNamePage, RepresentativePhoneNumberPage}
+import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative.{ActingAsRepresentativePage, RepresentativeAddContactPage, RepresentativeEoriNumbeOrTinPage, RepresentativeNamePage, RepresentativePhoneNumberPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.SetReducedDataSetIndicatorPage
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder.{AddHolderContactNamePage, AddHolderContactPersonPage, AddHolderContactPhoneNumberPage, HolderAddressPage, HolderCountryPage, HolderEoriNumberOrTinPage, HolderNamePage, IsHolderEoriKnownPage, IsTIRidKnownPage, TirHolderIdPage}
 
@@ -99,17 +99,17 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the representative 'Do you want to add your details\?' page$"""){(answer: String) =>
+    RepresentativeAddContactPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?enter (.+) on the representative 'What is your name\?' page$""") { (answer: String) =>
     RepresentativeNamePage
       .loadPage()
       .fillInput(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the representative 'What is your capacity\?' page$""") { (answer: String) =>
-    RepresentativeCapacityPage
-      .loadPage()
-      .select(answer)
       .submitPage()
   }
 

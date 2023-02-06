@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative
+package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object RepresentativeCapacityPage extends RadioPage {
+object GuaranteeLiabilityCurrencyPage extends SelectPage {
 
-  override def title(args: String*): String = "What is your capacity?"
+  override def title(args: String*): String = "What currency do you want to use for the liability?"
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "Direct (principal solely liable)"              => clickRadioBtn("direct")
-      case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
-    }
-    this
-  }
 }

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
+package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ContainerIdentificationNumberPage extends StringPage {
+object RepresentativeAddContactPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is the container identification number?"
+  override def title(args: String*): String = "Do you want to add your details?"
 
 }
