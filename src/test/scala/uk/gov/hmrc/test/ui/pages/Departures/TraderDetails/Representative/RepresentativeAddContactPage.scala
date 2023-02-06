@@ -16,17 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RepresentativeCapacityPage extends RadioPage {
+object RepresentativeAddContactPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is your capacity?"
+  override def title(args: String*): String = "Do you want to add your details?"
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "Direct (principal solely liable)"              => clickRadioBtn("direct")
-      case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
-    }
-    this
-  }
 }
