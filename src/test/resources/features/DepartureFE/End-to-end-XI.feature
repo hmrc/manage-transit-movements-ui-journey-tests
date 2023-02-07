@@ -33,6 +33,7 @@ Feature: End to end journey for Northern Ireland office of departure
       ## Representative details
     And I choose radio option Yes on the 'Are you acting as a representative?' page
     And I enter FR123123132 on the representative 'What is your EORI number or TIN?' page
+    And I choose radio option Yes on the representative 'Do you want to add your details?' page
     And I enter Marie Rep on the representative 'What is your name?' page
     And I enter +11 1111 1111 on the representative 'What is your phone number?' page
 
@@ -133,9 +134,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
         ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-#    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
     And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
-#    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
     And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
@@ -146,8 +145,5 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
       ## Transport equipment
-
-##    1930 Add Transport Equipment
     And I choose radio option No on the 'Do you need to add any transport equipment?' page
-
 #     This path bypasses Payment Method

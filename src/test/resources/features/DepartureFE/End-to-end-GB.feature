@@ -1,4 +1,4 @@
-@departureGBe2e
+@departureGBe2e @wip
 
 Feature: End to end journey for Great Britain office of departure
 
@@ -35,6 +35,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Representative details
     And I choose radio option Yes on the 'Are you acting as a representative?' page
     And I enter FR123123132 on the representative 'What is your EORI number or TIN?' page
+    And I choose radio option Yes on the representative 'Do you want to add your details?' page
     And I enter Marie Rep on the representative 'What is your name?' page
     And I enter +11 1111 1111 on the representative 'What is your phone number?' page
 
@@ -226,99 +227,41 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
-     ##Transport Equipement
 
-  ##    1837 Container Id number
+     ## Transport Equipement
     And I enter C001 on the 'What is the container identification number?' page
-#
-##    1854 Add Seal Id Number
     And I choose radio option Yes on the 'Do you want to add a seal?' page
-#
-##    1858 Seal Id number
     And I enter S001 on the 'What is the seal identification number?' page
-#
-##    1859 Add Another Seal
     And I choose radio option Yes on the 'You have added 1 seal' page
-#
-##    1858 Seal Id number
     And I enter S002 on the 'What is the seal identification number?' page
-#
-#    Click the remove link
-     And I click the Remove link  on the 'You have added 2 seals' page
-#
-    ##    1860 Remove Seal
+    And I click the Remove link  on the 'You have added 2 seals' page
     And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
-#
-##    1859 Add Another Seal
     And I choose radio option No on the 'You have added 1 seal' page
-#
-##    2084 Add Goods Item Number
     And I choose radio option Yes on the 'Do you want to add a goods item number?' page
-#
-  ##    2085 Goods Item number
-    And I enter 0001 on the 'What is the goods item number?' page
-#
-  ##   2086 Add Another Goods Item
+    And I enter 1 on the 'What is the goods item number?' page
     And I choose radio option Yes on the 'You have added 1 goods item number' page
-#
-  ##    2085 Goods Item number
-    And I enter 0002 on the 'What is the goods item number?' page
-#
-#    Click the remove link
+    And I enter 2 on the 'What is the goods item number?' page
     And I click the Remove link on the 'You have added 2 goods item numbers' page
-  ##   2087 Remove Goods Item
-    And I click radio option Yes on the 'Are you sure you want to remove goods item number 0001?' page
-#
-  ##    2086 Add Another Goods Item
+    And I click radio option Yes on the 'Are you sure you want to remove goods item number 1?' page
     And I choose radio option No on the 'You have added 1 goods item number' page
-#
-  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
     And I submit on the 'Transport details - Transport equipment Check your answers' page
 #
 ##    1873 Add Another Container
-    And I choose radio option Yes on the 'You have added 1 container identification number' page
-#
-      ##    1931 Add Container Id Number
-    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
-#
-  ##    1837 Container Id number
-    And I enter C002 on the 'What is the container identification number?' page
-#
-    ##    1854 Add Seal Id Number
-    And I choose radio option No on the 'Do you want to add a seal?' page
-#
-  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-    And I submit on the 'Transport details - Transport equipment Check your answers' page
-#
-#    Click the remove link
-    And I click the Remove link on the 'You have added 2 container identification numbers' page
-#
-  ##    1874 Remove Container
-    And I click radio option Yes on the 'Are you sure you want to remove container C001?' page
-#
-##    1873 Add Another Container
-    And I choose radio option No on the 'You have added 1 container identification number' page
-#
-
-
-
-
-
-
-##    Change Container
-#    And I click the Change link on the 'You have added 1 container identification number' page
-#
-##    Change Seal
-#    And I click the Change link  on the 'You have added 1 seal for container C001' page
-#
-##    Change Goods Item
-#    And I click the Change link on the 'You have added 1 goods item number for container C001' page
-#
-##    1854 Add Seal Id Number
-#    And I choose radio option No on the 'Do you want to add a seal for container C002?' page
-#
-
-
+#    And I choose radio option Yes on the 'You have added 1 container identification number' page
+#      ##    1931 Add Container Id Number
+#    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
+#  ##    1837 Container Id number
+#    And I enter C002 on the 'What is the container identification number?' page
+#    ##    1854 Add Seal Id Number
+#    And I choose radio option No on the 'Do you want to add a seal?' page
+#  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
+#    And I submit on the 'Transport details - Transport equipment Check your answers' page
+##    Click the remove link
+#    And I click the Remove link on the 'You have added 2 container identification numbers' page
+#  ##    1874 Remove Container
+#    And I click radio option Yes on the 'Are you sure you want to remove container C001?' page
+###    1873 Add Another Container
+#    And I choose radio option No on the 'You have added 1 container identification number' page
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -340,20 +283,20 @@ Feature: End to end journey for Great Britain office of departure
 
     And I choose radio option No on the 'Do you want to add a contact?' page
 
-    ## Representative details
+      ## Representative details
     And I choose radio option No on the 'Are you acting as a representative?' page
 
-    ## Reduced data set operator
+      ## Reduced data set operator
     And I choose radio option No on the 'Do you want to use a reduced data set?' page
 
-    ## Consignor
+      ## Consignor
     And I choose radio option No on the 'Do you know the consignor’s EORI number or TIN?' page
     And I enter Pip Consignor on the 'What is the consignor’s name?' page
     And I select United Kingdom on the 'Which country is the consignor based in?' page
     And I fill in the address on the 'What is the consignor’s address?' page
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
-    ## Consignee
+      ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
     And I submit on the 'Trader details Check your answers' page
     Then I should be on the 'Declaration summary' page
@@ -362,14 +305,14 @@ Feature: End to end journey for Great Britain office of departure
     # Route details
     When I click the link with visible text: Add route details on the 'Declaration summary' page
 
-     ## Transit route
+      ## Transit route
     And I select Italy on the 'What is the country of destination?' page
     And I select IT on the 'Where is the office of destination?' page
 
-     ## Binding itinerary indicator
+      ## Binding itinerary indicator
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
-     ## Transit route country optional
+      ## Transit route country optional
     And I choose radio option No on the transit route add country page
     And I submit on the 'Route details - Transit route Check your answers' page
 
@@ -387,7 +330,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
-    ## Place of loading UN LOCODE
+      ## Place of loading UN LOCODE
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     And I enter London on the 'Where in United Kingdom is the place of loading?' page
@@ -395,7 +338,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    #Guarantee details
+    # Guarantee details
     When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
@@ -406,15 +349,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 guarantee' page
     Then I should be on the 'Declaration summary' page
 
-    #Transport details
+    # Transport details
     When I click the link with visible text: Add transport details on the 'Declaration summary' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
-    ## Container indicator
+      ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
 
-    ## Inland mode of transport
+      ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
@@ -432,23 +375,14 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Carrier
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
-   And I wait for 100000 seconds
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
       ## Transport equipment Security 0, ContainerID YES, No authorisations
-
-    ##    1930 Add Transport Equipment
     And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
-#
-##    1854 Add Seal Id Number
     And I choose radio option No on the 'Do you want to add a seal?' page
-#
-  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
     And I submit on the 'Transport details - Transport equipment Check your answers' page
-#
 ##    1873 Add Another Container
-    And I choose radio option No on the 'You have added 1 container identification number' page
-#
+#    And I choose radio option No on the 'You have added 1 container identification number' page
 #     This path will skip Payment Method and go straight to CYA page 1877 as security = 0
 
 

@@ -144,10 +144,10 @@ Feature: Arrival notification feature
     Then I choose radio option No on the add another container seal page
   #Add Goods Item
     When I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter 0001 on the What is the goods item number page
+    And I enter 1 on the What is the goods item number page
   #Add Another Goods Item
     When I choose radio option Yes on the You have added 1 goods item number page
-    And I enter 0002 on the What is the goods item number page
+    And I enter 2 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
   #Add Transport Equipment
@@ -165,16 +165,16 @@ Feature: Arrival notification feature
     When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter 0003 on the What is the goods item number page
+    And I enter 3 on the What is the goods item number page
   #Add Another Goods Item
     And I choose radio option Yes on the You have added 1 goods item number page
-    And I enter 0004 on the What is the goods item number page
+    And I enter 4 on the What is the goods item number page
   #Change Goods Item
     When I click the Change link on the You have added 2 goods item numbers page
-    Then I enter 0005 on the What is the goods item number page
+    Then I enter 5 on the What is the goods item number page
   #Remove Goods Item
     When I click the Remove link on the You have added 2 goods item numbers page
-    And I click radio option Yes on the Are you sure you want to remove goods item number 0005 page
+    And I click radio option Yes on the Are you sure you want to remove goods item number 5 page
     And I choose radio option No on the You have added 1 goods item number page
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
   #Change Transport Equipment
@@ -275,7 +275,7 @@ Feature: Arrival notification feature
     When I choose radio option No on the add another container seal page
   #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
-    And I enter 0001 on the What is the goods item number page
+    And I enter 1 on the What is the goods item number page
     And I choose radio option No on the You have added 1 goods item number page
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
     And I choose radio option No on the You have added 1 transport equipment page
