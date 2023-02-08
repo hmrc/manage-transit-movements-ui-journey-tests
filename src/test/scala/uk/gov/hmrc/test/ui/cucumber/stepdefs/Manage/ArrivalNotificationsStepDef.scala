@@ -26,7 +26,7 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  And("""^(?:I )?click on the (.*) link for MRN (.*) on the Arrival notifications page""") {
+  And("""^(?:I )?click on the (.*) link for MRN (.*) on the Arrival notifications page$""") {
     (linkText: String, mrn: String) =>
     ArrivalNotificationsPage
         .loadPage()

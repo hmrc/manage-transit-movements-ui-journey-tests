@@ -45,14 +45,14 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page""") {
+  And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page$""") {
     (sectionLink: String, numberOfGoodsItems: String) =>
       AddAnotherGoodsItemNumberPage
         .loadPage(numberOfGoodsItems)
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove goods item number (.*) page""") {
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove goods item number (.*) page$""") {
     (answer: String, numberOfGoodsItems: String) =>
       RemoveGoodsItemNumberPage
         .loadPage(numberOfGoodsItems)
@@ -68,14 +68,14 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the You have added (.*) transport equipment page""") {
+  And("""^(?:I )?click the (.*) link on the You have added (.*) transport equipment page$""") {
     (sectionLink: String, numberOfTransportEquipment: String) =>
     AddAnotherTransportEquipmentPage
       .loadPage(numberOfTransportEquipment)
       .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove transport equipment (.*) page""") {
+  And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove transport equipment (.*) page$""") {
     (answer: String, numberOfTransportEquipment: String) =>
         RemoveTransportEquipmentPage
           .loadPage(numberOfTransportEquipment)
