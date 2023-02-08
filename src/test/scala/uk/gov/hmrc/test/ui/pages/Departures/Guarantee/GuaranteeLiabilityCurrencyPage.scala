@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object GuaranteeLiabilityAmount extends StringPage {
+object GuaranteeLiabilityCurrencyPage extends SelectPage {
 
-  override def title(args: String*): String = "How much is the liability amount?"
+  override def title(args: String*): String = "What currency do you want to use for the liability?"
 
 }

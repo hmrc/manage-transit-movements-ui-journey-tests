@@ -18,30 +18,40 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.junit.Assert.assertTrue
 import uk.gov.hmrc.test.ui.pages.CYAPage.pageSubheading
-import uk.gov.hmrc.test.ui.pages.{CYAPage}
+import uk.gov.hmrc.test.ui.pages.CYAPage
 
 class CYAStepDef extends BaseStepDef {
 
-  And("""^(?:I )?should be on the CYA page""") { () =>
+  And("""^(?:I )?should be on the CYA page$""") { () =>
     CYAPage
       .loadPage()
   }
 
-  And("""^(?:I )?submit the Check your answers page$""") { () =>
+  And("""^(?:I )?submit the 'Check your answers' page$""") { () =>
       CYAPage
         .loadPage()
         .submitPage()
   }
 
   And(
-    """^(?:I )?submit on the (Trader details|Route details - Transit route|
-    |Route details - Office of transit|Route details - Location of goods|
-    |Route details - Places of loading and unloading|Route details - Office of exit|
-    |Route details - Office of transit|Route details|
-    |Transport details - Border means of transport|Transport details - Modes and means of transport|
-    |Transport details - Equipment|Transport details|
-    |Guarantee details|Arrivals - Authorisations|Arrivals - Transport equipment|
-    |Arrivals - Incidents|Arrivals) Check your answers page$""") {
+    """^(?:I )?submit on the '(Trader details|
+    |Route details - Transit route|
+    |Route details - Office of transit|
+    |Route details - Location of goods|
+    |Route details - Places of loading and unloading|
+    |Route details - Office of exit|
+    |Route details - Office of transit|
+    |Route details|
+    |Transport details - Border means of transport|
+    |Transport details - Modes and means of transport|
+    |Transport details - Transport equipment|
+    |Transport details - Equipment|
+    |Transport details|
+    |Guarantee details|
+    |Arrivals - Authorisations|
+    |Arrivals - Transport equipment|
+    |Arrivals - Incidents|
+    |Arrivals) Check your answers' page$""") {
     (subheading: String) =>
     CYAPage
       .loadPage()

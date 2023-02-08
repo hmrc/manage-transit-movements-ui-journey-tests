@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
-object GuaranteeLiabilityAmount extends StringPage {
-
-  override def title(args: String*): String = "How much is the liability amount?"
-
+object RemoveGoodsItemPage extends YesNoPage {
+   override def title(args: String*): String = args match {
+      case Seq(goodsItemNo) => String.format("Are you sure you want to remove goods item number %s?",goodsItemNo)
+      case _ => throw InvalidTitleArgsException(s"Expected a goods item number but got: $args")
+    }
 }

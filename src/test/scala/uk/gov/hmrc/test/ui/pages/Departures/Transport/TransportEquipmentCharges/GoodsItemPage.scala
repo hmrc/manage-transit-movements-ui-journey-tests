@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GuaranteeLiabilityAmount extends StringPage {
+object GoodsItemPage extends StringPage {
 
-  override def title(args: String*): String = "How much is the liability amount?"
+  override def title(args: String*): String = "What is the goods item number?"
 
 }

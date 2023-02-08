@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RepresentativeCapacityPage extends RadioPage {
+object AddAnotherContainerPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is your capacity?"
+  override def title(args: String*): String = String.format("You have added %s container identification numbers", args: _*)
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "Direct (principal solely liable)"              => clickRadioBtn("direct")
-      case "Indirect (principal and agent jointly liable)" => clickRadioBtn("indirect")
-    }
-    this
-  }
 }
