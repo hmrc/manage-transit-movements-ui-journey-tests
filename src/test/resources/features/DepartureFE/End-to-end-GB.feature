@@ -378,7 +378,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
       ## Transport equipment Security 0, ContainerID YES, No authorisations
-    And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
+    And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
 ##    1873 Add Another Container

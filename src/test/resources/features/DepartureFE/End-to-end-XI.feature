@@ -145,5 +145,5 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
       ## Transport equipment
-    And I choose radio option No on the 'Do you need to add any transport equipment?' page
+    And I choose radio option No on the 'Do you want to add any transport equipment?' page
 #     This path bypasses Payment Method
