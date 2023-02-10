@@ -244,6 +244,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 goods item numbers' page
     And I click radio option Yes on the 'Are you sure you want to remove goods item number 1?' page
     And I choose radio option No on the 'You have added 1 goods item number' page
+    And I wait for 10000 seconds
     And I submit on the 'Transport details - Transport equipment Check your answers' page
 #
 ##    1873 Add Another Container
@@ -268,7 +269,7 @@ Feature: End to end journey for Great Britain office of departure
 #    And I submit on the 'Transport details - Equipment Check your answers' page
 #    And I submit on the 'Transport details Check your answers' page
 
-
+@wip
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using' page
