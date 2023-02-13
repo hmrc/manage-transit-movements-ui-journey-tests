@@ -147,3 +147,4 @@ Feature: End to end journey for Northern Ireland office of departure
       ## Transport equipment
     And I choose radio option No on the 'Do you need to add any transport equipment?' page
     And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page

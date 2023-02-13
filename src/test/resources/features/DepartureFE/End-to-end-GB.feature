@@ -248,6 +248,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a container identification number?' page
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
     And I click the Remove link on the 'You have added 2 transport equipment' page
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
@@ -257,6 +259,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -371,12 +374,15 @@ Feature: End to end journey for Great Britain office of departure
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
-      ## Transport equipment Security 0, ContainerID YES, No authorisations
+      ## Transport equipment
     And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page
 
 
 
