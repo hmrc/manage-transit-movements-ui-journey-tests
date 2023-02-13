@@ -48,7 +48,7 @@ trait BasePage extends BrowserDriver with Matchers {
         10 seconds
       )
 
-    dropCollection("manage-transit-movements-departure-cache", "manage-transit-movements-departure-frontend")
+    dropCollection("manage-transit-movements-departure-cache")
     dropCollection("manage-transit-movements-arrival-frontend")
     dropCollection("manage-transit-movements-unloading-frontend")
   }

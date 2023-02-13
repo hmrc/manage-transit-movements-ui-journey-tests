@@ -27,7 +27,6 @@ Feature: End to end journey for Great Britain office of departure
     And I fill in the address on the 'What is the transit holder’s address?' page
 
       ## Transit holder's contact person's details
-
     And I choose radio option Yes on the 'Do you want to add a contact?' page
     And I enter John contact on the 'What is the contact’s name?' page
     And I enter +2112212112 on the 'What is the transit holder’s contact phone number?' page
@@ -228,7 +227,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-     ## Transport Equipement
+      ## Transport Equipement
     And I enter C001 on the 'What is the container identification number?' page
     And I choose radio option Yes on the 'Do you want to add a seal?' page
     And I enter S001 on the 'What is the seal identification number?' page
@@ -245,23 +244,22 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Are you sure you want to remove goods item number 1?' page
     And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
-#
-##    1873 Add Another Container
-#    And I choose radio option Yes on the 'You have added 1 container identification number' page
-#      ##    1931 Add Container Id Number
-#    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
-#  ##    1837 Container Id number
-#    And I enter C002 on the 'What is the container identification number?' page
-#    ##    1854 Add Seal Id Number
-#    And I choose radio option No on the 'Do you want to add a seal?' page
-#  ##   1872 CYA Page for Transport details - Container, seals and goods item numbers
-#    And I submit on the 'Transport details - Transport equipment Check your answers' page
-##    Click the remove link
-#    And I click the Remove link on the 'You have added 2 container identification numbers' page
-#  ##    1874 Remove Container
-#    And I click radio option Yes on the 'Are you sure you want to remove container C001?' page
-###    1873 Add Another Container
-#    And I choose radio option No on the 'You have added 1 container identification number' page
+    And I choose radio option Yes on the 'You have added 1 transport equipment' page
+    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
+    And I enter C002 on the 'What is the container identification number?' page
+    And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
+    And I click the Remove link on the 'You have added 2 transport equipment' page
+    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
+    And I choose radio option No on the 'You have added 1 transport equipment' page
+
+      ## Charges
+    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
+    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
+    And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -279,8 +277,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the 'Which country is the transit holder based in?' page
     And I fill in the address on the 'What is the transit holder’s address?' page
 
-     ## Transit holder's contact person's details
-
+      ## Transit holder's contact person's details
     And I choose radio option No on the 'Do you want to add a contact?' page
 
       ## Representative details
@@ -377,13 +374,15 @@ Feature: End to end journey for Great Britain office of departure
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
-      ## Transport equipment Security 0, ContainerID YES, No authorisations
+      ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
-##    1873 Add Another Container
-#    And I choose radio option No on the 'You have added 1 container identification number' page
-#     This path will skip Payment Method and go straight to CYA page 1877 as security = 0
+    And I choose radio option No on the 'You have added 1 transport equipment' page
+    And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page
 
 
 

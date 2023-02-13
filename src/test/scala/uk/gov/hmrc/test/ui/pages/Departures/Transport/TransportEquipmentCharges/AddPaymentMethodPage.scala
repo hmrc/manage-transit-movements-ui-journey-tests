@@ -18,8 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherContainerPage extends YesNoPage {
+object AddPaymentMethodPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("You have added %s transport equipment", args: _*)
-
+  override def title(args: String*): String = "Do you want to add a method of payment for transport charges?"
 }

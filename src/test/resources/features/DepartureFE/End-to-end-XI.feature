@@ -18,7 +18,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
     # Trader details
     When I click the link with visible text: Add trader details on the 'Declaration summary' page
-      ##Transit holder
+      ## Transit holder
     And I choose radio option Yes on the 'Is the TIR holder’s identification number known?' page
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
@@ -58,10 +58,10 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
-      # Route details
+    # Route details
     When I click the link with visible text: Add route details on the 'Declaration summary' page
 
-        ## Transit route
+      ## Transit route
     And I select Italy on the 'What is the country of destination?' page
     And I select Bari on the 'Where is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
@@ -71,19 +71,19 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the 'Route details - Transit route Check your answers' page
 
-        ## Location of goods
+      ## Location of goods
     And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
-        ## Place of loading
+      ## Place of loading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
 
-        ## Place of unloading
+      ## Place of unloading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
     And I select United Kingdom on the 'Which country is the place of unloading in?' page
     And I enter London on the 'Where in United Kingdom is the place of unloading?' page
@@ -91,7 +91,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-     # Guarantee details
+    # Guarantee details
     And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
 
     Then I should be on the 'Guarantee added for TIR declaration' page
@@ -106,39 +106,39 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
     And I select United Kingdom on the 'What country are the items being transported to?' page
 
-        ## Container indicator
+      ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
 
-        ## Inland mode of transport
+      ## Inland mode of transport
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
-        ## Border means of transport
+      ## Border means of transport
     And I choose radio option Air on the 'Which mode of transport are you using to cross the border?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
-        ## Border means of transport - office of transit
+      ## Border means of transport - office of transit
     And I select BARI on the 'Where is the office of transit?' page
 
-        ## Conveyance Reference Number
+      ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
-        ## Supply chain actor
+      ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor?' page
 
-        ## Authorisation
+      ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
     And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
     And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
-        ## Carrier
+      ## Carrier
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Carry on the 'Who is the contact for the carrier?' page
@@ -146,4 +146,5 @@ Feature: End to end journey for Northern Ireland office of departure
 
       ## Transport equipment
     And I choose radio option No on the 'Do you want to add any transport equipment?' page
-#     This path bypasses Payment Method
+    And I submit on the 'Transport details Check your answers' page
+    Then I should be on the 'Declaration summary' page
