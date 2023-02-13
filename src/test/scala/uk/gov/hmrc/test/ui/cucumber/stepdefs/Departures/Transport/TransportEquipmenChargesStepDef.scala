@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges.
 class TransportEquipmenChargesStepDef extends BaseStepDef {
 
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you need to add any transport equipment\?' page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page$""") { (answer: String) =>
     AddTransportEquipmentPage
       .loadPage()
       .select(answer)

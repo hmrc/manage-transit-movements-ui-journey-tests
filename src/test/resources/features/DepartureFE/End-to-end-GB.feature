@@ -375,7 +375,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
       ## Transport equipment
-    And I choose radio option Yes on the 'Do you need to add any transport equipment?' page
+    And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I enter 1 on the 'What is the goods item number?' page
     And I choose radio option No on the 'You have added 1 goods item number' page
