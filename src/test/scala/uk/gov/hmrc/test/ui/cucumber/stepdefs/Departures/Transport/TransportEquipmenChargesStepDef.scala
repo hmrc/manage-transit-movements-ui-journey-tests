@@ -53,7 +53,7 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have added (.*) container identification numbers?' page$""") {
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) transport equipment' page$""") {
     (sectionLink: String, numberOfContainers: String) =>
       AddAnotherContainerPage
         .loadPage(numberOfContainers)
@@ -74,7 +74,7 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) container identification numbers?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) transport equipment' page$""") {
     (answer: String, numberOfContainers: String) =>
       AddAnotherContainerPage
         .loadPage(numberOfContainers)
@@ -121,7 +121,7 @@ class TransportEquipmenChargesStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove container (.*)\?' page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove transport equipment (.*)\?' page$""") {
     (answer: String, containerIdNumber: String) =>
       RemoveContainerPage
         .loadPage(containerIdNumber)

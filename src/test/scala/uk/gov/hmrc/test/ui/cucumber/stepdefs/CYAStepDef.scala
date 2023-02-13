@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.junit.Assert.assertTrue
 import uk.gov.hmrc.test.ui.pages.CYAPage.pageSubheading
-import uk.gov.hmrc.test.ui.pages.{CYAPage}
+import uk.gov.hmrc.test.ui.pages.CYAPage
 
 class CYAStepDef extends BaseStepDef {
 
@@ -34,16 +34,23 @@ class CYAStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?submit on the '(Trader details|Route details - Transit route|
-    |Route details - Office of transit|Route details - Location of goods|
-    |Route details - Places of loading and unloading|Route details - Office of exit|
-    |Route details - Office of transit|Route details|
+    """^(?:I )?submit on the '(Trader details|
+    |Route details - Transit route|
+    |Route details - Office of transit|
+    |Route details - Location of goods|
+    |Route details - Places of loading and unloading|
+    |Route details - Office of exit|
+    |Route details - Office of transit|
+    |Route details|
     |Transport details - Border means of transport|
     |Transport details - Modes and means of transport|
     |Transport details - Transport equipment|
+    |Transport details|
     |Guarantee details|
-    |Arrivals - Authorisations|Arrivals - Transport equipment|
-    |Arrivals - Incidents|Arrivals) Check your answers' page$""") {
+    |Arrivals - Authorisations|
+    |Arrivals - Transport equipment|
+    |Arrivals - Incidents|
+    |Arrivals) Check your answers' page$""") {
     (subheading: String) =>
     CYAPage
       .loadPage()
