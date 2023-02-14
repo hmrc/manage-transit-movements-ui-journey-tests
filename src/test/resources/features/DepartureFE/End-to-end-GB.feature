@@ -4,16 +4,15 @@ Feature: End to end journey for Great Britain office of departure
 
   Background:
     Given I login with ID 1234567890
-    Then I should be on the Manage your transit movements page
-    When I click on the Make a departure declaration link on the Manage your transit movements page
-    Then I input a random LRN on the 'What is the Local Reference Number' page
-    And I select GB on the 'Where is the office of departure' page
+    When I click on the Make a departure declaration link on the 'Manage your transit movements' page
+    Then I input a random LRN on the 'What is the Local Reference Number?' page
+    And I select GB on the 'Where is the office of departure?' page
 
   @a11y
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes'
-    And I choose radio option Simplified on the 'What type of procedure are you using' page
-    And I choose radio option T2 on the 'What declaration do you want to create' page
+    And I choose radio option Simplified on the 'What type of procedure are you using?' page
+    And I choose radio option T2 on the 'What declaration do you want to create?' page
     And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
@@ -264,8 +263,8 @@ Feature: End to end journey for Great Britain office of departure
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
-    And I choose radio option Normal on the 'What type of procedure are you using' page
-    And I choose radio option T1 on the 'What declaration do you want to create' page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
+    And I choose radio option T1 on the 'What declaration do you want to create?' page
     And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
