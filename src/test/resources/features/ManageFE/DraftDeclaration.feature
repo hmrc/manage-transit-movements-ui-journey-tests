@@ -1,7 +1,6 @@
 @manageDraftDeparture
 Feature: Journey to test a draft departure in the Manage Transit Movements frontend
 
-
   Scenario: 01 User starts a departure declaration, signs out, then returns to continue the declaration on a subsequent login before deleting the draft
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
