@@ -28,4 +28,11 @@ object LocalReferenceNumberPage extends StringPage {
     println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
     this
   }
+
+  def fillLRN(): this.type = {
+    val randomLRN = randomAlphaNumericString(15)
+    fillInputById("value", randomLRN)
+    println("LRN:::::::::::::::::::::::::::::::" + randomLRN)
+    this
+  }
 }

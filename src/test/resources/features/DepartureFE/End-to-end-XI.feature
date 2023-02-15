@@ -3,12 +3,11 @@ Feature: End to end journey for Northern Ireland office of departure
 
   Background:
     Given I login with ID 1234567890
-    Then I should be on the Manage your transit movements page
-    When I click on the Make a departure declaration link on the Manage your transit movements page
-    Then I input a random LRN on the 'What is the Local Reference Number' page
-    And I select XI on the 'Where is the office of departure' page
-    And I choose radio option Normal on the 'What type of procedure are you using' page
-    And I choose radio option TIR on the 'What declaration do you want to create' page
+    When I click on the Make a departure declaration link on the 'Manage your transit movements' page
+    Then I input a random LRN on the 'What is the Local Reference Number?' page
+    And I select XI on the 'Where is the office of departure?' page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
+    And I choose radio option TIR on the 'What declaration do you want to create?' page
 
   @a11y
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No'
@@ -94,8 +93,7 @@ Feature: End to end journey for Northern Ireland office of departure
     # Guarantee details
     And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
 
-    Then I should be on the 'Guarantee added for TIR declaration' page
-    When I choose to continue
+    Then I click the Continue button on the 'Guarantee added for TIR declaration' page
     And I should be on the 'Declaration summary' page
 
     # Transport details

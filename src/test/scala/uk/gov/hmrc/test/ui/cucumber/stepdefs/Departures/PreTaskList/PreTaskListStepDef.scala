@@ -21,10 +21,17 @@ import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.{DeclarationTypePage, Lo
 
 class PreTaskListStepDef extends BaseStepDef {
 
-  When("""^I input a random LRN on the 'What is the Local Reference Number' page$""") { () =>
+  When("""^I input a random LRN on the 'What is the Local Reference Number\?' page$""") { () =>
     LocalReferenceNumberPage
       .loadPage()
       .fillInput()
+      .submitPage()
+  }
+
+  Then("""^(?:I )?enter (.+) on the 'What is the Local Reference Number\?' page$""") { (answer: String) =>
+    LocalReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
       .submitPage()
   }
 
@@ -33,21 +40,21 @@ class PreTaskListStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the office of departure' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") { (answer: String) =>
     OfficeOfDeparturePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using' page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") { (answer: String) =>
     ProcedureTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'What declaration do you want to create' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'What declaration do you want to create\?' page$""") {
     (answer: String) =>
       DeclarationTypePage
         .loadPage()

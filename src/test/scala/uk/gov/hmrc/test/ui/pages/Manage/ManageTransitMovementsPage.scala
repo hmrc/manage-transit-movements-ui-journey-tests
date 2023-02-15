@@ -36,6 +36,7 @@ object ManageTransitMovementsPage extends Page {
       case "Make a departure declaration" => clickById("make-departure-declaration")
       case "View departure declarations"  => clickById("view-departure-declarations")
       case "Check your guarantee balance" => clickById("check-guarantee-balance")
+      case "View draft departure declarations" => clickById("view-draft-departures")
     }
     this
   }

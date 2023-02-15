@@ -4,18 +4,17 @@ Feature: End to end journey Arrival notification feature
 
   Background:
     Given I login with ID 1234567890
-    Then I should be on the Manage your transit movements page
-    And I click on the Make an arrival notification link on the Manage your transit movements page
+    And I click on the Make an arrival notification link on the 'Manage your transit movements' page
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
-  @ally
+  @arrivalA11y
   Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
     #Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using' page
+    And I choose radio option Simplified on the 'What type of procedure are you using?' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026351 on the ACE authorisations reference number page
     And I submit on the 'Arrivals - Authorisations Check your answers' page
@@ -158,7 +157,7 @@ Feature: End to end journey Arrival notification feature
   # Identification
     When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using' page
+    And I choose radio option Simplified on the 'What type of procedure are you using?' page
     And I choose radio option ACE on the authorisations type page
     And I enter 1200014210026352 on the ACE authorisations reference number page
     And I submit on the 'Arrivals - Authorisations Check your answers' page
@@ -215,7 +214,7 @@ Feature: End to end journey Arrival notification feature
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using' page
+    And I choose radio option Simplified on the 'What type of procedure are you using?' page
     And I choose radio option ACT on the authorisations type page
     And I enter 1200014210026352 on the ACT authorisations reference number page
     And I submit on the 'Arrivals - Authorisations Check your answers' page

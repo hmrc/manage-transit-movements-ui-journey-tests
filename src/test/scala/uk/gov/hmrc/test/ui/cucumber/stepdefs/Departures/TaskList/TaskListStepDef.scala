@@ -32,6 +32,12 @@ class TaskListStepDef extends BaseStepDef {
       .selectDeclarationSection(answer)
   }
 
+  Then("""^(?:I )?click on the (.+) link on the 'Declaration summary' page$""") { (answer: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectDeclarationSection(answer)
+  }
+
   And("""^(?:I )?should see (.*) status for trader details on the 'Declaration summary' page$""") { (status: String) =>
     DeclarationSummaryPage
       .checkTraderDetailsStatus(status)

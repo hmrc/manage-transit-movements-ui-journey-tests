@@ -26,7 +26,7 @@ class ManageStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Given("""^(?:I )?click on the (.+) link on the Manage your transit movements page$""") { (link: String) =>
+  Given("""^(?:I )?click on the (.+) link on the 'Manage your transit movements' page$""") { (link: String) =>
     ManageTransitMovementsPage
       .loadPage()
       .selectAction(link)

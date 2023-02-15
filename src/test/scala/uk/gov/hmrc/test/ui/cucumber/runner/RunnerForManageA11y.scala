@@ -24,6 +24,6 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@managehub or @manageDraftDeparture"
+  tags = "@manageA11y"
 )
-class RunnerForManage {}
+class RunnerForManageA11y {}
