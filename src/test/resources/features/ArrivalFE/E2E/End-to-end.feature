@@ -8,8 +8,8 @@ Feature: End to end journey Arrival notification feature
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
   @arrivalA11y
-  Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
-  Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
+  Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'Yes' - Add Incident 'Yes'- Incident Code '3' -
+  Add Endorsement 'Yes' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
     #Identification
     When I select XI on the arrival office of destination page
@@ -34,7 +34,9 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Address on the arrival location of goods identification page
     And I select United Arab Emirates on the In which country is the location of goods page
     And I fill in address on the arrival location of goods address page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
     #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -42,10 +44,14 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 3 - The goods on the incident code page
     And I enter Hit an iceburg on the incident description page
     #Endorsement
-    And I choose radio option No on the add endorsement page
-    #Incident Identify Location
-    And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I choose radio option Yes on the add endorsement page
+    And I choose fill in the date on the endorsement date page
+    And I enter Gendarmerie Maritime on the endorsement authority page
+    And I select France on the endorsement country page
+    And I enter Calais Harbour on the endorsement location page
+    #Incident Identify Location - First Incident
+    And I choose radio option Coordinates on the incident identify location page
+    And I enter 50.96622 and 1.86201 on the incident coordinates page
     #Add Container Indicator
     When I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
@@ -134,11 +140,7 @@ Feature: End to end journey Arrival notification feature
     #Change an incident
     When I click the Change link on the You have added 2 incidents page
     And I click the change link for add endorsement on the CYA page
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter Border Patrol on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Route 1A junction 6 on the endorsement location page
+    And I choose radio option No on the add endorsement page
     And I submit on the 'Arrivals - Incidents Check your answers' page
     #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
@@ -209,8 +211,8 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 03 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'Yes' -
-  Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'Yes' - Incident Location 'Address' - Add Another Incident 'No'
+  Scenario: 03 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'No' -
+  Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
   #Identification
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
@@ -226,9 +228,7 @@ Feature: End to end journey Arrival notification feature
     And I enter GB123456789000 on the arrival location of goods eori tin page
     And I choose radio option Yes on the arrival location of goods add additional identifier page
     And I enter 1234 on the arrival location of goods additional identifier page
-    And I choose radio option Yes on the arrival location of goods add contact page
-    And I enter John Joe on the arrival location of goods contact page
-    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+    And I choose radio option No on the arrival location of goods add contact page
   #Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -236,11 +236,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 5 - The holder on the incident code page
     And I enter Test Incident Happened text on the incident description page
   #Endorsement
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter test data on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Incident test data on the endorsement location page
+    And I choose radio option No on the add endorsement page
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
