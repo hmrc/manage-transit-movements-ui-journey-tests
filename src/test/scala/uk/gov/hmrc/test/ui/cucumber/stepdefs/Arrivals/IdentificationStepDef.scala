@@ -21,35 +21,35 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Identification._
 
 class IdentificationStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the arrival office of destination page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the arrival office of destination\?' page$""") { (answer: String) =>
     OfficeOfDestinationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the consignee eori tin page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the consignee’s EORI number or Trader Identification Number\?'  page$""") { (answer: String) =>
     ConsigneeEoriTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the Movement Reference Number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the Movement Reference Number\?' page$""") { (answer: String) =>
     MovementReferenceNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the authorisations type page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of authorisation are you using\?' page$""") { (answer: String) =>
     AuthorisationsTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the (.+) authorisations reference number page$""") {
+  And("""^(?:I )?enter (.+) on the 'What is the reference number for the (.+) authorisation\?' page$""") {
     (answer: String, authorisation: String) =>
       AuthorisationsReferenceNumberPage
         .loadPage(authorisation)
@@ -57,14 +57,10 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?should have (.*) authorisations? on the add another authorisation page$""") {
-    (numberOfOffices: String) =>
-      AuthorisationsAddAnotherPage
-        .loadPage(numberOfOffices)
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the add another authorisation page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) authorisations?' page$""") {
+    (answer: String, numberOfAuthorisations: String) =>
     AuthorisationsAddAnotherPage
+      .loadPage(numberOfAuthorisations)
       .select(answer)
       .submitPage()
   }
@@ -75,7 +71,7 @@ class IdentificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) for the (.+) authorisation (.+) on the remove authorisation page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the (.+) authorisation (.+)\?' page$""") {
     (answer: String, authorisationType: String, identificationVal: String) =>
       RemoveAuthorisationPage
         .loadPage(authorisationType, identificationVal)
@@ -83,8 +79,4 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-   Then("""^(?:I )?(?:should )?be on the What is the Movement Reference Number page$""") { () =>
-    MovementReferenceNumberPage
-      .loadPage()
-  }
 }

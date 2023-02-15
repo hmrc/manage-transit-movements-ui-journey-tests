@@ -3,6 +3,7 @@
 #Depending on the OS of your device, change the value of OS appropriately
 OS="linux64"
 #OS="mac64"
+CHROME_VERSION = "109.0.5414.25"
 
 #These match the configuration on Jenkins - you should only have to adjust these values when the platform makes changes
 #Line below commented out as currently pointing to wrong version. Check the version before uncommenting.

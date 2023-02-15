@@ -5,14 +5,14 @@ Feature: Arrival notification feature
   Background:
     Given I login with ID 1234567890
     And I click on the Make an arrival notification link on the 'Manage your transit movements' page
-    And I enter 21GB00014210026352 on the Movement Reference Number page
+    And I enter 21GB00014210026352 on the 'What is the Movement Reference Number?' page
 
 
   Scenario: 01 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes' - Incident Code '1' -
   Add Endorsement 'Yes' - Add Another Incident 'No'
   #Identification
-    When I select GB on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
+    When I select Newcastle-Upon-Tyne (GB000218) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
@@ -47,8 +47,8 @@ Feature: Arrival notification feature
   Scenario: 02 - Normal - Goods Location Id  'Customs office' - Add Incident 'Yes'- Incident Code '2' - Add Endorsement 'No' -
   Add Container 'Yes' - Add Goods Item 'No' - Add Transport Equipment 'No' - Add Another Incident 'No'
   #Identification
-    When I select GB on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
+    When I select Newcastle-Upon-Tyne (GB000218) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
@@ -91,8 +91,8 @@ Feature: Arrival notification feature
   Scenario: 03 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
   Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
   # Identification
-    When I select GB on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
+    When I select Newcastle-Upon-Tyne (GB000218) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
@@ -139,8 +139,8 @@ Feature: Arrival notification feature
 
   Scenario: 04 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
   # Identification
-    When I select XI on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
+    When I select Belfast EPU (XI000142) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page

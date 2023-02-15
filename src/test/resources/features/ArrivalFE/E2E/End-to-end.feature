@@ -5,30 +5,29 @@ Feature: End to end journey Arrival notification feature
   Background:
     Given I login with ID 1234567890
     And I click on the Make an arrival notification link on the 'Manage your transit movements' page
-    And I enter 21GB00014210026352 on the Movement Reference Number page
+    And I enter 21GB00014210026352 on the 'What is the Movement Reference Number?' page
 
   @arrivalA11y
   Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'Yes' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'Yes' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
     #Identification
-    When I select XI on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
+#    When I select XI on the arrival office of destination page
+    When I select Belfast EPU (XI000142) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026351 on the ACE authorisations reference number page
+    And I choose radio option ACE on the 'Which type of authorisation are you using?' page
+    And I enter 1200014210026351 on the 'What is the reference number for the ACE authorisation?' page
     And I submit on the 'Arrivals - Authorisations Check your answers' page
     #Add Authorisation
-    Then I should have 1 authorisation on the add another authorisation page
-    When I choose radio option Yes on the add another authorisation page
-    And I choose radio option ACT on the authorisations type page
-    And I enter 1200014210026352 on the ACT authorisations reference number page
+    When I choose radio option Yes on the 'You have added 1 authorisation' page
+    And I choose radio option ACT on the 'Which type of authorisation are you using?' page
+    And I enter 1200014210026352 on the 'What is the reference number for the ACT authorisation?' page
     And I submit on the 'Arrivals - Authorisations Check your answers' page
-    Then I should have 2 authorisations on the add another authorisation page
     #Remove Authorisation
-    When I choose to click on Remove link on the add another authorisation page
-    And I choose radio option Yes for the ACE authorisation 1200014210026351 on the remove authorisation page
-    Then I choose radio option No on the add another authorisation page
+    When I choose to click on Remove link on the 'You have added 2 authorisations' page
+    And I choose radio option Yes on the 'Are you sure you want to remove the ACE authorisation 1200014210026351?' page
+    Then I choose radio option No on the 'You have added 1 authorisation' page
     #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -153,18 +152,13 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 02 - Simplified - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
+  Scenario: 02 - Normal - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
   Add Endorsement 'No' - Incident Location 'UN/LOCODE' - Container Id 'Yes' - Add Seal 'Yes' x2 - Add Goods Item 'No' -
   Add Transport Equipment 'No' - Add Another Incident 'No'
   # Identification
-    When I select XI on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026352 on the ACE authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    When I should have 1 authorisation on the add another authorisation page
-    And I choose radio option No on the add another authorisation page
+    When I select Belfast EPU (XI000142) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option Address on the arrival location of goods identification page
@@ -211,17 +205,12 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 03 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'No' -
+  Scenario: 03 - Normal - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'No' -
   Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
   #Identification
-    When I select GB on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACT on the authorisations type page
-    And I enter 1200014210026352 on the ACT authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    And I should have 1 authorisation on the add another authorisation page
-    When I choose radio option No on the add another authorisation page
+    When I select Newcastle-Upon-Tyne (GB000218) on the 'Where is the arrival office of destination?' page
+    And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods - Location of goods - X Eori Number
     And I choose radio option Authorised place on the arrival location of goods type page
     And I choose radio option EORI number on the arrival location of goods identification page
