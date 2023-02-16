@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Manage.{ArrivalNotificationsPage, ArrivalReject
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
-   Then("""^(?:I )?(?:should )?be on the Arrival notifications page$""") { () =>
+   Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") { () =>
     ArrivalNotificationsPage
       .loadPage()
   }

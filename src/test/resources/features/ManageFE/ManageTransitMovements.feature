@@ -25,7 +25,7 @@ Feature: Manage transit movements feature
 
   Scenario: 04 - Trader is able to view arrival notification with duplicate MRN & change the MRN
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    Then I should be on the Arrival notifications page
+    Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 99IT9876AB88901209 on the Arrival notifications page
 #  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/3/arrival-rejection page
 #    And I click on the Change link on the There is a problem with this arrival notification page

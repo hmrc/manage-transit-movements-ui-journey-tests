@@ -21,21 +21,21 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType._
 
 class LocationOfGoodsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods type page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of location are the goods in\?' page$""") { (answer: String) =>
     LocationOfGoodsTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods eori tin page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the EORI number or Trader Identification Number for the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsEoriTinPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods identification page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'How do you want to identify the arrival location of goods\?' page$""") {
     (answer: String) =>
       LocationOfGoodsIdentificationPage
         .loadPage()
@@ -43,7 +43,7 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) and (.+) on the arrival location of goods coordinates page$""") {
+  And("""^(?:I )?enter (.+) and (.+) on the 'What are the coordinates for the location of goods\?' page$""") {
     (latitudeNo: String, longitudeNo: String) =>
       LocationOfGoodsCoordinatesPage
         .loadPage()
@@ -51,14 +51,14 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the arrival location of goods customs un locode page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the UN/LOCODE for the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the arrival location of goods customs office identification page$""") {
+  And("""^(?:I )?select (.+) on the 'What is the customs office identifier for the location of goods\?' page$""") {
     (answer: String) =>
       LocationOfGoodsCustomsOfficeIdentificationPage
         .loadPage()
@@ -80,28 +80,28 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods add contact page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the arrival location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsAddContactPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods contact page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'Who is the contact for the arrival location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsContactPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods contact telephone number page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is John Bonham’s telephone number\?' page$""") { (answer: String) =>
     LocationOfGoodsContactTelephoneNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods add additional identifier page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an additional identifier for the location of goods\?' page$""") {
     (answer: String) =>
       LocationOfGoodsAddAdditionalIdentifierPage
         .loadPage()
@@ -109,21 +109,21 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods additional identifier page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the additional identifier for the location of goods?' page$""") { (answer: String) =>
     LocationOfGoodsAdditionalIdentifierPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?fill in address on the arrival location of goods address page$""") { () =>
+  And("""^(?:I )?fill in address on the 'What is the address for the location of goods\?' page$""") { () =>
     LocationOfGoodsAddressPage
       .loadPage()
       .fillInputs()
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the In which country is the location of goods page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'In which country is the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsCountryPage
       .loadPage()
       .select(answer)

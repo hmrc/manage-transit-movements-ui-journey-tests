@@ -15,9 +15,9 @@ Feature: Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Customs office identifier on the arrival location of goods identification page
-    And I select GB on the arrival location of goods customs office identification page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
+    And I select Southampton (GB000290) on the 'What is the customs office identifier for the location of goods?' page
   #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -40,7 +40,7 @@ Feature: Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
-    And I should be on the Arrival notifications page
+    And I should be on the 'Arrival notifications' page
     And I sign out
 
 
@@ -51,9 +51,9 @@ Feature: Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Customs office identifier on the arrival location of goods identification page
-    And I select GB on the arrival location of goods customs office identification page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
+    And I select Southampton (GB000290) on the 'What is the customs office identifier for the location of goods?' page
   #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -84,7 +84,7 @@ Feature: Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Create another arrival notification link on the Arrival notification sent page
-    And I should be on the What is the Movement Reference Number page
+    And I should be on the 'What is the Movement Reference Number?' page
     And I sign out
 
 
@@ -95,10 +95,10 @@ Feature: Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Coordinates on the arrival location of goods identification page
-    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
+    And I enter 50.96622 and 50.96622 on the 'What are the coordinates for the location of goods?' page
+    And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
   #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -143,10 +143,10 @@ Feature: Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option UN/LOCODE on the arrival location of goods identification page
-    And I select Aalen on the arrival location of goods customs un locode page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option UN/LOCODE on the 'How do you want to identify the location of goods?' page
+    And I select Aalen (DEAAL) on the 'What is the UN/LOCODE for the location of goods?' page
+    And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
   #Add Incident
     And I choose radio option No on the add incident page
   #Summary CYA page

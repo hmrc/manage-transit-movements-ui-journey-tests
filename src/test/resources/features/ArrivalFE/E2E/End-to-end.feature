@@ -29,13 +29,13 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Yes on the 'Are you sure you want to remove the ACE authorisation 1200014210026351?' page
     Then I choose radio option No on the 'You have added 1 authorisation' page
     #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Address on the arrival location of goods identification page
-    And I select United Arab Emirates on the In which country is the location of goods page
-    And I fill in address on the arrival location of goods address page
-    And I choose radio option Yes on the arrival location of goods add contact page
-    And I enter John Joe on the arrival location of goods contact page
-    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option Address on the 'How do you want to identify the arrival location of goods?' page
+    And I select United Arab Emirates on the 'In which country is the location of goods?' page
+    And I fill in address on the 'What is the address for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the arrival location of goods?' page
+    And I enter John Bonham on the 'Who is the contact for the arrival location of goods?' page
+    And I enter +44 2345 82 83 on the 'What is John Bonham’s telephone number?' page
     #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -160,11 +160,11 @@ Feature: End to end journey Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Address on the arrival location of goods identification page
-    And I select France on the In which country is the location of goods page
-    And I fill in address on the arrival location of goods address page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option Address on the 'How do you want to identify the arrival location of goods?' page
+    And I select France on the 'In which country is the location of goods?' page
+    And I fill in address on the 'What is the address for the location of goods?' page
+    And I choose radio option No on the 'Do you want to add a contact for the arrival location of goods?' page
   #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -201,7 +201,7 @@ Feature: End to end journey Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
-    #And I should be on the Arrival notifications page
+    And I should be on the 'Arrival notifications' page
     And I sign out
 
 
@@ -212,12 +212,12 @@ Feature: End to end journey Arrival notification feature
     And I enter GB123456789000 on the 'What is the consignee’s EORI number or Trader Identification Number?'  page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
   #Location Of goods - Location of goods - X Eori Number
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option EORI number on the arrival location of goods identification page
-    And I enter GB123456789000 on the arrival location of goods eori tin page
-    And I choose radio option Yes on the arrival location of goods add additional identifier page
-    And I enter 1234 on the arrival location of goods additional identifier page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
+    And I choose radio option EORI number on the 'How do you want to identify the arrival location of goods?' page
+    And I enter GB123456789000 on the 'What is the EORI number or Trader Identification Number for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
+    And I enter 1234 on the 'What is the additional identifier for the location of goods?' page
+    And I choose radio option No on the 'Do you want to add a contact for the arrival location of goods?' page
   #Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -236,5 +236,5 @@ Feature: End to end journey Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Create another arrival notification link on the Arrival notification sent page
-    And I should be on the What is the Movement Reference Number page
+    And I should be on the 'What is the Movement Reference Number?' page
     And I sign out
