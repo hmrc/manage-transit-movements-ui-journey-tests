@@ -151,7 +151,7 @@ Feature: Manage transit movements feature
   @manageA11y
   Scenario: 22 - Trader is able to view a draft departure declaration and delete it
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
-    Then I enter 1234567890ABCDEFGHIJKL on the 'What is the Local Reference Number?' page
+    Then I enter 1234567890ABCDEFGHIXYZ on the 'What is the Local Reference Number?' page
     And I sign out
     Given I login with ID 1234567890
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
