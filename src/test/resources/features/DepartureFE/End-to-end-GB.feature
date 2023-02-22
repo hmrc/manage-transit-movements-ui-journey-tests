@@ -259,6 +259,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
+    And I sign out
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -382,6 +383,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
+    And I sign out
 
 
 
