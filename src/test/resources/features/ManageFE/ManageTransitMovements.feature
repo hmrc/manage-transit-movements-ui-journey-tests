@@ -9,18 +9,21 @@ Feature: Manage transit movements feature
   Scenario: 01 - Trader is able to make an arrival notifications from home page
     When I click on the Make an arrival notification link on the 'Manage your transit movements' page
     Then I should be on the What is the Movement Reference Number page
+    And I sign out
 
 
   Scenario: 02 - Trader is able to view and make an arrival notifications
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make an arrival notification link on the Arrival notifications page
     Then I should be on the What is the Movement Reference Number page
+    And I sign out
 
   @manageA11y
   Scenario: 03 - Trader is able to view and make unloading remarks
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 19IT02110010007827 on the Arrival notifications page
     Then I should be on the Unload the goods before you send the unloading remarks page
+    And I sign out
 
 
   Scenario: 04 - Trader is able to view arrival notification with duplicate MRN & change the MRN
@@ -30,6 +33,7 @@ Feature: Manage transit movements feature
 #  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/3/arrival-rejection page
 #    And I click on the Change link on the There is a problem with this arrival notification page
 #    Then I should be on the What is the Movement Reference Number page
+    And I sign out
 
 
   Scenario: 05 - Trader is able to view arrival notification with generic errors
@@ -38,6 +42,7 @@ Feature: Manage transit movements feature
     And I click on the View errors link for MRN 19IT02110010007A33 on the Arrival notifications page
   #  FOUND 10121/manage-transit-movements/arrivals/not-found EXPECTED manage-transit-movements-arrivals/7/arrival-rejection page
 #  And I should see the content Error code on the There is a problem with this arrival notification page
+    And I sign out
 
   @manageA11y
   Scenario: 06 - Trader is able to view unloading remarks with specific error for Vehicle Registration Number
@@ -45,6 +50,7 @@ Feature: Manage transit movements feature
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 66KYNS1Y465HIJK3M7 on the Arrival notifications page
     And I should see the content Name, registration or reference on the Unloading rejection page
+    And I sign out
 
   @manageA11y
   Scenario: 07 - Trader is able to view unloading remarks with specific error for Date Goods Unloaded
@@ -52,6 +58,7 @@ Feature: Manage transit movements feature
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 35YJ28Z73FNSUQK6M9 on the Arrival notifications page
     And I should see the content Unloading date on the Unloading rejection page
+    And I sign out
 
   @manageA11y
   Scenario: 08 - Trader is able to view unloading remarks for multiple errors
@@ -59,6 +66,7 @@ Feature: Manage transit movements feature
     Then I should be on the Arrival notifications page
     And I click on the View errors link for MRN 31KYA7YO4FVSIJK911 on the Arrival notifications page
     And I should see the content Error code on the Unloading rejection page
+    And I sign out
 
 
   Scenario: 09 - Trader is able to view invalid arrival notification
@@ -68,11 +76,13 @@ Feature: Manage transit movements feature
 #    And I should see the content You must review the error on the There is a problem with this arrival notification page
 #    And I click on the send a new arrival notification with the right information link on the There is a problem with this arrival notification page
 #    Then I should be on the What is the Movement Reference Number page
+    And I sign out
 
 
   Scenario: 10 - Trader is able to make a departure declaration from home page
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I should be on the What is the Local Reference Number page
+    And I sign out
 
 
   Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
@@ -80,6 +90,7 @@ Feature: Manage transit movements feature
     Then I click on the View errors link for LRN LRN123461 on the Departure declarations page
 #    FOUND 10120/manage-transit-movements/departures/not-found EXPECTED manage-transit-movements-departures/27/guarantee-rejection page
 #    And I should be on the There is a problem with the guarantee for this departure declaration page
+    And I sign out
 
 
   Scenario: 12 - Trader is able to view declaration rejection for departure declaration
@@ -87,24 +98,28 @@ Feature: Manage transit movements feature
     Then I click on the View errors link for LRN LRN123459 on the Departure declarations page
 #    FOUND 10122/manage-transit-movements/cancellation/technical-difficulties EXPECTED manage-transit-movements-departures/33/departure-declaration-fail page
 #    And I should be on the There is a problem with this departure declaration page
+    And I sign out
 
   @manageA11y
   Scenario: 13 - Trader is able to see Goods not released for departure declaration
     When I click on the View departure declarations link on the 'Manage your transit movements' page
     Then I click on the View details link for LRN LRN123470 on the Departure declarations page
     And I should see the content No release motivation on the No release for transit page
+    And I sign out
 
   @manageA11y
   Scenario: 14 - Trader is able to see the negative acknowledgement for arrivals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I click on the View errors link for MRN 67QJPVXD78GHIJYQT on the Arrival notifications page
     And I should be on the Negative acknowledgement page
+    And I sign out
 
   @manageA11y
   Scenario: 15 - Trader is able to see Control decision for departure declaration
     When I click on the View departure declarations link on the 'Manage your transit movements' page
     Then I click on the View details link for LRN LRN123471 on the Departure declarations page
     And I should be on the Your goods have been selected for control page
+    And I sign out
 
   @manageA11y
   Scenario: 16 - Trader is able to view unloading remarks for negative submission acknowledgement error
@@ -112,17 +127,20 @@ Feature: Manage transit movements feature
     Then I click on the View errors link for MRN 99QJPVXD78GHIJYQT on the Arrival notifications page
     And I click the create new unloading remarks link on the Unloading remarks negative acknowledgement page
     And I should be on the Unload the goods before you send the unloading remarks page
+    And I sign out
 
   @manageA11y
   Scenario: 17 - Trader is unable to cancel their declaration for departure declaration due to a data error
     When I click on the View departure declarations link on the 'Manage your transit movements' page
     Then I click on the Cancel declaration link for LRN LRN123457 on the Departure declarations page
     And I should be on the You cannot cancel this departure declaration page
+    And I sign out
 
 
   Scenario: 18 - Trader is able to check guarantee balance
     When I click on the Check your guarantee balance link on the 'Manage your transit movements' page
     Then I should be on the What is your EORI number page
+    And I sign out
 
   @manageA11y
   Scenario: 19 - Trader is able to search for departures
@@ -132,6 +150,8 @@ Feature: Manage transit movements feature
     And I click on the View all movements link on the Departure declarations page
     And I click on the Go to manage transit movements link on the Departure declarations page
     Then I should be on the Manage your transit movements page
+    And I sign out
+
 
   @manageA11y
   Scenario: 20 - Trader is able to search for arrivals
@@ -141,12 +161,14 @@ Feature: Manage transit movements feature
     And I click on the View all movements link on the Arrival notifications page
     And I click on the Go to manage transit movements link on the Arrival notifications page
     Then I should be on the Manage your transit movements page
+    And I sign out
 
 
   Scenario: 21 - Trader is able to start a departure declaration from the Departure declarations page
     When I click on the View departure declarations link on the 'Manage your transit movements' page
     Then I click on the Make a departure declaration link on the Departure declarations page
     And I should be on the What is the Local Reference Number page
+    And I sign out
 
   @manageA11y
   Scenario: 22 - Trader is able to view a draft departure declaration and delete it
