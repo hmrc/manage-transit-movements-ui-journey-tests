@@ -17,9 +17,17 @@
 package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.Page
+import org.openqa.selenium.By
 
-object UnloadingGuidancePage extends Page {
+object UnloadingSummaryPage extends Page {
 
-   override def title(args: String*): String = "Unload the goods before you make unloading remarks"
+  override def title(args: String*): String = "What did you find when unloading?"
+
+  def clickChangeLink(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
+
+  def pageSubheading(): String = driver.findElement(By.cssSelector("h1 > span")).getText
 
 }

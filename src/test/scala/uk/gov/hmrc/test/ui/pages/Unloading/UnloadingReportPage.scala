@@ -16,10 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object UnloadingGuidancePage extends Page {
+object UnloadingReportPage extends StringPage {
 
-   override def title(args: String*): String = "Unload the goods before you make unloading remarks"
+   override def title(args: String*): String = "What do you need to report?"
+
+  def clickChangeLink(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
 
 }

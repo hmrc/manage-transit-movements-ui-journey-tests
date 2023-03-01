@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object UnloadingGuidancePage extends Page {
+object VehicleCountryPage extends SelectPage {
 
-   override def title(args: String*): String = "Unload the goods before you make unloading remarks"
+  override def title(args: String*): String = "What country is the vehicle registered to?"
 
 }

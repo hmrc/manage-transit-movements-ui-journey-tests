@@ -30,6 +30,7 @@ class EndorsementStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose fill in the date on the endorsement date page$""") { () =>
     EndorsementDatePage
+      .loadPage()
       .fillInputs()
       .submitPage()
   }

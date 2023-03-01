@@ -17,11 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingRejectionPage, UnloadingRemarksNegativeAcknowledgementPage}
+import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the Unload the goods before you send the unloading remarks page""") { () =>
+  Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
     UnloadingGuidancePage
       .loadPage()
   }
@@ -37,6 +37,97 @@ class UnloadingStepDef extends BaseStepDef {
     UnloadingRejectionPage
       .loadPage()
       .checkForContent(content)
+  }
+
+  And("""^(?:I )?fill in the date on the 'When were the goods unloaded\?' page$""") { () =>
+      GoodsUnloadedDatePage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are all the seal numbers of marks readable\?' page$""") {
+    (answer: String) =>
+    SealNumbersReadablePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") {
+    (answer: String) =>
+    SealsBrokenPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the new vehicle\?' page$""") {
+    (answer: String) =>
+      VehicleIdPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the Continue button on the 'Unload the goods before you make unloading remarks' page$""") { () =>
+    UnloadingGuidancePage
+      .loadPage()
+      .submitPage()
+  }
+
+  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") {
+    (sectionLink: String) =>
+    UnloadingSummaryPage
+      .loadPage()
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") {
+    (answer: String) =>
+      UnloadingReportPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+    }
+
+  And("""^(?:I )?click the Change link for (.+) on the 'What did you find when unloading\?' page$""") {
+    (text: String) =>
+    UnloadingReportPage
+      .loadPage()
+      .clickChangeLink(text)
+  }
+
+  And("""^(?:I )?select (.*) on the unloading 'What country is the vehicle registered to\?' page$""") {
+  (answer: String) =>
+    VehicleCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") {
+    (answer: String) =>
+      SealNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new total gross weight\?' page$""") {
+    (answer: String) =>
+      TotalGrossWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new total number of packages\?' page$""") {
+    (answer: String) =>
+      TotalNumberPackagesPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
 }

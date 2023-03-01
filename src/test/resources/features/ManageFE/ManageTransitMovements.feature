@@ -22,7 +22,7 @@ Feature: Manage transit movements feature
 #  Scenario: 03 - Trader is able to view and make unloading remarks
 #    When I click on the View arrival notifications link on the 'Manage your transit movements' page
 #    And I click on the Make unloading remarks link for MRN 19IT02110010007827 on the Arrival notifications page
-#    Then I should be on the Unload the goods before you send the unloading remarks page
+#    Then I should be on the 'Unload the goods before you make unloading remarks' page
 #    And I sign out
 #
 #
@@ -126,7 +126,7 @@ Feature: Manage transit movements feature
 #    When I click on the View arrival notifications link on the 'Manage your transit movements' page
 #    Then I click on the View errors link for MRN 99QJPVXD78GHIJYQT on the Arrival notifications page
 #    And I click the create new unloading remarks link on the Unloading remarks negative acknowledgement page
-#    And I should be on the Unload the goods before you send the unloading remarks page
+#    And I should be on the 'Unload the goods before you make unloading remarks' page
 #    And I sign out
 #
 #  @manageA11y

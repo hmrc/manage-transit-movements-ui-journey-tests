@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object UnloadingGuidancePage extends Page {
+object SealNumberPage extends StringPage {
 
-   override def title(args: String*): String = "Unload the goods before you make unloading remarks"
+  override def title(args: String*): String = "What is the new seal number?"
 
 }
