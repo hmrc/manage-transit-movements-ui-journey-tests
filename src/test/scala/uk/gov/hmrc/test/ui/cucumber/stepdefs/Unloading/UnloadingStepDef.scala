@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingReje
 
 class UnloadingStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the Unload the goods before you send the unloading remarks page""") { () =>
+  Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
     UnloadingGuidancePage
       .loadPage()
   }

@@ -40,7 +40,7 @@ Feature: Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
-    And I should be on the Arrival notifications page
+    And I should be on the 'Arrival notifications' page
     And I sign out
 
 
@@ -285,7 +285,7 @@ Feature: Arrival notification feature
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
-    And I should be on the Arrival notifications page
+    And I should be on the 'Arrival notifications' page
     And I sign out
 
 
