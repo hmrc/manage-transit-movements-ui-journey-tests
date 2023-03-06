@@ -37,11 +37,11 @@ Feature: End to end journey Arrival notification feature
     And I enter John Bonham on the 'Who is the contact for the arrival location of goods?' page
     And I enter +44 2345 82 83 on the 'What is John Bonham’s telephone number?' page
     #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
     #Incident Code
-    And I choose radio option 3 - The goods on the incident code page
-    And I enter Hit an iceburg on the incident description page
+    And I choose radio option 3 - The goods on the 'Which type of incident was it?' page
+    And I enter Hit an iceburg on the 'What happened during the incident?' page
     #Endorsement
     And I choose radio option Yes on the add endorsement page
     And I choose fill in the date on the endorsement date page
@@ -118,10 +118,10 @@ Feature: End to end journey Arrival notification feature
     #Add Another Incident
     And I choose radio option Yes on the You have added 1 incident page
     #Add Incident - 2nd iteration
-    And I select Argentina on the In which country did the incident happen page
+    And I select Argentina on the 'In which country did the incident happen?' page
     #Incident Code - Second Incident
-    And I choose radio option 3 - The goods on the incident code page
-    And I enter The ship sank on the incident description page
+    And I choose radio option 3 - The goods on the 'Which type of incident was it?' page
+    And I enter the ship sank on the 'What happened during the incident?' page
     #Endorsement - Second Incident
     And I choose radio option No on the add endorsement page
     #Incident Identify Location - Second Incident
@@ -166,11 +166,11 @@ Feature: End to end journey Arrival notification feature
     And I fill in address on the 'What is the address for the location of goods?' page
     And I choose radio option No on the 'Do you want to add a contact for the arrival location of goods?' page
   #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
   #Incident Code
-    And I choose radio option 4 - The goods were partially on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I choose radio option 4 - The goods were partially on the 'Which type of incident was it?' page
+    And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
@@ -219,11 +219,11 @@ Feature: End to end journey Arrival notification feature
     And I enter 1234 on the 'What is the additional identifier for the location of goods?' page
     And I choose radio option No on the 'Do you want to add a contact for the arrival location of goods?' page
   #Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
   #Incident code
-    And I choose radio option 5 - The holder on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I choose radio option 5 - The holder on the 'Which type of incident was it?' page
+    And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
     And I choose radio option No on the add endorsement page
   #Incidents Identify Location

@@ -51,7 +51,7 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the UN/LOCODE for the location of goods\?' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What is the UN\/LOCODE for the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage
       .loadPage()
       .select(answer)

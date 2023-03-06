@@ -19,11 +19,11 @@ Feature: Arrival notification feature
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select Southampton (GB000290) on the 'What is the customs office identifier for the location of goods?' page
   #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
   #Incident Code
-    And I choose radio option 1 - The carrier on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I choose radio option 1 - The carrier on the 'Which type of incident was it?' page
+    And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
     And I choose radio option Yes on the add endorsement page
     And I choose fill in the date on the endorsement date page
@@ -55,11 +55,11 @@ Feature: Arrival notification feature
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select Southampton (GB000290) on the 'What is the customs office identifier for the location of goods?' page
   #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
   #Incident Code
-    And I choose radio option 2 - The seals on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I choose radio option 2 - The seals on the 'Which type of incident was it?' page
+    And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
@@ -100,11 +100,11 @@ Feature: Arrival notification feature
     And I enter 50.96622 and 50.96622 on the 'What are the coordinates for the location of goods?' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
   #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
+    And I choose radio option Yes on the 'Were there any incidents during the transit?' page
+    And I select France on the 'In which country did the incident happen?' page
   #Incident Code
-    And I choose radio option 6 - The means on the incident code page
-    And I enter Test Incident Happened text on the incident description page
+    And I choose radio option 6 - The means on the 'Which type of incident was it?' page
+    And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsements
     And I choose radio option No on the add endorsement page
   #Incidents Identify Location
@@ -148,7 +148,7 @@ Feature: Arrival notification feature
     And I select Aalen (DEAAL) on the 'What is the UN/LOCODE for the location of goods?' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
   #Add Incident
-    And I choose radio option No on the add incident page
+    And I choose radio option No on the 'Were there any incidents during the transit?' page
   #Summary CYA page
     And I submit on the 'Arrivals Check your answers' page
  #Confirmation

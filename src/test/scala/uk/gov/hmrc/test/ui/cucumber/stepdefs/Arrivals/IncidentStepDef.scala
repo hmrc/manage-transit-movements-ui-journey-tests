@@ -50,28 +50,28 @@ class IncidentStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add incident page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Were there any incidents during the transit\?' page$""") { (answer: String) =>
     AddIncidentPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the In which country did the incident happen page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'In which country did the incident happen\?' page$""") { (answer: String) =>
     IncidentCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the incident code page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of incident was it\?' page$""") { (answer: String) =>
     IncidentCodePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the incident description page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What happened during the incident\?' page$""") { (answer: String) =>
     IncidentDescriptionPage
       .loadPage()
       .fillInput(answer)
