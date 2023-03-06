@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.EoriNumberPage
 
 class GuaranteeBalanceStepDef extends BaseStepDef {
 
-   Then("""^(?:I )?(?:should )?be on the What is your EORI number page$""") { () =>
+   Then("""^(?:I )?(?:should )?be on the 'What is your EORI number\?' page$""") { () =>
      EoriNumberPage
        .loadPage()
   }
