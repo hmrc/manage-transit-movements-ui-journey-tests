@@ -19,7 +19,9 @@ Feature: Manage transit movements feature
 #    And I sign out
 #
   @manageA11y
+    @wip
   Scenario: 03 - Trader is able to view and make unloading remarks
+    Given The user submits an arrival notification
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM1 on the 'Arrival notifications' page
     Then I should be on the 'Unload the goods before you make unloading remarks' page
