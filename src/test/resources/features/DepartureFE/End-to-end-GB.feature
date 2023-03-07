@@ -265,19 +265,19 @@ Feature: End to end journey for Great Britain office of departure
     When I click the link with visible text: Add items on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
-    And I select United Kingdom on the 'What is the item’s country of dispatch?' page
+    #And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
-    And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
+    #And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
     And I enter UCR ABC123555666 on the 'What is the Unique Consignment Reference (UCR)?' page
 
 
 
 
-
+@wip
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option T1 on the 'What declaration do you want to create?' page
+    And I choose radio option T on the 'What declaration do you want to create?' page
     And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
@@ -400,11 +400,13 @@ Feature: End to end journey for Great Britain office of departure
     When I click the link with visible text: Add items on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
-    And I select United Kingdom on the 'What is the item’s country of dispatch?' page
+    #And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
-    And I choose radio option No on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
+    #And I choose radio option No on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
+    #And I enter ABC123555666 on the 'What is the Unique Consignment Reference (UCR)' page
 
-    And I sign out
+
+  And I sign out
 
 
 

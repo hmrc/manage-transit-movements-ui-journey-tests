@@ -62,7 +62,7 @@ class ItemsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter UCR (.*) on the 'What is the Unique Consignment Reference (UCR)\?' page$""") {
+  And("""^(?:I )?enter (.*) on the 'What is the Unique Consignment Reference (UCR)' page$""") {
     (answer: String) =>
       ItemUCRPage
         .loadPage()
