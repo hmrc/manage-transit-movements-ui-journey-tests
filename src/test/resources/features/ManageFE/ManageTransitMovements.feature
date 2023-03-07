@@ -6,13 +6,13 @@ Feature: Manage transit movements feature
     Given I login with ID 1234567890
 
 
-#  Scenario: 01 - Trader is able to make an arrival notifications from home page
+#  Scenario: 01 - Trader is able to make an arrival notification from home page
 #    When I click on the Make an arrival notification link on the 'Manage your transit movements' page
 #    Then I should be on the 'What is the Movement Reference Number?' page
 #    And I sign out
 #
 #
-#  Scenario: 02 - Trader is able to view and make an arrival notifications
+#  Scenario: 02 - Trader is able to view and make an arrival notification
 #    When I click on the View arrival notifications link on the 'Manage your transit movements' page
 #    And I click on the Make an arrival notification link on the 'Arrival notifications' page
 #    Then I should be on the 'What is the Movement Reference Number?' page

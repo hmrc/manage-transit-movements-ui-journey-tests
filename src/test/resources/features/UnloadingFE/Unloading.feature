@@ -5,7 +5,7 @@ Feature: Submit unloading remarks with seals
   Scenario: 01 - Unloading remarks with changes to summary answers & add/remove comment & adds new seals and changes the check seals section from CYA page
     Given I login with ID 1234567890
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM1 on the Arrival notifications page
+    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM1 on the 'Arrival notifications' page
     #    2276
     Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
     #    2288
