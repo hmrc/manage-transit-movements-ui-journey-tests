@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Manage._
 
 class ManageStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the Manage your transit movements page""") { () =>
+  Then("""^(?:I )?should be on the 'Manage your transit movements' page""") { () =>
     ManageTransitMovementsPage
       .loadPage()
   }
@@ -32,33 +32,33 @@ class ManageStepDef extends BaseStepDef {
       .selectAction(link)
   }
 
-  Then("""^(?:I )?should be on the There is a problem with the guarantee for this departure declaration page""") { () =>
+  Then("""^(?:I )?should be on the 'There is a problem with the guarantee for this departure declaration' page""") { () =>
     GuaranteeRejectionPage
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the There is a problem with this departure declaration page""") { () =>
+  Then("""^(?:I )?should be on the 'There is a problem with this departure declaration' page""") { () =>
     DepartureDeclarationFailPage
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the No release for transit page""") { () =>
+  Then("""^(?:I )?should be on the 'No release for transit' page""") { () =>
     NoReleaseForTransitPage
       .loadPage()
   }
 
- Then("""^(?:I )?should be on the Negative acknowledgement page""") { () =>
+ Then("""^(?:I )?should be on the 'Negative acknowledgement' page""") { () =>
     NegativeAcknowledgementPage
       .loadPage()
   }
 
 
-  Then("""^(?:I )?should be on the Your goods have been selected for control page""") { () =>
+  Then("""^(?:I )?should be on the 'Your goods have been selected for control' page""") { () =>
     ControlDecisionPage
       .loadPage()
   }
 
-  And("""^(?:I )?should see the content (.*) on the No release for transit page$""") {
+  And("""^(?:I )?should see the content (.*) on the 'No release for transit' page$""") {
     (content: String) =>
       NoReleaseForTransitPage
         .loadPage()
