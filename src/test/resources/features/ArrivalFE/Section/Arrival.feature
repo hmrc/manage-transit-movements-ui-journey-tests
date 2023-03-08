@@ -1,4 +1,4 @@
-@arrival
+@arrival @wip
 
 Feature: Arrival notification feature
 
@@ -25,11 +25,11 @@ Feature: Arrival notification feature
     And I choose radio option 1 - The carrier on the 'Which type of incident was it?' page
     And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter test data on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Incident test data on the endorsement location page
+    And I choose radio option Yes on the 'Do you need to add an endorsement for the incident?' page
+    And I enter the date on the 'When was the endorsement made?' page
+    And I enter Gendarmerie Maritime on the 'What authority made the endorsement?' page
+    And I select France on the 'In which country was the endorsement made?' page
+    And I enter Calais Harbour on the 'Where in France was the endorsement made?' page
   #Incident Identify Location
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
@@ -61,7 +61,7 @@ Feature: Arrival notification feature
     And I choose radio option 2 - The seals on the 'Which type of incident was it?' page
     And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
   #Incident Identify Location
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
@@ -106,7 +106,7 @@ Feature: Arrival notification feature
     And I choose radio option 6 - The means on the 'Which type of incident was it?' page
     And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsements
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
@@ -145,7 +145,7 @@ Feature: Arrival notification feature
   #Location Of goods
     And I choose radio option Authorised place on the 'Which type of location are the goods in?' page
     And I choose radio option UN/LOCODE on the 'How do you want to identify the location of goods?' page
-    And I select Aalen (DEAAL) on the 'What is the UN/LOCODE for the location of goods?' page
+    And I select Aalen (DEAAL) on the 'What is the UNLOCODE for the location of goods?' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
   #Add Incident
     And I choose radio option No on the 'Were there any incidents during the transit?' page

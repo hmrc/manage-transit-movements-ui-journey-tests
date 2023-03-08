@@ -21,34 +21,34 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Endorsement._
 
 class EndorsementStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the add endorsement page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you need to add an endorsement for the incident\?' page$""") { (answer: String) =>
     AddEndorsementPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose fill in the date on the endorsement date page$""") { () =>
+  And("""^(?:I )?enter the date on the 'When was the endorsement made\?' page$""") { () =>
     EndorsementDatePage
       .fillInputs()
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the endorsement authority page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What authority made the endorsement\?' page$""") { (answer: String) =>
     EndorsementAuthorityPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the endorsement country page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'In which country was the endorsement made\?' page$""") { (answer: String) =>
     EndorsementCountryPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the endorsement location page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'Where in France was the endorsement made\?' page$""") { (answer: String) =>
     EndorsementLocationPage
       .loadPage()
       .fillInput(answer)

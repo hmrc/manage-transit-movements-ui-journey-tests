@@ -43,11 +43,11 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 3 - The goods on the 'Which type of incident was it?' page
     And I enter Hit an iceburg on the 'What happened during the incident?' page
     #Endorsement
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter Gendarmerie Maritime on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Calais Harbour on the endorsement location page
+    And I choose radio option Yes on the 'Do you need to add an endorsement for the incident?' page
+    And I enter the date on the 'When was the endorsement made?' page
+    And I enter Gendarmerie Maritime on the 'What authority made the endorsement?' page
+    And I select France on the 'In which country was the endorsement made?' page
+    And I enter Calais Harbour on the 'Where in France was the endorsement made?' page
     #Incident Identify Location - First Incident
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 1.86201 on the incident coordinates page
@@ -123,7 +123,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 3 - The goods on the 'Which type of incident was it?' page
     And I enter the ship sank on the 'What happened during the incident?' page
     #Endorsement - Second Incident
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
     #Incident Identify Location - Second Incident
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
@@ -139,7 +139,7 @@ Feature: End to end journey Arrival notification feature
     #Change an incident
     When I click the Change link on the You have added 2 incidents page
     And I click the change link for add endorsement on the CYA page
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
     And I submit on the 'Arrivals - Incidents Check your answers' page
     #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
@@ -172,7 +172,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 4 - The goods were partially on the 'Which type of incident was it?' page
     And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
   #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
     And I select Aalen on the incident un locode page
@@ -225,7 +225,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option 5 - The holder on the 'Which type of incident was it?' page
     And I enter Test Incident Happened text on the 'What happened during the incident?' page
   #Endorsement
-    And I choose radio option No on the add endorsement page
+    And I choose radio option No on the 'Do you need to add an endorsement for the incident?' page
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
