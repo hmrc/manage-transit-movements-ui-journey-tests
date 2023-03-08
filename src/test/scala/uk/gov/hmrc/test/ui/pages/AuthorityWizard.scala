@@ -31,7 +31,7 @@ object AuthorityWizard extends BasePage {
   def findElementBy(by: By): WebElement = driver.findElement(by)
 
   def fillInputs(eoriNumber: String): this.type = {
-    val redirectionUrl = "http://localhost:9949/auth-login-stub/session"
+    val redirectionUrl = TestConfiguration.authorise("auth-login-stub")
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("credentialStrength").sendKeys("weak")
     findById("confidenceLevel").sendKeys("50")
