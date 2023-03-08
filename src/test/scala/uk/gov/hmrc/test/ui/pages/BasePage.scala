@@ -17,10 +17,12 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.mongodb.scala.MongoClient
+import org.openqa.selenium.By.cssSelector
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
 import java.time.Duration
@@ -49,9 +51,10 @@ trait BasePage extends BrowserDriver with Matchers {
       )
 
     dropCollection("manage-transit-movements-departure-cache")
-    dropCollection("manage-transit-movements-departure-cache","draft-locks")
+    dropCollection("manage-transit-movements-departure-cache", "draft-locks")
     dropCollection("manage-transit-movements-arrival-frontend")
     dropCollection("manage-transit-movements-unloading-frontend")
+    dropCollection("transit-movements", "movements")
   }
 
   def deleteCookies(): Unit = {
@@ -82,4 +85,5 @@ trait BasePage extends BrowserDriver with Matchers {
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
+
 case class InvalidTitleArgsException(s: String) extends Exception(s)

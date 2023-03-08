@@ -18,8 +18,18 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Manage._
+import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
+
+  Given("""^The user submits an arrival notification""") { () =>
+    ApiHelper.insertArrival()
+  }
+
+  Given("""^The user submits and unloading permission""") { () =>
+    ApiHelper.insertUnloadingPermission()
+  }
+
 
   Then("""^(?:I )?should be on the 'Manage your transit movements' page""") { () =>
     ManageTransitMovementsPage
