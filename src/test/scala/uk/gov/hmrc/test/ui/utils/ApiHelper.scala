@@ -41,7 +41,7 @@ object ApiHelper {
         <messageType>CC007C</messageType>
         <correlationIdentifier>token</correlationIdentifier>
         <TransitOperation>
-          <MRN>38VYQTYFU3T0KUTUM1</MRN>
+          <MRN>38VYQTYFU3T0KUTUM3</MRN>
           <arrivalNotificationDateAndTime>2022-07-02T03:11:04</arrivalNotificationDateAndTime>
           <simplifiedProcedure>1</simplifiedProcedure>
           <incidentFlag>1</incidentFlag>
@@ -150,7 +150,7 @@ object ApiHelper {
         <messageType>CC043C</messageType>
         <correlationIdentifier>token</correlationIdentifier>
         <TransitOperation>
-          <MRN>38VYQTYFU3T0KUTUM1</MRN>
+          <MRN>38VYQTYFU3T0KUTUM3</MRN>
           <declarationType>3</declarationType>
           <declarationAcceptanceDate>2014-06-09+01:00</declarationAcceptanceDate>
           <security>4</security>
