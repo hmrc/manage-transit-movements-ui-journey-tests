@@ -51,7 +51,7 @@ trait BasePage extends BrowserDriver with Matchers {
       )
 
     dropCollection("manage-transit-movements-departure-cache")
-    dropCollection("manage-transit-movements-departure-cache","draft-locks")
+    dropCollection("manage-transit-movements-departure-cache", "draft-locks")
     dropCollection("manage-transit-movements-arrival-frontend")
     dropCollection("manage-transit-movements-unloading-frontend")
     dropCollection("transit-movements", "movements")
@@ -85,4 +85,5 @@ trait BasePage extends BrowserDriver with Matchers {
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
+
 case class InvalidTitleArgsException(s: String) extends Exception(s)

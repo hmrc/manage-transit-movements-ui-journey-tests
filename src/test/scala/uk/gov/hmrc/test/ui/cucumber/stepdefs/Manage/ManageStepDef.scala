@@ -26,6 +26,10 @@ class ManageStepDef extends BaseStepDef {
     ApiHelper.insertArrival()
   }
 
+  Given("""^The user submits and unloading permission""") { () =>
+    ApiHelper.insertUnloadingPermission()
+  }
+
 
   Then("""^(?:I )?should be on the 'Manage your transit movements' page""") { () =>
     ManageTransitMovementsPage

@@ -24,6 +24,7 @@ import uk.gov.hmrc.test.ui.pages.AuthorityWizard.{findElementBy, navigateTo}
 // For caching values between steps
 object World {
   var bearerToken: String = ""
+  var arrivalId: String   = ""
 }
 
 class LoginStepDef extends BaseStepDef {
