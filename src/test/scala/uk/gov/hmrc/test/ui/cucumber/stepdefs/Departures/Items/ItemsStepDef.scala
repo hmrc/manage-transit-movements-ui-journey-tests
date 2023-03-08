@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Items.{AddItemUCRPage, ItemCountryOfDestinationPage, ItemCountryOfDispatchPage, ItemDeclarationTypePage, ItemDescriptionPage, ItemUCRPage}
+import uk.gov.hmrc.test.ui.pages.Departures.Items.{AddItemUCRPage, ItemCountryOfDestinationPage, ItemCountryOfDispatchPage, ItemDeclarationTypePage, ItemDescriptionPage, ItemUCRNumberPage}
 
 
 class ItemsStepDef extends BaseStepDef {
@@ -54,7 +54,7 @@ class ItemsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference (UCR)\?' page$"""){
+  And("""^(?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference\?' page$"""){
     (answer: String) =>
       AddItemUCRPage
         .loadPage()
@@ -62,9 +62,10 @@ class ItemsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the Unique Consignment Reference (UCR)' page$""") {
+
+  And("""^(?:I )?enter (.*) on the 'What is the Unique Consignment Reference\?' page$""") {
     (answer: String) =>
-      ItemUCRPage
+      ItemUCRNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()

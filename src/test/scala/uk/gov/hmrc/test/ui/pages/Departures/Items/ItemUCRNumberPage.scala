@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Items
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ItemUCRPage extends StringPage {
+object ItemUCRNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Unique Consignment Reference (UCR)?"
 

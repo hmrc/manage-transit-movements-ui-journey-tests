@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit._
 
 class RouteDetailsTransitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Which country is the office of transit in\?' page$""") { (answer: String) =>
     T2DeclarationPage
       .loadPage()
       .select(answer)

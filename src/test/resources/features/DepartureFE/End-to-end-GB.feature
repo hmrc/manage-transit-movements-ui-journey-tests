@@ -1,4 +1,4 @@
-@departureGBe2e
+@departureGBe2e @wip
 
 Feature: End to end journey for Great Britain office of departure
 
@@ -259,21 +259,16 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
-    And I sign out
+
 
     #Items
     When I click the link with visible text: Add items on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
-    And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
-    #And I select United Kingdom on the 'What is the item’s country of dispatch?' page
-    And I select Italy on the 'What is the item’s country of destination?' page
-    #And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
-    And I enter UCR ABC123555666 on the 'What is the Unique Consignment Reference (UCR)?' page
+    #And I sign out
 
 
 
 
-@wip
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -325,6 +320,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the transit route add country page
     And I submit on the 'Route details - Transit route Check your answers' page
 
+    And I choose radio option Yes on the 'Which country is the office of transit in?' page
       ## Country of Transit
     And I select France on the 'Which country is the office of transit in?' page
     And I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
@@ -402,11 +398,9 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     #And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
-    #And I choose radio option No on the 'Do you want to add a Unique Consignment Reference (UCR)?' page
-    #And I enter ABC123555666 on the 'What is the Unique Consignment Reference (UCR)' page
-
-
-  And I sign out
+    #And I choose radio option No on the 'Do you want to add a Unique Consignment Reference?' page
+    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
+    #And I sign out
 
 
 
