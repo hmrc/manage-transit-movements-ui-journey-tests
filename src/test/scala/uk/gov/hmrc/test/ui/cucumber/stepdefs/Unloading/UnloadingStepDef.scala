@@ -114,10 +114,18 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the new total gross weight\?' page$""") {
+  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") {
     (answer: String) =>
-      TotalGrossWeightPage
+      ContainerNumberPage
         .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new gross weight of item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      GrossWeightPage
+        .loadPage(itemNumber)
         .fillInput(answer)
         .submitPage()
   }
@@ -128,6 +136,19 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage()
         .fillInput(answer)
         .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new net weight of item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      NetWeightPage
+        .loadPage(itemNumber)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  Then("""^(?:I )?(?:should )?be on the 'Unloading remarks sent' page$""") { () =>
+    UnloadingConfirmationPage
+      .loadPage()
   }
 
 }

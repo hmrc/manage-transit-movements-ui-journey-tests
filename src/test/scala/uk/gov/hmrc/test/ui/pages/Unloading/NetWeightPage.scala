@@ -18,8 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object TotalGrossWeightPage extends StringPage {
+object NetWeightPage extends StringPage {
 
-  override def title(args: String*): String = "What is the new total gross weight?"
+  override def title(args: String*): String =
+    String.format("What is the new net weight for item %s?", args: _*)
 
 }

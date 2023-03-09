@@ -50,7 +50,8 @@ class CYAStepDef extends BaseStepDef {
     |Arrivals - Authorisations|
     |Arrivals - Transport equipment|
     |Arrivals - Incidents|
-    |Arrivals) Check your answers' page$""") {
+    |Arrivals|
+    |Unloading remarks) Check your answers' page$""") {
     (subheading: String) =>
     CYAPage
       .loadPage()
