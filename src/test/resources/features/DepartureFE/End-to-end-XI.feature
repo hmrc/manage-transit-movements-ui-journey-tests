@@ -15,8 +15,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
-    # Trader details
+      ## Trader details
     When I click the link with visible text: Add trader details on the 'Declaration summary' page
+
       ## Transit holder
     And I choose radio option Yes on the 'Is the TIR holder’s identification number known?' page
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
@@ -57,7 +58,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
-    # Route details
+      ## Route details
     When I click the link with visible text: Add route details on the 'Declaration summary' page
 
       ## Transit route
@@ -90,17 +91,17 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    # Guarantee details
+      ## Guarantee details
     And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
-
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
     And I should be on the 'Declaration summary' page
 
-    # Transport details
+      ## Transport details
     When I click the link with visible text: Add transport details on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
-    And I enter GB123456123456 on the 'What is the UCR?' page
-    And I select United Kingdom on the country of dispatch page
+    And I enter UCR23456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
+    And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
     And I select United Kingdom on the 'What country are the items being transported to?' page
 

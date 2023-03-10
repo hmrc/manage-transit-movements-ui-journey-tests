@@ -17,14 +17,11 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.mongodb.scala.MongoClient
-import org.openqa.selenium.By.cssSelector
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-
 import java.time.Duration
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
