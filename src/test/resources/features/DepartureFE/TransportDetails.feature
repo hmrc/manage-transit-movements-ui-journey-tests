@@ -67,7 +67,7 @@ Feature: Transport details journey
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-      ## Transport Equipement
+      ## Transport Equipment
     And I enter C001 on the 'What is the container identification number?' page
     And I choose radio option Yes on the 'Do you want to add a seal?' page
     And I enter S001 on the 'What is the seal identification number?' page
@@ -101,6 +101,7 @@ Feature: Transport details journey
     And I submit on the 'Transport details Check your answers' page
 
     Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
 
   Scenario: 02 Northern Ireland office of departure
@@ -161,4 +162,5 @@ Feature: Transport details journey
     And I submit on the 'Transport details Check your answers' page
 
     Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
