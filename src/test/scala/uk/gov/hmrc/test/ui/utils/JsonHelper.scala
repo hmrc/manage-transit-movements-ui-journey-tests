@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.utils
 
-class CommonStepDef extends BaseStepDef {
+import play.api.libs.json._
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
-    val time = t * 1000
-    Thread.sleep(time)
+trait JsonHelper {
+
+  implicit class RichJsValue(json: JsValue) {
+
+    private def withValue(path: JsPath, value: String): JsValue =
+      json.transform(__.json.update(path.json.put(JsString(value)))) match {
+        case JsSuccess(value, _) => value
+        case JsError(errors) => throw new Exception(s"Error adding LRN: $errors")
+      }
+
+    def withLrn(lrn: String): JsValue = withValue(__ \ "lrn", lrn)
+
+    def withEoriNumber(eoriNumber: String): JsValue = withValue(__ \ "eoriNumber", eoriNumber)
   }
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
-  }
 }

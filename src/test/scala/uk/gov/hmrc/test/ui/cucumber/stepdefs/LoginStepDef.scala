@@ -24,6 +24,7 @@ import uk.gov.hmrc.test.ui.pages.AuthorityWizard.{findElementBy, navigateTo}
 // For caching values between steps
 object World {
   var bearerToken: String = ""
+  var sessionId: String = ""
   var arrivalId: String   = ""
 }
 
@@ -36,6 +37,8 @@ class LoginStepDef extends BaseStepDef {
       .submitPage()
 
     World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
+    World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
+
     navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
   }
 

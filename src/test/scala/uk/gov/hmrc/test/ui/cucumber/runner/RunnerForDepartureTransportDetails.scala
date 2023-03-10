@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-class CommonStepDef extends BaseStepDef {
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
-    val time = t * 1000
-    Thread.sleep(time)
-  }
-
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
-  }
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@departureTransportDetails"
+)
+class RunnerForDepartureTransportDetails {}

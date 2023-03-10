@@ -1,0 +1,146 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "XI000142",
+        "name" : "Belfast EPU",
+        "phoneNumber" : "+44 (0)02896 931537"
+      },
+      "procedureType" : "normal",
+      "declarationType" : "TIR",
+      "tirCarnetReference" : "1234567",
+      "securityDetailsType" : "entrySummaryDeclaration",
+      "detailsConfirmed" : true
+    },
+    "traderDetails" : {
+      "holderOfTransit" : {
+        "tirIdentificationYesNo" : true,
+        "tirIdentification" : "ABC/123/12345",
+        "name" : "Joe Blog",
+        "country" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        },
+        "address" : {
+          "numberAndStreet" : "1 Church lane",
+          "city" : "Godrics Hollow",
+          "postalCode" : "BA1 0AA"
+        },
+        "addContact" : true,
+        "contact" : {
+          "name" : "John contact",
+          "telephoneNumber" : "+2112212112"
+        }
+      },
+      "actingAsRepresentative" : true,
+      "representative" : {
+        "eori" : "FR123123132",
+        "addDetails" : true,
+        "name" : "Marie Rep",
+        "telephoneNumber" : "+11 1111 1111"
+      },
+      "consignment" : {
+        "consignor" : {
+          "eoriYesNo" : true,
+          "eori" : "IT12312313",
+          "name" : "Pip Consignor",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          },
+          "addContact" : true,
+          "contact" : {
+            "name" : "Pip Contact",
+            "telephoneNumber" : "+123123123213"
+          }
+        },
+        "moreThanOneConsignee" : false,
+        "consignee" : {
+          "eoriYesNo" : true,
+          "eori" : "GE00101001",
+          "name" : "Simpson Blog Consignee",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          }
+        }
+      }
+    },
+    "routeDetails" : {
+      "routing" : {
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "officeOfDestination" : {
+          "id" : "IT018101",
+          "name" : "Aeroporto Bari - Palese",
+          "phoneNumber" : "0039 0805316196"
+        },
+        "bindingItinerary" : false,
+        "countriesOfRouting" : [
+          {
+            "countryOfRouting" : {
+              "code" : "AD",
+              "description" : "Andorra"
+            }
+          },
+          {
+            "countryOfRouting" : {
+              "code" : "AR",
+              "description" : "Argentina"
+            }
+          }
+        ]
+      },
+      "countriesInSecurityAgreement" : false,
+      "addLocationOfGoods" : true,
+      "locationOfGoods" : {
+        "typeOfLocation" : "designatedLocation",
+        "qualifierOfIdentification" : "customsOfficeIdentifier",
+        "identifier" : {
+          "customsOffice" : {
+            "id" : "XI000142",
+            "name" : "Belfast EPU",
+            "phoneNumber" : "+44 (0)02896 931537"
+          }
+        }
+      },
+      "loading" : {
+        "addUnLocodeYesNo" : false,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "location" : "London"
+        }
+      },
+      "unloading" : {
+        "addUnLocodeYesNo" : false,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "location" : "London"
+        }
+      }
+    }
+  },
+  "tasks" : {
+    ".preTaskList" : "completed",
+    ".traderDetails" : "completed",
+    ".routeDetails" : "completed"
+  }
+}

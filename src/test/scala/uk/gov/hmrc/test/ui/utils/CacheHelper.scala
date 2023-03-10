@@ -16,22 +16,20 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import akka.util.ByteString
-import play.api.libs.json.{JsValue, Json}
-import play.api.libs.ws.{BodyWritable, InMemoryBody}
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
-import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, Future}
+object CacheHelper extends HttpClient with FileHelper with JsonHelper {
 
-trait AsyncHelper {
+  private def headers: Seq[(String, String)] = Seq(
+    ("Authorization", World.bearerToken)
+  )
 
-  def awaitResult[T](request: => Future[T]): T =
-    Await.result(request, Duration.Inf)
+  private val proxy = TestConfiguration.url("manage-transit-movements-departure-frontend")
 
-  implicit val jsValueBodyWrites: BodyWritable[JsValue] =
-    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(Json.toBytes(a))), "application/json")
-
-  implicit val stringBodyWrites: BodyWritable[String] =
-    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(a.getBytes())), "application/xml")
-
+  def submitUserAnswers(fileName: String, lrn: String, eoriNumber: String): Unit = {
+    val url = s"$proxy/test-only/user-answers/${World.sessionId}"
+    val json = getJson(fileName).withLrn(lrn).withEoriNumber(eoriNumber)
+    post(url, json, headers)
+  }
 }

@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.utils
 
-class CommonStepDef extends BaseStepDef {
+import play.api.libs.json.{JsValue, Json}
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
-    val time = t * 1000
-    Thread.sleep(time)
+import scala.io.Source
+
+trait FileHelper {
+
+  def getJson(fileName: String): JsValue = {
+    val source = Source.fromFile(getClass.getResource(s"/useranswers/$fileName").getPath)
+    val jsonString = source.mkString
+    source.close()
+    Json.parse(jsonString)
   }
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
-  }
 }

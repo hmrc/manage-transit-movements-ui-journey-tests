@@ -1,0 +1,164 @@
+@departureTransportDetails
+
+Feature: Transport details journey
+
+  Background:
+    Given I login with ID 1234567890
+
+  Scenario: 01 Great Britain office of departure
+
+    And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
+    And I click the link with visible text: Add transport details on the 'Declaration summary' page
+
+    And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
+    And I enter GB123456123456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
+    And I select Italy on the 'What country are the items being transported to?' page
+
+      ## Container indicator
+    And I choose radio option Yes on the 'Are you using any containers?' page
+
+      ## Inland mode of transport
+    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+
+      ## Border means of transport
+    And I choose radio option Maritime on the 'Which mode of transport are you using to cross the border?' page
+    And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+
+      ## Border means office of transit
+    And I select Basel (DE004058) on the 'Where is the office of transit?' page
+
+      ## Conveyance Reference Number
+    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
+    And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+
+      ## Supply chain actor
+    And I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
+    And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
+    And I enter FR98472189002 on the 'What’s the EORI number or TIN for the consolidator?' page
+    And I choose radio option No on the 'You have added 1 supply chain actor' page
+
+      ## Authorisation
+    And I enter ACR123 reference number on the 'What’s the reference number for the ACR authorisation?' page
+    And I choose radio option Yes on the 'You have added 1 transport authorisation' page
+    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+    And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
+    And I choose to click on Remove link on the 'You have added 2 authorisations' page
+    And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
+    And I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I enter the date on the 'When is the limit date?' page
+
+      ## Carrier
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
+    And I enter Moseley on the 'Who is the contact for the carrier?' page
+    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
+
+      ## Transport Equipement
+    And I enter C001 on the 'What is the container identification number?' page
+    And I choose radio option Yes on the 'Do you want to add a seal?' page
+    And I enter S001 on the 'What is the seal identification number?' page
+    And I choose radio option Yes on the 'You have added 1 seal' page
+    And I enter S002 on the 'What is the seal identification number?' page
+    And I click the Remove link  on the 'You have added 2 seals' page
+    And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
+    And I choose radio option No on the 'You have added 1 seal' page
+    And I choose radio option Yes on the 'Do you want to add a goods item number?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option Yes on the 'You have added 1 goods item number' page
+    And I enter 2 on the 'What is the goods item number?' page
+    And I click the Remove link on the 'You have added 2 goods item numbers' page
+    And I click radio option Yes on the 'Are you sure you want to remove goods item number 1?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
+    And I choose radio option Yes on the 'You have added 1 transport equipment' page
+    And I choose radio option Yes on the 'Do you want to add a container identification number?' page
+    And I enter C002 on the 'What is the container identification number?' page
+    And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter 1 on the 'What is the goods item number?' page
+    And I choose radio option No on the 'You have added 1 goods item number' page
+    And I submit on the 'Transport details - Transport equipment Check your answers' page
+    And I click the Remove link on the 'You have added 2 transport equipment' page
+    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
+    And I choose radio option No on the 'You have added 1 transport equipment' page
+
+      ## Charges
+    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
+    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
+    And I submit on the 'Transport details Check your answers' page
+
+    Then I should be on the 'Declaration summary' page
+    And I sign out
+
+  Scenario: 02 Northern Ireland office of departure
+
+    And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
+    And I click the link with visible text: Add transport details on the 'Declaration summary' page
+
+    And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
+    And I enter GB123456123456 on the 'What is the UCR?' page
+    And I select United Kingdom on the country of dispatch page
+    And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
+    And I select United Kingdom on the 'What country are the items being transported to?' page
+
+      ## Container indicator
+    And I choose radio option No on the 'Are you using any containers?' page
+
+      ## Inland mode of transport
+    And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number 1234567 on the 'What is the train number?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+
+      ## Border means of transport
+    And I choose radio option Air on the 'Which mode of transport are you using to cross the border?' page
+    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+
+      ## Border means of transport - office of transit
+    And I select BARI on the 'Where is the office of transit?' page
+
+      ## Conveyance Reference Number
+    And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+
+      ## Supply chain actor
+    When I choose radio option No on the 'Do you want to add a supply chain actor?' page
+
+      ## Authorisation
+    And I choose radio option Yes on the 'Do you want to add an authorisation' page
+    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
+    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
+    When I choose radio option No on the 'You have added 1 transport authorisation' page
+
+      ## Carrier
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
+    And I enter Carry on the 'Who is the contact for the carrier?' page
+    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
+
+      ## Transport equipment
+    And I choose radio option No on the 'Do you want to add any transport equipment?' page
+    And I submit on the 'Transport details Check your answers' page
+
+    Then I should be on the 'Declaration summary' page
+    And I sign out
