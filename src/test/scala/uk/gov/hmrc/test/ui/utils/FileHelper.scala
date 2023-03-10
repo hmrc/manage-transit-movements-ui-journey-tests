@@ -23,7 +23,7 @@ import scala.io.Source
 trait FileHelper {
 
   def getJson(fileName: String): JsValue = {
-    val source = Source.fromFile(getClass.getResource(s"/useranswers/$fileName").getPath)
+    val source = Source.fromResource(s"useranswers/$fileName")
     val jsonString = source.mkString
     source.close()
     Json.parse(jsonString)
