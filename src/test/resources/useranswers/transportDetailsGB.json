@@ -1,0 +1,191 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "GB000068",
+        "name" : "Basildon Helipad",
+        "phoneNumber" : "+44(0)126 856 1234"
+      },
+      "procedureType" : "simplified",
+      "declarationType" : "T2",
+      "securityDetailsType" : "exitSummaryDeclaration",
+      "detailsConfirmed" : true
+    },
+    "traderDetails" : {
+      "holderOfTransit" : {
+        "eoriYesNo" : true,
+        "eori" : "GB123456123456",
+        "name" : "Joe Blog",
+        "country" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        },
+        "address" : {
+          "numberAndStreet" : "1 Church lane",
+          "city" : "Godrics Hollow",
+          "postalCode" : "BA1 0AA"
+        },
+        "addContact" : true,
+        "contact" : {
+          "name" : "John contact",
+          "telephoneNumber" : "+2112212112"
+        }
+      },
+      "actingAsRepresentative" : true,
+      "representative" : {
+        "eori" : "FR123123132",
+        "addDetails" : true,
+        "name" : "Marie Rep",
+        "telephoneNumber" : "+11 1111 1111"
+      },
+      "consignment" : {
+        "approvedOperator" : true,
+        "consignor" : {
+          "eoriYesNo" : true,
+          "eori" : "IT12312313",
+          "name" : "Pip Consignor",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          },
+          "addContact" : true,
+          "contact" : {
+            "name" : "Pip Contact",
+            "telephoneNumber" : "+123123123213"
+          }
+        },
+        "moreThanOneConsignee" : false,
+        "consignee" : {
+          "eoriYesNo" : true,
+          "eori" : "GE00101001",
+          "name" : "Simpson Blog Consignee",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          }
+        }
+      }
+    },
+    "routeDetails" : {
+      "routing" : {
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "officeOfDestination" : {
+          "id" : "IT262101",
+          "name" : "AEROPORTO",
+          "phoneNumber" : "0039 0106015339"
+        },
+        "bindingItinerary" : true,
+        "countriesOfRouting" : [
+          {
+            "countryOfRouting" : {
+              "code" : "FR",
+              "description" : "France"
+            }
+          },
+          {
+            "countryOfRouting" : {
+              "code" : "DE",
+              "description" : "Germany"
+            }
+          }
+        ]
+      },
+      "countriesInSecurityAgreement" : true,
+      "transit" : {
+        "officesOfTransit" : [
+          {
+            "officeOfTransitCountry" : {
+              "code" : "DE",
+              "description" : "Germany"
+            },
+            "officeOfTransit" : {
+              "id" : "DE004058",
+              "name" : "Basel",
+              "phoneNumber" : "+41 61 20114-24"
+            },
+            "addOfficeOfTransitETAYesNo" : true,
+            "arrivalDateTime" : "2023-03-10T06:58:00"
+          }
+        ]
+      },
+      "exit" : {
+        "officesOfExit" : [
+          {
+            "officeOfExitCountry" : {
+              "code" : "FR",
+              "description" : "France"
+            },
+            "officeOfExit" : {
+              "id" : "FR005130",
+              "name" : "Agen bureau",
+              "phoneNumber" : "09 70 27 57 70"
+            }
+          }
+        ]
+      },
+      "locationOfGoods" : {
+        "typeOfLocation" : "designatedLocation",
+        "qualifierOfIdentification" : "authorisationNumber",
+        "identifier" : {
+          "authorisationNumber" : "1234567890",
+          "addAdditionalIdentifier" : true,
+          "additionalIdentifier" : "x9x9",
+          "addContact" : true
+        },
+        "contact" : {
+          "name" : "Locator Joe",
+          "telephoneNumber" : "+432 1212 1212"
+        }
+      },
+      "loading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "AEFAT",
+          "name" : "Fateh Terminal"
+        },
+        "addLocationYesNo" : true,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "location" : "London"
+        }
+      },
+      "addPlaceOfUnloading" : true,
+      "unloading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "DEAAL",
+          "name" : "Aalen"
+        },
+        "addExtraInformationYesNo" : true,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "IT",
+            "description" : "Italy"
+          },
+          "location" : "Milano"
+        }
+      }
+    }
+  },
+  "tasks" : {
+    ".preTaskList" : "completed",
+    ".traderDetails" : "completed",
+    ".routeDetails" : "completed"
+  }
+}

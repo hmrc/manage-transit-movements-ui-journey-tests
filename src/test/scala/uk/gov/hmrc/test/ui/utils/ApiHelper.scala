@@ -20,7 +20,7 @@ import play.api.libs.ws.StandaloneWSResponse
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
-object ApiHelper {
+object ApiHelper extends HttpClient {
 
   val arrivalIdIndex: Int = 10
 
@@ -133,9 +133,8 @@ object ApiHelper {
         </Consignment>
       </ncts:CC007C>.mkString
 
-    val response: StandaloneWSResponse = HttpClient.postStr(url, xmlStr, headers)
+    val response: StandaloneWSResponse = post(url, xmlStr, headers)
     World.arrivalId                    = response.body.split("/")(arrivalIdIndex)
-
   }
 
   def insertUnloadingPermission() : Unit = {
@@ -420,8 +419,7 @@ object ApiHelper {
         </Consignment>
       </ncts:CC043C>.mkString
 
-    HttpClient.postStr(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
-
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
   }
 
 }
