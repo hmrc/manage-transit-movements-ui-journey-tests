@@ -86,6 +86,7 @@ Feature: Route details journey
     And I submit on the 'Route details Check your answers' page
 
     Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for route details on the 'Declaration summary' page
     And I sign out
 
   Scenario: 02 Northern Ireland office of departure
@@ -127,4 +128,5 @@ Feature: Route details journey
     And I submit on the 'Route details Check your answers' page
 
     Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for route details on the 'Declaration summary' page
     And I sign out

@@ -14,19 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.utils
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import play.api.libs.json.{JsValue, Json}
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-import scala.io.Source
-
-trait FileHelper {
-
-  def getJson(fileName: String): JsValue = {
-    val source = Source.fromResource(s"useranswers/$fileName")
-    val jsonString = source.mkString
-    source.close()
-    Json.parse(jsonString)
-  }
-
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@departureTraderDetails"
+)
+class RunnerForDepartureTraderDetails {}

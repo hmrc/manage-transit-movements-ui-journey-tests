@@ -226,7 +226,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
-      ## Transport Equipement
+      ## Transport Equipment
     And I enter C001 on the 'What is the container identification number?' page
     And I choose radio option Yes on the 'Do you want to add a seal?' page
     And I enter S001 on the 'What is the seal identification number?' page
