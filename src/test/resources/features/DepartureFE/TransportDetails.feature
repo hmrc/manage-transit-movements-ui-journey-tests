@@ -6,16 +6,14 @@ Feature: Transport details journey
     Given I login with ID 1234567890
 
   Scenario: 01 Great Britain office of departure
-
     And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
     And I click the link with visible text: Add transport details on the 'Declaration summary' page
-
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
-    And I enter GB123456123456 on the 'What is the UCR?' page
+    And I enter UCR23456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
     And I select Italy on the 'What country are the items being transported to?' page
 
@@ -99,23 +97,24 @@ Feature: Transport details journey
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
-
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
 
-  Scenario: 02 Northern Ireland office of departure
 
+
+  Scenario: 02 Northern Ireland office of departure
     And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add transport details on the 'Declaration summary' page
-
+     ## Transport details
+    When I click the link with visible text: Add transport details on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
-    And I enter GB123456123456 on the 'What is the UCR?' page
-    And I select United Kingdom on the country of dispatch page
+    And I enter UCR23456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
+    And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
     And I select United Kingdom on the 'What country are the items being transported to?' page
 
@@ -160,7 +159,6 @@ Feature: Transport details journey
       ## Transport equipment
     And I choose radio option No on the 'Do you want to add any transport equipment?' page
     And I submit on the 'Transport details Check your answers' page
-
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
