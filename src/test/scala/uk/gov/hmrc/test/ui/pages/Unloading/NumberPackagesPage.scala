@@ -18,8 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object TotalNumberPackagesPage extends StringPage {
+object NumberPackagesPage extends StringPage {
 
-  override def title(args: String*): String = "What is the new total number of packages?"
+  override def title(args: String*): String =
+    String.format("What is the new number of packages for item %s?", args: _*)
 
 }

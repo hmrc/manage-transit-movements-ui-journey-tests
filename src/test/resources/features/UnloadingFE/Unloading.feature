@@ -37,7 +37,7 @@ Feature: Submit unloading remarks with seals
     And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
 
 #    2333
-    And I click the Change link for Total gross weight on the 'What did you find when unloading?' page
+    And I click the Change link for Gross weight on the 'What did you find when unloading?' page
     And I enter 123.45 on the 'What is the new gross weight of item 1?' page
 
 #     2385
@@ -45,8 +45,8 @@ Feature: Submit unloading remarks with seals
     And I enter 123.456789 on the 'What is the new net weight of item 1?' page
 
     #    2342
-    And I click the Change link for Total number of packages on the 'What did you find when unloading?' page
-    And I enter 100 on the 'What is the new total number of packages?' page
+    And I click the Change link for Number of packages on the 'What did you find when unloading?' page
+    And I enter 100 on the 'What is the new number of packages for item 1?' page
 
     #    2343 Add a comment
     When I click the Add comment link on the 'What did you find when unloading?' page

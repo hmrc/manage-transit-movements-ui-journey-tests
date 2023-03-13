@@ -130,10 +130,10 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the new total number of packages\?' page$""") {
-    (answer: String) =>
-      TotalNumberPackagesPage
-        .loadPage()
+  And("""^(?:I )?enter (.*) on the 'What is the new number of packages for item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      NumberPackagesPage
+        .loadPage(itemNumber)
         .fillInput(answer)
         .submitPage()
   }

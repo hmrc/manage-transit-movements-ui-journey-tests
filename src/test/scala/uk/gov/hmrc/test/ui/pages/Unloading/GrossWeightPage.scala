@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object GrossWeightPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the new gross weight for item %s?", args: _*)
+    String.format("What is the new gross weight of item %s?", args: _*)
 
 
 }
