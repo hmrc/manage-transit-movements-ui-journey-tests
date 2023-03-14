@@ -1,5 +1,4 @@
 @departureGBe2e
-
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -173,7 +172,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
-    And I select Italy on the 'What country are the items being transported to?' page
+    And I select Italy on the transport details 'What is the country of destination?' page
 
       ## Container indicator
     And I choose radio option Yes on the 'Are you using any containers?' page
@@ -185,14 +184,14 @@ Feature: End to end journey for Great Britain office of departure
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Maritime on the 'Which mode of transport are you using to cross the border?' page
+    And I choose radio option Maritime on the 'How is the transit crossing the border?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means office of transit
-    And I select Basel (DE004058) on the 'Where is the office of transit?' page
+    And I select Basel (DE004058) on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
@@ -204,14 +203,14 @@ Feature: End to end journey for Great Britain office of departure
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
-    And I enter FR98472189002 on the 'What’s the EORI number or TIN for the consolidator?' page
+    And I enter FR98472189002 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
-    And I enter ACR123 reference number on the 'What’s the reference number for the ACR authorisation?' page
+    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
     And I choose radio option Yes on the 'You have added 1 transport authorisation' page
     And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
-    And I enter SSE123 reference number on the 'What’s the reference number for the SSE authorisation?' page
+    And I enter SSE123 reference number on the 'What is the reference number for the SSE authorisation?' page
     And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     And I choose radio option No on the 'You have added 1 transport authorisation' page
@@ -360,8 +359,20 @@ Feature: End to end journey for Great Britain office of departure
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
-      ## Border mode of transport
-    And I choose radio option No on the add border mode of transport page
+      ## Border means of transport
+    And I choose radio option Air on the 'How is the transit crossing the border?' page
+    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification Air12345 on the 'What is the registration number of the aircraft?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+
+        ## Border means of transport - office of transit
+    And I select Brest bureau (FR000690) on the 'Where is the customs office at the border?' page
+
+       ## Conveyance Reference Number
+    And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor

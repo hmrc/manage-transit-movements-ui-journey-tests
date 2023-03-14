@@ -37,7 +37,7 @@ class SupplyChainActorStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What’s the EORI number or TIN for the (.*)\?' page$""") {
+  And("""^(?:I )?enter (.+) on the 'What is the EORI number or Trader Identification Number TIN for the (.*)\?' page$""") {
     (answer: String, typeVal: String) =>
       EoriTinSupplyChainActorPage
         .loadPage(typeVal)

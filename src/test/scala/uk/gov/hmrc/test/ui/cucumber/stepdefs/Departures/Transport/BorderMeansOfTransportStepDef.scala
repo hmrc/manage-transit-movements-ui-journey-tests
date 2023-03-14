@@ -28,7 +28,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which mode of transport are you using to cross the border\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'How is the transit crossing the border\?' page$""") {
     (answer: String) =>
       BorderModeOfTransportPage
         .loadPage()
@@ -70,7 +70,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the office of transit\?' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'Where is the customs office at the border\?' page$""") { (answer: String) =>
     BorderMeansOfTransportOfficeOfTransitPage
       .loadPage()
       .select(answer)
