@@ -258,9 +258,6 @@ Feature: End to end journey for Great Britain office of departure
     And I sign out
 
 
-
-
-
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -395,6 +392,9 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I sign out
+
+    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+
 
 
 
