@@ -147,4 +147,16 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add any transport equipment?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
-    And I sign out
+
+      # Documents
+#  CTCP-1968 What type of document do you want to add? CL213
+#  CTCP-1946/2011 What is the document’s reference number?
+#  CTCP-2014 Do you want to add a line item number? YES
+#  CTCP-2015 What is the line item number?
+#  CTCP-2019 Check your answers - Supporting documents
+#  CTCP-1970 You have added 1 document
+
+    When I click the Add documents link on the 'Declaration summary' page
+    Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
+    And I enter 1234 on the 'What is the document’s reference number?' page
+#    And I sign out

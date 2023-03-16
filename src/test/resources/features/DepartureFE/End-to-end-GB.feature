@@ -255,7 +255,31 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
-    And I sign out
+
+      # Documents
+#  CTCP-1943 What previous document do you want to add?
+#  CTCP-1946 What is the document’s reference number?
+#  CTCP-1947 Do you want to add a goods item number? YES
+#  CTCP-1952 What is the goods item number?
+#  CTCP-1948 Do you want to declare the package the goods arrived in?
+#  CTCP-1949 What type of package did the goods arrive in?
+#  CTCP-1981 Do you want to add a package to the document?
+#  CTCP-1982 How many of these were there?
+#  CTCP-1953 Do you want to declare the quantity of goods?
+#  CTCP-1950 How many of these do the goods include?
+#  CTCP-1951 What metric do you want to use for the quantity of goods?
+#  CTCP-1969 Check your answers –  Previous Documents
+#  CTCP-1970 You have added 1 document
+#  CTCP-1971 Are you sure you want to remove the [document_type]?
+
+    When I click the Add documents link on the 'Declaration summary' page
+    Then I select (T2L) T2L on the 'What previous document do you want to add?' page
+    And I enter 1234 on the 'What is the document’s reference number?' page
+    And I click radio option Yes on the 'Do you want to add a goods item number?' page
+    And I enter 1234 on the documents 'What is the goods item number?' page
+    And I click radio option Yes on the 'Do you want to declare the package the goods arrived in?' page
+    Then I select (BG) Bag on the 'What type of package did the goods arrive in?' page
+#    And I sign out
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -391,10 +415,17 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
-    And I sign out
 
-    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+      # Documents
+#  CTCP-1968 What type of document do you want to add? CL754
+#  CTCP-1946/2025 What is the document’s reference number?
+#  CTCP-2026 Check your answers - Transport documents
+#  CTCP-1970 You have added 1 document
 
+    When I click the Add documents link on the 'Declaration summary' page
+    Then I select (235) Container list on the 'What type of document do you want to add?' page
+    And I enter 1234 on the 'What is the document’s reference number?' page
+#    And I sign out
 
 
 
