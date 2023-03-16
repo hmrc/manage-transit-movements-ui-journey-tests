@@ -27,8 +27,8 @@ Feature: Journeys for Previous, Transport & Supporting documents
 #  CTCP-1950 How many of these do the goods include?
 #  CTCP-1951 What metric do you want to use for the quantity of goods?
 #  CTCP-1969 Check your answers –  Previous Documents
-#  CTCP-1970 You have added 1 document
-#  CTCP-1971 Are you sure you want to remove the [document_type]?
+#  CTCP-1970 You have added 1 document YES
+#  CTCP-1971 Are you sure you want to remove the [document_type]? YES
 
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (T2L) T2L on the 'What previous document do you want to add?' page
@@ -52,7 +52,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 #  CTCP-1968 What type of document do you want to add? CL754
 #  CTCP-1946/2025 What is the document’s reference number?
 #  CTCP-2026 Check your answers - Transport documents
-#  CTCP-1970 You have added 1 document
+#  CTCP-1970 You have added 1 document NO
 
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (235) Container list on the 'What type of document do you want to add?' page
@@ -75,8 +75,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 #  CTCP-2014 Do you want to add a line item number? YES
 #  CTCP-2015 What is the line item number?
 #  CTCP-2019 Check your answers - Supporting documents
-#  CTCP-1970 You have added 1 document
-#  CTCP-1971 Are you sure you want to remove the [document_type]?
+#  CTCP-1970 You have added 1 document NO
 
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
