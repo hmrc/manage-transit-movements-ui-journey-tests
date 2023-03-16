@@ -17,7 +17,7 @@ Feature: Transport details journey
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
-    And I sign out
+    #And I sign out
 
 
 
@@ -35,4 +35,4 @@ Feature: Transport details journey
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
-    And I sign out
+    #And I sign out
