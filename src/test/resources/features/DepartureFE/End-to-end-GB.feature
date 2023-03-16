@@ -256,6 +256,10 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
+    #Items
+    When I click the link with visible text: Add items on the 'Declaration summary' page
+    And I enter This is a description on the 'Enter a description of item 1' page
+    #And I sign out
       # Documents
 #  CTCP-1943 What previous document do you want to add?
 #  CTCP-1946 What is the document’s reference number?
@@ -282,10 +286,11 @@ Feature: End to end journey for Great Britain office of departure
 #    And I sign out
 
 
-  Scenario: 02 Procedure 'Normal' - Declaration 'T1' - Security '0' - Consignee in Item level, destination countries at Item level
+
+  Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option T1 on the 'What declaration do you want to create?' page
+    And I choose radio option T on the 'What declaration do you want to create?' page
     And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
@@ -334,6 +339,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Route details - Transit route Check your answers' page
 
       ## Country of Transit
+    And I choose radio option Yes on the 'Does the transit include any T2 declarations?' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)?' page
@@ -415,6 +421,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
+
+    #Items
+    When I click the link with visible text: Add items on the 'Declaration summary' page
+    And I enter This is a description on the 'Enter a description of item 1' page
+    And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
+    And I select Italy on the 'What is the item’s country of destination?' page
+    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
+
+    #And I sign out
 
       # Documents
 #  CTCP-1968 What type of document do you want to add? CL754
