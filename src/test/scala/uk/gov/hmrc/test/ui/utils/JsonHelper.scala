@@ -14,11 +14,23 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor
+package uk.gov.hmrc.test.ui.utils
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import play.api.libs.json._
 
-object EoriTinSupplyChainActorPage extends StringPage {
+trait JsonHelper {
 
-  override def title(args: String*): String = String.format ("What is the EORI number or Trader Identification Number (TIN) for the %s?", args: _*)
+  implicit class RichJsValue(json: JsValue) {
+
+    private def withValue(path: JsPath, value: String): JsValue =
+      json.transform(__.json.update(path.json.put(JsString(value)))) match {
+        case JsSuccess(value, _) => value
+        case JsError(errors) => throw new Exception(s"Error adding LRN: $errors")
+      }
+
+    def withLrn(lrn: String): JsValue = withValue(__ \ "lrn", lrn)
+
+    def withEoriNumber(eoriNumber: String): JsValue = withValue(__ \ "eoriNumber", eoriNumber)
+  }
+
 }

@@ -1,0 +1,18 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "GB000068",
+        "name" : "Basildon Helipad",
+        "phoneNumber" : "+44(0)126 856 1234"
+      },
+      "procedureType" : "simplified",
+      "declarationType" : "T2",
+      "securityDetailsType" : "exitSummaryDeclaration",
+      "detailsConfirmed" : true
+    }
+  },
+  "tasks" : {
+    ".preTaskList" : "completed"
+  }
+}

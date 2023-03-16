@@ -16,7 +16,17 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import org.openqa.selenium.By.cssSelector
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.pages.AuthorityWizard
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard.{findElementBy, navigateTo}
+
+// For caching values between steps
+object World {
+  var bearerToken: String = ""
+  var sessionId: String = ""
+  var arrivalId: String   = ""
+}
 
 class LoginStepDef extends BaseStepDef {
 
@@ -25,6 +35,11 @@ class LoginStepDef extends BaseStepDef {
       .loadPage()
       .fillInputs(id)
       .submitPage()
+
+    World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
+    World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
+
+    navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
   }
 
 }

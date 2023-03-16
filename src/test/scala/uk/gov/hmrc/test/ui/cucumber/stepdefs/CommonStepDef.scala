@@ -22,4 +22,8 @@ class CommonStepDef extends BaseStepDef {
     val time = t * 1000
     Thread.sleep(time)
   }
+
+  And("""^(?:I )?refresh the page$""") { () =>
+    driver.navigate().refresh()
+  }
 }

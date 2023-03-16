@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object EoriTinSupplyChainActorPage extends StringPage {
+object ItemsSameDispatchCountryPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format ("What is the EORI number or Trader Identification Number (TIN) for the %s?", args: _*)
+  override def title(args: String*): String =
+    "Are all the items being dispatched from the same country?"
 }

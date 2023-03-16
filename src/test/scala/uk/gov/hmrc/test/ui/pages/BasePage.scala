@@ -22,7 +22,6 @@ import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-
 import java.time.Duration
 import scala.concurrent.Await
 import scala.concurrent.duration.DurationInt
@@ -49,9 +48,10 @@ trait BasePage extends BrowserDriver with Matchers {
       )
 
     dropCollection("manage-transit-movements-departure-cache")
-    dropCollection("manage-transit-movements-departure-cache","draft-locks")
+    dropCollection("manage-transit-movements-departure-cache", "draft-locks")
     dropCollection("manage-transit-movements-arrival-frontend")
     dropCollection("manage-transit-movements-unloading-frontend")
+    dropCollection("transit-movements", "movements")
   }
 
   def deleteCookies(): Unit = {
@@ -66,6 +66,8 @@ trait BasePage extends BrowserDriver with Matchers {
   def click(by: By): Unit = bringIntoView(by, _.click)
 
   def clickById(id: String): Unit = click(By.id(id))
+  
+  def clickByValue(value: String): Unit = click((By.cssSelector(s"input[value='$value']")))
 
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
@@ -82,4 +84,5 @@ trait BasePage extends BrowserDriver with Matchers {
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
+
 case class InvalidTitleArgsException(s: String) extends Exception(s)

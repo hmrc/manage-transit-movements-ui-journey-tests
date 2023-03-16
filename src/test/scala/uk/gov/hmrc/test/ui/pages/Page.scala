@@ -16,10 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.WebDriver
-import uk.gov.hmrc.webdriver.SingletonDriver
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
-
 trait Page extends BasePage {
 
   def title(args: String*): String

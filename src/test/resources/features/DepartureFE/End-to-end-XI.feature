@@ -15,8 +15,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
-    # Trader details
+      ## Trader details
     When I click the link with visible text: Add trader details on the 'Declaration summary' page
+
       ## Transit holder
     And I choose radio option Yes on the 'Is the TIR holder’s identification number known?' page
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
@@ -57,7 +58,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
-    # Route details
+      ## Route details
     When I click the link with visible text: Add route details on the 'Declaration summary' page
 
       ## Transit route
@@ -90,19 +91,19 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    # Guarantee details
+      ## Guarantee details
     And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
-
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
     And I should be on the 'Declaration summary' page
 
-    # Transport details
+      ## Transport details
     When I click the link with visible text: Add transport details on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
-    And I enter GB123456123456 on the 'What is the UCR?' page
-    And I select United Kingdom on the country of dispatch page
+    And I enter UCR23456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
+    And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
-    And I select United Kingdom on the 'What country are the items being transported to?' page
+    And I select United Kingdom on the 'What is the country of destination?' page
 
       ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
@@ -114,14 +115,14 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Air on the 'Which mode of transport are you using to cross the border?' page
+    And I choose radio option Air on the 'How is the transit crossing the border?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the office of transit?' page
+    And I select BARI on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
@@ -133,7 +134,7 @@ Feature: End to end journey for Northern Ireland office of departure
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
     And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What’s the reference number for the TRD authorisation?' page
+    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
       ## Carrier

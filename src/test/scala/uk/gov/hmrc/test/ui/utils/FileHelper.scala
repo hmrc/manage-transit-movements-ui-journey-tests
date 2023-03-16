@@ -14,11 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor
+package uk.gov.hmrc.test.ui.utils
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import play.api.libs.json.{JsValue, Json}
 
-object EoriTinSupplyChainActorPage extends StringPage {
+import scala.io.Source
 
-  override def title(args: String*): String = String.format ("What is the EORI number or Trader Identification Number (TIN) for the %s?", args: _*)
+trait FileHelper {
+
+  def getJson(fileName: String): JsValue = {
+    val source = Source.fromResource(s"useranswers/$fileName")
+    val jsonString = source.mkString
+    source.close()
+    Json.parse(jsonString)
+  }
+
 }
