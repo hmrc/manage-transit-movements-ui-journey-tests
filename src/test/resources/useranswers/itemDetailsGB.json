@@ -1,0 +1,184 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "GB000068",
+        "name" : "Basildon Helipad",
+        "phoneNumber" : "+44(0)126 856 1234"
+      },
+      "procedureType" : "normal",
+      "declarationType" : "T",
+      "securityDetailsType" : "noSecurity",
+      "detailsConfirmed" : true
+    },
+    "traderDetails" : {
+      "holderOfTransit" : {
+        "eoriYesNo" : false,
+        "name" : "Joe",
+        "country" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        },
+        "address" : {
+          "numberAndStreet" : "123 TEST ADDRESS",
+          "city" : "TESTERFIELD",
+          "postalCode" : "TE33ST"
+        },
+        "addContact" : false
+      },
+      "actingAsRepresentative" : false,
+      "consignment" : {
+        "approvedOperator" : true,
+        "moreThanOneConsignee" : true
+      }
+    },
+    "routeDetails" : {
+      "routing" : {
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "officeOfDestination" : {
+          "id" : "IT371100",
+          "name" : "MILANO 3",
+          "phoneNumber" : "0039 0270200470"
+        },
+        "bindingItinerary" : true,
+        "countriesOfRouting" : [
+          {
+            "countryOfRouting" : {
+              "code" : "FR",
+              "description" : "France"
+            }
+          }
+        ]
+      },
+      "countriesInSecurityAgreement" : true,
+      "transit" : {
+        "officesOfTransit" : [
+          {
+            "inferredOfficeOfTransitCountry" : {
+              "code" : "FR",
+              "description" : "France"
+            },
+            "officeOfTransit" : {
+              "id" : "FR000610",
+              "name" : "Bordeaux bassens pt bureau",
+              "phoneNumber" : "09 70 27 56 60"
+            },
+            "addOfficeOfTransitETAYesNo" : false
+          }
+        ]
+      },
+      "locationOfGoods" : {
+        "typeOfLocation" : "authorisedPlace",
+        "inferredQualifierOfIdentification" : "authorisationNumber",
+        "identifier" : {
+          "authorisationNumber" : "ABC1231231",
+          "addAdditionalIdentifier" : true,
+          "additionalIdentifier" : "x9x9",
+          "addContact" : true
+        },
+        "contact" : {
+          "name" : "Paris",
+          "telephoneNumber" : "+44 808 157 0192"
+        }
+      },
+      "loading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "CAALK",
+          "name" : "Adlavik"
+        },
+        "addLocationYesNo" : false
+      }
+    },
+    "transportDetails" : {
+      "preRequisites" : {
+        "sameUcrYesNo" : false,
+        "transportedToSameCountryYesNo" : false,
+        "containerIndicator" : true
+      },
+      "equipmentsAndCharges" : {
+        "equipments" : [
+          {
+            "containerIdentificationNumber" : "GB123456789000",
+            "addSealsYesNo" : true,
+            "seals" : [
+              {
+                "identificationNumber" : "Seal009"
+              }
+            ],
+            "addGoodsItemNumbersYesNo" : true,
+            "itemNumbers" : [
+              {
+                "itemNumber" : "1"
+              },
+              {
+                "itemNumber" : "2"
+              },
+              {
+                "itemNumber" : "3"
+              }
+            ]
+          }
+        ]
+      },
+      "inlandMode" : "road",
+      "transportMeansDeparture" : {
+        "identification" : "regNumberRoadVehicle",
+        "meansIdentificationNumber" : "REG1231231",
+        "vehicleCountry" : {
+          "code" : "GB",
+          "desc" : "United Kingdom"
+        }
+      },
+      "borderModeOfTransport" : "rail",
+      "transportMeansActiveList" : [
+        {
+          "inferredIdentification" : "trainNumber",
+          "identificationNumber" : "T1111",
+          "addNationalityYesNo" : true,
+          "nationality" : {
+            "code" : "GB",
+            "desc" : "United Kingdom"
+          },
+          "customsOfficeActiveBorder" : {
+            "id" : "FR000610",
+            "name" : "Bordeaux bassens pt bureau",
+            "phoneNumber" : "09 70 27 56 60"
+          },
+          "conveyanceReferenceNumberYesNo" : false
+        }
+      ],
+      "supplyChainActorYesNo" : true,
+      "supplyChainActors" : [
+        {
+          "supplyChainActorType" : "freightForwarder",
+          "identificationNumber" : "GB123456789001"
+        }
+      ],
+      "authorisationsAndLimit" : {
+        "authorisations" : [
+          {
+            "authorisationType" : "ACR",
+            "authorisationReferenceNumber" : "12312"
+          }
+        ],
+        "limit" : {
+          "limitDate" : "2023-03-25"
+        }
+      },
+      "carrierDetails" : {
+        "identificationNumber" : "GB123456789000",
+        "addContactYesNo" : false
+      }
+    }
+  },
+  "tasks" : {
+    ".preTaskList" : "completed",
+    ".traderDetails" : "completed",
+    ".routeDetails" : "completed",
+    ".transportDetails" : "completed"
+  }
+}

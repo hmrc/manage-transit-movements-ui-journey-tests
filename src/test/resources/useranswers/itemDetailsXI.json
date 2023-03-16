@@ -1,0 +1,173 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "XI000142",
+        "name" : "Belfast EPU",
+        "phoneNumber" : "+44 (0)02896 931537"
+      },
+      "procedureType" : "normal",
+      "declarationType" : "TIR",
+      "tirCarnetReference" : "TIR001",
+      "securityDetailsType" : "entrySummaryDeclaration",
+      "detailsConfirmed" : true
+    },
+    "traderDetails" : {
+      "holderOfTransit" : {
+        "tirIdentificationYesNo" : true,
+        "tirIdentification" : "AAA/999/99999",
+        "name" : "JOE BLOG",
+        "country" : {
+          "code" : "FR",
+          "description" : "France"
+        },
+        "address" : {
+          "numberAndStreet" : "123 TEST ADDRESS",
+          "city" : "TESTERFIELD",
+          "postalCode" : "TE33ST"
+        },
+        "addContact" : false
+      },
+      "actingAsRepresentative" : false,
+      "consignment" : {
+        "consignor" : {
+          "eoriYesNo" : false,
+          "name" : "CONSIGNOR JD",
+          "country" : {
+            "code" : "IT",
+            "description" : "Italy"
+          },
+          "address" : {
+            "numberAndStreet" : "123 TEST ADDRESS",
+            "city" : "TESTERFIELD",
+            "postalCode" : "TE33ST"
+          },
+          "addContact" : false
+        },
+        "moreThanOneConsignee" : true
+      }
+    },
+    "routeDetails" : {
+      "routing" : {
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "officeOfDestination" : {
+          "id" : "IT018101",
+          "name" : "Aeroporto Bari - Palese",
+          "phoneNumber" : "0039 0805316196"
+        },
+        "bindingItinerary" : true,
+        "countriesOfRouting" : [
+          {
+            "countryOfRouting" : {
+              "code" : "AT",
+              "description" : "Austria"
+            }
+          },
+          {
+            "countryOfRouting" : {
+              "code" : "FR",
+              "description" : "France"
+            }
+          }
+        ]
+      },
+      "countriesInSecurityAgreement" : true,
+      "addLocationOfGoods" : true,
+      "locationOfGoods" : {
+        "typeOfLocation" : "designatedLocation",
+        "qualifierOfIdentification" : "unlocode",
+        "identifier" : {
+          "unLocode" : {
+            "unLocodeExtendedCode" : "CAALK",
+            "name" : "Adlavik"
+          },
+          "addContact" : false
+        }
+      },
+      "loading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "ADALV",
+          "name" : "Andorra la Vella"
+        },
+        "addLocationYesNo" : false
+      },
+      "unloading" : {
+        "addUnLocodeYesNo" : false,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "IT",
+            "description" : "Italy"
+          },
+          "location" : "Milano"
+        }
+      }
+    },
+    "transportDetails" : {
+      "preRequisites" : {
+        "sameUcrYesNo" : false,
+        "sameCountryOfDispatchYesNo" : false,
+        "transportedToSameCountryYesNo" : false,
+        "containerIndicator" : true
+      },
+      "equipmentsAndCharges" : {
+        "equipments" : [
+          {
+            "containerIdentificationNumber" : "GB123456789000",
+            "addSealsYesNo" : false,
+            "addGoodsItemNumbersYesNo" : false
+          }
+        ],
+        "addPaymentMethodYesNo" : true,
+        "paymentMethod" : "electronicCreditTransfer"
+      },
+      "inlandMode" : "road",
+      "transportMeansDeparture" : {
+        "identification" : "regNumberRoadVehicle",
+        "meansIdentificationNumber" : "REG00101",
+        "vehicleCountry" : {
+          "code" : "GB",
+          "desc" : "United Kingdom"
+        }
+      },
+      "borderModeOfTransport" : "maritime",
+      "transportMeansActiveList" : [
+        {
+          "identification" : "imoShipIdNumber",
+          "identificationNumber" : "SHIPA",
+          "addNationalityYesNo" : false,
+          "customsOfficeActiveBorder" : {
+            "id" : "IT018101",
+            "name" : "Aeroporto Bari - Palese",
+            "phoneNumber" : "0039 0805316196"
+          },
+          "conveyanceReferenceNumberYesNo" : true,
+          "conveyanceReferenceNumber" : "CONVEYANCE1231"
+        }
+      ],
+      "supplyChainActorYesNo" : false,
+      "addAuthorisationsYesNo" : true,
+      "authorisationsAndLimit" : {
+        "authorisations" : [
+          {
+            "authorisationType" : "SSE",
+            "authorisationReferenceNumber" : "SSE12312"
+          }
+        ]
+      },
+      "carrierDetails" : {
+        "identificationNumber" : "GB123456789007",
+        "addContactYesNo" : false
+      }
+    }
+  },
+  "tasks" : {
+    ".preTaskList" : "completed",
+    ".traderDetails" : "completed",
+    ".routeDetails" : "completed",
+    ".transportDetails" : "completed"
+  }
+}

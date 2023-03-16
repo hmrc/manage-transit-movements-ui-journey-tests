@@ -22,9 +22,19 @@ object CYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers"
 
-  def clickChangeLink(text: String): Unit = {
+  def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"
     clickById(id)
+  }
+
+  def clickChangeLink(answer: String): this.type = {
+    answer match {
+      case "Do you want to use the same Unique Consignment Reference?" => clickLinkById("using-same-ucr")
+      case "Are all the items being dispatched from the same country?" => clickLinkById("using-same-country-of-dispatch")
+      case "Are all the items being transported to the same country?" => clickLinkById("transported-to-same-country")
+      case "Other" => clickById("value_3")
+    }
+    this
   }
 
   def pageSubheading(): String = driver.findElement(By.cssSelector("h1 > span")).getText
