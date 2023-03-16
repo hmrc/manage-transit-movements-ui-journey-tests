@@ -17,7 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+<<<<<<< HEAD
 import uk.gov.hmrc.test.ui.pages.Departures.Items.{AddItemUCRPage, ItemCountryOfDestinationPage, ItemCountryOfDispatchPage, ItemDeclarationTypePage, ItemDescriptionPage, ItemUCRNumberPage}
+=======
+import uk.gov.hmrc.test.ui.pages.Departures.Items.{AddItemUCRPage, ItemCountryOfDestinationPage, ItemCountryOfDispatchPage, ItemDeclarationTypePage, ItemDescriptionPage, ItemUCRPage}
+>>>>>>> ede7b98 (CTCP-2629: Added items pages in before nav)
 
 
 class ItemsStepDef extends BaseStepDef {
@@ -54,6 +58,7 @@ class ItemsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+
   And("""^(?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference\?' page$"""){
     (answer: String) =>
       AddItemUCRPage
@@ -61,6 +66,7 @@ class ItemsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
 
 
   And("""^(?:I )?enter (.*) on the 'What is the Unique Consignment Reference\?' page$""") {
