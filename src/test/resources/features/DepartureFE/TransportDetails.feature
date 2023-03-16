@@ -10,7 +10,7 @@ Feature: Transport details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add transport details on the 'Declaration summary' page
+    And I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter UCR23456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
@@ -109,7 +109,7 @@ Feature: Transport details journey
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
      ## Transport details
-    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+    And I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter UCR23456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page

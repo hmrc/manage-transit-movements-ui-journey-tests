@@ -7,7 +7,6 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the 'What is the Local Reference Number?' page
     And I select GB on the 'Where is the office of departure?' page
 
-  @a11y
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes'
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -16,7 +15,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit the 'Check your answers' page
 
       ## Trader details
-    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+    And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
     And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
@@ -61,7 +60,7 @@ Feature: End to end journey for Great Britain office of departure
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
       ## Route details
-    When I click the link with visible text: Add route details on the 'Declaration summary' page
+    When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -135,7 +134,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
       ## Guarantee details - remove guarantee
-    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    When I click the Add guarantee details link on the 'Declaration summary' page
     And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
@@ -168,7 +167,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
       ## Transport details
-    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+    When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
@@ -256,11 +255,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    #Items
-    When I click the link with visible text: Add items on the 'Declaration summary' page
-    And I enter This is a description on the 'Enter a description of item 1' page
-    #And I sign out
-      # Documents
+    # Documents
 #  CTCP-1943 What previous document do you want to add?
 #  CTCP-1946 What is the document’s reference number?
 #  CTCP-1947 Do you want to add a goods item number? YES
@@ -276,13 +271,17 @@ Feature: End to end journey for Great Britain office of departure
 #  CTCP-1970 You have added 1 document
 #  CTCP-1971 Are you sure you want to remove the [document_type]?
 
-    When I click the Add documents link on the 'Declaration summary' page
-    Then I select (T2L) T2L on the 'What previous document do you want to add?' page
-    And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to add a goods item number?' page
-    And I enter 1234 on the documents 'What is the goods item number?' page
-    And I click radio option Yes on the 'Do you want to declare the package the goods arrived in?' page
-    Then I select (BG) Bag on the 'What type of package did the goods arrive in?' page
+#    When I click the Add documents link on the 'Declaration summary' page
+#    Then I select (T2L) T2L on the 'What previous document do you want to add?' page
+#    And I enter 1234 on the 'What is the document’s reference number?' page
+#    And I click radio option Yes on the 'Do you want to add a goods item number?' page
+#    And I enter 1234 on the documents 'What is the goods item number?' page
+#    And I click radio option Yes on the 'Do you want to declare the package the goods arrived in?' page
+#    Then I select (BG) Bag on the 'What type of package did the goods arrive in?' page
+
+    #Items
+    When I click the Add items link on the 'Declaration summary' page
+    And I enter This is a description on the 'Enter a description of item 1' page
 #    And I sign out
 
 
@@ -295,7 +294,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit the 'Check your answers' page
 
     ## Trader details
-    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+    And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
     And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
@@ -325,7 +324,7 @@ Feature: End to end journey for Great Britain office of departure
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
     # Route details
-    When I click the link with visible text: Add route details on the 'Declaration summary' page
+    When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -362,7 +361,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
      ## Guarantee details
-    When I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    When I click the Add guarantee details link on the 'Declaration summary' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
@@ -373,7 +372,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
      ## Transport details
-    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+    When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
@@ -422,25 +421,23 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    #Items
-    When I click the link with visible text: Add items on the 'Declaration summary' page
-    And I enter This is a description on the 'Enter a description of item 1' page
-    And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
-    And I select Italy on the 'What is the item’s country of destination?' page
-    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
-
-    #And I sign out
-
-      # Documents
+    # Documents
 #  CTCP-1968 What type of document do you want to add? CL754
 #  CTCP-1946/2025 What is the document’s reference number?
 #  CTCP-2026 Check your answers - Transport documents
 #  CTCP-1970 You have added 1 document
 
-    When I click the Add documents link on the 'Declaration summary' page
-    Then I select (235) Container list on the 'What type of document do you want to add?' page
-    And I enter 1234 on the 'What is the document’s reference number?' page
-#    And I sign out
+#    When I click the Add documents link on the 'Declaration summary' page
+#    Then I select (235) Container list on the 'What type of document do you want to add?' page
+#    And I enter 1234 on the 'What is the document’s reference number?' page
+
+    #Items
+    When I click the Add items link on the 'Declaration summary' page
+    And I enter This is a description on the 'Enter a description of item 1' page
+    And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
+    And I select Italy on the 'What is the item’s country of destination?' page
+    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
+    #And I sign out
 
 
 

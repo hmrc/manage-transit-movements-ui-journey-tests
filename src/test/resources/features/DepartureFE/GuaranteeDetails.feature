@@ -12,7 +12,7 @@ Feature: Guarantee details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890GDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    And I click the Add guarantee details link on the 'Declaration summary' page
 
     And I choose radio option (A) Guarantee waiver by agreement on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'You have added 1 guarantee' page
@@ -55,7 +55,7 @@ Feature: Guarantee details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890GDXI on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    And I click the Add guarantee details link on the 'Declaration summary' page
 
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
 
