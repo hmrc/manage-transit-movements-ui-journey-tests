@@ -1,5 +1,5 @@
 @departureItemDetails
-Feature: Transport details journey
+Feature: Item details journey
 
   Background:
     Given I login with ID 1234567890
@@ -12,7 +12,7 @@ Feature: Transport details journey
     Then I should be on the 'Declaration summary' page
 
     ## Item details
-    When I click the link with visible text: Add items on the 'Declaration summary' page
+    When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
@@ -30,7 +30,7 @@ Feature: Transport details journey
     Then I should be on the 'Declaration summary' page
 
     ## Item details
-    When I click the link with visible text: Add items on the 'Declaration summary' page
+    When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page

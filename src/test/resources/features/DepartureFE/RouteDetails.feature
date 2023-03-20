@@ -12,7 +12,7 @@ Feature: Route details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890RDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add route details on the 'Declaration summary' page
+    And I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -95,7 +95,7 @@ Feature: Route details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890RDXI on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add route details on the 'Declaration summary' page
+    And I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page

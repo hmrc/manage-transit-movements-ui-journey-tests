@@ -26,7 +26,7 @@ class TaskListStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?click the link with visible text: (.+) on the 'Declaration summary' page$""") { (answer: String) =>
+  Then("""^(?:I )?click the (.+) link on the 'Declaration summary' page$""") { (answer: String) =>
     DeclarationSummaryPage
       .loadPage()
       .selectDeclarationSection(answer)

@@ -12,7 +12,7 @@ Feature: Trader details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+    And I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit Holder
     And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
@@ -67,7 +67,7 @@ Feature: Trader details journey
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
-    And I click the link with visible text: Add trader details on the 'Declaration summary' page
+    And I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit holder
     And I choose radio option Yes on the 'Is the TIR holder’s identification number known?' page

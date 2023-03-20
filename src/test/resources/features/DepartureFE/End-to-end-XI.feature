@@ -9,14 +9,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I choose radio option TIR on the 'What declaration do you want to create?' page
 
-  @a11y
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No'
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
       ## Trader details
-    When I click the link with visible text: Add trader details on the 'Declaration summary' page
+    When I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit holder
     And I choose radio option Yes on the 'Is the TIR holder’s identification number known?' page
@@ -59,7 +58,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
       ## Route details
-    When I click the link with visible text: Add route details on the 'Declaration summary' page
+    When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -92,12 +91,12 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
 
       ## Guarantee details
-    And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    And I click the Add guarantee details link on the 'Declaration summary' page
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
     And I should be on the 'Declaration summary' page
 
       ## Transport details
-    When I click the link with visible text: Add transport details on the 'Declaration summary' page
+    When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter UCR23456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
@@ -156,12 +155,22 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
+   # Documents
+#  CTCP-1968 What type of document do you want to add? CL213
+#  CTCP-1946/2011 What is the document’s reference number?
+#  CTCP-2014 Do you want to add a line item number? YES
+#  CTCP-2015 What is the line item number?
+#  CTCP-2019 Check your answers - Supporting documents
+#  CTCP-1970 You have added 1 document
+
+#    When I click the Add documents link on the 'Declaration summary' page
+#    Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
+#    And I enter 1234 on the 'What is the document’s reference number?' page
+
     #Items
-    When I click the link with visible text: Add items on the 'Declaration summary' page
+    When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     #And I sign out
-
-
