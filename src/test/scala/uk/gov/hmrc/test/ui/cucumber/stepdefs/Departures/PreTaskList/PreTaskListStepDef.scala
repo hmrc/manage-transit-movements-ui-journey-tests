@@ -17,9 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.PreTaskList
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.{DeclarationTypePage, LocalReferenceNumberPage, OfficeOfDeparturePage, ProcedureTypePage, SecurityDetailsPage, TIRCarnetPage}
+import uk.gov.hmrc.test.ui.pages.BasePage
+import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList._
+import uk.gov.hmrc.test.ui.utils.CacheHelper
 
-class PreTaskListStepDef extends BaseStepDef {
+class PreTaskListStepDef extends BaseStepDef with BasePage {
 
   When("""^I input a random LRN on the 'What is the Local Reference Number\?' page$""") { () =>
     LocalReferenceNumberPage
@@ -76,5 +78,9 @@ class PreTaskListStepDef extends BaseStepDef {
       .loadPage()
       .select(answer)
       .submitPage()
+  }
+
+  When("""^the user has submitted (.+) for LRN (.+) and EORI number (.+)$""") { (fileName: String, lrn: String, eoriNumber: String) =>
+    CacheHelper.submitUserAnswers(fileName, lrn, eoriNumber)
   }
 }

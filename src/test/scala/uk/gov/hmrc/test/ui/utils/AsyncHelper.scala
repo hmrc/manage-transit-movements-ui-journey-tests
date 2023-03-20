@@ -16,6 +16,10 @@
 
 package uk.gov.hmrc.test.ui.utils
 
+import akka.util.ByteString
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.{BodyWritable, InMemoryBody}
+
 import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, Future}
 
@@ -23,5 +27,11 @@ trait AsyncHelper {
 
   def awaitResult[T](request: => Future[T]): T =
     Await.result(request, Duration.Inf)
+
+  implicit val jsValueBodyWrites: BodyWritable[JsValue] =
+    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(Json.toBytes(a))), "application/json")
+
+  implicit val stringBodyWrites: BodyWritable[String] =
+    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(a.getBytes())), "application/xml")
 
 }

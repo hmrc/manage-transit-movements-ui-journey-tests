@@ -17,9 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor._
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges.{AddAnotherContainerPage, AddAnotherGoodsItemPage, AddAnotherSealPage, AddContainerIdentificationNumberPage, AddGoodsItemNumberPage, AddPaymentMethodPage, AddSealPage, AddTransportEquipmentPage, ContainerIdentificationNumberPage, GoodsItemPage, MethodOfPaymentPage, RemoveContainerPage, RemoveGoodsItemPage, RemoveSealPage, SealIdentificationNumberPage}
-
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges._
 class TransportEquipmentChargesStepDef extends BaseStepDef {
 
 

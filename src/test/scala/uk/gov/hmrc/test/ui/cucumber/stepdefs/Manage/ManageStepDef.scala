@@ -26,7 +26,7 @@ class ManageStepDef extends BaseStepDef {
     ApiHelper.insertArrival()
   }
 
-  Given("""^The user submits and unloading permission""") { () =>
+  Given("""^The user submits an unloading permission""") { () =>
     ApiHelper.insertUnloadingPermission()
   }
 

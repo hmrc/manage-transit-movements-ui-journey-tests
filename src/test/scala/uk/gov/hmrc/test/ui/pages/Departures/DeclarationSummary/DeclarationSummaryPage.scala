@@ -27,14 +27,8 @@ object DeclarationSummaryPage extends Page {
   def selectDeclarationSection(sectionLink: String): Unit =
     clickByPartialLinkText(sectionLink)
 
-  def checkTraderDetailsStatus(status: String): Assertion =
-    checkStatus("trader-details", status)
-
-  def checkRouteDetailsStatus(status: String): Assertion =
-    checkStatus("route-details", status)
-
-  private def checkStatus(section: String, status: String): Assertion = {
-    val statusFieldText: String = driver.findElement(By.id(s"$section-status")).getText
+  def checkStatus(section: String, status: String): Assertion = {
+    val statusFieldText: String = driver.findElement(By.id(s"${section.replaceAll(" ", "-")}-status")).getText
     statusFieldText shouldBe status
   }
 }

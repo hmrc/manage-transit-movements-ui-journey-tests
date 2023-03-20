@@ -18,18 +18,11 @@ package uk.gov.hmrc.test.ui.utils
 
 import akka.actor.ActorSystem
 import akka.stream.{Materializer, SystemMaterializer}
-import akka.util.ByteString
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json.JsValue
 import play.api.libs.ws.ahc.StandaloneAhcWSClient
-import play.api.libs.ws.{BodyWritable, InMemoryBody, StandaloneWSResponse}
+import play.api.libs.ws.{BodyWritable, StandaloneWSResponse}
 
-object HttpClient extends AsyncHelper {
-
-  private implicit val bodyWrites: BodyWritable[JsValue] =
-    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(Json.toBytes(a))), "application/json")
-
-  private implicit val bodyStrWrites: BodyWritable[String] =
-    BodyWritable(a => InMemoryBody(ByteString.fromArrayUnsafe(a.getBytes())), "application/xml")
+trait HttpClient extends AsyncHelper {
 
   private lazy val asyncClient: StandaloneAhcWSClient = {
     val system: ActorSystem                 = ActorSystem()
@@ -40,10 +33,7 @@ object HttpClient extends AsyncHelper {
   def get(url: String, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =
     awaitResult(asyncClient.url(url).withHttpHeaders(headers: _*).get())
 
-  def post(url: String, json: JsValue, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =
-    awaitResult(asyncClient.url(url).withHttpHeaders(headers: _*).post(json))
-
-  def postStr(url: String, value: String, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =
+  def post[T](url: String, value: T, headers: Seq[(String, String)] = Nil)(implicit bodyWritable: BodyWritable[T]): StandaloneWSResponse =
     awaitResult(asyncClient.url(url).withHttpHeaders(headers: _*).post(value))
 
   def put(url: String, json: JsValue, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =

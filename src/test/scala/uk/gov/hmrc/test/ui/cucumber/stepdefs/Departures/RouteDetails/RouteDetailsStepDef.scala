@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.RouteDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Routing._
+import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.T2DeclarationPage
 
 class RouteDetailsStepDef extends BaseStepDef {
 
@@ -88,4 +89,14 @@ class RouteDetailsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Does the transit include any T2 declarations\?' page$""")
+  { (answer: String) =>
+    T2DeclarationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+
 }

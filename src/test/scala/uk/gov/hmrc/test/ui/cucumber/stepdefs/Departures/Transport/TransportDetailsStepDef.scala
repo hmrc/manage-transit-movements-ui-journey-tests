@@ -44,7 +44,7 @@ class TransportDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What country are the items being transported to\?' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the transport details 'What is the country of destination\?' page$""") { (answer: String) =>
     ItemsDestinationCountryPage
       .loadPage()
       .select(answer)
@@ -58,7 +58,15 @@ class TransportDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the country of dispatch page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Are all the items being dispatched from the same country\?' page$""") {
+    (answer: String) =>
+      ItemsSameDispatchCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What is the country of dispatch\?' page$""") { (answer: String) =>
     CountryOfDispatchPage
       .loadPage()
       .select(answer)
