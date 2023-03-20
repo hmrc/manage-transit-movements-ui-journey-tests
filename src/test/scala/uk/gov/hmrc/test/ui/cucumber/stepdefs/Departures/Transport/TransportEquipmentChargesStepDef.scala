@@ -136,14 +136,6 @@ class TransportEquipmentChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove your comments\?' page$""") {
-    (answer: String, sealIdNumber: String) =>
-      RemoveCommentsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove goods item number (.*)\?' page$""") {
     (answer: String, goodsIdNumber: String) =>
       RemoveGoodsItemPage

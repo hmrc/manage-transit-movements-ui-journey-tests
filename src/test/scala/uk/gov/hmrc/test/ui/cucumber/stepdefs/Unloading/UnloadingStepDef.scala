@@ -151,4 +151,13 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove your comments\?' page$""") {
+    (answer: String) =>
+      RemoveCommentsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+
 }
