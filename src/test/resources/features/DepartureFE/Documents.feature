@@ -1,4 +1,4 @@
-@departureDocuments @departureDocumentsA11y
+@departureDocuments
 Feature: Journeys for Previous, Transport & Supporting documents
 
   Background:
