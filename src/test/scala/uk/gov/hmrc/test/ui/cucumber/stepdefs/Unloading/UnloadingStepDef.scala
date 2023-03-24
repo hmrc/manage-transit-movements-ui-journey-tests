@@ -46,7 +46,7 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are all the seal numbers of marks readable\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$""") {
     (answer: String) =>
     SealNumbersReadablePage
       .loadPage()
@@ -60,6 +60,14 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
       .select(answer)
       .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$""") {
+    (answer: String) =>
+      DifferencesPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the identification number for the new vehicle\?' page$""") {
@@ -90,6 +98,14 @@ class UnloadingStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
     }
+
+  And("""^(?:I )?enter (.*) on the 'What comments do you want to add\?' page$""") {
+    (answer: String) =>
+      UnloadingCommentsPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
 
   And("""^(?:I )?click the Change link for (.+) on the 'What did you find when unloading\?' page$""") {
     (text: String) =>

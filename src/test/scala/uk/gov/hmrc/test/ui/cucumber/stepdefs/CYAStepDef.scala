@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.CYAPage
 
 class CYAStepDef extends BaseStepDef {
 
-  And("""^(?:I )?should be on the CYA page$""") { () =>
+  And("""^(?:I )?should be on the 'Check your answers' page$""") { () =>
     CYAPage
       .loadPage()
   }
@@ -50,8 +50,7 @@ class CYAStepDef extends BaseStepDef {
     |Arrivals - Authorisations|
     |Arrivals - Transport equipment|
     |Arrivals - Incidents|
-    |Arrivals|
-    |Unloading remarks) Check your answers' page$""") {
+    |Arrivals) Check your answers' page$""") {
     (subheading: String) =>
     CYAPage
       .loadPage()
@@ -61,12 +60,12 @@ class CYAStepDef extends BaseStepDef {
 
   }
 
-  And("""^(?:I )?click the change link for (.+) on the CYA page$""") { (text: String) =>
+  And("""^(?:I )?click the change link for (.+) on the 'Check your answers' page$""") { (text: String) =>
     CYAPage
       .clickLinkById(text)
   }
 
-  And("""^(?:I )?click the change link for (.+) on the Transport details CYA page$""") { (text: String) =>
+  And("""^(?:I )?click the change link for (.+) on the (?:Transport details|Unloading) 'Check your answers' page$""") { (text: String) =>
     CYAPage
       .clickChangeLink(text)
   }

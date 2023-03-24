@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object SealNumbersReadablePage extends YesNoPage {
+object DifferencesPage extends YesNoPage {
 
-   override def title(args: String*): String = "Are all the seal identification numbers or marks readable?"
+   override def title(args: String*): String = "Were there any differences between the transit and the declaration information?"
 
 }

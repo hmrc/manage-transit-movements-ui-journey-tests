@@ -16,10 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object SealNumbersReadablePage extends YesNoPage {
+object UnloadingCommentsPage extends StringPage {
 
-   override def title(args: String*): String = "Are all the seal identification numbers or marks readable?"
+   override def title(args: String*): String = "What comments do you want to add?"
+
+  def clickChangeLink(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
 
 }
