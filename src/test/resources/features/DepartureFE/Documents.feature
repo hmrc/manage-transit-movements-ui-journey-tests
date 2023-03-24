@@ -24,8 +24,8 @@ Feature: Journeys for Previous, Transport & Supporting documents
 #  CTCP-1981 Do you want to add a package to the document?
 #  CTCP-1982 How many of these were there?
 #  CTCP-1953 Do you want to declare the quantity of goods?
-#  CTCP-1950 How many of these do the goods include?
 #  CTCP-1951 What metric do you want to use for the quantity of goods?
+#  CTCP-1950 How many of these do the goods include?
 #  CTCP-1969 Check your answers –  Previous Documents
 #  CTCP-1970 You have added 1 document YES
 #  CTCP-1971 Are you sure you want to remove the [document_type]? YES

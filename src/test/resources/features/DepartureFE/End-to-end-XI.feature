@@ -146,11 +146,11 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add any transport equipment?' page
 
       ##CYA changes to NO to test in Items details
-    And click the change link for Do you want to use the same Unique Consignment Reference? on the Transport details CYA page
+    And click the change link for Do you want to use the same Unique Consignment Reference? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
-    And click the change link for Are all the items being dispatched from the same country? on the Transport details CYA page
+    And click the change link for Are all the items being dispatched from the same country? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Are all the items being dispatched from the same country?' page
-    And click the change link for Are all the items being transported to the same country? on the Transport details CYA page
+    And click the change link for Are all the items being transported to the same country? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page

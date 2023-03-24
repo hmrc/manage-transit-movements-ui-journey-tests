@@ -14,28 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Unloading
 
+import uk.gov.hmrc.test.ui.pages.Page
 import org.openqa.selenium.By
 
-object CYAPage extends Page {
+object UnloadingSummaryPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
+  override def title(args: String*): String = "What did you find when unloading?"
 
-  def clickLinkById(text: String): Unit = {
+  def clickChangeLink(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"
     clickById(id)
-  }
-
-  def clickChangeLink(answer: String): this.type = {
-    answer match {
-      case "Do you want to use the same Unique Consignment Reference?" => clickLinkById("using-same-ucr")
-      case "Are all the items being dispatched from the same country?" => clickLinkById("using-same-country-of-dispatch")
-      case "Are all the items being transported to the same country?" => clickLinkById("transported-to-same-country")
-      case "Were there any differences between the transit and the declaration information?" => clickLinkById("add-unloading-comments")
-      case "Other" => clickById("value_3")
-    }
-    this
   }
 
   def pageSubheading(): String = driver.findElement(By.cssSelector("h1 > span")).getText

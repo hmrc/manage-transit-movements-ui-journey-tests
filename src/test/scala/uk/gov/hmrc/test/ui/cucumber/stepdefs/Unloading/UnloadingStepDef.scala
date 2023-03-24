@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Unloading.{UnloadingGuidancePage, UnloadingRejectionPage, UnloadingRemarksNegativeAcknowledgementPage}
+import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -38,5 +38,142 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
       .checkForContent(content)
   }
+
+  And("""^(?:I )?fill in the date on the 'When were the goods unloaded\?' page$""") { () =>
+      GoodsUnloadedDatePage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$""") {
+    (answer: String) =>
+    SealNumbersReadablePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") {
+    (answer: String) =>
+    SealsBrokenPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$""") {
+    (answer: String) =>
+      DifferencesPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the new vehicle\?' page$""") {
+    (answer: String) =>
+      VehicleIdPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the Continue button on the 'Unload the goods before you make unloading remarks' page$""") { () =>
+    UnloadingGuidancePage
+      .loadPage()
+      .submitPage()
+  }
+
+  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") {
+    (sectionLink: String) =>
+    UnloadingSummaryPage
+      .loadPage()
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") {
+    (answer: String) =>
+      UnloadingReportPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+    }
+
+  And("""^(?:I )?enter (.*) on the 'What comments do you want to add\?' page$""") {
+    (answer: String) =>
+      UnloadingCommentsPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the Change link for (.+) on the 'What did you find when unloading\?' page$""") {
+    (text: String) =>
+    UnloadingReportPage
+      .loadPage()
+      .clickChangeLink(text)
+  }
+
+  And("""^(?:I )?select (.*) on the unloading 'What country is the vehicle registered to\?' page$""") {
+  (answer: String) =>
+    VehicleCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") {
+    (answer: String) =>
+      SealNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") {
+    (answer: String) =>
+      ContainerNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new gross weight of item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      GrossWeightPage
+        .loadPage(itemNumber)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new number of packages for item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      NumberPackagesPage
+        .loadPage(itemNumber)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new net weight of item (.*)\?' page$""") {
+    (answer: String, itemNumber: String) =>
+      NetWeightPage
+        .loadPage(itemNumber)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  Then("""^(?:I )?(?:should )?be on the 'Unloading remarks sent' page$""") { () =>
+    UnloadingConfirmationPage
+      .loadPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove your comments\?' page$""") {
+    (answer: String) =>
+      RemoveCommentsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
 
 }

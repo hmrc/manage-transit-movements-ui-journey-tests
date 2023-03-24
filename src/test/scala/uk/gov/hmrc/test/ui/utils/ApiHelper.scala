@@ -137,7 +137,7 @@ object ApiHelper extends HttpClient {
     World.arrivalId                    = response.body.split("/")(arrivalIdIndex)
   }
 
-  def insertUnloadingPermission() : Unit = {
+  def insertUnloadingPermissionWithSeals() : Unit = {
     val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
 
     val xmlStr =
