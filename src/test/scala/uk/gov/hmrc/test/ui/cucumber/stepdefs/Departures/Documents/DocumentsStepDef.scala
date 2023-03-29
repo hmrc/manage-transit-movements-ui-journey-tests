@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Documents
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Documents.Documents._
-import uk.gov.hmrc.test.ui.pages.Departures.Documents.Previous.AddGoodsItemNumberPage
+import uk.gov.hmrc.test.ui.pages.Departures.Documents.Supporting.{AddLineItemNumberPage, LineItemNumberPage}
 
 class DocumentsStepDef extends BaseStepDef {
 
@@ -41,6 +41,46 @@ class DocumentsStepDef extends BaseStepDef {
       .loadPage()
       .fillInput(answer)
       .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) documents?' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      DocumentAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add a line item number\?' page$""") {
+    (answer: String) =>
+      AddLineItemNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'What is the line item number\?' page$""") { (answer: String) =>
+    LineItemNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) documents?' page$"""
+  ) { (sectionLink: String, numberOfDocuments: String) =>
+    DocumentAddAnotherPage
+      .loadPage(numberOfDocuments)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*)\?' page$""") {
+    (answer: String, documentTypeToRemove: String) =>
+      RemoveDocumentPage
+        .loadPage(documentTypeToRemove)
+        .select(answer)
+        .submitPage()
   }
 
 }

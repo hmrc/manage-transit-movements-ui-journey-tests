@@ -46,6 +46,7 @@ class CYAStepDef extends BaseStepDef {
     |Transport details - Modes and means of transport|
     |Transport details - Transport equipment|
     |Transport details|
+    |Documents|
     |Guarantee details|
     |Arrivals - Authorisations|
     |Arrivals - Transport equipment|

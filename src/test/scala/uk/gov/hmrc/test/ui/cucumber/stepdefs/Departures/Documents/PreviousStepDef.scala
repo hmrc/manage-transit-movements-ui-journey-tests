@@ -51,5 +51,43 @@ class PreviousStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?enter (.+) on the 'How many of these do the goods include\?' page$""") { (answer: String) =>
+    GoodsItemMetricAmountPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What metric do you want to use for the quantity of goods\?' page$""") { (answer: String) =>
+    MetricTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of goods\?' page$""") {
+    (answer: String) =>
+      AddGoodsMetricPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the documents 'How many of these were there\?' page$""") { (answer: String) =>
+    PackageQuantityPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of this package\?' page$""") {
+    (answer: String) =>
+      DeclareQuantityOfPackagePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
 
 }
