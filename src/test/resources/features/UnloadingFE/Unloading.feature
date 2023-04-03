@@ -16,6 +16,7 @@ Feature: Submit unloading remarks with seals
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     #    2293
     And I choose radio option No on the 'Are any of the seals broken?' page
+    And I click the continue on the 'Cross-check the transit with this declaration summary' page
     #    2773
     And I choose radio option No on the 'Were there any differences between the transit and the declaration information?' page
     #    2344
