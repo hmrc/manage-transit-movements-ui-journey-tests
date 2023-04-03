@@ -62,6 +62,12 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?click the continue on the 'Cross-check the transit with this declaration summary' page$""") { () =>
+      DeclarationSummaryPage
+        .loadPage()
+        .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$""") {
     (answer: String) =>
       DifferencesPage
