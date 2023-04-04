@@ -11,6 +11,8 @@ Feature: Submit unloading remarks with seals
     #    2276
     Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
     #    2288
+    And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
+
     And I fill in the date on the 'When were the goods unloaded?' page
     #    2292
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
