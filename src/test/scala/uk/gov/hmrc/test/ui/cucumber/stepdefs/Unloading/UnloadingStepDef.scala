@@ -46,6 +46,14 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the 'Have you fully or partially unloaded the goods\?' page$""") {
+    (answer: String) =>
+      FullyOrPartiallyUnloadedPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$""") {
     (answer: String) =>
     SealNumbersReadablePage
