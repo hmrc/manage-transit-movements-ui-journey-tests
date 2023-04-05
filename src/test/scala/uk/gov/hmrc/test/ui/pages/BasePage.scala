@@ -50,6 +50,8 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("manage-transit-movements-departure-cache")
     dropCollection("manage-transit-movements-departure-cache", "draft-locks")
     dropCollection("manage-transit-movements-arrival-frontend")
+    dropCollection("manage-transit-movements-arrival-cache")
+    dropCollection("manage-transit-movements-arrival-cache", "draft-locks")
     dropCollection("manage-transit-movements-unloading-frontend")
     dropCollection("transit-movements", "movements")
   }
