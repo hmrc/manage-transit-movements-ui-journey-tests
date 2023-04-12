@@ -4,7 +4,8 @@
       "officeOfDeparture" : {
         "id" : "XI000142",
         "name" : "Belfast EPU",
-        "phoneNumber" : "+44 (0)02896 931537"
+        "phoneNumber" : "+44 (0)02896 931537",
+        "isInCL112" : false
       },
       "procedureType" : "normal",
       "declarationType" : "TIR",
