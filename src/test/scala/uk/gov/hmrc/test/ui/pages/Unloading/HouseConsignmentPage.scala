@@ -18,16 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object DeclarationSummaryPage extends Page {
+object HouseConsignmentPage extends Page {
 
-  override def title(args: String*): String = "Cross-check the transit with this declaration summary"
-
-  def selectAction(link: String): this.type = {
-    link match {
-      case "More details" => clickById("view_link.id")
-      case "House consignment 1" => clickById("houseConsignment1")
-    }
-    this
-  }
+  override def title(args: String*): String = String.format("Cross-check the transit with house consignment %s", args: _*)
 
 }

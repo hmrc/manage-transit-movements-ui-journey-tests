@@ -8,28 +8,20 @@ Feature: Submit unloading remarks with seals
     And I submit an unloading permission with seals
     Then I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
-    #    2276
     Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
-    #    2288
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
-
     And I fill in the date on the 'When were the goods unloaded?' page
-    #    2292
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
-    #    2293
     And I choose radio option No on the 'Are any of the seals broken?' page
-    And I click the continue on the 'Cross-check the transit with this declaration summary' page
-    #    2773
+    And I click the House consignment 1 link on the 'Cross-check the transit with this declaration summary' page
+    And I click the More details link on the 'Cross-check the transit with this declaration summary' page
+    And I click the Back to summary button on the 'Cross-check the transit with house consignment 1' page
+    And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option No on the 'Were there any differences between the transit and the declaration information?' page
-    #    2344
     And I click the change link for Were there any differences between the transit and the declaration information? on the Unloading 'Check your answers' page
-    #    2773
     And I choose radio option Yes on the 'Were there any differences between the transit and the declaration information?' page
-     #    2343 Add a comment
     And I enter a comment into the text field on the 'What comments do you want to add?' page
-        #    2344
     And I submit the 'Check your answers' page
-    #    2360
     And I should be on the 'Unloading remarks sent' page
     And I sign out
 

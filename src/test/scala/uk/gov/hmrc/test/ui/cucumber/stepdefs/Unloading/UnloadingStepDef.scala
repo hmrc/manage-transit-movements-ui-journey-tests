@@ -70,10 +70,22 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the continue on the 'Cross-check the transit with this declaration summary' page$""") { () =>
+  And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") { () =>
       DeclarationSummaryPage
         .loadPage()
         .submitPage()
+  }
+
+  Given("""^(?:I )?click the (.+) link on the 'Cross-check the transit with this declaration summary' page$""") { (link: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectAction(link)
+  }
+
+  Given("""^(?:I )?click the Back to summary button on the 'Cross-check the transit with house consignment (.*)' page$""") { (houseConsignmentNumber: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignmentNumber)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$""") {
