@@ -25,7 +25,7 @@ Feature: Journey to test a draft departure in the Manage Transit Movements front
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890ABCDEFGHIJKL on the 'Draft departure declarations' page
 
-    And I click the link with visible text: Add guarantee details on the 'Declaration summary' page
+    And I click the Add guarantee details link on the 'Declaration summary' page
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
 
     And I click on the Back to transit movements link on the 'Declaration summary' page
