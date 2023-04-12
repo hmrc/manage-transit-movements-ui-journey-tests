@@ -12,7 +12,7 @@ Feature: End to end journey Arrival notification feature
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
     #Identification
-    When I select XI on the GB123456789000
+    When I select XI on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
     And I choose radio option ACE on the authorisations type page
