@@ -4,7 +4,8 @@
       "officeOfDeparture" : {
         "id" : "GB000068",
         "name" : "Basildon Helipad",
-        "phoneNumber" : "+44(0)126 856 1234"
+        "phoneNumber" : "+44(0)126 856 1234",
+        "isInCL112" : true
       },
       "procedureType" : "normal",
       "declarationType" : "T",
