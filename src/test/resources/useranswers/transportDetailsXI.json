@@ -87,25 +87,29 @@
         "officeOfDestination" : {
           "id" : "IT018101",
           "name" : "Aeroporto Bari - Palese",
-          "phoneNumber" : "0039 0805316196"
+          "phoneNumber" : "0039 0805316196",
+          "isInCL112" : false
         },
         "bindingItinerary" : false,
         "countriesOfRouting" : [
           {
             "countryOfRouting" : {
               "code" : "AD",
-              "description" : "Andorra"
+              "description" : "Andorra",
+              "isInCL112" : false,
+              "isInCL147" : false
             }
           },
           {
             "countryOfRouting" : {
               "code" : "AR",
-              "description" : "Argentina"
+              "description" : "Argentina",
+              "isInCL112" : false,
+              "isInCL147" : false
             }
           }
         ]
       },
-      "countriesInSecurityAgreement" : false,
       "addLocationOfGoods" : true,
       "locationOfGoods" : {
         "typeOfLocation" : "designatedLocation",
