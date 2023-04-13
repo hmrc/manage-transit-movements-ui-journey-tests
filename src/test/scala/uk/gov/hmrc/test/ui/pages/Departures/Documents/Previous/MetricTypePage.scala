@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Documents.Previous
 
-import uk.gov.hmrc.test.ui.pages.{RadioPage, SelectPage}
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object MetricTypePage extends SelectPage {
 
