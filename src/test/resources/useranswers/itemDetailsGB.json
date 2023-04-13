@@ -43,19 +43,21 @@
         "officeOfDestination" : {
           "id" : "IT371100",
           "name" : "MILANO 3",
-          "phoneNumber" : "0039 0270200470"
+          "phoneNumber" : "0039 0270200470",
+          "isInCL112" : false
         },
         "bindingItinerary" : true,
         "countriesOfRouting" : [
           {
             "countryOfRouting" : {
               "code" : "FR",
-              "description" : "France"
+              "description" : "France",
+              "isInCL112" : false,
+              "isInCL147" : true
             }
           }
         ]
       },
-      "countriesInSecurityAgreement" : true,
       "transit" : {
         "officesOfTransit" : [
           {

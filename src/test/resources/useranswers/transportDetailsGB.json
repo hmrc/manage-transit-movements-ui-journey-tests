@@ -87,25 +87,29 @@
         "officeOfDestination" : {
           "id" : "IT262101",
           "name" : "AEROPORTO",
-          "phoneNumber" : "0039 0106015339"
+          "phoneNumber" : "0039 0106015339",
+          "isInCL112" : false
         },
         "bindingItinerary" : true,
         "countriesOfRouting" : [
           {
             "countryOfRouting" : {
               "code" : "FR",
-              "description" : "France"
+              "description" : "France",
+              "isInCL112" : false,
+              "isInCL147" : true
             }
           },
           {
             "countryOfRouting" : {
               "code" : "DE",
-              "description" : "Germany"
+              "description" : "Germany",
+              "isInCL112" : false,
+              "isInCL147" : true
             }
           }
         ]
       },
-      "countriesInSecurityAgreement" : true,
       "transit" : {
         "officesOfTransit" : [
           {
