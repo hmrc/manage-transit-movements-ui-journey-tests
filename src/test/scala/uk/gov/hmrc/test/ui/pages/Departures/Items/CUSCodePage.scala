@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Documents.Previous
+package uk.gov.hmrc.test.ui.pages.Departures.Items
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object MetricTypePage extends SelectPage {
+object CUSCodePage extends StringPage {
 
-  override def title(args: String*): String = "What metric do you want to use for the quantity of goods?"
+  override def title(args: String*): String = "What is the Customs Union and Statistics (CUS) code?"
 
 }
