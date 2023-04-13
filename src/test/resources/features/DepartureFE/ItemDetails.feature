@@ -4,7 +4,7 @@ Feature: Item details journey
   Background:
     Given I login with ID 1234567890
 
-  Scenario: 01 Great Britain office of departure
+  Scenario: 01 Office Departure 'GB', Declaration 'T'
     And the user has submitted itemDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -17,12 +17,12 @@ Feature: Item details journey
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
-    #And I sign out
+    And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I enter ABC123 on the 'What is the commodity code?' page
+    And I sign out
 
 
-
-
-  Scenario: 02 Northern Ireland office of departure
+  Scenario: 02 Office Departure 'XI', Declaration 'TIR'
     And the user has submitted itemDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -35,4 +35,10 @@ Feature: Item details journey
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
-    #And I sign out
+    And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I enter ABC123456 on the 'What is the Customs Union and Statistics code?' page
+    And I click radio option Yes on the 'Do you want to add a commodity code?' page
+    And I enter ABC123 on the 'What is the commodity code?' page
+    And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
+    And I enter A1 on the 'What is the combined nomenclature code?' page
+    And I sign out
