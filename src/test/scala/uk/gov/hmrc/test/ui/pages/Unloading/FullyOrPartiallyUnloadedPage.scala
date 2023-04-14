@@ -23,7 +23,12 @@ object FullyOrPartiallyUnloadedPage extends RadioPage {
   override def title(args: String*): String = "Have you fully or partially unloaded the goods?"
 
   override def select(answer: String): this.type = {
-    clickRadioBtn(answer)
+    val valueToClick = answer match {
+      case "fully"   => "1"
+      case "partial" => "0"
+    }
+
+    clickRadioBtn(valueToClick)
     this
   }
 
