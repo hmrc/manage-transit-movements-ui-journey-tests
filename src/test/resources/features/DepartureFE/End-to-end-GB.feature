@@ -284,7 +284,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter This is a description on the 'Enter a description of item 1' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
-    # Dangerous goods section
+      # Dangerous goods section
     And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
     And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
     And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
@@ -292,11 +292,11 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
     And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
     And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
-    #Measurement section
+      #Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
     And I click radio option Yes on the 'Do you want to add supplementary units?' page
     And I enter 123.99 on the 'How many supplementary units does the item include?' page
-    #Package section
+      #Package section
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
