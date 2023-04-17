@@ -154,9 +154,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
-
-   # Documents
-
+    # Documents
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -164,8 +162,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 54321 on the 'What is the line item number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
-
-    #Items
+      #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
@@ -177,4 +174,18 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
+      # Dangerous goods section
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+      # Measurement section
+    And I enter 100 on the 'What is the item’s gross weight?' page
+    And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
+    And I enter 225.99 on the 'What is the item’s net weight?' page
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+      #Package section
+    And I select (VL) Bulk, liquid on the 'What type of package are you using for the item?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out
