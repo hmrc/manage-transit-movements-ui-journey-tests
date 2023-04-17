@@ -256,7 +256,6 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
     # Documents
-
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (T2L) T2L on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -285,7 +284,46 @@ Feature: End to end journey for Great Britain office of departure
     And I enter This is a description on the 'Enter a description of item 1' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
+    # Dangerous goods section
+#CTCP-2146
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+#CTCP-2147
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2148
+    And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
+    And I enter 1234 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2149
+    And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
+    And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+
+    #Measurement section
+#CTCP-2157
+    And I enter 100 on the 'What is the item’s gross weight?' page
+#CTCP-2171
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+#CTCP-2172
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+
+    #Package section
+#CTCP-2150
+    And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
+#CTCP-2153
+    And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
+#CTCP-2151
+    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
+#CTCP-2152
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2154
+    And I click radio option Yes on the 'You have added 1 types of package' page
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2155 this uses a partial link
+    And I click the Remove link on the 'You have added 2 types of packages' page
+    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out
+
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -439,5 +477,30 @@ Feature: End to end journey for Great Britain office of departure
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
+      # Dangerous goods section
+#CTCP-2146
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+#CTCP-2147
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2148
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+
+      # Measurement section
+#CTCP-2157
+    And I enter 100 on the 'What is the item’s gross weight?' page
+#CTCP-2158
+    And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
+#CTCP-2159
+    And I enter 225.99 on the 'What is the item’s net weight?' page
+#CTCP-2171
+    And I click radio option No on the 'Do you want to add supplementary units?' page
+
+    #Package section
+#CTCP-2150
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+#CTCP-2152
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2154
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out
 

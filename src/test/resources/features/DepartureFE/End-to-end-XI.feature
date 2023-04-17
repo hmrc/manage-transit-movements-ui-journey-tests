@@ -177,4 +177,32 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
+
+     # Dangerous goods section
+#CTCP-2146
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+#CTCP-2147
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2148
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+
+    # Measurement section
+#CTCP-2157
+    And I enter 100 on the 'What is the item’s gross weight?' page
+#CTCP-2158
+    And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
+#CTCP-2159
+    And I enter 225.99 on the 'What is the item’s net weight?' page
+#CTCP-2171
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+#CTCP-2172
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+
+    #Package section
+#CTCP-2150
+    And I select (VL) Bulk, liquid on the 'What type of package are you using for the item?' page
+#CTCP-2151
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+#CTCP-2154
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out

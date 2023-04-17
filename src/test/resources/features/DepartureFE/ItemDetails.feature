@@ -19,6 +19,44 @@ Feature: Item details journey
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
+    # Dangerous goods section
+#CTCP-2146
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+#CTCP-2147
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2148
+    And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
+    And I enter 1234 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2149
+    And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
+    And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+
+    #Measurement section
+#CTCP-2157
+    And I enter 100 on the 'What is the item’s gross weight?' page
+#CTCP-2171
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+#CTCP-2172
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+
+    #Package section
+#CTCP-2150
+    And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
+#CTCP-2153
+    And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
+#CTCP-2151
+    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
+#CTCP-2152
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2154
+    And I click radio option Yes on the 'You have added 1 types of package' page
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2155 this uses a partial link
+    And I click the Remove link on the 'You have added 2 types of packages' page
+    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out
 
 
@@ -41,4 +79,29 @@ Feature: Item details journey
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
+    # Dangerous goods section
+#CTCP-2146
+    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
+#CTCP-2147
+    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
+#CTCP-2148
+    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+
+    # Measurement section
+#CTCP-2157
+    And I enter 100 on the 'What is the item’s gross weight?' page
+#CTCP-2158
+    And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
+#CTCP-2159
+    And I enter 225.99 on the 'What is the item’s net weight?' page
+#CTCP-2171
+    And I click radio option No on the 'Do you want to add supplementary units?' page
+
+    #Package section
+#CTCP-2150
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+#CTCP-2152
+    And I enter This is a description on the 'What is the shipping mark?' page
+#CTCP-2154
+    And I click radio option No on the 'You have added 1 type of package' page
     And I sign out

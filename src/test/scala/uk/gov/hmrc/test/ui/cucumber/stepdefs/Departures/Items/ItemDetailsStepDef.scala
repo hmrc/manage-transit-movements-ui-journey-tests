@@ -117,4 +117,139 @@ class ItemDetailsStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the 'Does the item contain any dangerous goods\?' page$""") {
+    (answer: String) =>
+      AddDangerousGoodsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the UN number for the dangerous goods\?' page$""") {
+    (answer: String) =>
+      DangerousGoodsUnNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) UN numbe(?:r |rs )for dangerous goods' page$""") {
+    (answer: String, numberOfUnNumber: String) =>
+      DangerousGoodsUnNumberAddAnotherPage
+        .loadPage(numberOfUnNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) UN numbe(?:r |rs )for dangerous goods' page$""") {
+    (sectionLink: String, numberOfUnNumber: String) =>
+      DangerousGoodsUnNumberAddAnotherPage
+        .loadPage(numberOfUnNumber)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove UN number (.*)\?' page$""") {
+    (answer: String, documentTypeToRemove: String) =>
+      RemoveDangerousGoodsPage
+        .loadPage(documentTypeToRemove)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the item’s gross weight\?' page$""") {
+    (answer: String) =>
+      MeasurementGrossWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add the item’s net weight\?' page$""") {
+    (answer: String) =>
+      MeasurementAddNetWeightPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the item’s net weight\?' page$""") {
+    (answer: String) =>
+      MeasurementNetWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add supplementary units\?' page$""") {
+    (answer: String) =>
+      MeasurementAddSupplementaryUnitsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'How many supplementary units does the item include\?' page$""") {
+    (answer: String) =>
+      MeasurementSupplementaryUnitsPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of package are you using for the item\?' page$""") {
+    (answer: String) =>
+      PackageTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'How many (.*) are you using\?' page$""") {
+    (answer: String, packageValue: String) =>
+      PackagesTypeQuantityPage
+        .loadPage(packageValue)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add a shipping mark\?' page$""") {
+    (answer: String) =>
+      PackagesAddShippingMarkPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the shipping mark\?' page$""") {
+    (answer: String) =>
+      PackagesShippingMarkPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) typ(?:e |es )of package' page$""") {
+    (answer: String, numberOfPackage: String) =>
+      PackagesAddAnotherPage
+        .loadPage(numberOfPackage)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) typ(?:e |es )of packag(?:e |es)' page$""") {
+    (sectionLink: String, numberOfPackage: String) =>
+      PackagesAddAnotherPage
+        .loadPage(numberOfPackage)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove (.*) from this item\?' page$""") {
+    (answer: String, documentTypeToRemove: String) =>
+      RemovePackagePage
+        .loadPage(documentTypeToRemove)
+        .select(answer)
+        .submitPage()
+  }
 }
