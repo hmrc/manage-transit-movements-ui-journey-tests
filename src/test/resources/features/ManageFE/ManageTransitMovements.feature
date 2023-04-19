@@ -115,14 +115,33 @@ Feature: Manage transit movements feature
 #    Then I click on the View errors link for MRN 67QJPVXD78GHIJYQT on the 'Arrival notifications' page
 #    And I should be on the 'Negative acknowledgement' page
 #    And I sign out
-#
-#  @manageA11y
-#  Scenario: 15 - Trader is able to see Control decision for departure declaration
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the View details link for LRN LRN123471 on the 'Departure declarations' page
+
+  @manageA11y
+  Scenario: 15 - Trader is able to see Control decision for departure declaration
+#    IE015 - Declaration Data
+    When I submit a departure declaration
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    Then I see the status Declaration sent on the 'Departure declarations' page
+#    IE928 - Positive Acknowledgement
+    When I submit a positive acknowledgement
+    And I refresh the page
+    Then I see the status Declaration sent on the 'Departure declarations' page
+#    IE028 - MRN Allocated
+    When I submit a MRN allocation
+    And I refresh the page
+#            And I wait for 1000 seconds
+
+    Then I see the status MRN allocated on the 'Departure declarations' page
+#    IE060 - Control Decision Notification
+    When I submit a control decision notification
+    And I refresh the page
+    Then I see the status Goods under control on the 'Departure declarations' page
+
+    And I click on the View details link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
 #    And I should be on the 'Your goods have been selected for control' page
 #    And I sign out
-#
+
 #  @manageA11y
 #  Scenario: 16 - Trader is able to view unloading remarks for negative submission acknowledgement error
 #    When I click on the View arrival notifications link on the 'Manage your transit movements' page

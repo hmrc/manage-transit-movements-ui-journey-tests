@@ -22,6 +22,22 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
 
+  Given("""^(?:I )?submit a departure declaration$""") { () =>
+    ApiHelper.insertDeparture()
+  }
+
+  Given("""^(?:I )?submit a positive acknowledgement$""") { () =>
+    ApiHelper.insertPostiveAcknowledgement()
+  }
+
+  Given("""^(?:I )?submit a MRN allocation$""") { () =>
+    ApiHelper.insertMRNAllocation()
+  }
+
+  Given("""^(?:I )?submit a control decision notification$""") { () =>
+    ApiHelper.insertControlDecision()
+  }
+
   Given("""^(?:I )?submit an arrival notification$""") { () =>
     ApiHelper.insertArrival()
   }
