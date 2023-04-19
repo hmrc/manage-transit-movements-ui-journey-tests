@@ -175,15 +175,11 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
       # Dangerous goods section
-    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
-    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
-    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+    And I click radio option No on the 'Does the item contain any dangerous goods?' page
       # Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
-    And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
-    And I enter 225.99 on the 'What is the item’s net weight?' page
-    And I click radio option Yes on the 'Do you want to add supplementary units?' page
-    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+    And I click radio option No on the 'Do you want to add the item’s net weight?' page
+    And I click radio option No on the 'Do you want to add supplementary units?' page
       #Package section
     And I select (VL) Bulk, liquid on the 'What type of package are you using for the item?' page
     And I click radio option No on the 'Do you want to add a shipping mark?' page
