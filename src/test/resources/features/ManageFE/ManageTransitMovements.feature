@@ -130,14 +130,11 @@ Feature: Manage transit movements feature
 #    IE028 - MRN Allocated
     When I submit a MRN allocation
     And I refresh the page
-#            And I wait for 1000 seconds
-
     Then I see the status MRN allocated on the 'Departure declarations' page
 #    IE060 - Control Decision Notification
     When I submit a control decision notification
     And I refresh the page
     Then I see the status Goods under control on the 'Departure declarations' page
-
     And I click on the View details link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
 #    And I should be on the 'Your goods have been selected for control' page
 #    And I sign out
