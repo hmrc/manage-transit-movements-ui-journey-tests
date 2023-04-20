@@ -177,12 +177,25 @@
         "identificationNumber" : "GB123456789000",
         "addContactYesNo" : false
       }
-    }
+    },
+    "documents" : [
+      {
+        "type" : {
+          "type" : "Transport",
+          "code" : "235",
+          "description" : "Container list"
+        },
+        "details" : {
+          "documentReferenceNumber" : "1234"
+        }
+      }
+    ]
   },
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
     ".routeDetails" : "completed",
-    ".transportDetails" : "completed"
+    ".transportDetails" : "completed",
+    ".documents" : "completed"
   }
 }
