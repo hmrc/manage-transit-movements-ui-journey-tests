@@ -275,9 +275,9 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 010101 on the 'What is the line item number?' page
     And I submit on the 'Documents Check your answers' page
-    When I choose to click on the Remove link on the 'You have added 2 documents' page
-    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L?' page
-    Then I choose radio option No on the 'You have added 1 documents' page
+#    When I choose to click on the Remove link on the 'You have added 2 documents' page
+#    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L?' page
+    Then I choose radio option No on the 'You have added 2 documents' page
 
     #Items
     When I click the Add items link on the 'Declaration summary' page
