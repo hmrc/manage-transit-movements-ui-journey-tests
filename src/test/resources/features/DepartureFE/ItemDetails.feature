@@ -19,6 +19,7 @@ Feature: Item details journey
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
+
     # Dangerous goods section
     And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
     And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
@@ -66,15 +67,16 @@ Feature: Item details journey
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
+
     # Dangerous goods section
-    And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
-    And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
-    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
+    And I click radio option No on the 'Does the item contain any dangerous goods?' page
+
     # Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
     And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
     And I enter 225.99 on the 'What is the item’s net weight?' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
+
     #Package section
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
