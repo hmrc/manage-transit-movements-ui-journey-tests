@@ -296,7 +296,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 100 on the 'What is the item’s gross weight?' page
     And I click radio option Yes on the 'Do you want to add supplementary units?' page
     And I enter 123.99 on the 'How many supplementary units does the item include?' page
-      #Package section
+      #Package section CL182 Yes
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
@@ -447,7 +447,6 @@ Feature: End to end journey for Great Britain office of departure
     Then I should be on the 'Declaration summary' page
 
     # Documents - Transport docs
-
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (235) Container list on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -471,7 +470,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
     And I enter 225.99 on the 'What is the item’s net weight?' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
-      #Package section
+      #Package section CL182 No, CL181 No
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
