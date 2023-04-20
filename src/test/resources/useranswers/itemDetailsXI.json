@@ -168,12 +168,27 @@
         "identificationNumber" : "GB123456789007",
         "addContactYesNo" : false
       }
-    }
+    },
+    "documents" : [
+      {
+        "type" : {
+          "type" : "Support",
+          "code" : "3",
+          "description" : "Certificate of quality"
+        },
+        "details" : {
+          "documentReferenceNumber" : "1234",
+          "addLineItemNumberYesNo" : true,
+          "lineItemNumber" : 54321
+        }
+      }
+    ]
   },
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
     ".routeDetails" : "completed",
-    ".transportDetails" : "completed"
+    ".transportDetails" : "completed",
+    ".documents" : "completed"
   }
 }
