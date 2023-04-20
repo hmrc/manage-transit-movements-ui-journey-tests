@@ -45,6 +45,15 @@ Feature: Item details journey
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
+
+    #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
+    And I select T2L on the 'Which document do you want to attach?' page
+    And I click radio option Yes on the 'You have attached 1 document to this item' page
+    And I select 380 on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 2 document to this item' page
+    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L - 123456 from this item?' document page
+    And I click radio option No on the 'You have attached 1 document to this item' page
     And I sign out
 
 
@@ -81,4 +90,9 @@ Feature: Item details journey
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+
+    #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
+    And I select T2L on the 'Which document do you want to attach?' page
+    And I click radio option No on the 'You have attached 1 document to this item' page
     And I sign out

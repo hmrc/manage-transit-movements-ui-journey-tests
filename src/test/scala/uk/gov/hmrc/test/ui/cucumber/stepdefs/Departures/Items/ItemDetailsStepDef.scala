@@ -252,4 +252,43 @@ class ItemDetailsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to attach any documents to this item\?' page$""") {
+    (answer: String) =>
+      DocumentsAddDocumentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'Which document do you want to attach\?' page$""") {
+    (answer: String) =>
+      DocumentsWhichDocumentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) documen(?:t |ts )to this item' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have attached (.*) documen(?:t |ts )to this item' page$""") {
+    (sectionLink: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*) from this item\?' document page$""") {
+    (answer: String, documentToRemove: String) =>
+      DocumentsRemoveDocumentPage
+        .loadPage(documentToRemove)
+        .select(answer)
+        .submitPage()
+  }
 }
