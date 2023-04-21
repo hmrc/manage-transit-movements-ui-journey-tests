@@ -291,4 +291,59 @@ class ItemDetailsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add an additional reference for this item\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of additional reference do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add an additional reference number\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'Enter the additional reference number' page$""") {
+    (answer: String) =>
+      AdditionalReferenceEnterNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional referenc(?:e' |es' )page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherPage
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional referenc(?:e' |es' )page$""") {
+    (sectionLink: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherPage
+        .loadPage(numberOfReferences)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove additional reference (.*)\?' page$""") {
+    (answer: String, referenceToRemove: String) =>
+      AdditionalReferenceRemovePage
+        .loadPage(referenceToRemove)
+        .select(answer)
+        .submitPage()
+  }
 }

@@ -54,6 +54,20 @@ Feature: Item details journey
     And I click the Remove link on the 'You have attached 2 document to this item' page
     And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L - 123456 from this item?' document page
     And I click radio option No on the 'You have attached 1 document to this item' page
+
+    #Additional Reference section
+    And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
+    #select non C561 or C658
+    And I select (Y023) Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter 12345 on the 'Enter the additional reference number' page
+    And click radio option Yes on the 'You have added 1 additional reference' page
+    #select C561 or C658
+    And I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page
+    And I enter 98765 on the 'Enter the additional reference number' page
+    And I click the Remove link on the 'You have added 2 additional references' page
+    And I click radio option Yes on the 'Are you sure you want to remove additional reference (Y023) Consignee (AEO certificate number)?' page
+    And click radio option No on the 'You have added 1 additional reference' page
     And I sign out
 
 
