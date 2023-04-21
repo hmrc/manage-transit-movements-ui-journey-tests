@@ -183,7 +183,8 @@
         "type" : {
           "type" : "Transport",
           "code" : "235",
-          "description" : "Container list"
+          "description" : "Container list",
+          "uuid" : "8e5a3f69-7d6d-490a-8071-002b1d35d3c1"
         },
         "details" : {
           "documentReferenceNumber" : "1234"
