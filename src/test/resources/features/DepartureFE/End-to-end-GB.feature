@@ -277,9 +277,8 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Documents Check your answers' page
     When I choose to click on the Remove link on the 'You have added 2 documents' page
     And I click radio option Yes on the 'Are you sure you want to remove the (380) Commercial invoice?' page
-#  And I wait for 100000 seconds
 
-  Then I choose radio option No on the 'You have added 1 documents' page
+    Then I choose radio option No on the 'You have added 1 documents' page
     #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
@@ -308,8 +307,6 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
-#    And I wait for 100000 seconds
-
     And I sign out
 
 
