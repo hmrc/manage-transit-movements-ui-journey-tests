@@ -269,7 +269,7 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) documen(?:t |ts )to this item' page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) documents? to this item' page$""") {
     (answer: String, numberOfDocuments: String) =>
       DocumentsAddAnotherPage
         .loadPage(numberOfDocuments)
@@ -277,7 +277,7 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have attached (.*) documen(?:t |ts )to this item' page$""") {
+  And("""^(?:I )?click the (.*) link on the 'You have attached (.*) documents? to this item' page$""") {
     (sectionLink: String, numberOfDocuments: String) =>
       DocumentsAddAnotherPage
         .loadPage(numberOfDocuments)
@@ -324,7 +324,7 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional referenc(?:e' |es' )page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional references?' page$""") {
     (answer: String, numberOfReferences: String) =>
       AdditionalReferenceAddAnotherPage
         .loadPage(numberOfReferences)
@@ -332,7 +332,7 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional referenc(?:e' |es' )page$""") {
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional references?' page$""") {
     (sectionLink: String, numberOfReferences: String) =>
       AdditionalReferenceAddAnotherPage
         .loadPage(numberOfReferences)
