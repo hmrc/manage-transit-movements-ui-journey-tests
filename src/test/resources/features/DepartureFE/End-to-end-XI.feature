@@ -188,4 +188,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select (3) Certificate of quality on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 1 document to this item' page
+    #Additional Reference section
+    And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
+    And I select (Y023) Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option No on the 'Do you want to add an additional reference number?' page
+    And click radio option No on the 'You have added 1 additional reference' page
     And I sign out
