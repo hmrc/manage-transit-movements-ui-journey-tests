@@ -166,7 +166,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 4 guarantees' page
     Then I should be on the 'Declaration summary' page
 
-      ## Transport details
+       # Transport details
     When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page

@@ -214,6 +214,7 @@
           "documentReferenceNumber" : "98765",
           "addLineItemNumberYesNo" : true,
           "lineItemNumber" : 10101
+
         }
       }
     ]
@@ -223,6 +224,7 @@
     ".traderDetails" : "completed",
     ".documents" : "completed",
     ".routeDetails" : "completed",
-    ".transportDetails" : "completed"
+    ".transportDetails" : "completed",
+    ".documents" : "completed"
   }
 }
