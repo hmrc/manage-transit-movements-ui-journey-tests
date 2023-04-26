@@ -171,15 +171,41 @@
     },
     "documents" : [
       {
-        "type" : {
-          "type" : "Support",
-          "code" : "3",
-          "description" : "Certificate of quality"
+        "previousDocumentType" : {
+          "type" : "Previous",
+          "code" : "T2L",
+          "description" : "T2L"
         },
         "details" : {
-          "documentReferenceNumber" : "1234",
+          "documentReferenceNumber" : "123456",
+          "addGoodsItemNumberYesNo" : true,
+          "goodsItemNumber" : 123456,
+          "addTypeOfPackageYesNo" : true,
+          "packageType" : {
+            "code" : "BG",
+            "description" : "Bag"
+          },
+          "addNumberOfPackagesYesNo" : true,
+          "numberOfPackages" : 50,
+          "declareQuantityOfGoodsYesNo" : true,
+          "metric" : {
+            "code" : "GRM",
+            "description" : "Gram"
+          },
+          "quantity" : 1500
+        }
+      },
+      {
+        "type" : {
+          "type" : "Support",
+          "code" : "380",
+          "description" : "Commercial invoice"
+        },
+        "details" : {
+          "documentReferenceNumber" : "98765",
           "addLineItemNumberYesNo" : true,
-          "lineItemNumber" : 54321
+          "lineItemNumber" : 10101
+
         }
       }
     ]
@@ -188,7 +214,8 @@
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
     ".routeDetails" : "completed",
-    ".transportDetails" : "completed",
-    ".documents" : "completed"
+    ".documents" : "completed",
+    ".transportDetails" : "completed"
+
   }
 }
