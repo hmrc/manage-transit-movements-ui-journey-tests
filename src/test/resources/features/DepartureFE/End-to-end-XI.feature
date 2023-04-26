@@ -184,4 +184,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select (VL) Bulk, liquid on the 'What type of package are you using for the item?' page
     And I click radio option No on the 'Do you want to add a shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+      #Documents section
+    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+    #Additional Reference section
+    And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     And I sign out

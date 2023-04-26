@@ -166,7 +166,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 4 guarantees' page
     Then I should be on the 'Declaration summary' page
 
-      ## Transport details
+       # Transport details
     When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page
@@ -276,8 +276,12 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 010101 on the 'What is the line item number?' page
     And I submit on the 'Documents Check your answers' page
     When I choose to click on the Remove link on the 'You have added 2 documents' page
-    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L?' page
-    Then I choose radio option No on the 'You have added 1 documents' page
+    And I click radio option Yes on the 'Are you sure you want to remove the (380) Commercial invoice?' page
+    And I choose radio option Yes on the 'You have added 1 document' page
+    Then I select (235) Container list on the 'What type of document do you want to add?' page
+    And I enter 1234 on the 'What is the document’s reference number?' page
+    And I submit on the 'Documents Check your answers' page
+    Then I choose radio option No on the 'You have added 2 documents' page
 
     #Items
     When I click the Add items link on the 'Declaration summary' page
@@ -307,6 +311,27 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
+    #Documents Section -T2 skips Yes/No to add document
+    And I select T2L on the 'Which document do you want to attach?' page
+    And I click radio option Yes on the 'You have attached 1 document to this item' page
+    And I select (235) Container list on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 2 document to this item' page
+    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L - 1234 from this item?' document page
+    And I click radio option No on the 'You have attached 1 document to this item' page
+
+    #Additional Reference Section
+    And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
+    #select non C561 or C658
+    And I select (Y023) Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter 12345 on the 'Enter the additional reference number' page
+    And click radio option Yes on the 'You have added 1 additional reference' page
+    #select C561 or C658
+    And I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page
+    And I enter 98765 on the 'Enter the additional reference number' page
+    And I click the Remove link on the 'You have added 2 additional references' page
+    And I click radio option Yes on the 'Are you sure you want to remove additional reference 1?' page
+    And click radio option No on the 'You have added 1 additional reference' page
     And I sign out
 
 
@@ -474,5 +499,9 @@ Feature: End to end journey for Great Britain office of departure
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+    #Documents section
+    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+    #Additional Reference section
+    And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     And I sign out
 

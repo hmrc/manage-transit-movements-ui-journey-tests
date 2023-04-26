@@ -168,12 +168,54 @@
         "identificationNumber" : "GB123456789007",
         "addContactYesNo" : false
       }
-    }
+    },
+    "documents" : [
+      {
+        "previousDocumentType" : {
+          "type" : "Previous",
+          "code" : "T2L",
+          "description" : "T2L"
+        },
+        "details" : {
+          "documentReferenceNumber" : "123456",
+          "addGoodsItemNumberYesNo" : true,
+          "goodsItemNumber" : 123456,
+          "addTypeOfPackageYesNo" : true,
+          "packageType" : {
+            "code" : "BG",
+            "description" : "Bag"
+          },
+          "addNumberOfPackagesYesNo" : true,
+          "numberOfPackages" : 50,
+          "declareQuantityOfGoodsYesNo" : true,
+          "metric" : {
+            "code" : "GRM",
+            "description" : "Gram"
+          },
+          "quantity" : 1500
+        }
+      },
+      {
+        "type" : {
+          "type" : "Support",
+          "code" : "380",
+          "description" : "Commercial invoice"
+        },
+        "details" : {
+          "documentReferenceNumber" : "98765",
+          "addLineItemNumberYesNo" : true,
+          "lineItemNumber" : 10101
+
+        }
+      }
+    ]
   },
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
     ".routeDetails" : "completed",
+    ".documents" : "completed",
     ".transportDetails" : "completed"
+
   }
 }

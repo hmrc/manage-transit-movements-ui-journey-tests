@@ -252,4 +252,98 @@ class ItemDetailsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to attach any documents to this item\?' page$""") {
+    (answer: String) =>
+      DocumentsAddDocumentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'Which document do you want to attach\?' page$""") {
+    (answer: String) =>
+      DocumentsWhichDocumentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) documents? to this item' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have attached (.*) documents? to this item' page$""") {
+    (sectionLink: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*) from this item\?' document page$""") {
+    (answer: String, documentToRemove: String) =>
+      DocumentsRemoveDocumentPage
+        .loadPage(documentToRemove)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add an additional reference for this item\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of additional reference do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add an additional reference number\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'Enter the additional reference number' page$""") {
+    (answer: String) =>
+      AdditionalReferenceEnterNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional references?' page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherPage
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional references?' page$""") {
+    (sectionLink: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherPage
+        .loadPage(numberOfReferences)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove additional reference (.*)\?' page$""") {
+    (answer: String, referenceToRemove: String) =>
+      AdditionalReferenceRemovePage
+        .loadPage(referenceToRemove)
+        .select(answer)
+        .submitPage()
+  }
 }
