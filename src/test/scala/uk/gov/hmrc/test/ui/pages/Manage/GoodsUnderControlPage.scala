@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Manage
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object ControlDecisionPage extends Page {
+object GoodsUnderControlPage extends Page {
 
-   override def title(args: String*): String = "Your goods have been selected for control"
+   override def title(args: String*): String = "Goods under control"
 
 }

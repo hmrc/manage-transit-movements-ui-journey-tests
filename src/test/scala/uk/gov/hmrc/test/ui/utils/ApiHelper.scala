@@ -222,6 +222,81 @@ object ApiHelper extends HttpClient {
     post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
   }
 
+  def insertControlDecisionNoDocuments(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+
+    val xmlStr =
+      <ncts:CC060C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+        <messageSender>token</messageSender>
+        <messageRecipient>token</messageRecipient>
+        <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+        <messageIdentification>token</messageIdentification>
+        <messageType>CC060C</messageType>
+        <!--Optional:-->
+        <correlationIdentifier>token</correlationIdentifier>
+        <TransitOperation>
+          <!--Optional:-->
+          <LRN>qvRcL</LRN>
+          <!--Optional:-->
+          <MRN>28BDU7NB98LCWXLNM2</MRN>
+          <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
+          <notificationType>0</notificationType>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>GB000060</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <HolderOfTheTransitProcedure>
+          <!--Optional:-->
+          <identificationNumber>string</identificationNumber>
+          <!--Optional:-->
+          <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+          <!--Optional:-->
+          <name>string</name>
+          <!--Optional:-->
+          <Address>
+            <streetAndNumber>string</streetAndNumber>
+            <!--Optional:-->
+            <postcode>string</postcode>
+            <city>string</city>
+            <country>st</country>
+          </Address>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <Representative>
+          <identificationNumber>string</identificationNumber>
+          <status>token</status>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </Representative>
+        <!--0 to 99 repetitions:-->
+        <TypeOfControls>
+          <sequenceNumber>1</sequenceNumber>
+          <type>42</type>
+          <!--Optional:-->
+          <text>string</text>
+        </TypeOfControls>
+        <TypeOfControls>
+          <sequenceNumber>2</sequenceNumber>
+          <type>44</type>
+          <!--Optional:-->
+          <text>string</text>
+        </TypeOfControls>
+      </ncts:CC060C>.mkString
+
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
+  }
 
   def insertArrival(): Unit = {
     val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-outbound"
