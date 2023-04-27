@@ -26,6 +26,8 @@ object World {
   var bearerToken: String = ""
   var sessionId: String = ""
   var arrivalId: String   = ""
+  var departureId: String   = ""
+  var lrn: String = ""
 }
 
 class LoginStepDef extends BaseStepDef {

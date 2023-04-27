@@ -23,11 +23,280 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 object ApiHelper extends HttpClient {
 
   val arrivalIdIndex: Int = 10
+  val departureIdIndex: Int = 10
 
   private def headers: Seq[(String, String)] = Seq(
     ("Accept", "application/vnd.hmrc.2.0+json"),
     ("Authorization", World.bearerToken)
   )
+
+
+  def insertDeparture(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-outbound"
+
+    val xmlStr =
+      <ncts:CC015C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+        <messageSender>token</messageSender>
+        <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
+        <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
+        <messageIdentification>6Onxa3En</messageIdentification>
+        <messageType>CC015C</messageType>
+        <TransitOperation>
+          <LRN>83LU49243708J1I4B5A2NM</LRN>
+          <declarationType>Pbg</declarationType>
+          <additionalDeclarationType>O</additionalDeclarationType>
+          <security>8</security>
+          <reducedDatasetIndicator>1</reducedDatasetIndicator>
+          <bindingItinerary>0</bindingItinerary>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>GB123456</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <CustomsOfficeOfDestinationDeclared>
+          <referenceNumber>ZQZ20442</referenceNumber>
+        </CustomsOfficeOfDestinationDeclared>
+        <HolderOfTheTransitProcedure>
+          <identificationNumber>SFzsisksA</identificationNumber>
+        </HolderOfTheTransitProcedure>
+        <Guarantee>
+          <sequenceNumber>48711</sequenceNumber>
+          <guaranteeType>1</guaranteeType>
+          <otherGuaranteeReference>1qJMA6MbhnnrOJJjHBHX</otherGuaranteeReference>
+        </Guarantee>
+        <Consignment>
+          <grossMass>6430669292.48125</grossMass>
+          <HouseConsignment>
+            <sequenceNumber>48711</sequenceNumber>
+            <grossMass>6430669292.48125</grossMass>
+            <ConsignmentItem>
+              <goodsItemNumber>18914</goodsItemNumber>
+              <declarationGoodsItemNumber>1458</declarationGoodsItemNumber>
+              <Commodity>
+                <descriptionOfGoods>ZMyM5HTSTnLqT5FT9aHXwScqXKC1VitlWeO5gs91cVXBXOB8xBdXG5aGhG9VFjjDGiraIETFfbQWeA7VUokO7ngDOrKZ23ccKKMA6C3GpXciUTt9nS2pzCFFFeg4BXdkIe</descriptionOfGoods>
+              </Commodity>
+              <Packaging>
+                <sequenceNumber>48711</sequenceNumber>
+                <typeOfPackages>Oi</typeOfPackages>
+              </Packaging>
+            </ConsignmentItem>
+          </HouseConsignment>
+        </Consignment>
+      </ncts:CC015C>.mkString
+
+    val response: StandaloneWSResponse = post(url, xmlStr, headers)
+    World.departureId = response.body.split("/")(departureIdIndex)
+  }
+
+  def insertPostiveAcknowledgement(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+
+    val xmlStr =
+      <ns2:CC928C xmlns:ns2="http://ncts.dgtaxud.ec" PhaseID="NCTS5.1">
+        <messageSender>NTA.LU</messageSender>
+        <messageRecipient>LU11868245</messageRecipient>
+        <preparationDateAndTime>2021-10-19T06:44:30</preparationDateAndTime>
+        <messageIdentification>5b839278095847eb830e48965a68d4b2</messageIdentification>
+        <messageType>CC928C</messageType>
+        <TransitOperation>
+          <LRN>83LU49243708J1I4B5A2NM</LRN>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>LU715000</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <HolderOfTheTransitProcedure>
+          <identificationNumber>LU14900721</identificationNumber>
+        </HolderOfTheTransitProcedure>
+      </ns2:CC928C>.mkString
+
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE928"))
+  }
+
+  def insertMRNAllocation(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+
+    val xmlStr =
+      <ncts:CC028C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+        <messageSender>token</messageSender>
+        <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
+        <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+        <messageIdentification>6Onxa3En</messageIdentification>
+        <messageType>CC057C</messageType>
+        <correlationIdentifier>co-id-1</correlationIdentifier>
+        <TransitOperation>
+          <MRN>28BDU7NB98LCWXLNM2</MRN>
+          <declarationAcceptanceDate>2022-12-25</declarationAcceptanceDate>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>2</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <HolderOfTheTransitProcedure>
+          <identificationNumber>Fzsisks</identificationNumber>
+          <TIRHolderIdentificationNumber>trp-id-1</TIRHolderIdentificationNumber>
+          <name>Jean Doe</name>
+          <Address>
+            <streetAndNumber>1 avenue marceau</streetAndNumber>
+            <postcode>10006</postcode>
+            <city>Paris</city>
+            <country>FR</country>
+          </Address>
+        </HolderOfTheTransitProcedure>
+      </ncts:CC028C>.mkString
+
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE028"))
+  }
+
+  def insertControlDecision(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+
+    val xmlStr =
+      <ncts:CC060C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+        <messageSender>token</messageSender>
+        <messageRecipient>token</messageRecipient>
+        <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+        <messageIdentification>token</messageIdentification>
+        <messageType>CC060C</messageType>
+        <!--Optional:-->
+        <correlationIdentifier>token</correlationIdentifier>
+        <TransitOperation>
+          <!--Optional:-->
+          <LRN>string</LRN>
+          <!--Optional:-->
+          <MRN>string</MRN>
+          <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
+          <notificationType>token</notificationType>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>stringst</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <HolderOfTheTransitProcedure>
+          <!--Optional:-->
+          <identificationNumber>string</identificationNumber>
+          <!--Optional:-->
+          <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+          <!--Optional:-->
+          <name>string</name>
+          <!--Optional:-->
+          <Address>
+            <streetAndNumber>string</streetAndNumber>
+            <!--Optional:-->
+            <postcode>string</postcode>
+            <city>string</city>
+            <country>st</country>
+          </Address>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <Representative>
+          <identificationNumber>string</identificationNumber>
+          <status>token</status>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </Representative>
+        <!--0 to 99 repetitions:-->
+        <TypeOfControls>
+          <sequenceNumber>token</sequenceNumber>
+          <type>str</type>
+          <!--Optional:-->
+          <text>string</text>
+        </TypeOfControls>
+        <!--0 to 99 repetitions:-->
+        <RequestedDocument>
+          <sequenceNumber>token</sequenceNumber>
+          <documentType>token</documentType>
+          <!--Optional:-->
+          <description>string</description>
+        </RequestedDocument>
+      </ncts:CC060C>.mkString
+
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
+  }
+
+  def insertControlDecisionNoDocuments(): Unit = {
+    val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+
+    val xmlStr =
+      <ncts:CC060C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+        <messageSender>token</messageSender>
+        <messageRecipient>token</messageRecipient>
+        <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+        <messageIdentification>token</messageIdentification>
+        <messageType>CC060C</messageType>
+        <!--Optional:-->
+        <correlationIdentifier>token</correlationIdentifier>
+        <TransitOperation>
+          <!--Optional:-->
+          <LRN>qvRcL</LRN>
+          <!--Optional:-->
+          <MRN>28BDU7NB98LCWXLNM2</MRN>
+          <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
+          <notificationType>0</notificationType>
+        </TransitOperation>
+        <CustomsOfficeOfDeparture>
+          <referenceNumber>GB000060</referenceNumber>
+        </CustomsOfficeOfDeparture>
+        <HolderOfTheTransitProcedure>
+          <!--Optional:-->
+          <identificationNumber>string</identificationNumber>
+          <!--Optional:-->
+          <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+          <!--Optional:-->
+          <name>string</name>
+          <!--Optional:-->
+          <Address>
+            <streetAndNumber>string</streetAndNumber>
+            <!--Optional:-->
+            <postcode>string</postcode>
+            <city>string</city>
+            <country>st</country>
+          </Address>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <Representative>
+          <identificationNumber>string</identificationNumber>
+          <status>token</status>
+          <!--Optional:-->
+          <ContactPerson>
+            <name>string</name>
+            <phoneNumber>token</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string</eMailAddress>
+          </ContactPerson>
+        </Representative>
+        <!--0 to 99 repetitions:-->
+        <TypeOfControls>
+          <sequenceNumber>1</sequenceNumber>
+          <type>42</type>
+          <!--Optional:-->
+          <text>string</text>
+        </TypeOfControls>
+        <TypeOfControls>
+          <sequenceNumber>2</sequenceNumber>
+          <type>44</type>
+          <!--Optional:-->
+          <text>string</text>
+        </TypeOfControls>
+      </ncts:CC060C>.mkString
+
+    post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
+  }
 
   def insertArrival(): Unit = {
     val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-outbound"

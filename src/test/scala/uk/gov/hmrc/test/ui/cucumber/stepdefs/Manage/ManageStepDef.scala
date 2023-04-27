@@ -22,11 +22,32 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
 
-  Given("""^(?:I )?submit an arrival notification$""") { () =>
+  Given("""^(?:I )?submit a departure declaration IE015$""") { () =>
+    ApiHelper.insertDeparture()
+  }
+
+  Given("""^(?:I )?submit a positive acknowledgement$ IE928""") { () =>
+    ApiHelper.insertPostiveAcknowledgement()
+  }
+
+  Given("""^(?:I )?submit a MRN allocation IE028$""") { () =>
+    ApiHelper.insertMRNAllocation()
+  }
+
+  Given("""^(?:I )?submit a control decision notification IE060 with documents$""") { () =>
+    ApiHelper.insertControlDecision()
+  }
+
+  Given("""^(?:I )?submit a control decision notification IE060 with no documents$""") { () =>
+    ApiHelper.insertControlDecisionNoDocuments()
+  }
+
+
+  Given("""^(?:I )?submit an arrival notification IE007$""") { () =>
     ApiHelper.insertArrival()
   }
 
-  Given("""^(?:I )?submit an unloading permission with seals$""") { () =>
+  Given("""^(?:I )?submit an unloading permission IE043 with seals$""") { () =>
     ApiHelper.insertUnloadingPermissionWithSeals()
   }
 
@@ -63,8 +84,13 @@ class ManageStepDef extends BaseStepDef {
   }
 
 
-  Then("""^(?:I )?should be on the 'Your goods have been selected for control' page$""") { () =>
-    ControlDecisionPage
+  Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
+    GoodsUnderControlDocumentsRequestedPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Goods under control' page$""") { () =>
+    GoodsUnderControlPage
       .loadPage()
   }
 

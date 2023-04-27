@@ -56,6 +56,9 @@ trait BasePage extends BrowserDriver with Matchers {
     dropCollection("transit-movements", "movements")
   }
 
+  def findSiblingByText(text: String): WebElement =
+    driver.findElement(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))
+
   def deleteCookies(): Unit = {
     println("============================Clearing cookies")
     driver.manage().deleteAllCookies()
