@@ -74,7 +74,7 @@ Feature: Item details journey
     # Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
     And I click radio option Yes on the 'Do you want to add the item’s net weight?' page
-    And I enter 225.99 on the 'What is the item’s net weight?' page
+    And I enter 25.99 on the 'What is the item’s net weight?' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
 
     #Package section
