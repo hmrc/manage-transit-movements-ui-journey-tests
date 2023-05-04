@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 #Depending on the OS of your device, change the value of OS appropriately
-OS="linux64"
+#OS="linux64"
 #OS="mac64"
+OS="mac_arm64"
 
 #These match the configuration on Jenkins - you should only have to adjust these values when the platform makes changes
 #Line below commented out as currently pointing to wrong version. Check the version before uncommenting.
