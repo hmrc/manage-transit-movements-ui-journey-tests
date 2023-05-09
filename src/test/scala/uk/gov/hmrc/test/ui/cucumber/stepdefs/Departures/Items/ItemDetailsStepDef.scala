@@ -339,10 +339,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove additional reference (.*)\?' page$""") {
-    (answer: String, referenceToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional reference\?' page$""") {
+    (answer: String) =>
       AdditionalReferenceRemovePage
-        .loadPage(referenceToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }

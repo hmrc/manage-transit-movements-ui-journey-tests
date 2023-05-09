@@ -330,7 +330,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page
     And I enter 98765 on the 'Enter the additional reference number' page
     And I click the Remove link on the 'You have added 2 additional references' page
-    And I click radio option Yes on the 'Are you sure you want to remove additional reference 1?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And click radio option No on the 'You have added 1 additional reference' page
     And I sign out
 
