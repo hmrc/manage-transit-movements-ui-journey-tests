@@ -346,4 +346,35 @@ class ItemDetailsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the (.*) page$""") {
+    (answer: String, pageName: String) =>
+      AdditionalReferenceAddAnotherPage
+        .loadPage(pageName)
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?select (.+) on the '(.*)' page$""") {
+    (answer: String,pageName: String) =>
+      AdditionalReferenceTypePage
+        .loadPage(pageName)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the '(.*)' page$""") {
+    (answer: String) =>
+      AdditionalReferenceEnterNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the '(.*)' page$""") {
+    (sectionLink: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
+  }
+
 }
