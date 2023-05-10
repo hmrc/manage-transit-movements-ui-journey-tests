@@ -22,8 +22,8 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
 
-  Given("""^(?:I )?submit a departure declaration IE015$""") { () =>
-    ApiHelper.insertDeparture()
+  Given("""^(?:I )?submit a (.+)$""") { (filename: String) =>
+    ApiHelper.insertXML(filename)
   }
 
   Given("""^(?:I )?submit a positive acknowledgement$ IE928""") { () =>
@@ -34,9 +34,9 @@ class ManageStepDef extends BaseStepDef {
     ApiHelper.insertMRNAllocation()
   }
 
-  Given("""^(?:I )?submit a control decision notification IE060 with documents$""") { () =>
-    ApiHelper.insertControlDecision()
-  }
+//  Given("""^(?:I )?submit a control decision notification IE060 with documents$""") { () =>
+//    ApiHelper.insertControlDecision()
+//  }
 
   Given("""^(?:I )?submit a control decision notification IE060 with no documents$""") { () =>
     ApiHelper.insertControlDecisionNoDocuments()

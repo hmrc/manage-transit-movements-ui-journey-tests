@@ -25,8 +25,8 @@ Feature: Manage transit movements feature
 
   @manageA11y
   Scenario: 03 - Trader is able to see a control decision notification IE060 with documents
-    When I submit a departure declaration IE015
-    Then I submit a control decision notification IE060 with documents
+    When I submit a Departure Declaration IE015
+    Then I submit a Control Decision Notification IE060 With Documents
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View details link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
