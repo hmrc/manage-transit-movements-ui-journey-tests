@@ -51,6 +51,17 @@ class ManageStepDef extends BaseStepDef {
     ApiHelper.insertUnloadingPermissionWithSeals()
   }
 
+  Given("""^(?:I )?submit a rejection IE056 with amendable errors$""") { () =>
+    ApiHelper.insertRejectionAmendable()
+  }
+
+  Given("""^(?:I )?submit a rejection IE056 with more than 10 errors$""") { () =>
+    ApiHelper.insertRejectionMoreThan10Errors()
+  }
+
+  Given("""^(?:I )?submit a rejection IE056 with no amendable errors$""") { () =>
+    ApiHelper.insertRejectionNonAmendable()
+  }
 
   Then("""^(?:I )?should be on the 'Manage your transit movements' page$""") { () =>
     ManageTransitMovementsPage
@@ -68,10 +79,7 @@ class ManageStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'There is a problem with this departure declaration' page$""") { () =>
-    DepartureDeclarationFailPage
-      .loadPage()
-  }
+
 
   Then("""^(?:I )?should be on the 'No release for transit' page$""") { () =>
     NoReleaseForTransitPage
