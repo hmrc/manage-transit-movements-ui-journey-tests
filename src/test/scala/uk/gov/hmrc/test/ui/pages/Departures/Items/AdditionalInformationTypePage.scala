@@ -16,9 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Items
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object AdditionalReferenceRemovePage extends YesNoPage {
+object AdditionalInformationTypePage extends SelectPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove this additional reference?")
+  override def title(args: String*): String = "What type of additional information do you want to add?"
+
 }

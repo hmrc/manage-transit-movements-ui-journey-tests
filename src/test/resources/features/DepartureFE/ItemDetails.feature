@@ -66,18 +66,19 @@ Feature: Item details journey
     And I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page
     And I enter 98765 on the 'Enter the additional reference number' page
     And I click the Remove link on the 'You have added 2 additional references' page
-    And I click radio option Yes on the 'Are you sure you want to remove additional reference 1?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And click radio option No on the 'You have added 1 additional reference' page
     #Additiaonl information section
     And I click radio option Yes on the 'Do you want to add any additional information for this item?' page
     And I select (20300) Export on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
-    And click radio option Yes on the 'You have added 1 additional information' page
+    And I click radio option Yes on the 'You have added 1 additional information' page
     And I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
     And I click the Remove link on the 'You have added 2 additional information' page
-    And I click radio option Yes on the 'Are you sure you want to remove additional information?' page
-    And click radio option No on the 'You have added 1 additional information' page
+    And I click radio option Yes on 'Do you want to add any additional information for this item?' page
+    And I click radio option No on the 'You have added 1 additional information' page
+    #Items Summary page
     And I submit the 'Check your answers' page
     And I click the Remove link on the 'You have added 1 item' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
@@ -123,5 +124,9 @@ Feature: Item details journey
 
     #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
-
+    #Additional Information
+    And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    #Items Summary
+    And I submit the 'Check your answers' page
+    And I click radio option No on the 'You have added 1 item' page
     And I sign out
