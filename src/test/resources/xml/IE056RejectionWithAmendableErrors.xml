@@ -1,0 +1,115 @@
+<ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+    <messageSender>token</messageSender>
+    <messageRecipient>token</messageRecipient>
+    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageIdentification>token</messageIdentification>
+    <messageType>CC056C</messageType>
+    <!--Optional:-->
+    <correlationIdentifier>token</correlationIdentifier>
+    <TransitOperation>
+        <!--Optional:-->
+        <LRN>string</LRN>
+        <!--Optional:-->
+        <MRN>string</MRN>
+        <businessRejectionType>token</businessRejectionType>
+        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
+        <rejectionCode>token</rejectionCode>
+        <!--Optional:-->
+        <rejectionReason>string</rejectionReason>
+    </TransitOperation>
+    <CustomsOfficeOfDeparture>
+        <referenceNumber>stringst</referenceNumber>
+    </CustomsOfficeOfDeparture>
+    <HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <identificationNumber>string</identificationNumber>
+        <!--Optional:-->
+        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+        <!--Optional:-->
+        <name>string</name>
+        <!--Optional:-->
+        <Address>
+            <streetAndNumber>string</streetAndNumber>
+            <!--Optional:-->
+            <postcode>string</postcode>
+            <city>string</city>
+            <country>st</country>
+        </Address>
+    </HolderOfTheTransitProcedure>
+    <!--Optional:-->
+    <Representative>
+        <identificationNumber>string</identificationNumber>
+        <status>token</status>
+    </Representative>
+    <!--0 to 9999 repetitions:-->
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>12</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>15</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>50</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>51</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>52</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>90</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>92</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+</ncts:CC056C>

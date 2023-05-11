@@ -25,8 +25,8 @@ Feature: Manage transit movements feature
 
   @manageA11y
   Scenario: 03 - Trader is able to see a control decision notification IE060 with documents
-    When I submit a Departure Declaration IE015
-    Then I submit a Control Decision Notification IE060 With Documents
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE060 Control Decision Notification With Documents
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View details link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
@@ -35,8 +35,8 @@ Feature: Manage transit movements feature
 
 
   Scenario: 04 - Trader is able to see a control decision notification IE060 with no documents
-    When I submit a departure declaration IE015
-    Then I submit a control decision notification IE060 with no documents
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE060 Control Decision Notification With No Documents
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View details link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
@@ -46,8 +46,8 @@ Feature: Manage transit movements feature
   #CTCP-2795 <=10 Non-amendable
   @manageA11y
   Scenario: 05 - Trader is able to review a declaration error for a departure declaration
-    When I submit a departure declaration IE015
-    Then I submit a rejection IE056 with no amendable errors
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE056 Rejection With No Amendable Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
@@ -57,8 +57,8 @@ Feature: Manage transit movements feature
 #CTCP-2796 <=10 Amendable
   @manageA11y
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
-    When I submit a departure declaration IE015
-    Then I submit a rejection IE056 with amendable errors
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE056 Rejection With Amendable Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
@@ -69,8 +69,8 @@ Feature: Manage transit movements feature
   #CTCP-2892 <=10 Errors
   @manageA11y
   Scenario: 07 - Trader is able to amend a declaration error for a departure declaration
-    When I submit a departure declaration IE015
-    Then I submit a rejection IE056 with more than 10 errors
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE056 Rejection With More Than 10 Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
