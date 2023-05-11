@@ -187,6 +187,7 @@
         },
         "details" : {
           "documentReferenceNumber" : "123456",
+          "uuid" : "1794d93b-17d5-44fe-a18d-aaa2059d06fe",
           "addGoodsItemNumberYesNo" : true,
           "goodsItemNumber" : 123456,
           "addTypeOfPackageYesNo" : true,
@@ -212,6 +213,7 @@
         },
         "details" : {
           "documentReferenceNumber" : "98765",
+          "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02a",
           "addLineItemNumberYesNo" : true,
           "lineItemNumber" : 10101
 
