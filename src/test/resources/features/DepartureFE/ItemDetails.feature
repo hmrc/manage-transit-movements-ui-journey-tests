@@ -80,7 +80,37 @@ Feature: Item details journey
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
     And I submit the 'Check your answers' page
-    And I click the Remove link on the 'You have added 1 item' page
+    And I click radio option Yes on the 'You have added 1 item' page
+    #Add another Item
+    And I enter This is a description on the 'Enter a description of item 2' page
+    And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
+    And I select Italy on the 'What is the item’s country of destination?' page
+    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
+    And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I enter ABC123 on the 'What is the commodity code?' page
+    # Dangerous goods section
+    And I click radio option No on the 'Does the item contain any dangerous goods?' page
+
+    # Measurement section
+    And I enter 100 on the 'What is the item’s gross weight?' page
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+
+    #Package section
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter This is a description on the 'What is the shipping mark?' page
+    And I click radio option No on the 'You have added 1 type of package' page
+
+    #Documents section
+    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+
+    #Additional Reference section
+    And I click radio option No on the 'Do you want to add an additional reference for this item?' page
+    #Additional Information
+    And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    #Items Summary
+    And I submit the 'Check your answers' page
+    And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I sign out
 

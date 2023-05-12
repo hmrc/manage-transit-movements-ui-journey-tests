@@ -332,7 +332,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 additional references' page
     And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And click radio option No on the 'You have added 1 additional reference' page
-     #Additiaonl information section
+    #Additiaonl information section
     And I click radio option Yes on the 'Do you want to add any additional information for this item?' page
     And I select (20300) Export on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
@@ -344,11 +344,41 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
     And I submit the 'Check your answers' page
-    And I click the Remove link on the 'You have added 1 item' page
+    And I click radio option Yes on the 'You have added 1 item' page
+    #Add another Item
+    And I enter This is a description on the 'Enter a description of item 2' page
+    And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I enter ABC123 on the 'What is the commodity code?' page
+    # Dangerous goods section
+    And I click radio option No on the 'Does the item contain any dangerous goods?' page
+
+    # Measurement section
+    And I enter 100 on the 'What is the item’s gross weight?' page
+    And I click radio option Yes on the 'Do you want to add supplementary units?' page
+    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+
+    #Package section
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter This is a description on the 'What is the shipping mark?' page
+    And I click radio option No on the 'You have added 1 type of package' page
+
+    #Documents section
+    And I select T2L on the 'Which document do you want to attach?' page
+    And I click radio option Yes on the 'You have attached 1 document to this item' page
+    And I select (235) Container list on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 2 document to this item' page
+    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L - 1234 from this item?' document page
+    And I click radio option No on the 'You have attached 1 document to this item' page
+
+    #Additional Reference section
+    And I click radio option No on the 'Do you want to add an additional reference for this item?' page
+    #Additional Information
+    And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    #Items Summary
+    And I submit the 'Check your answers' page
+    And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I sign out
-
-
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level

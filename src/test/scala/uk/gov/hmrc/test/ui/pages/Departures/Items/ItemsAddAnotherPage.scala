@@ -22,6 +22,6 @@ object ItemsAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => "You have added 1 item"
-    case _        => String.format("You have added %s documents", args: _*)
+    case _        => String.format("You have added %s items", args: _*)
   }
 }
