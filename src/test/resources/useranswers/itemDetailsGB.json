@@ -224,7 +224,6 @@
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
-    ".documents" : "completed",
     ".routeDetails" : "completed",
     ".transportDetails" : "completed",
     ".documents" : "completed"

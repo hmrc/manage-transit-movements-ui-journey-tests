@@ -216,8 +216,7 @@
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
     ".routeDetails" : "completed",
-    ".documents" : "completed",
-    ".transportDetails" : "completed"
-
+    ".transportDetails" : "completed",
+    ".documents" : "completed"
   }
 }
