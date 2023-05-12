@@ -41,44 +41,9 @@
     </Representative>
     <!--0 to 9999 repetitions:-->
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
+        <errorPointer>/CC015C/Consignment/countryOfDispatch</errorPointer>
         <errorCode>14</errorCode>
         <errorReason>There was an error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was another error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>There was a violation on a submitted codelist</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
-        <errorCode>15</errorCode>
-        <errorReason>Value appeared when it should'nt have been possible</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
