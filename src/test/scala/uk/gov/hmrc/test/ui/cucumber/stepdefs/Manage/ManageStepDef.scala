@@ -22,35 +22,9 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
 
-  Given("""^(?:I )?submit a departure declaration IE015$""") { () =>
-    ApiHelper.insertDeparture()
+  Given("""^(?:I )?submit an (.+)$""") { (filename: String) =>
+    ApiHelper.insertXML(filename)
   }
-
-  Given("""^(?:I )?submit a positive acknowledgement$ IE928""") { () =>
-    ApiHelper.insertPostiveAcknowledgement()
-  }
-
-  Given("""^(?:I )?submit a MRN allocation IE028$""") { () =>
-    ApiHelper.insertMRNAllocation()
-  }
-
-  Given("""^(?:I )?submit a control decision notification IE060 with documents$""") { () =>
-    ApiHelper.insertControlDecision()
-  }
-
-  Given("""^(?:I )?submit a control decision notification IE060 with no documents$""") { () =>
-    ApiHelper.insertControlDecisionNoDocuments()
-  }
-
-
-  Given("""^(?:I )?submit an arrival notification IE007$""") { () =>
-    ApiHelper.insertArrival()
-  }
-
-  Given("""^(?:I )?submit an unloading permission IE043 with seals$""") { () =>
-    ApiHelper.insertUnloadingPermissionWithSeals()
-  }
-
 
   Then("""^(?:I )?should be on the 'Manage your transit movements' page$""") { () =>
     ManageTransitMovementsPage
@@ -68,11 +42,6 @@ class ManageStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'There is a problem with this departure declaration' page$""") { () =>
-    DepartureDeclarationFailPage
-      .loadPage()
-  }
-
   Then("""^(?:I )?should be on the 'No release for transit' page$""") { () =>
     NoReleaseForTransitPage
       .loadPage()
@@ -82,7 +51,6 @@ class ManageStepDef extends BaseStepDef {
     NegativeAcknowledgementPage
       .loadPage()
   }
-
 
   Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
     GoodsUnderControlDocumentsRequestedPage

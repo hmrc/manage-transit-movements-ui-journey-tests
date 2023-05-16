@@ -1,0 +1,403 @@
+{
+  "data" : {
+    "preTaskList" : {
+      "officeOfDeparture" : {
+        "id" : "GB000068",
+        "name" : "Basildon Helipad",
+        "phoneNumber" : "+44(0)126 856 1234",
+        "isInCL112" : true,
+        "isInCL147" : false
+      },
+      "procedureType" : "simplified",
+      "declarationType" : "T2",
+      "securityDetailsType" : "exitSummaryDeclaration",
+      "detailsConfirmed" : true
+    },
+    "traderDetails" : {
+      "holderOfTransit" : {
+        "eoriYesNo" : true,
+        "eori" : "GB123456123456",
+        "name" : "Joe Blog",
+        "country" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        },
+        "address" : {
+          "numberAndStreet" : "1 Church lane",
+          "city" : "Godrics Hollow",
+          "postalCode" : "BA1 0AA"
+        },
+        "addContact" : true,
+        "contact" : {
+          "name" : "John contact",
+          "telephoneNumber" : "+2112212112"
+        }
+      },
+      "actingAsRepresentative" : true,
+      "representative" : {
+        "eori" : "FR123123132",
+        "addDetails" : true,
+        "name" : "Marie Rep",
+        "telephoneNumber" : "+11 1111 1111"
+      },
+      "consignment" : {
+        "approvedOperator" : true,
+        "consignor" : {
+          "eoriYesNo" : true,
+          "eori" : "IT12312313",
+          "name" : "Pip Consignor",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          },
+          "addContact" : true,
+          "contact" : {
+            "name" : "Pip Contact",
+            "telephoneNumber" : "+123123123213"
+          }
+        },
+        "moreThanOneConsignee" : false,
+        "consignee" : {
+          "eoriYesNo" : true,
+          "eori" : "GE00101001",
+          "name" : "Simpson Blog Consignee",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          }
+        }
+      }
+    },
+    "routeDetails" : {
+      "routing" : {
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "officeOfDestination" : {
+          "id" : "IT262101",
+          "name" : "AEROPORTO",
+          "phoneNumber" : "0039 0106015339",
+          "isInCL112" : false
+        },
+        "bindingItinerary" : true,
+        "countriesOfRouting" : [
+          {
+            "countryOfRouting" : {
+              "code" : "FR",
+              "description" : "France",
+              "isInCL112" : false,
+              "isInCL147" : true
+            }
+          },
+          {
+            "countryOfRouting" : {
+              "code" : "DE",
+              "description" : "Germany",
+              "isInCL112" : false,
+              "isInCL147" : true
+            }
+          }
+        ]
+      },
+      "transit" : {
+        "officesOfTransit" : [
+          {
+            "officeOfTransitCountry" : {
+              "code" : "DE",
+              "description" : "Germany"
+            },
+            "officeOfTransit" : {
+              "id" : "DE004058",
+              "name" : "Basel",
+              "phoneNumber" : "+41 61 20114-24",
+              "isInCL147" : true
+            },
+            "addOfficeOfTransitETAYesNo" : true,
+            "arrivalDateTime" : "2023-05-12T07:33:00"
+          }
+        ]
+      },
+      "exit" : {
+        "officesOfExit" : [
+          {
+            "officeOfExitCountry" : {
+              "code" : "FR",
+              "description" : "France"
+            },
+            "officeOfExit" : {
+              "id" : "FR005130",
+              "name" : "Agen bureau",
+              "phoneNumber" : "09 70 27 57 70"
+            }
+          }
+        ]
+      },
+      "locationOfGoods" : {
+        "typeOfLocation" : "authorisedPlace",
+        "inferredQualifierOfIdentification" : "authorisationNumber",
+        "identifier" : {
+          "authorisationNumber" : "1234567890",
+          "addAdditionalIdentifier" : true,
+          "additionalIdentifier" : "x9x9",
+          "addContact" : true
+        },
+        "contact" : {
+          "name" : "Locator Joe",
+          "telephoneNumber" : "+432 1212 1212"
+        }
+      },
+      "loading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "AEFAT",
+          "name" : "Fateh Terminal"
+        },
+        "addLocationYesNo" : true,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "location" : "London"
+        }
+      },
+      "addPlaceOfUnloading" : true,
+      "unloading" : {
+        "addUnLocodeYesNo" : true,
+        "unLocode" : {
+          "unLocodeExtendedCode" : "DEAAL",
+          "name" : "Aalen"
+        },
+        "addExtraInformationYesNo" : true,
+        "additionalInformation" : {
+          "country" : {
+            "code" : "IT",
+            "description" : "Italy"
+          },
+          "location" : "Milano"
+        }
+      }
+    },
+    "guaranteeDetails" : [
+      {
+        "guaranteeType" : "1",
+        "referenceNumber" : "01GB1234567890120A123456",
+        "currency" : {
+          "currency" : "GBP",
+          "description" : "Pound Sterling"
+        },
+        "liabilityAmount" : 100.00,
+        "accessCode" : "AC01"
+      },
+      {
+        "guaranteeType" : "8",
+        "otherReference" : "01GB123456789012",
+        "currency" : {
+          "currency" : "GBP",
+          "description" : "Pound Sterling"
+        },
+        "liabilityAmount" : 100.00
+      },
+      {
+        "guaranteeType" : "3",
+        "otherReferenceYesNo" : true,
+        "otherReference" : "01GB123456789012",
+        "currency" : {
+          "currency" : "GBP",
+          "description" : "Pound Sterling"
+        },
+        "liabilityAmount" : 54.99
+      },
+      {
+        "guaranteeType" : "5",
+        "currency" : {
+          "currency" : "GBP",
+          "description" : "Pound Sterling"
+        },
+        "liabilityAmount" : 54.99
+      }
+    ],
+    "transportDetails" : {
+      "preRequisites" : {
+        "sameUcrYesNo" : true,
+        "uniqueConsignmentReference" : "GB123456123456",
+        "transportedToSameCountryYesNo" : true,
+        "itemsDestinationCountry" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "containerIndicator" : true
+      },
+      "equipmentsAndCharges" : {
+        "equipments" : [
+          {
+            "containerIdentificationNumber" : "C001",
+            "addSealsYesNo" : true,
+            "seals" : [
+              {
+                "identificationNumber" : "S002"
+              }
+            ],
+            "addGoodsItemNumbersYesNo" : true,
+            "itemNumbers" : [
+              {
+                "itemNumber" : "2"
+              }
+            ]
+          }
+        ],
+        "addPaymentMethodYesNo" : true,
+        "paymentMethod" : "creditCard"
+      },
+      "inlandMode" : "road",
+      "transportMeansDeparture" : {
+        "identification" : "regNumberRoadTrailer",
+        "meansIdentificationNumber" : "GB1234567",
+        "vehicleCountry" : {
+          "code" : "GB",
+          "desc" : "United Kingdom"
+        }
+      },
+      "borderModeOfTransport" : "maritime",
+      "transportMeansActiveList" : [
+        {
+          "identification" : "seaGoingVessel",
+          "identificationNumber" : "GB1234567",
+          "addNationalityYesNo" : true,
+          "nationality" : {
+            "code" : "GB",
+            "desc" : "United Kingdom"
+          },
+          "customsOfficeActiveBorder" : {
+            "id" : "DE004058",
+            "name" : "Basel",
+            "phoneNumber" : "+41 61 20114-24"
+          },
+          "conveyanceReferenceNumberYesNo" : true,
+          "conveyanceReferenceNumber" : "GB123456123456"
+        }
+      ],
+      "supplyChainActorYesNo" : true,
+      "supplyChainActors" : [
+        {
+          "supplyChainActorType" : "consolidator",
+          "identificationNumber" : "FR98472189002"
+        }
+      ],
+      "authorisationsAndLimit" : {
+        "authorisations" : [
+          {
+            "inferredAuthorisationType" : "ACR",
+            "authorisationReferenceNumber" : "ACR123"
+          }
+        ],
+        "limit" : {
+          "limitDate" : "2023-05-14"
+        }
+      },
+      "carrierDetails" : {
+        "identificationNumber" : "GB123456123456",
+        "addContactYesNo" : true,
+        "contact" : {
+          "name" : "Moseley",
+          "telephoneNumber" : "+88 888 888"
+        }
+      }
+    },
+    "documents" : [
+      {
+        "previousDocumentType" : {
+          "type" : "Previous",
+          "code" : "T2L",
+          "description" : "T2L"
+        },
+        "details" : {
+          "documentReferenceNumber" : "1234",
+          "addGoodsItemNumberYesNo" : true,
+          "goodsItemNumber" : "1234",
+          "addTypeOfPackageYesNo" : true,
+          "packageType" : {
+            "code" : "BG",
+            "description" : "Bag"
+          },
+          "addNumberOfPackagesYesNo" : true,
+          "numberOfPackages" : 50,
+          "declareQuantityOfGoodsYesNo" : true,
+          "metric" : {
+            "code" : "GRM",
+            "description" : "Gram"
+          },
+          "quantity" : 1500
+        }
+      },
+      {
+        "type" : {
+          "type" : "Transport",
+          "code" : "235",
+          "description" : "Container list"
+        },
+        "details" : {
+          "documentReferenceNumber" : "1234"
+        }
+      }
+    ],
+    "items" : [
+      {
+        "description" : "Item description",
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "uniqueConsignmentReference" : "UCR",
+        "addCUSCodeYesNo" : true,
+        "customsUnionAndStatisticsCode" : "123ABC789",
+        "commodityCode" : "123ABC",
+        "addDangerousGoodsYesNo" : true,
+        "dangerousGoodsList" : [
+          {
+            "unNumber" : "AB12"
+          }
+        ],
+        "grossWeight" : 12.345,
+        "addSupplementaryUnitsYesNo" : true,
+        "supplementaryUnits" : 12.345,
+        "packages" : [
+          {
+            "packageType" : {
+              "code" : "NU",
+              "description" : "Net, tube, plastic",
+              "type" : "Other"
+            },
+            "shippingMark" : "The shipping mark"
+          }
+        ],
+        "addDocumentsYesNo" : false,
+        "addAdditionalReferenceYesNo" : false,
+        "addAdditionalInformationYesNo" : false,
+        "addItemNetWeightYesNo" : false
+      }
+    ]
+  },
+  "isSubmitted" : true,
+  "lastUpdated" : "2023-05-12T06:34:18.690+0000",
+  "tasks" : {
+    ".traderDetails" : "completed",
+    ".guaranteeDetails" : "completed",
+    ".documents" : "completed",
+    ".transportDetails" : "completed",
+    ".preTaskList" : "completed",
+    ".routeDetails" : "completed",
+    ".items" : "completed"
+  }
+}
