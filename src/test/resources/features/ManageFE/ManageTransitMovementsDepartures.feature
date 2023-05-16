@@ -11,6 +11,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'What is the Local Reference Number?' page
     And I sign out
 
+
   @manageA11y
   Scenario: 02 - Trader is able to view a draft departure declaration and delete it
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
@@ -43,9 +44,9 @@ Feature: Manage transit movements feature
     Then I should be on the 'Goods under control' page
     And I sign out
 
-  #CTCP-2795 <=10 Non-amendable
+
   @manageA11y
-  Scenario: 05 - Trader is able to review a declaration error for a departure declaration
+  Scenario: 05 - Trader is able to review declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With No Amendable Errors
     And I refresh the page
@@ -54,30 +55,22 @@ Feature: Manage transit movements feature
     Then I should be on the 'Review declaration errors' page
     And I sign out
 
-#CTCP-2796 <=10 Amendable
-  @manageA11y @wip
+
+  @manageA11y
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
-
     And the user has submitted departureDeclaration.json for LRN 83LU49243708J1I4B5A2NM and EORI number 1234567890
     And I refresh the page
-
-    And I wait for 1000 seconds
-#    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the link for LRN 83LU49243708J1I4B5A2NM on the 'Draft departure declarations' page
-#    Then I should be on the 'Declaration summary' page
-
-#    And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-#    And I click on the Amend declaration link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
-#    And I click on the Amend errors button on the 'Amend declaration errors' page
-#    Then I should be on the 'Declaration summary' page
-#    And I sign out
+    And I click on the Amend declaration link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
+    And I click on the Amend errors button on the 'Amend declaration errors' page
+    Then I should be on the 'Declaration summary' page
+    And I sign out
 
-  #CTCP-2892 <=10 Errors
+
   @manageA11y
-  Scenario: 07 - Trader is able to amend a declaration error for a departure declaration
+  Scenario: 07 - Trader is notified of multiple declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With More Than 10 Errors
     And I refresh the page
@@ -87,7 +80,6 @@ Feature: Manage transit movements feature
     Then I should be on the 'What is the Local Reference Number?' page
     And I sign out
 
-  #CTCP-2794 Amend declaration summary
 
 #  Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
 #    When I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -96,6 +88,7 @@ Feature: Manage transit movements feature
 ##    And I should be on the 'There is a problem with the guarantee for this departure declaration' page
 #    And I sign out
 
+
 #  @manageA11y
 #  Scenario: 13 - Trader is able to see Goods not released for departure declaration
 #    When I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -103,12 +96,14 @@ Feature: Manage transit movements feature
 #    And I should see the content No release motivation on the 'No release for transit' page
 #    And I sign out
 
+
 #  @manageA11y
 #  Scenario: 17 - Trader is unable to cancel their declaration for departure declaration due to a data error
 #    When I click on the View departure declarations link on the 'Manage your transit movements' page
 #    Then I click on the Cancel declaration link for LRN LRN123457 on the 'Departure declarations' page
 #    And I should be on the 'You cannot cancel this departure declaration' page
 #    And I sign out
+
 
 #  @manageA11y
 #  Scenario: 19 - Trader is able to search for departures
@@ -119,6 +114,7 @@ Feature: Manage transit movements feature
 #    And I click on the Go to manage transit movements link on the 'Departure declarations' page
 #    Then I should be on the 'Manage your transit movements' page
 #    And I sign out
+
 
 #  Scenario: 21 - Trader is able to start a departure declaration from the 'Departure declarations' page
 #    When I click on the View departure declarations link on the 'Manage your transit movements' page
