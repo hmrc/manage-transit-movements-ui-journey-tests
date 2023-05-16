@@ -67,7 +67,7 @@ object ApiHelper extends HttpClient {
         val response: StandaloneWSResponse = post(url, xmlStr, headers)
         World.arrivalId = response.body.split("/")(arrivalIdIndex)
 
-      case "IE043UnloadingPermissonWithSeals.xml" =>
+      case "IE043UnloadingPermissionWithSeals.xml" =>
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
 
