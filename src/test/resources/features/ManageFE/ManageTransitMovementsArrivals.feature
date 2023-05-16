@@ -1,4 +1,4 @@
-@managehub @wip
+@managehub
 
 Feature: Manage transit movements feature
 
