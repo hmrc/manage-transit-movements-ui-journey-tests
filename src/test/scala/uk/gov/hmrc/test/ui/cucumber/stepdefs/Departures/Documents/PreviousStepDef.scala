@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Documents
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Documents.Documents.{AddAdditionalInformationPage, DocumentEnterAdditionalInfoPage}
+import uk.gov.hmrc.test.ui.pages.Departures.Documents.Documents._
 import uk.gov.hmrc.test.ui.pages.Departures.Documents.Previous._
 
 class PreviousStepDef extends BaseStepDef {
