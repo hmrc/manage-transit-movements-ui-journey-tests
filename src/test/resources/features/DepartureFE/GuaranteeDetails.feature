@@ -22,7 +22,7 @@ Feature: Guarantee details journey
     And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
     And I submit on the 'Guarantee details Check your answers' page
-    And I choose to click on the Remove link on the 'You have added 2 guarantees' page
+    And I click the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page

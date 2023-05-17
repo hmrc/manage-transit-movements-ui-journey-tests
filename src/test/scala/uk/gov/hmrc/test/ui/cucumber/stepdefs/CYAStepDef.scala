@@ -47,6 +47,7 @@ class CYAStepDef extends BaseStepDef {
     |Transport details - Transport equipment|
     |Transport details|
     |Documents|
+    |Item 1|
     |Guarantee details|
     |Arrivals - Authorisations|
     |Arrivals - Transport equipment|
@@ -66,7 +67,7 @@ class CYAStepDef extends BaseStepDef {
       .clickLinkById(text)
   }
 
-  And("""^(?:I )?click the Change link for (.+) on the (?:Transport details|Unloading|Route details|Trader details|Documents|Item 1) 'Check your answers' page$""") { (text: String) =>
+  And("""^(?:I )?click the Change link for (.+) on the (?:Transport details|Unloading|Route details|Trader details|Documents|Item 1|Guarantee details) 'Check your answers' page$""") { (text: String) =>
     CYAPage
       .clickChangeLink(text)
   }

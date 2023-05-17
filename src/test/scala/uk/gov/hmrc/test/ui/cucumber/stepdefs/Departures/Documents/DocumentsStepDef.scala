@@ -51,6 +51,13 @@ class DocumentsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  When("""^(?:I )?click the (.*) link on the 'You have added (.*) documents?' page$""") {
+    (sectionLink: String, numberOfDocuments: String) =>
+      DocumentAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
+  }
+
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add a line item number\?' page$""") {
     (answer: String) =>
       AddLineItemNumberPage

@@ -392,7 +392,7 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have added (.*) ite(?:m |ms)' page$""") {
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) items?' page$""") {
     (sectionLink: String, numberOfItems: String) =>
       ItemsAddAnotherPage
         .loadPage(numberOfItems)

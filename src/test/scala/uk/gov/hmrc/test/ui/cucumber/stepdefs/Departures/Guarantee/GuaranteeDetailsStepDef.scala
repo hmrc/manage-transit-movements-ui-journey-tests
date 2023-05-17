@@ -62,7 +62,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose to click on the (.*) link on the 'You have added (.*) guarantees?' page$"""){
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) guarantees?' page$"""){
     (linkText: String, numberOfGuaranteeTitle: String)=>
       AddAnotherGuaranteePage
         .loadPage(numberOfGuaranteeTitle)
