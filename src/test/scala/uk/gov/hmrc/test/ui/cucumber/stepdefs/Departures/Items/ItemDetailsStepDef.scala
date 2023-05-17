@@ -52,7 +52,6 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-
   And("""^(?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference\?' page$""") {
     (answer: String) =>
       AddItemUCRPage
@@ -164,7 +163,6 @@ class ItemDetailsStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
-
 
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add the item’s net weight\?' page$""") {
     (answer: String) =>
@@ -339,11 +337,82 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional reference\?' page$""") {
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional reference\?' page$"""
+  ) { (answer: String) =>
+    AdditionalReferenceRemovePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for this item\?' page$""") {
     (answer: String) =>
-      AdditionalReferenceRemovePage
+      AdditionalInformationAddPage
         .loadPage()
         .select(answer)
         .submitPage()
   }
+  And("""^(?:I )?select (.+) on the 'What type of additional information do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalInformationTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'Enter the additional information' page$""") { (answer: String) =>
+    AdditionalInformationEnterTextPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional information' page$""") {
+    (answer: String,documentNumber:String) =>
+      AdditionalInformationAddAnotherPage
+        .loadPage(documentNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional information' page$""") {
+    (sectionLink: String, numberOfDocuments: String) =>
+      AdditionalInformationAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on '(.*)' page$""") {
+    (answer: String, pageName: String) =>
+      AdditionalInformationRemovePage
+        .loadPage(pageName)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) ite(?:m |ms)' page$""") {
+    (sectionLink: String, numberOfItems: String) =>
+      ItemsAddAnotherPage
+        .loadPage(numberOfItems)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)?' page$""") {
+    (answer: String,itemNumber:String) =>
+      RemoveItemPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) item' page$""") {
+    (answer: String,itemNumber:String) =>
+      ItemsAddAnotherPage
+        .loadPage(itemNumber)
+        .select(answer)
+        .submitPage()
+  }
+
 }

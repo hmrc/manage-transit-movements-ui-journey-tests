@@ -55,4 +55,5 @@ class EndorsementStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
+
 }
