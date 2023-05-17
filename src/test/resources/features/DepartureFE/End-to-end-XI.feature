@@ -161,7 +161,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 54321 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
-    And I enter 12345 on the 'Enter the additional information' page
+    And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
       #Items
