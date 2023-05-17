@@ -215,7 +215,9 @@
           "documentReferenceNumber" : "98765",
           "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02a",
           "addLineItemNumberYesNo" : true,
-          "lineItemNumber" : 10101
+          "lineItemNumber" : 10101,
+          "addAdditionalInformationYesNo": true,
+          "additionalInformation": "12345"
 
         }
       }

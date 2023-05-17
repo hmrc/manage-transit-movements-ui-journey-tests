@@ -14,6 +14,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
 
+
     # Documents - Previous document
     When I click the Add documents link on the 'Declaration summary' page
     Then I select (T2L) T2L on the 'What previous document do you want to add?' page
@@ -27,12 +28,16 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I click radio option Yes on the 'Do you want to declare the quantity of goods?' page
     And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
     And I enter 1500 on the 'How many of these do the goods include?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
+    And I enter 12345 on the 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I select (380) Commercial invoice on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 010101 on the 'What is the line item number?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
+    And I enter 12345 on the 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     When I choose to click on the Remove link on the 'You have added 2 documents' page
     And I click radio option Yes on the 'Are you sure you want to remove the (380) Commercial invoice?' page
@@ -72,6 +77,8 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 54321 on the 'What is the line item number?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
+    And I enter 12345 on the 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
     And I sign out
