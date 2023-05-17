@@ -98,7 +98,7 @@ class PreviousStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-  And("""^(?:I )?enter (.+) on the 'Enter the additional information' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the Documents 'Enter the additional information' page$""") { (answer: String) =>
     DocumentEnterAdditionalInfoPage
       .loadPage()
       .fillInput(answer)
