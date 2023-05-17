@@ -160,6 +160,8 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 54321 on the 'What is the line item number?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
+    And I enter 12345 on the 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
       #Items
@@ -186,6 +188,11 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'You have added 1 type of package' page
       #Documents section
     And I click radio option No on the 'Do you want to attach any documents to this item?' page
-    #Additional Reference section
+     #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
+    #Additional Information
+    And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    #Items Summary
+    And I submit the 'Check your answers' page
+    And I click radio option No on the 'You have added 1 item' page
     And I sign out

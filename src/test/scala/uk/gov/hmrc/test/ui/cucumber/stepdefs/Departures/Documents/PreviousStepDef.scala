@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Documents
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Documents.Documents._
 import uk.gov.hmrc.test.ui.pages.Departures.Documents.Previous._
 
 class PreviousStepDef extends BaseStepDef {
@@ -89,5 +90,21 @@ class PreviousStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for this document\?' page$""") {
+    (answer: String) =>
+      AddAdditionalInformationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?enter (.+) on the 'Enter the additional information' page$""") { (answer: String) =>
+    DocumentEnterAdditionalInfoPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+
 
 }
