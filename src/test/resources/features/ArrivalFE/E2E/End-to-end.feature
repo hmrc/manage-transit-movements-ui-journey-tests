@@ -98,7 +98,7 @@ Feature: End to end journey Arrival notification feature
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
     #Change Transport Equipment
     When I click the Change link on the You have added 2 transport equipment page
-    And I click the change link for Container identification number on the 'Check your answers' page
+    And I click the Change link for Container identification number on the 'Check your answers' page
     And I enter C003 on the container identification number page
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
     #Remove Transport Equipment
@@ -133,7 +133,7 @@ Feature: End to end journey Arrival notification feature
     And I submit on the 'Arrivals - Incidents Check your answers' page
     #Change an incident
     When I click the Change link on the You have added 2 incidents page
-    And I click the change link for add endorsement on the 'Check your answers' page
+    And I click the Change link for add endorsement on the 'Check your answers' page
     And I choose radio option Yes on the add endorsement page
     And I choose fill in the date on the endorsement date page
     And I enter Border Patrol on the endorsement authority page

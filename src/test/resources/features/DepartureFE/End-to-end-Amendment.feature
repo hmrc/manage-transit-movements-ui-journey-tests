@@ -1,7 +1,9 @@
-@departureAmendment @wip
+@departureAmendment
 
 Feature: End to end journey for amending a departure declaration
 
+  Background: I log on to the Manage Transit Movements Hub service
+    Given I login with ID 1234567890
   @manageA11y
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
     When I submit an IE015 Departure Declaration
