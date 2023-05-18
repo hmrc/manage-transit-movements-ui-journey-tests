@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor._
 
 class SupplyChainActorStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a supply chain actor\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a supply chain actor for all items\?' page$""") {
     (answer: String) =>
       AddSupplyChainActorPage
         .loadPage()

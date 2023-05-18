@@ -128,7 +128,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
-    When I choose radio option No on the 'Do you want to add a supply chain actor?' page
+    When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page

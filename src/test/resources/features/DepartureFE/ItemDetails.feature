@@ -52,7 +52,7 @@ Feature: Item details journey
     And I click radio option Yes on the 'You have attached 1 document to this item' page
     And I select 380 on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
-    And I click radio option Yes on the 'Are you sure you want to remove the (T2L) T2L - 123456 from this item?' document page
+    And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
     And I click radio option No on the 'You have attached 1 document to this item' page
 
     #Additional Reference section

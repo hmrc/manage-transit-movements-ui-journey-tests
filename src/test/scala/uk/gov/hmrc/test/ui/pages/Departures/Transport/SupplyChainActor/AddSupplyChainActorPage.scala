@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddSupplyChainActorPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a supply chain actor?"
+  override def title(args: String*): String = "Do you want to add a supply chain actor for all items?"
 }
