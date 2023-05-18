@@ -18,7 +18,7 @@ Feature: Submit unloading remarks with seals
     And I click the Back to summary button on the 'Cross-check the transit with house consignment 1' page
     And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option No on the 'Were there any differences between the transit and the declaration information?' page
-    And I click the change link for Were there any differences between the transit and the declaration information? on the Unloading 'Check your answers' page
+    And I click the Change link for Were there any differences between the transit and the declaration information? on the Unloading 'Check your answers' page
     And I choose radio option Yes on the 'Were there any differences between the transit and the declaration information?' page
     And I enter a comment into the text field on the 'What comments do you want to add?' page
     And I submit the 'Check your answers' page

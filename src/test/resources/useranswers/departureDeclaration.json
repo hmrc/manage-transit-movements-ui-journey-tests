@@ -124,7 +124,7 @@
               "isInCL147" : true
             },
             "addOfficeOfTransitETAYesNo" : true,
-            "arrivalDateTime" : "2023-05-12T07:33:00"
+            "arrivalDateTime" : "2023-05-17T12:06:00"
           }
         ]
       },
@@ -197,7 +197,7 @@
           "currency" : "GBP",
           "description" : "Pound Sterling"
         },
-        "liabilityAmount" : 100.00,
+        "liabilityAmount" : 120,
         "accessCode" : "AC01"
       },
       {
@@ -207,7 +207,7 @@
           "currency" : "GBP",
           "description" : "Pound Sterling"
         },
-        "liabilityAmount" : 100.00
+        "liabilityAmount" : 123
       },
       {
         "guaranteeType" : "3",
@@ -303,7 +303,7 @@
           }
         ],
         "limit" : {
-          "limitDate" : "2023-05-14"
+          "limitDate" : "2023-05-19"
         }
       },
       "carrierDetails" : {
@@ -324,8 +324,9 @@
         },
         "details" : {
           "documentReferenceNumber" : "1234",
+          "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
           "addGoodsItemNumberYesNo" : true,
-          "goodsItemNumber" : "1234",
+          "goodsItemNumber" : 1234,
           "addTypeOfPackageYesNo" : true,
           "packageType" : {
             "code" : "BG",
@@ -338,7 +339,9 @@
             "code" : "GRM",
             "description" : "Gram"
           },
-          "quantity" : 1500
+          "quantity" : 1500,
+          "addAdditionalInformationYesNo" : true,
+          "additionalInformation" : "12345"
         }
       },
       {
@@ -348,44 +351,38 @@
           "description" : "Container list"
         },
         "details" : {
-          "documentReferenceNumber" : "1234"
+          "documentReferenceNumber" : "1234",
+          "uuid" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
         }
       }
     ],
     "items" : [
       {
-        "description" : "Item description",
-        "countryOfDestination" : {
-          "code" : "IT",
-          "description" : "Italy"
-        },
-        "uniqueConsignmentReference" : "UCR",
-        "addCUSCodeYesNo" : true,
-        "customsUnionAndStatisticsCode" : "123ABC789",
-        "commodityCode" : "123ABC",
-        "addDangerousGoodsYesNo" : true,
-        "dangerousGoodsList" : [
-          {
-            "unNumber" : "AB12"
-          }
-        ],
-        "grossWeight" : 12.345,
+        "description" : "This is a description",
+        "addCUSCodeYesNo" : false,
+        "commodityCode" : "ABC123",
+        "addDangerousGoodsYesNo" : false,
+        "grossWeight" : 100,
         "addSupplementaryUnitsYesNo" : true,
-        "supplementaryUnits" : 12.345,
+        "supplementaryUnits" : 123.99,
         "packages" : [
           {
             "packageType" : {
-              "code" : "NU",
-              "description" : "Net, tube, plastic",
+              "code" : "AE",
+              "description" : "Aerosol",
               "type" : "Other"
             },
-            "shippingMark" : "The shipping mark"
+            "shippingMark" : "This is a description"
           }
         ],
-        "addDocumentsYesNo" : false,
+        "documents" : [
+          {
+            "document" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+          }
+        ],
+        "documentsInProgress" : false,
         "addAdditionalReferenceYesNo" : false,
-        "addAdditionalInformationYesNo" : false,
-        "addItemNetWeightYesNo" : false
+        "addAdditionalInformationYesNo" : false
       }
     ]
   },
