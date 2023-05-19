@@ -251,6 +251,56 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add a supply chain actor for this item\?' page$""") {
+    (answer: String) =>
+      SupplyChainActorItemAddPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Which type of supply chain actor do you want to add\?' item page$""") {
+    (answer: String) =>
+      SupplyChainActorTypeItemPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the EORI number or Trader Identification Number TIN for the (.*)\?' item page$""") {
+    (answer: String, typeVal: String) =>
+      SupplyChainActorEoriTinItemPage
+        .loadPage(typeVal)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) supply chain actors? for this item' item page$""") {
+    (answer: String, numberOfSCAs: String) =>
+      SupplyChainActorItemAddAnotherPage
+        .loadPage(numberOfSCAs)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) supply chain actors? for this item' item page$""") {
+    (sectionLink: String, numberOfSCAs: String) =>
+      SupplyChainActorItemAddAnotherPage
+        .loadPage(numberOfSCAs)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this supply chain actor\?' item page$""") {
+    (answer: String) =>
+      SupplyChainActorItemRemoveSCAPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+
+
+
   And("""^(?:I )?click radio option (.*) on the 'Do you want to attach any documents to this item\?' page$""") {
     (answer: String) =>
       DocumentsAddDocumentPage
