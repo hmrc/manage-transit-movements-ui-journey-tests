@@ -282,13 +282,14 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*) from this item\?' document page$""") {
-    (answer: String, documentToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from the item\?' document page$""") {
+    (answer: String) =>
       DocumentsRemoveDocumentPage
-        .loadPage(documentToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
+
 
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add an additional reference for this item\?' page$""") {
     (answer: String) =>

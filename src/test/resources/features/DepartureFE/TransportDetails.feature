@@ -43,7 +43,7 @@ Feature: Transport details journey
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
-    And I choose radio option Yes on the 'Do you want to add a supply chain actor?' page
+    And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
     And I enter FR98472189002 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
@@ -141,7 +141,7 @@ Feature: Transport details journey
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
-    When I choose radio option No on the 'Do you want to add a supply chain actor?' page
+    When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
