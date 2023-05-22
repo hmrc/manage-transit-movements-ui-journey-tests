@@ -17,6 +17,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
     # Documents - Previous document
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select (T2L) T2L on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a goods item number?' page
@@ -32,6 +33,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select (380) Commercial invoice on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
@@ -45,7 +47,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I sign out
 
 
-
   Scenario: 02 Departure Office 'GB' - Declaration 'T' - Documents - 'Transport'
     And I select GB on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -55,12 +56,14 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
     # Documents - Transport document
     When I click the Add documents link on the 'Declaration summary' page
-    Then I select (235) Container list on the 'What type of document do you want to add?' page
+    And I click radio option Yes on the 'Do you want to use this document for all items?' page
+    Then I select (T1) Document T1 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
+    And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
     And I sign out
-
 
 
   Scenario: 03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'
@@ -73,6 +76,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
    # Documents - Supporting document
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
