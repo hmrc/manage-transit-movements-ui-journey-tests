@@ -377,7 +377,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
         #Supply Chain Actor section
-
+    And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
     And I select T2L on the 'Which document do you want to attach?' page
