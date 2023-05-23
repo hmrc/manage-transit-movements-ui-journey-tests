@@ -3,17 +3,14 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
   Background:
     Given I login with ID 1234567890
-    When I click on the Make a departure declaration link on the 'Manage your transit movements' page
-    Then I input a random LRN on the 'What is the Local Reference Number?' page
 
 
   Scenario: 01 Departure Office 'GB' - Declaration 'T2' - Documents - 'Previous'
-    And I select GB on the 'Where is the office of departure?' page
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option T2 on the 'What declaration do you want to create?' page
-    And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
-    And I submit the 'Check your answers' page
-
+    And the user has submitted documentsGB1.json for LRN 1234567890DGB1 and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890DGB1 on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
 
     # Documents - Previous document
     When I click the Add documents link on the 'Declaration summary' page
@@ -48,11 +45,11 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
 
   Scenario: 02 Departure Office 'GB' - Declaration 'T' - Documents - 'Transport'
-    And I select GB on the 'Where is the office of departure?' page
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option T on the 'What declaration do you want to create?' page
-    And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
-    And I submit the 'Check your answers' page
+    And the user has submitted documentsGB2.json for LRN 1234567890DGB2 and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890DGB2 on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
 
     # Documents - Transport document
     When I click the Add documents link on the 'Declaration summary' page
@@ -67,12 +64,11 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
 
   Scenario: 03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'
-    And I select XI on the 'Where is the office of departure?' page
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option TIR on the 'What declaration do you want to create?' page
-    And I enter 1234567 on the 'What is the TIR carnet reference?' page
-    And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
-    And I submit the 'Check your answers' page
+    And the user has submitted documentsXI.json for LRN 1234567890DXI and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890DXI on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
 
    # Documents - Supporting document
     When I click the Add documents link on the 'Declaration summary' page
@@ -86,16 +82,4 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
     And I sign out
-
-
-
-
-
-
-
-
-
-
-
-
 
