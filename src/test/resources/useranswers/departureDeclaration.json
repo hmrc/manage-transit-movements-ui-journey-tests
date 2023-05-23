@@ -317,6 +317,7 @@
     },
     "documents" : [
       {
+        "attachToAllItems" : false,
         "previousDocumentType" : {
           "type" : "Previous",
           "code" : "T2L",
@@ -345,6 +346,7 @@
         }
       },
       {
+        "attachToAllItems" : false,
         "type" : {
           "type" : "Transport",
           "code" : "235",
