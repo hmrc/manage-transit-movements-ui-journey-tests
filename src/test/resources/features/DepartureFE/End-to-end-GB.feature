@@ -318,6 +318,17 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
+    #Supply Chain Actor section
+    And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
+    And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
+    And I enter GB123456 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page
+    And I click radio option Yes on the 'You have added 1 supply chain actor for this item' item page
+    And I click radio option Warehouse keeper on the 'Which type of supply chain actor do you want to add?' item page
+    And I enter ABC123 on the 'What is the EORI number or Trader Identification Number TIN for the warehouse keeper?' item page
+    And I click the Remove link on the 'You have added 2 supply chain actors for this item' item page
+    And I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page
+    And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
+
     #Documents Section -T2 skips Yes/No to add document
     And I select T2L on the 'Which document do you want to attach?' page
     And I click radio option Yes on the 'You have attached 1 document to this item' page
@@ -368,6 +379,8 @@ Feature: End to end journey for Great Britain office of departure
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+        #Supply Chain Actor section
+    And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
     And I select T2L on the 'Which document do you want to attach?' page
@@ -555,6 +568,10 @@ Feature: End to end journey for Great Britain office of departure
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+
+    #Supply Chain Actor section
+    And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
+
     #Documents section
     And I click radio option No on the 'Do you want to attach any documents to this item?' page
        #Additional Reference section
