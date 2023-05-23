@@ -90,4 +90,13 @@ class DocumentsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to use this document for all items\?' page$""") {
+    (answer: String) =>
+      DocumentsForAllItems
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+
 }

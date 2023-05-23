@@ -156,6 +156,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
     # Documents
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
