@@ -44,7 +44,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Goods under control' page
     And I sign out
 
-
+# 2795
   @manageA11y
   Scenario: 05 - Trader is able to review declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
@@ -55,7 +55,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Review declaration errors' page
     And I sign out
 
-
+# 2796
   @manageA11y
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
     When I submit an IE015 Departure Declaration
@@ -68,7 +68,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Declaration summary' page
     And I sign out
 
-
+# 2892
   @manageA11y
   Scenario: 07 - Trader is notified of multiple declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
@@ -80,6 +80,27 @@ Feature: Manage transit movements feature
     Then I should be on the 'What is the Local Reference Number?' page
     And I sign out
 
+# 2898
+  @manageA11y
+  Scenario: 05 - Trader is able to review cancellation errors for a departure declaration
+    When I submit an IE014 Declaration Cancellation
+    Then I submit an IE056 Rejection With No Amendable Errors
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View errors link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
+    Then I should be on the 'Review cancellation errors' page
+    And I sign out
+
+# 2897
+  @manageA11y
+  Scenario: 07 - Trader is notified of multiple cancellation errors for a departure declaration
+    When I submit an IE014 Declaration Cancellation
+    Then I submit an IE056 Rejection With More Than 10 Errors
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View errors link for LRN 83LU49243708J1I4B5A2NM on the 'Departure declarations' page
+    Then I should be on the 'Cancellation errors' page
+    And I sign out
 
 #  Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
 #    When I click on the View departure declarations link on the 'Manage your transit movements' page

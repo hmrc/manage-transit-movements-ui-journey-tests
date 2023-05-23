@@ -42,6 +42,12 @@ object ApiHelper extends HttpClient {
         val response: StandaloneWSResponse = post(url, xmlStr, headers)
          World.departureId = response.body.split("/")(departureIdIndex)
 
+      case "IE014DeclarationCancellation.xml" =>
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-outbound"
+        val response: StandaloneWSResponse = post(url, xmlStr, headers)
+        println("********************************************* " + response.body.split("/")(departureIdIndex))
+        World.departureId = response.body.split("/")(departureIdIndex)
+
       case "IE060ControlDecisionNotificationWithDocuments.xml" =>
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
