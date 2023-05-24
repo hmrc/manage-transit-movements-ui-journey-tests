@@ -7,6 +7,7 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the 'What is the Local Reference Number?' page
     And I select GB on the 'Where is the office of departure?' page
 
+  @wip
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes'
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -422,10 +423,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to add a shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
-    And I click radio option No on the 'You have added 1 type of package' page
-    And I click select (T2F) Internal Community transit Declaration - 123123 on the 'Which document do you want to attach?' page
-    And I click the Remove link on the 'Do you want to attach another document?' page
-    And I click select (T2F) Internal Community transit Declaration - 123123 on the 'Which document do you want to attach?' page
+    And I select (T2F) Internal Community transit Declaration - 43214 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 1 document to this item' page
     And I sign out
 
