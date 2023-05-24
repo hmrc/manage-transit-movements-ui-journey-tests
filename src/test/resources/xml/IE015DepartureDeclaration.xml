@@ -5,7 +5,7 @@
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC015C</messageType>
     <TransitOperation>
-        <LRN>83LU49243708J1I4B5A2NM</LRN>
+        <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <declarationType>Pbg</declarationType>
         <additionalDeclarationType>O</additionalDeclarationType>
         <security>8</security>
@@ -13,7 +13,7 @@
         <bindingItinerary>0</bindingItinerary>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB123456</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <CustomsOfficeOfDestinationDeclared>
         <referenceNumber>ZQZ20442</referenceNumber>

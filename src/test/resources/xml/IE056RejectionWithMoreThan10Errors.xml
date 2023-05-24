@@ -8,9 +8,7 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <LRN>string</LRN>
-        <!--Optional:-->
-        <MRN>string</MRN>
+        <MRN>38VYQTYFU3T0KUTUM3</MRN>
         <businessRejectionType>token</businessRejectionType>
         <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>token</rejectionCode>
@@ -18,7 +16,7 @@
         <rejectionReason>string</rejectionReason>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>stringst</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
@@ -43,79 +41,128 @@
     </Representative>
     <!--0 to 9999 repetitions:-->
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
         <errorCode>14</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorReason>There was an error</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>There was another error</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
+        <errorCode>12</errorCode>
+        <errorReason>There was a violation on a submitted codelist</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
         <errorCode>15</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorReason>Value appeared when it should'nt have been possible</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
+        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
         <errorCode>26</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorReason>This message ID has already been submitted</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>50</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>This message ID has already been submitted</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>51</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>There was an error</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>52</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>There was another error</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>90</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
+        <errorCode>12</errorCode>
+        <errorReason>There was a violation on a submitted codelist</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>92</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
+        <errorCode>15</errorCode>
+        <errorReason>Value appeared when it should'nt have been possible</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/referenceNumber</errorPointer>
-        <errorCode>93</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>This message ID has already been submitted</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>This message ID has already been submitted</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>There was an error</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>There was another error</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
+        <errorCode>12</errorCode>
+        <errorReason>There was a violation on a submitted codelist</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
+        <errorCode>15</errorCode>
+        <errorReason>Value appeared when it should'nt have been possible</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>This message ID has already been submitted</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
+        <errorCode>26</errorCode>
+        <errorReason>This message ID has already been submitted</errorReason>
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
