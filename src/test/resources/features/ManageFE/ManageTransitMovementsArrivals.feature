@@ -1,6 +1,6 @@
 @managehub
 
-Feature: Manage transit movements feature
+Feature: Manage transit movements frontend tests for Arrivals
 
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
@@ -14,6 +14,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Unload the goods before you make unloading remarks' page
     And I sign out
 
+#    2929
   @manageA11y
   Scenario: 02 - Trader is able to view unloading remarks for multiple errors
     When I submit an IE007 Arrival Notification
@@ -25,6 +26,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Review unloading remarks errors' page
     And I sign out
 
+#     2918
   Scenario: 03 - Trader is able to view arrival notification rejection for more than 10 errors
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Rejection More Than 10 Errors
@@ -34,6 +36,7 @@ Feature: Manage transit movements feature
     Then I should be on the 'Notification errors' page
    And I sign out
 
+#    2917
   Scenario: 04 - Trader is able to view arrival notification rejection for less than 10 errors
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Rejection Less Than 10 Errors
