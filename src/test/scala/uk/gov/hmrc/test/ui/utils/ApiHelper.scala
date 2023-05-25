@@ -36,7 +36,14 @@ object ApiHelper extends HttpClient {
     val file = s"${filename.replaceAll(" ", "")}.xml"
     val xmlStr = scala.io.Source.fromFile(s"src/test/resources/xml/$file").getLines.mkString
 
+
     file match {
+
+      case "IE007ArrivalNotification.xml" =>
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-outbound"
+        val response: StandaloneWSResponse = post(url, xmlStr, headers)
+        World.arrivalId = response.body.split("/")(arrivalIdIndex)
+
       case "IE015DepartureDeclaration.xml" =>
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-outbound"
         val response: StandaloneWSResponse = post(url, xmlStr, headers)
@@ -66,14 +73,23 @@ object ApiHelper extends HttpClient {
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
-      case "IE007ArrivalNotification.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-outbound"
-        val response: StandaloneWSResponse = post(url, xmlStr, headers)
-        World.arrivalId = response.body.split("/")(arrivalIdIndex)
+      case "IE057RejectionLessThan10Errors.xml" =>
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        post(url, xmlStr, headers :+ ("X-Message-Type", "IE057"))
+
+      case "IE057RejectionMoreThan10Errors.xml" =>
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        post(url, xmlStr, headers :+ ("X-Message-Type", "IE057"))
 
       case "IE043UnloadingPermissionWithSeals.xml" =>
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
+
+      case "IE044UnloadingRemarksNotificationWithSeals.xml" =>
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        post(url, xmlStr, headers :+ ("X-Message-Type", "IE044"))
+
+
 
       case _ => throw new scala.RuntimeException("Cannot construct url")
 
