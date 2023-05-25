@@ -424,7 +424,14 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 type of package' page
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
     And I select (T2F) Internal Community transit Declaration - 43214 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 1 document to this item' page
+    And I click the Remove link on the 'You have attached 1 document to this item' page
+    And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' page
+    And I select (T2F) Internal Community transit Declaration - 43214 on the 'Which document do you want to attach?' page
+    And I click radio option No on the 'You have attached 1 document to this item?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
+    And I enter This is a reference number on the 'Enter the additional reference number' page
+    And I click radio option No on the 'You have added 1 additional reference' page
+    And I submit the 'Check your answers' page
     And I sign out
 
 
