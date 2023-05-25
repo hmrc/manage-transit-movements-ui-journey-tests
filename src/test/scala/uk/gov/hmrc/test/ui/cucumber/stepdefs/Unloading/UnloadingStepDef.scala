@@ -17,12 +17,18 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Manage.UnloadingRemarksRejectionLessThan10
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
     UnloadingGuidancePage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") { () =>
+    UnloadingRemarksRejectionLessThan10
       .loadPage()
   }
 
