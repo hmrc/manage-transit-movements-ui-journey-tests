@@ -482,10 +482,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) document to this item\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'You have attached (.*) document to this item' page$""") {
+    (answer: String, itemNumber: String) =>
       AddAnotherDocumentToItemPage
-        .loadPage()
+        .loadPage(itemNumber)
         .select(answer)
         .submitPage()
   }

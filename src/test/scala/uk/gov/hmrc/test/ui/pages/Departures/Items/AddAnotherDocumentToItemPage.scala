@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddAnotherDocumentToItemPage extends YesNoPage {
 
-  override def title(args: String*): String = s"You have attached ${args.head} document to this item?"
+  override def title(args: String*): String = String.format("You have attached %s document to this item?", args: _*)
+
 
 }
