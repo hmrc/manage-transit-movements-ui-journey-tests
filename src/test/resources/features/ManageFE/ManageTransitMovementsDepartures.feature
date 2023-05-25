@@ -1,6 +1,6 @@
 @managehub
 
-Feature: Manage transit movements feature
+Feature: Manage transit movements frontend tests for Departures
 
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
