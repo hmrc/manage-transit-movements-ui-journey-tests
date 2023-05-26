@@ -26,6 +26,18 @@ Feature: Manage transit movements frontend tests for Arrivals
     Then I should be on the 'Review unloading remarks errors' page
     And I sign out
 
+#    2930
+  @manageA11y
+  Scenario: 02 - Trader is able to view unloading remarks for multiple errors
+    When I submit an IE007 Arrival Notification
+    And I submit an IE044 Unloading Remarks Notification With Seals
+    And I submit an IE057 Rejection More Than 10 Errors
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    Then I should be on the 'Arrival notifications' page
+    And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    Then I should be on the 'Unloading remarks errors' page
+    And I sign out
+
 #     2918
   Scenario: 03 - Trader is able to view arrival notification rejection for more than 10 errors
     When I submit an IE007 Arrival Notification
