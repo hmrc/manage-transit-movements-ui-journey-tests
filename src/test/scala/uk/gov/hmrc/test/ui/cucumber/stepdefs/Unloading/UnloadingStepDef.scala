@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.{ReviewUnloadingRemarksErrorsPage, UnloadingRemarksErrors}
+import uk.gov.hmrc.test.ui.pages.Manage._
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {

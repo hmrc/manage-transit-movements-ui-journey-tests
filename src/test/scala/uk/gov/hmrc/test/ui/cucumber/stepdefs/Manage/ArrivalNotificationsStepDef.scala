@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.{ReviewNotificationErrorsPage, NotificationErrorsPage, ArrivalNotificationsPage, ArrivalRejectionPage}
+import uk.gov.hmrc.test.ui.pages.Manage._
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
