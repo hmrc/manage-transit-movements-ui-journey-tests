@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Manage
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object ArrivalNotificationRejectionMoreThan10ErrorsPage extends Page {
+object UnloadingRemarksErrors extends Page {
 
-    override def title(args: String*): String = "Notification errors"
+   override def title(args: String*): String = "Unloading remarks errors"
 
 }

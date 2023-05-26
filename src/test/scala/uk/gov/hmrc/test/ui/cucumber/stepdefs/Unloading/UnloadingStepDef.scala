@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.UnloadingRemarksRejectionLessThan10
+import uk.gov.hmrc.test.ui.pages.Manage.{ReviewUnloadingRemarksErrorsPage, UnloadingRemarksErrors}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -28,7 +28,12 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") { () =>
-    UnloadingRemarksRejectionLessThan10
+    ReviewUnloadingRemarksErrorsPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Unloading remarks errors' page$""") { () =>
+    UnloadingRemarksErrors
       .loadPage()
   }
 
