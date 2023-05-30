@@ -189,13 +189,17 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select CodeOnly on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to add a goods item number?' page
-    And I enter 54321 on the 'What is the goods item number?' page
+    And I click radio option No on the 'Do you want to add a goods item number?' page
     And I click radio option No on the 'Do you want to declare the package the goods arrived in?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option Yes on the 'You have added 2 documents' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
+    Then I select (740) Air waybill on the 'What type of document do you want to add?' page
+    And I enter AirwayBill123 on the 'What is the document’s reference number?' page
+    And I submit the 'Check your answers' page
+    And I choose radio option No on the 'You have added 3 documents' page
     Then I should be on the 'Declaration summary' page
     When I click the Edit documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
@@ -204,7 +208,7 @@ Feature: Item details journey
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 document' page
+    And I choose radio option No on the 'You have added 3 document' page
     Then I should be on the 'Declaration summary' page
     When I click the Add item link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
@@ -215,25 +219,23 @@ Feature: Item details journey
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
     And I enter 100 on the 'What is the item’s gross weight?' page
-    And I click radio option Yes on the 'Do you want to add supplementary units?' page
-    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+    And I click radio option No on the 'Do you want to add supplementary units?' page
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
-    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
-    And I enter This is a description on the 'What is the shipping mark?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
     And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
     And I enter GB123456 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
     And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
-    And I select CodeOnly on the 'Which document do you want to attach?' page
+    And I select AirwayBill123 on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
-    # Need to fix this navigation issue - it is not able to click "save and continue" button
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I submit the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     And I submit the 'Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
+
