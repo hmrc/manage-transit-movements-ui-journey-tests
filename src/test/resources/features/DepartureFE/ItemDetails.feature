@@ -178,7 +178,7 @@ Feature: Item details journey
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
-    @wip
+  @wip
   Scenario: 02 Office Departure 'GB', Declaration 'T'
     And the user has submitted itemDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
@@ -232,7 +232,7 @@ Feature: Item details journey
     And I select AirwayBill123 on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
-    And I submit the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 2 document to this item' page
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     And I submit the 'Check your answers' page
