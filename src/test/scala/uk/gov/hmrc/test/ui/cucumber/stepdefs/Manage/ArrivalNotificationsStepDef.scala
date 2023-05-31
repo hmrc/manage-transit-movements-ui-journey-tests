@@ -17,8 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals.{ArrivalNotificationsPage, NotificationErrorsPage, ReviewNotificationErrorsPage}
-import uk.gov.hmrc.test.ui.pages.Manage._
+import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals._
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
@@ -64,5 +63,14 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") { () =>
+    ReviewUnloadingRemarksErrorsPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Unloading remarks errors' page$""") { () =>
+    UnloadingRemarksErrors
+      .loadPage()
+  }
 
 }
