@@ -1,4 +1,4 @@
-@managehub
+@managehub @manageA11y
 
 Feature: Manage transit movements frontend tests for Departures
 
@@ -12,7 +12,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 
-  @manageA11y
   Scenario: 02 - Trader is able to view a draft departure declaration and delete it
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I enter 1234567890ABCDEFGHIJKL on the 'What is the Local Reference Number?' page
@@ -24,7 +23,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 
-  @manageA11y
   Scenario: 03 - Trader is able to see a control decision notification IE060 with documents
     When I submit an IE015 Departure Declaration
     Then I submit an IE060 Control Decision Notification With Documents
@@ -45,7 +43,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2795
-  @manageA11y
   Scenario: 05 - Trader is able to review declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With No Amendable Errors
@@ -56,7 +53,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2796
-  @manageA11y
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
@@ -69,7 +65,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2892
-  @manageA11y
   Scenario: 07 - Trader is notified of multiple declaration errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With More Than 10 Errors
@@ -81,8 +76,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2898
-  @manageA11y
-  Scenario: 05 - Trader is able to review cancellation errors for a departure declaration
+  Scenario: 08 - Trader is able to review cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE014 Declaration Cancellation
     And I submit an IE056 Rejection With No Amendable Errors
@@ -93,8 +87,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2897
-  @manageA11y
-  Scenario: 07 - Trader is notified of multiple cancellation errors for a departure declaration
+  Scenario: 09 - Trader is notified of multiple cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE014 Declaration Cancellation
     And I submit an IE056 Rejection With More Than 10 Errors
@@ -104,43 +97,3 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Cancellation errors' page
     And I sign out
 
-#  Scenario: 11 - Trader is able to view guarantee rejection for departure declaration
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the View errors link for LRN LRN123461 on the 'Departure declarations' page
-##    FOUND 10120/manage-transit-movements/departures/not-found EXPECTED manage-transit-movements-departures/27/guarantee-rejection page
-##    And I should be on the 'There is a problem with the guarantee for this departure declaration' page
-#    And I sign out
-
-
-#  @manageA11y
-#  Scenario: 13 - Trader is able to see Goods not released for departure declaration
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the View details link for LRN LRN123470 on the 'Departure declarations' page
-#    And I should see the content No release motivation on the 'No release for transit' page
-#    And I sign out
-
-
-#  @manageA11y
-#  Scenario: 17 - Trader is unable to cancel their declaration for departure declaration due to a data error
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the Cancel declaration link for LRN LRN123457 on the 'Departure declarations' page
-#    And I should be on the 'You cannot cancel this departure declaration' page
-#    And I sign out
-
-
-#  @manageA11y
-#  Scenario: 19 - Trader is able to search for departures
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    And I enter 99 in the Search field on the 'Departure declarations' page
-#    Then I should see the content Showing 14 results matching 99 on the 'Departure declarations' page
-#    And I click on the View all movements link on the 'Departure declarations' page
-#    And I click on the Go to manage transit movements link on the 'Departure declarations' page
-#    Then I should be on the 'Manage your transit movements' page
-#    And I sign out
-
-
-#  Scenario: 21 - Trader is able to start a departure declaration from the 'Departure declarations' page
-#    When I click on the View departure declarations link on the 'Manage your transit movements' page
-#    Then I click on the Make a departure declaration link on the 'Departure declarations' page
-#    And I should be on the 'What is the Local Reference Number?' page
-#    And I sign out

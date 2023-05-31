@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object DeleteDraftDeclarationsPage extends YesNoPage {
+object CancellationErrorsPage extends Page {
 
-  override def title(args: String*): String = "Are you sure you want to delete this declaration?"
+   override def title(args: String*): String = "Cancellation errors"
 
 }

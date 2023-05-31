@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals.{ArrivalNotificationsPage, NotificationErrorsPage, ReviewNotificationErrorsPage}
 import uk.gov.hmrc.test.ui.pages.Manage._
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
@@ -51,19 +52,6 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
     ArrivalNotificationsPage
       .loadPage()
       .checkForContent(content)
-  }
-
-  Given("""^(?:I )?click on the (.+) link on the 'There is a problem with this arrival notification' page$""") { (link: String) =>
-    ArrivalRejectionPage
-      .loadPage()
-      .selectAction(link)
-  }
-
-  And("""^(?:I )?should see the content (.*) on the 'There is a problem with this arrival notification' page$""") {
-    (content: String) =>
-      ArrivalRejectionPage
-        .loadPage()
-        .checkForContent(content)
   }
 
   Then("""^(?:I )?should be on the 'Review notification errors' page$""") { () =>

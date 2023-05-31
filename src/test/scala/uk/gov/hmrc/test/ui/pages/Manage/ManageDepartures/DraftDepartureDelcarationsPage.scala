@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ArrivalRejectionPage extends StringPage {
+object DraftDepartureDelcarationsPage extends StringPage {
 
-   override def title(args: String*): String = "There is a problem with this arrival notification"
+  override def title(args: String*): String = "Draft departure declarations"
 
-  def selectAction(link: String): this.type = {
-    link match {
-      case "Change" => clickByPartialLinkText("Change")
-      case "send a new arrival notification with the right information" => clickByPartialLinkText("send a new arrival notification with the right information")
-    }
-    this
-  }
+  def selectDraftDeclarationLink(link: String): Unit =
+      clickByPartialLinkText(link)
 
 }

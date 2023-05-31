@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object UnloadingRemarksErrors extends Page {
+object GoodsUnderControlPage extends Page {
 
-   override def title(args: String*): String = "Unloading remarks errors"
+   override def title(args: String*): String = "Goods under control"
 
 }

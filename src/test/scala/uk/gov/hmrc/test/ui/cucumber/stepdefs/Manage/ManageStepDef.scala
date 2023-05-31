@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage}
 import uk.gov.hmrc.test.ui.pages.Manage._
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
@@ -37,20 +38,7 @@ class ManageStepDef extends BaseStepDef {
       .selectAction(link)
   }
 
-  Then("""^(?:I )?should be on the 'There is a problem with the guarantee for this departure declaration' page$""") { () =>
-    GuaranteeRejectionPage
-      .loadPage()
-  }
 
-  Then("""^(?:I )?should be on the 'No release for transit' page$""") { () =>
-    NoReleaseForTransitPage
-      .loadPage()
-  }
-
- Then("""^(?:I )?should be on the 'Negative acknowledgement' page$""") { () =>
-    NegativeAcknowledgementPage
-      .loadPage()
-  }
 
   Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
     GoodsUnderControlDocumentsRequestedPage
@@ -60,13 +48,6 @@ class ManageStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'Goods under control' page$""") { () =>
     GoodsUnderControlPage
       .loadPage()
-  }
-
-  And("""^(?:I )?should see the content (.*) on the 'No release for transit' page$""") {
-    (content: String) =>
-      NoReleaseForTransitPage
-        .loadPage()
-        .checkForContent(content)
   }
 
 }

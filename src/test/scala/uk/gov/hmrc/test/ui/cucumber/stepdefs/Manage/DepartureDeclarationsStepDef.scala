@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{AmendDeclarationErrorsPage, CancellationErrorsPage, DeclarationErrorsPage, DepartureDeclarationsPage, ReviewCancellationErrorsPage, ReviewDeclarationErrorsPage}
 import uk.gov.hmrc.test.ui.pages.Manage._
 
 class DepartureDeclarationsStepDef extends BaseStepDef {

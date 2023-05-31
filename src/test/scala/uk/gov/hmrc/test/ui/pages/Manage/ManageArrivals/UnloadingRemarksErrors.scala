@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object NegativeAcknowledgementPage extends Page {
+object UnloadingRemarksErrors extends Page {
 
-   override def title(args: String*): String = "There is a problem with this arrival notification"
+   override def title(args: String*): String = "Unloading remarks errors"
 
 }
