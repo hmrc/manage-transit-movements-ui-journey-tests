@@ -171,43 +171,41 @@
     },
     "documents" : [
       {
-        "previousDocumentType" : {
-          "type" : "Previous",
-          "code" : "T2L",
-          "description" : "T2L"
+        "attachToAllItems": true,
+        "type": {
+          "type": "Previous",
+          "code": "CodeOnly"
         },
-        "details" : {
-          "documentReferenceNumber" : "123456",
-          "uuid" : "1794d93b-17d5-44fe-a18d-aaa2059d06fe",
-          "addGoodsItemNumberYesNo" : true,
-          "goodsItemNumber" : 123456,
-          "addTypeOfPackageYesNo" : true,
-          "packageType" : {
-            "code" : "BG",
-            "description" : "Bag"
-          },
-          "addNumberOfPackagesYesNo" : true,
-          "numberOfPackages" : 50,
-          "declareQuantityOfGoodsYesNo" : true,
-          "metric" : {
-            "code" : "GRM",
-            "description" : "Gram"
-          },
-          "quantity" : 1500
+        "details": {
+          "documentReferenceNumber": "1234567",
+          "uuid": "61ea7b0b-f10f-4811-a387-b5952a76d97d",
+          "addAdditionalInformationYesNo": false
         }
       },
       {
-        "type" : {
-          "type" : "Support",
-          "code" : "380",
-          "description" : "Commercial invoice"
+        "attachToAllItems": false,
+        "type": {
+          "type": "Transport",
+          "code": "740",
+          "description": "Air waybill"
         },
-        "details" : {
-          "documentReferenceNumber" : "98765",
-          "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02a",
-          "addLineItemNumberYesNo" : true,
-          "lineItemNumber" : 10101
-
+        "details": {
+          "documentReferenceNumber": "1234",
+          "uuid": "ddcca71c-6b43-4295-b5e9-e3ee95c39286"
+        }
+      },
+      {
+        "attachToAllItems": false,
+        "type": {
+          "type": "Support",
+          "code": "380",
+          "description": "Commercial invoice"
+        },
+        "details": {
+          "documentReferenceNumber": "12345",
+          "uuid": "411d05f0-386f-4689-a285-2145cfed4946",
+          "addLineItemNumberYesNo": false,
+          "addAdditionalInformationYesNo": false
         }
       }
     ]
