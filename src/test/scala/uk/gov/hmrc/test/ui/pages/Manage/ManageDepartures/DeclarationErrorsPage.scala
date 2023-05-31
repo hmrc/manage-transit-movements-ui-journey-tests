@@ -14,12 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object GoodsUnderControlPage extends Page {
+object DeclarationErrorsPage extends Page {
 
-   override def title(args: String*): String = "Goods under control"
+   override def title(args: String*): String = "Declaration errors"
+
+  def selectAction(link: String): this.type = {
+    link match {
+      case "Create another departure declaration" => clickById("departure-link")
+//      'match case' used so more can be added
+    }
+    this
+  }
 
 }

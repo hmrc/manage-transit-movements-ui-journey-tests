@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object DraftDepartureDelcarationsPage extends StringPage {
+object ReviewNotificationErrorsPage extends Page {
 
-  override def title(args: String*): String = "Draft departure declarations"
-
-  def selectDraftDeclarationLink(link: String): Unit =
-      clickByPartialLinkText(link)
+    override def title(args: String*): String = "Review notification errors"
 
 }

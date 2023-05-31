@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object ReviewDeclarationErrorsPage extends Page {
+object NotificationErrorsPage extends Page {
 
-   override def title(args: String*): String = "Review declaration errors"
+    override def title(args: String*): String = "Notification errors"
 
 }

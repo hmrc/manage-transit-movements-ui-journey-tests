@@ -14,34 +14,26 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals
 
-import org.openqa.selenium.WebElement
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object DepartureDeclarationsPage extends StringPage {
+object ArrivalNotificationsPage extends StringPage {
 
-   override def title(args: String*): String = "Departure declarations"
+   override def title(args: String*): String = "Arrival notifications"
 
   def selectAction(link: String): this.type = {
     link match {
-      case "Make a departure declaration"  => clickById("make-departure-declaration")
+      case "Make an arrival notification" => clickById("make-arrival-notification")
       case "Go to manage transit movements"  => clickById("go-to-manage-transit-movements")
       case "View all movements"  => clickById("go-to-view-all-movements")
     }
     this
   }
 
-  def selectDepartureAction(linkText: String, lrn: String): Unit = {
-    val id = s"${linkText.replace(" ", "-")}-$lrn"
-    clickById(id)
-  }
-
-  def checkDepartureStatus(status: String): Assertion = {
-    val statusField: WebElement = findSiblingByText(World.lrn)
-    statusField.getText shouldBe status
+  def selectArrivalAction(linkText: String, mrn: String): Unit = {
+    val id = s"${linkText.replace (" ", "-")}-$mrn"
+    clickById (id)
   }
 
 }

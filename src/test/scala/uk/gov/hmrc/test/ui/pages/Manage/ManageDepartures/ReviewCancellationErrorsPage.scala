@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
+package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object GoodsUnderControlDocumentsRequestedPage extends Page {
+object ReviewCancellationErrorsPage extends Page {
 
-   override def title(args: String*): String = "Goods under control - document requested"
+   override def title(args: String*): String = "Review cancellation errors"
 
 }
