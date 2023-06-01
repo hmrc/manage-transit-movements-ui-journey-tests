@@ -180,6 +180,7 @@
     },
     "documents" : [
       {
+        "attachToAllItems": true,
         "previousDocumentType" : {
           "type" : "Previous",
           "code" : "T2L",
@@ -206,6 +207,7 @@
         }
       },
       {
+        "attachToAllItems": false,
         "type" : {
           "type" : "Support",
           "code" : "380",
@@ -216,6 +218,23 @@
           "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02a",
           "addLineItemNumberYesNo" : true,
           "lineItemNumber" : 10101,
+          "addAdditionalInformationYesNo": true,
+          "additionalInformation": "12345"
+
+        }
+      }
+      , {
+        "attachToAllItems": false,
+        "type" : {
+          "type" : "Support",
+          "code" : "380",
+          "description" : "Commercial invoice"
+        },
+        "details" : {
+          "documentReferenceNumber" : "98762",
+          "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02c",
+          "addLineItemNumberYesNo" : true,
+          "lineItemNumber" : 10102,
           "addAdditionalInformationYesNo": true,
           "additionalInformation": "12345"
 

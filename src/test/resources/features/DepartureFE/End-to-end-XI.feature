@@ -164,7 +164,18 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 1 document' page
+    And I choose radio option Yes on the 'You have added 1 document' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
+    And I select (740) Air waybill on the 'What type of document do you want to add?' page
+    And I enter 1234 on the 'What is the document’s reference number?' page
+    And I submit on the 'Documents Check your answers' page
+    And I choose radio option Yes on the 'You have added 2 documents' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
+    And I select (740) Air waybill on the 'What type of document do you want to add?' page
+    And I enter air1234 on the 'What is the document’s reference number?' page
+    And I submit on the 'Documents Check your answers' page
+    And I choose radio option No on the 'You have added 3 documents' page
+
       #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
@@ -190,7 +201,9 @@ Feature: End to end journey for Northern Ireland office of departure
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
-    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+    And I select Air waybill  on the 'Which document do you want to attach?' page
+    And I click radio option No on the 'You have attached 2 document to this item' page
+
      #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information

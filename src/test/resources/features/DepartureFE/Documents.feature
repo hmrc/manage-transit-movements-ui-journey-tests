@@ -62,7 +62,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I choose radio option No on the 'You have added 1 document' page
     And I sign out
 
-
   Scenario: 03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'
     And the user has submitted documentsXI.json for LRN 1234567890DXI and EORI number 1234567890
     And I refresh the page

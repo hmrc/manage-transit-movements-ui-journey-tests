@@ -466,4 +466,20 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from the item\?' page$""") {
+    (answer: String) =>
+      ConfirmRemoveDocumentFromItemPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Which document do you want to attach\?' page$""") {
+    (answer: String) =>
+      ConfirmRemoveDocumentFromItemPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
 }

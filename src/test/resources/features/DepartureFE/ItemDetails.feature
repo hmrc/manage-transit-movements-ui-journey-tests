@@ -58,14 +58,10 @@ Feature: Item details journey
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Documents section
-    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
-    And I select T2L on the 'Which document do you want to attach?' page
-    And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select 380 on the 'Which document do you want to attach?' page
+    And I select (380) Commercial invoice on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
-    And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
-    And I click radio option No on the 'You have attached 1 document to this item' page
-
+    And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
+    And I click radio option No on the 'You have attached 2 document to this item' page
     #Additional Reference section
     And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
     #select non C561 or C658
@@ -116,7 +112,10 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
-    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+    And I select (380) Commercial invoice - 98765 on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
+    And I click radio option No on the 'You have attached 2 document to this item' page
 
     #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
@@ -167,7 +166,10 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
-    And I click radio option No on the 'Do you want to attach any documents to this item?' page
+    And I select (380) Commercial invoice on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
+    And I click radio option No on the 'You have attached 2 document to this item' page
 
     #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
@@ -177,3 +179,4 @@ Feature: Item details journey
     And I submit the 'Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
+
