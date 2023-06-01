@@ -412,6 +412,7 @@ Feature: End to end journey for Great Britain office of departure
     And I sign out
 
 
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No'
     And I choose radio option Normal on the 'What type of procedure are you using?' page
