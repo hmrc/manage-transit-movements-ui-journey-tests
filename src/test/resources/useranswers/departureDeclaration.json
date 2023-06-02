@@ -315,49 +315,52 @@
         }
       }
     },
-    "documents" : [
-      {
-        "attachToAllItems" : false,
-        "previousDocumentType" : {
-          "type" : "Previous",
-          "code" : "T2L",
-          "description" : "T2L"
-        },
-        "details" : {
-          "documentReferenceNumber" : "1234",
-          "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
-          "addGoodsItemNumberYesNo" : true,
-          "goodsItemNumber" : 1234,
-          "addTypeOfPackageYesNo" : true,
-          "packageType" : {
-            "code" : "BG",
-            "description" : "Bag"
+    "documents" : {
+      "addDocumentsYesNo": true,
+      "documents" : [
+        {
+          "attachToAllItems" : false,
+          "previousDocumentType" : {
+            "type" : "Previous",
+            "code" : "T2L",
+            "description" : "T2L"
           },
-          "addNumberOfPackagesYesNo" : true,
-          "numberOfPackages" : 50,
-          "declareQuantityOfGoodsYesNo" : true,
-          "metric" : {
-            "code" : "GRM",
-            "description" : "Gram"
-          },
-          "quantity" : 1500,
-          "addAdditionalInformationYesNo" : true,
-          "additionalInformation" : "12345"
-        }
-      },
-      {
-        "attachToAllItems" : false,
-        "type" : {
-          "type" : "Transport",
-          "code" : "235",
-          "description" : "Container list"
+          "details" : {
+            "documentReferenceNumber" : "1234",
+            "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
+            "addGoodsItemNumberYesNo" : true,
+            "goodsItemNumber" : 1234,
+            "addTypeOfPackageYesNo" : true,
+            "packageType" : {
+              "code" : "BG",
+              "description" : "Bag"
+            },
+            "addNumberOfPackagesYesNo" : true,
+            "numberOfPackages" : 50,
+            "declareQuantityOfGoodsYesNo" : true,
+            "metric" : {
+              "code" : "GRM",
+              "description" : "Gram"
+            },
+            "quantity" : 1500,
+            "addAdditionalInformationYesNo" : true,
+            "additionalInformation" : "12345"
+          }
         },
-        "details" : {
-          "documentReferenceNumber" : "1234",
-          "uuid" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+        {
+          "attachToAllItems" : false,
+          "type" : {
+            "type" : "Transport",
+            "code" : "235",
+            "description" : "Container list"
+          },
+          "details" : {
+            "documentReferenceNumber" : "1234",
+            "uuid" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+          }
         }
-      }
-    ],
+      ]
+    },
     "items" : [
       {
         "description" : "This is a description",
