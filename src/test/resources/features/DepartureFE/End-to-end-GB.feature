@@ -230,20 +230,11 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link  on the 'You have added 2 seals' page
     And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I choose radio option Yes on the 'Do you want to add a goods item number?' page
-    And I enter 1 on the 'What is the goods item number?' page
-    And I choose radio option Yes on the 'You have added 1 goods item number' page
-    And I enter 2 on the 'What is the goods item number?' page
-    And I click the Remove link on the 'You have added 2 goods item numbers' page
-    And I click radio option Yes on the 'Are you sure you want to remove goods item number 1?' page
-    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
     And I choose radio option Yes on the 'You have added 1 transport equipment' page
     And I choose radio option Yes on the 'Do you want to add a container identification number?' page
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
-    And I enter 1 on the 'What is the goods item number?' page
-    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
     And I click the Remove link on the 'You have added 2 transport equipment' page
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
@@ -541,8 +532,6 @@ Feature: End to end journey for Great Britain office of departure
       ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
-    And I enter 1 on the 'What is the goods item number?' page
-    And I choose radio option No on the 'You have added 1 goods item number' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the 'Transport details Check your answers' page
