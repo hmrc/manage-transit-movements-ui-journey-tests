@@ -145,7 +145,7 @@
           "addNationalityYesNo" : true,
           "nationality" : {
             "code" : "GB",
-            "desc" : "United Kingdom"
+            "description" : "United Kingdom"
           },
           "customsOfficeActiveBorder" : {
             "id" : "FR000610",

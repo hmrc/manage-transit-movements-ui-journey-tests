@@ -277,7 +277,7 @@
           "addNationalityYesNo" : true,
           "nationality" : {
             "code" : "GB",
-            "desc" : "United Kingdom"
+            "description" : "United Kingdom"
           },
           "customsOfficeActiveBorder" : {
             "id" : "DE004058",
