@@ -249,12 +249,7 @@
                 "identificationNumber" : "S002"
               }
             ],
-            "addGoodsItemNumbersYesNo" : true,
-            "itemNumbers" : [
-              {
-                "itemNumber" : "2"
-              }
-            ]
+            "addGoodsItemNumbersYesNo" : false
           }
         ],
         "addPaymentMethodYesNo" : true,
