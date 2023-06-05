@@ -136,7 +136,7 @@
         "meansIdentificationNumber" : "REG00101",
         "vehicleCountry" : {
           "code" : "GB",
-          "desc" : "United Kingdom"
+          "description" : "United Kingdom"
         }
       },
       "borderModeOfTransport" : "maritime",
