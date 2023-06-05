@@ -4,7 +4,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
   Background:
     Given I login with ID 1234567890
 
-
   Scenario: 01 Departure Office 'GB' - Declaration 'T2' - Documents - 'Previous'
     And the user has submitted documentsGB1.json for LRN 1234567890DGB1 and EORI number 1234567890
     And I refresh the page
@@ -53,6 +52,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
     # Documents - Transport document
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (T1) Document T1 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -61,6 +61,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 1 document' page
     And I sign out
+
 
   Scenario: 03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'
     And the user has submitted documentsXI.json for LRN 1234567890DXI and EORI number 1234567890
@@ -71,6 +72,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
    # Documents - Supporting document
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
