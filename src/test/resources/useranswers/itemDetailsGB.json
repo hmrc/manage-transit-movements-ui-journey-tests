@@ -134,7 +134,7 @@
         "meansIdentificationNumber" : "REG1231231",
         "vehicleCountry" : {
           "code" : "GB",
-          "desc" : "United Kingdom"
+          "description" : "United Kingdom"
         }
       },
       "borderModeOfTransport" : "rail",

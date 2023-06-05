@@ -266,7 +266,7 @@
         "meansIdentificationNumber" : "GB1234567",
         "vehicleCountry" : {
           "code" : "GB",
-          "desc" : "United Kingdom"
+          "description" : "United Kingdom"
         }
       },
       "borderModeOfTransport" : "maritime",
