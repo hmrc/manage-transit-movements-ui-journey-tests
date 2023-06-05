@@ -248,8 +248,7 @@
               {
                 "identificationNumber" : "S002"
               }
-            ],
-            "addGoodsItemNumbersYesNo" : false
+            ]
           }
         ],
         "addPaymentMethodYesNo" : true,
