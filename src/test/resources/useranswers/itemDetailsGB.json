@@ -112,18 +112,6 @@
               {
                 "identificationNumber" : "Seal009"
               }
-            ],
-            "addGoodsItemNumbersYesNo" : true,
-            "itemNumbers" : [
-              {
-                "itemNumber" : "1"
-              },
-              {
-                "itemNumber" : "2"
-              },
-              {
-                "itemNumber" : "3"
-              }
             ]
           }
         ]
