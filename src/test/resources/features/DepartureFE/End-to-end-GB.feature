@@ -540,6 +540,7 @@ Feature: End to end journey for Great Britain office of departure
 
     # Documents - Transport docs
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (T2L) T2L on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page

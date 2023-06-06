@@ -9,6 +9,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I choose radio option TIR on the 'What declaration do you want to create?' page
 
+
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No'
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
@@ -156,6 +157,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Then I should be on the 'Declaration summary' page
     # Documents
     When I click the Add documents link on the 'Declaration summary' page
+    And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page

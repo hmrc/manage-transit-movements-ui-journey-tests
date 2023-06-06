@@ -169,46 +169,49 @@
         "addContactYesNo" : false
       }
     },
-    "documents" : [
-      {
-        "attachToAllItems": true,
-        "type": {
-          "type": "Previous",
-          "code": "CodeOnly"
+    "documents" : {
+      "addDocumentsYesNo": true,
+      "documents" : [
+        {
+          "attachToAllItems": true,
+          "type": {
+            "type": "Previous",
+            "code": "CodeOnly"
+          },
+          "details": {
+            "documentReferenceNumber": "1234567",
+            "uuid": "61ea7b0b-f10f-4811-a387-b5952a76d97d",
+            "addAdditionalInformationYesNo": false
+          }
         },
-        "details": {
-          "documentReferenceNumber": "1234567",
-          "uuid": "61ea7b0b-f10f-4811-a387-b5952a76d97d",
-          "addAdditionalInformationYesNo": false
-        }
-      },
-      {
-        "attachToAllItems": false,
-        "type": {
-          "type": "Transport",
-          "code": "740",
-          "description": "Air waybill"
+        {
+          "attachToAllItems": false,
+          "type": {
+            "type": "Transport",
+            "code": "740",
+            "description": "Air waybill"
+          },
+          "details": {
+            "documentReferenceNumber": "1234",
+            "uuid": "ddcca71c-6b43-4295-b5e9-e3ee95c39286"
+          }
         },
-        "details": {
-          "documentReferenceNumber": "1234",
-          "uuid": "ddcca71c-6b43-4295-b5e9-e3ee95c39286"
+        {
+          "attachToAllItems": false,
+          "type": {
+            "type": "Support",
+            "code": "380",
+            "description": "Commercial invoice"
+          },
+          "details": {
+            "documentReferenceNumber": "12345",
+            "uuid": "411d05f0-386f-4689-a285-2145cfed4946",
+            "addLineItemNumberYesNo": false,
+            "addAdditionalInformationYesNo": false
+          }
         }
-      },
-      {
-        "attachToAllItems": false,
-        "type": {
-          "type": "Support",
-          "code": "380",
-          "description": "Commercial invoice"
-        },
-        "details": {
-          "documentReferenceNumber": "12345",
-          "uuid": "411d05f0-386f-4689-a285-2145cfed4946",
-          "addLineItemNumberYesNo": false,
-          "addAdditionalInformationYesNo": false
-        }
-      }
-    ]
+      ]
+    }
   },
   "tasks" : {
     ".preTaskList" : "completed",
