@@ -28,6 +28,14 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?select (.+) on the 'Which transport equipment are you using for this item\?' page$""") {
+    (answer: String) =>
+      ItemTransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the 'Which type of declaration do you want to create for this item\?' page$""") {
     (answer: String) =>
       ItemDeclarationTypePage

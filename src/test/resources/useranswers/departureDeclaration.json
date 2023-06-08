@@ -358,6 +358,7 @@
     "items" : [
       {
         "description" : "This is a description",
+        "transportEquipment" : 1,
         "addCUSCodeYesNo" : false,
         "commodityCode" : "ABC123",
         "addDangerousGoodsYesNo" : false,
