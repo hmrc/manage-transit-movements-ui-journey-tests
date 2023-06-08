@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
+package uk.gov.hmrc.test.ui.pages.Cancellations
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object DeclarationErrorsPage extends Page {
+object CancellationRequestSentPage extends Page {
 
-   override def title(args: String*): String = "Declaration errors"
+  override def title(args: String*): String = "Cancellation request sent"
 
   def selectDepartureDeclarationLink(declarationLink: String): Unit =
     clickByPartialLinkText(declarationLink)
+
 }

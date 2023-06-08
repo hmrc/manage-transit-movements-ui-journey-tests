@@ -17,19 +17,30 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Cancellations
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Cancellations.DeclarationNotFoundPage
+import uk.gov.hmrc.test.ui.pages.Cancellations._
 
 class CancellationsStepDef extends BaseStepDef {
 
-   Then("""^(?:I )?(?:should )?be on the You cannot cancel this departure declaration page$""") { () =>
-    DeclarationNotFoundPage
-      .loadPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to cancel this departure declaration\?' page$""") {
+    (answer: String) =>
+      ConfirmCancellationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  Given("""^(?:I )?click on the Back to departure declarations link on the Declaration not found page$""") { (link: String) =>
-    DeclarationNotFoundPage
+  And("""^(?:I )?enter (.*) on the 'Why do you want to cancel this departure declaration\?' page$""") {
+    (answer: String) =>
+      CancellationReasonPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  Given("""^(?:I )?click on the (.+) link on the 'Cancellation request sent' page$""") { (declarationLink: String) =>
+    CancellationRequestSentPage
       .loadPage()
-      .backToDepartureDeclarations()
+      .selectDepartureDeclarationLink(declarationLink)
   }
 
 }

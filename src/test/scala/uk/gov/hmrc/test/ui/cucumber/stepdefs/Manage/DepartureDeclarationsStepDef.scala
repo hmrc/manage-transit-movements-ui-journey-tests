@@ -17,8 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{AmendDeclarationErrorsPage, CancellationErrorsPage, DeclarationErrorsPage, DepartureDeclarationsPage, ReviewCancellationErrorsPage, ReviewDeclarationErrorsPage}
-import uk.gov.hmrc.test.ui.pages.Manage._
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures._
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
@@ -62,10 +61,10 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     .checkForContent(content)
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") { (link: String) =>
+  Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") { (declarationLink: String) =>
     DeclarationErrorsPage
       .loadPage()
-      .selectAction(link)
+      .selectDepartureDeclarationLink(declarationLink)
   }
 
   Given("""^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$""") { () =>
