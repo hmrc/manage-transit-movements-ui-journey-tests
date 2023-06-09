@@ -10,7 +10,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option TIR on the 'What declaration do you want to create?' page
 
 
-  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No'
+  Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No' - CL213 & CL754 Documents
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
     And I submit the 'Check your answers' page
@@ -159,6 +159,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
+#    Supporting document from list CL213 Supporting docs
     Then I select (3) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
@@ -168,10 +169,11 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
+#    Transport document from list CL754
     And I select (740) Air waybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option Yes on the 'You have added 2 documents' page
+    And I choose radio option No on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select (740) Air waybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
