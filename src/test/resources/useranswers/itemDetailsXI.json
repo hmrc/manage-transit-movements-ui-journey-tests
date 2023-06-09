@@ -124,7 +124,8 @@
           {
             "containerIdentificationNumber" : "GB123456789000",
             "addSealsYesNo" : false,
-            "addGoodsItemNumbersYesNo" : false
+            "addGoodsItemNumbersYesNo" : false,
+            "uuid" : "249fe373-6e14-42e4-b60e-00f4b751055d"
           }
         ],
         "addPaymentMethodYesNo" : true,
