@@ -37,7 +37,7 @@ class PreviousStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the package the goods arrived in\?' page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the package used to transport the goods into the UK\?' page$""") {
     (answer: String) =>
       DeclarePackagePage
         .loadPage()
@@ -45,7 +45,7 @@ class PreviousStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What type of package did the goods arrive in\?' page$""") { (answer: String) =>
+  And("""^(?:I )?select (.+) on the 'What type of package was used to transport the goods into the UK\?' page$""") { (answer: String) =>
     PackageTypePage
       .loadPage()
       .select(answer)
