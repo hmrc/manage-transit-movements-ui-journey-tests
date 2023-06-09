@@ -1,4 +1,5 @@
 @departureXIe2e
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -173,7 +174,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select (740) Air waybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select (740) Air waybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
