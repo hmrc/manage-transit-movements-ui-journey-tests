@@ -254,8 +254,8 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a goods item number?' page
     And I enter 1234 on the documents 'What is the goods item number?' page
-    And I click radio option Yes on the 'Do you want to declare the package the goods arrived in?' page
-    Then I select (BG) Bag on the 'What type of package did the goods arrive in?' page
+    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
+    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
     And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
     And I enter 50 on the documents 'How many of these were there?' page
     And I click radio option Yes on the 'Do you want to declare the quantity of goods?' page
@@ -287,7 +287,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 43214 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a goods item number?' page
     And I enter 76767 on the 'What is the goods item number?' page
-    And I click radio option No on the 'Do you want to declare the package the goods arrived in?' page
+    And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page

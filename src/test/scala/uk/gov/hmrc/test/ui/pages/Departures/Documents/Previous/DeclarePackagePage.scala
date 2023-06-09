@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DeclarePackagePage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to declare the package the goods arrived in?")
+  override def title(args: String*): String = String.format("Do you want to declare the package used to transport the goods into the UK?")
 
 }
