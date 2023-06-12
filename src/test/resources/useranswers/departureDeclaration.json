@@ -242,6 +242,7 @@
       "equipmentsAndCharges" : {
         "equipments" : [
           {
+            "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
             "containerIdentificationNumber" : "C001",
             "addSealsYesNo" : true,
             "seals" : [
@@ -358,7 +359,7 @@
     "items" : [
       {
         "description" : "This is a description",
-        "transportEquipment" : 1,
+        "transportEquipment" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
         "addCUSCodeYesNo" : false,
         "commodityCode" : "ABC123",
         "addDangerousGoodsYesNo" : false,
