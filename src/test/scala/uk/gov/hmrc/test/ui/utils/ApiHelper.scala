@@ -50,46 +50,44 @@ object ApiHelper extends HttpClient {
          World.departureId = response.body.split("/")(departureIdIndex)
 
       case "IE014DeclarationCancellation.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-outbound-message/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-outbound-message"
         post(url, xmlStr, headers)
 
       case "IE060ControlDecisionNotificationWithDocuments.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
 
       case "IE060ControlDecisionNotificationWithNoDocuments.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
 
       case "IE056RejectionWithAmendableErrors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
       case "IE056RejectionWithNoAmendableErrors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
       case "IE056RejectionWithMoreThan10Errors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-inbound/${World.departureId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
       case "IE057RejectionLessThan10Errors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE057"))
 
       case "IE057RejectionMoreThan10Errors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE057"))
 
       case "IE043UnloadingPermissionWithSeals.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
 
       case "IE044UnloadingRemarksNotificationWithSeals.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-inbound/${World.arrivalId}"
+        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE044"))
-
-
 
       case _ => throw new scala.RuntimeException("Cannot construct url")
 
