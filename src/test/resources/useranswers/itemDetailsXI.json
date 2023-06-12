@@ -122,6 +122,7 @@
       "equipmentsAndCharges" : {
         "equipments" : [
           {
+            "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
             "containerIdentificationNumber" : "GB123456789000",
             "addSealsYesNo" : false,
             "addGoodsItemNumbersYesNo" : false,
