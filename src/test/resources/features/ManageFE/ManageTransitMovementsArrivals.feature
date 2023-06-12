@@ -1,4 +1,4 @@
-@managehub  @manageA11y
+@managehub @manageA11y
 
 Feature: Manage transit movements frontend tests for Arrivals
 

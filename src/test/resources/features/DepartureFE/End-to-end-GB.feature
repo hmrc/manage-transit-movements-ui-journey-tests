@@ -9,7 +9,7 @@ Feature: End to end journey for Great Britain office of departure
 
 
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
-  Completed Consignee at header level - Container Ind 'Yes'
+  Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
     And I choose radio option T2 on the 'What declaration do you want to create?' page
     And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
@@ -247,7 +247,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    # Documents
+    # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select (T2L) T2L on the 'What previous document do you want to add?' page
@@ -406,7 +406,7 @@ Feature: End to end journey for Great Britain office of departure
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
-  - Container Ind 'No'
+  - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I choose radio option T on the 'What declaration do you want to create?' page
     And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
@@ -538,7 +538,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
-    # Documents - Transport docs
+    # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
