@@ -250,7 +250,7 @@ Feature: End to end journey for Great Britain office of departure
     # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select (T2L) T2L on the 'What previous document do you want to add?' page
+    Then I select (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a goods item number?' page
     And I enter 1234 on the documents 'What is the goods item number?' page
@@ -266,7 +266,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    And I select (380) Commercial invoice on the 'What type of document do you want to add?' page
+    And I select (N003) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 010101 on the 'What is the line item number?' page
@@ -274,16 +274,16 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     When I choose to click on the Remove link on the 'You have added 2 documents' page
-    And I click radio option Yes on the 'Are you sure you want to remove the (380) Commercial invoice?' page
+    And I click radio option Yes on the 'Are you sure you want to remove the (N003) Certificate of quality?' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select (235) Container list on the 'What type of document do you want to add?' page
+    Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
-    # Documents T2F
+    # Documents N270
     Then I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    And I select (T2F) Internal Community transit Declaration on the 'What type of document do you want to add?' page
+    And I select (N270) Delivery note on the 'What type of document do you want to add?' page
     And I enter 43214 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a goods item number?' page
     And I enter 76767 on the 'What is the goods item number?' page
@@ -334,9 +334,9 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Documents Section -T2 skips Yes/No to add document
-    And I select T2L on the 'Which document do you want to attach?' page
+    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select (235) Container list on the 'Which document do you want to attach?' page
+    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 document to this item' page
     And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
     And I click radio option No on the 'You have attached 1 document to this item' page
@@ -388,9 +388,9 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
-    And I select T2L on the 'Which document do you want to attach?' page
+    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select (235) Container list on the 'Which document do you want to attach?' page
+    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 document to this item' page
     And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
     And I click radio option No on the 'You have attached 1 document to this item' page
@@ -544,19 +544,19 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-    Then I select (T2L) T2L on the 'What type of document do you want to add?' page
+    Then I select (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select (740) Air waybill on the 'What type of document do you want to add?' page
+    Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter AirwayBill123 on the 'What is the document’s reference number?' page
     And I submit the 'Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select (740) Air waybill on the 'What type of document do you want to add?' page
+    Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 123456 on the 'What is the document’s reference number?' page
     And I submit the 'Check your answers' page
     And I choose radio option No on the 'You have added 3 documents' page
@@ -589,7 +589,7 @@ Feature: End to end journey for Great Britain office of departure
 
     #Documents section
     And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
-    And I select (740) Air waybill on the 'Which document do you want to attach?' page
+    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
     And I click radio option No on the 'You have attached 2 document to this item' page

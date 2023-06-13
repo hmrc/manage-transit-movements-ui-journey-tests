@@ -125,8 +125,7 @@
             "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
             "containerIdentificationNumber" : "GB123456789000",
             "addSealsYesNo" : false,
-            "addGoodsItemNumbersYesNo" : false,
-            "uuid" : "249fe373-6e14-42e4-b60e-00f4b751055d"
+            "addGoodsItemNumbersYesNo" : false
           }
         ],
         "addPaymentMethodYesNo" : true,
@@ -178,7 +177,8 @@
           "attachToAllItems": true,
           "type": {
             "type": "Previous",
-            "code": "CodeOnly"
+            "code": "C605",
+            "description": "Information sheet INF3"
           },
           "details": {
             "documentReferenceNumber": "1234567",
@@ -190,8 +190,8 @@
           "attachToAllItems": false,
           "type": {
             "type": "Transport",
-            "code": "740",
-            "description": "Air waybill"
+            "code": "N741",
+            "description": "Master airwaybill"
           },
           "details": {
             "documentReferenceNumber": "1234",
@@ -202,8 +202,8 @@
           "attachToAllItems": false,
           "type": {
             "type": "Support",
-            "code": "380",
-            "description": "Commercial invoice"
+            "code": "C673",
+            "description": "Catch certificate"
           },
           "details": {
             "documentReferenceNumber": "12345",
