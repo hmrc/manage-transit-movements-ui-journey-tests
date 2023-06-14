@@ -113,8 +113,7 @@
               {
                 "identificationNumber" : "Seal009"
               }
-            ],
-            "uuid" : "249fe373-6e14-42e4-b60e-00f4b751055d"
+            ]
           }
         ]
       },
@@ -175,8 +174,8 @@
           "attachToAllItems": true,
           "previousDocumentType" : {
             "type" : "Previous",
-            "code" : "T2L",
-            "description" : "T2L"
+            "code": "C605",
+            "description": "Information sheet INF3"
           },
           "details" : {
             "documentReferenceNumber" : "123456",
@@ -202,8 +201,8 @@
           "attachToAllItems": false,
           "type" : {
             "type" : "Support",
-            "code" : "380",
-            "description" : "Commercial invoice"
+            "code": "C673",
+            "description": "Catch certificate"
           },
           "details" : {
             "documentReferenceNumber" : "98765",
@@ -214,13 +213,13 @@
             "additionalInformation": "12345"
 
           }
-        }
-      , {
+        },
+        {
           "attachToAllItems": false,
           "type" : {
             "type" : "Support",
-            "code" : "380",
-            "description" : "Commercial invoice"
+            "code": "C673",
+            "description": "Catch certificate"
           },
           "details" : {
             "documentReferenceNumber" : "98762",

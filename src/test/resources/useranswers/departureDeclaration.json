@@ -249,8 +249,7 @@
               {
                 "identificationNumber" : "S002"
               }
-            ],
-            "uuid" : "249fe373-6e14-42e4-b60e-00f4b751055d"
+            ]
           }
         ],
         "addPaymentMethodYesNo" : true,
@@ -318,8 +317,8 @@
           "attachToAllItems" : false,
           "previousDocumentType" : {
             "type" : "Previous",
-            "code" : "T2L",
-            "description" : "T2L"
+            "code": "C605",
+            "description": "Information sheet INF3"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
@@ -347,8 +346,8 @@
           "attachToAllItems" : false,
           "type" : {
             "type" : "Transport",
-            "code" : "235",
-            "description" : "Container list"
+            "code": "N741",
+            "description": "Master airwaybill"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
