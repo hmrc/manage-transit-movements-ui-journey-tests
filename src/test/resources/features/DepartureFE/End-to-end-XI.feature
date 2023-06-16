@@ -1,5 +1,6 @@
 @departureXIe2e
 
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -156,15 +157,16 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
+
     # Documents
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
 #    Supporting document from list CL213 Supporting docs
     Then I select (C673) Catch certificate on the 'What type of document do you want to add?' page
-    And I enter 1234 on the 'What is the document’s reference number?' page
+    And I enter RefNoCL213Doc1 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
-    And I enter 54321 on the 'What is the line item number?' page
+    And I enter 10001 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
@@ -172,18 +174,19 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to use this document for all items?' page
 #    Transport document from list CL754
     And I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
-    And I enter 1234 on the 'What is the document’s reference number?' page
+    And I enter RefNoCL754Doc2 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
+
     And I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
-    And I enter air1234 on the 'What is the document’s reference number?' page
+    And I enter RefNoCL754Doc3 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 3 documents' page
 
       #Items
     When I click the Add items link on the 'Declaration summary' page
-    And I enter This is a description on the 'Enter a description of item 1' page
+    And I enter This is a description of Item 1 on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
@@ -214,6 +217,6 @@ Feature: End to end journey for Northern Ireland office of departure
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit the 'Check your answers' page
+    And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out

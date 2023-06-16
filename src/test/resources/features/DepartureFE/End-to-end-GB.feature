@@ -264,6 +264,8 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
+
+    #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select (N003) Certificate of quality on the 'What type of document do you want to add?' page
@@ -273,25 +275,18 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
+
+    #  Remove Supporting document 2
     When I choose to click on the Remove link on the 'You have added 2 documents' page
     And I click radio option Yes on the 'Are you sure you want to remove the (N003) Certificate of quality?' page
     And I choose radio option Yes on the 'You have added 1 document' page
+
+    #  Add a Transport document from list 754
     And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
-    # Documents N270
-    Then I choose radio option Yes on the 'You have added 2 documents' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
-    And I select (N270) Delivery note on the 'What type of document do you want to add?' page
-    And I enter 43214 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to add a goods item number?' page
-    And I enter 76767 on the 'What is the goods item number?' page
-    And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I click radio option No on the 'Do you want to declare the quantity of goods?' page
-    And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the 'Documents Check your answers' page
-    Then I choose radio option No on the 'You have added 3 documents' page
+    Then I choose radio option No on the 'You have added 2 documents' page
 
     #Items
     When I click the Add items link on the 'Declaration summary' page
@@ -299,7 +294,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
-      # Dangerous goods section
+    # Dangerous goods section
     And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
     And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
     And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
@@ -315,10 +310,10 @@ Feature: End to end journey for Great Britain office of departure
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 100 on the 'How many (NE) Unpacked or unpackaged are you using?' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
-    And I enter This is a description on the 'What is the shipping mark?' page
+    And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
-    And I enter This is a description on the 'What is the shipping mark?' page
+    And I enter This is a description of the cargo 2 on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
@@ -330,10 +325,11 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Warehouse keeper on the 'Which type of supply chain actor do you want to add?' item page
     And I enter ABC123 on the 'What is the EORI number or Trader Identification Number TIN for the warehouse keeper?' item page
     And I click the Remove link on the 'You have added 2 supply chain actors for this item' item page
+    #Remove Supply Chain Actor
     And I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
-    #Documents Section -T2 skips Yes/No to add document
+    #Items Documents Section -T2 skips Yes/No to add document
     And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option Yes on the 'You have attached 1 document to this item' page
     And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
@@ -365,46 +361,45 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on 'Do you want to add any additional information for this item?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Item 1 Check your answers' page
     And I click radio option Yes on the 'You have added 1 item' page
+
     #Add another Item
     And I enter This is a description on the 'Enter a description of item 2' page
     And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
-    # Dangerous goods section
+    #2nd Item - Dangerous goods section
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
 
-    # Measurement section
+    #2nd Item - Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
-    And I click radio option Yes on the 'Do you want to add supplementary units?' page
-    And I enter 123.99 on the 'How many supplementary units does the item include?' page
+    And I click radio option No on the 'Do you want to add supplementary units?' page
 
-    #Package section
+    #2nd Item - Package section
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
-    And I enter This is a description on the 'What is the shipping mark?' page
+    And I enter 2nd item shipping mark cargo description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
-        #Supply Chain Actor section
+
+    #2nd Item - Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
-    #Documents section
+    #2nd Item - Documents section
     And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
-    And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
-    And I click the Remove link on the 'You have attached 2 document to this item' page
-    And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
     And I click radio option No on the 'You have attached 1 document to this item' page
 
-    #Additional Reference section
+    #2nd Item - Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
-    #Additional Information
+
+    #2nd Item - Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
-    #Items Summary
-    And I submit the 'Check your answers' page
+
+    #2nd Item - Items Summary
+    And I submit on the 'Item 2 Check your answers' page
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
+    And I click radio option No on the 'You have added 1 item' page
     And I sign out
-
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -582,7 +577,7 @@ Feature: End to end journey for Great Britain office of departure
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit the 'Check your answers' page
+    And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
