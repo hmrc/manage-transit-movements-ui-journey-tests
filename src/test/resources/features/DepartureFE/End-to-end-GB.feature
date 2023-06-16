@@ -276,7 +276,7 @@ Feature: End to end journey for Great Britain office of departure
     When I choose to click on the Remove link on the 'You have added 2 documents' page
     And I click radio option Yes on the 'Are you sure you want to remove the (N003) Certificate of quality?' page
     And I choose radio option Yes on the 'You have added 1 document' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
+    And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
@@ -334,12 +334,12 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Documents Section -T2 skips Yes/No to add document
-    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
-    And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
-    And I click the Remove link on the 'You have attached 2 document to this item' page
+    And I select (C605) Information sheet INF3 - 1234 on the 'Which document do you want to attach?' page
+    And I click radio option Yes on the 'You have attached 2 documents to this item' page
+    And I select (N270) Delivery note on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 3 documents to this item' page
     And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
-    And I click radio option No on the 'You have attached 1 document to this item' page
+    And I click radio option No on the 'You have attached 2 document to this item' page
 
     #Additional Reference Section
     And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
@@ -389,11 +389,11 @@ Feature: End to end journey for Great Britain office of departure
 
     #Documents section
     And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
-    And I click radio option Yes on the 'You have attached 1 document to this item' page
-    And I select (N741) Master airwaybill on the 'Which document do you want to attach?' page
-    And I click the Remove link on the 'You have attached 2 document to this item' page
+    And I click radio option Yes on the 'You have attached 2 document to this item' page
+    And I select (N270) Delivery note on the 'Which document do you want to attach?' page
+    And I click the Remove link on the 'You have attached 3 document to this item' page
     And I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page
-    And I click radio option No on the 'You have attached 1 document to this item' page
+    And I click radio option No on the 'You have attached 2 document to this item' page
 
     #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
