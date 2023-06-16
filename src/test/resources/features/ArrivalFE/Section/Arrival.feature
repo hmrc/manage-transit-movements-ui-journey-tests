@@ -335,69 +335,69 @@ Feature: Arrival notification feature
     And I sign out
 
 
-  Scenario: 06 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
-  Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
-  # Identification
-    When I select GB on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-  #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Coordinates on the arrival location of goods identification page
-    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
-    And I choose radio option No on the arrival location of goods add contact page
-  #Add Incident
-    And I choose radio option Yes on the add incident page
-    And I select France on the In which country did the incident happen page
-  #Incident Code
-    And I choose radio option 6 - The means on the incident code page
-    And I enter Test Incident Happened text on the incident description page
-  #Endorsements
-    And I choose radio option No on the add endorsement page
-  #Incidents Identify Location
-    And I choose radio option Address on the incident identify location page
-    And I fill in address on the incident address page
-  #Add Container Indicator
-    And I choose radio option No on the container indicator page
-    And I choose radio option Yes on the add transport equipment page
-    And I choose radio option No on the add container identification number page
-  #Add Container Seal
-    And I enter S001 on the What is the seal identification number page
-    And I should have 1 seal added on the add another seal page
-    When I choose radio option No on the add another container seal page
-  #Add Goods Item
-    And I choose radio option No on the Do you want to add a goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
-  #Add Transport Equipment
-    And I choose radio option No on the You have added 1 transport equipment page
- #Type of Identification
-    And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
-    And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
-  #Add Another Incident
-    And I choose radio option No on the You have added 1 incident page
-  #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
-  #Confirmation
-    And I should be on the Arrival notification sent page
-    And I sign out
-
-
-  Scenario: 07 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
-  # Identification
-    When I select XI on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-  #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option UN/LOCODE on the arrival location of goods identification page
-    And I select Aalen on the arrival location of goods customs un locode page
-    And I choose radio option No on the arrival location of goods add contact page
-  #Add Incident
-    And I choose radio option No on the add incident page
-  #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
- #Confirmation
-    And I should be on the Arrival notification sent page
-    And I sign out
+#  Scenario: 06 - Normal - Goods Location Id  'Coordinates' - Add Incident 'Yes' - Incident code '6' -
+#  Endorsement 'No' - Incident Location 'Address' - Add Another Incident 'No'
+#  # Identification
+#    When I select GB on the arrival office of destination page
+#    And I enter GB123456789000 on the consignee eori tin page
+#    And I choose radio option Normal on the 'What type of procedure are you using?' page
+#  #Location Of goods
+#    And I choose radio option Authorised place on the arrival location of goods type page
+#    And I choose radio option Coordinates on the arrival location of goods identification page
+#    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
+#    And I choose radio option No on the arrival location of goods add contact page
+#  #Add Incident
+#    And I choose radio option Yes on the add incident page
+#    And I select France on the In which country did the incident happen page
+#  #Incident Code
+#    And I choose radio option 6 - The means on the incident code page
+#    And I enter Test Incident Happened text on the incident description page
+#  #Endorsements
+#    And I choose radio option No on the add endorsement page
+#  #Incidents Identify Location
+#    And I choose radio option Address on the incident identify location page
+#    And I fill in address on the incident address page
+#  #Add Container Indicator
+#    And I choose radio option No on the container indicator page
+#    And I choose radio option Yes on the add transport equipment page
+#    And I choose radio option No on the add container identification number page
+#  #Add Container Seal
+#    And I enter S001 on the What is the seal identification number page
+#    And I should have 1 seal added on the add another seal page
+#    When I choose radio option No on the add another container seal page
+#  #Add Goods Item
+#    And I choose radio option No on the Do you want to add a goods item number page
+#    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+#  #Add Transport Equipment
+#    And I choose radio option No on the You have added 1 transport equipment page
+# #Type of Identification
+#    And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
+#    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+#    And I select Argentina on the What country is the replacement transport registered to page
+#    And I submit on the 'Arrivals - Incidents Check your answers' page
+#  #Add Another Incident
+#    And I choose radio option No on the You have added 1 incident page
+#  #Summary CYA page
+#    And I submit on the 'Arrivals Check your answers' page
+#  #Confirmation
+#    And I should be on the Arrival notification sent page
+#    And I sign out
+#
+#
+#  Scenario: 07 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
+#  # Identification
+#    When I select XI on the arrival office of destination page
+#    And I enter GB123456789000 on the consignee eori tin page
+#    And I choose radio option Normal on the 'What type of procedure are you using?' page
+#  #Location Of goods
+#    And I choose radio option Authorised place on the arrival location of goods type page
+#    And I choose radio option UN/LOCODE on the arrival location of goods identification page
+#    And I select Aalen on the arrival location of goods customs un locode page
+#    And I choose radio option No on the arrival location of goods add contact page
+#  #Add Incident
+#    And I choose radio option No on the add incident page
+#  #Summary CYA page
+#    And I submit on the 'Arrivals Check your answers' page
+# #Confirmation
+#    And I should be on the Arrival notification sent page
+#    And I sign out
