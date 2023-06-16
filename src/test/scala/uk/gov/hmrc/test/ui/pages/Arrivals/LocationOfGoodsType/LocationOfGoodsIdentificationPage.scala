@@ -26,11 +26,10 @@ object LocationOfGoodsIdentificationPage extends RadioPage {
     answer match {
       case "Customs office identifier" => clickById("value")
       case "EORI number"               => clickById("value_1")
-      case "Authorisation number"      => clickById("value_2")
-      case "Coordinates"               => clickById("value_3")
-      case "UN/LOCODE"                 => clickById("value_4")
-      case "Address"                   => clickById("value_5")
-      case "Postal code"               => clickById("value_6")
+      case "Coordinates"               => clickById("value_2")
+      case "UN/LOCODE"                 => clickById("value_3")
+      case "Address"                   => clickById("value_4")
+      case "Postal code"               => clickById("value_5")
     }
     this
   }

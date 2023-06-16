@@ -49,10 +49,10 @@ class IdentificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the (.+) authorisations reference number page$""") {
-    (answer: String, authorisation: String) =>
+  And("""^(?:I )?enter (.+) on the authorisations reference number page$""") {
+    (answer: String) =>
       AuthorisationsReferenceNumberPage
-        .loadPage(authorisation)
+        .loadPage()
         .fillInput(answer)
         .submitPage()
   }

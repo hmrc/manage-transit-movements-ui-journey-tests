@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AuthorisationsReferenceNumberPage extends StringPage {
   override def title(args: String*): String =
-    String.format("What’s the reference number for the %s authorisation?", args: _*)
+    String.format("What is the authorisation reference number?")
 }
