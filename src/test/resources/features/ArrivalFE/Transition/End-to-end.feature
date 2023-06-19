@@ -1,3 +1,4 @@
+@arrivalE2e
 
 Feature: End to end journey Arrival notification feature
 
@@ -214,40 +215,38 @@ Feature: End to end journey Arrival notification feature
     When I select GB on the arrival office of destination page
     And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I enter GB123456789000 on the consignee eori tin page
-#    And I choose radio option ACT on the authorisations type page
-    And I enter 1200014210026352 on the authorisations reference number page
-#    And I submit on the 'Arrivals - Authorisations Check your answers' page
-#    And I should have 1 authorisation on the add another authorisation page
-#    When I choose radio option No on the add another authorisation page
+    And I choose radio option ACT on the authorisations type page
+    And I enter 1200014210026352 on the ACT authorisations reference number page
+    And I submit on the 'Arrivals - Authorisations Check your answers' page
+    And I should have 1 authorisation on the add another authorisation page
+    When I choose radio option No on the add another authorisation page
   #Location Of goods - Location of goods - X Eori Number
-#    And I choose radio option Authorised place on the arrival location of goods type page
-#    And I choose radio option EORI number on the arrival location of goods identification page
-#    And I enter GB123456789000 on the arrival location of goods eori tin page
-#    And I choose radio option Yes on the arrival location of goods add additional identifier page
-#    And I enter 1234 on the arrival location of goods additional identifier page
-    And I enter 12345 on the arrival location of goods authorisation number page
+    And I choose radio option Authorised place on the arrival location of goods type page
+    And I choose radio option EORI number on the arrival location of goods identification page
+    And I enter GB123456789000 on the arrival location of goods eori tin page
+    And I choose radio option Yes on the arrival location of goods add additional identifier page
+    And I enter 1234 on the arrival location of goods additional identifier page
     And I choose radio option Yes on the arrival location of goods add contact page
     And I enter John Joe on the arrival location of goods contact page
-    And I enter +44 2345 82 83 on the arrival location of goods contact number page
-#  #Incident
-#    And I choose radio option Yes on the add incident page
-#    And I select France on the In which country did the incident happen page
-#  #Incident code
-#    And I choose radio option 5 - The holder on the incident code page
-#    And I enter Test Incident Happened text on the incident description page
-#  #Endorsement
-#    And I choose radio option Yes on the add endorsement page
-#    And I choose fill in the date on the endorsement date page
-#    And I enter test data on the endorsement authority page
-#    And I select France on the endorsement country page
-#    And I enter Incident test data on the endorsement location page
-#  #Incidents Identify Location
-#    And I choose radio option Address on the incident identify location page
-#    And I fill in address on the incident address page
-#    And I submit on the 'Arrivals - Incidents Check your answers' page
-#  #Add Another Incident
-#    And I choose radio option No on the You have added 1 incident page
+    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+  #Incident
+    And I choose radio option Yes on the add incident page
+    And I select France on the In which country did the incident happen page
+  #Incident code
+    And I choose radio option 5 - The holder on the incident code page
+    And I enter Test Incident Happened text on the incident description page
+  #Endorsement
+    And I choose radio option Yes on the add endorsement page
+    And I choose fill in the date on the endorsement date page
+    And I enter test data on the endorsement authority page
+    And I select France on the endorsement country page
+    And I enter Incident test data on the endorsement location page
+  #Incidents Identify Location
+    And I choose radio option Address on the incident identify location page
+    And I fill in address on the incident address page
+    And I submit on the 'Arrivals - Incidents Check your answers' page
+  #Add Another Incident
+    And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
