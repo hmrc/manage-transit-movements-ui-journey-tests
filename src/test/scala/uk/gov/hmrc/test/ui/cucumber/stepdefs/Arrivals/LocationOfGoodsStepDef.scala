@@ -88,14 +88,14 @@ class LocationOfGoodsStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?enter (.+) on the arrival location of goods contact page$""") { (answer: String) =>
-    LocationOfGoodsContactPage
+    LocationOfGoodsContactNamePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods contact telephone number page$""") { (answer: String) =>
-    LocationOfGoodsContactTelephoneNumberPage
+  And("""^(?:I )?enter (.+) on the arrival location of goods contact number page$""") { (answer: String) =>
+    ContactPhoneNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
