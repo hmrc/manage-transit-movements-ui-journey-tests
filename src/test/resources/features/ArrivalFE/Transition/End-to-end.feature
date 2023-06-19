@@ -1,4 +1,3 @@
-@arrivalE2e
 
 Feature: End to end journey Arrival notification feature
 
