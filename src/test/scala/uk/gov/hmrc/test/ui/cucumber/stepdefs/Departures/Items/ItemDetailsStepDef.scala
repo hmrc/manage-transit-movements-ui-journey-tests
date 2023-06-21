@@ -220,6 +220,12 @@ class ItemDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click continue on the 'Before you continue' page$""") {
+         ErrorHintTextPage
+        .loadPage()
+        .submitPage()
+  }
+
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add a shipping mark\?' page$""") {
     (answer: String) =>
       PackagesAddShippingMarkPage
