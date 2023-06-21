@@ -6,7 +6,7 @@ Feature: End to end journey Arrival notification feature
     And I click on the Make an arrival notification link on the 'Manage your transit movements' page
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
-  @arrivalA11y
+
   Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
