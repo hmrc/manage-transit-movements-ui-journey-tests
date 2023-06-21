@@ -49,6 +49,14 @@
       "newLevel": 0
     },
     {
+      "reason": "CSP header not set - we have no control over this",
+      "contextId": 1,
+      "url": "https:\\/\\/www.googletagmanager.com\\/.*",
+      "ruleId": 10038,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
       "reason": "Ignore Missing Anti-clickjacking Header",
       "contextId": 1,
       "url": "https:\\/\\/optimizationguide-pa.googleapis.com\\/.*",
@@ -61,6 +69,14 @@
       "contextId": 1,
       "url": "https:\\/\\/optimizationguide-pa.googleapis.com\\/.*",
       "ruleId": 10021,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
+      "reason": "CSP header not set - we have no control over this",
+      "contextId": 1,
+      "url": "https:\\/\\/optimizationguide-pa.googleapis.com\\/.*",
+      "ruleId": 10038,
       "urlIsRegex": "true",
       "newLevel": 0
     },
