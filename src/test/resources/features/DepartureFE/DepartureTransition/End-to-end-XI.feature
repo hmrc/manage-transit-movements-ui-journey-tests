@@ -1,3 +1,4 @@
+@departureXIe2e
 
 
 Feature: End to end journey for Northern Ireland office of departure
@@ -168,8 +169,6 @@ Feature: End to end journey for Northern Ireland office of departure
     # Previous document from list
     And I select (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-
-    And I click radio option No on the 'Do you want to add a goods item number?' page
     And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
