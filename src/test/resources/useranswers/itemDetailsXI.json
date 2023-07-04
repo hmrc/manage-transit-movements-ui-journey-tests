@@ -45,8 +45,7 @@
             "postalCode" : "TE33ST"
           },
           "addContact" : false
-        },
-        "moreThanOneConsignee" : true
+        }
       }
     },
     "routeDetails" : {

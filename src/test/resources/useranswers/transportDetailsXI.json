@@ -61,7 +61,6 @@
             "telephoneNumber" : "+123123123213"
           }
         },
-        "moreThanOneConsignee" : false,
         "consignee" : {
           "eoriYesNo" : true,
           "eori" : "GE00101001",

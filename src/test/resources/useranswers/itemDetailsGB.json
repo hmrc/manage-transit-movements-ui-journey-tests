@@ -30,8 +30,7 @@
       },
       "actingAsRepresentative" : false,
       "consignment" : {
-        "approvedOperator" : true,
-        "moreThanOneConsignee" : true
+        "approvedOperator" : true
       }
     },
     "routeDetails" : {
