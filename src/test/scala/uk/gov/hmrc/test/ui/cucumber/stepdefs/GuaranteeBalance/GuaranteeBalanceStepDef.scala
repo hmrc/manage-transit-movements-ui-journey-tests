@@ -17,9 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.EoriNumberPage
+import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.GuaranteeRefNumberPage
 
 class GuaranteeBalanceStepDef extends BaseStepDef {
+
 
   Then("""^(?:I )?(?:should )?be on the 'What is your EORI number\?' page$""") { () =>
     EoriNumberPage

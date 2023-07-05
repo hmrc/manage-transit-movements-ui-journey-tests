@@ -56,4 +56,3 @@ Feature: Manage transit movements frontend tests for Arrivals
     Then I should be on the 'Review notification errors' page
     And I sign out
 
-

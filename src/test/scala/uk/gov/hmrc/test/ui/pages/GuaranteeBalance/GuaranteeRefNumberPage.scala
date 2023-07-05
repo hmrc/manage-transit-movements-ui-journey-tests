@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object EoriNumberPage extends StringPage with GuaranteeBalancePage {
+object GuaranteeRefNumberPage extends StringPage with GuaranteeBalancePage {
 
-  override def title(args: String*): String = "What is your EORI number?"
+  override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
 }

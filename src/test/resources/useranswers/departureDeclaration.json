@@ -15,8 +15,7 @@
     },
     "traderDetails" : {
       "holderOfTransit" : {
-        "eoriYesNo" : true,
-        "eori" : "GB123456123456",
+        "eoriYesNo" : false,
         "name" : "Joe Blog",
         "country" : {
           "code" : "GB",
@@ -43,8 +42,7 @@
       "consignment" : {
         "approvedOperator" : true,
         "consignor" : {
-          "eoriYesNo" : true,
-          "eori" : "IT12312313",
+          "eoriYesNo" : false,
           "name" : "Pip Consignor",
           "country" : {
             "code" : "GB",
@@ -61,10 +59,8 @@
             "telephoneNumber" : "+123123123213"
           }
         },
-        "moreThanOneConsignee" : false,
         "consignee" : {
-          "eoriYesNo" : true,
-          "eori" : "GE00101001",
+          "eoriYesNo" : false,
           "name" : "Simpson Blog Consignee",
           "country" : {
             "code" : "GB",
@@ -323,8 +319,6 @@
           "details" : {
             "documentReferenceNumber" : "1234",
             "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
-            "addGoodsItemNumberYesNo" : true,
-            "goodsItemNumber" : 1234,
             "addTypeOfPackageYesNo" : true,
             "packageType" : {
               "code" : "BG",

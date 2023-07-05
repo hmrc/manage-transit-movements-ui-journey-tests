@@ -16,22 +16,62 @@
     "traderDetails" : {
       "holderOfTransit" : {
         "eoriYesNo" : false,
-        "name" : "Joe",
+        "name" : "Joe Blog",
         "country" : {
           "code" : "GB",
           "description" : "United Kingdom"
         },
         "address" : {
-          "numberAndStreet" : "123 TEST ADDRESS",
-          "city" : "TESTERFIELD",
-          "postalCode" : "TE33ST"
+          "numberAndStreet" : "1 Church lane",
+          "city" : "Godrics Hollow",
+          "postalCode" : "BA1 0AA"
         },
-        "addContact" : false
+        "addContact" : true,
+        "contact" : {
+          "name" : "John contact",
+          "telephoneNumber" : "+2112212112"
+        }
       },
-      "actingAsRepresentative" : false,
+      "actingAsRepresentative" : true,
+      "representative" : {
+        "eori" : "FR123123132",
+        "addDetails" : true,
+        "name" : "Marie Rep",
+        "telephoneNumber" : "+11 1111 1111"
+      },
       "consignment" : {
         "approvedOperator" : true,
-        "moreThanOneConsignee" : true
+        "consignor" : {
+          "eoriYesNo" : false,
+          "name" : "Pip Consignor",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          },
+          "addContact" : true,
+          "contact" : {
+            "name" : "Pip Contact",
+            "telephoneNumber" : "+123123123213"
+          }
+        },
+        "consignee" : {
+          "eoriYesNo" : false,
+          "name" : "Simpson Blog Consignee",
+          "country" : {
+            "code" : "GB",
+            "description" : "United Kingdom"
+          },
+          "address" : {
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          }
+        }
       }
     },
     "routeDetails" : {
@@ -180,8 +220,6 @@
           "details" : {
             "documentReferenceNumber" : "123456",
             "uuid" : "1794d93b-17d5-44fe-a18d-aaa2059d06fe",
-            "addGoodsItemNumberYesNo" : true,
-            "goodsItemNumber" : 123456,
             "addTypeOfPackageYesNo" : true,
             "packageType" : {
               "code" : "BG",

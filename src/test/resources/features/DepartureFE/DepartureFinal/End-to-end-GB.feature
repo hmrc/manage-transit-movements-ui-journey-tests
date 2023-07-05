@@ -1,4 +1,5 @@
 @departureGBe2e
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -18,8 +19,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Trader details
     And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
-    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
     And I select United Kingdom on the 'Which country is the transit holder based in?' page
     And I fill in the address on the 'What is the transit holder’s address?' page
@@ -36,23 +36,22 @@ Feature: End to end journey for Great Britain office of departure
     And I enter Marie Rep on the representative 'What is your name?' page
     And I enter +11 1111 1111 on the representative 'What is your phone number?' page
 
-    ## Reduced data set operator
+      ## Reduced data set operator (can only be true when security = 0)
     And I choose radio option Yes on the 'Do you want to use a reduced data set?' page
 
       ## Consignor
-    And I choose radio option Yes on the 'Do you know the consignor’s EORI number or TIN?' page
-    And I enter IT12312313 on the 'What is the consignor’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you know the consignor’s EORI number or TIN?' page
     And I enter Pip Consignor on the 'What is the consignor’s name?' page
     And I select United Kingdom on the 'Which country is the consignor based in?' page
     And I fill in the address on the 'What is the consignor’s address?' page
+
+      ## Consignor contact person's details
     And I choose radio option Yes on the 'Do you want to add a contact for the consignor?' page
     And I enter Pip Contact on the 'Who is the contact for the consignor?' page
     And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
 
       ## Consignee
-    And I choose radio option No on the 'Is there more than one consignee?' page
-    And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
-    And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter Simpson Blog Consignee on the 'What is the consignee’s name?' page
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
@@ -250,10 +249,8 @@ Feature: End to end journey for Great Britain office of departure
     # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
+    Then I select (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to add a goods item number?' page
-    And I enter 1234 on the documents 'What is the goods item number?' page
     And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
     And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
@@ -267,7 +264,7 @@ Feature: End to end journey for Great Britain office of departure
     #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    And I select Supporting - (N003) Certificate of quality on the 'What type of document do you want to add?' page
+    And I select (N003) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 010101 on the 'What is the line item number?' page
@@ -277,7 +274,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'You have added 2 documents' page
         #  Add a Transport document from list 754
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-    Then I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
+    Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     Then I choose radio option No on the 'You have added 3 documents' page
@@ -325,7 +322,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Items Documents Section -T2 skips Yes/No to add document
-    And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
+    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
     #Additional Reference Section
@@ -376,7 +373,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #2nd Item - Documents section
-    And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
+    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
     #2nd Item - Additional Reference section
@@ -403,10 +400,8 @@ Feature: End to end journey for Great Britain office of departure
     ## Trader details
     And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
-    And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter Joe Blog on the 'What is the transit holder’s name?' page
-    And I select United Kingdom on the 'Which country is the transit holder based in?' page
-    And I fill in the address on the 'What is the transit holder’s address?' page
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
 
       ## Transit holder's contact person's details
     And I choose radio option No on the 'Do you want to add a contact?' page
@@ -418,14 +413,15 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to use a reduced data set?' page
 
       ## Consignor
-    And I choose radio option No on the 'Do you know the consignor’s EORI number or TIN?' page
-    And I enter Pip Consignor on the 'What is the consignor’s name?' page
-    And I select United Kingdom on the 'Which country is the consignor based in?' page
-    And I fill in the address on the 'What is the consignor’s address?' page
+    And I choose radio option Yes on the 'Do you know the consignor’s EORI number or TIN?' page
+    And I enter IT12312313 on the 'What is the consignor’s EORI number or TIN?' page
+      ## Consignor contact person's details
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
       ## Consignee
-    And I choose radio option Yes on the 'Is there more than one consignee?' page
+    And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
+    And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
+
     And I submit on the 'Trader details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
@@ -530,7 +526,7 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-    Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
+    Then I select (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page

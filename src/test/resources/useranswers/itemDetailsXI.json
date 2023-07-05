@@ -16,37 +16,35 @@
     },
     "traderDetails" : {
       "holderOfTransit" : {
-        "tirIdentificationYesNo" : true,
-        "tirIdentification" : "AAA/999/99999",
-        "name" : "JOE BLOG",
-        "country" : {
-          "code" : "FR",
-          "description" : "France"
-        },
-        "address" : {
-          "numberAndStreet" : "123 TEST ADDRESS",
-          "city" : "TESTERFIELD",
-          "postalCode" : "TE33ST"
-        },
-        "addContact" : false
+        "eoriYesNo" : true,
+        "eori" : "GB123456123456",
+        "addContact" : false,
+        "tirIdentification" : "AAA/999/99999"
       },
       "actingAsRepresentative" : false,
       "consignment" : {
         "consignor" : {
+          "eoriYesNo" : true,
+          "eori" : "GB123456123456",
+          "addContact" : true,
+          "contact" : {
+            "name" : "Pip Contact",
+            "telephoneNumber" : "+123123123213"
+          }
+        },
+        "consignee" : {
           "eoriYesNo" : false,
-          "name" : "CONSIGNOR JD",
+          "name" : "Simpson Blog Consignee",
           "country" : {
-            "code" : "IT",
-            "description" : "Italy"
+            "code" : "GB",
+            "description" : "United Kingdom"
           },
           "address" : {
-            "numberAndStreet" : "123 TEST ADDRESS",
-            "city" : "TESTERFIELD",
-            "postalCode" : "TE33ST"
-          },
-          "addContact" : false
-        },
-        "moreThanOneConsignee" : true
+            "numberAndStreet" : "1 Merry Lane",
+            "city" : "Godrics Hollow",
+            "postalCode" : "CA1 9AA"
+          }
+        }
       }
     },
     "routeDetails" : {
