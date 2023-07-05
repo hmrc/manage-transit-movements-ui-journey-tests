@@ -22,7 +22,6 @@ object DeclarationNotFoundPage extends Page {
 
   override def title(args: String*): String = "You cannot cancel this departure declaration"
 
-  def backToDepartureDeclarations(): Unit = {
+  def backToDepartureDeclarations(): Unit =
     clickById("manage-transit-movements")
-  }
 }

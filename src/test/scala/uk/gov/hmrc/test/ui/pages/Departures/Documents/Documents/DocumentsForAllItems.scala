@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Documents.Documents
 
-
-
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DocumentsForAllItems extends YesNoPage {

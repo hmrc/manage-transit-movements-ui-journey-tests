@@ -85,11 +85,12 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter conveyance number (.+) on the 'What is the conveyance reference number\?' page$""") { (answer: String) =>
-    ConveyanceReferenceNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter conveyance number (.+) on the 'What is the conveyance reference number\?' page$""") {
+    (answer: String) =>
+      ConveyanceReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose to click on (.*) link on the add another border means of transport page$""") {
@@ -105,11 +106,12 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") { (answer: String, numberOfBorderMeansInTitle: String) =>
-    AddAnotherBorderMeansOfTransportPage
-      .loadPage(numberOfBorderMeansInTitle)
-      .select(answer)
-      .submitPage()
+  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") {
+    (answer: String, numberOfBorderMeansInTitle: String) =>
+      AddAnotherBorderMeansOfTransportPage
+        .loadPage(numberOfBorderMeansInTitle)
+        .select(answer)
+        .submitPage()
   }
 
 }

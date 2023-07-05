@@ -20,5 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemovePackagePage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove %s from this item?", args: _*)
+  override def title(args: String*): String =
+    String.format("Are you sure you want to remove %s from this item?", args: _*)
 }

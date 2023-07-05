@@ -49,11 +49,12 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") { (answer: String) =>
-    ProcedureTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") {
+    (answer: String) =>
+      ProcedureTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'What declaration do you want to create\?' page$""") {
@@ -80,7 +81,8 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .submitPage()
   }
 
-  When("""^the user has submitted (.+) for LRN (.+) and EORI number (.+)$""") { (fileName: String, lrn: String, eoriNumber: String) =>
-    CacheHelper.submitUserAnswers(fileName, lrn, eoriNumber)
+  When("""^the user has submitted (.+) for LRN (.+) and EORI number (.+)$""") {
+    (fileName: String, lrn: String, eoriNumber: String) =>
+      CacheHelper.submitUserAnswers(fileName, lrn, eoriNumber)
   }
 }

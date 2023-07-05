@@ -21,12 +21,13 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{Authorisat
 
 class TransportAuthorisationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?enter (.+) reference number on the 'What is the reference number for the (.+) authorisation\?' page$""") {
-    (answer: String, authorisation: String) =>
-      AuthorisationRefNumberPage
-        .loadPage(authorisation)
-        .fillInput(answer)
-        .submitPage()
+  And(
+    """^(?:I )?enter (.+) reference number on the 'What is the reference number for the (.+) authorisation\?' page$"""
+  ) { (answer: String, authorisation: String) =>
+    AuthorisationRefNumberPage
+      .loadPage(authorisation)
+      .fillInput(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?should have (.*) authorisations? on the 'You have added (.*) authorisations?' page$""") {

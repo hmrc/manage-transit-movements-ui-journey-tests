@@ -26,18 +26,17 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") {
-    (content: String) =>
+  And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
     UnloadingRejectionPage
       .loadPage()
       .checkForContent(content)
   }
 
   And("""^(?:I )?fill in the date on the 'When were the goods unloaded\?' page$""") { () =>
-      GoodsUnloadedDatePage
-        .loadPage()
-        .fillInputs()
-        .submitPage()
+    GoodsUnloadedDatePage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Have you fully or partially unloaded the goods\?' page$""") {
@@ -48,46 +47,51 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$""") {
-    (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$"""
+  ) { (answer: String) =>
     SealNumbersReadablePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") { (answer: String) =>
     SealsBrokenPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") { () =>
+  And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") {
+    () =>
       DeclarationSummaryPage
         .loadPage()
         .submitPage()
   }
 
-  Given("""^(?:I )?click the (.+) link on the 'Cross-check the transit with this declaration summary' page$""") { (link: String) =>
-    DeclarationSummaryPage
-      .loadPage()
-      .selectAction(link)
+  Given("""^(?:I )?click the (.+) link on the 'Cross-check the transit with this declaration summary' page$""") {
+    (link: String) =>
+      DeclarationSummaryPage
+        .loadPage()
+        .selectAction(link)
   }
 
-  Given("""^(?:I )?click the Back to summary button on the 'Cross-check the transit with house consignment (.*)' page$""") { (houseConsignmentNumber: String) =>
+  Given(
+    """^(?:I )?click the Back to summary button on the 'Cross-check the transit with house consignment (.*)' page$"""
+  ) { (houseConsignmentNumber: String) =>
     HouseConsignmentPage
       .loadPage(houseConsignmentNumber)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$""") {
-    (answer: String) =>
-      DifferencesPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$"""
+  ) { (answer: String) =>
+    DifferencesPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the identification number for the new vehicle\?' page$""") {
@@ -104,58 +108,53 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") {
-    (sectionLink: String) =>
+  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") { (sectionLink: String) =>
     UnloadingSummaryPage
       .loadPage()
       .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") {
-    (answer: String) =>
-      UnloadingReportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
-    }
+  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") { (answer: String) =>
+    UnloadingReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
 
-  And("""^(?:I )?enter (.*) on the 'What comments do you want to add\?' page$""") {
-    (answer: String) =>
-      UnloadingCommentsPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What comments do you want to add\?' page$""") { (answer: String) =>
+    UnloadingCommentsPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click the Change link for (.+) on the 'What did you find when unloading\?' page$""") {
     (text: String) =>
-    UnloadingReportPage
-      .loadPage()
-      .clickChangeLink(text)
+      UnloadingReportPage
+        .loadPage()
+        .clickChangeLink(text)
   }
 
   And("""^(?:I )?select (.*) on the unloading 'What country is the vehicle registered to\?' page$""") {
-  (answer: String) =>
-    VehicleCountryPage
+    (answer: String) =>
+      VehicleCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") { (answer: String) =>
+    SealNumberPage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") {
-    (answer: String) =>
-      SealNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") {
-    (answer: String) =>
-      ContainerNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") { (answer: String) =>
+    ContainerNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.*) on the 'What is the new gross weight of item (.*)\?' page$""") {

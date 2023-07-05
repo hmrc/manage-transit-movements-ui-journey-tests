@@ -40,7 +40,6 @@ object TestConfiguration {
     s"$host${authRoute(service)}"
   }
 
-
   def environmentHost: String = envConfig.getString("services.host")
 
   def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")

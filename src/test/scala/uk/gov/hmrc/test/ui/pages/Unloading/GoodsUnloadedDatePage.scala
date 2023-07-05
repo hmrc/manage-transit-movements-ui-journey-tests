@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.DatePage
 
 object GoodsUnloadedDatePage extends DatePage {
 
-   override def title(args: String*): String = "When were the goods unloaded?"
+  override def title(args: String*): String = "When were the goods unloaded?"
 
 }

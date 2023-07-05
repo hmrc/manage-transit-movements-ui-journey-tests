@@ -33,7 +33,9 @@ trait HttpClient extends AsyncHelper {
   def get(url: String, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =
     awaitResult(asyncClient.url(url).withHttpHeaders(headers: _*).get())
 
-  def post[T](url: String, value: T, headers: Seq[(String, String)] = Nil)(implicit bodyWritable: BodyWritable[T]): StandaloneWSResponse =
+  def post[T](url: String, value: T, headers: Seq[(String, String)] = Nil)(implicit
+    bodyWritable: BodyWritable[T]
+  ): StandaloneWSResponse =
     awaitResult(asyncClient.url(url).withHttpHeaders(headers: _*).post(value))
 
   def put(url: String, json: JsValue, headers: Seq[(String, String)] = Nil): StandaloneWSResponse =

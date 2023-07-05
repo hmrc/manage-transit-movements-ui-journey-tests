@@ -43,11 +43,12 @@ class CarrierDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the phone number for the carrier’s contact\?' page$""") { (answer: String) =>
-    CarrierContactPhoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the phone number for the carrier’s contact\?' page$""") {
+    (answer: String) =>
+      CarrierContactPhoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
 }
