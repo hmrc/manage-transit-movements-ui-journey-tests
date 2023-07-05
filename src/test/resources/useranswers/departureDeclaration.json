@@ -189,6 +189,7 @@
       {
         "guaranteeType" : "1",
         "referenceNumber" : "01GB1234567890120A123456",
+        "addLiabilityYesNo": true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
@@ -217,6 +218,7 @@
       },
       {
         "guaranteeType" : "5",
+        "addLiabilityYesNo": true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
