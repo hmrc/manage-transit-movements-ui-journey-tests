@@ -6,7 +6,7 @@ Feature: Trader details journey
     Given I login with ID 1234567890
 
   Scenario: 01 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration
-  with EORI numbers, Contacts, Representatives, single Consignee
+  with EORI numbers, Contacts, Representatives
 
     And the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
@@ -55,8 +55,7 @@ Feature: Trader details journey
 
 
   Scenario: 02 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration,
-  no EORI numbers, no Contacts, no Representative, single Consignee
-
+  no EORI numbers, no Contacts, no Representative
     And the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -102,7 +101,7 @@ Feature: Trader details journey
 
 
   Scenario: 03 Northern Ireland office of departure, TIR declaration type, entrySummaryDeclaration,
-  no EORI numbers, no Contacts, no Representative, multi Consignees
+  no EORI numbers, no Contacts, no Representative
 
     And the user has submitted traderDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page

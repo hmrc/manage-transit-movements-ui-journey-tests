@@ -133,7 +133,7 @@ Feature: Trader details journey
       ## Consignor contact
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
-      ## Consignee at header level
+      ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
