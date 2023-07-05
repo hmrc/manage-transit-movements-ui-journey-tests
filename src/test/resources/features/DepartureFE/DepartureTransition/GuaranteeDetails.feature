@@ -1,5 +1,3 @@
-@departureGuaranteeDetails
-
 Feature: Guarantee details journey
 
   Background:
@@ -18,6 +16,7 @@ Feature: Guarantee details journey
     And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
+    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
@@ -39,6 +38,7 @@ Feature: Guarantee details journey
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option Yes on the 'You have added 3 guarantees' page
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
+    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
