@@ -227,7 +227,7 @@ Feature: End to end journey Arrival notification feature
     And I enter 1234 on the arrival location of goods additional identifier page
     And I choose radio option Yes on the arrival location of goods add contact page
     And I enter John Joe on the arrival location of goods contact page
-#    And I enter +44 2345 82 83 on the arrival location of goods contact telephone number page
+    And I enter +44 2345 82 83 on the arrival location of goods contact number page
   #Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
