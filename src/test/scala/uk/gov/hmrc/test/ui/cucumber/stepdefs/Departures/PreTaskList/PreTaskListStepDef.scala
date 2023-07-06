@@ -42,6 +42,11 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .loadPage()
   }
 
+  Then("""^(?:I )?should be on the 'What is the new Local Reference Number\?' page$""") { () =>
+    LocalReferenceNumberPage
+      .loadPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") { (answer: String) =>
     OfficeOfDeparturePage
       .loadPage()
