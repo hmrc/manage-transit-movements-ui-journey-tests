@@ -384,7 +384,7 @@
       }
     ]
   },
-  "isSubmitted" : true,
+  "isSubmitted" : "submitted",
   "lastUpdated" : "2023-05-12T06:34:18.690+0000",
   "tasks" : {
     ".traderDetails" : "completed",
