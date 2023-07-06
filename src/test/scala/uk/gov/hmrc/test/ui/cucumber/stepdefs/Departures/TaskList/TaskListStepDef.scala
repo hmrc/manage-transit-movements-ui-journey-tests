@@ -42,4 +42,11 @@ class TaskListStepDef extends BaseStepDef {
     DeclarationSummaryPage
       .checkStatus(section, status)
   }
+
+  And("""^(?:I )?click the Confirm and resend button on the 'Declaration summary' page$""") { () =>
+    DeclarationSummaryPage
+      .loadPage()
+      .submitPage()
+  }
+
 }
