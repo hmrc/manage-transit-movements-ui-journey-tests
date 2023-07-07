@@ -30,7 +30,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select Previous - (N380) Commercial invoice on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option No on the 'Do you want to add a goods item number?' page
     And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
