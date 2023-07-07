@@ -11,7 +11,7 @@ Feature: End to end journey for amending a departure declaration
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
-    Then I should be on the 'Declaration summary' page
+    Then I input a random LRN on the 'What is the new Local Reference Number?' page
 
     And I should see ERROR status for trader details on the 'Declaration summary' page
     And I should see ERROR status for route details on the 'Declaration summary' page
@@ -61,4 +61,5 @@ Feature: End to end journey for amending a departure declaration
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
+    And I click the Confirm and resend button on the 'Declaration summary' page
     And I sign out

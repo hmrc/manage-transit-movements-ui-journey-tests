@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.GuaranteeRefNumberPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-class GuaranteeBalanceStepDef extends BaseStepDef {
+object GuaranteeRefNumberPage extends StringPage with GuaranteeBalancePage {
 
-   Then("""^(?:I )?(?:should )?be on the 'What is the Guarantee Reference Number\?' page$""") { () =>
-     GuaranteeRefNumberPage
-       .loadPage()
-  }
+  override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
 }

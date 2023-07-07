@@ -111,4 +111,12 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .loadPage()
       .submitPage()
   }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a liability for the guarantee\?' page$""") {
+    (answer: String) =>
+      LiabilityForGuarantee
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
 }

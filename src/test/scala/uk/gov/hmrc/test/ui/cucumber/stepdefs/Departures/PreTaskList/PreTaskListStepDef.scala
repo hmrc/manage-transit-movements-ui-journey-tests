@@ -30,6 +30,13 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .submitPage()
   }
 
+  When("""^I input a random LRN on the 'What is the new Local Reference Number\?' page$""") { () =>
+    NewLocalReferenceNumberPage
+      .loadPage()
+      .fillInput()
+      .submitPage()
+  }
+
   Then("""^(?:I )?enter (.+) on the 'What is the Local Reference Number\?' page$""") { (answer: String) =>
     LocalReferenceNumberPage
       .loadPage()
@@ -39,6 +46,11 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
 
   Then("""^(?:I )?should be on the 'What is the Local Reference Number\?' page$""") { () =>
     LocalReferenceNumberPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'What is the new Local Reference Number\?' page$""") { () =>
+    NewLocalReferenceNumberPage
       .loadPage()
   }
 

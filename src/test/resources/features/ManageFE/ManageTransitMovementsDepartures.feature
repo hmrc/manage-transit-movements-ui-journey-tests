@@ -61,7 +61,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
-    Then I should be on the 'Declaration summary' page
+    Then I should be on the 'What is the new Local Reference Number?' page
     And I sign out
 
 # 2892

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object EoriNumberPage extends StringPage with GuaranteeBalancePage {
+object LiabilityForGuarantee extends YesNoPage {
 
-  override def title(args: String*): String = "What is your EORI number?"
+  override def title(args: String*): String = "Do you want to add a liability for the guarantee?"
+
 }
