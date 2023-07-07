@@ -24,10 +24,10 @@ import uk.gov.hmrc.test.ui.pages.AuthorityWizard.{findElementBy, navigateTo}
 // For caching values between steps
 object World {
   var bearerToken: String = ""
-  var sessionId: String = ""
+  var sessionId: String   = ""
   var arrivalId: String   = ""
-  var departureId: String   = ""
-  var lrn: String = ""
+  var departureId: String = ""
+  var lrn: String         = ""
 }
 
 class LoginStepDef extends BaseStepDef {

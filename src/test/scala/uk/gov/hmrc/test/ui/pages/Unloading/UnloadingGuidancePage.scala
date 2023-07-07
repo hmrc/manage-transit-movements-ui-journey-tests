@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object UnloadingGuidancePage extends Page {
 
-   override def title(args: String*): String = "Unload the goods before you make unloading remarks"
+  override def title(args: String*): String = "Unload the goods before you make unloading remarks"
 
 }

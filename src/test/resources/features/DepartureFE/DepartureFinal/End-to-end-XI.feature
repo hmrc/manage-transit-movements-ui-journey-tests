@@ -149,7 +149,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
 #    Supporting document from list CL213 Supporting docs
-    Then I select (C673) Catch certificate on the 'What type of document do you want to add?' page
+    Then I select Supporting - (C673) Catch certificate on the 'What type of document do you want to add?' page
     And I enter RefNoCL213Doc1 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 10001 on the 'What is the line item number?' page
@@ -159,15 +159,14 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
 #    Transport document from list CL754
-    And I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
+    And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
     # Previous document from list
-    And I select (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
+    And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-
     And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
@@ -199,7 +198,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
-    And I select (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
+    And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
      #Additional Reference section

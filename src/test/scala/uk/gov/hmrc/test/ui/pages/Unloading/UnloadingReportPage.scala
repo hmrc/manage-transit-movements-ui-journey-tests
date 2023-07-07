@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object UnloadingReportPage extends StringPage {
 
-   override def title(args: String*): String = "What do you need to report?"
+  override def title(args: String*): String = "What do you need to report?"
 
   def clickChangeLink(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"

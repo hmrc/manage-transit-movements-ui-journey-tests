@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmRemoveOfficeOfTransitPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove %s as an office of transit?", args: _*)
+  override def title(args: String*): String =
+    String.format("Are you sure you want to remove %s as an office of transit?", args: _*)
 
 }

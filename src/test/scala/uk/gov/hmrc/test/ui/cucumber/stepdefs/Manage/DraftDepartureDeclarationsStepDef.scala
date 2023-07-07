@@ -21,11 +21,10 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{DeleteDraftDeclaration
 
 class DraftDepartureDeclarationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?click on the link for LRN (.*) on the 'Draft departure declarations' page""") {
-    (link: String) =>
-      DraftDepartureDelcarationsPage
-        .loadPage()
-        .selectDraftDeclarationLink(link)
+  And("""^(?:I )?click on the link for LRN (.*) on the 'Draft departure declarations' page""") { (link: String) =>
+    DraftDepartureDelcarationsPage
+      .loadPage()
+      .selectDraftDeclarationLink(link)
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Draft departure declarations' page$""") { (link: String) =>
@@ -40,7 +39,7 @@ class DraftDepartureDeclarationsStepDef extends BaseStepDef {
         .loadPage()
         .select(answer)
         .submitPage()
-      }
+  }
 
   And("""^(?:I )?enter (.+) in the Search field on the 'Draft departure declarations' page$""") {
     (searchString: String) =>
@@ -50,11 +49,10 @@ class DraftDepartureDeclarationsStepDef extends BaseStepDef {
         .clickById("submit")
   }
 
-  And("""^(?:I )?should see the content (.*) on the 'Draft departure declarations' page$""") {
-    (content: String) =>
-      DraftDepartureDelcarationsPage
-        .loadPage()
-        .checkForContent(content)
+  And("""^(?:I )?should see the content (.*) on the 'Draft departure declarations' page$""") { (content: String) =>
+    DraftDepartureDelcarationsPage
+      .loadPage()
+      .checkForContent(content)
   }
 
 }

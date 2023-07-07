@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object AmendDeclarationErrorsPage extends Page {
 
-   override def title(args: String*): String = "Amend declaration errors"
+  override def title(args: String*): String = "Amend declaration errors"
 
 }

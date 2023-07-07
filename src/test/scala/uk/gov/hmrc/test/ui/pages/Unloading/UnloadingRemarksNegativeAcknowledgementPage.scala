@@ -22,9 +22,6 @@ object UnloadingRemarksNegativeAcknowledgementPage extends Page {
 
   override def title(args: String*): String = "There is a problem with these unloading remarks"
 
-  def createNewUnloadingRemarks(): Unit = {
+  def createNewUnloadingRemarks(): Unit =
     clickById("create-new-unloading-remarks")
-  }
 }
-
-

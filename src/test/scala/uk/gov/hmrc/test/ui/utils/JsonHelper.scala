@@ -25,7 +25,7 @@ trait JsonHelper {
     private def withValue(path: JsPath, value: String): JsValue =
       json.transform(__.json.update(path.json.put(JsString(value)))) match {
         case JsSuccess(value, _) => value
-        case JsError(errors) => throw new Exception(s"Error adding LRN: $errors")
+        case JsError(errors)     => throw new Exception(s"Error adding LRN: $errors")
       }
 
     def withLrn(lrn: String): JsValue = withValue(__ \ "lrn", lrn)

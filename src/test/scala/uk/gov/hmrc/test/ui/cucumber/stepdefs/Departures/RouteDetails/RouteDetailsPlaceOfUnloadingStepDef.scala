@@ -29,12 +29,13 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of unloading\?' page$""") {
-    (answer: String) =>
-      PlaceOfUnloadingAddUnLocodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of unloading\?' page$"""
+  ) { (answer: String) =>
+    PlaceOfUnloadingAddUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>

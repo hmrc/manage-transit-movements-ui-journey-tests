@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal.{AddAnotherC
 
 class TransportEquipmentSealStepDef extends BaseStepDef {
 
-
   And("""^(?:I )?choose radio option (.*) on the add transport equipment page$""") { (answer: String) =>
     AddTransportEquipmentPage
       .loadPage()
@@ -29,58 +28,55 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-
   And("""^(?:I )?choose radio option (.*) for container identification number (.+) on the add container seal page$""") {
-    (answer: String,identificationVal: String) =>
-    AddContainerSealPage
-      .loadPage(identificationVal)
-      .select(answer)
-      .submitPage()
+    (answer: String, identificationVal: String) =>
+      AddContainerSealPage
+        .loadPage(identificationVal)
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) for container identification number (.*) on the container seal identification number page$""") {
-    (answer: String, identificationVal: String) =>
+  And(
+    """^(?:I )?enter (.+) for container identification number (.*) on the container seal identification number page$"""
+  ) { (answer: String, identificationVal: String) =>
     ContainerSealIdentificationNumberPage
       .loadPage(identificationVal)
       .fillInput(answer)
       .submitPage()
   }
 
-  Then("""^(?:I )?should have (.*) container seals? added for container identification number (.+) on the add another container seal page$""") {
-    (numberOfSeals: String, identificationVal: String) =>
-      AddAnotherContainerSealPage
-        .loadPage(numberOfSeals, identificationVal)
+  Then(
+    """^(?:I )?should have (.*) container seals? added for container identification number (.+) on the add another container seal page$"""
+  ) { (numberOfSeals: String, identificationVal: String) =>
+    AddAnotherContainerSealPage
+      .loadPage(numberOfSeals, identificationVal)
   }
 
-  Then("""^(?:I )?should have (.*) seals? added on the add another seal page$""") {
-    (numberOfSeals: String) =>
-      AddAnotherContainerSealPage
-        .loadPage(numberOfSeals)
+  Then("""^(?:I )?should have (.*) seals? added on the add another seal page$""") { (numberOfSeals: String) =>
+    AddAnotherContainerSealPage
+      .loadPage(numberOfSeals)
   }
 
-  When("""^(?:I )?click the (.*) link on the add another container seal page$""") {
-    (sectionLink: String) =>
-      AddAnotherContainerSealPage
-        .clickByPartialLinkText(sectionLink)
+  When("""^(?:I )?click the (.*) link on the add another container seal page$""") { (sectionLink: String) =>
+    AddAnotherContainerSealPage
+      .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add another (?:container seal|seal) page$""") {
-    (answer: String) =>
-      AddAnotherContainerSealPage
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?click radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
-    (answer: String, identificationVal: String) =>
-    RemoveSealPage
-      .loadPage(identificationVal)
+  And("""^(?:I )?choose radio option (.*) on the add another (?:container seal|seal) page$""") { (answer: String) =>
+    AddAnotherContainerSealPage
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") {
-    (answer: String) =>
+  And("""^(?:I )?click radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
+    (answer: String, identificationVal: String) =>
+      RemoveSealPage
+        .loadPage(identificationVal)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") { (answer: String) =>
     SealIdentificationNumberPage
       .loadPage()
       .fillInput(answer)

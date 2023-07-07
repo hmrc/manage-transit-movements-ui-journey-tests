@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object HouseConsignmentPage extends Page {
 
-  override def title(args: String*): String = String.format("Cross-check the transit with house consignment %s", args: _*)
+  override def title(args: String*): String =
+    String.format("Cross-check the transit with house consignment %s", args: _*)
 
 }

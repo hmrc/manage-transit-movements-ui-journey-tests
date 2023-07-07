@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DifferencesPage extends YesNoPage {
 
-   override def title(args: String*): String = "Were there any differences between the transit and the declaration information?"
+  override def title(args: String*): String =
+    "Were there any differences between the transit and the declaration information?"
 
 }

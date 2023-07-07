@@ -24,7 +24,7 @@ object DeclarationSummaryPage extends Page {
 
   def selectAction(link: String): this.type = {
     link match {
-      case "More details" => clickById("view_link.id")
+      case "More details"        => clickById("view_link.id")
       case "House consignment 1" => clickById("houseConsignment1")
     }
     this

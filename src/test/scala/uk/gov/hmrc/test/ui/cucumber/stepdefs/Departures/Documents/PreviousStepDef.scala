@@ -37,19 +37,21 @@ class PreviousStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the package used to transport the goods into the UK\?' page$""") {
-    (answer: String) =>
-      DeclarePackagePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?select (.+) on the 'What type of package was used to transport the goods into the UK\?' page$""") { (answer: String) =>
-    PackageTypePage
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to declare the package used to transport the goods into the UK\?' page$"""
+  ) { (answer: String) =>
+    DeclarePackagePage
       .loadPage()
       .select(answer)
       .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of package was used to transport the goods into the UK\?' page$""") {
+    (answer: String) =>
+      PackageTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'How many of these do the goods include\?' page$""") { (answer: String) =>
@@ -59,13 +61,13 @@ class PreviousStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What metric do you want to use for the quantity of goods\?' page$""") { (answer: String) =>
-    MetricTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'What metric do you want to use for the quantity of goods\?' page$""") {
+    (answer: String) =>
+      MetricTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
-
 
   And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of goods\?' page$""") {
     (answer: String) =>
@@ -82,7 +84,6 @@ class PreviousStepDef extends BaseStepDef {
       .submitPage()
   }
 
-
   And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of this package\?' page$""") {
     (answer: String) =>
       DeclareQuantityOfPackagePage
@@ -91,12 +92,13 @@ class PreviousStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for this document\?' page$""") {
-    (answer: String) =>
-      AddAdditionalInformationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for this document\?' page$"""
+  ) { (answer: String) =>
+    AddAdditionalInformationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
   And("""^(?:I )?enter (.+) on the Documents 'Enter the additional information' page$""") { (answer: String) =>
     DocumentEnterAdditionalInfoPage
@@ -104,7 +106,5 @@ class PreviousStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-
-
 
 }

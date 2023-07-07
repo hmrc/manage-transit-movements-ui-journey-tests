@@ -21,14 +21,14 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals._
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
-   Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") { () =>
+  Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") { () =>
     ArrivalNotificationsPage
       .loadPage()
   }
 
   And("""^(?:I )?click on the (.*) link for MRN (.*) on the 'Arrival notifications' page$""") {
     (linkText: String, mrn: String) =>
-    ArrivalNotificationsPage
+      ArrivalNotificationsPage
         .loadPage()
         .selectArrivalAction(linkText, mrn)
   }
@@ -39,15 +39,13 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
       .selectAction(link)
   }
 
-  And("""^(?:I )?enter (.+) in the Search field on the 'Arrival notifications' page$""") {
-    (searchString: String) =>
+  And("""^(?:I )?enter (.+) in the Search field on the 'Arrival notifications' page$""") { (searchString: String) =>
     ArrivalNotificationsPage
-        .loadPage()
-        .fillInput(searchString)
-        .clickById("submit")
+      .loadPage()
+      .fillInput(searchString)
+      .clickById("submit")
   }
-  And("""^(?:I )?should see the content (.*) on the 'Arrival notifications' page$""") {
-    (content: String) =>
+  And("""^(?:I )?should see the content (.*) on the 'Arrival notifications' page$""") { (content: String) =>
     ArrivalNotificationsPage
       .loadPage()
       .checkForContent(content)

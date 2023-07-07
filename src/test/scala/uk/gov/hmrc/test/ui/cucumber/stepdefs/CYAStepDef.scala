@@ -28,13 +28,12 @@ class CYAStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?submit the 'Check your answers' page$""") { () =>
-      CYAPage
-        .loadPage()
-        .submitPage()
+    CYAPage
+      .loadPage()
+      .submitPage()
   }
 
-  And(
-    """^(?:I )?submit on the '(Trader details|
+  And("""^(?:I )?submit on the '(Trader details|
     |Route details - Transit route|
     |Route details - Office of transit|
     |Route details - Location of goods|
@@ -53,13 +52,12 @@ class CYAStepDef extends BaseStepDef {
     |Arrivals - Authorisations|
     |Arrivals - Transport equipment|
     |Arrivals - Incidents|
-    |Arrivals) Check your answers' page$""") {
-    (subheading: String) =>
+    |Arrivals) Check your answers' page$""") { (subheading: String) =>
     CYAPage
       .loadPage()
       .pageSubheading()
-      assertTrue(pageSubheading().contains(subheading))
-      CYAPage.submitPage()
+    assertTrue(pageSubheading().contains(subheading))
+    CYAPage.submitPage()
 
   }
 
@@ -68,10 +66,11 @@ class CYAStepDef extends BaseStepDef {
       .clickLinkById(text)
   }
 
-  And("""^(?:I )?click the Change link for (.+) on the (?:Transport details|Unloading|Route details|Trader details|Documents|Item 1|Guarantee details) 'Check your answers' page$""") { (text: String) =>
+  And(
+    """^(?:I )?click the Change link for (.+) on the (?:Transport details|Unloading|Route details|Trader details|Documents|Item 1|Guarantee details) 'Check your answers' page$"""
+  ) { (text: String) =>
     CYAPage
       .clickChangeLink(text)
   }
-
 
 }

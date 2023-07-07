@@ -81,7 +81,6 @@ class DocumentsStepDef extends BaseStepDef {
       .clickByPartialLinkText(sectionLink)
   }
 
-
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*)\?' page$""") {
     (answer: String, documentTypeToRemove: String) =>
       RemoveDocumentPage
@@ -97,6 +96,5 @@ class DocumentsStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-
 
 }
