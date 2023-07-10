@@ -112,4 +112,11 @@
         <!--Optional:-->
         <originalAttributeValue>string</originalAttributeValue>
     </FunctionalError>
+    <FunctionalError>
+        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
+        <errorCode>12</errorCode>
+        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <!--Optional:-->
+        <originalAttributeValue>string</originalAttributeValue>
+    </FunctionalError>
 </ncts:CC056C>

@@ -69,9 +69,9 @@ object ApiHelper extends HttpClient {
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
         post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
-      case "IE056RejectionWithMoreThan10Errors.xml" =>
-        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
+//      case "IE056RejectionWithMoreThan10Errors.xml" =>
+//        val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
+//        post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
 
       case "IE057RejectionLessThan10Errors.xml" =>
         val url = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
