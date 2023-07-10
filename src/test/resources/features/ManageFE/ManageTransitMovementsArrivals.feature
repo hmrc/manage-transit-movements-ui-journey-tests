@@ -56,9 +56,3 @@ Feature: Manage transit movements frontend tests for Arrivals
     Then I should be on the 'Review notification errors' page
     And I sign out
 
-
-  Scenario: 06 - Trader is able to check guarantee balance
-    When I click on the Check your guarantee balance link on the 'Manage your transit movements' page
-    Then I should be on the 'What is the Guarantee Reference Number?' page
-    And I sign out
-

@@ -28,7 +28,7 @@ object CacheHelper extends HttpClient with FileHelper with JsonHelper {
   private val proxy = TestConfiguration.url("manage-transit-movements-departure-frontend")
 
   def submitUserAnswers(fileName: String, lrn: String, eoriNumber: String): Unit = {
-    val url = s"$proxy/test-only/user-answers/${World.sessionId}"
+    val url  = s"$proxy/test-only/user-answers/${World.sessionId}"
     val json = getJson(fileName).withLrn(lrn).withEoriNumber(eoriNumber)
     post(url, json, headers)
   }

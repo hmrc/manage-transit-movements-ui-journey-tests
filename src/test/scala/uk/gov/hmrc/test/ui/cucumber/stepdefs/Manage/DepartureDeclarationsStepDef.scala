@@ -21,11 +21,10 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures._
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?see the status (.*) on the 'Departure declarations' page$""") {
-    (status: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .checkDepartureStatus(status)
+  And("""^(?:I )?see the status (.*) on the 'Departure declarations' page$""") { (status: String) =>
+    DepartureDeclarationsPage
+      .loadPage()
+      .checkDepartureStatus(status)
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Departure declarations' page$""") { () =>
@@ -46,19 +45,17 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .selectAction(link)
   }
 
-  And("""^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$""") {
-    (searchString: String) =>
+  And("""^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$""") { (searchString: String) =>
     DepartureDeclarationsPage
       .loadPage()
       .fillInput(searchString)
       .clickById("submit")
   }
 
-  And("""^(?:I )?should see the content (.*) on the 'Departure declarations' page$""") {
-    (content: String) =>
+  And("""^(?:I )?should see the content (.*) on the 'Departure declarations' page$""") { (content: String) =>
     DepartureDeclarationsPage
       .loadPage()
-    .checkForContent(content)
+      .checkForContent(content)
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") { (declarationLink: String) =>

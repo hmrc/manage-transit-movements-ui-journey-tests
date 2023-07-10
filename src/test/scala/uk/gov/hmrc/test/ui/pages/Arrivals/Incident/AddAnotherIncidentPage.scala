@@ -22,7 +22,7 @@ object AddAnotherIncidentPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => "You have added 1 incident"
-    case _ =>
+    case _        =>
       String.format(
         "You have added %s incidents",
         args: _*

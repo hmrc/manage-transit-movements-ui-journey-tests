@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
 
 import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object BorderMeansOfTransportOfficeOfTransitPage extends SelectPage  {
+object BorderMeansOfTransportOfficeOfTransitPage extends SelectPage {
 
   override def title(args: String*): String = "Where is the customs office at the border?"
 
 }
-

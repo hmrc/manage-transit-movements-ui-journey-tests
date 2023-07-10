@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object VehicleIdPage extends StringPage {
 
-   override def title(args: String*): String = "What is the identification nuber for the new vehicle?"
+  override def title(args: String*): String = "What is the identification nuber for the new vehicle?"
 
 }

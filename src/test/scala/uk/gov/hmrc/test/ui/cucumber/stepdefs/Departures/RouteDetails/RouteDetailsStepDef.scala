@@ -90,13 +90,12 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Does the transit include any T2 declarations\?' page$""")
-  { (answer: String) =>
-    T2DeclarationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Does the transit include any T2 declarations\?' page$""") {
+    (answer: String) =>
+      T2DeclarationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
-
 
 }

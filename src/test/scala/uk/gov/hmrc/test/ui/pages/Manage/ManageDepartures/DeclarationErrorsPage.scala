@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object DeclarationErrorsPage extends Page {
 
-   override def title(args: String*): String = "Declaration errors"
+  override def title(args: String*): String = "Declaration errors"
 
   def selectDepartureDeclarationLink(declarationLink: String): Unit =
     clickByPartialLinkText(declarationLink)

@@ -20,12 +20,12 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges._
 class TransportEquipmentChargesStepDef extends BaseStepDef {
 
-
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page$""") { (answer: String) =>
-    AddTransportEquipmentPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page$""") {
+    (answer: String) =>
+      AddTransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a container identification number\?' page$""") {
@@ -36,12 +36,11 @@ class TransportEquipmentChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page$""") {
-    (answer: String) =>
-      AddSealPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page$""") { (answer: String) =>
+    AddSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a goods item number\?' page$""") {
@@ -104,20 +103,18 @@ class TransportEquipmentChargesStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the seal identification number\?' page$""") {
-    (answer: String) =>
-      SealIdentificationNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the seal identification number\?' page$""") { (answer: String) =>
+    SealIdentificationNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the goods item number\?' page$""") {
-    (answer: String) =>
-      GoodsItemPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What is the goods item number\?' page$""") { (answer: String) =>
+    GoodsItemPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove transport equipment (.*)\?' page$""") {
@@ -144,16 +141,18 @@ class TransportEquipmentChargesStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a method of payment for transport charges\?' page$""") {
-    (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a method of payment for transport charges\?' page$"""
+  ) { (answer: String) =>
     AddPaymentMethodPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$""") {
-    (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$"""
+  ) { (answer: String) =>
     MethodOfPaymentPage
       .loadPage()
       .select(answer)

@@ -80,10 +80,10 @@ class IncidentStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) incidents? page$""") {
     (answer: String, numberOfIncidents: String) =>
-    AddAnotherIncidentPage
-      .loadPage(numberOfIncidents)
-      .select(answer)
-      .submitPage()
+      AddAnotherIncidentPage
+        .loadPage(numberOfIncidents)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?click the (.*) link on the You have added (.*) incidents? page$""") {

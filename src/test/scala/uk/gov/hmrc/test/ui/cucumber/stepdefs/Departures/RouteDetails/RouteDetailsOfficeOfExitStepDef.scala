@@ -53,10 +53,11 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit' page$""") { (answer: String, officesInTitle: String) =>
-    AddAnotherOfficeOfExitPage
-      .loadPage(officesInTitle)
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit' page$""") {
+    (answer: String, officesInTitle: String) =>
+      AddAnotherOfficeOfExitPage
+        .loadPage(officesInTitle)
+        .select(answer)
+        .submitPage()
   }
 }

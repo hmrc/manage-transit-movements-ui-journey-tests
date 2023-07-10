@@ -218,7 +218,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter the date on the 'When is the limit date?' page
 
       ## Carrier
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
@@ -251,7 +251,7 @@ Feature: End to end journey for Great Britain office of departure
     # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    Then I select (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
+    Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
@@ -266,7 +266,7 @@ Feature: End to end journey for Great Britain office of departure
     #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-    And I select (N003) Certificate of quality on the 'What type of document do you want to add?' page
+    And I select Supporting - (N003) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
     And I enter 010101 on the 'What is the line item number?' page
@@ -276,7 +276,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'You have added 2 documents' page
         #  Add a Transport document from list 754
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-    Then I select (N741) Master airwaybill on the 'What type of document do you want to add?' page
+    Then I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     Then I choose radio option No on the 'You have added 3 documents' page
@@ -324,7 +324,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Items Documents Section -T2 skips Yes/No to add document
-    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
+    And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
     #Additional Reference Section
@@ -375,7 +375,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #2nd Item - Documents section
-    And I select (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
+    And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
     #2nd Item - Additional Reference section
@@ -513,7 +513,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
       ## Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or TIN?' page
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
     And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
       ## Transport equipment
@@ -528,7 +528,7 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-    Then I select (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
+    Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page

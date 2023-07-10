@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrivals.IncidentTransportEquipment._
 import uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal.{RemoveGoodsItemNumberPage, RemoveTransportEquipmentPage}
 
-
 class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number page$""") { (answer: String) =>
@@ -39,10 +38,10 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) goods item numbers? page$""") {
     (answer: String, numberOfGoodsItems: String) =>
-    AddAnotherGoodsItemNumberPage
-      .loadPage(numberOfGoodsItems)
-      .select(answer)
-      .submitPage()
+      AddAnotherGoodsItemNumberPage
+        .loadPage(numberOfGoodsItems)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?click the (.*) link on the You have added (.*) goods item numbers? page$""") {
@@ -62,24 +61,24 @@ class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) transport equipment page$""") {
     (answer: String, numberOfTransportEquipment: String) =>
-    AddAnotherTransportEquipmentPage
-      .loadPage(numberOfTransportEquipment)
-      .select(answer)
-      .submitPage()
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?click the (.*) link on the You have added (.*) transport equipment page$""") {
     (sectionLink: String, numberOfTransportEquipment: String) =>
-    AddAnotherTransportEquipmentPage
-      .loadPage(numberOfTransportEquipment)
-      .clickByPartialLinkText(sectionLink)
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?click radio option (.*) on the Are you sure you want to remove transport equipment (.*) page$""") {
     (answer: String, numberOfTransportEquipment: String) =>
-        RemoveTransportEquipmentPage
-          .loadPage(numberOfTransportEquipment)
-          .select(answer)
-          .submitPage()
+      RemoveTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .select(answer)
+        .submitPage()
   }
 }

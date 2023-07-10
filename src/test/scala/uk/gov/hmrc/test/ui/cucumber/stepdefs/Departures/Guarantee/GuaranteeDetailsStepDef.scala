@@ -35,11 +35,12 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What currency do you want to use for the liability\?' page$""") { (answer: String) =>
-    GuaranteeLiabilityCurrencyPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'What currency do you want to use for the liability\?' page$""") {
+    (answer: String) =>
+      GuaranteeLiabilityCurrencyPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'How much is the liability in pounds\?' page$""") { (answer: String) =>
@@ -55,15 +56,16 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
         .loadPage(numberOfGuarantees)
   }
 
-  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) guarantees?' page$""") { (answer: String, guaranteesInTitle: String) =>
-    AddAnotherGuaranteePage
-      .loadPage(guaranteesInTitle)
-      .select(answer)
-      .submitPage()
+  When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) guarantees?' page$""") {
+    (answer: String, guaranteesInTitle: String) =>
+      AddAnotherGuaranteePage
+        .loadPage(guaranteesInTitle)
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?click the (.*) link on the 'You have added (.*) guarantees?' page$"""){
-    (linkText: String, numberOfGuaranteeTitle: String)=>
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) guarantees?' page$""") {
+    (linkText: String, numberOfGuaranteeTitle: String) =>
       AddAnotherGuaranteePage
         .loadPage(numberOfGuaranteeTitle)
         .clickByPartialLinkText(linkText)

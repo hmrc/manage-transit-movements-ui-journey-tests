@@ -23,6 +23,6 @@ object DraftDepartureDelcarationsPage extends StringPage {
   override def title(args: String*): String = "Draft departure declarations"
 
   def selectDraftDeclarationLink(link: String): Unit =
-      clickByPartialLinkText(link)
+    clickByPartialLinkText(link)
 
 }

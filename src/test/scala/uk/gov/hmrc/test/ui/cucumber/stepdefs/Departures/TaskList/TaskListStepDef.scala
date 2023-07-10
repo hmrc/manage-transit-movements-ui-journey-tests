@@ -38,9 +38,10 @@ class TaskListStepDef extends BaseStepDef {
       .selectDeclarationSection(answer)
   }
 
-  And("""^(?:I )?should see (.*) status for (.+) on the 'Declaration summary' page$""") { (status: String, section: String) =>
-    DeclarationSummaryPage
-      .checkStatus(section, status)
+  And("""^(?:I )?should see (.*) status for (.+) on the 'Declaration summary' page$""") {
+    (status: String, section: String) =>
+      DeclarationSummaryPage
+        .checkStatus(section, status)
   }
 
   And("""^(?:I )?click the Confirm and resend button on the 'Declaration summary' page$""") { () =>

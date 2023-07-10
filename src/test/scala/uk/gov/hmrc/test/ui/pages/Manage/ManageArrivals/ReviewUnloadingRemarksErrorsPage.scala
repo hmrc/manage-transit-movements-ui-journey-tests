@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object ReviewUnloadingRemarksErrorsPage extends Page {
 
-   override def title(args: String*): String = "Review unloading remarks errors"
+  override def title(args: String*): String = "Review unloading remarks errors"
 
 }

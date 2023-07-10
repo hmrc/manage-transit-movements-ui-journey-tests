@@ -38,4 +38,3 @@ class ConfirmationStepDef extends BaseStepDef {
   }
 
 }
-

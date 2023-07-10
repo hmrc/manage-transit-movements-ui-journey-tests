@@ -24,8 +24,9 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@departureGBe2e or @departureXIe2e or @departureGuaranteeDetails or @departureHub or @departureItemDetails or " +
-    "@departureRouteDetails or @departureTraderDetails or @departureTransportDetails or @departureDocuments or " +
-    "@departure or @arrivalE2e or @arrival or @cancellation or @managehub or @manageDraftDeparture or @unloading_remarks or @departureAmendment"
+  tags =
+    "@departureGBe2e or @departureXIe2e or @departureGuaranteeDetails or @departureHub or @departureItemDetails or " +
+      "@departureRouteDetails or @departureTraderDetails or @departureTransportDetails or @departureDocuments or " +
+      "@departure or @arrivalE2e or @arrival or @cancellation or @managehub or @manageDraftDeparture or @unloading_remarks or @departureAmendment"
 )
 class RunnerForAll {}

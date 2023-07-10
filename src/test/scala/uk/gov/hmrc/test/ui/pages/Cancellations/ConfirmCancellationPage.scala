@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmCancellationPage extends YesNoPage {
 
-   override def title(args: String*): String = "Are you sure you want to cancel this departure declaration?"
+  override def title(args: String*): String = "Are you sure you want to cancel this departure declaration?"
 
 }

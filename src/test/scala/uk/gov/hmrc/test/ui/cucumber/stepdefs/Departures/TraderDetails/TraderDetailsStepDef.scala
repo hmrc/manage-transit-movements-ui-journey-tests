@@ -99,11 +99,12 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the representative 'Do you want to add your details\?' page$"""){(answer: String) =>
-    RepresentativeAddContactPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the representative 'Do you want to add your details\?' page$""") {
+    (answer: String) =>
+      RepresentativeAddContactPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the representative 'What is your name\?' page$""") { (answer: String) =>
@@ -121,19 +122,21 @@ class TraderDetailsStepDef extends BaseStepDef {
   }
 
   //Approved operator - data set indicator
-  Then("""^(?:I )?choose radio option (.*) on the 'Do you want to use a reduced data set\?' page""") { (answer: String) =>
-    SetReducedDataSetIndicatorPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  Then("""^(?:I )?choose radio option (.*) on the 'Do you want to use a reduced data set\?' page""") {
+    (answer: String) =>
+      SetReducedDataSetIndicatorPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   //Consignor
-  And("""^(?:I )?choose radio option (.*) on the 'Is the TIR holder’s identification number known\?' page$""") { (answer: String) =>
-    IsTIRidKnownPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Is the TIR holder’s identification number known\?' page$""") {
+    (answer: String) =>
+      IsTIRidKnownPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the TIR holder’s identification number\?' page$""") { (answer: String) =>

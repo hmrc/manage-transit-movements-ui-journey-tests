@@ -20,8 +20,8 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddAnotherGoodsItemPage extends YesNoPage {
 
-      override def title(args: String*): String = args match {
-        case Seq("1") => String.format("You have added 1 goods item number")
-        case Seq(numberOfSeals) => String.format("You have added %s goods item numbers", numberOfSeals)
-      }
+  override def title(args: String*): String = args match {
+    case Seq("1")           => String.format("You have added 1 goods item number")
+    case Seq(numberOfSeals) => String.format("You have added %s goods item numbers", numberOfSeals)
+  }
 }

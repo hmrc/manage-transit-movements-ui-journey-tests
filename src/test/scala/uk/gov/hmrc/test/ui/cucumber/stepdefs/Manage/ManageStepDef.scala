@@ -38,8 +38,6 @@ class ManageStepDef extends BaseStepDef {
       .selectAction(link)
   }
 
-
-
   Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
     GoodsUnderControlDocumentsRequestedPage
       .loadPage()

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object GoodsUnderControlPage extends Page {
 
-   override def title(args: String*): String = "Goods under control"
+  override def title(args: String*): String = "Goods under control"
 
 }
