@@ -28,7 +28,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 
 
 #    2917
-  Scenario: 05 - Trader is able to view arrival notification rejections for all errors
+  Scenario: 03 - Trader is able to view arrival notification rejections for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Rejection
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
