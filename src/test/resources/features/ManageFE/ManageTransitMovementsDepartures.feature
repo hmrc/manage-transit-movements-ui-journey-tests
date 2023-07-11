@@ -65,7 +65,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2898
-  Scenario: 08 - Trader is able to review cancellation errors for a departure declaration
+  Scenario: 07 - Trader is able to review cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE014 Declaration Cancellation
     And I submit an IE056 Rejection With No Amendable Errors
@@ -76,7 +76,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 3000
-  Scenario: 10 Trader is able to cancel a departure declaration
+  Scenario: 08 Trader is able to cancel a departure declaration
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     And I refresh the page
