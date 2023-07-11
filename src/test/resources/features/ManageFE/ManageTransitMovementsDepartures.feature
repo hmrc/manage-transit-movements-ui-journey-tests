@@ -64,17 +64,6 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'What is the new Local Reference Number?' page
     And I sign out
 
-# 2892
-  Scenario: 07 - Trader is notified of multiple declaration errors for a departure declaration
-    When I submit an IE015 Departure Declaration
-    Then I submit an IE056 Rejection With More Than 10 Errors
-    And I refresh the page
-    And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
-    And I click on the Create another departure declaration link on the 'Declaration errors' page
-    Then I should be on the 'What is the Local Reference Number?' page
-    And I sign out
-
 # 2898
   Scenario: 08 - Trader is able to review cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
@@ -84,17 +73,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     Then I should be on the 'Review cancellation errors' page
-    And I sign out
-
-# 2897
-  Scenario: 09 - Trader is notified of multiple cancellation errors for a departure declaration
-    When I submit an IE015 Departure Declaration
-    Then I submit an IE014 Declaration Cancellation
-    And I submit an IE056 Rejection With More Than 10 Errors
-    And I refresh the page
-    And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
-    Then I should be on the 'Cancellation errors' page
     And I sign out
 
 # 3000
