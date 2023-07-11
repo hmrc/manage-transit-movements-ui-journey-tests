@@ -16,7 +16,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 
 
 #    2929
-  Scenario: 02 - Trader is able to view unloading remarks for multiple errors
+  Scenario: 02 - Trader is able to view unloading remarks for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE044 Unloading Remarks Notification With Seals
     And I submit an IE057 Rejection
