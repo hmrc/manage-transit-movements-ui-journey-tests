@@ -218,6 +218,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter the date on the 'When is the limit date?' page
 
       ## Carrier
+    When I choose radio option Yes on the 'Do you want to add a carrier?' page
     And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
@@ -513,8 +514,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
       ## Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
-    And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
+    When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page

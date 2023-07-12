@@ -299,6 +299,7 @@
           "limitDate" : "2023-05-19"
         }
       },
+      "carrierDetailYesNo" : true,
       "carrierDetails" : {
         "identificationNumber" : "GB123456123456",
         "addContactYesNo" : true,
