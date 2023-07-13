@@ -59,6 +59,7 @@ Feature: Transport details journey
     And I enter the date on the 'When is the limit date?' page
 
       ## Carrier
+    And I choose radio option Yes on the 'Do you want to add a carrier?' page
     And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
@@ -141,10 +142,7 @@ Feature: Transport details journey
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
       ## Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
-    And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
-    And I enter Carry on the 'Who is the contact for the carrier?' page
-    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
+    When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport equipment
     And I choose radio option No on the 'Do you want to add any transport equipment?' page

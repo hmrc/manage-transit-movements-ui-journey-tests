@@ -202,6 +202,7 @@
           "limitDate" : "2023-03-25"
         }
       },
+      "carrierDetailYesNo" : true,
       "carrierDetails" : {
         "identificationNumber" : "GB123456789000",
         "addContactYesNo" : false

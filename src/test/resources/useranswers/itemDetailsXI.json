@@ -163,6 +163,7 @@
           }
         ]
       },
+      "carrierDetailYesNo" : true,
       "carrierDetails" : {
         "identificationNumber" : "GB123456789007",
         "addContactYesNo" : false
