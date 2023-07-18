@@ -154,6 +154,12 @@
                 "identificationNumber" : "Seal009"
               }
             ]
+          },
+          {
+            "addContainerIdentificationNumberYesNo" : true,
+            "uuid" : "e0de183a-b420-4e88-8294-41bad782bd78",
+            "containerIdentificationNumber" : "ABC1234",
+            "addSealsYesNo" : false
           }
         ]
       },

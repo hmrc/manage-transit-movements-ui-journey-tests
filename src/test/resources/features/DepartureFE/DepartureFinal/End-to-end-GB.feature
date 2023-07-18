@@ -239,9 +239,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
-    And I click the Remove link on the 'You have added 2 transport equipment' page
-    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
-    And I choose radio option No on the 'You have added 1 transport equipment' page
+    And I choose radio option No on the 'You have added 2 transport equipment' page
 
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
@@ -538,7 +536,6 @@ Feature: End to end journey for Great Britain office of departure
     #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
-    And I select (1) Transport equipment on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T2 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
