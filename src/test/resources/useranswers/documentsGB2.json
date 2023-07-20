@@ -9,8 +9,14 @@
         "isInCL147" : false
       },
       "procedureType" : "normal",
-      "declarationType" : "T",
-      "securityDetailsType" : "noSecurity",
+      "declarationType" : {
+        "code": "T",
+        "description": "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
+      },
+      "securityDetailsType" : {
+        "code": "0",
+        "description": "Not used for safety and security purposes"
+      },
       "detailsConfirmed" : true
     }
   },

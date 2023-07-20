@@ -9,9 +9,15 @@
         "isInCL147" : true
       },
       "procedureType" : "normal",
-      "declarationType" : "TIR",
+      "declarationType" : {
+        "code": "TIR",
+        "description": "TIR carnet"
+      },
       "tirCarnetReference" : "1234567",
-      "securityDetailsType" : "entrySummaryDeclaration",
+      "securityDetailsType" : {
+        "code": "1",
+        "description": "ENS"
+      },
       "detailsConfirmed" : true
     }
   },
