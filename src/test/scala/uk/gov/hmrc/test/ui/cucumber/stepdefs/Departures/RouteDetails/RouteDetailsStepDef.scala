@@ -22,6 +22,22 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.T2DeclarationPa
 
 class RouteDetailsStepDef extends BaseStepDef {
 
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a specific circumstance indicator\?' page$"""
+  ) { (answer: String) =>
+    AddSpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Which specific circumstance indicator do you want to add\?' page$""") { (answer: String) =>
+    SpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'What is the country of destination\?' page$""") { (answer: String) =>
     CountryOfDestinationPage
       .loadPage()

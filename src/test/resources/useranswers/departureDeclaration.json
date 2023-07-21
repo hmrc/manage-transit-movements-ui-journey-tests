@@ -183,6 +183,11 @@
           },
           "location" : "Milano"
         }
+      },
+      "addSpecificCircumstanceIndicatorYesNo" : true,
+      "specificCircumstanceIndicator" : {
+        "code" : "XXX",
+        "description" : "Authorised economic operators"
       }
     },
     "guaranteeDetails" : [
