@@ -1,4 +1,4 @@
-@departureTransportDetails
+
 Feature: Transport details journey
 
   Background:
