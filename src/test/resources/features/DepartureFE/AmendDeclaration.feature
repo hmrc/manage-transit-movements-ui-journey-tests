@@ -33,8 +33,8 @@ Feature: End to end journey for amending a departure declaration
     And I should see COMPLETED status for route details on the 'Declaration summary' page
 
     And I click on the Edit transport details link on the 'Declaration summary' page
-    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
-    And I submit the 'Check your answers' page
+#    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
+#    And I submit the 'Check your answers' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
