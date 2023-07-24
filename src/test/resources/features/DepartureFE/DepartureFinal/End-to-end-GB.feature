@@ -215,7 +215,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     And I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When is the limit date?' page
+    And I enter the date on the 'When do you expect the transit to arrive in IT?' page
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page

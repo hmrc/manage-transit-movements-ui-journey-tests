@@ -22,7 +22,7 @@ import java.time.LocalDateTime
 
 object LimitDatePage extends DatePage {
 
-  override def title(args: String*): String = "When is the limit date?"
+  override def title(args: String*): String = "When do you expect the transit to arrive in %s?"
 
   override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
 
