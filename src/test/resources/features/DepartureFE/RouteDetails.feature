@@ -14,6 +14,10 @@ Feature: Route details journey
     Then I should be on the 'Declaration summary' page
     And I click the Add route details link on the 'Declaration summary' page
 
+    #Specific Circumstance Indicator (SCI)
+    And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
+    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
+
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
     And I select IT on the 'Where is the office of destination?' page
