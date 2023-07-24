@@ -60,13 +60,13 @@ Feature: Arrival notification feature
     And I sign out
 
 
-  Scenario: 04 - Normal -Designated location - Coordinates - contact
+  Scenario: 04 - Normal -Authorised place - Coordinates - contact
   # Identification
     When I select GB on the arrival office of destination page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I enter GB123456789000 on the consignee eori tin page
   #Location Of goods
-    And I choose radio option Designated location on the arrival location of goods type page
+    And I choose radio option Approved place on the arrival location of goods type page
     And I choose radio option Coordinates on the arrival location of goods identification page
     And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
     And I choose radio option Yes on the arrival location of goods add contact page

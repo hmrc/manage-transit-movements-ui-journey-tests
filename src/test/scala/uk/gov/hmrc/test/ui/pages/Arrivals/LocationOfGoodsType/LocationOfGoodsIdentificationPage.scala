@@ -24,12 +24,12 @@ object LocationOfGoodsIdentificationPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "Customs office identifier" => clickById("value")
-      case "EORI number"               => clickById("value_1")
-      case "Coordinates"               => clickById("value_2")
-      case "UN/LOCODE"                 => clickById("value_3")
-      case "Address"                   => clickById("value_4")
-      case "Postal code"               => clickById("value_5")
+      case "Customs office identifier" => clickByValue("customsOffice")
+      case "EORI number"               => clickByValue("eoriNumber")
+      case "Coordinates"               => clickByValue("coordinates")
+      case "UN/LOCODE"                 => clickByValue("unlocode")
+      case "Address"                   => clickByValue("address")
+      case "Postal code"               => clickByValue("postalCode")
     }
     this
   }
