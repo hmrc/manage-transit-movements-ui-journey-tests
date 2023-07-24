@@ -17,19 +17,20 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier.{AddCarrierPage, AddCarrierContactNamePage, AddCarrierContactPersonPage, CarrierContactPhoneNumberPage, CarrierEoriNumberOrTinPage}
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier.{AddCarrierContactNamePage, AddCarrierContactPersonPage, AddCarrierPage, CarrierContactPhoneNumberPage, CarrierEoriNumberOrTinPage}
 
 class CarrierDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page$""") {
-    (answer: String) =>
-      AddCarrierPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page$""") { (answer: String) =>
+    AddCarrierPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or Third Country Unique Identification Number \(TCUIN\)\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or Third Country Unique Identification Number \(TCUIN\)\?' page$"""
+  ) { (answer: String) =>
     CarrierEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
