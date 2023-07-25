@@ -183,6 +183,11 @@
           },
           "location" : "Milano"
         }
+      },
+      "addSpecificCircumstanceIndicatorYesNo" : true,
+      "specificCircumstanceIndicator" : {
+        "code" : "XXX",
+        "description" : "Authorised economic operators"
       }
     },
     "guaranteeDetails" : [
@@ -307,7 +312,8 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      }
+      },
+      "addDepartureTransportMeansYesNo": false
     },
     "documents" : {
       "addDocumentsYesNo": true,

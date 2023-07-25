@@ -1,5 +1,4 @@
 @departureGBe2e
-
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -61,6 +60,9 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Route details
     When I click the Add route details link on the 'Declaration summary' page
+
+    And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
+    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -141,7 +143,8 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
     And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
-    And I enter 120 on the 'How much is the liability in pounds?' page
+    And I enter 0 on the 'How much is the liability in pounds?' page
+    And I choose radio option Yes on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter AC01 on the 'What is the access code?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I click the Remove link on the 'You have added 2 guarantees' page
@@ -150,6 +153,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 0 on the 'How much is the liability in pounds?' page
+    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 123.00 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option Yes on the 'You have added 2 guarantees' page
@@ -180,8 +185,12 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -197,9 +206,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the 'Transport details - Border means of transport Check your answers' page
-    And I choose radio option No on the 'You have added 1 border means of transport' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -215,7 +222,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     And I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When is the limit date?' page
+    And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
@@ -390,7 +397,6 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
-
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -470,6 +476,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 0 on the 'How much is the liability in pounds?' page
+    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 1299.99 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option No on the 'You have added 1 guarantee' page
@@ -480,30 +488,20 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
-      ## Container indicator
+     ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
 
       ## Inland mode of transport
-    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+    And I choose radio option Air on the 'Which inland mode of transport are you using?' page
+    And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number 1234567 on the 'What is the IATA flight number?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification Air12345 on the 'What is the registration number of the aircraft?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-
-        ## Border means of transport - office of transit
-    And I select Brest bureau (FR000690) on the 'Where is the customs office at the border?' page
-
-       ## Conveyance Reference Number
-    And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
-    And I submit on the 'Transport details - Border means of transport Check your answers' page
-    And I choose radio option No on the 'You have added 1 border means of transport' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page

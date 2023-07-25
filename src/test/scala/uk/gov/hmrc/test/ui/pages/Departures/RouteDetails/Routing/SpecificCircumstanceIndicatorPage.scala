@@ -14,24 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
+package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Routing
 
-import uk.gov.hmrc.test.ui.pages.DatePage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-import java.time.LocalDateTime
+object SpecificCircumstanceIndicatorPage extends RadioPage {
 
-object LimitDatePage extends DatePage {
+  override def title(args: String*): String = "Which specific circumstance indicator do you want to add?"
 
-  override def title(args: String*): String =  String.format("When do you expect the transit to arrive in %s?", args: _*)
-
-  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
-
-  override def fillInputs(): this.type = {
-    fillInputById("valueDay", day)
-    fillInputById("valueMonth", month)
-    fillInputById("valueYear", year)
-
+  override def select(answer: String): this.type = {
+    answer match {
+      case "XXX - Authorised economic operators"    => clickById("value")
+      case "A20 - Express consignments in the context of exit summary declarations" => clickById("value_1")
+    }
     this
   }
-
 }

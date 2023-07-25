@@ -14,24 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
+package uk.gov.hmrc.test.ui.pages.Departures.Guarantee
 
-import uk.gov.hmrc.test.ui.pages.DatePage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-import java.time.LocalDateTime
+object GuaranteeDefaultLiabilityPage extends YesNoPage {
 
-object LimitDatePage extends DatePage {
-
-  override def title(args: String*): String =  String.format("When do you expect the transit to arrive in %s?", args: _*)
-
-  override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
-
-  override def fillInputs(): this.type = {
-    fillInputById("valueDay", day)
-    fillInputById("valueMonth", month)
-    fillInputById("valueYear", year)
-
-    this
-  }
+  override def title(args: String*): String = "Do you want to use the default liability amount of 10,000 euros?"
 
 }

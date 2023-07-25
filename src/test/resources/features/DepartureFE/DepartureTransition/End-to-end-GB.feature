@@ -142,6 +142,8 @@ Feature: End to end journey for Great Britain office of departure
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
     And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 0 on the 'How much is the liability in pounds?' page
+    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
     And I submit on the 'Guarantee details Check your answers' page
@@ -216,7 +218,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     And I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When is the limit date?' page
+    And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier
     And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
@@ -472,6 +474,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
+    And I enter 0 on the 'How much is the liability in pounds?' page
+    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 1299.99 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option No on the 'You have added 1 guarantee' page
