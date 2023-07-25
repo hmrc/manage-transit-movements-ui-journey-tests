@@ -211,7 +211,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
-    And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number (TCUIN) for the consolidator?' page
+    And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
@@ -226,7 +226,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
@@ -320,10 +320,10 @@ Feature: End to end journey for Great Britain office of departure
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
     And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
-    And I enter GB123456 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' item page
+    And I enter GB123456 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page
     And I click radio option Yes on the 'You have added 1 supply chain actor for this item' item page
     And I click radio option Warehouse keeper on the 'Which type of supply chain actor do you want to add?' item page
-    And I enter ABC123 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the warehouse keeper?' item page
+    And I enter ABC123 on the 'What is the EORI number or Trader Identification Number TIN for the warehouse keeper?' item page
     And I click the Remove link on the 'You have added 2 supply chain actors for this item' item page
     #Remove Supply Chain Actor
     And I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page
