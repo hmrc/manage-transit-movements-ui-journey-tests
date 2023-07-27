@@ -1,4 +1,5 @@
-Feature: Arrival notification feature
+@arrivalTransition
+Feature: Arrival notification feature - Transition
 
   Background:
     Given I login with ID 1234567890

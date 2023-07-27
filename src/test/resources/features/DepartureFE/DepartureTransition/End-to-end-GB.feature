@@ -1,5 +1,5 @@
-
-Feature: End to end journey for Great Britain office of departure
+@departureGBe2eTransition
+Feature: End to end journey for Great Britain office of departure - Transition
 
   Background:
     Given I login with ID 1234567890

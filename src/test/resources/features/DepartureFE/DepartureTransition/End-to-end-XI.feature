@@ -1,3 +1,5 @@
+@departureXIe2eTransition
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:

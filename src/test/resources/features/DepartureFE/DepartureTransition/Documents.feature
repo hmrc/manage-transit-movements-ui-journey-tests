@@ -1,5 +1,5 @@
 @departureDocumentsTransition
-Feature: Journeys for Previous, Transport & Supporting documents
+Feature: Journeys for Previous, Transport & Supporting documents - Transition
 
   Background:
     Given I login with ID 1234567890

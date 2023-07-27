@@ -1,5 +1,5 @@
-
-Feature: End to end journey Arrival notification feature
+@arrivalE2eTransition
+Feature: End to end journey Arrival notification feature - Transition
 
   Background:
     Given I login with ID 1234567890

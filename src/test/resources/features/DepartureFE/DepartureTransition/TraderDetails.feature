@@ -1,6 +1,6 @@
+@departureTraderDetailsTransition
 
-
-Feature: Trader details journey
+Feature: Trader details journey - Transition
 
   Background:
     Given I login with ID 1234567890
