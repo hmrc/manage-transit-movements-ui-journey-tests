@@ -21,12 +21,8 @@ Feature: Transport details journey
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -42,7 +38,9 @@ Feature: Transport details journey
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -118,6 +116,7 @@ Feature: Transport details journey
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
@@ -131,7 +130,7 @@ Feature: Transport details journey
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
