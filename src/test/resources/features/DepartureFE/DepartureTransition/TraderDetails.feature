@@ -135,8 +135,6 @@ Feature: Trader details journey - Transition
 
       ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
-    And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
-    And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
     And I submit on the 'Trader details Check your answers' page
 
