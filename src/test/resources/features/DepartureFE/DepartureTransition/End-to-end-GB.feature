@@ -1,4 +1,4 @@
-@departureGBe2eTransition
+
 Feature: End to end journey for Great Britain office of departure - Transition
 
   Background:
@@ -185,8 +185,12 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -202,9 +206,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the 'Transport details - Border means of transport Check your answers' page
-    And I choose radio option No on the 'You have added 1 border means of transport' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -223,7 +225,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
+    When I choose radio option Yes on the 'Do you want to add a carrier?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
@@ -393,7 +396,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
-
+  @departureGBe2eTransition
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -490,26 +493,16 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using any containers?' page
 
       ## Inland mode of transport
-    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+    And I choose radio option Air on the 'Which inland mode of transport are you using?' page
+    And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number 1234567 on the 'What is the IATA flight number?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification Air12345 on the 'What is the registration number of the aircraft?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-
-        ## Border means of transport - office of transit
-    And I select Brest bureau (FR000690) on the 'Where is the customs office at the border?' page
-
-       ## Conveyance Reference Number
-    And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
-    And I submit on the 'Transport details - Border means of transport Check your answers' page
-    And I choose radio option No on the 'You have added 1 border means of transport' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -518,8 +511,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
       ## Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
-    And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
+    When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
