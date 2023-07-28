@@ -1,4 +1,5 @@
-Feature: Transport details journey
+@departureTransportDetailsTransition
+Feature: Transport details journey - Transition
 
   Background:
     Given I login with ID 1234567890
