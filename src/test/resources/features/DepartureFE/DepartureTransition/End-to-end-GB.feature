@@ -64,6 +64,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
+    And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
+    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
     And I select Italy on the 'What is the country of destination?' page
     And I select IT on the 'Where is the office of destination?' page
 
@@ -421,6 +423,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
       ## Consignee
+    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 

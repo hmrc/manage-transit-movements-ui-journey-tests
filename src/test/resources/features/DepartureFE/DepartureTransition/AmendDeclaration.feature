@@ -6,7 +6,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
