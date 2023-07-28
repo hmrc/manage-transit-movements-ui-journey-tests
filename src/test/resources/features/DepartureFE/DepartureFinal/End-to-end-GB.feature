@@ -50,19 +50,18 @@ Feature: End to end journey for Great Britain office of departure
     And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
 
       ## Consignee
+    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option No on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter Simpson Blog Consignee on the 'What is the consignee’s name?' page
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
+
     And I submit on the 'Trader details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
       ## Route details
     When I click the Add route details link on the 'Declaration summary' page
-
-    And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
-    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
 
       ## Transit route
     And I select Italy on the 'What is the country of destination?' page
@@ -141,9 +140,11 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
+    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 0 on the 'How much is the liability in pounds?' page
-    And I choose radio option Yes on the 'Do you want to use the default liability amount of 10000 euros?' page
+    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
+    And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I click the Remove link on the 'You have added 2 guarantees' page
@@ -152,8 +153,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page
     And I enter 01GB123456789012 on the 'What is the reference?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
-    And I enter 0 on the 'How much is the liability in pounds?' page
-    And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 123.00 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option Yes on the 'You have added 2 guarantees' page
@@ -165,6 +164,7 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option Yes on the 'You have added 3 guarantees' page
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
+    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
@@ -183,12 +183,8 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -204,7 +200,9 @@ Feature: End to end journey for Great Britain office of departure
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -223,8 +221,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier
-    When I choose radio option Yes on the 'Do you want to add a carrier?' page
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
@@ -244,7 +241,9 @@ Feature: End to end journey for Great Britain office of departure
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the 'Transport details - Transport equipment Check your answers' page
-    And I choose radio option No on the 'You have added 2 transport equipment' page
+    And I click the Remove link on the 'You have added 2 transport equipment' page
+    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
+    And I choose radio option No on the 'You have added 1 transport equipment' page
 
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
@@ -254,7 +253,6 @@ Feature: End to end journey for Great Britain office of departure
 
     # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
@@ -269,7 +267,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Documents Check your answers' page
     #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select Supporting - (N003) Certificate of quality on the 'What type of document do you want to add?' page
     And I enter 98765 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add a line item number?' page
@@ -279,7 +276,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
         #  Add a Transport document from list 754
-    And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
@@ -395,6 +391,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -486,20 +483,30 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
-     ## Container indicator
+      ## Container indicator
     And I choose radio option No on the 'Are you using any containers?' page
 
       ## Inland mode of transport
-    And I choose radio option Air on the 'Which inland mode of transport are you using?' page
-    And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number 1234567 on the 'What is the IATA flight number?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
+    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
-    And I submit the 'Check your answers' page
+    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification Air12345 on the 'What is the registration number of the aircraft?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+
+        ## Border means of transport - office of transit
+    And I select Brest bureau (FR000690) on the 'Where is the customs office at the border?' page
+
+       ## Conveyance Reference Number
+    And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -508,7 +515,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add an authorisation' page
 
       ## Carrier
-    When I choose radio option No on the 'Do you want to add a carrier?' page
+    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
+    And I choose radio option No on the 'Do you want to add a contact for the carrier?' page
 
       ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
@@ -521,7 +529,6 @@ Feature: End to end journey for Great Britain office of departure
     # Documents - Previous document from list CL214
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
-    And I click radio option Yes on the 'Do you want to use this document for all items?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
@@ -532,6 +539,7 @@ Feature: End to end journey for Great Britain office of departure
     #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
+    And I select (1) Transport equipment on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T2 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page

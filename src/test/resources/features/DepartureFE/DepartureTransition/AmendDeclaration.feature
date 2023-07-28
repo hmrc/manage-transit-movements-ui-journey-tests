@@ -1,4 +1,4 @@
-@departureAmendmentTransition
+ @departureAmendmentTransition
 
 Feature: End to end journey for amending a departure declaration - Transition
 

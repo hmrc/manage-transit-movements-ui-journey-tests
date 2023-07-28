@@ -1,6 +1,6 @@
 @departureXIe2eTransition
 
-Feature: End to end journey for Northern Ireland office of departure
+Feature: End to end journey for Northern Ireland office of departure - transition
 
   Background:
     Given I login with ID 1234567890
@@ -39,7 +39,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
       ## Consignee at header level
-    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
@@ -101,7 +100,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
-    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
@@ -115,7 +113,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -127,10 +125,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
       ## Carrier
-    When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
-    And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
-    And I enter Carry on the 'Who is the contact for the carrier?' page
-    And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
+    When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport equipment
     And I choose radio option No on the 'Do you want to add any transport equipment?' page
@@ -148,6 +143,7 @@ Feature: End to end journey for Northern Ireland office of departure
     # Documents
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
 #    Supporting document from list CL213 Supporting docs
     Then I select Supporting - (C673) Catch certificate on the 'What type of document do you want to add?' page
     And I enter RefNoCL213Doc1 on the 'What is the document’s reference number?' page
@@ -157,11 +153,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
+    And I click radio option Yes on the 'Do you want to use this document for all items?' page
 #    Transport document from list CL754
     And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
+    And I click radio option No on the 'Do you want to use this document for all items?' page
     # Previous document from list
     And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
