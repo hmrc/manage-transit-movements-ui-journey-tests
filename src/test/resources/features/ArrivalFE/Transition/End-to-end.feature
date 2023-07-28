@@ -1,5 +1,5 @@
-
-Feature: End to end journey Arrival notification feature
+@arrivalE2eTransition
+Feature: End to end journey Arrival notification feature - Transition
 
   Background:
     Given I login with ID 1234567890
@@ -7,33 +7,18 @@ Feature: End to end journey Arrival notification feature
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
 
-  Scenario: 01 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
+  Scenario: 01 - Simplified - Add contact 'Yes' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
   Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
     #Identification
     When I select XI on the arrival office of destination page
-    And I enter GB123456789000 on the consignee eori tin page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026351 on the authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    #Add Authorisation
-    Then I should have 1 authorisation on the add another authorisation page
-    When I choose radio option Yes on the add another authorisation page
-    And I choose radio option ACT on the authorisations type page
+    And I enter GB123456789000 on the consignee eori tin page
     And I enter 1200014210026352 on the authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    Then I should have 2 authorisations on the add another authorisation page
-    #Remove Authorisation
-    When I choose to click on Remove link on the add another authorisation page
-    And I choose radio option Yes for the ACE authorisation 1200014210026351 on the remove authorisation page
-    Then I choose radio option No on the add another authorisation page
-    #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Address on the arrival location of goods identification page
-    And I select United Arab Emirates on the In which country is the location of goods page
-    And I fill in address on the arrival location of goods address page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I enter 12345 on the arrival location of goods authorisation number page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact number page
     #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -150,24 +135,20 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 02 - Simplified - Goods Location Id  'Address' - Add Contact 'No' - Add Incident 'Yes'- Incident Code '4' -
+  Scenario: 02 - Normal - Approved place - Coordinates - Add Contact 'Yes' - Add Incident 'Yes'- Incident Code '4' -
   Add Endorsement 'No' - Incident Location 'UN/LOCODE' - Container Id 'Yes' - Add Seal 'Yes' x2 - Add Goods Item 'No' -
   Add Transport Equipment 'No' - Add Another Incident 'No'
   # Identification
-    When I select XI on the arrival office of destination page
+    When I select GB on the arrival office of destination page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACE on the authorisations type page
-    And I enter 1200014210026352 on the authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    When I should have 1 authorisation on the add another authorisation page
-    And I choose radio option No on the add another authorisation page
   #Location Of goods
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option Address on the arrival location of goods identification page
-    And I select France on the In which country is the location of goods page
-    And I fill in address on the arrival location of goods address page
-    And I choose radio option No on the arrival location of goods add contact page
+    And I choose radio option Approved place on the arrival location of goods type page
+    And I choose radio option Coordinates on the arrival location of goods identification page
+    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact number page
   #Add Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page
@@ -208,26 +189,15 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 03 - Simplified - Goods Location Id  'EORI Number' - Add additional Id 'Yes' - Add Contact 'Yes' -
-  Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'Yes' - Incident Location 'Address' - Add Another Incident 'No'
+  Scenario: 03 - Normal - Designited location - Add Incident 'Yes'- Incident Code '5' - Add Endorsement 'Yes' - Incident Location 'Address' - Add Another Incident 'No'
   #Identification
     When I select GB on the arrival office of destination page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I enter GB123456789000 on the consignee eori tin page
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option ACT on the authorisations type page
-    And I enter 1200014210026352 on the authorisations reference number page
-    And I submit on the 'Arrivals - Authorisations Check your answers' page
-    And I should have 1 authorisation on the add another authorisation page
-    When I choose radio option No on the add another authorisation page
-  #Location Of goods - Location of goods - X Eori Number
-    And I choose radio option Authorised place on the arrival location of goods type page
-    And I choose radio option EORI number on the arrival location of goods identification page
-    And I enter GB123456789000 on the arrival location of goods eori tin page
-    And I choose radio option Yes on the arrival location of goods add additional identifier page
-    And I enter 1234 on the arrival location of goods additional identifier page
-    And I choose radio option Yes on the arrival location of goods add contact page
-    And I enter John Joe on the arrival location of goods contact page
-    And I enter +44 2345 82 83 on the arrival location of goods contact number page
+  #Location Of goods
+    And I choose radio option Designated location on the arrival location of goods type page
+    And I choose radio option Customs office identifier on the arrival location of goods identification page
+    And I select GB on the arrival location of goods customs office identification page
   #Incident
     And I choose radio option Yes on the add incident page
     And I select France on the In which country did the incident happen page

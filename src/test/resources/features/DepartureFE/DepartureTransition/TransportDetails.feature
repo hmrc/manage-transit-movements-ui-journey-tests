@@ -1,5 +1,5 @@
-
-Feature: Transport details journey
+@departureTransportDetailsTransition
+Feature: Transport details journey - Transition
 
   Background:
     Given I login with ID 1234567890
@@ -45,7 +45,7 @@ Feature: Transport details journey
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
-    And I enter FR98472189002 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' page
+    And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation

@@ -1,4 +1,5 @@
-Feature: Guarantee details journey
+@departureGuaranteeDetailsTransition
+Feature: Guarantee details journey - Transition
 
   Background:
     Given I login with ID 1234567890

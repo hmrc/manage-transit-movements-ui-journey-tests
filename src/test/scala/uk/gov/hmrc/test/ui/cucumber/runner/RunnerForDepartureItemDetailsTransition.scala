@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-object EoriTinSupplyChainActorPage extends StringPage {
-
-  override def title(args: String*): String =
-    String.format("What is the EORI number or Third Country Unique Identification Number (TCUIN) for the %s?", args: _*)
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@departureItemDetailsTransition"
+)
+class RunnerForDepartureItemDetailsTransition {}

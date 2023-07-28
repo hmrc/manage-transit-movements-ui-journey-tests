@@ -141,7 +141,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'You have added 1 guarantee' page
     And I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page
     And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page
-    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 0 on the 'How much is the liability in pounds?' page
     And I choose radio option Yes on the 'Do you want to use the default liability amount of 10000 euros?' page
@@ -166,7 +165,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option Yes on the 'You have added 3 guarantees' page
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
-    And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
     And I submit on the 'Guarantee details Check your answers' page
@@ -211,7 +209,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
-    And I enter FR98472189002 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' page
+    And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
@@ -226,7 +224,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page

@@ -29,7 +29,7 @@ class CarrierDetailsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or Third Country Unique Identification Number \(TCUIN\)\?' page$"""
+    """^(?:I )?enter (.+) on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN\?' page$"""
   ) { (answer: String) =>
     CarrierEoriNumberOrTinPage
       .loadPage()
