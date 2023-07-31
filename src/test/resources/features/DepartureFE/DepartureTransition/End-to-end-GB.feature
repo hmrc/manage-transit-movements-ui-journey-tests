@@ -396,6 +396,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 
+    @wip
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -525,6 +526,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Do you want to add any documents?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
+    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
+    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
+    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
+    And I enter 50 on the documents 'How many of these were there?' page
+    And I click radio option Yes on the 'Do you want to declare the quantity of goods?' page
+    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
+    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
@@ -533,7 +541,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
-    And I select (1) Transport equipment on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T2 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page

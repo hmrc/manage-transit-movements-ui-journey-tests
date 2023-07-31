@@ -10,7 +10,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I choose radio option TIR on the 'What declaration do you want to create?' page
 
-
+@wip
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No' - CL213 & CL754 Documents
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
@@ -197,7 +197,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 1 document to this item' page
 
      #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
