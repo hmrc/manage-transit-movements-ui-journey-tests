@@ -10,7 +10,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Normal on the 'What type of procedure are you using?' page
     And I choose radio option TIR on the 'What declaration do you want to create?' page
 
-
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No' - CL213 & CL754 Documents
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
     And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
@@ -101,7 +100,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
-    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
@@ -127,6 +125,7 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option No on the 'You have added 1 transport authorisation' page
 
       ## Carrier
+    When I choose radio option Yes on the 'Do you want to add a carrier?' page
     When I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Carry on the 'Who is the contact for the carrier?' page
@@ -197,7 +196,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 1 document to this item' page
 
      #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
