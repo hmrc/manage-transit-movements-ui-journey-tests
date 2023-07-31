@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Items
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ItemsAddAnotherItemPage extends YesNoPage {
+object ItemsIsConsigneeEoriNumberOrTinKnownPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add another item?"
+  override def title(args: String*): String = "Do you know the consignee’s EORI number or Trader Identification Number (TIN) for this item?"
 }
