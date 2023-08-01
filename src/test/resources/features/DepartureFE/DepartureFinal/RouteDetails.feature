@@ -1,5 +1,5 @@
 @departureRouteDetails
-  @wip
+
 Feature: Route details journey
   Background:
     Given I login with ID 1234567890
