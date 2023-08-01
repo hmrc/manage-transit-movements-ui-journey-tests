@@ -68,11 +68,12 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page$""") { (officeOfDestination: String) =>
-    LimitDatePage
-      .loadPage(officeOfDestination)
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page$""") {
+    (officeOfDestination: String) =>
+      LimitDatePage
+        .loadPage(officeOfDestination)
+        .fillInputs()
+        .submitPage()
   }
 
   And(
