@@ -52,7 +52,9 @@ class TransportDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page$"""
+  ) { (answer: String) =>
     ContainersPage
       .loadPage()
       .select(answer)

@@ -19,11 +19,11 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the Add trader details link on the 'Declaration summary' page
 
         ## Transit holder
-    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option No on the 'Do you want to add a contact?' page
+    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
 
       ## Transit holder's TIR id
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
