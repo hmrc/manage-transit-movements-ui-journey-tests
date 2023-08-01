@@ -7,7 +7,6 @@ Feature: End to end journey for Great Britain office of departure
     Then I input a random LRN on the 'What is the Local Reference Number?' page
     And I select GB on the 'Where is the office of departure?' page
 
-
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -65,8 +64,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select Bari on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
@@ -112,11 +111,11 @@ Feature: End to end journey for Great Britain office of departure
       ## Location of goods
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
-    And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
-    And I enter +432 1212 1212 on the 'What is the contact for the location of goods’ telephone number?' page
+    And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
@@ -183,12 +182,8 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -205,6 +200,8 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit the 'Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -220,7 +217,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose to click on Remove link on the 'You have added 2 authorisations' page
     And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
     And I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
+    And I enter the date on the 'When do you expect the transit to arrive in Aeroporto Bari - Palese (IT018101)?' page
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
@@ -435,8 +432,8 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option No on the 'Are you using a binding itinerary?' page

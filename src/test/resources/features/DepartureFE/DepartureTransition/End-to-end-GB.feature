@@ -66,8 +66,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Transit route
     And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
     And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
@@ -113,11 +113,11 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Location of goods
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
-    And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
-    And I enter +432 1212 1212 on the 'What is the contact for the location of goods’ telephone number?' page
+    And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
@@ -437,8 +437,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option No on the 'Are you using a binding itinerary?' page

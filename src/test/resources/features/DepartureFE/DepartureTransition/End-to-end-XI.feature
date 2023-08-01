@@ -50,8 +50,8 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select Bari on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page

@@ -1,5 +1,4 @@
 @departureRouteDetailsTransition
-@wip
 Feature: Route details journey - Transition
 
   Background:
