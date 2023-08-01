@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object ContainersPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Are you using any containers?"
+    "Are you using any shipping containers to transport the goods?"
 
 }

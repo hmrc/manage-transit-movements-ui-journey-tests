@@ -94,7 +94,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
