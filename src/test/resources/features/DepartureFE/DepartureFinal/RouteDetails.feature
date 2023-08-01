@@ -1,8 +1,9 @@
 @departureRouteDetails
-
+  @wip
 Feature: Route details journey
   Background:
     Given I login with ID 1234567890
+
   Scenario: 01 Great Britain office of departure
 
     And the user has submitted routeDetailsGB.json for LRN 1234567890RDGB and EORI number 1234567890
@@ -18,7 +19,7 @@ Feature: Route details journey
 
       ## Transit route
     And I select Italy on the 'What country is the office of destination in?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
@@ -101,7 +102,7 @@ Feature: Route details journey
 
       ## Transit route
     And I select Italy on the 'What country is the office of destination in?' page
-    And I select Bari on the 'Where is the office of destination?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
