@@ -178,7 +178,7 @@ Feature: Arrival notification feature - Transition
   #Add Another Incident
     And I choose radio option Yes on the You have added 1 incident page
   #Add Incident - 2nd iteration
-    And I select Argentina on the In which country did the incident happen page
+    And I select Italy on the In which country did the incident happen page
   #Incident Code - Second Incident
     And I choose radio option 3 - The goods on the incident code page
     And I enter The ship sank on the incident description page
