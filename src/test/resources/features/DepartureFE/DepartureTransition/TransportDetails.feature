@@ -17,7 +17,7 @@ Feature: Transport details journey - Transition
     And I select Italy on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option Yes on the 'Are you using any containers?' page
+    And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
@@ -112,7 +112,7 @@ Feature: Transport details journey - Transition
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page

@@ -181,7 +181,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select Italy on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option Yes on the 'Are you using any containers?' page
+    And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
@@ -489,7 +489,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Air on the 'Which inland mode of transport are you using?' page
