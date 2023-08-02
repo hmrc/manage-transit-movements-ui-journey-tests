@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddTransportEquipmentPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you need to add any transport equipment?"
+  override def title(args: String*): String = "Did any transport equipment change during the incident?"
 
 }

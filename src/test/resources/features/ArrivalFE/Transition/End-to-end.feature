@@ -33,39 +33,35 @@ Feature: End to end journey Arrival notification feature - Transition
     #Add Container Indicator
     When I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
-    #Add Container Seal
-    And I choose radio option Yes for container identification number C001 on the add container seal page
-    And I enter S001 for container identification number C001 on the container seal identification number page
-    Then I should have 1 container seal added for container identification number C001 on the add another container seal page
-    #Add Another Container Seal
-    When I choose radio option Yes on the add another container seal page
-    And I enter S002 for container identification number C001 on the container seal identification number page
-    Then I should have 2 container seals added for container identification number C001 on the add another container seal page
-    #Remove A Container Seal
+      #Add Container Seal
+    And I choose radio option Yes on the add seals page
+    And I enter S001 on the seal identification number page
+  #Add Another Container Seal
+    When I choose radio option Yes on the Arrivals 'You have added 1 seal' page
+    And I enter S002 on the seal identification number page
+  #Remove A Container Seal
     When I click the Remove link on the add another container seal page
     And I click radio option Yes for container seal identification number S001 on the remove seal page
-    Then I choose radio option No on the add another container seal page
-    #Add Goods Item
+    When I choose radio option No on the Arrivals 'You have added 1 seal' page
+  #Add Goods Item
     When I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 1 on the What is the goods item number page
-    #Add Another Goods Item
+  #Add Another Goods Item
     When I choose radio option Yes on the You have added 1 goods item number page
     And I enter 2 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
     And I submit on the 'Arrivals - Transport equipment Check your answers' page
-    #Add Transport Equipment
+  #Add Transport Equipment
     When I choose radio option Yes on the You have added 1 transport equipment page
-    #Add Container Indicator - 2nd transport equipment iteration
+  #Add Container Indicator - 2nd transport equipment iteration
     And I enter C002 on the container identification number page
-    #Add Container Seal
-    And I choose radio option Yes for container identification number C002 on the add container seal page
-    And I enter S003 for container identification number C002 on the container seal identification number page
-    Then I should have 1 container seal added for container identification number C002 on the add another container seal page
-    #Add Another Container Seal
-    When I choose radio option Yes on the add another container seal page
-    And I enter S004 for container identification number C002 on the container seal identification number page
-    Then I should have 2 container seals added for container identification number C002 on the add another container seal page
-    When I choose radio option No on the add another container seal page
+  #Add Container Seal
+    And I choose radio option Yes on the add seals page
+    And I enter S003 on the seal identification number page
+  #Add Another Container Seal
+    When I choose radio option Yes on the Arrivals 'You have added 1 seal' page
+    And I enter S004 on the seal identification number page
+    When I choose radio option No on the Arrivals 'You have added 2 seals' page
     #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 3 on the What is the goods item number page
@@ -164,14 +160,12 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Yes on the add container identification number page
     And I enter C001 on the container identification number page
   #Add Container Seal
-    And I choose radio option Yes for container identification number C001 on the add container seal page
-    And I enter S001 for container identification number C001 on the container seal identification number page
-    Then I should have 1 container seal added for container identification number C001 on the add another container seal page
+    And I choose radio option Yes on the add seals page
+    And I enter S001 on the seal identification number page
   #Add Another Container Seal
-    When I choose radio option Yes on the add another container seal page
-    And I enter S002 for container identification number C001 on the container seal identification number page
-    Then I should have 2 container seals added for container identification number C001 on the add another container seal page
-    When I choose radio option No on the add another container seal page
+    When I choose radio option Yes on the Arrivals 'You have added 1 seal' page
+    And I enter S002 on the seal identification number page
+    When I choose radio option No on the Arrivals 'You have added 2 seals' page
   #Add Goods Item
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 1 on the What is the goods item number page
