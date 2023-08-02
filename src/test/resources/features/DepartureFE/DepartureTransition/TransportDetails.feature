@@ -18,7 +18,6 @@ Feature: Transport details journey - Transition
 
       ## Container indicator
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
-
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
@@ -30,11 +29,12 @@ Feature: Transport details journey - Transition
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Maritime on the 'How is the transit crossing the border?' page
-    And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
+    And I choose radio option Channel Tunnel on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+    And I enter identification GB1234567 on the 'What is the train number?' page
 
       ## Border means office of transit
     And I select Basel (DE004058) on the 'Where is the customs office at the border?' page
@@ -87,8 +87,6 @@ Feature: Transport details journey - Transition
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
       ## Charges
-    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
-    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
@@ -120,16 +118,17 @@ Feature: Transport details journey - Transition
     And I enter registration number 1234567 on the 'What is the train number?' page
 
       ## Border means of transport
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport - office of transit
     And I select BARI on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
+    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit the 'Check your answers' page
 
