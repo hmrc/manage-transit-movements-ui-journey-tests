@@ -5,7 +5,7 @@ Feature: Item details journey
     Given I login with ID 1234567890
 
   Scenario: 01 Office Departure 'GB', Declaration 'T'
-    And the user has submitted itemDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And the user has submitted itemDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
@@ -48,7 +48,10 @@ Feature: Item details journey
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
 
-    #Supply Chain Actor Section
+  #Consignee
+    And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
+    And I enter IT123123132 on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN?' page
+#Supply Chain Actor Section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
     And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
     And I enter GB123456 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page
@@ -111,6 +114,13 @@ Feature: Item details journey
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
 
+    #Consignee
+    And I choose radio option No on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
+    And I enter Simpson Item Consignee on the 'What is the consignee’s name?' page
+    And I select Italy on the 'Which country is the consignee based in?' page
+    And I fill in the address on the 'What is the consignee’s address?' page
+
+
     #Additional Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
@@ -132,7 +142,7 @@ Feature: Item details journey
 
 
   Scenario: 02 Office Departure 'XI', Declaration 'TIR'
-    And the user has submitted itemDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
+    And the user has submitted itemDetailsXITransition.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page
@@ -164,6 +174,10 @@ Feature: Item details journey
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+
+        #Consignee
+    And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
+    And I enter IT123123132 on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN?' page
 
     #Additional Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
