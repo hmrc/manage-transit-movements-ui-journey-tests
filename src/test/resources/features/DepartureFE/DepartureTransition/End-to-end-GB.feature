@@ -329,7 +329,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
     #Items Documents Section -T2 skips Yes/No to add document
     And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 1 documents to this item' page
 
     #Additional Reference Section
     And I click radio option Yes on the 'Do you want to add an additional reference for this item?' page
@@ -360,7 +360,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
     #Add another Item
     And I enter This is a description on the 'Enter a description of item 2' page
-    And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     #2nd Item - Dangerous goods section
@@ -380,7 +379,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
     #2nd Item - Documents section
     And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 1 documents to this item' page
 
     #2nd Item - Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
@@ -394,7 +393,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
-@wip
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -561,8 +560,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
     #Consignee Item level
-    And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
-    And I enter IT123123132 on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN?' page
+    And I choose radio option No on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
     And I enter Simpson Item Consignee on the 'What is the consignee’s name?' page
     And I select Italy on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page

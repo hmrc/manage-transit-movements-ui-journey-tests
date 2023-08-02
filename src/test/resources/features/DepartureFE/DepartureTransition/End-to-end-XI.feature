@@ -192,6 +192,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select (VL) Bulk, liquid on the 'What type of package are you using for the item?' page
     And I click radio option No on the 'Do you want to add a shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
+    #Consignee
+    And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
+    And I enter IT123123132 on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN?' page
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
