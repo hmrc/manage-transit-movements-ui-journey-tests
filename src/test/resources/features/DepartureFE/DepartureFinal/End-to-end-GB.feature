@@ -10,9 +10,9 @@ Feature: End to end journey for Great Britain office of departure
 
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
-    And I choose radio option Simplified on the 'What type of procedure are you using?' page
-    And I choose radio option T2 on the 'What declaration do you want to create?' page
-    And I choose radio option Exit summary declaration (EXS) on the 'What type of safety and security details do you need to add?' page
+    And I choose radio option Simplified on the 'Which type of procedure are you using?' page
+    And I choose radio option T2 on the 'Which type of declaration do you want to create?' page
+    And I choose radio option Exit summary declaration (EXS) on the 'Which type of safety and security details do you want to add?' page
     And I submit the 'Check your answers' page
 
       ## Trader details
@@ -397,9 +397,9 @@ Feature: End to end journey for Great Britain office of departure
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option T on the 'What declaration do you want to create?' page
-    And I choose radio option No security on the 'What type of safety and security details do you need to add?' page
+    And I choose radio option Normal on the 'Which type of procedure are you using?' page
+    And I choose radio option T on the 'Which type of declaration do you want to create?' page
+    And I choose radio option No security on the 'Which type of safety and security details do you want to add?' page
     And I submit the 'Check your answers' page
 
     ## Trader details
