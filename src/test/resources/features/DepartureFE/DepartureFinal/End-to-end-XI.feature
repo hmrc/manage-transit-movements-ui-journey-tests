@@ -155,14 +155,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
-
 #    Transport document from list CL754
     And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
     And I click radio option No on the 'Do you want to use this document for all items?' page
-
     # Previous document from list
     And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -198,7 +196,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 1 document to this item' page
+    And I click radio option No on the 'You have attached 2 documents to this item' page
 
      #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
