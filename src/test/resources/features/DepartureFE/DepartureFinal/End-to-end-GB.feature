@@ -1,4 +1,5 @@
 @departureGBe2e
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -49,6 +50,7 @@ Feature: End to end journey for Great Britain office of departure
     And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
 
       ## Consignee
+    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option No on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter Simpson Blog Consignee on the 'What is the consignee’s name?' page
     And I select United Kingdom on the 'Which country is the consignee based in?' page
@@ -421,6 +423,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
       ## Consignee
+    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 

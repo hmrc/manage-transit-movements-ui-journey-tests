@@ -1,4 +1,5 @@
 @departureGBe2eTransition
+
 Feature: End to end journey for Great Britain office of departure - Transition
 
   Background:

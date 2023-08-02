@@ -1,4 +1,5 @@
 @departureXIe2e
+
 Feature: End to end journey for Northern Ireland office of departure
 
   Background:
@@ -38,6 +39,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
 
       ## Consignee at header level
+    And I choose radio option No on the 'Is there more than one consignee?' page
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
@@ -101,7 +103,6 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter registration number 1234567 on the 'What is the train number?' page
 
       ## Border means of transport
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
@@ -143,7 +144,6 @@ Feature: End to end journey for Northern Ireland office of departure
     # Documents
     When I click the Add documents link on the 'Declaration summary' page
     And I click radio option Yes on the 'Do you want to add any documents?' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
 #    Supporting document from list CL213 Supporting docs
     Then I select Supporting - (C673) Catch certificate on the 'What type of document do you want to add?' page
     And I enter RefNoCL213Doc1 on the 'What is the document’s reference number?' page
@@ -153,13 +153,12 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 1 document' page
-    And I click radio option Yes on the 'Do you want to use this document for all items?' page
 #    Transport document from list CL754
     And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option Yes on the 'You have added 2 documents' page
-    And I click radio option No on the 'Do you want to use this document for all items?' page
+
     # Previous document from list
     And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
@@ -195,7 +194,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
-    And I click radio option No on the 'You have attached 2 documents to this item' page
+    And I click radio option No on the 'You have attached 1 document to this item' page
 
      #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
