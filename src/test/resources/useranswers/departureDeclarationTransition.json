@@ -6,7 +6,8 @@
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
         "isInCL112" : true,
-        "isInCL147" : false
+        "isInCL147" : false,
+        "isInCL010": false
       },
       "procedureType" : "simplified",
       "declarationType" : "T2",
