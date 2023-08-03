@@ -289,7 +289,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Items
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
-    And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
+#    And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     # Dangerous goods section
@@ -444,7 +444,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
       ## Transit route country optional
-    And I choose radio option No on the transit route add country page
     And I submit on the 'Route details - Transit route Check your answers' page
 
       ## Country of Transit
@@ -456,6 +455,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
+    And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Approved place on the 'Which type of location is it?' page
     And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
@@ -463,9 +463,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
-    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I select United Kingdom on the 'In which country is the place of loading?' page
-    And I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I choose radio option No on the 'Do you want to add extra information for the place of unloading?' page
     And I submit on the 'Route details - Places of loading and unloading Check your answers' page
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
