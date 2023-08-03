@@ -6,12 +6,13 @@
         "name" : "Belfast EPU",
         "phoneNumber" : "+44 (0)02896 931537",
         "isInCL112" : false,
-        "isInCL147" : true
+        "isInCL147" : true,
+        "isInCL010" : true
       },
       "procedureType" : "normal",
       "declarationType" : "TIR",
       "tirCarnetReference" : "1234567",
-      "securityDetailsType" : "entrySummaryDeclaration",
+      "securityDetailsType" : "noSecurity",
       "detailsConfirmed" : true
     },
     "traderDetails" : {

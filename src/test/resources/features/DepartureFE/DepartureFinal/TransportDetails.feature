@@ -26,7 +26,7 @@ Feature: Transport details journey
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Maritime on the 'How is the transit crossing the border?' page
+    And I choose radio option Sea on the 'How is the transit crossing the border?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
