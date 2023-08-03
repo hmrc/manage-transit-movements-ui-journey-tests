@@ -18,13 +18,10 @@ package uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherContainerSealPage extends YesNoPage {
+object AddAnotherArrivalSealPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1")                              => "You have added 1 seal"
-    case Seq("1", identificationVal)           => String.format("You have added 1 seal for container %s", identificationVal)
-    case Seq(numberOfSeals)                    => String.format("You have added %s seals", numberOfSeals)
-    case Seq(numberOfSeals, identificationVal) =>
-      String.format("You have added %s seals for container %s", numberOfSeals, identificationVal)
+    case Seq("1") => "You have added 1 seal"
+    case Seq(numberOfSeals) => String.format("You have added %s seals", numberOfSeals)
   }
 }
