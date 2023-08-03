@@ -503,7 +503,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
 
       ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the customs office at the border?' page
+    And I select AEROPORTO on the 'Where is the customs office at the border?' page
 
           ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page

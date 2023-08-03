@@ -109,10 +109,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
 
       ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the customs office at the border?' page
+    And I select Bari on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
-    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit the 'Check your answers' page
 
