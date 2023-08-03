@@ -28,6 +28,5 @@ trait BrowserDriver extends LazyLogging {
 
   val options                         = new ChromeOptions()
   options.addArguments("--remote-allow-origins=*")
-  options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
   implicit lazy val driver: WebDriver = SingletonDriver.getInstance(Some(options))
 }
