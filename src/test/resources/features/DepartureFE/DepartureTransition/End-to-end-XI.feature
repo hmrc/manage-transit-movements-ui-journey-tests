@@ -102,18 +102,18 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter registration number 1234567 on the 'What is the train number?' page
 
       ## Border means of transport
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the customs office at the border?' page
+    And I select Bari on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
+    And I submit the 'Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
