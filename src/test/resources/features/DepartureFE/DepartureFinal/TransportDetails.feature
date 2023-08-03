@@ -26,7 +26,9 @@ Feature: Transport details journey
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Sea on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
@@ -84,9 +86,6 @@ Feature: Transport details journey
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
-      ## Charges
-    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
-    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
@@ -119,7 +118,9 @@ Feature: Transport details journey
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
@@ -129,6 +130,7 @@ Feature: Transport details journey
     And I select BARI on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
+    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
