@@ -28,12 +28,11 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add seals page$""") {
-    (answer: String) =>
-      AddContainerSealPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add seals page$""") { (answer: String) =>
+    AddContainerSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the seal identification number page$""") { (answer: String) =>
@@ -55,7 +54,6 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-
 
   And("""^(?:I )?click radio option (.*) for container seal identification number (.+) on the remove seal page$""") {
     (answer: String, identificationVal: String) =>
