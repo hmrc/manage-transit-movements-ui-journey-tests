@@ -50,8 +50,8 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select Bari on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
@@ -91,7 +91,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
     And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
-    And I select United Kingdom on the 'What is the country of destination?' page
+    And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
@@ -110,7 +110,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the customs office at the border?' page
+    And I select AEROPORTO on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
