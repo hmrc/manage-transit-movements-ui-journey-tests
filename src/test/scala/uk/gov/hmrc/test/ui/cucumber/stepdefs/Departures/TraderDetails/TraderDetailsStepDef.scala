@@ -25,7 +25,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder.{AddHold
 
 class TraderDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you know the transit holder’s EORI number or TIN\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Do you know the transit holder’s EORI number\?' page$""") {
     (answer: String) =>
       IsHolderEoriKnownPage
         .loadPage()
@@ -33,7 +33,7 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s EORI number or TIN\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s EORI number\?' page$""") { (answer: String) =>
     HolderEoriNumberOrTinPage
       .loadPage()
       .fillInput(answer)
@@ -62,11 +62,12 @@ class TraderDetailsStepDef extends BaseStepDef {
 
   //Transit holder contact person
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact\?' page$""") { (answer: String) =>
-    AddHolderContactPersonPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the transit holder\?' page$""") {
+    (answer: String) =>
+      AddHolderContactPersonPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the contact’s name\?' page$""") { (answer: String) =>
@@ -76,11 +77,12 @@ class TraderDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s contact phone number\?' page$""") { (answer: String) =>
-    AddHolderContactPhoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the phone number for the transit holder’s contact\?' page$""") {
+    (answer: String) =>
+      AddHolderContactPhoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   //Representative
@@ -189,18 +191,19 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Who is the contact for the consignor\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the contact's name\?' page$""") { (answer: String) =>
     AddConsignorContactNamePage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the consignor contact’s phone number\?' page$""") { (answer: String) =>
-    AddConsignorContactPhoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the phone number for the consignor’s contact\?' page$""") {
+    (answer: String) =>
+      AddConsignorContactPhoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   //Consignee

@@ -31,7 +31,9 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which specific circumstance indicator do you want to add\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which specific circumstance indicator do you want to add\?' page$"""
+  ) { (answer: String) =>
     SpecificCircumstanceIndicatorPage
       .loadPage()
       .select(answer)

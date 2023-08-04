@@ -50,7 +50,9 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to use the default liability amount of 10000 euros\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to use the default liability amount of 10000 euros\?' page$"""
+  ) { (answer: String) =>
     GuaranteeDefaultLiabilityPage
       .loadPage()
       .select(answer)

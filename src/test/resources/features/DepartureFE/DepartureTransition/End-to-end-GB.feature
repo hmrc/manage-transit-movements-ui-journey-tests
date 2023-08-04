@@ -18,15 +18,15 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Trader details
     And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
-    And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you know the transit holder’s EORI number?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
     And I select United Kingdom on the 'Which country is the transit holder based in?' page
     And I fill in the address on the 'What is the transit holder’s address?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option Yes on the 'Do you want to add a contact?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the transit holder?' page
     And I enter John contact on the 'What is the contact’s name?' page
-    And I enter +2112212112 on the 'What is the transit holder’s contact phone number?' page
+    And I enter +2112212112 on the 'What is the phone number for the transit holder’s contact?' page
 
       ## Representative details
     And I choose radio option Yes on the 'Are you acting as a representative?' page
@@ -46,8 +46,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Consignor contact person's details
     And I choose radio option Yes on the 'Do you want to add a contact for the consignor?' page
-    And I enter Pip Contact on the 'Who is the contact for the consignor?' page
-    And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
+    And I enter Pip Contact on the 'What is the contact’s name?' page
+    And I enter +123123123213 on the 'What is the phone number for the consignor’s contact?' page
 
       ## Consignee
     And I choose radio option No on the 'Is there more than one consignee?' page
@@ -404,11 +404,11 @@ Feature: End to end journey for Great Britain office of departure - Transition
     ## Trader details
     And I click the Add trader details link on the 'Declaration summary' page
       ## Transit Holder
-    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option No on the 'Do you want to add a contact?' page
+    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
 
       ## Representative details
     And I choose radio option No on the 'Are you acting as a representative?' page
