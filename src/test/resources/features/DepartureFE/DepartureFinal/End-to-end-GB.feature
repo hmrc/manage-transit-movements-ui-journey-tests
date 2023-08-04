@@ -183,16 +183,12 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Inland mode of transport
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Maritime on the 'How is the transit crossing the border?' page
+    And I choose radio option Sea on the 'How is the transit crossing the border?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
@@ -204,7 +200,9 @@ Feature: End to end journey for Great Britain office of departure
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Transport details - Border means of transport Check your answers' page
+    And I choose radio option No on the 'You have added 1 border means of transport' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
