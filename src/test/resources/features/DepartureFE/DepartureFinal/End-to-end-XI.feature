@@ -6,24 +6,24 @@ Feature: End to end journey for Northern Ireland office of departure
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
     And I select XI on the 'Where is the office of departure?' page
-    And I choose radio option Normal on the 'What type of procedure are you using?' page
-    And I choose radio option TIR on the 'What declaration do you want to create?' page
+    And I choose radio option Normal on the 'Which type of procedure are you using?' page
+    And I choose radio option TIR on the 'Which type of declaration do you want to create?' page
 
 
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No' - CL213 & CL754 Documents
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
-    And I choose radio option Entry summary declaration (ENS) on the 'What type of safety and security details do you need to add?' page
+    And I choose radio option Entry summary declaration (ENS) on the 'Which type of safety and security details do you want to add?' page
     And I submit the 'Check your answers' page
 
       ## Trader details
     When I click the Add trader details link on the 'Declaration summary' page
 
         ## Transit holder
-    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option No on the 'Do you want to add a contact?' page
+    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
 
       ## Transit holder's TIR id
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
@@ -100,6 +100,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
@@ -114,7 +115,7 @@ Feature: End to end journey for Northern Ireland office of departure
 
       ## Conveyance Reference Number
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
+    And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page

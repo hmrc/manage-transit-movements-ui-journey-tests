@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
+import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
 class ItemDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.*) on the 'Enter a description of item (.*)' page$""") {
@@ -483,6 +484,24 @@ class ItemDetailsStepDef extends BaseStepDef {
     AddDocumentsPage
       .loadPage()
       .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item\?' page$"""
+  ) { (answer: String) =>
+    ItemsIsConsigneeEoriNumberOrTinKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.*) on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN\?' page$"""
+  ) { (answer: String) =>
+    ConsigneeEoriNumberOrTinPage
+      .loadPage()
+      .fillInput(answer)
       .submitPage()
   }
 

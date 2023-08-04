@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder
+package uk.gov.hmrc.test.ui.pages.Arrivals.Identification
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object AddHolderContactPersonPage extends YesNoPage {
+object ArrivalProcedureTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Do you want to add a contact for the transit holder?"
+  override def title(args: String*): String = "What type of procedure are you using?"
+
+  // answer is one of Normal, Simplified
+  override def select(answer: String): this.type = {
+    clickRadioBtn(answer.toLowerCase())
+    this
+  }
 
 }
