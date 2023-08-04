@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Cancellations
+package uk.gov.hmrc.test.ui.pages.Departures.Items
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ConfirmCancellationPage extends YesNoPage {
+object ItemsIsConsigneeEoriNumberOrTinKnownPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to cancel this declaration?"
-
+  override def title(args: String*): String = "Do you know the consignee’s EORI number or Trader Identification Number (TIN) for this item?"
 }

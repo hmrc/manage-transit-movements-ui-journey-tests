@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object CancellationReasonPage extends StringPage {
 
-  override def title(args: String*): String = "Why do you want to cancel this departure declaration?"
+  override def title(args: String*): String = "Why do you want to cancel this declaration?"
 
 }

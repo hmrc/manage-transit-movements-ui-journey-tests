@@ -365,33 +365,72 @@
     },
     "items" : [
       {
-        "description" : "This is a description",
-        "transportEquipment" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
+        "description" : "item",
+        "inferredTransportEquipment" : "a98d90a0-9b35-470d-bb78-81a3c0ff8b40",
+        "countryOfDispatch" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "uniqueConsignmentReference" : "ucr",
         "addCUSCodeYesNo" : false,
-        "commodityCode" : "ABC123",
+        "addCommodityCodeYesNo" : false,
         "addDangerousGoodsYesNo" : false,
-        "grossWeight" : 100,
-        "addSupplementaryUnitsYesNo" : true,
-        "supplementaryUnits" : 123.99,
+        "grossWeight" : 1111,
+        "addItemNetWeightYesNo" : false,
+        "addSupplementaryUnitsYesNo" : false,
         "packages" : [
           {
             "packageType" : {
-              "code" : "AE",
-              "description" : "Aerosol",
+              "code" : "BG",
+              "description" : "Bag",
               "type" : "Other"
             },
-            "shippingMark" : "This is a description"
+            "shippingMark" : "sdasdq"
           }
         ],
-        "addSupplyChainActorYesNo" : false,
+        "commodityCode" : "224466",
+        "consignee" : {
+          "addConsigneeEoriNumberYesNo" : true,
+          "identificationNumber" : "IT8374872342"
+        },
+        "addSupplyChainActorYesNo" : true,
+        "supplyChainActors" : [
+          {
+            "supplyChainActorType" : "consolidator",
+            "identificationNumber" : "GB885454"
+          }
+        ],
         "documents" : [
           {
-            "document" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+            "document" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d"
           }
         ],
         "documentsInProgress" : false,
-        "addAdditionalReferenceYesNo" : false,
-        "addAdditionalInformationYesNo" : false
+        "addAdditionalReferenceYesNo" : true,
+        "additionalReferences" : [
+          {
+            "additionalReference" : {
+              "documentType" : "Y024",
+              "description" : "Declarant (AEO certificate number)"
+            },
+            "addAdditionalReferenceNumberYesNo" : true,
+            "additionalReferenceNumber" : "REF343434"
+          }
+        ],
+        "addAdditionalInformationYesNo" : true,
+        "additionalInformationList" : [
+          {
+            "additionalInformationType" : {
+              "code" : "20300",
+              "description" : "Export"
+            },
+            "additionalInformation" : "Additional info"
+          }
+        ]
       }
     ]
   },
