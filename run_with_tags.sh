@@ -8,6 +8,9 @@ sbt scalafmtCheckAll scalafmtSbtCheck
 if [ $2  =  headless ]
   then
     sbt -Denvironment=local -Dbrowser=headless-chrome "testOnly uk.gov.hmrc.test.ui.cucumber.runner.RunnerFor$1"
-  else
-    sbt -Denvironment=local -Dbrowser=chrome "testOnly uk.gov.hmrc.test.ui.cucumber.runner.RunnerFor$1"
+  elif [ $2  =  remote ]
+    then
+      sbt -Denvironment=local -Dbrowser=remote-chrome "testOnly uk.gov.hmrc.test.ui.cucumber.runner.RunnerFor$1"
+        else
+          sbt -Denvironment=local -Dbrowser=chrome "testOnly uk.gov.hmrc.test.ui.cucumber.runner.RunnerFor$1"
 fi

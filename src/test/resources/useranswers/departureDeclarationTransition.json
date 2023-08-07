@@ -77,6 +77,11 @@
       }
     },
     "routeDetails" : {
+      "addSpecificCircumstanceIndicatorYesNo" : true,
+      "specificCircumstanceIndicator" : {
+        "code" : "XXX",
+        "description" : "Authorised economic operators"
+      },
       "routing" : {
         "countryOfDestination" : {
           "code" : "IT",
@@ -119,7 +124,8 @@
               "id" : "DE004058",
               "name" : "Basel",
               "phoneNumber" : "+41 61 20114-24",
-              "isInCL147" : true
+              "isInCL147" : true,
+              "isInCL010" : false
             },
             "addOfficeOfTransitETAYesNo" : true,
             "arrivalDateTime" : "2023-05-17T12:06:00"
@@ -141,6 +147,7 @@
           }
         ]
       },
+      "addLocationOfGoods" : true,
       "locationOfGoods" : {
         "typeOfLocation" : "authorisedPlace",
         "inferredQualifierOfIdentification" : "authorisationNumber",
@@ -185,11 +192,6 @@
           },
           "location" : "Milano"
         }
-      },
-      "addSpecificCircumstanceIndicatorYesNo" : true,
-      "specificCircumstanceIndicator" : {
-        "code" : "XXX",
-        "description" : "Authorised economic operators"
       }
     },
     "guaranteeDetails" : [
