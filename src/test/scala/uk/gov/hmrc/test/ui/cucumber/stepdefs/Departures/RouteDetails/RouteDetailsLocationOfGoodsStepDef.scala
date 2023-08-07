@@ -88,7 +88,7 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add another identifier for the location of goods\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an additional identifier for the location of goods\?' page$"""
   ) { (answer: String) =>
     LocationOfGoodsAddIdentificationPage
       .loadPage()
@@ -134,7 +134,7 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the contact for the location of goods’ telephone number\?' page$""") {
+  And("""^(?:I )?enter (.+) on the 'What is the phone number for the location of goods’ contact\?' page$""") {
     (answer: String) =>
       LocationOfGoodsContactTelephoneNumberPage
         .loadPage()
