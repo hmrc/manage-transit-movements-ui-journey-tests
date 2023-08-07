@@ -24,7 +24,7 @@ object SpecificCircumstanceIndicatorPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "XXX - Authorised economic operators"    => clickById("value")
+      case "XXX - Authorised economic operators"                                    => clickById("value")
       case "A20 - Express consignments in the context of exit summary declarations" => clickById("value_1")
     }
     this

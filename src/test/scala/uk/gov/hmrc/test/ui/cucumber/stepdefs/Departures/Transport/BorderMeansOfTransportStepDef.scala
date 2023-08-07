@@ -107,7 +107,7 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add identification for this vehicle?\?' page$""") {
     (answer: String) =>
-VehicleIdentificationDepartureMeansOfTransport
+      VehicleIdentificationDepartureMeansOfTransport
         .loadPage()
         .select(answer)
         .submitPage()
@@ -121,20 +121,22 @@ VehicleIdentificationDepartureMeansOfTransport
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an identification number for this vehicle?\?' page$""") {
-    (answer: String) =>
-      IdentificationNumberDepartureMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an identification number for this vehicle?\?' page$"""
+  ) { (answer: String) =>
+    IdentificationNumberDepartureMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle?\?' page$""") {
-    (answer: String) =>
-      RegisteredVehicleCountryDepartureMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle?\?' page$"""
+  ) { (answer: String) =>
+    RegisteredVehicleCountryDepartureMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }
