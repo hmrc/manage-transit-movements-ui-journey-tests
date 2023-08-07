@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object PackagesTypeQuantityPage extends StringPage {
 
-  override def title(args: String*): String = String.format("How many %s are you using?", args: _*)
+  override def title: String = String.format("How many of these are you using?")
 
 }
