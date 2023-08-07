@@ -45,7 +45,7 @@ Feature: Route details journey - Transition
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
-    And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
+    And I choose fill in the date and time on the 'When do you expect the transit to arrive in Bastia port, France?' page
     And I submit on the 'Route details - Office of transit Check your answers' page
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
@@ -64,6 +64,7 @@ Feature: Route details journey - Transition
     And I choose radio option No on the 'You have added 1 office of exit' page
 
       ## Location of goods
+  And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page

@@ -7,7 +7,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     Then I input a random LRN on the 'What is the Local Reference Number?' page
     And I select GB on the 'Where is the office of departure?' page
 
-
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
     And I choose radio option Simplified on the 'Which type of procedure are you using?' page
@@ -66,8 +65,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Transit route
     And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
     And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
@@ -92,7 +91,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
-    And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
+    And I choose fill in the date and time on the 'When do you expect the transit to arrive in Bastia port, France?' page
     And I submit on the 'Route details - Office of transit Check your answers' page
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
@@ -111,13 +110,14 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of exit' page
 
       ## Location of goods
+    And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
-    And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
-    And I enter +432 1212 1212 on the 'What is the contact for the location of goods’ telephone number?' page
+    And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
@@ -432,14 +432,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
       ## Transit route country optional
-    And I choose radio option No on the transit route add country page
     And I submit on the 'Route details - Transit route Check your answers' page
 
       ## Country of Transit
@@ -451,6 +450,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
+    And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Approved place on the 'Which type of location is it?' page
     And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
@@ -458,9 +458,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
-    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I select United Kingdom on the 'In which country is the place of loading?' page
-    And I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I choose radio option No on the 'Do you want to add extra information for the place of unloading?' page
     And I submit on the 'Route details - Places of loading and unloading Check your answers' page
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
