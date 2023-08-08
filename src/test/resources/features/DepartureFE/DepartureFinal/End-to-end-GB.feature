@@ -304,7 +304,6 @@ Feature: End to end journey for Great Britain office of departure
       #Package section CL182 Yes
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 1 on the 'How many of these are you using?' page
-    And I click continue on the 'Before you continue' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
