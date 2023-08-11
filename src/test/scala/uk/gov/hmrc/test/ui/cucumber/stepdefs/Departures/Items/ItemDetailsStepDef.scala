@@ -441,6 +441,24 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add a method of payment for this item’s transport charges\?' page$"""
+  ) { (answer: String) =>
+    ItemTransportChargesAddPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$"""
+  ) { (answer: String) =>
+    ItemTransportChargesPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?click the (.*) link on the 'You have added (.*) items?' page$""") {
     (sectionLink: String, numberOfItems: String) =>
       ItemsAddAnotherPage

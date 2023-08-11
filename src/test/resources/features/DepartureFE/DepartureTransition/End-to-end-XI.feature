@@ -175,6 +175,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter This is a description of Item 1 on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
+    And I  choose radio option Yes on the 'Do you want to add a Unique Consignment Reference?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123456 on the 'What is the Customs Union and Statistics code?' page
@@ -205,6 +206,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
