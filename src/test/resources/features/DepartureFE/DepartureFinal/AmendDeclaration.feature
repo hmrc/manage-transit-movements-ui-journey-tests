@@ -62,3 +62,4 @@ Feature: End to end journey for amending a departure declaration
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
+    And I sign out
