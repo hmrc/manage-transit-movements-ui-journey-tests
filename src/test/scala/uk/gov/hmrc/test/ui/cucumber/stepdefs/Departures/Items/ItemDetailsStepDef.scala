@@ -202,9 +202,9 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'How many (.*) are you using\?' page$""") { (answer: String, packageValue: String) =>
+  And("""^(?:I )?enter (.*) on the 'How many of these are you using\?' page$""") { (answer: String) =>
     PackagesTypeQuantityPage
-      .loadPage(packageValue)
+      .loadPage()
       .fillInput(answer)
       .submitPage()
   }

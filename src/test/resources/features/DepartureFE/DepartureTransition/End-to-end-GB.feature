@@ -299,8 +299,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 123.99 on the 'How many supplementary units does the item include?' page
       #Package section CL182 Yes
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
-    And I enter 0 on the 'How many (NE) Unpacked or unpackaged are you using?' page
-    And I click continue on the 'Before you continue' page
+    And I enter 1 on the 'How many of these are you using?' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
@@ -385,7 +384,9 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
+    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
+
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
@@ -578,5 +579,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
+    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
