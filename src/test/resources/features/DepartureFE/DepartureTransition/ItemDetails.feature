@@ -96,9 +96,9 @@ Feature: Item details journey
     And I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
-  And I  choose radio option No on the 'Do you want to add a Unique Consignment Reference?' page
+    And I  choose radio option No on the 'Do you want to add a Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
-  And I click radio option No on the 'Do you want to add a commodity code?' page
+    And I click radio option No on the 'Do you want to add a commodity code?' page
     # Dangerous goods section
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
 
