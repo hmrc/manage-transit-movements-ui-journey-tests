@@ -3,7 +3,6 @@ Feature: Item details journey
 
   Background:
     Given I login with ID 1234567890
-
   Scenario: 01 Office Departure 'GB', Declaration 'T'
     And the user has submitted itemDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
