@@ -86,7 +86,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Were there any differences between the transit and the declaration information\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit and the declaration summary\?' page$"""
   ) { (answer: String) =>
     DifferencesPage
       .loadPage()
@@ -121,7 +121,7 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What comments do you want to add\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.*) on the 'Describe the discrepancies between the transit and the declaration summary' page$""") { (answer: String) =>
     UnloadingCommentsPage
       .loadPage()
       .fillInput(answer)

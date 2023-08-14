@@ -17,10 +17,10 @@ Feature: Submit unloading remarks with seals
     And I click the More details link on the 'Cross-check the transit with this declaration summary' page
     And I click the Back to summary button on the 'Cross-check the transit with house consignment 1' page
     And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
-    And I choose radio option No on the 'Were there any differences between the transit and the declaration information?' page
-    And I click the Change link for Were there any differences between the transit and the declaration information? on the Unloading 'Check your answers' page
-    And I choose radio option Yes on the 'Were there any differences between the transit and the declaration information?' page
-    And I enter a comment into the text field on the 'What comments do you want to add?' page
+    And I choose radio option No on the 'Were there any discrepancies between the transit and the declaration summary?' page
+    And I click the Change link for Were there any discrepancies between the transit and the declaration summary? on the Unloading 'Check your answers' page
+    And I choose radio option Yes on the 'Were there any discrepancies between the transit and the declaration summary?' page
+    And I enter a comment into the text field on the 'Describe the discrepancies between the transit and the declaration summary' page
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
     And I sign out
@@ -28,7 +28,7 @@ Feature: Submit unloading remarks with seals
 
 
 #    #    2324
-#    And I click the Change link for Identification number on the 'What did you find when unloading?' page
+#    And I click the Change link for Identification number on the 'What did   you find when unloading?' page
 #    And I enter LX58TZO on the 'What is the identification number for the new vehicle?' page
 #
 #    #    2328
