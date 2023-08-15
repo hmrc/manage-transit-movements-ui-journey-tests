@@ -20,9 +20,12 @@ Feature: Transport details journey
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -112,9 +115,12 @@ Feature: Transport details journey
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport

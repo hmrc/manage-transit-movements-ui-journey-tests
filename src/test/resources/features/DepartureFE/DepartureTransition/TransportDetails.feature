@@ -18,7 +18,9 @@ Feature: Transport details journey - Transition
 
       ## Container indicator
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
+
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
@@ -113,6 +115,7 @@ Feature: Transport details journey - Transition
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page

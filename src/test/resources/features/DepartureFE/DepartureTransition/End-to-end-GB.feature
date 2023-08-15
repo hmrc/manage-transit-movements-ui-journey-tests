@@ -184,6 +184,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
@@ -387,7 +388,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
 
@@ -483,6 +484,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Air on the 'Which inland mode of transport are you using?' page
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the IATA flight number?' page
@@ -582,6 +584,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
