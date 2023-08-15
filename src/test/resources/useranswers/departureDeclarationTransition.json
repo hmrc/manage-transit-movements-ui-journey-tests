@@ -376,6 +376,7 @@
           "code" : "IT",
           "description" : "Italy"
         },
+        "addUCRYesNo" : true,
         "uniqueConsignmentReference" : "ucr",
         "addCUSCodeYesNo" : false,
         "addCommodityCodeYesNo" : false,
@@ -431,7 +432,8 @@
             },
             "additionalInformation" : "Additional info"
           }
-        ]
+        ],
+        "addTransportChargesYesNo" : false
       }
     ]
   },

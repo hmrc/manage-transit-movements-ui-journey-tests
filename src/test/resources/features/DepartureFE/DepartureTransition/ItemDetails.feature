@@ -3,7 +3,6 @@ Feature: Item details journey
 
   Background:
     Given I login with ID 1234567890
-
   Scenario: 01 Office Departure 'GB', Declaration 'T'
     And the user has submitted itemDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
@@ -17,18 +16,15 @@ Feature: Item details journey
     And I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
+    And I  choose radio option Yes on the 'Do you want to add a Unique Consignment Reference?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I click radio option Yes on the 'Do you want to add a commodity code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
 
     # Dangerous goods section
     And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
     And I enter AB12 on the 'What is the UN number for the dangerous goods?' page
-    And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
-    And I enter 1234 on the 'What is the UN number for the dangerous goods?' page
-    And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
-    And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
-    And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
 
     #Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
@@ -37,7 +33,8 @@ Feature: Item details journey
 
     #Package section
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
-    And I enter 1 on the 'How many of these are you using?' page
+    And I enter 0 on the 'How many of these are you using?' page
+    And I click continue on the 'Before you continue' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
@@ -89,6 +86,8 @@ Feature: Item details journey
     And I click the Remove link on the 'You have added 2 additional information' page
     And I click radio option Yes on 'Do you want to add any additional information for this item?' page
     And I click radio option No on the 'You have added 1 additional information' page
+    And I click radio option Yes on the 'Do you want to add a method of payment for this item’s transport charges?' page
+    And I click radio option Payment by credit card on the 'Which method of payment do you want to use for transport charges?' page
     #Items Summary page
     And I submit the 'Check your answers' page
     And I click radio option Yes on the 'You have added 1 item' page
@@ -97,9 +96,9 @@ Feature: Item details journey
     And I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
-    And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
+    And I  choose radio option No on the 'Do you want to add a Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter ABC123 on the 'What is the commodity code?' page
+    And I click radio option No on the 'Do you want to add a commodity code?' page
     # Dangerous goods section
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
 
@@ -133,6 +132,7 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
     And I submit the 'Check your answers' page
     And I click the Remove link on the 'You have added 2 items' page
@@ -152,6 +152,7 @@ Feature: Item details journey
     And I enter This is a description on the 'Enter a description of item 1' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
+    And I  choose radio option Yes on the 'Do you want to add a Unique Consignment Reference?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123456 on the 'What is the Customs Union and Statistics code?' page
@@ -191,6 +192,7 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
+    And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
     And I submit the 'Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
