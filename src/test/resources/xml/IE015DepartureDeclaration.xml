@@ -6,7 +6,7 @@
     <messageType>CC015C</messageType>
     <TransitOperation>
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
-        <declarationType>Pbg</declarationType>
+        <DeclarationType>Pbg</DeclarationType>
         <additionalDeclarationType>O</additionalDeclarationType>
         <security>8</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
@@ -23,7 +23,7 @@
     </HolderOfTheTransitProcedure>
     <Guarantee>
         <sequenceNumber>48711</sequenceNumber>
-        <guaranteeType>1</guaranteeType>
+        <GuaranteeType>1</GuaranteeType>
         <otherGuaranteeReference>1qJMA6MbhnnrOJJjHBHX</otherGuaranteeReference>
     </Guarantee>
     <Consignment>
