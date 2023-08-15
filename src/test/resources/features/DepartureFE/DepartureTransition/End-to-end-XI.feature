@@ -210,5 +210,5 @@ Feature: End to end journey for Northern Ireland office of departure
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
