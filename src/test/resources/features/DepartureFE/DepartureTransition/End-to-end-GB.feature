@@ -184,6 +184,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
@@ -486,6 +487,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Air on the 'Which inland mode of transport are you using?' page
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the IATA flight number?' page
