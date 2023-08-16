@@ -30,8 +30,8 @@ trait FileHelper {
   }
 
   def getXml(fileName: String): String = {
-    val source     = Source.fromResource(s"xml/$fileName")
-    val xml = source.getLines().mkString
+    val source = Source.fromResource(s"xml/$fileName")
+    val xml    = source.getLines().mkString
     source.close()
     xml
   }

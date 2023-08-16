@@ -17,37 +17,38 @@
 package uk.gov.hmrc.test.ui.utils
 
 import play.api.libs.ws.StandaloneWSResponse
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
 object ApiHelper extends HttpClient with FileHelper {
 
-  val arrivalIdIndex: Int   = 10
-  val departureIdIndex: Int = 10
-
-  private def headers: Seq[(String, String)] = Seq(
+  private def headers(message: Message): Seq[(String, String)] = Seq(
     ("Accept", "application/vnd.hmrc.2.0+json"),
-    ("Authorization", World.bearerToken)
+    ("Authorization", World.bearerToken),
+    ("X-Message-Type", message.toString)
   )
 
-  def insertXML(filename: String): Unit = {
-    val file   = filename.replaceAll(" ", "")
-    val xmlStr = getXml(s"$file.xml")
+  private val proxy = TestConfiguration.url("manage-transit-movements-frontend")
 
-    val message: Message = file match {
-      case "IE007ArrivalNotification" => IE007
-      case "IE015DepartureDeclaration" => IE015
-      case "IE014DeclarationCancellation" => IE014(World.departureId)
-      case "IE060ControlDecisionNotificationWithDocuments" => IE060(World.departureId)
-      case "IE060ControlDecisionNotificationWithNoDocuments" => IE060(World.departureId)
-      case "IE056RejectionWithAmendableErrors" => IE056(World.departureId)
-      case "IE056RejectionWithNoAmendableErrors" => IE056(World.departureId)
-      case "IE057Rejection" => IE057(World.arrivalId)
-      case "IE043UnloadingPermissionWithSeals" => IE043(World.arrivalId)
-      case "IE044UnloadingRemarksNotificationWithSeals" => IE044(World.arrivalId)
-      case _ => throw new scala.RuntimeException(s"$file not found ion resources")
+  private def url(message: Message) = s"$proxy/test-only/${message.endpoint}"
+
+  def insertXML(filename: String): Unit = {
+    val file = filename.replaceAll(" ", "")
+    val xml  = getXml(s"$file.xml")
+
+    val message: Message = file.take(5) match {
+      case "IE007" => IE007
+      case "IE015" => IE015
+      case "IE014" => IE014(World.departureId)
+      case "IE060" => IE060(World.departureId)
+      case "IE056" => IE056(World.departureId)
+      case "IE057" => IE057(World.arrivalId)
+      case "IE043" => IE043(World.arrivalId)
+      case "IE044" => IE044(World.arrivalId)
+      case _       => throw new RuntimeException(s"$file not found in resources")
     }
 
-    val response: StandaloneWSResponse = post(message.url, xmlStr, headers :+ ("X-Message-Type", "IE044"))
+    val response: StandaloneWSResponse = post(url(message), xml, headers(message))
     message.updateIds(response)
   }
 
