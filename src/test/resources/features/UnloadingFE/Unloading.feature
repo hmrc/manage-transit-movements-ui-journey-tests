@@ -20,7 +20,7 @@ Feature: Submit unloading remarks with seals
     And I choose radio option No on the 'Were there any discrepancies between the transit and the declaration summary?' page
     And I click the Change link for Were there any discrepancies between the transit and the declaration summary? on the Unloading 'Check your answers' page
     And I choose radio option Yes on the 'Were there any discrepancies between the transit and the declaration summary?' page
-    And I enter a comment into the text field on the 'Describe the discrepancies between the transit and the declaration summary' page
+    And I enter a comment into the text field, with a comma on the 'Describe the discrepancies between the transit and the declaration summary' page
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
     And I sign out

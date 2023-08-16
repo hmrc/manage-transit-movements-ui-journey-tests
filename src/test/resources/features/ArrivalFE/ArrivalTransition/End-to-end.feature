@@ -24,7 +24,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I select France on the In which country did the incident happen page
     #Incident Code
     And I choose radio option 3 - The goods on the incident code page
-    And I enter Hit an iceburg on the incident description page
+    And I enter Hit an iceberg, then sank on the incident description page
     #Endorsement
     And I choose radio option No on the add endorsement page
     #Incident Identify Location

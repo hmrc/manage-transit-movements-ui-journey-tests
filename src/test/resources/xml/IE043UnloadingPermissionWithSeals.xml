@@ -7,7 +7,7 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <MRN>38VYQTYFU3T0KUTUM3</MRN>
-        <DeclarationType>3</DeclarationType>
+        <declarationType>3</declarationType>
         <declarationAcceptanceDate>2014-06-09+01:00</declarationAcceptanceDate>
         <security>4</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
@@ -209,7 +209,7 @@
             <ConsignmentItem>
                 <goodsItemNumber>6</goodsItemNumber>
                 <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
-                <DeclarationType>2</DeclarationType>
+                <declarationType>2</declarationType>
                 <countryOfDestination>DE</countryOfDestination>
                 <Consignee>
                     <identificationNumber>5</identificationNumber>
