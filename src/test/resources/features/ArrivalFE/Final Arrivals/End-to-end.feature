@@ -7,8 +7,7 @@ Feature: End to end journey Arrival notification feature
     And I click on the Make an arrival notification link on the 'Manage your transit movements' page
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
-  @arrivalA11y
-
+  @a11y
   Scenario: 01 - Simplified - e2e journey
   #Identification
     When I select GB on the arrival office of destination page
