@@ -17,10 +17,9 @@
 package uk.gov.hmrc.test.ui.utils
 
 import play.api.libs.ws.StandaloneWSResponse
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
-object ApiHelper extends HttpClient {
+object ApiHelper extends HttpClient with FileHelper {
 
   val arrivalIdIndex: Int   = 10
   val departureIdIndex: Int = 10
@@ -31,65 +30,25 @@ object ApiHelper extends HttpClient {
   )
 
   def insertXML(filename: String): Unit = {
+    val file   = filename.replaceAll(" ", "")
+    val xmlStr = getXml(s"$file.xml")
 
-    val file   = s"${filename.replaceAll(" ", "")}.xml"
-    val xmlStr = scala.io.Source.fromFile(s"src/test/resources/xml/$file").getLines.mkString
-
-    file match {
-
-      case "IE007ArrivalNotification.xml" =>
-        val url                            = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/arrival-outbound"
-        val response: StandaloneWSResponse = post(url, xmlStr, headers)
-        World.arrivalId = response.body.split("/")(arrivalIdIndex)
-
-      case "IE015DepartureDeclaration.xml" =>
-        val url                            = s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/departure-outbound"
-        val response: StandaloneWSResponse = post(url, xmlStr, headers)
-        World.departureId = response.body.split("/")(departureIdIndex)
-
-      case "IE014DeclarationCancellation.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-outbound-message"
-        post(url, xmlStr, headers)
-
-      case "IE060ControlDecisionNotificationWithDocuments.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
-
-      case "IE060ControlDecisionNotificationWithNoDocuments.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE060"))
-
-      case "IE056RejectionWithAmendableErrors.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
-
-      case "IE056RejectionWithNoAmendableErrors.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.departureId}/departure-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE056"))
-
-      case "IE057Rejection.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE057"))
-
-      case "IE043UnloadingPermissionWithSeals.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE043"))
-
-      case "IE044UnloadingRemarksNotificationWithSeals.xml" =>
-        val url =
-          s"${TestConfiguration.url("manage-transit-movements-frontend")}/test-only/${World.arrivalId}/arrival-inbound"
-        post(url, xmlStr, headers :+ ("X-Message-Type", "IE044"))
-
-      case _ => throw new scala.RuntimeException("Cannot construct url")
-
+    val message: Message = file match {
+      case "IE007ArrivalNotification" => IE007
+      case "IE015DepartureDeclaration" => IE015
+      case "IE014DeclarationCancellation" => IE014(World.departureId)
+      case "IE060ControlDecisionNotificationWithDocuments" => IE060(World.departureId)
+      case "IE060ControlDecisionNotificationWithNoDocuments" => IE060(World.departureId)
+      case "IE056RejectionWithAmendableErrors" => IE056(World.departureId)
+      case "IE056RejectionWithNoAmendableErrors" => IE056(World.departureId)
+      case "IE057Rejection" => IE057(World.arrivalId)
+      case "IE043UnloadingPermissionWithSeals" => IE043(World.arrivalId)
+      case "IE044UnloadingRemarksNotificationWithSeals" => IE044(World.arrivalId)
+      case _ => throw new scala.RuntimeException(s"$file not found ion resources")
     }
+
+    val response: StandaloneWSResponse = post(message.url, xmlStr, headers :+ ("X-Message-Type", "IE044"))
+    message.updateIds(response)
   }
 
 }

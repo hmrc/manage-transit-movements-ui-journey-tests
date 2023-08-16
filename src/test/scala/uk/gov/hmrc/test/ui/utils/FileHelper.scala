@@ -29,4 +29,11 @@ trait FileHelper {
     Json.parse(jsonString)
   }
 
+  def getXml(fileName: String): String = {
+    val source     = Source.fromResource(s"xml/$fileName")
+    val xml = source.getLines().mkString
+    source.close()
+    xml
+  }
+
 }
