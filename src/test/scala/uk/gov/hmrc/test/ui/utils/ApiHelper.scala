@@ -16,40 +16,35 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import play.api.libs.ws.StandaloneWSResponse
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
 object ApiHelper extends HttpClient with FileHelper {
 
-  private def headers(message: Message): Seq[(String, String)] = Seq(
+  private def headers(messageType: String): Seq[(String, String)] = Seq(
     ("Accept", "application/vnd.hmrc.2.0+json"),
     ("Authorization", World.bearerToken),
-    ("X-Message-Type", message.toString)
+    ("X-Message-Type", messageType)
   )
 
   private val proxy = TestConfiguration.url("manage-transit-movements-frontend")
 
   private def url(message: Message) = s"$proxy/test-only/${message.endpoint}"
 
-  def insertXML(filename: String): Unit = {
-    val file = filename.replaceAll(" ", "")
-    val xml  = getXml(s"$file.xml")
-
-    val message: Message = file.take(5) match {
-      case "IE007" => IE007
-      case "IE015" => IE015
-      case "IE014" => IE014(World.departureId)
-      case "IE060" => IE060(World.departureId)
-      case "IE056" => IE056(World.departureId)
-      case "IE057" => IE057(World.arrivalId)
-      case "IE043" => IE043(World.arrivalId)
-      case "IE044" => IE044(World.arrivalId)
-      case _       => throw new RuntimeException(s"$file not found in resources")
-    }
-
-    val response: StandaloneWSResponse = post(url(message), xml, headers(message))
+  def insertXML(descriptor: String): Unit = {
+    val fileName    = descriptor.replaceAll(" ", "")
+    val xml         = getXml(s"$fileName.xml")
+    val messageType = getMessageType(descriptor)
+    val message     = Message(messageType)
+    val response    = post(url(message), xml, headers(messageType))
     message.updateIds(response)
+  }
+
+  private def getMessageType(descriptor: String): String = {
+    val regex = "IE\\d+".r
+    regex.findFirstIn(descriptor).getOrElse {
+      throw new RuntimeException(s"$descriptor did not contain a message type")
+    }
   }
 
 }

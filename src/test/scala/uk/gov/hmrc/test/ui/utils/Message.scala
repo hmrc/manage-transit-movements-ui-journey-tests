@@ -25,6 +25,21 @@ sealed trait Message {
   def updateIds(response: StandaloneWSResponse): Unit = ()
 }
 
+object Message {
+
+  def apply(value: String): Message = value match {
+    case "IE007" => IE007
+    case "IE015" => IE015
+    case "IE014" => IE014(World.departureId)
+    case "IE060" => IE060(World.departureId)
+    case "IE056" => IE056(World.departureId)
+    case "IE057" => IE057(World.arrivalId)
+    case "IE043" => IE043(World.arrivalId)
+    case "IE044" => IE044(World.arrivalId)
+    case _       => throw new RuntimeException(s"$value not recognised")
+  }
+}
+
 sealed trait DepartureInboundMessage extends Message {
   val departureId: String
   override val endpoint: String = s"$departureId/departure-inbound"
