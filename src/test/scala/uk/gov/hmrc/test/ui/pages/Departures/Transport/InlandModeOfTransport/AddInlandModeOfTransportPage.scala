@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@managehubTransition or @manageDraftDepartureTransition"
-)
-class RunnerForManageTransition {}
+object AddInlandModeOfTransportPage extends RadioPage {
+
+  override def title(args: String*): String = "Do you want to add an inland mode of transport?"
+
+  override def select(answer: String): this.type = {
+    val addInlandModeOfTransport = answer match {
+      case "Yes"                                               => "yes"
+      case "No - the goods are already at the port or airport" => "no"
+    }
+    clickRadioBtn(addInlandModeOfTransport)
+    this
+  }
+}

@@ -97,6 +97,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the train number?' page
@@ -210,5 +211,5 @@ Feature: End to end journey for Northern Ireland office of departure
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out

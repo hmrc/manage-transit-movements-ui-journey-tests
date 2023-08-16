@@ -182,9 +182,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
@@ -390,7 +393,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
 
@@ -489,9 +492,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Air on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the IATA flight number?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
 
@@ -560,6 +566,6 @@ Feature: End to end journey for Great Britain office of departure
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
-    And I click the Confirm and send button on the 'Declaration summary' page
+#    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 

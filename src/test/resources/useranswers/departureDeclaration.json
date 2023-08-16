@@ -258,6 +258,7 @@
         "addPaymentMethodYesNo" : true,
         "paymentMethod" : "creditCard"
       },
+      "addInlandModeYesNo": "yes",
       "inlandMode" : "road",
       "transportMeansDeparture" : {
         "identification" : "regNumberRoadTrailer",
@@ -265,7 +266,9 @@
         "vehicleCountry" : {
           "code" : "GB",
           "description" : "United Kingdom"
-        }
+        },
+        "addIdentificationTypeYesNo": true,
+        "addVehicleCountryYesNo": true
       },
       "borderModeOfTransport" : "maritime",
       "transportMeansActiveList" : [

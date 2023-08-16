@@ -262,6 +262,7 @@
         "addPaymentMethodYesNo" : true,
         "paymentMethod" : "creditCard"
       },
+      "addInlandModeYesNo": "yes",
       "inlandMode" : "road",
       "transportMeansDeparture" : {
         "identification" : "regNumberRoadTrailer",
