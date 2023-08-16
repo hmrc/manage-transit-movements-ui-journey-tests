@@ -1,5 +1,4 @@
 @arrivalE2e
-
 Feature: End to end journey Arrival notification feature
 
   Background:
@@ -8,7 +7,7 @@ Feature: End to end journey Arrival notification feature
     And I enter 21GB00014210026352 on the Movement Reference Number page
 
   @a11y
-  Scenario: 01 - Simplified - e2e journey
+  Scenario: 01 - Simplified - Authorisation number w/ contact
   #Identification
     When I select GB on the arrival office of destination page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -27,7 +26,7 @@ Feature: End to end journey Arrival notification feature
     And I sign out
 
 
-  Scenario: 02 - Normal -e2e journey
+  Scenario: 02 - Normal - Customs office
   #Identification
     When I select GB on the arrival office of destination page
     And I choose radio option Normal on the 'What type of procedure are you using?' page
@@ -41,4 +40,23 @@ Feature: End to end journey Arrival notification feature
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     And I should be on the 'Arrival notifications' page
+    And I sign out
+
+
+  Scenario: 03 - Normal - Coordinates w/ contact
+  # Identification
+    When I select GB on the arrival office of destination page
+    And I choose radio option Normal on the 'What type of procedure are you using?' page
+    And I enter GB123456789000 on the consignee eori tin page
+  #Location Of goods
+    And I choose radio option Approved place on the arrival location of goods type page
+    And I choose radio option Coordinates on the arrival location of goods identification page
+    And I enter 50.96622 and 50.96622 on the arrival location of goods coordinates page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact number page
+  #Summary CYA page
+    And I submit on the 'Arrivals Check your answers' page
+  #Confirmation
+    And I should be on the Arrival notification sent page
     And I sign out
