@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.utils
 
+import play.api.libs.json.__
 import play.api.libs.ws.StandaloneWSResponse
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
@@ -40,6 +41,8 @@ object Message {
   }
 }
 
+sealed trait OutboundMessage extends Message with JsonHelper
+
 sealed trait DepartureInboundMessage extends Message {
   val departureId: String
   override val endpoint: String = s"$departureId/departure-inbound"
@@ -50,18 +53,18 @@ sealed trait ArrivalInboundMessage extends Message {
   override val endpoint: String = s"$arrivalId/arrival-inbound"
 }
 
-case object IE007 extends Message {
+case object IE007 extends OutboundMessage {
   override val endpoint: String = "arrival-outbound"
 
   override def updateIds(response: StandaloneWSResponse): Unit =
-    World.arrivalId = response.body.split("/")(10)
+    World.arrivalId = response.pick(__ \ "arrivalId")
 }
 
-case object IE015 extends Message {
+case object IE015 extends OutboundMessage {
   override val endpoint: String = "departure-outbound"
 
   override def updateIds(response: StandaloneWSResponse): Unit =
-    World.departureId = response.body.split("/")(10)
+    World.departureId = response.pick(__ \ "departureId")
 }
 
 case class IE014(departureId: String) extends Message {
