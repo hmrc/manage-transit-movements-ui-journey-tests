@@ -81,10 +81,10 @@ class DocumentsStepDef extends BaseStepDef {
       .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove the (.*)\?' page$""") {
-    (answer: String, documentTypeToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document\?' page$""") {
+    (answer: String) =>
       RemoveDocumentPage
-        .loadPage(documentTypeToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
