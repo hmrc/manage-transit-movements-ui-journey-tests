@@ -303,15 +303,19 @@ Feature: End to end journey for Great Britain office of departure - Transition
       #Package section CL182 Yes
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 0 on the 'How many of these are you using?' page
-    And I click continue on the 'Before you continue' page
+    #And I click continue on the 'Before you continue' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
+    And I select (VS) Bulk, scrap metal on the 'What type of package are you using for the item?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click radio option Yes on the 'You have added 2 type of package' page
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
-    And I enter This is a description of the cargo 2 on the 'What is the shipping mark?' page
-    And I click the Remove link on the 'You have added 2 types of packages' page
+    And I enter 0 on the 'How many of these are you using?' page
+    And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
+    And I click the Remove link on the 'You have added 3 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
-    And I click radio option No on the 'You have added 1 type of package' page
+    And I click radio option No on the 'You have added 2 type of package' page
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
     And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
@@ -368,6 +372,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
     #2nd Item - Package section
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter 10 on the 'How many of these are you using?' page
     And I enter 2nd item shipping mark cargo description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
 
@@ -562,6 +567,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option No on the 'Do you want to add supplementary units?' page
       #Package section CL182 No, CL181 No
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter 10 on the 'How many of these are you using?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
     #Consignee Item level

@@ -13,7 +13,7 @@ Feature: Item details journey
 
     ## Item details
     When I click the Add items link on the 'Declaration summary' page
-    And I enter This is a description on the 'Enter a description of item 1' page
+    And I enter This is a description, with a comma on the 'Enter a description of item 1' page
     And I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page
     And I choose radio option T1 on the 'Which type of declaration do you want to create for this item?' page
     And I select Italy on the 'What is the item’s country of destination?' page
@@ -42,6 +42,8 @@ Feature: Item details journey
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter 0 on the 'How many of these are you using?' page
+    And I click continue on the 'Before you continue' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
@@ -68,11 +70,11 @@ Feature: Item details journey
     #select non C561 or C658
     And I select (Y023) Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
     And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter 12345 on the 'Enter the additional reference number' page
+    And I enter 12345,6789 on the 'Enter the additional reference number' page
     And click radio option Yes on the 'You have added 1 additional reference' page
     #select C561 or C658
     And I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page
-    And I enter 98765 on the 'Enter the additional reference number' page
+    And I enter 98765,4321 on the 'Enter the additional reference number' page
     And I click the Remove link on the 'You have added 2 additional references' page
     And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And click radio option No on the 'You have added 1 additional reference' page
@@ -106,9 +108,21 @@ Feature: Item details journey
     And I enter 123.99 on the 'How many supplementary units does the item include?' page
 
     #Package section
+    And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
+    And I enter 1 on the 'How many of these are you using?' page
+    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
+    And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
+    And I click radio option Yes on the 'You have added 1 types of package' page
+    And I select (VS) Bulk, scrap metal on the 'What type of package are you using for the item?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click radio option Yes on the 'You have added 2 type of package' page
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
-    And I enter This is a description on the 'What is the shipping mark?' page
-    And I click radio option No on the 'You have added 1 type of package' page
+    And I enter 0 on the 'How many of these are you using?' page
+    And I click continue on the 'Before you continue' page
+    And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
+    And I click the Remove link on the 'You have added 3 types of packages' page
+    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option No on the 'You have added 2 type of package' page
 
     #Additional Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
@@ -161,6 +175,7 @@ Feature: Item details journey
 
     #Package section
     And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I enter 20 on the 'How many of these are you using?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option No on the 'You have added 1 type of package' page
 
