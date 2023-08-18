@@ -1,7 +1,6 @@
 @departureAmendment
 
 Feature: End to end journey for amending a departure declaration
-@wip
   Scenario: End to end journey for amending a departure declaration
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
