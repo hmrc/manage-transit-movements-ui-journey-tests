@@ -379,7 +379,8 @@
               "description" : "Aerosol",
               "type" : "Other"
             },
-            "shippingMark" : "This is a description"
+            "shippingMark" : "This is a description",
+            "numberOfPackages" : 200
           }
         ],
         "addSupplyChainActorYesNo" : false,

@@ -391,7 +391,8 @@
               "description" : "Bag",
               "type" : "Other"
             },
-            "shippingMark" : "sdasdq"
+            "shippingMark" : "sdasdq",
+            "numberOfPackages" : 200
           }
         ],
         "commodityCode" : "224466",

@@ -69,7 +69,7 @@ class PreviousStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of goods\?' page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to declare the quantity of goods transported into the UK\?' page$""") {
     (answer: String) =>
       AddGoodsMetricPage
         .loadPage()

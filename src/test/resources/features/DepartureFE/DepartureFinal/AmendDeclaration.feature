@@ -1,7 +1,6 @@
 @departureAmendment
 
 Feature: End to end journey for amending a departure declaration
-
   Scenario: End to end journey for amending a departure declaration
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
@@ -61,5 +60,5 @@ Feature: End to end journey for amending a departure declaration
     And I submit on the 'Guarantee details Check your answers' page
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
-#    And I click the Confirm and resend button on the 'Declaration summary' page
+    And I click the Confirm and resend button on the 'Declaration summary' page
     And I sign out

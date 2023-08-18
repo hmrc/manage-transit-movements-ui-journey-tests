@@ -262,7 +262,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
     And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
     And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods?' page
+    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
     And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
     And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
@@ -399,7 +399,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
-#    And I click the Confirm and send button on the 'Declaration summary' page
+    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -572,6 +572,6 @@ Feature: End to end journey for Great Britain office of departure
     #Items Summary
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
-#    And I click the Confirm and send button on the 'Declaration summary' page
+    And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
