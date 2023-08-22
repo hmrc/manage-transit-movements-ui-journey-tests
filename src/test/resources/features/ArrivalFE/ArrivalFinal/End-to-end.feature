@@ -21,7 +21,7 @@ Feature: End to end journey Arrival notification feature
   #Summary CYA page
     And I submit on the 'Arrivals Check your answers' page
   #Confirmation
-    And I click the Create another arrival notification link on the Arrival notification sent page
+    And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
     And I sign out
 
