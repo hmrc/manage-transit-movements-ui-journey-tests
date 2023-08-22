@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object RemoveAuthPage extends YesNoPage {
 
   override def title(args: String*): String =
-    String.format("Are you sure you want to remove %s authorisation %s?", args: _*)
+    String.format("Are you sure you want to remove this %s authorisation?", args: _*)
 
 }
