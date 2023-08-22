@@ -9,7 +9,7 @@
     <TransitOperation>
         <!--Optional:-->
         <MRN>string</MRN>
-        <businessRejectionType>token</businessRejectionType>
+        <businessRejectionType>015</businessRejectionType>
         <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>token</rejectionCode>
         <!--Optional:-->
