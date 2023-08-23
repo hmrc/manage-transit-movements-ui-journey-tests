@@ -21,10 +21,10 @@ Feature: Transport details journey
 
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
-    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
-    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the name of the sea-going vessel?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
@@ -54,13 +54,13 @@ Feature: Transport details journey
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
+    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
     And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
-    And I choose radio option Yes on the 'You have added 1 transport authorisation' page
-    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+    And I choose radio option Yes on the 'You have added 2 transport authorisations' page
     And I enter SSE123 reference number on the 'What is the reference number for the SSE authorisation?' page
-    And I choose to click on Remove link on the 'You have added 2 authorisations' page
-    And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
-    And I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I choose to click on Remove link on the 'You have added 3 authorisations' page
+    And I choose radio option Yes for the 'Are you sure you want to remove this SSE authorisation?' page
+    And I choose radio option No on the 'You have added 2 transport authorisations' page
     And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier

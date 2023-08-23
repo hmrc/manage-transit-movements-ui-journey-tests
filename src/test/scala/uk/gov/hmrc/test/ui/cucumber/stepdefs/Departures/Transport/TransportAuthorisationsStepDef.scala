@@ -60,10 +60,10 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove (.+) authorisation (.+)\?' page$"""
-  ) { (answer: String, authorisationType: String, identificationVal: String) =>
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this (.+) authorisation\?' page$"""
+  ) { (answer: String, authorisationType: String) =>
     RemoveAuthPage
-      .loadPage(authorisationType, identificationVal)
+      .loadPage(authorisationType)
       .select(answer)
       .submitPage()
   }
