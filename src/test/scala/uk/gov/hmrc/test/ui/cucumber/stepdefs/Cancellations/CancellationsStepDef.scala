@@ -30,12 +30,11 @@ class CancellationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'Why do you want to cancel this declaration\?' page$""") {
-    (answer: String) =>
-      CancellationReasonPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'Why do you want to cancel this declaration\?' page$""") { (answer: String) =>
+    CancellationReasonPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Cancellation request sent' page$""") { (declarationLink: String) =>

@@ -20,5 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ItemsIsConsigneeEoriNumberOrTinKnownPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you know the consignee’s EORI number or Trader Identification Number (TIN) for this item?"
+  override def title(args: String*): String =
+    "Do you know the consignee’s EORI number or Trader Identification Number (TIN) for this item?"
 }

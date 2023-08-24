@@ -47,11 +47,12 @@ class RouteDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where in (.+) is the office of destination\?' page$""") { (answer: String, country: String) =>
-    OfficeOfDestinationPage
-      .loadPage(country)
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Where in (.+) is the office of destination\?' page$""") {
+    (answer: String, country: String) =>
+      OfficeOfDestinationPage
+        .loadPage(country)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Are you using a binding itinerary\?' page$""") { (answer: String) =>
