@@ -21,11 +21,12 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Identification._
 
 class IdentificationStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") { (answer: String) =>
-    ArrivalProcedureTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") {
+    (answer: String) =>
+      ArrivalProcedureTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the arrival office of destination page$""") { (answer: String) =>

@@ -24,13 +24,13 @@ object ItemTransportChargesPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "Payment in cash"      => clickById("value")
-      case "Payment by credit card" => clickById("value_1")
-      case "Payment by cheque"      => clickById("value_2")
+      case "Payment in cash"             => clickById("value")
+      case "Payment by credit card"      => clickById("value_1")
+      case "Payment by cheque"           => clickById("value_2")
       case "Electronic credit transfer"  => clickById("value_3")
-      case "Account holder with carrier"  => clickById("value_4")
-      case "Not pre-paid"  => clickById("value_5")
-      case "Other"  => clickById("value_6")
+      case "Account holder with carrier" => clickById("value_4")
+      case "Not pre-paid"                => clickById("value_5")
+      case "Other"                       => clickById("value_6")
     }
     this
   }

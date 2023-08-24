@@ -121,7 +121,9 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'Describe the discrepancies between the transit and the declaration summary' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?enter (.*) on the 'Describe the discrepancies between the transit and the declaration summary' page$"""
+  ) { (answer: String) =>
     UnloadingCommentsPage
       .loadPage()
       .fillInput(answer)

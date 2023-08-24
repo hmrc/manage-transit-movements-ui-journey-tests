@@ -505,20 +505,22 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item\?' page$""") {
-    (answer: String) =>
-      ItemsIsConsigneeEoriNumberOrTinKnownPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item\?' page$"""
+  ) { (answer: String) =>
+    ItemsIsConsigneeEoriNumberOrTinKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN\?' page$""") {
-    (answer: String) =>
-      ConsigneeEoriNumberOrTinPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And(
+    """^(?:I )?enter (.*) on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN\?' page$"""
+  ) { (answer: String) =>
+    ConsigneeEoriNumberOrTinPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
 }
