@@ -22,9 +22,6 @@ object CannotSendUnloadingPage extends Page {
 
   override def title(args: String*): String = "You cannot send these unloading remarks"
 
-  def selectArrivalNotificationLink(notificationLink: String): Unit =
-    clickByPartialLinkText(notificationLink)
-
   def selectSignOutLink(signOutLink: String): Unit =
     clickByPartialLinkText(signOutLink)
 
