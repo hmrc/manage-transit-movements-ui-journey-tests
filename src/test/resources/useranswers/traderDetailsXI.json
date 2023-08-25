@@ -10,6 +10,7 @@
       },
       "procedureType" : "normal",
       "declarationType" : "TIR",
+      "additionalDeclarationType" : "A",
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : "entrySummaryDeclaration",
       "detailsConfirmed" : true

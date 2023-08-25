@@ -6,6 +6,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
+    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select XI on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option TIR on the 'Which type of declaration do you want to create?' page

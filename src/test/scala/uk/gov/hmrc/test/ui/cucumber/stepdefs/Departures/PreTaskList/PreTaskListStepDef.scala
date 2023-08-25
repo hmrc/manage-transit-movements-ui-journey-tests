@@ -54,6 +54,14 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .loadPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the 'Is this a standard or pre-lodged declaration\?' page$""") {
+    (answer: String) =>
+      AdditionalDeclarationTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") { (answer: String) =>
     OfficeOfDeparturePage
       .loadPage()
