@@ -87,7 +87,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the You have added 1 transport equipment page
     #Type of Identification 1
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Titanic for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I enter Titanic on the What is the identification number for this page
     And I select France on the What country is the replacement transport registered to page
     And I submit on the 'Arrivals - Incidents Check your answers' page
     #Add Another Incident
@@ -108,7 +108,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add transport equipment page
     #Type of Identification - Second Incident
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
     And I submit on the 'Arrivals - Incidents Check your answers' page
     #Change an incident
@@ -377,7 +377,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the You have added 1 transport equipment page
   #Type of Identification 1
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Titanic for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I enter Titanic on the What is the identification number for this page
     And I select France on the What country is the replacement transport registered to page
     And I submit on the 'Arrivals - Incidents Check your answers' page
   #Add Another Incident
@@ -398,7 +398,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add transport equipment page
   #Type of Identification - Second Incident
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
     And I submit on the 'Arrivals - Incidents Check your answers' page
   #Change an incident
@@ -542,7 +542,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the You have added 1 transport equipment page
  #Type of Identification
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
-    And I enter Bismarck for the name of the sea-going vessel on the What is the identification number for the replacement transport page
+    And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
     And I submit on the 'Arrivals - Incidents Check your answers' page
   #Add Another Incident

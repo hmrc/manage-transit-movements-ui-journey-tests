@@ -45,10 +45,10 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter identification (.+) on the 'What is the (.*)\?' page$""") {
-    (answer: String, bordermeansOfTransport: String) =>
+  And("""^(?:I )?enter identification (.+) on the 'What is the identification number for this\?' page$""") {
+    (answer: String) =>
       BorderMeansOfTransportIdentificationNumberPage
-        .loadPage(bordermeansOfTransport)
+        .loadPage()
         .fillInput(answer)
         .submitPage()
   }
