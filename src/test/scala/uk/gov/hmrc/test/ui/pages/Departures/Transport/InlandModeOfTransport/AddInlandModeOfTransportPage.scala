@@ -16,18 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddInlandModeOfTransportPage extends RadioPage {
+object AddInlandModeOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an inland mode of transport?"
 
-  override def select(answer: String): this.type = {
-    val addInlandModeOfTransport = answer match {
-      case "Yes"                                               => "yes"
-      case "No - the goods are already at the port or airport" => "no"
-    }
-    clickRadioBtn(addInlandModeOfTransport)
-    this
-  }
 }
