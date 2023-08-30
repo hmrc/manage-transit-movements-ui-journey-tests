@@ -12,3 +12,5 @@ Feature: Cancellation frontend journey test
     And I enter a cancellation reason, with a comma on the 'Why do you want to cancel this declaration?' page
     And I click on the Check the status of departure declarations link on the 'Cancellation request sent' page
     And I sign out
+
+
