@@ -38,7 +38,7 @@ class CYAStepDef extends BaseStepDef {
     |Route details - Office of transit|
     |Route details - Location of goods|
     |Route details - Places of loading and unloading|
-    |Route details - Office of exit|
+    |Route details - Office of exit for transit|
     |Route details - Office of transit|
     |Route details|
     |Transport details - Border means of transport|
