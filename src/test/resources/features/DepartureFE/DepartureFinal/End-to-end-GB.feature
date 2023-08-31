@@ -99,16 +99,16 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit - removing an office of exit
-    And I select Germany on the 'Which country is the office of exit in?' page
-    When I select Dortmund on the 'Where in Germany is the office of exit?' page
-    And I submit on the 'Route details - Office of exit Check your answers' page
-    And I choose radio option Yes on the 'You have added 1 office of exit' page
-    And I select France on the 'Which country is the office of exit in?' page
-    And I select Agen bureau on the 'Where in France is the office of exit?' page
-    And I submit on the 'Route details - Office of exit Check your answers' page
-    And I choose to click on the Remove link on the 'You have added 2 offices of exit' page
-    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit?' page
-    And I choose radio option No on the 'You have added 1 office of exit' page
+    And I select Germany on the 'In which country is the office of exit for transit?' page
+    When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
+    And I submit on the 'Route details - Office of exit for transit Check your answers' page
+    And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
+    And I select France on the 'In which country is the office of exit for transit?' page
+    And I select Agen bureau on the 'Where in France is the office of exit for transit?' page
+    And I submit on the 'Route details - Office of exit for transit Check your answers' page
+    And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit for transit?' page
+    And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
     And I choose radio option Authorised place on the 'Which type of location is it?' page

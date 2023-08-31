@@ -3,7 +3,7 @@ Feature: Transport details journey - Transition
 
   Background:
     Given I login with ID 1234567890
-@wip
+
   Scenario: 01 Great Britain office of departure
     And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
