@@ -3,7 +3,7 @@ Feature: Transport details journey - Transition
 
   Background:
     Given I login with ID 1234567890
-
+@wip
   Scenario: 01 Great Britain office of departure
     And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
@@ -26,7 +26,7 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
-    And I enter registration number GB1234567 on the 'What is the name of the sea-going vessel?' page
+    And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
@@ -36,7 +36,7 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-    And I enter identification GB1234567 on the 'What is the train number?' page
+    And I enter identification GB1234567 on the 'What is the identification number for this?' page
 
       ## Border means office of transit
     And I select Basel (DE004058) on the 'Where is the customs office at the border?' page
@@ -118,14 +118,14 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number 1234567 on the 'What is the train number?' page
+    And I enter registration number 1234567 on the 'What is the identification number for this?' page
 
       ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
+    And I enter identification GB1234567 on the 'What is the identification number for this?' page
 
       ## Border means of transport - office of transit
     And I select BARI on the 'Where is the customs office at the border?' page

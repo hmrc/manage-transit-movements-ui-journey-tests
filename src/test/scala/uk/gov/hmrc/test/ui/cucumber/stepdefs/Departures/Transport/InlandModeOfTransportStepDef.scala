@@ -39,10 +39,10 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter registration number (.+) on the 'What is the (.*)\?' page$""") {
-    (answer: String, meansOfTransport: String) =>
+  And("""^(?:I )?enter registration number (.+) on the 'What is the identification number for this\?' page$""") {
+    (answer: String) =>
       IdentificationNumberPage
-        .loadPage(meansOfTransport)
+        .loadPage()
         .fillInput(answer)
         .submitPage()
   }

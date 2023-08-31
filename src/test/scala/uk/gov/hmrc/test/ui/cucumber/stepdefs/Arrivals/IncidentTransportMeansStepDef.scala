@@ -31,10 +31,10 @@ class IncidentTransportMeansStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter (.+) for the (.+) on the What is the identification number for the replacement transport page$"""
-  ) { (answer: String, identificationVal: String) =>
+    """^(?:I )?enter (.+) on the What is the identification number for this page$"""
+  ) { (answer: String) =>
     ReplacementTransportIdentificationNumberPage
-      .loadPage(identificationVal)
+      .loadPage()
       .fillInput(answer)
       .submitPage()
   }
