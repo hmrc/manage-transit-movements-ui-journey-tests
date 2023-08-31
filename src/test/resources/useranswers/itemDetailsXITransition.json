@@ -151,8 +151,8 @@
         }
       ],
       "supplyChainActorYesNo" : false,
-      "addAuthorisationsYesNo" : true,
       "authorisationsAndLimit" : {
+        "addAuthorisationsYesNo" : true,
         "authorisations" : [
           {
             "authorisationType" : "TRD",
