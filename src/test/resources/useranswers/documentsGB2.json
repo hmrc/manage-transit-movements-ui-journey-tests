@@ -15,6 +15,7 @@
       "detailsConfirmed" : true
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed"
   }
