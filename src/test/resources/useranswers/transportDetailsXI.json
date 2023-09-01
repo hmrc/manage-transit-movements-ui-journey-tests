@@ -112,6 +112,7 @@
       }
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",
