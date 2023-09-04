@@ -16,10 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object ContainersPage extends YesNoPage {
+object ContainersPage extends RadioPage {
 
   override def title(args: String*): String = "Are you using any shipping containers to transport the goods?"
 
+  override def select(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No" => clickById("value-no")
+      case "Not sure" => clickById("value-maybe")
+    }
+    this
+  }
 }

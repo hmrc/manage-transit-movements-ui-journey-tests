@@ -112,7 +112,7 @@ Feature: Transport details journey
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
+    And I choose radio option Not sure on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
