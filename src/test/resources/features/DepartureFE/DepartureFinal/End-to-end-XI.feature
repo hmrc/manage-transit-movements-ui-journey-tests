@@ -6,7 +6,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
+    And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
     And I select XI on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option TIR on the 'Which type of declaration do you want to create?' page
@@ -68,6 +68,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page

@@ -11,7 +11,7 @@
       },
       "procedureType" : "simplified",
       "declarationType" : "T2",
-      "additionalDeclarationType" : "A",
+      "additionalDeclarationType" : "D",
       "securityDetailsType" : "exitSummaryDeclaration",
       "detailsConfirmed" : true
     }

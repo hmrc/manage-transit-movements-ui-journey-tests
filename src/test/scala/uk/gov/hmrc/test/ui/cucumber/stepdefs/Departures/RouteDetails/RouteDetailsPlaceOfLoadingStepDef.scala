@@ -28,7 +28,13 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a place of loading\?' page$""") {
+    (answer: String) =>
+      AddPlaceOfLoading
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
   And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
     PlaceOfLoadingUnLocodePage
       .loadPage()
