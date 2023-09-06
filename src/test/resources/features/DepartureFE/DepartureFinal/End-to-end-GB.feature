@@ -5,7 +5,7 @@ Feature: End to end journey for Great Britain office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
+    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select GB on the 'Where is the office of departure?' page
 
 
@@ -122,7 +122,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
-    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
@@ -473,7 +472,6 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
-    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     And I enter London on the 'Where in United Kingdom is the place of loading?' page
