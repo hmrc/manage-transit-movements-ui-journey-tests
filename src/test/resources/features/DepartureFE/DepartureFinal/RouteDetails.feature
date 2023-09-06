@@ -64,6 +64,7 @@ Feature: Route details journey
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
+    And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
@@ -74,6 +75,7 @@ Feature: Route details journey
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
@@ -119,6 +121,7 @@ Feature: Route details journey
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
