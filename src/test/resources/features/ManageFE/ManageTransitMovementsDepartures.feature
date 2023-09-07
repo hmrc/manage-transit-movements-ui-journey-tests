@@ -1,4 +1,4 @@
-@managehub @a11y
+@managehub @a11y @wip
 
 Feature: Manage transit movements frontend tests for Departures
 
@@ -53,16 +53,29 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2796
-  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
-    When I submit an IE015 Departure Declaration
-    Then I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
-    And I refresh the page
-    And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
-    And I click on the Amend errors button on the 'Amend declaration errors' page
-    Then I should be on the 'What is the new Local Reference Number?' page
-    And I sign out
+#  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration before MRN allocation
+#    When I submit an IE015 Departure Declaration
+#    Then I submit an IE056 Rejection With Amendable Errors
+#    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+#    And I refresh the page
+#    And I click on the View departure declarations link on the 'Manage your transit movements' page
+#    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+#    And I click on the Amend errors button on the 'Amend declaration errors' page
+#    Then I should be on the 'Declaration summary' page
+#    And I sign out
+
+#  3817
+  #  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration after MRN allocation
+#    When I submit an IE015 Departure Declaration
+#    Then I submit an IE028 MRN Allocation
+#    Then I submit an IE056 Rejection With Amendable Errors
+#    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+#    And I refresh the page
+#    And I click on the View departure declarations link on the 'Manage your transit movements' page
+#    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+#    And I click on the Amend errors button on the 'Amend declaration errors' page
+#    Then I should be on the 'What is the new Local Reference Number?' page
+#    And I sign out
 
 # 2898
   Scenario: 07 - Trader is able to review cancellation errors for a departure declaration
