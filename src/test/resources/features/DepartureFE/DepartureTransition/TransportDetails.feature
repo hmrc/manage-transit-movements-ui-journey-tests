@@ -140,9 +140,11 @@ Feature: Transport details journey - Transition
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
+    And I choose radio option ACR on the 'Which type of authorisation do you want to add' page
+    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I choose radio option Yes on the 'Do you want to add the arrival date at the office of destination' page
+    And I enter the date on the 'When do you expect the transit to arrive in Aeroporto Bari - Palese (IT018101)?' page
 
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page

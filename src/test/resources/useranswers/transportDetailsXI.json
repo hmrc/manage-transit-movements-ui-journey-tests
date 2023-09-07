@@ -11,7 +11,7 @@
       },
       "procedureType" : "normal",
       "declarationType" : "TIR",
-      "additionalDeclarationType" : "A",
+      "additionalDeclarationType" : "D",
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : "noSecurity",
       "detailsConfirmed" : true
