@@ -6,13 +6,15 @@
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
         "isInCL112" : true,
-        "isInCL147" : false
+        "isInCL147" : false,
+        "isInCL010" : false
       },
       "procedureType" : "simplified",
       "declarationType" : {
         "code": "T2",
         "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
       },
+      "additionalDeclarationType" : "A",
       "securityDetailsType" : {
         "code": "2",
         "description": "EXS"
@@ -20,6 +22,7 @@
       "detailsConfirmed" : true
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed"
   }

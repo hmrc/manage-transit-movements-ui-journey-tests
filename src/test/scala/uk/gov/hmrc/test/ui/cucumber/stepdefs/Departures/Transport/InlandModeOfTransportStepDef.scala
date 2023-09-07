@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport.AddNewBorderModeOfTransportPage
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.{IdentificationNumberPage, InlandModeOfTransportPage, TransportCountryPage, TransportIdentificationPage}
 
 class InlandModeOfTransportStepDef extends BaseStepDef {
@@ -38,10 +39,10 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter registration number (.+) on the 'What is the (.*)\?' page$""") {
-    (answer: String, meansOfTransport: String) =>
+  And("""^(?:I )?enter registration number (.+) on the 'What is the identification number for this\?' page$""") {
+    (answer: String) =>
       IdentificationNumberPage
-        .loadPage(meansOfTransport)
+        .loadPage()
         .fillInput(answer)
         .submitPage()
   }
@@ -52,6 +53,15 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
         .loadPage()
         .select(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on 'Do you want to add a border mode of transport\?' page$"""
+  ) { (answer: String) =>
+    AddNewBorderModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }

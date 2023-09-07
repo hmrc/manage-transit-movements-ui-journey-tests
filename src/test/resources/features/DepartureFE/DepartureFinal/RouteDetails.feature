@@ -14,9 +14,13 @@ Feature: Route details journey
     Then I should be on the 'Declaration summary' page
     And I click the Add route details link on the 'Declaration summary' page
 
+    #Specific Circumstance Indicator (SCI)
+    And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
+    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
+
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select IT on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select IT on the 'Where in Italy is the office of destination?' page
 
       ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
@@ -48,28 +52,30 @@ Feature: Route details journey
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit - removing an office of exit
-    And I select Germany on the 'Which country is the office of exit in?' page
-    When I select Dortmund on the 'Where in Germany is the office of exit?' page
-    And I submit on the 'Route details - Office of exit Check your answers' page
-    And I choose radio option Yes on the 'You have added 1 office of exit' page
-    And I select France on the 'Which country is the office of exit in?' page
-    And I select Agen bureau on the 'Where in France is the office of exit?' page
-    And I submit on the 'Route details - Office of exit Check your answers' page
-    And I choose to click on the Remove link on the 'You have added 2 offices of exit' page
-    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit?' page
-    And I choose radio option No on the 'You have added 1 office of exit' page
+    And I select Germany on the 'In which country is the office of exit for transit?' page
+    When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
+    And I submit on the 'Route details - Office of exit for transit Check your answers' page
+    And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
+    And I select France on the 'In which country is the office of exit for transit?' page
+    And I select Agen bureau on the 'Where in France is the office of exit for transit?' page
+    And I submit on the 'Route details - Office of exit for transit Check your answers' page
+    And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit for transit?' page
+    And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
+    And I choose radio option Yes on the departure add location of goods page
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
-    And I choose radio option Yes on the 'Do you want to add another identifier for the location of goods?' page
+    And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
-    And I enter +432 1212 1212 on the 'What is the contact for the location of goods’ telephone number?' page
+    And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading UN LOCODE
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
@@ -98,8 +104,8 @@ Feature: Route details journey
     And I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
-    And I select Italy on the 'What is the country of destination?' page
-    And I select Bari on the 'Where is the office of destination?' page
+    And I select Italy on the 'What country is the office of destination in?' page
+    And I select Bari on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
@@ -115,6 +121,7 @@ Feature: Route details journey
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page

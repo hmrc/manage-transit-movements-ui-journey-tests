@@ -13,6 +13,7 @@
         "code": "TIR",
         "description": "TIR carnet"
       },
+      "additionalDeclarationType" : "A",
       "tirCarnetReference" : "TIR001",
       "securityDetailsType" : {
         "code": "1",
@@ -160,8 +161,8 @@
         }
       ],
       "supplyChainActorYesNo" : false,
-      "addAuthorisationsYesNo" : true,
       "authorisationsAndLimit" : {
+        "addAuthorisationsYesNo" : true,
         "authorisations" : [
           {
             "authorisationType" : "SSE",
@@ -220,6 +221,7 @@
       ]
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",

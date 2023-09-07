@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.Cancellations._
 class CancellationsStepDef extends BaseStepDef {
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to cancel this departure declaration\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to cancel this declaration\?' page$"""
   ) { (answer: String) =>
     ConfirmCancellationPage
       .loadPage()
@@ -30,12 +30,11 @@ class CancellationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'Why do you want to cancel this departure declaration\?' page$""") {
-    (answer: String) =>
-      CancellationReasonPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'Why do you want to cancel this declaration\?' page$""") { (answer: String) =>
+    CancellationReasonPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Cancellation request sent' page$""") { (declarationLink: String) =>

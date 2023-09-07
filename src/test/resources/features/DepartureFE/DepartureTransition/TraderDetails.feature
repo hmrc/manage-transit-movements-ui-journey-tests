@@ -1,6 +1,6 @@
+@departureTraderDetailsTransition
 
-
-Feature: Trader details journey
+Feature: Trader details journey - Transition
 
   Background:
     Given I login with ID 1234567890
@@ -16,13 +16,13 @@ Feature: Trader details journey
     And I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit Holder
-    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-    And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+    And I choose radio option Yes on the 'Do you know the transit holder’s EORI number?' page
+    And I enter GB123456123456 on the 'What is the transit holder’s EORI number?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option Yes on the 'Do you want to add a contact?' page
+    And I choose radio option Yes on the 'Do you want to add a contact for the transit holder?' page
     And I enter John contact on the 'What is the contact’s name?' page
-    And I enter +2112212112 on the 'What is the transit holder’s contact phone number?' page
+    And I enter +2112212112 on the 'What is the phone number for the transit holder’s contact?' page
 
       ## Representative details
     And I choose radio option Yes on the 'Are you acting as a representative?' page
@@ -40,8 +40,8 @@ Feature: Trader details journey
 
       ## Consignor contact
     And I choose radio option Yes on the 'Do you want to add a contact for the consignor?' page
-    And I enter Pip Contact on the 'Who is the contact for the consignor?' page
-    And I enter +123123123213 on the 'What is the consignor contact’s phone number?' page
+    And I enter Pip Contact on the 'What is the contact’s name?' page
+    And I enter +123123123213 on the 'What is the phone number for the consignor’s contact?' page
 
       ## Consignee
     And I choose radio option No on the 'Is there more than one consignee?' page
@@ -66,13 +66,13 @@ Feature: Trader details journey
     And I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit Holder
-    And I choose radio option No on the 'Do you know the transit holder’s EORI number or TIN?' page
+    And I choose radio option No on the 'Do you know the transit holder’s EORI number?' page
     And I enter Joe Blog on the 'What is the transit holder’s name?' page
     And I select United Kingdom on the 'Which country is the transit holder based in?' page
     And I fill in the address on the 'What is the transit holder’s address?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option No on the 'Do you want to add a contact?' page
+    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
 
       ## Representative details
     And I choose radio option No on the 'Are you acting as a representative?' page
@@ -114,11 +114,11 @@ Feature: Trader details journey
     And I click the Add trader details link on the 'Declaration summary' page
 
       ## Transit holder
-   And I choose radio option Yes on the 'Do you know the transit holder’s EORI number or TIN?' page
-   And I enter GB123456123456 on the 'What is the transit holder’s EORI number or TIN?' page
+   And I choose radio option Yes on the 'Do you know the transit holder’s EORI number?' page
+   And I enter GB123456123456 on the 'What is the transit holder’s EORI number?' page
 
       ## Transit holder's contact person's details
-    And I choose radio option No on the 'Do you want to add a contact?' page
+    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
 
       ## Transit holder's TIR id
     And I enter ABC/123/12345 on the 'What is the TIR holder’s identification number?' page
@@ -135,8 +135,6 @@ Feature: Trader details journey
 
       ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
-    And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
-    And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
     And I submit on the 'Trader details Check your answers' page
 

@@ -13,6 +13,7 @@
         "code": "T2",
         "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
       },
+      "additionalDeclarationType" : "A",
       "securityDetailsType" : {
         "code": "2",
         "description": "EXS"
@@ -189,6 +190,11 @@
           },
           "location" : "Milano"
         }
+      },
+      "addSpecificCircumstanceIndicatorYesNo" : true,
+      "specificCircumstanceIndicator" : {
+        "code" : "XXX",
+        "description" : "Authorised economic operators"
       }
     },
     "guaranteeDetails" : [
@@ -259,6 +265,7 @@
         "addPaymentMethodYesNo" : true,
         "paymentMethod" : "creditCard"
       },
+      "addInlandModeYesNo": true,
       "inlandMode" : "road",
       "transportMeansDeparture" : {
         "identification" : "regNumberRoadTrailer",
@@ -266,7 +273,9 @@
         "vehicleCountry" : {
           "code" : "GB",
           "description" : "United Kingdom"
-        }
+        },
+        "addIdentificationTypeYesNo": true,
+        "addVehicleCountryYesNo": true
       },
       "borderModeOfTransport" : "maritime",
       "transportMeansActiveList" : [
@@ -313,7 +322,8 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      }
+      },
+      "addDepartureTransportMeansYesNo": false
     },
     "documents" : {
       "addDocumentsYesNo": true,
@@ -376,7 +386,8 @@
               "description" : "Aerosol",
               "type" : "Other"
             },
-            "shippingMark" : "This is a description"
+            "shippingMark" : "This is a description",
+            "numberOfPackages" : 200
           }
         ],
         "addSupplyChainActorYesNo" : false,

@@ -17,18 +17,23 @@ Feature: Transport details journey
     And I select Italy on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option Yes on the 'Are you using any containers?' page
+    And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
-    And I choose radio option Road on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Registration number of a road trailer on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number GB1234567 on the 'What is the registration number of the road trailer?' page
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
+    And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
+    And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the identification number for this?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Maritime on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
+    And I choose radio option Sea on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification GB1234567 on the 'What is the name of the sea-going vessel?' page
+    And I enter identification GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
@@ -45,22 +50,22 @@ Feature: Transport details journey
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
-    And I enter FR98472189002 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' page
+    And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
+    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
     And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
-    And I choose radio option Yes on the 'You have added 1 transport authorisation' page
-    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+    And I choose radio option Yes on the 'You have added 2 transport authorisations' page
     And I enter SSE123 reference number on the 'What is the reference number for the SSE authorisation?' page
-    And I choose to click on Remove link on the 'You have added 2 authorisations' page
-    And I choose radio option Yes for the 'Are you sure you want to remove SSE authorisation SSE123?' page
-    And I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I enter the date on the 'When is the limit date?' page
+    And I choose to click on Remove link on the 'You have added 3 authorisations' page
+    And I choose radio option Yes for the 'Are you sure you want to remove this SSE authorisation?' page
+    And I choose radio option No on the 'You have added 2 transport authorisations' page
+    And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
 
       ## Carrier
     And I choose radio option Yes on the 'Do you want to add a carrier?' page
-    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?' page
+    And I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page
     And I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page
     And I enter Moseley on the 'Who is the contact for the carrier?' page
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
@@ -84,9 +89,6 @@ Feature: Transport details journey
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
-      ## Charges
-    And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
-    And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
@@ -110,18 +112,23 @@ Feature: Transport details journey
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any containers?' page
+    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
+    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
+    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number 1234567 on the 'What is the train number?' page
+    And I enter registration number 1234567 on the 'What is the identification number for this?' page
+    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
+    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
+    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification GB1234567 on the 'What is the registration number of the aircraft?' page
+    And I enter identification GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
@@ -129,6 +136,7 @@ Feature: Transport details journey
     And I select BARI on the 'Where is the customs office at the border?' page
 
       ## Conveyance Reference Number
+    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit on the 'Transport details - Modes and means of transport Check your answers' page
 

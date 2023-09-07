@@ -60,19 +60,20 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove (.+) authorisation (.+)\?' page$"""
-  ) { (answer: String, authorisationType: String, identificationVal: String) =>
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this (.+) authorisation\?' page$"""
+  ) { (answer: String, authorisationType: String) =>
     RemoveAuthPage
-      .loadPage(authorisationType, identificationVal)
+      .loadPage(authorisationType)
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter the date on the 'When is the limit date\?' page$""") { () =>
-    LimitDatePage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page$""") {
+    (officeOfDestination: String) =>
+      LimitDatePage
+        .loadPage(officeOfDestination)
+        .fillInputs()
+        .submitPage()
   }
 
   And(

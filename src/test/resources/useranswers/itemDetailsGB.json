@@ -13,6 +13,7 @@
         "code": "T",
         "description": "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
       },
+      "additionalDeclarationType" : "A",
       "securityDetailsType" : {
         "code": "0",
         "description": "Not used for safety and security purposes"
@@ -285,6 +286,7 @@
       ]
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",

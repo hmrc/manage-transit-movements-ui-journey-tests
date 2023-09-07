@@ -17,20 +17,31 @@
 package uk.gov.hmrc.test.ui.utils
 
 import play.api.libs.json._
+import play.api.libs.ws.StandaloneWSResponse
 
 trait JsonHelper {
 
   implicit class RichJsValue(json: JsValue) {
 
-    private def withValue(path: JsPath, value: String): JsValue =
+    private def put(path: JsPath, value: String): JsValue =
       json.transform(__.json.update(path.json.put(JsString(value)))) match {
         case JsSuccess(value, _) => value
         case JsError(errors)     => throw new Exception(s"Error adding LRN: $errors")
       }
 
-    def withLrn(lrn: String): JsValue = withValue(__ \ "lrn", lrn)
+    def withLrn(lrn: String): JsValue = put(__ \ "lrn", lrn)
 
-    def withEoriNumber(eoriNumber: String): JsValue = withValue(__ \ "eoriNumber", eoriNumber)
+    def withEoriNumber(eoriNumber: String): JsValue = put(__ \ "eoriNumber", eoriNumber)
+
+    def pick(path: JsPath): String =
+      json.transform(path.json.pick[JsString]).map(_.value).getOrElse {
+        throw new RuntimeException(s"Response body did not contain string at path $path")
+      }
+  }
+
+  implicit class RichStandaloneWSResponse(response: StandaloneWSResponse) {
+
+    def pick(path: JsPath): String = Json.parse(response.body).pick(path)
   }
 
 }

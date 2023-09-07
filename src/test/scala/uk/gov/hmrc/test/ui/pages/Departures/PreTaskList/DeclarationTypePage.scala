@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object DeclarationTypePage extends RadioPage {
 
-  override def title(args: String*): String = "What declaration do you want to create?"
+  override def title(args: String*): String = "Which type of declaration do you want to create?"
 
   // answer is one of T1, T2, T2F, TIR, T
   override def select(answer: String): this.type = {

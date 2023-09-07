@@ -54,6 +54,14 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .loadPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the 'Is this a standard or pre-lodged declaration\?' page$""") {
+    (answer: String) =>
+      AdditionalDeclarationTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") { (answer: String) =>
     OfficeOfDeparturePage
       .loadPage()
@@ -61,7 +69,7 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of procedure are you using\?' page$""") {
     (answer: String) =>
       ProcedureTypePage
         .loadPage()
@@ -69,7 +77,7 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'What declaration do you want to create\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of declaration do you want to create\?' page$""") {
     (answer: String) =>
       DeclarationTypePage
         .loadPage()
@@ -85,7 +93,7 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'What type of safety and security details do you need to add\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Which type of safety and security details do you want to add\?' page$"""
   ) { (answer: String) =>
     SecurityDetailsPage
       .loadPage()

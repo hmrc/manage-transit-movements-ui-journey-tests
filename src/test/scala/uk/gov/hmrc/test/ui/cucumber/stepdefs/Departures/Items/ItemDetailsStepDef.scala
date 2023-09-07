@@ -18,6 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
+import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
 class ItemDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.*) on the 'Enter a description of item (.*)' page$""") {
@@ -201,9 +202,9 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'How many (.*) are you using\?' page$""") { (answer: String, packageValue: String) =>
+  And("""^(?:I )?enter (.*) on the 'How many of these are you using\?' page$""") { (answer: String) =>
     PackagesTypeQuantityPage
-      .loadPage(packageValue)
+      .loadPage()
       .fillInput(answer)
       .submitPage()
   }
@@ -440,6 +441,24 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add a method of payment for this item’s transport charges\?' page$"""
+  ) { (answer: String) =>
+    ItemTransportChargesAddPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$"""
+  ) { (answer: String) =>
+    ItemTransportChargesPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?click the (.*) link on the 'You have added (.*) items?' page$""") {
     (sectionLink: String, numberOfItems: String) =>
       ItemsAddAnotherPage
@@ -483,6 +502,24 @@ class ItemDetailsStepDef extends BaseStepDef {
     AddDocumentsPage
       .loadPage()
       .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item\?' page$"""
+  ) { (answer: String) =>
+    ItemsIsConsigneeEoriNumberOrTinKnownPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.*) on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN\?' page$"""
+  ) { (answer: String) =>
+    ConsigneeEoriNumberOrTinPage
+      .loadPage()
+      .fillInput(answer)
       .submitPage()
   }
 

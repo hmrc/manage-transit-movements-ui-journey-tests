@@ -22,18 +22,37 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.T2DeclarationPa
 
 class RouteDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the 'What is the country of destination\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a specific circumstance indicator\?' page$"""
+  ) { (answer: String) =>
+    AddSpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which specific circumstance indicator do you want to add\?' page$"""
+  ) { (answer: String) =>
+    SpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What country is the office of destination in\?' page$""") { (answer: String) =>
     CountryOfDestinationPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the office of destination\?' page$""") { (answer: String) =>
-    OfficeOfDestinationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Where in (.+) is the office of destination\?' page$""") {
+    (answer: String, country: String) =>
+      OfficeOfDestinationPage
+        .loadPage(country)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Are you using a binding itinerary\?' page$""") { (answer: String) =>

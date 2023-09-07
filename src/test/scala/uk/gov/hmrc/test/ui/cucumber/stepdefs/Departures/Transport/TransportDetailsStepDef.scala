@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.AddInlandModeOfTransportPage
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails._
 
 class TransportDetailsStepDef extends BaseStepDef {
@@ -52,8 +53,18 @@ class TransportDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you using any containers\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page$"""
+  ) { (answer: String) =>
     ContainersPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an inland mode of transport\?' page$"""
+  ) { (answer: String) =>
+    AddInlandModeOfTransportPage
       .loadPage()
       .select(answer)
       .submitPage()

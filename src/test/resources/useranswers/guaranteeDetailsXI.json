@@ -13,6 +13,7 @@
         "code": "TIR",
         "description": "TIR carnet"
       },
+      "additionalDeclarationType" : "A",
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : {
         "code": "1",
@@ -21,6 +22,7 @@
       "detailsConfirmed" : true
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed"
   }

@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object UnloadingCommentsPage extends StringPage {
 
-  override def title(args: String*): String = "What comments do you want to add?"
+  override def title(args: String*): String =
+    "Describe the discrepancies between the transit and the declaration summary"
 
   def clickChangeLink(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"

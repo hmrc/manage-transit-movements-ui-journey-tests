@@ -13,6 +13,7 @@
         "code": "T2",
         "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
       },
+      "additionalDeclarationType" : "A",
       "securityDetailsType" : {
         "code": "2",
         "description": "EXS"
@@ -20,6 +21,7 @@
       "detailsConfirmed" : true
     }
   },
+  "isSubmitted" : "notSubmitted",
   "tasks" : {
     ".preTaskList" : "completed"
   }
