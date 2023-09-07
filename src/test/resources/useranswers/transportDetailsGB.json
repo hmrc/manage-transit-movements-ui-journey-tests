@@ -16,8 +16,8 @@
       },
       "additionalDeclarationType" : "A",
       "securityDetailsType" : {
-        "code": "2",
-        "description": "EXS"
+        "code": "0",
+        "description": "Not used for safety and security purposes"
       },
       "detailsConfirmed" : true
     },
