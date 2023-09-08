@@ -68,6 +68,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I submit on the 'Route details - Location of goods Check your answers' page
 
       ## Place of loading
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
