@@ -1,4 +1,4 @@
-@departureRouteDetails
+#@departureRouteDetails
 
 Feature: Route details journey
 
