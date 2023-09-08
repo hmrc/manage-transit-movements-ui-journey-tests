@@ -3,7 +3,7 @@ Feature: Journeys for Previous, Transport & Supporting documents
 
   Background:
     Given I login with ID 1234567890
-@wip
+
   Scenario: 01 Departure Office 'GB' - Declaration 'T2' - Documents - 'Previous'
     And the user has submitted documentsGB1.json for LRN 1234567890DGB1 and EORI number 1234567890
     And I refresh the page
