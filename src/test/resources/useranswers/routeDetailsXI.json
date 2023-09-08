@@ -13,7 +13,10 @@
         "code": "TIR",
         "description": "TIR carnet"
       },
-      "additionalDeclarationType" : "D",
+      "additionalDeclarationType" : {
+        "code" : "D",
+        "description" : "For lodging a standard customs declaration (such as referred to under code A) in accordance with Article 171 of the Code."
+      },
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : {
         "code": "1",

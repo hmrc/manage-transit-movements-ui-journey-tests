@@ -13,7 +13,10 @@
         "code": "T",
         "description": "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
       },
-      "additionalDeclarationType" : "A",
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
       "securityDetailsType" : {
         "code": "0",
         "description": "Not used for safety and security purposes"

@@ -11,7 +11,10 @@
       },
       "procedureType" : "simplified",
       "declarationType" : "T2",
-      "additionalDeclarationType" : "A",
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
       "securityDetailsType" : "exitSummaryDeclaration",
       "detailsConfirmed" : true
     },
