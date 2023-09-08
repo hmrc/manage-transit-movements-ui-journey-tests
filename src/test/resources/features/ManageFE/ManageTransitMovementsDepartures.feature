@@ -53,7 +53,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2796
-  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
+  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration before MRN allocation
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
@@ -64,9 +64,8 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Declaration summary' page
     And I sign out
 
-    # 3817
-
-  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration
+# 3817
+  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration after MRN allocation
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     And I submit an IE056 Rejection With Amendable Errors
