@@ -1,4 +1,4 @@
-@departureAmendment @wip
+@departureAmendment
 
 Feature: End to end journey for amending a departure declaration - Post Transition
 
