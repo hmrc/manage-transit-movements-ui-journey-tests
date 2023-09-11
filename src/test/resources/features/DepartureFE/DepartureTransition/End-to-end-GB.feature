@@ -1,4 +1,5 @@
 @departureGBe2eTransition
+
 Feature: End to end journey for Great Britain office of departure - Transition
 
   Background:
@@ -462,9 +463,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
-      ## Place of loading UN LOCODE
-    And I choose radio option No on the 'Do you want to add extra information for the place of unloading?' page
-    And I submit on the 'Route details - Places of loading and unloading Check your answers' page
+    ## Route details CYA
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 
