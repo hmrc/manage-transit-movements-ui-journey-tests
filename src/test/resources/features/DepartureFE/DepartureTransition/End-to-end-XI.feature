@@ -6,7 +6,7 @@ Feature: End to end journey for Northern Ireland office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
+    And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
     And I select XI on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option TIR on the 'Which type of declaration do you want to create?' page
@@ -122,9 +122,11 @@ Feature: End to end journey for Northern Ireland office of departure
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
+    And I choose radio option ACR on the 'Which type of authorisation do you want to add' page
+    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I choose radio option No on the 'Do you want to add the arrival date at the office of destination' page
+
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
