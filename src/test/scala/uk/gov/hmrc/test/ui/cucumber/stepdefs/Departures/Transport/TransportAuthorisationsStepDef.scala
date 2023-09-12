@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{AuthorisationAddAnotherPage, AuthorisationRefNumberPage, AuthorisationTypePage, LimitDatePage, RemoveAuthPage, WantToAddAuthorisation}
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations.{AuthorisationAddAnotherPage, AuthorisationRefNumberPage, AuthorisationTypePage, LimitDatePage, RemoveAuthPage, WantToAddArrival, WantToAddAuthorisation}
 
 class TransportAuthorisationsStepDef extends BaseStepDef {
 
@@ -80,6 +80,15 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page$"""
   ) { (answer: String) =>
     WantToAddAuthorisation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the arrival date at the office of destination' page$"""
+  ) { (answer: String) =>
+    WantToAddArrival
       .loadPage()
       .select(answer)
       .submitPage()
