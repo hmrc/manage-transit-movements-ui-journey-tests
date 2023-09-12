@@ -35,6 +35,7 @@ object Message {
     case "IE028" => IE028(World.departureId)
     case "IE060" => IE060(World.departureId)
     case "IE056" => IE056(World.departureId)
+    case "IE028" => IE028(World.departureId)
     case "IE057" => IE057(World.arrivalId)
     case "IE043" => IE043(World.arrivalId)
     case "IE044" => IE044(World.arrivalId)

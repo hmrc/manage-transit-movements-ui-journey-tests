@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
+package uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object VehicleIdentificationDepartureMeansOfTransport extends YesNoPage {
+object AddVehicleIdentificationInlandModeOfTransport extends YesNoPage {
 
   override def title(args: String*): String =
     "Do you want to add identification for this vehicle?"
