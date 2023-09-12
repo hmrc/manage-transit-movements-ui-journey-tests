@@ -1,4 +1,5 @@
 @departureGBe2eTransition
+
 Feature: End to end journey for Great Britain office of departure - Transition
 
   Background:
@@ -187,16 +188,15 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the inland mode 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
-
     And I choose radio option Channel Tunnel on the 'How is the transit crossing the border?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
@@ -462,9 +462,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
 
-      ## Place of loading UN LOCODE
-    And I choose radio option No on the 'Do you want to add extra information for the place of unloading?' page
-    And I submit on the 'Route details - Places of loading and unloading Check your answers' page
+    ## Route details CYA
     And I submit on the 'Route details Check your answers' page
     Then I should be on the 'Declaration summary' page
 

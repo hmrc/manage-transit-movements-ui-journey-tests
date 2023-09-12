@@ -31,7 +31,7 @@ Feature: Transport details journey
       ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Sea on the 'How is the transit crossing the border?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
@@ -112,7 +112,7 @@ Feature: Transport details journey
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
+    And I choose radio option Not sure on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
@@ -126,7 +126,7 @@ Feature: Transport details journey
       ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
