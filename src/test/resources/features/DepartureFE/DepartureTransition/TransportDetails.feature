@@ -22,7 +22,7 @@ Feature: Transport details journey - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the inland mode 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
@@ -33,7 +33,7 @@ Feature: Transport details journey - Transition
       ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Channel Tunnel on the 'How is the transit crossing the border?' page
-    And I choose radio option Yes on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
@@ -112,27 +112,17 @@ Feature: Transport details journey - Transition
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
+    And I choose radio option Not sure on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
-    And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
-    And I choose radio option Rail on the 'Which inland mode of transport are you using?' page
+    And I choose radio option No on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter registration number 1234567 on the 'What is the identification number for this?' page
+    And choose radio option No on the 'Do you want to add an identification number for this vehicle?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport
-    And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
-    And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-    And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification GB1234567 on the 'What is the identification number for this?' page
-
-      ## Border means of transport - office of transit
-    And I select BARI on the 'Where is the customs office at the border?' page
-
-      ## Conveyance Reference Number
-    And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
-    And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
+    And I choose radio option No on 'Do you want to add a border mode of transport?' page
+    And I choose radio option No on the border means 'Do you want to add identification for this vehicle?' page
     And I submit the 'Check your answers' page
 
       ## Supply chain actor

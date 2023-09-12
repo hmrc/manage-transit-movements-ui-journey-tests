@@ -21,11 +21,12 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit._
 
 class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the 'In which country is the office of exit for transit\?' page$""") { (answer: String) =>
-    OfficeOfExitCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'In which country is the office of exit for transit\?' page$""") {
+    (answer: String) =>
+      OfficeOfExitCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'Where in (.*) is the office of exit for transit\?' page$""") {

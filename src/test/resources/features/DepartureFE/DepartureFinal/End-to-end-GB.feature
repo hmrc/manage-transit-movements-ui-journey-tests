@@ -510,7 +510,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Border means of transport
     And I choose radio option Air on the 'How is the transit crossing the border?' page
-    And I choose radio option No on the 'Do you want to add identification for this vehicle?' page
+    And I choose radio option No on the border means 'Do you want to add identification for this vehicle?' page
     And I submit the 'Check your answers' page
 
       ## Supply chain actor
