@@ -21,6 +21,16 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit._
 
 class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
+//  I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a customs office of exit\?' page$""") {
+    (answer: String) =>
+      AddCustomsOfficeOfExitPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'In which country is the office of exit for transit\?' page$""") {
     (answer: String) =>
       OfficeOfExitCountryPage
