@@ -52,6 +52,7 @@ Feature: Route details journey - Transition
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit - removing an office of exit
+    And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
     And I select Germany on the 'In which country is the office of exit for transit?' page
     When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
     And I submit on the 'Route details - Office of exit for transit Check your answers' page
