@@ -61,7 +61,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I submit on the 'Route details - Transit route Check your answers' page
 
       ## Location of goods
-    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page

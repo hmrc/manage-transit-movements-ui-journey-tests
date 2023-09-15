@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.LocationOfGoods._
 
 class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the departure add location of goods page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page$""") { (answer: String) =>
     AddLocationOfGoodsPage
       .loadPage()
       .select(answer)
