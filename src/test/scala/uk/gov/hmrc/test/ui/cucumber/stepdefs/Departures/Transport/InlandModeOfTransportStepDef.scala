@@ -64,12 +64,13 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the inland mode 'Do you want to add identification for this vehicle\?' page$""") {
-    (answer: String) =>
-      AddVehicleIdentificationInlandModeOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the inland mode 'Do you want to add identification for this vehicle\?' page$"""
+  ) { (answer: String) =>
+    AddVehicleIdentificationInlandModeOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }
