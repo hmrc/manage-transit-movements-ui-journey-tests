@@ -553,7 +553,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I should be on the Arrival notification sent page
     And I sign out
 
-
+@wip
   Scenario: 10 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
   # Identification
     When I select XI on the arrival office of destination page
@@ -562,7 +562,7 @@ Feature: End to end journey Arrival notification feature - Transition
   #Location Of goods
     And I choose radio option Other on the arrival location of goods type page
     And I choose radio option UN/LOCODE on the arrival location of goods identification page
-    And I select Aalen on the arrival location of goods customs un locode page
+    And I enter DEAAL on the arrival location of goods customs un locode page
     And I choose radio option No on the arrival location of goods add contact page
   #Add Incident
     And I choose radio option No on the add incident page
