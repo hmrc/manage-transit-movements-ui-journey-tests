@@ -105,12 +105,13 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the border means 'Do you want to add identification for this vehicle\?' page$""") {
-    (answer: String) =>
-      AddVehicleIdentificationBorderMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the border means 'Do you want to add identification for this vehicle\?' page$"""
+  ) { (answer: String) =>
+    AddVehicleIdentificationBorderMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add the type of identification\?' page$""") {

@@ -24,8 +24,8 @@ object ContainersPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "Yes" => clickById("value")
-      case "No" => clickById("value-no")
+      case "Yes"      => clickById("value")
+      case "No"       => clickById("value-no")
       case "Not sure" => clickById("value-maybe")
     }
     this

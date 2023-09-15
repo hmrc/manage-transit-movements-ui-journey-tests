@@ -29,7 +29,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
     #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
     #Add Container Indicator
     When I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
@@ -101,7 +101,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
     #Incident Identify Location - Second Incident
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
     #Add Container Indicator - Second Incident
     And I choose radio option No on the container indicator page
     #Add Transport Equipment - Second Incident
@@ -155,7 +155,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
   #Container Identification Number
     And I choose radio option Yes on the add container identification number page
     And I enter C001 on the container identification number page
@@ -319,7 +319,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
   #Add Container Indicator
     When I choose radio option Yes on the container indicator page
     And I enter C001 on the container identification number page
@@ -391,7 +391,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
   #Incident Identify Location - Second Incident
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
   #Add Container Indicator - Second Incident
     And I choose radio option No on the container indicator page
   #Add Transport Equipment - Second Incident
@@ -441,7 +441,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the add endorsement page
   #Incident Identify Location
     And I choose radio option UN/LOCODE on the incident identify location page
-    And I select Aalen on the incident un locode page
+    And I enter DEAAL on the incident un locode page
   #Container Identification Number
     And I choose radio option Yes on the add container identification number page
     And I enter C001 on the container identification number page
