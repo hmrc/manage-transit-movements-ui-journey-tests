@@ -553,7 +553,6 @@ Feature: End to end journey Arrival notification feature - Transition
     And I should be on the Arrival notification sent page
     And I sign out
 
-@wip
   Scenario: 10 - Normal - Goods id location 'UN/LOCODE' - Add Contact 'No' - Add Incident 'No'
   # Identification
     When I select XI on the arrival office of destination page
