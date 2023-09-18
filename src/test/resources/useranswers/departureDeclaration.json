@@ -126,6 +126,7 @@
         ]
       },
       "exit" : {
+        "addCustomsOfficeOfExitYesNoPage" : true,
         "officesOfExit" : [
           {
             "officeOfExitCountry" : {
