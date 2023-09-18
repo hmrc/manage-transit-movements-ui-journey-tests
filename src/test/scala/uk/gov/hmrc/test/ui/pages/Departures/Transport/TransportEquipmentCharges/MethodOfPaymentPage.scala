@@ -24,13 +24,13 @@ object MethodOfPaymentPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     val methodOfPayment = answer match {
-      case "Cash"                        => "cash"
-      case "Credit card"                 => "creditCard"
-      case "Cheque"                      => "cheque"
-      case "Electronic credit transfer"  => "electronicCreditTransfer"
-      case "Account holder with carrier" => "accountHolderWithCarrier"
-      case "Not pre-paid"                => "notPrepaid"
-      case "Other"                       => "other"
+      case "Cash"                        => "A"
+      case "Credit card"                 => "B"
+      case "Cheque"                      => "C"
+      case "Electronic credit transfer"  => "H"
+      case "Account holder with carrier" => "Y"
+      case "Not pre-paid"                => "Z"
+      case "Other"                       => "D"
     }
     clickRadioBtn(methodOfPayment)
     this

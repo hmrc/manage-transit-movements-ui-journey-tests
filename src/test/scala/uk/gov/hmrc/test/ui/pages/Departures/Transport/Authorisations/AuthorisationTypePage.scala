@@ -23,7 +23,12 @@ object AuthorisationTypePage extends RadioPage {
   override def title(args: String*): String = "Which type of authorisation do you want to add?"
 
   override def select(answer: String): this.type = {
-    clickRadioBtn(answer)
+    val authorisationType = answer match {
+      case "ACR" => "C521"
+      case "SSE" => "C523"
+      case "TRD" => "C524"
+    }
+    clickRadioBtn(authorisationType)
     this
   }
 }

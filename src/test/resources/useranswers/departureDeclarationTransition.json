@@ -256,12 +256,21 @@
           }
         ],
         "addPaymentMethodYesNo" : true,
-        "paymentMethod" : "creditCard"
+        "paymentMethod" : {
+          "method" : "B",
+          "description" : "Payment by credit card"
+        }
       },
       "addInlandModeYesNo": true,
-      "inlandMode" : "road",
+      "inlandMode" : {
+        "code" : "3",
+        "description" : "Road transport"
+      },
       "transportMeansDeparture" : {
-        "identification" : "regNumberRoadTrailer",
+        "identification" : {
+          "type" : "31",
+          "description" : "Registration Number of the Road Trailer"
+        },
         "meansIdentificationNumber" : "GB1234567",
         "vehicleCountry" : {
           "code" : "GB",
@@ -271,7 +280,10 @@
       "borderModeOfTransport" : "maritime",
       "transportMeansActiveList" : [
         {
-          "identification" : "seaGoingVessel",
+          "identification" : {
+            "code" : "11",
+            "description" : "Name of the sea-going vessel"
+          },
           "identificationNumber" : "GB1234567",
           "addNationalityYesNo" : true,
           "nationality" : {
@@ -290,7 +302,10 @@
       "supplyChainActorYesNo" : true,
       "supplyChainActors" : [
         {
-          "supplyChainActorType" : "consolidator",
+          "supplyChainActorType" : {
+            "code" : "CS",
+            "description" : "Consolidator"
+          },
           "identificationNumber" : "FR98472189002"
         }
       ],
@@ -399,7 +414,10 @@
         "addSupplyChainActorYesNo" : true,
         "supplyChainActors" : [
           {
-            "supplyChainActorType" : "consolidator",
+            "supplyChainActorType" : {
+              "code" : "CS",
+              "description" : "Consolidator"
+            },
             "identificationNumber" : "GB885454"
           }
         ],

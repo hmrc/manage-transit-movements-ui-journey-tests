@@ -128,11 +128,20 @@
           }
         ],
         "addPaymentMethodYesNo" : true,
-        "paymentMethod" : "electronicCreditTransfer"
+        "paymentMethod" : {
+          "method" : "H",
+          "description" : "Electronic credit transfer"
+        }
       },
-      "inlandMode" : "road",
+      "inlandMode" : {
+        "code" : "3",
+        "description" : "Road transport"
+      },
       "transportMeansDeparture" : {
-        "identification" : "regNumberRoadVehicle",
+        "identification" : {
+          "type" : "30",
+          "description" : "Registration Number of the Road Vehicle"
+        },
         "meansIdentificationNumber" : "REG00101",
         "vehicleCountry" : {
           "code" : "GB",
@@ -142,7 +151,10 @@
       "borderModeOfTransport" : "maritime",
       "transportMeansActiveList" : [
         {
-          "identification" : "imoShipIdNumber",
+          "identification" : {
+            "code" : "10",
+            "description" : "IMO Ship Identification Number"
+          },
           "identificationNumber" : "SHIPA",
           "addNationalityYesNo" : false,
           "customsOfficeActiveBorder" : {
@@ -159,7 +171,10 @@
         "addAuthorisationsYesNo" : true,
         "authorisations" : [
           {
-            "authorisationType" : "SSE",
+            "authorisationType" : {
+              "code" : "C523",
+              "description" : "SSE - Authorisation for the use of seals of a special type (Column 9d, Annex A of Delegated Regulation (EU) 2015/2446)"
+            },
             "authorisationReferenceNumber" : "SSE12312"
           }
         ]
