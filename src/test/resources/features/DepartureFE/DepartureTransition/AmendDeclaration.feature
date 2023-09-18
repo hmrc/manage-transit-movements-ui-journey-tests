@@ -1,7 +1,6 @@
 @departureAmendmentTransition
 
 Feature: End to end journey for amending a departure declaration - Transition
-
   Scenario: End to end journey for amending a departure declaration before MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
