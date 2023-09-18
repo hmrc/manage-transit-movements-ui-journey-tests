@@ -406,6 +406,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Confirm and send button on the 'Declaration summary' page
     And I sign out
 
+
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
@@ -466,7 +467,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Location of goods
     And I choose radio option Approved place on the 'Which type of location is it?' page
-    And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
+    And I choose radio option GPS coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
