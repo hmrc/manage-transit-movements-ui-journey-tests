@@ -2,7 +2,7 @@
 
 Feature: End to end journey for amending a departure declaration - Post Transition
 
-  Scenario: End to end journey for amending a departure declaration before MRN allocation
+  Scenario: 01 End to end journey for amending a departure declaration before MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
@@ -64,7 +64,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I sign out
 
 
-  Scenario: End to end journey for amending a departure declaration after MRN allocation
+  Scenario: 02 End to end journey for amending a departure declaration after MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated

@@ -116,17 +116,24 @@
         ]
       },
       "locationOfGoods" : {
-        "typeOfLocation" : "authorisedPlace",
-        "inferredQualifierOfIdentification" : "authorisationNumber",
+        "typeOfLocation" : {
+          "type" : "C",
+          "description" : "Approved place"
+        },
+        "qualifierOfIdentification" : {
+          "qualifier" : "W",
+          "description" : "GPS coordinates"
+        },
         "identifier" : {
-          "authorisationNumber" : "ABC1231231",
-          "addAdditionalIdentifier" : true,
-          "additionalIdentifier" : "x9x9",
+          "coordinates" : {
+            "latitude" : "50.96622",
+            "longitude" : "1.86211"
+          },
           "addContact" : true
         },
         "contact" : {
-          "name" : "Paris",
-          "telephoneNumber" : "+44 808 157 0192"
+          "name" : "Locator Joe",
+          "telephoneNumber" : "+432 1212 1212"
         }
       },
       "loading" : {
