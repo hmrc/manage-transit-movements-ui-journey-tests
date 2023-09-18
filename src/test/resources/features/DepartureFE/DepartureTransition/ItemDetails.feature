@@ -1,6 +1,5 @@
 @departureItemDetailsTransition
 
-@wip
 Feature: Item details journey
 
   Background:
