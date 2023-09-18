@@ -36,10 +36,10 @@ class IncidentStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the incident un locode page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the incident un locode page$""") { (answer: String) =>
     IncidentsUnLocodePage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 
