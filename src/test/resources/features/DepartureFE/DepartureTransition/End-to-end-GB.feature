@@ -113,7 +113,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
-    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
@@ -456,9 +456,9 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
-    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Approved place on the 'Which type of location is it?' page
-    And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
+    And I choose radio option GPS coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
