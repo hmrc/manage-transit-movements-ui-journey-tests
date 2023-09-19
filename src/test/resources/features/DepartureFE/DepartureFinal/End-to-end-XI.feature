@@ -202,6 +202,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 
