@@ -113,7 +113,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
-    And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page

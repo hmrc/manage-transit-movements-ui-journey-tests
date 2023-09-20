@@ -1,4 +1,5 @@
 @departureItemDetails
+
 Feature: Item details journey
 
   Background:
@@ -61,6 +62,7 @@ Feature: Item details journey
     And I click radio option No on the 'You have added 1 supply chain actor for this item' item page
 
     #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select (C673) Catch certificate on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
@@ -128,6 +130,7 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select (C673) Catch certificate - 98765 on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
@@ -183,6 +186,7 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select (C673) Catch certificate on the 'Which document do you want to attach?' page
     And I click the Remove link on the 'You have attached 2 documents to this item' page
     And I click radio option No on the 'Are you sure you want to remove this document from the item?' document page
