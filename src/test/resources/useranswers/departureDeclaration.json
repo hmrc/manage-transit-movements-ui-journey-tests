@@ -76,6 +76,11 @@
       }
     },
     "routeDetails" : {
+      "addSpecificCircumstanceIndicatorYesNo" : true,
+      "specificCircumstanceIndicator" : {
+        "code" : "XXX",
+        "description" : "Authorised economic operators"
+      },
       "routing" : {
         "countryOfDestination" : {
           "code" : "IT",
@@ -118,10 +123,11 @@
               "id" : "DE004058",
               "name" : "Basel",
               "phoneNumber" : "+41 61 20114-24",
-              "isInCL147" : true
+              "isInCL147" : true,
+              "isInCL010" : false
             },
             "addOfficeOfTransitETAYesNo" : true,
-            "arrivalDateTime" : "2023-05-17T12:06:00"
+            "arrivalDateTime" : "2023-09-19T14:10:00"
           }
         ]
       },
@@ -143,18 +149,13 @@
       },
       "locationOfGoods" : {
         "typeOfLocation" : {
-          "type" : "C",
-          "description" : "Approved place"
-        },
-        "qualifierOfIdentification" : {
-          "qualifier" : "W",
-          "description" : "GPS coordinates"
+          "type" : "B",
+          "description" : "Authorised place"
         },
         "identifier" : {
-          "coordinates" : {
-            "latitude" : "50.96622",
-            "longitude" : "1.86211"
-          },
+          "authorisationNumber" : "1234567890",
+          "addAdditionalIdentifier" : true,
+          "additionalIdentifier" : "x9x9",
           "addContact" : true
         },
         "contact" : {
@@ -164,33 +165,34 @@
       },
       "loading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" : "AEFAT",
-        "addLocationYesNo" : true,
         "additionalInformation" : {
           "country" : {
             "code" : "GB",
             "description" : "United Kingdom"
           },
           "location" : "London"
-        }
+        },
+        "unLocode" : {
+          "unLocodeExtendedCode" : "AEFAT",
+          "name" : "Fateh Terminal"
+        },
+        "addLocationYesNo" : true
       },
       "addPlaceOfUnloading" : true,
       "unloading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" :  "DEAAL",
-        "addExtraInformationYesNo" : true,
         "additionalInformation" : {
           "country" : {
             "code" : "IT",
             "description" : "Italy"
           },
           "location" : "Milano"
-        }
-      },
-      "addSpecificCircumstanceIndicatorYesNo" : true,
-      "specificCircumstanceIndicator" : {
-        "code" : "XXX",
-        "description" : "Authorised economic operators"
+        },
+        "unLocode" : {
+          "unLocodeExtendedCode" : "DEAAL",
+          "name" : "Aalen"
+        },
+        "addExtraInformationYesNo" : true
       }
     },
     "guaranteeDetails" : [

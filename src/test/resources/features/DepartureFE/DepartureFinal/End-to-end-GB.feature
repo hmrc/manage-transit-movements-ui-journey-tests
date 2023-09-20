@@ -9,7 +9,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select GB on the 'Where is the office of departure?' page
 
-
+@wip
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
     And I choose radio option Simplified on the 'Which type of procedure are you using?' page
