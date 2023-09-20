@@ -10,9 +10,18 @@
         "isInCL010" : false
       },
       "procedureType" : "simplified",
-      "declarationType" : "T2",
-      "additionalDeclarationType" : "A",
-      "securityDetailsType" : "exitSummaryDeclaration",
+      "declarationType" : {
+        "code": "T2",
+        "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
+      },
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
+      "securityDetailsType" : {
+        "code": "2",
+        "description": "EXS"
+      },
       "detailsConfirmed" : true
     }
   },

@@ -9,10 +9,19 @@
         "isInCL147" : true
       },
       "procedureType" : "normal",
-      "declarationType" : "TIR",
-      "additionalDeclarationType" : "A",
+      "declarationType" : {
+        "code": "TIR",
+        "description": "TIR carnet"
+      },
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
       "tirCarnetReference" : "1234567",
-      "securityDetailsType" : "entrySummaryDeclaration",
+      "securityDetailsType" : {
+        "code": "1",
+        "description": "ENS"
+      },
       "detailsConfirmed" : true
     }
   },
