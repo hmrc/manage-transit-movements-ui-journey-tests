@@ -426,7 +426,7 @@
         "supplyChainActors" : [
           {
             "supplyChainActorType" : {
-              "code" : "CS",
+              "role" : "CS",
               "description" : "Consolidator"
             },
             "identificationNumber" : "GB885454"
