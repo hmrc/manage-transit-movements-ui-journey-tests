@@ -210,7 +210,7 @@
       "supplyChainActors" : [
         {
           "supplyChainActorType" : {
-            "code" : "FW",
+            "role" : "FW",
             "description" : "Freight Forwarder"
           },
           "identificationNumber" : "GB123456789001"
