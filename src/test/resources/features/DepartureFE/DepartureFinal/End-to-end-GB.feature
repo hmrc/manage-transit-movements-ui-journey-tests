@@ -1,4 +1,5 @@
 @departureGBe2e
+
 Feature: End to end journey for Great Britain office of departure
 
   Background:
@@ -99,6 +100,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit - removing an office of exit
+    And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
     And I select Germany on the 'In which country is the office of exit for transit?' page
     When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
     And I submit on the 'Route details - Office of exit for transit Check your answers' page
@@ -111,7 +113,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
 
       ## Location of goods
-    And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
@@ -122,13 +123,13 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Place of loading UN LOCODE
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I select Fateh Terminal (AEFAT) on the 'What is the UN LOCODE for the place of loading?' page
+    And I enter AEFAT on the 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     And I enter London on the 'Where in United Kingdom is the place of loading?' page
     And I choose radio option Yes on the 'Do you want to add a place of unloading?' page
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of unloading?' page
-    And I select Aalen on the 'What is the UN LOCODE for the place of unloading?' page
+    And I enter DEAAL on the 'What is the UN LOCODE for the place of unloading?' page
     And I choose radio option Yes on the 'Do you want to add extra information for the place of unloading?' page
     And I select Italy on the 'Which country is the place of unloading in?' page
     And I enter Milano on the 'Where in Italy is the place of unloading?' page

@@ -1,21 +1,22 @@
 #!/usr/bin/env bash
 
 #Depending on the OS of your device, change the value of OS appropriately
-#OS="linux64"
+OS="linux64"
 #OS="mac64"
-OS="mac_arm64"
+#OS="mac-x64"
+#OS="mac-arm64"
 
 #These match the configuration on Jenkins - you should only have to adjust these values when the platform makes changes
-#Line below commented out as currently pointing to wrong version. Check the version before uncommenting.
-#CHROME_VERSION=`curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+CHROME_VERSION=`curl -sS https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_STABLE`
 CHROME_PARENT_DIR="/usr/local/bin/"
 
-CHROME_DOWNLOAD_URL="http://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_${OS}.zip"
+CHROME_DOWNLOAD_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$CHROME_VERSION/$OS/chromedriver-$OS.zip"
+
 CHROME_TEMP="/tmp/chromedriver-v${CHROME_VERSION}-${OS}.tar.gz"
 
 wget -N ${CHROME_DOWNLOAD_URL} -P ~/
 unzip ~/chromedriver_${OS}.zip -d ~/
 rm ~/chromedriver_${OS}.zip
-sudo mv -f ~/chromedriver ${CHROME_PARENT_DIR}chromedriver
+sudo mv -f ~/chromedriver-$OS/chromedriver ${CHROME_PARENT_DIR}chromedriver
 sudo chown root:root ${CHROME_PARENT_DIR}chromedriver
 sudo chmod 755 ${CHROME_PARENT_DIR}chromedriver

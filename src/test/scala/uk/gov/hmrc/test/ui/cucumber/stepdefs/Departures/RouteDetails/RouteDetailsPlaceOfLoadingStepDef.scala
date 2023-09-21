@@ -35,10 +35,10 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
     PlaceOfLoadingUnLocodePage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 

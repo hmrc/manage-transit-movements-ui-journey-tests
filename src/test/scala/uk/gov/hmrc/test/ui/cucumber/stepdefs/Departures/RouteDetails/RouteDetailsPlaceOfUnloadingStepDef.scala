@@ -38,10 +38,10 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>
     PlaceOfUnloadingUnLocodePage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 

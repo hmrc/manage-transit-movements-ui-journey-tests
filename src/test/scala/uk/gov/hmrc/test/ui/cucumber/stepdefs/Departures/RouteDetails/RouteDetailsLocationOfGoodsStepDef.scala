@@ -80,10 +80,10 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the departure location of goods customs un locode page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the departure location of goods customs un locode page$""") { (answer: String) =>
     LocationOfGoodsUnLocodePage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 

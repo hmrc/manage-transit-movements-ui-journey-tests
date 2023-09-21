@@ -113,9 +113,11 @@ Feature: End to end journey for Northern Ireland office of departure
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
+    And I choose radio option ACR on the 'Which type of authorisation do you want to add' page
+    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
+    And I choose radio option No on the 'Do you want to add the arrival date at the office of destination' page
+
 
       ## Carrier
     When I choose radio option Yes on the 'Do you want to add a carrier?' page
@@ -192,6 +194,7 @@ Feature: End to end journey for Northern Ireland office of departure
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
+    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 1 document to this item' page
 

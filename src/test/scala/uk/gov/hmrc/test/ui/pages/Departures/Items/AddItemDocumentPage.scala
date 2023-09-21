@@ -14,20 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails
+package uk.gov.hmrc.test.ui.pages.Departures.Items
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ContainersPage extends RadioPage {
+object AddItemDocumentPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you using any shipping containers to transport the goods?"
+  override def title(args: String*): String = "Do you want to attach any documents to this item?"
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "Yes"      => clickById("value")
-      case "No"       => clickById("value-no")
-      case "Not sure" => clickById("value-maybe")
-    }
-    this
-  }
 }

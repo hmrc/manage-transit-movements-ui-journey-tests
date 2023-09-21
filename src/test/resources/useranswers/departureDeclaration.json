@@ -135,6 +135,7 @@
         ]
       },
       "exit" : {
+        "addCustomsOfficeOfExitYesNoPage" : true,
         "officesOfExit" : [
           {
             "officeOfExitCountry" : {
@@ -165,10 +166,7 @@
       },
       "loading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "AEFAT",
-          "name" : "Fateh Terminal"
-        },
+        "unLocode" : "AEFAT",
         "addLocationYesNo" : true,
         "additionalInformation" : {
           "country" : {
@@ -181,10 +179,7 @@
       "addPlaceOfUnloading" : true,
       "unloading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "DEAAL",
-          "name" : "Aalen"
-        },
+        "unLocode" :  "DEAAL",
         "addExtraInformationYesNo" : true,
         "additionalInformation" : {
           "country" : {
