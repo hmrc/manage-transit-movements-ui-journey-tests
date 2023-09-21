@@ -188,9 +188,11 @@
     },
     "guaranteeDetails" : [
       {
-        "guaranteeType" : "1",
+        "guaranteeType" : {
+          "code" : "1",
+          "description" : "Comprehensive guarantee"
+        },
         "referenceNumber" : "01GB1234567890120A123456",
-        "addLiabilityYesNo": true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
@@ -199,7 +201,10 @@
         "accessCode" : "AC01"
       },
       {
-        "guaranteeType" : "8",
+        "guaranteeType" : {
+          "code" : "8",
+          "description" : "Guarantee not required for certain public bodies"
+        },
         "otherReference" : "01GB123456789012",
         "currency" : {
           "currency" : "GBP",
@@ -208,7 +213,10 @@
         "liabilityAmount" : 123
       },
       {
-        "guaranteeType" : "3",
+        "guaranteeType" : {
+          "code" : "3",
+          "description" : "Individual guarantee in cash or other means of payment recognised by the customs authorities as being equivalent to a cash deposit, made in euro or in the currency of the Member State in which the guarantee is registered."
+        },
         "otherReferenceYesNo" : true,
         "otherReference" : "01GB123456789012",
         "currency" : {
@@ -218,8 +226,10 @@
         "liabilityAmount" : 54.99
       },
       {
-        "guaranteeType" : "5",
-        "addLiabilityYesNo": true,
+        "guaranteeType" : {
+          "code" : "5",
+          "description" : "Guarantee waiver where the amount of import or export duty to be secured does not exceed the statistical value threshold for declarations laid down in accordance with Article 3(4) of Regulation (EC) No 471/2009"
+        },
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
