@@ -9,10 +9,19 @@
         "isInCL147" : true
       },
       "procedureType" : "normal",
-      "declarationType" : "TIR",
-      "additionalDeclarationType" : "D",
+      "declarationType" : {
+        "code": "TIR",
+        "description": "TIR carnet"
+      },
+      "additionalDeclarationType" : {
+        "code" : "D",
+        "description" : "For lodging a standard customs declaration (such as referred to under code A) in accordance with Article 171 of the Code."
+      },
       "tirCarnetReference" : "1234567",
-      "securityDetailsType" : "entrySummaryDeclaration",
+      "securityDetailsType" : {
+        "code": "1",
+        "description": "ENS"
+      },
       "detailsConfirmed" : true
     }
   },
