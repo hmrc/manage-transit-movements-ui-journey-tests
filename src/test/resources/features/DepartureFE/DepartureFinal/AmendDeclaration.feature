@@ -38,11 +38,11 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
-    And I click the Change link on the 'You have added 2 documents' page
+    And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option No on the 'You have added 3 documents' page
     And I should see COMPLETED status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
@@ -102,11 +102,11 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
-    And I click the Change link on the 'You have added 2 documents' page
+    And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option No on the 'You have added 3 documents' page
     And I should see COMPLETED status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page

@@ -1,25 +1,26 @@
 {
   "data" : {
     "preTaskList" : {
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
       "officeOfDeparture" : {
         "id" : "GB000068",
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
         "isInCL112" : true,
-        "isInCL147" : false
+        "isInCL147" : false,
+        "isInCL010" : false
       },
       "procedureType" : "simplified",
       "declarationType" : {
-        "code": "T2",
-        "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
-      },
-      "additionalDeclarationType" : {
-        "code" : "A",
-        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+        "code" : "T2",
+        "description" : "Goods having the customs status of Union goods, which are placed under the common transit procedure"
       },
       "securityDetailsType" : {
-        "code": "2",
-        "description": "EXS"
+        "code" : "2",
+        "description" : "EXS"
       },
       "detailsConfirmed" : true
     },
@@ -136,7 +137,7 @@
               "isInCL010" : false
             },
             "addOfficeOfTransitETAYesNo" : true,
-            "arrivalDateTime" : "2023-09-19T14:10:00"
+            "arrivalDateTime" : "2023-09-26T15:01:00"
           }
         ]
       },
@@ -161,6 +162,10 @@
           "type" : "B",
           "description" : "Authorised place"
         },
+        "inferredQualifierOfIdentification" : {
+          "qualifier" : "Y",
+          "description" : "Authorisation number"
+        },
         "identifier" : {
           "authorisationNumber" : "1234567890",
           "addAdditionalIdentifier" : true,
@@ -181,10 +186,7 @@
           },
           "location" : "London"
         },
-        "unLocode" : {
-          "unLocodeExtendedCode" : "AEFAT",
-          "name" : "Fateh Terminal"
-        },
+        "unLocode" : "AEFAT",
         "addLocationYesNo" : true
       },
       "addPlaceOfUnloading" : true,
@@ -197,10 +199,7 @@
           },
           "location" : "Milano"
         },
-        "unLocode" : {
-          "unLocodeExtendedCode" : "DEAAL",
-          "name" : "Aalen"
-        },
+        "unLocode" : "DEAAL",
         "addExtraInformationYesNo" : true
       }
     },
@@ -208,12 +207,11 @@
       {
         "guaranteeType" : "1",
         "referenceNumber" : "01GB1234567890120A123456",
-        "addLiabilityYesNo": true,
         "currency" : {
-          "currency" : "GBP",
-          "description" : "Pound Sterling"
+          "currency" : "EUR",
+          "description" : "Euro"
         },
-        "liabilityAmount" : 120,
+        "liabilityAmount" : 10000,
         "accessCode" : "AC01"
       },
       {
@@ -237,7 +235,6 @@
       },
       {
         "guaranteeType" : "5",
-        "addLiabilityYesNo": true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
@@ -252,37 +249,44 @@
         "transportedToSameCountryYesNo" : true,
         "itemsDestinationCountry" : {
           "code" : "IT",
-          "description" : "Italy"
+          "description" : "Italy",
+          "isInCL009" : true
         },
         "containerIndicator" : true
       },
       "equipmentsAndCharges" : {
         "equipments" : [
           {
-            "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
             "containerIdentificationNumber" : "C001",
+            "uuid" : "25c9018d-4b58-4561-b263-e45d40c4cbc6",
             "addSealsYesNo" : true,
             "seals" : [
               {
                 "identificationNumber" : "S002"
               }
             ]
+          },
+          {
+            "addContainerIdentificationNumberYesNo" : true,
+            "uuid" : "d1f2000f-3a8b-41e6-84bc-bbdb5fb17510",
+            "containerIdentificationNumber" : "C002",
+            "addSealsYesNo" : false
           }
         ],
         "addPaymentMethodYesNo" : true,
         "paymentMethod" : "creditCard"
       },
-      "addInlandModeYesNo": true,
-      "inlandMode" : "road",
+      "addInlandModeYesNo" : true,
+      "inlandMode" : "maritime",
       "transportMeansDeparture" : {
-        "identification" : "regNumberRoadTrailer",
+        "addIdentificationTypeYesNo" : true,
+        "identification" : "seaGoingVessel",
         "meansIdentificationNumber" : "GB1234567",
+        "addVehicleCountryYesNo" : true,
         "vehicleCountry" : {
           "code" : "GB",
           "description" : "United Kingdom"
-        },
-        "addIdentificationTypeYesNo": true,
-        "addVehicleCountryYesNo": true
+        }
       },
       "borderModeOfTransport" : "maritime",
       "transportMeansActiveList" : [
@@ -313,12 +317,17 @@
       "authorisationsAndLimit" : {
         "authorisations" : [
           {
+            "inferredAuthorisationType" : "TRD",
+            "authorisationReferenceNumber" : "TRD123"
+          },
+          {
             "inferredAuthorisationType" : "ACR",
             "authorisationReferenceNumber" : "ACR123"
           }
         ],
+        "authorisationsInferred" : true,
         "limit" : {
-          "limitDate" : "2023-05-19"
+          "limitDate" : "2023-09-28"
         }
       },
       "carrierDetailYesNo" : true,
@@ -329,22 +338,20 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      },
-      "addDepartureTransportMeansYesNo": false
+      }
     },
     "documents" : {
-      "addDocumentsYesNo": true,
       "documents" : [
         {
           "attachToAllItems" : false,
           "previousDocumentType" : {
             "type" : "Previous",
-            "code": "C605",
-            "description": "Information sheet INF3"
+            "code" : "C605",
+            "description" : "Information sheet INF3"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
-            "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
+            "uuid" : "88880074-eb56-4bed-bf51-aec0e6a2ed40",
             "addTypeOfPackageYesNo" : true,
             "packageType" : {
               "code" : "BG",
@@ -365,13 +372,29 @@
         {
           "attachToAllItems" : false,
           "type" : {
+            "type" : "Support",
+            "code" : "N003",
+            "description" : "Certificate of quality"
+          },
+          "details" : {
+            "documentReferenceNumber" : "98765",
+            "uuid" : "ff2110fa-8e75-4db2-be00-3e2006557e4e",
+            "addLineItemNumberYesNo" : true,
+            "lineItemNumber" : 10101,
+            "addAdditionalInformationYesNo" : true,
+            "additionalInformation" : "12345"
+          }
+        },
+        {
+          "attachToAllItems" : true,
+          "type" : {
             "type" : "Transport",
-            "code": "N741",
-            "description": "Master airwaybill"
+            "code" : "N741",
+            "description" : "Master airwaybill"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
-            "uuid" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+            "uuid" : "15db6313-c0e1-4c06-895e-f415e8fba345"
           }
         }
       ]
@@ -379,13 +402,12 @@
     "items" : [
       {
         "description" : "This is a description",
-        "transportEquipment" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
+        "transportEquipment" : "25c9018d-4b58-4561-b263-e45d40c4cbc6",
         "addCUSCodeYesNo" : false,
         "commodityCode" : "ABC123",
         "addDangerousGoodsYesNo" : false,
         "grossWeight" : 100,
-        "addSupplementaryUnitsYesNo" : true,
-        "supplementaryUnits" : 123.99,
+        "addSupplementaryUnitsYesNo" : false,
         "packages" : [
           {
             "packageType" : {
@@ -393,14 +415,14 @@
               "description" : "Aerosol",
               "type" : "Other"
             },
-            "shippingMark" : "This is a description",
-            "numberOfPackages" : 200
+            "numberOfPackages" : 10,
+            "shippingMark" : "2nd item shipping mark cargo description"
           }
         ],
         "addSupplyChainActorYesNo" : false,
         "documents" : [
           {
-            "document" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+            "document" : "88880074-eb56-4bed-bf51-aec0e6a2ed40"
           }
         ],
         "documentsInProgress" : false,
@@ -409,8 +431,8 @@
       }
     ]
   },
-  "isSubmitted" : "submitted",
-  "lastUpdated" : "2023-05-12T06:34:18.690+0000",
+  "isSubmitted" : "notSubmitted",
+  "lastUpdated" : "2023-09-26T14:01:58.554+0000",
   "tasks" : {
     ".traderDetails" : "completed",
     ".guaranteeDetails" : "completed",
