@@ -41,8 +41,7 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
   And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>
     PlaceOfUnloadingUnLocodePage
       .loadPage()
-//      .fillInput(answer)
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 
