@@ -10,10 +10,19 @@
         "isInCL010" : true
       },
       "procedureType" : "normal",
-      "declarationType" : "TIR",
-      "additionalDeclarationType" : "D",
+      "declarationType" : {
+        "code": "TIR",
+        "description": "TIR carnet"
+      },
+      "additionalDeclarationType" : {
+        "code" : "D",
+        "description" : "For lodging a standard customs declaration (such as referred to under code A) in accordance with Article 171 of the Code."
+      },
       "tirCarnetReference" : "1234567",
-      "securityDetailsType" : "noSecurity",
+      "securityDetailsType" : {
+        "code": "0",
+        "description": "Not used for safety and security purposes"
+      },
       "detailsConfirmed" : true
     },
     "traderDetails" : {
