@@ -5,8 +5,8 @@ Feature: Route details journey - Transition
   Background:
     Given I login with ID 1234567890
 
-  Scenario: 01 Great Britain office of departure
 
+  Scenario: 01 Great Britain office of departure
     And the user has submitted routeDetailsGB.json for LRN 1234567890RDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -66,7 +66,6 @@ Feature: Route details journey - Transition
 
       ## Location of goods
     And I choose radio option Yes on the 'Do you want to add a location of goods?' page
-    And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
@@ -94,8 +93,8 @@ Feature: Route details journey - Transition
     And I should see COMPLETED status for route details on the 'Declaration summary' page
     And I sign out
 
-  Scenario: 02 Northern Ireland office of departure
 
+  Scenario: 02 Northern Ireland office of departure
     And the user has submitted routeDetailsXI.json for LRN 1234567890RDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page

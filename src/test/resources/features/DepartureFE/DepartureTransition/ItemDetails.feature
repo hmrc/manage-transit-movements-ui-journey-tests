@@ -35,7 +35,6 @@ Feature: Item details journey
     #Package section
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 0 on the 'How many of these are you using?' page
-#    And I click continue on the 'Before you continue' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
@@ -45,11 +44,10 @@ Feature: Item details journey
     And I click the Remove link on the 'You have added 2 types of packages' page
     And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
     And I click radio option No on the 'You have added 1 type of package' page
-
-  #Consignee
+    #Consignee
     And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page
     And I enter IT123123132 on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN?' page
-#Supply Chain Actor Section
+    #Supply Chain Actor Section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
     And I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page
     And I enter GB123456 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page
@@ -87,7 +85,7 @@ Feature: Item details journey
     And I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
     And I click the Remove link on the 'You have added 2 additional information' page
-    And I click radio option Yes on 'Do you want to add any additional information for this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     And I click radio option Yes on the 'Do you want to add a method of payment for this item’s transport charges?' page
     And I click radio option Payment by credit card on the 'Which method of payment do you want to use for transport charges?' page
@@ -121,7 +119,6 @@ Feature: Item details journey
     And I enter Simpson Item Consignee on the 'What is the consignee’s name?' page
     And I select Italy on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
-
 
     #Additional Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page

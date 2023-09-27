@@ -9,6 +9,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select GB on the 'Where is the office of departure?' page
 
+
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
   Completed Consignee at header level - Container Ind 'Yes' - CL214 Documents
     And I choose radio option Simplified on the 'Which type of procedure are you using?' page
@@ -114,7 +115,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Location of goods
     And I choose radio option Yes on the 'Do you want to add a location of goods?' page
-    And I choose radio option Authorised place on the 'Which type of location is it?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
@@ -305,7 +305,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
       #Package section CL182 Yes
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
     And I enter 0 on the 'How many of these are you using?' page
-    #And I click continue on the 'Before you continue' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
     And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
     And I click radio option Yes on the 'You have added 1 types of package' page
@@ -355,7 +354,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
     And I click the Remove link on the 'You have added 2 additional information' page
-    And I click radio option Yes on 'Do you want to add any additional information for this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
     And I submit on the 'Item 1 Check your answers' page
@@ -546,7 +545,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 4312 on the 'What is the document’s reference number?' page
     And I submit on the 'Documents Check your answers' page
     And I choose radio option No on the 'You have added 2 document' page
-
 
     #Items
     When I click the Add items link on the 'Declaration summary' page
