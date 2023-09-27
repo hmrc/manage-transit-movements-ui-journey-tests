@@ -395,7 +395,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
 
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
@@ -589,5 +589,4 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
-    And I sign out
-
+    And I click the Sign out link on the 'Departure declaration sent' page

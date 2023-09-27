@@ -214,4 +214,4 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page

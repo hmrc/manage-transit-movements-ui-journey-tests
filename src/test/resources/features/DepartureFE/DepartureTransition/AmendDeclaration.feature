@@ -61,7 +61,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
 
 
   Scenario: End to end journey for amending a departure declaration after MRN allocation
@@ -125,5 +125,5 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
 

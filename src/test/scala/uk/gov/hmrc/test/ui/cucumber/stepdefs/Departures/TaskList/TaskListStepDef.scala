@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.TaskList
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Confirmation.DepartureConfirmationPage
 import uk.gov.hmrc.test.ui.pages.Departures.DeclarationSummary.DeclarationSummaryPage
 
 class TaskListStepDef extends BaseStepDef {
