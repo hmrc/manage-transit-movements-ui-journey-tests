@@ -402,50 +402,50 @@
     },
     "items" : [
       {
-        "description" : "This is a description of Item 1",
-        "inferredTransportEquipment" : "dc6c4973-c143-4574-b51c-b07c05c94a51",
-        "addCUSCodeYesNo" : true,
-        "customsUnionAndStatisticsCode" : "ABC123456",
-        "addCommodityCodeYesNo" : true,
-        "commodityCode" : "ABC123",
-        "addDangerousGoodsYesNo" : true,
-        "dangerousGoodsList" : [
-          {
-            "unNumber" : "AB12"
-          }
-        ],
-        "grossWeight" : 100,
-        "addSupplementaryUnitsYesNo" : true,
-        "supplementaryUnits" : 123.99,
+        "description" : "item",
+        "inferredTransportEquipment" : "a98d90a0-9b35-470d-bb78-81a3c0ff8b40",
+        "countryOfDispatch" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "countryOfDestination" : {
+          "code" : "IT",
+          "description" : "Italy"
+        },
+        "addUCRYesNo" : true,
+        "uniqueConsignmentReference" : "ucr",
+        "addCUSCodeYesNo" : false,
+        "addCommodityCodeYesNo" : false,
+        "addDangerousGoodsYesNo" : false,
+        "grossWeight" : 1111,
+        "addItemNetWeightYesNo" : false,
+        "addSupplementaryUnitsYesNo" : false,
         "packages" : [
           {
             "packageType" : {
-              "code" : "VS",
-              "description" : "Bulk, scrap metal",
-              "type" : "Bulk"
-            },
-            "addShippingMarkYesNo" : false
-          },
-          {
-            "packageType" : {
-              "code" : "AE",
-              "description" : "Aerosol",
+              "code" : "BG",
+              "description" : "Bag",
               "type" : "Other"
             },
-            "numberOfPackages" : 0,
-            "shippingMark" : "This is a description of the cargo 3"
+            "shippingMark" : "sdasdq",
+            "numberOfPackages" : 200
           }
         ],
+        "commodityCode" : "224466",
+        "consignee" : {
+          "addConsigneeEoriNumberYesNo" : true,
+          "identificationNumber" : "IT8374872342"
+        },
         "addSupplyChainActorYesNo" : true,
         "supplyChainActors" : [
           {
-            "supplyChainActorType" : "warehouseKeeper",
-            "identificationNumber" : "ABC123"
+            "supplyChainActorType" : "consolidator",
+            "identificationNumber" : "GB885454"
           }
         ],
         "documents" : [
           {
-            "document" : "6a65c88d-dd9a-455f-98cb-2abf151d9760"
+            "document" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d"
           }
         ],
         "documentsInProgress" : false,
@@ -453,52 +453,24 @@
         "additionalReferences" : [
           {
             "additionalReference" : {
-              "documentType" : "C651",
-              "description" : "Electronic administrative document (e-AD), as referred to in Article 3(1) of Reg. (EC) No 684/2009"
+              "documentType" : "Y024",
+              "description" : "Declarant (AEO certificate number)"
             },
-            "additionalReferenceNumber" : "98765",
-            "addAdditionalReferenceNumberYesNo" : true
+            "addAdditionalReferenceNumberYesNo" : true,
+            "additionalReferenceNumber" : "REF343434"
           }
         ],
         "addAdditionalInformationYesNo" : true,
         "additionalInformationList" : [
           {
             "additionalInformationType" : {
-              "code" : "20200",
-              "description" : "Export from one EFTA country subject to duties or export from the Union subject to duties"
+              "code" : "20300",
+              "description" : "Export"
             },
-            "additionalInformation" : "12345"
-          }
-        ]
-      },
-      {
-        "description" : "This is a description of Item 2",
-        "inferredTransportEquipment" : "dc6c4973-c143-4574-b51c-b07c05c94a51",
-        "addCUSCodeYesNo" : false,
-        "addCommodityCodeYesNo" : false,
-        "addDangerousGoodsYesNo" : false,
-        "grossWeight" : 100,
-        "addSupplementaryUnitsYesNo" : false,
-        "packages" : [
-          {
-            "packageType" : {
-              "code" : "AE",
-              "description" : "Aerosol",
-              "type" : "Other"
-            },
-            "numberOfPackages" : 10,
-            "shippingMark" : "2nd item shipping mark cargo description"
+            "additionalInformation" : "Additional info"
           }
         ],
-        "addSupplyChainActorYesNo" : false,
-        "documents" : [
-          {
-            "document" : "6a65c88d-dd9a-455f-98cb-2abf151d9760"
-          }
-        ],
-        "documentsInProgress" : false,
-        "addAdditionalReferenceYesNo" : false,
-        "addAdditionalInformationYesNo" : false
+        "addTransportChargesYesNo" : false
       }
     ]
   },
