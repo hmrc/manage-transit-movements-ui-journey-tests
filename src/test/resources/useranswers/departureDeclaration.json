@@ -284,7 +284,10 @@
         "addIdentificationTypeYesNo": true,
         "addVehicleCountryYesNo": true
       },
-      "borderModeOfTransport" : "maritime",
+      "borderModeOfTransport" : {
+        "code" : "1",
+        "description" : "Maritime Transport"
+      },
       "transportMeansActiveList" : [
         {
           "identification" : {

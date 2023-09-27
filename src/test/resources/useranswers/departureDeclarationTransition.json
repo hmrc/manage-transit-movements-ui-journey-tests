@@ -285,7 +285,10 @@
           "description" : "United Kingdom"
         }
       },
-      "borderModeOfTransport" : "maritime",
+      "borderModeOfTransport" : {
+        "code" : "1",
+        "description" : "Maritime Transport"
+      },
       "transportMeansActiveList" : [
         {
           "identification" : {
