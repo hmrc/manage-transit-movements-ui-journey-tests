@@ -2,7 +2,7 @@
 
 Feature: End to end journey for amending a departure declaration - Post Transition
 
-  Scenario: End to end journey for amending a departure declaration before MRN allocation
+  Scenario: 01 End to end journey for amending a departure declaration before MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
@@ -38,11 +38,11 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
-    And I click the Change link on the 'You have added 2 documents' page
+    And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option No on the 'You have added 3 documents' page
     And I should see COMPLETED status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
@@ -61,10 +61,10 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
 
 
-  Scenario: End to end journey for amending a departure declaration after MRN allocation
+  Scenario: 02 End to end journey for amending a departure declaration after MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
@@ -102,11 +102,11 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
-    And I click the Change link on the 'You have added 2 documents' page
+    And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the 'Documents Check your answers' page
-    And I choose radio option No on the 'You have added 2 documents' page
+    And I choose radio option No on the 'You have added 3 documents' page
     And I should see COMPLETED status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
@@ -125,4 +125,4 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page

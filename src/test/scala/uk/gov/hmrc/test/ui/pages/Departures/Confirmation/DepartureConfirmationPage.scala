@@ -14,11 +14,18 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfLoading
+package uk.gov.hmrc.test.ui.pages.Departures.Confirmation
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object PlaceOfLoadingUnLocodePage extends StringPage {
+object DepartureConfirmationPage extends Page {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the place of loading?"
+  override def title(args: String*): String = "Departure declaration sent"
+
+  def selectLink(link: String): Unit =
+    clickByPartialLinkText(link)
+
+  def selectSignOutLink(signOutLink: String): Unit =
+    clickByPartialLinkText(signOutLink)
+
 }

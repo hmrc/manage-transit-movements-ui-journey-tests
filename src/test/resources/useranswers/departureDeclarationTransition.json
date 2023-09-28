@@ -1,6 +1,10 @@
 {
   "data" : {
     "preTaskList" : {
+      "additionalDeclarationType" : {
+        "code" : "A",
+        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+      },
       "officeOfDeparture" : {
         "id" : "GB000068",
         "name" : "Basildon Helipad",
@@ -11,17 +15,14 @@
       },
       "procedureType" : "simplified",
       "declarationType" : {
-        "code": "T2",
-        "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
-      },
-      "additionalDeclarationType" : {
-        "code" : "A",
-        "description" : "for a standard customs declaration (under Article 162 of the Code)"
+        "code" : "T2",
+        "description" : "Goods having the customs status of Union goods, which are placed under the common transit procedure"
       },
       "securityDetailsType" : {
-        "code": "2",
-        "description": "EXS"
-      },      "detailsConfirmed" : true
+        "code" : "2",
+        "description" : "EXS"
+      },
+      "detailsConfirmed" : true
     },
     "traderDetails" : {
       "holderOfTransit" : {
@@ -69,6 +70,7 @@
             "telephoneNumber" : "+123123123213"
           }
         },
+        "moreThanOneConsignee" : false,
         "consignee" : {
           "eoriYesNo" : false,
           "name" : "Simpson Blog Consignee",
@@ -81,8 +83,7 @@
             "city" : "Godrics Hollow",
             "postalCode" : "CA1 9AA"
           }
-        },
-        "moreThanOneConsignee" : true
+        }
       }
     },
     "routeDetails" : {
@@ -137,7 +138,7 @@
               "isInCL010" : false
             },
             "addOfficeOfTransitETAYesNo" : true,
-            "arrivalDateTime" : "2023-05-17T12:06:00"
+            "arrivalDateTime" : "2023-09-26T17:16:00"
           }
         ]
       },
@@ -159,8 +160,14 @@
       },
       "addLocationOfGoods" : true,
       "locationOfGoods" : {
-        "typeOfLocation" : "authorisedPlace",
-        "inferredQualifierOfIdentification" : "authorisationNumber",
+        "typeOfLocation" : {
+          "type" : "B",
+          "description" : "Authorised place"
+        },
+        "inferredQualifierOfIdentification" : {
+          "qualifier" : "Y",
+          "description" : "Authorisation number"
+        },
         "identifier" : {
           "authorisationNumber" : "1234567890",
           "addAdditionalIdentifier" : true,
@@ -174,35 +181,35 @@
       },
       "loading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" : "AEFAT",
-        "addLocationYesNo" : true,
         "additionalInformation" : {
           "country" : {
             "code" : "GB",
             "description" : "United Kingdom"
           },
           "location" : "London"
-        }
+        },
+        "unLocode" : "AEFAT",
+        "addLocationYesNo" : true
       },
       "addPlaceOfUnloading" : true,
       "unloading" : {
         "addUnLocodeYesNo" : true,
-        "unLocode" : "DEAAL",
-        "addExtraInformationYesNo" : true,
         "additionalInformation" : {
           "country" : {
             "code" : "IT",
             "description" : "Italy"
           },
           "location" : "Milano"
-        }
+        },
+        "unLocode" : "DEAAL",
+        "addExtraInformationYesNo" : true
       }
     },
     "guaranteeDetails" : [
       {
         "guaranteeType" : "1",
         "referenceNumber" : "01GB1234567890120A123456",
-        "addLiabilityYesNo": true,
+        "addLiabilityYesNo" : true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
@@ -231,7 +238,7 @@
       },
       {
         "guaranteeType" : "5",
-        "addLiabilityYesNo": true,
+        "addLiabilityYesNo" : true,
         "currency" : {
           "currency" : "GBP",
           "description" : "Pound Sterling"
@@ -246,15 +253,16 @@
         "transportedToSameCountryYesNo" : true,
         "itemsDestinationCountry" : {
           "code" : "IT",
-          "description" : "Italy"
+          "description" : "Italy",
+          "isInCL009" : true
         },
         "containerIndicator" : true
       },
       "equipmentsAndCharges" : {
         "equipments" : [
           {
-            "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
             "containerIdentificationNumber" : "C001",
+            "uuid" : "dc6c4973-c143-4574-b51c-b07c05c94a51",
             "addSealsYesNo" : true,
             "seals" : [
               {
@@ -266,26 +274,31 @@
         "addPaymentMethodYesNo" : true,
         "paymentMethod" : "creditCard"
       },
-      "addInlandModeYesNo": true,
-      "inlandMode" : "road",
+      "addInlandModeYesNo" : true,
+      "inlandMode" : "maritime",
+      "addDepartureTransportMeansYesNo" : true,
       "transportMeansDeparture" : {
-        "identification" : "regNumberRoadTrailer",
+        "addIdentificationTypeYesNo" : true,
+        "identification" : "seaGoingVessel",
+        "addIdentificationNumberYesNo" : true,
         "meansIdentificationNumber" : "GB1234567",
+        "addVehicleCountryYesNo" : true,
         "vehicleCountry" : {
           "code" : "GB",
           "description" : "United Kingdom"
         }
       },
-      "borderModeOfTransport" : "maritime",
+      "borderModeOfTransport" : "rail",
+      "addActiveBorderTransportMeansYesNo" : true,
       "transportMeansActiveList" : [
         {
-          "identification" : "seaGoingVessel",
-          "identificationNumber" : "GB1234567",
           "addNationalityYesNo" : true,
           "nationality" : {
             "code" : "GB",
             "description" : "United Kingdom"
           },
+          "inferredIdentification" : "trainNumber",
+          "identificationNumber" : "GB1234567",
           "customsOfficeActiveBorder" : {
             "id" : "DE004058",
             "name" : "Basel",
@@ -305,12 +318,17 @@
       "authorisationsAndLimit" : {
         "authorisations" : [
           {
+            "inferredAuthorisationType" : "TRD",
+            "authorisationReferenceNumber" : "TRD123"
+          },
+          {
             "inferredAuthorisationType" : "ACR",
             "authorisationReferenceNumber" : "ACR123"
           }
         ],
+        "authorisationsInferred" : true,
         "limit" : {
-          "limitDate" : "2023-05-19"
+          "limitDate" : "2023-09-28"
         }
       },
       "carrierDetailYesNo" : true,
@@ -321,22 +339,20 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      },
-      "addDepartureTransportMeansYesNo": false
+      }
     },
     "documents" : {
-      "addDocumentsYesNo": true,
       "documents" : [
         {
-          "attachToAllItems" : false,
+          "inferredAttachToAllItems" : false,
           "previousDocumentType" : {
             "type" : "Previous",
-            "code": "C605",
-            "description": "Information sheet INF3"
+            "code" : "C605",
+            "description" : "Information sheet INF3"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
-            "uuid" : "66f085cd-ad0e-4c9a-8289-0f3c653c9c3d",
+            "uuid" : "6a65c88d-dd9a-455f-98cb-2abf151d9760",
             "addTypeOfPackageYesNo" : true,
             "packageType" : {
               "code" : "BG",
@@ -355,15 +371,31 @@
           }
         },
         {
-          "attachToAllItems" : false,
+          "inferredAttachToAllItems" : false,
+          "type" : {
+            "type" : "Support",
+            "code" : "N003",
+            "description" : "Certificate of quality"
+          },
+          "details" : {
+            "documentReferenceNumber" : "98765",
+            "uuid" : "95d21b93-69e1-44f4-8255-695b505b2d4b",
+            "addLineItemNumberYesNo" : true,
+            "lineItemNumber" : 10101,
+            "addAdditionalInformationYesNo" : true,
+            "additionalInformation" : "12345"
+          }
+        },
+        {
+          "inferredAttachToAllItems" : false,
           "type" : {
             "type" : "Transport",
-            "code": "N741",
-            "description": "Master airwaybill"
+            "code" : "N741",
+            "description" : "Master airwaybill"
           },
           "details" : {
             "documentReferenceNumber" : "1234",
-            "uuid" : "80ecd1e4-44bf-4922-b3f0-243fa0a502c5"
+            "uuid" : "4d0e56be-92f3-4b76-986f-9e4350258e42"
           }
         }
       ]
@@ -442,8 +474,8 @@
       }
     ]
   },
-  "isSubmitted" : "submitted",
-  "lastUpdated" : "2023-05-12T06:34:18.690+0000",
+  "isSubmitted" : "notSubmitted",
+  "lastUpdated" : "2023-09-26T16:16:44.504+0000",
   "tasks" : {
     ".traderDetails" : "completed",
     ".guaranteeDetails" : "completed",
