@@ -42,11 +42,13 @@ Feature: Route details journey
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
     And I submit on the 'Route details - Office of transit Check your answers' page
+
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page
     And I submit on the 'Route details - Office of transit Check your answers' page
+
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
@@ -56,10 +58,12 @@ Feature: Route details journey
     And I select Germany on the 'In which country is the office of exit for transit?' page
     When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
     And I submit on the 'Route details - Office of exit for transit Check your answers' page
+
     And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
     And I select France on the 'In which country is the office of exit for transit?' page
     And I select Agen bureau on the 'Where in France is the office of exit for transit?' page
     And I submit on the 'Route details - Office of exit for transit Check your answers' page
+
     And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit for transit?' page
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
@@ -92,6 +96,7 @@ Feature: Route details journey
     And I should see COMPLETED status for route details on the 'Declaration summary' page
     And I sign out
 
+
   Scenario: 02 Northern Ireland office of departure
 
     And the user has submitted routeDetailsXI.json for LRN 1234567890RDXI and EORI number 1234567890
@@ -112,7 +117,7 @@ Feature: Route details journey
     And I submit on the 'Route details - Transit route Check your answers' page
 
       ## Location of goods
-    And I choose radio option Yes on the departure add location of goods page
+    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page

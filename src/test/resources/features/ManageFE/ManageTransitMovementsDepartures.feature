@@ -65,7 +65,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 3817
-  Scenario: 06 - Trader is able to amend a declaration error for a departure declaration after MRN allocation
+  Scenario: 07 - Trader is able to amend a declaration error for a departure declaration after MRN allocation
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     And I submit an IE056 Rejection With Amendable Errors
@@ -78,7 +78,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 2898
-  Scenario: 07 - Trader is able to review cancellation errors for a departure declaration
+  Scenario: 08 - Trader is able to review cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE014 Declaration Cancellation
     And I submit an IE056 Cancellation Rejection With No Amendable Errors
@@ -89,7 +89,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 3000
-  Scenario: 08 Trader is able to cancel a departure declaration
+  Scenario: 09 Trader is able to cancel a departure declaration
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     And I refresh the page
