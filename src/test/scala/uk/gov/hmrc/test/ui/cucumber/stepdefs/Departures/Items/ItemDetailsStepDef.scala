@@ -434,9 +434,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on '(.*)' page$""") { (answer: String, pageName: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional information\?' page$""") {
+    (answer: String) =>
     AdditionalInformationRemovePage
-      .loadPage(pageName)
+      .loadPage()
       .select(answer)
       .submitPage()
   }
@@ -466,10 +467,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)?' page$""") {
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)\?' page$""") {
     (answer: String, itemNumber: String) =>
       RemoveItemPage
-        .loadPage()
+        .loadPage(itemNumber)
         .select(answer)
         .submitPage()
   }

@@ -88,7 +88,7 @@ Feature: Item details journey
     And I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
     And I click the Remove link on the 'You have added 2 additional information' page
-    And I click radio option Yes on 'Do you want to add any additional information for this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
     And I submit the 'Check your answers' page

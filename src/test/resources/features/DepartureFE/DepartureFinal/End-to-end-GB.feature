@@ -360,7 +360,7 @@ Feature: End to end journey for Great Britain office of departure
     And I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page
     And I enter 12345 on the 'Enter the additional information' page
     And I click the Remove link on the 'You have added 2 additional information' page
-    And I click radio option Yes on 'Do you want to add any additional information for this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
     And I submit on the 'Item 1 Check your answers' page
@@ -403,7 +403,8 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
+
 
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
@@ -465,7 +466,7 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Location of goods
     And I choose radio option Approved place on the 'Which type of location is it?' page
-    And I choose radio option Coordinates on the 'How do you want to identify the location of goods?' page
+    And I choose radio option GPS coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the 'Route details - Location of goods Check your answers' page
@@ -576,5 +577,5 @@ Feature: End to end journey for Great Britain office of departure
     And I submit on the 'Item 1 Check your answers' page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
-    And I sign out
+    And I click the Sign out link on the 'Departure declaration sent' page
 
