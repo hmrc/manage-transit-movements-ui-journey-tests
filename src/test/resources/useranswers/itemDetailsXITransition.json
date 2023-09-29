@@ -143,18 +143,27 @@
         ],
         "addPaymentMethodYesNo" : false
       },
-      "inlandMode" : "rail",
+      "inlandMode" : {
+        "code" : "2",
+        "description" : "Rail Transport"
+      },
       "addDepartureTransportMeansYesNo" : true,
       "transportMeansDeparture" : {
         "addIdentificationTypeYesNo" : true,
-        "identification" : "trainNumber",
+        "identification" : {
+          "code" : "21",
+          "description" : "Train Number"
+        },
         "addIdentificationNumberYesNo" : true,
         "meansIdentificationNumber" : "TRA1122"
       },
       "borderModeOfTransport" : "air",
       "transportMeansActiveList" : [
         {
-          "identification" : "regNumberAircraft",
+          "identification" : {
+            "code" : "41",
+            "description" : "Registration Number of the Aircraft"
+          },
           "identificationNumber" : "GB1312312",
           "addNationalityYesNo" : true,
           "nationality" : {
@@ -174,7 +183,10 @@
         "addAuthorisationsYesNo" : true,
         "authorisations" : [
           {
-            "authorisationType" : "TRD",
+            "authorisationType" : {
+              "code" : "C524",
+              "description" : "TRD - Authorisation to use transit declaration with a reduced dataset (Column 9e, Annex A of Delegated Regulation (EU) 2015/2446)"
+            },
             "authorisationReferenceNumber" : "TRD2313"
           }
         ]

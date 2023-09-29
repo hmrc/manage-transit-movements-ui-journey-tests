@@ -272,15 +272,23 @@
           }
         ],
         "addPaymentMethodYesNo" : true,
-        "paymentMethod" : "creditCard"
+        "paymentMethod" : {
+          "method" : "B",
+          "description" : "Payment by credit card"
+        }
       },
-      "addInlandModeYesNo" : true,
-      "inlandMode" : "maritime",
-      "addDepartureTransportMeansYesNo" : true,
+      "addInlandModeYesNo": true,
+      "inlandMode" : {
+        "code" : "3",
+        "description" : "Road transport"
+      },
       "transportMeansDeparture" : {
         "addIdentificationTypeYesNo" : true,
-        "identification" : "seaGoingVessel",
         "addIdentificationNumberYesNo" : true,
+        "identification" : {
+          "type" : "31",
+          "description" : "Registration Number of the Road Trailer"
+        },
         "meansIdentificationNumber" : "GB1234567",
         "addVehicleCountryYesNo" : true,
         "vehicleCountry" : {
@@ -288,10 +296,17 @@
           "description" : "United Kingdom"
         }
       },
-      "borderModeOfTransport" : "rail",
-      "addActiveBorderTransportMeansYesNo" : true,
+      "borderModeOfTransport" : {
+        "code" : "1",
+        "description" : "Maritime Transport"
+      },
       "transportMeansActiveList" : [
         {
+          "identification" : {
+            "code" : "11",
+            "description" : "Name of the sea-going vessel"
+          },
+          "identificationNumber" : "GB1234567",
           "addNationalityYesNo" : true,
           "nationality" : {
             "code" : "GB",
@@ -311,18 +326,20 @@
       "supplyChainActorYesNo" : true,
       "supplyChainActors" : [
         {
-          "supplyChainActorType" : "consolidator",
+          "supplyChainActorType" : {
+            "role" : "CS",
+            "description" : "Consolidator"
+          },
           "identificationNumber" : "FR98472189002"
         }
       ],
       "authorisationsAndLimit" : {
         "authorisations" : [
           {
-            "inferredAuthorisationType" : "TRD",
-            "authorisationReferenceNumber" : "TRD123"
-          },
-          {
-            "inferredAuthorisationType" : "ACR",
+            "inferredAuthorisationType" : {
+              "code" : "C521",
+              "description" : "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
+            },
             "authorisationReferenceNumber" : "ACR123"
           }
         ],
@@ -339,7 +356,8 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      }
+      },
+      "addDepartureTransportMeansYesNo" : true
     },
     "documents" : {
       "documents" : [
@@ -439,7 +457,10 @@
         "addSupplyChainActorYesNo" : true,
         "supplyChainActors" : [
           {
-            "supplyChainActorType" : "consolidator",
+            "supplyChainActorType" : {
+              "role" : "CS",
+              "description" : "Consolidator"
+            },
             "identificationNumber" : "GB885454"
           }
         ],
