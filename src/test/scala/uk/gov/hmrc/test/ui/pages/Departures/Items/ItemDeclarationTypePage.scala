@@ -24,9 +24,9 @@ object ItemDeclarationTypePage extends RadioPage {
 
   override def select(answer: String): this.type = {
     answer match {
-      case "T1"                                            => clickById("value")
-      case "T2"                                            => clickById("value_1")
-      case "T2F"                                           => clickById("value_2")
+      case "T1"  => clickById("value")
+      case "T2"  => clickById("value_1")
+      case "T2F" => clickById("value_2")
     }
     this
   }
