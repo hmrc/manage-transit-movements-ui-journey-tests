@@ -127,7 +127,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page
 
       ## Transport equipment
-    And I choose radio option No on the 'Do you want to add any transport equipment?' page
+    And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
 
       ##CYA changes to NO to test in Items details
     And click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details 'Check your answers' page
