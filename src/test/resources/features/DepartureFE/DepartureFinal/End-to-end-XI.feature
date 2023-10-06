@@ -134,8 +134,8 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
 
-      ## Transport equipment
-    And I choose radio option No on the 'Do you want to add any transport equipment?' page
+      ## Transport charges
+    And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
 
       ##CYA changes to NO to test in Items details
     And click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details 'Check your answers' page

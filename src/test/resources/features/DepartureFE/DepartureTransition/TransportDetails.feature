@@ -139,8 +139,6 @@ Feature: Transport details journey - Transition
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
 
-      ## Transport equipment
-    And I choose radio option No on the 'Do you want to add any transport equipment?' page
     And I submit on the 'Transport details Check your answers' page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
