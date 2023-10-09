@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
+package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object WantToAddArrival extends YesNoPage {
+object LocationOfGoodsTypePage extends RadioPage {
 
-  override def title(args: String*): String =
-    "Do you want to add the arrival date at the office of destination?"
+  override def title(args: String*): String = "Which type of location is it?"
 
+  override def select(answer: String): this.type = {
+    answer match {
+      case "Designated location" => clickById("value")
+      case "Approved place"      => clickById("value_1")
+      case "Other"               => clickById("value_2")
+    }
+    this
+  }
 }
