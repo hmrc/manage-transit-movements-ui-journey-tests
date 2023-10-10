@@ -2,22 +2,20 @@
 
 Feature: End to end journey for Presentation Notification frontend
 
-  Background:
+  Scenario: 01 Trader completes a departure declaration that was previously pre-lodged
+
     Given I login with ID 1234567890
-    When I submit an IE015 Departure Declaration
-    Then I click on the View departure declarations link on the 'Manage your transit movements' page
+    When I submit an IE015 Pre-lodged Departure Declaration
+    Then I submit an IE928 Positive Acknowledgment
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
 
+#    3844 Landing Page - More information needed (when required fields in IE170 are MISSING in IE015/IE013)
+    And I click the Continue button on the 'More information needed to complete declaration' page
 
-  Scenario: 01
-
-#  3844 Landing Page - More information needed (when required fields in IE170 are MISSING in IE015/IE013)
-    Then I click the Continue button on the 'More information needed to complete declaration' page
-
-#  3929 Landing Page - More information needed (when required fields in IE170 are AVAILABLE in IE015/IE013)
-    Then I click the Continue button on the 'Confirmation needed to complete declaration' page
-
-#  3887
-    And I choose radio option Yes on the presentation 'Do you want to add the arrival date at the office of destination?' page
+#    3929 Landing Page - More information needed (when required fields in IE170 are AVAILABLE in IE015/IE013)
+    And I click the Continue button on the 'Confirmation needed to complete declaration' page
 
       ## Location of goods
 #    3845
@@ -50,3 +48,6 @@ Feature: End to end journey for Presentation Notification frontend
     And I enter Locator Joe on the presentation 'Who is the contact for the location of goods?' page
 #    3864
     And I enter +432 1212 1212 on the presentation 'What is the phone number for the location of goods’ contact?' page
+#    3887
+    And I choose radio option Yes on the presentation 'Do you want to add the arrival date at the office of destination?' page
+
