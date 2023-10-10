@@ -90,9 +90,16 @@ Feature: Manage transit movements frontend tests for Departures
 
 # 3000
   Scenario: 09 Trader is able to cancel a departure declaration
-    Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
-    And I refresh the page
-    When I click on the View departure declarations link on the 'Manage your transit movements' page
+    Then I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Cancel declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I sign out
+
+# 3807
+  Scenario: 10 Trader completes a departure declaration that was previously pre-lodged
+    When I submit an IE015 Pre-lodged Departure Declaration
+    Then I submit an IE928 Positive Acknowledgment
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
