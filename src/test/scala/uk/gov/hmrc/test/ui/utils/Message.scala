@@ -42,7 +42,7 @@ object Message {
     case "IE043" => IE043(World.arrivalId)
     case "IE044" => IE044(World.arrivalId)
 
-    case _       => throw new RuntimeException(s"$value not recognised")
+    case _ => throw new RuntimeException(s"$value not recognised")
   }
 }
 
@@ -78,8 +78,8 @@ case class IE014(departureId: String) extends Message {
 
 case class IE060(departureId: String) extends DepartureInboundMessage
 case class IE056(departureId: String) extends DepartureInboundMessage
-case class IE035(departureId:String) extends DepartureInboundMessage
-case class IE051(departureId:String) extends DepartureInboundMessage
+case class IE035(departureId: String) extends DepartureInboundMessage
+case class IE051(departureId: String) extends DepartureInboundMessage
 case class IE028(departureId: String) extends DepartureInboundMessage
 case class IE928(departureId: String) extends DepartureInboundMessage
 
