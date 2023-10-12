@@ -36,9 +36,12 @@ object Message {
     case "IE928" => IE928(World.departureId)
     case "IE060" => IE060(World.departureId)
     case "IE056" => IE056(World.departureId)
+    case "IE035" => IE035(World.departureId)
+    case "IE051" => IE051(World.departureId)
     case "IE057" => IE057(World.arrivalId)
     case "IE043" => IE043(World.arrivalId)
     case "IE044" => IE044(World.arrivalId)
+
     case _       => throw new RuntimeException(s"$value not recognised")
   }
 }
@@ -75,6 +78,8 @@ case class IE014(departureId: String) extends Message {
 
 case class IE060(departureId: String) extends DepartureInboundMessage
 case class IE056(departureId: String) extends DepartureInboundMessage
+case class IE035(departureId:String) extends DepartureInboundMessage
+case class IE051(departureId:String) extends DepartureInboundMessage
 case class IE028(departureId: String) extends DepartureInboundMessage
 case class IE928(departureId: String) extends DepartureInboundMessage
 

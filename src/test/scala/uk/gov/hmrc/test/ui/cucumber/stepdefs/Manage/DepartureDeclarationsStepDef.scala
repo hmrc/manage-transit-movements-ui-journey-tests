@@ -84,4 +84,14 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     CancellationErrorsPage
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the 'Goods being recovered' page$""") { () =>
+    GoodsInRecoveryDetailsPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?(?:should )?be on the 'Goods not released' page$""") { () =>
+    GoodsNotReleasedDetailsPage
+      .loadPage()
+  }
 }

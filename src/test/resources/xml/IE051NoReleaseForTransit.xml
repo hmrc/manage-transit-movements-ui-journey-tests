@@ -1,0 +1,45 @@
+<ncts:CC051C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+    <messageSender>token</messageSender>
+    <messageRecipient>token</messageRecipient>
+    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageIdentification>token</messageIdentification>
+    <messageType>CC051C</messageType>
+    <!--Optional:-->
+    <correlationIdentifier>Correlation identifier</correlationIdentifier>
+    <TransitOperation>
+        <MRN>30OWNA2F5ORCIUZIR5</MRN>
+        <declarationSubmissionDateAndTime>2014-06-09T16:15:04+01:00</declarationSubmissionDateAndTime>
+        <noReleaseMotivationCode>no Release Motivation Code</noReleaseMotivationCode>
+        <noReleaseMotivationText>no Release Motivation Text</noReleaseMotivationText>
+    </TransitOperation>
+    <CustomsOfficeOfDeparture>
+        <referenceNumber>GB211221</referenceNumber>
+    </CustomsOfficeOfDeparture>
+    <HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <identificationNumber>string</identificationNumber>
+        <!--Optional:-->
+        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+        <!--Optional:-->
+        <name>Holder name</name>
+        <!--Optional:-->
+        <Address>
+            <streetAndNumber>Street and number</streetAndNumber>
+            <!--Optional:-->
+            <postcode>postcode</postcode>
+            <city>City string</city>
+            <country>st</country>
+        </Address>
+    </HolderOfTheTransitProcedure>
+    <!--Optional:-->
+    <Representative>
+        <identificationNumber>string</identificationNumber>
+        <!--Optional:-->
+        <ContactPerson>
+            <name>Contact person</name>
+            <phoneNumber>+44112312111</phoneNumber>
+            <!--Optional:-->
+            <eMailAddress>string@string.string.com</eMailAddress>
+        </ContactPerson>
+    </Representative>
+</ncts:CC051C>
