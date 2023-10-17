@@ -103,3 +103,24 @@ Feature: Manage transit movements frontend tests for Departures
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+
+  # 4085
+  Scenario: 11 Trader is able to review IE035 message details for Goods being recovered
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE035 Recovery Notification
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    Then I should be on the 'Goods being recovered' page
+    And I sign out
+
+
+  # 4039
+  Scenario: 12 Trader is able to review IE051 message details for Goods not released
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE051 No Release For Transit
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    Then I should be on the 'Goods not released' page
+    And I sign out

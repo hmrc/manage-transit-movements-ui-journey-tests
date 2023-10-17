@@ -434,8 +434,9 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional information\?' page$""") {
-    (answer: String) =>
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional information\?' page$"""
+  ) { (answer: String) =>
     AdditionalInformationRemovePage
       .loadPage()
       .select(answer)
