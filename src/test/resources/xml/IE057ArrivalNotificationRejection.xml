@@ -7,7 +7,7 @@
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
         <MRN>28BDU7NB98LCWXLNM2</MRN>
-        <businessRejectionType>sdfghj</businessRejectionType>
+        <businessRejectionType>007</businessRejectionType>
         <rejectionDateAndTime>2014-12-25T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>2</rejectionCode>
         <rejectionReason>N5t6u7</rejectionReason>

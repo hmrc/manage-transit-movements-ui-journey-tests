@@ -1,0 +1,93 @@
+<ncts:CC057C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+    <messageSender>token</messageSender>
+    <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
+    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <messageIdentification>6Onxa3En</messageIdentification>
+    <messageType>CC057C</messageType>
+    <correlationIdentifier>co-id-1</correlationIdentifier>
+    <TransitOperation>
+        <MRN>28BDU7NB98LCWXLNM2</MRN>
+        <businessRejectionType>044</businessRejectionType>
+        <rejectionDateAndTime>2014-12-25T16:15:04+01:00</rejectionDateAndTime>
+        <rejectionCode>2</rejectionCode>
+        <rejectionReason>N5t6u7</rejectionReason>
+    </TransitOperation>
+    <CustomsOfficeOfDestinationActual>
+        <referenceNumber>GB000060</referenceNumber>
+    </CustomsOfficeOfDestinationActual>
+    <TraderAtDestination>
+        <identificationNumber>1</identificationNumber>
+    </TraderAtDestination>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+    <FunctionalError>
+        <errorPointer>2</errorPointer>
+        <errorCode>13</errorCode>
+        <errorReason>waf 12</errorReason>
+        <originalAttributeValue>2</originalAttributeValue>
+    </FunctionalError>
+</ncts:CC057C>

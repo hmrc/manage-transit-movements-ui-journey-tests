@@ -1,4 +1,4 @@
-@managehub @a11y
+@managehub @a11y @wip
 
 Feature: Manage transit movements frontend tests for Arrivals
 
@@ -19,7 +19,7 @@ Feature: Manage transit movements frontend tests for Arrivals
   Scenario: 02 - Trader is able to view unloading remarks for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE044 Unloading Remarks Notification With Seals
-    And I submit an IE057 Rejection
+    And I submit an IE057 Unloading Remarks Rejection
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
@@ -30,7 +30,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 #    2917
   Scenario: 03 - Trader is able to view arrival notification rejections for all errors
     When I submit an IE007 Arrival Notification
-    And I submit an IE057 Rejection
+    And I submit an IE057 Arrival Notification Rejection
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
