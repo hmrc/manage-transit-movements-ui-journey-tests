@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.AddressPage
 
-object LocationOfGoodsTypePage extends RadioPage {
+object LocationOfGoodsAddressPage extends AddressPage {
 
-  override def title(args: String*): String = "Which type of location is it?"
+  override def title(args: String*): String = "What is the address for the location of goods?"
 
-  override def select(answer: String): this.type = {
-    answer match {
-      case "Designated location" => clickById("value")
-      case "Approved place"      => clickById("value_1")
-      case "Other"               => clickById("value_2")
-    }
-    this
-  }
+  override val addressLine1: String = "1 Old Lane"
+  override val addressLine2: String = "Hull"
+  override val postalCode: String   = "H1 0AA"
+
 }

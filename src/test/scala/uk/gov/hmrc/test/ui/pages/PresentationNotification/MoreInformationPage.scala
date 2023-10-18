@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.CoordinatesPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object LocationOfGoodsCoordinatesPage extends CoordinatesPage {
+object MoreInformationPage extends Page {
 
-  override def title(args: String*): String = "What are the coordinates for the location of goods?"
+  override def title(args: String*): String = "More information needed to complete declaration"
 
 }
