@@ -17,6 +17,14 @@
       "newLevel": 0
     },
     {
+      "reason": "PII Disclosure - False positive",
+      "contextId": 1,
+      "url": "http:\\/\\/localhost:9949\\/auth-login-stub\\/.*",
+      "ruleId": 10062,
+      "urlIsRegex": "true",
+      "newLevel": 0
+    },
+    {
       "reason": "Cross-Domain Misconfiguration - Sub-resources loaded from code.jquery.com use 'Access-Control-Allow-Origin: *' for CORS",
       "contextId": 1,
       "url": "https://code.jquery.com/jquery-3.6.0.min.js",
