@@ -1,4 +1,4 @@
-@presentationNotification @a11y @wip
+@presentationNotification @a11y
 
 Feature: Manage transit movements frontend tests for Departures
 
