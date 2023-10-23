@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object LocationOfGoodsAuthorisationNumberPage extends StringPage {
+object LocationOfGoodsCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "What is the authorisation number for the location of goods?"
+  override def title(args: String*): String = "In which country is the location of goods?"
 
 }

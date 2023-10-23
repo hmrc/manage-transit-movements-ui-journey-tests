@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsAddIdentificationPage extends YesNoPage {
+object LocationOfGoodsAuthorisationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "Do you want to add an additional identifier for the location of goods?"
+  override def title(args: String*): String = "What is the authorisation number for the location of goods?"
 
 }

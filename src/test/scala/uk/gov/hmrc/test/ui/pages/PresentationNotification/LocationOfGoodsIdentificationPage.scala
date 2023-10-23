@@ -14,19 +14,22 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification.LocationOfGoods
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
 import uk.gov.hmrc.test.ui.pages.RadioPage
 
-object LocationOfGoodsTypePage extends RadioPage {
+object LocationOfGoodsIdentificationPage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of location is it?"
+  override def title(args: String*): String = "How do you want to identify the location of goods?"
 
   override def select(answer: String): this.type = {
     val value = answer match {
-      case "Designated location" => "A"
-      case "Approved place"      => "C"
-      case "Other"               => "D"
+      case "Customs office identifier" => "V"
+      case "EORI number"               => "X"
+      case "GPS coordinates"           => "W"
+      case "UN/LOCODE"                 => "U"
+      case "Address"                   => "Z"
+      case "Postal code"               => "T"
     }
     clickRadioBtn(value)
     this
