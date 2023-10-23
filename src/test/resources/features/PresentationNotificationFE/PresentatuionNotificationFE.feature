@@ -4,7 +4,6 @@ Feature: Manage transit movements frontend tests for Departures
 
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
-
 # 3807
   Scenario: 01 Trader completes a Normal departure declaration that was previously pre-lodged
     When I submit an IE015 Prelodged Departure Declaration
@@ -15,10 +14,11 @@ Feature: Manage transit movements frontend tests for Departures
 
 
     And I click the Continue button on the presentation 'More information needed to complete declaration' page
-    And I choose radio option Approved place on the presentation 'Which type of location is it?' page
+    And I choose radio option Approved place on the presentation 'Which type of location are the goods in?' page
     And I choose a radio option Address on the presentation 'How do you want to identify the location of goods?' page
     And I select Italy on the presentation 'In which country is the location of goods?' page
     And I fill in the address on the presentation 'What is the address for the location of goods?' page
+
 
   Scenario: 02 Trader completes a Simplified departure declaration that was previously pre-lodged
     When I submit an IE015 Simplified Prelodged Departure Declaration

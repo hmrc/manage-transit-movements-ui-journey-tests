@@ -27,7 +27,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location is it\?' page$""") { (answer: String) =>
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location are the goods in\?' page$""") { (answer: String) =>
     LocationOfGoodsTypePage
       .loadPage()
       .select(answer)

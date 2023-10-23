@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object LocationOfGoodsTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of location is it?"
+  override def title(args: String*): String = "Which type of location are the goods in?"
 
   override def select(answer: String): this.type = {
     answer match {
