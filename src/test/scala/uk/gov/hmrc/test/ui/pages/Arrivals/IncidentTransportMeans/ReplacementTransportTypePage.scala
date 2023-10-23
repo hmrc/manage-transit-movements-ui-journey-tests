@@ -24,19 +24,20 @@ object ReplacementTransportTypePage extends RadioPage {
     "Which identification do you want to use for the replacement means of transport?"
 
   override def select(answer: String): this.type = {
-    answer match {
-      case "Name of a sea-going vessel"                                     => clickById("value")
-      case "IATA flight number"                                             => clickById("value_1")
-      case "Name of an inland waterways vehicle"                            => clickById("value_2")
-      case "IMO ship identification number"                                 => clickById("value_3")
-      case "Wagon number"                                                   => clickById("value_4")
-      case "Train number"                                                   => clickById("value_5")
-      case "Registration number of a road vehicle"                          => clickById("value_6")
-      case "Registration number of a road trailer"                          => clickById("value_7")
-      case "Registration number of an aircraft"                             => clickById("value_8")
-      case "European vessel identification number (ENI code)"               => clickById("value_9")
-      case "Unknown - this can only be used during the transitional period" => clickById("value_10")
+    val value = answer match {
+      case "Name of a sea-going vessel"                                     => "11"
+      case "IATA flight number"                                             => "40"
+      case "Name of an inland waterways vehicle"                            => "81"
+      case "IMO ship identification number"                                 => "10"
+      case "Wagon number"                                                   => "20"
+      case "Train number"                                                   => "21"
+      case "Registration number of a road vehicle"                          => "30"
+      case "Registration number of a road trailer"                          => "31"
+      case "Registration number of an aircraft"                             => "41"
+      case "European vessel identification number (ENI code)"               => "80"
+      case "Unknown - this can only be used during the transitional period" => "99"
     }
+    clickRadioBtn(value)
     this
   }
 }

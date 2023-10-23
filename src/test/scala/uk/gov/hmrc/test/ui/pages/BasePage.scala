@@ -72,8 +72,6 @@ trait BasePage extends BrowserDriver with Matchers {
 
   def clickById(id: String): Unit = click(By.id(id))
 
-  def clickByValue(value: String): Unit = click((By.cssSelector(s"input[value='$value']")))
-
   def clickByPartialLinkText(linkText: String): Unit = click(By.partialLinkText(linkText))
 
   def submitPage(): Unit = clickById("submit")
