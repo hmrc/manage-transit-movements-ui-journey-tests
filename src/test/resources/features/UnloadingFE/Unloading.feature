@@ -38,7 +38,7 @@ Feature: Submit unloading remarks with seals
     And I choose radio option No on the 'Are any of the seals broken?' page
     And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option No on the 'Were there any discrepancies between the transit and the declaration summary?' page
-    When I submit an IE057 Rejection
+    When I submit an IE057 Unloading Remarks Rejection
     And I submit the 'Check your answers' page
     Then I should be on the 'You cannot send these unloading remarks' page
     And I sign out
