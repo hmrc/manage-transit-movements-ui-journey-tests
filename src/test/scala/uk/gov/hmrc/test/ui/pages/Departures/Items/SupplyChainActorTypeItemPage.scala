@@ -24,10 +24,10 @@ object SupplyChainActorTypeItemPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     val typeSupplyChainActor = answer match {
-      case "Consolidator"      => "Consolidator"
-      case "Freight forwarder" => "Freight Forwarder"
-      case "Manufacturer"      => "Manufacturer"
-      case "Warehouse keeper"  => "Warehouse Keeper"
+      case "Consolidator"      => "CS"
+      case "Freight forwarder" => "FW"
+      case "Manufacturer"      => "MF"
+      case "Warehouse keeper"  => "WH"
     }
     clickRadioBtn(typeSupplyChainActor)
     this

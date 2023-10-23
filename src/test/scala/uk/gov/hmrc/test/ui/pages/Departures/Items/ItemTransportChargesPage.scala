@@ -23,15 +23,16 @@ object ItemTransportChargesPage extends RadioPage {
   override def title(args: String*): String = "Which method of payment do you want to use for transport charges?"
 
   override def select(answer: String): this.type = {
-    answer match {
-      case "Payment in cash"             => clickById("value")
-      case "Payment by credit card"      => clickById("value_1")
-      case "Payment by cheque"           => clickById("value_2")
-      case "Electronic credit transfer"  => clickById("value_3")
-      case "Account holder with carrier" => clickById("value_4")
-      case "Not pre-paid"                => clickById("value_5")
-      case "Other"                       => clickById("value_6")
+    val value = answer match {
+      case "Payment in cash"             => "A"
+      case "Payment by credit card"      => "B"
+      case "Payment by cheque"           => "C"
+      case "Electronic credit transfer"  => "H"
+      case "Account holder with carrier" => "Y"
+      case "Not pre-paid"                => "Z"
+      case "Other"                       => "D"
     }
+    clickRadioBtn(value)
     this
   }
 }
