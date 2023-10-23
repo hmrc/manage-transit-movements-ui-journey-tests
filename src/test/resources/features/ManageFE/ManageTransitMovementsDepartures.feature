@@ -98,7 +98,7 @@ Feature: Manage transit movements frontend tests for Departures
 
 # 3807
   Scenario: 10 Trader completes a departure declaration that was previously pre-lodged
-    When I submit an IE015 Pre-lodged Departure Declaration
+    When I submit an IE015 Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
