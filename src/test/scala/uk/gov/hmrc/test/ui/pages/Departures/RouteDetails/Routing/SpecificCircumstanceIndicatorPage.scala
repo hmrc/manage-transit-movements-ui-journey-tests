@@ -23,10 +23,11 @@ object SpecificCircumstanceIndicatorPage extends RadioPage {
   override def title(args: String*): String = "Which specific circumstance indicator do you want to add?"
 
   override def select(answer: String): this.type = {
-    answer match {
-      case "XXX - Authorised economic operators"                                    => clickById("value")
-      case "A20 - Express consignments in the context of exit summary declarations" => clickById("value_1")
+    val value = answer match {
+      case "XXX - Authorised economic operators"                                    => "XXX"
+      case "A20 - Express consignments in the context of exit summary declarations" => "A20"
     }
+    clickRadioBtn(value)
     this
   }
 }

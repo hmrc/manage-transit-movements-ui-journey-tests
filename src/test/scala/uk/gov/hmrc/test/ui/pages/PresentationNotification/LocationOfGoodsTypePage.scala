@@ -23,11 +23,12 @@ object LocationOfGoodsTypePage extends RadioPage {
   override def title(args: String*): String = "Which type of location are the goods in?"
 
   override def select(answer: String): this.type = {
-    answer match {
-      case "Designated location" => clickById("value")
-      case "Approved place"      => clickById("value_1")
-      case "Other"               => clickById("value_2")
+    val value = answer match {
+      case "Designated location" => "A"
+      case "Approved place"      => "C"
+      case "Other"               => "D"
     }
+    clickRadioBtn(value)
     this
   }
 }

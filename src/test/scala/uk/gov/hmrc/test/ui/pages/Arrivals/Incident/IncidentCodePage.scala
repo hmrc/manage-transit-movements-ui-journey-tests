@@ -23,14 +23,15 @@ object IncidentCodePage extends YesNoPage {
   override def title(args: String*): String = "Which type of incident was it?"
 
   override def select(answer: String): this.type = {
-    answer match {
-      case "1 - The carrier"              => clickById("value")
-      case "2 - The seals"                => clickById("value_1")
-      case "3 - The goods"                => clickById("value_2")
-      case "4 - The goods were partially" => clickById("value_3")
-      case "5 - The holder"               => clickById("value_4")
-      case "6 - The means"                => clickById("value_5")
+    val value = answer match {
+      case "1 - The carrier"              => "1"
+      case "2 - The seals"                => "2"
+      case "3 - The goods"                => "3"
+      case "4 - The goods were partially" => "4"
+      case "5 - The holder"               => "5"
+      case "6 - The means"                => "6"
     }
+    clickRadioBtn(value)
     this
   }
 }

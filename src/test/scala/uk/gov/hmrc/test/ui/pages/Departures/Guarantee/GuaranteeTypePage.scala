@@ -23,28 +23,29 @@ object GuaranteeTypePage extends RadioPage {
   override def title(args: String*): String = "Which type of guarantee is it?"
 
   override def select(answer: String): this.type = {
-    answer match {
+    val value = answer match {
       case "(0) Guarantee waiver"                                                                   =>
-        clickById("value")
+        "0"
       case "(1) Comprehensive guarantee"                                                            =>
-        clickById("value_1")
+        "1"
       case "(2) Individual guarantee as an undertaking by a guarantor"                              =>
-        clickById("value_2")
+        "2"
       case "(3) Individual guarantee in cash"                                                       =>
-        clickById("value_3")
+        "3"
       case "(4) Individual guarantee in the form of vouchers"                                       =>
-        clickById("value_4")
+        "4"
       case "(5) Guarantee waiver – secured for 500 euros or less"                                   =>
-        clickById("value_5")
+        "5"
       case "(8) Guarantee not required – exempt public body"                                        =>
-        clickById("value_6")
+        "8"
       case "(9) Individual guarantee with multiple usage"                                           =>
-        clickById("value_7")
+        "9"
       case "(A) Guarantee waiver by agreement"                                                      =>
-        clickById("value_8")
+        "A"
       case "(R) Guarantee not required – goods carried on the Rhine, the Danube or their waterways" =>
-        clickById("value_9")
+        "R"
     }
+    clickRadioBtn(value)
     this
   }
 }
