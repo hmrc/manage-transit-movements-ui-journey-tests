@@ -27,6 +27,6 @@ import org.junit.runner.RunWith
   tags =
     "@departureGBe2e or @departureXIe2e or @departureGuaranteeDetails or @departureHub or @departureItemDetails or " +
       "@departureRouteDetails or @departureTraderDetails or @departureTransportDetails or @departureDocuments or " +
-      "@arrivalE2e or @cancellation or @managehub or @manageDraftDeparture or @unloading_remarks or @departureAmendment"
+      "@arrivalE2e or @cancellation or @managehub or @manageDraftDeparture or @unloading_remarks or @departureAmendment or @presentationNotification"
 )
 class RunnerForAll {}

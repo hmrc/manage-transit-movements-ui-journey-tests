@@ -25,8 +25,6 @@ import org.junit.runner.RunWith
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
   tags =
-    "@departureGBe2eTransition or @departureXIe2eTransition or @departureGuaranteeDetailsTransition or @departureHubTransition or @departureItemDetailsTransition or " +
-      "@departureRouteDetailsTransition or @departureTraderDetailsTransition or @departureTransportDetailsTransition or @departureDocumentsTransition or " +
-      "@arrivalE2eTransition or @departureAmendmentTransition or @presentationNotification"
+    "@presentationNotification"
 )
-class RunnerForAllTransition {}
+class RunnerForPresentationNotification {}
