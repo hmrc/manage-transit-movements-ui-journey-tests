@@ -64,4 +64,44 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsAddContactPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'Who is the contact for the location of goods\?' page$""") { (answer: String) =>
+    LocationOfGoodsContactPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the phone number for the location of goods’ contact\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsContactTelephoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add an additional identifier for the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsAddIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the additional identifier for the location of goods\?' page$""") {
+    (answer: String) =>
+      LocationOfGoodsAdditionalIdentifierPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
 }
