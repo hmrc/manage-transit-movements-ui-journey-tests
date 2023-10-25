@@ -4,7 +4,7 @@ Feature: Manage transit movements frontend tests for Departures
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
 # 3807
-  @wip
+
   Scenario: 01 Trader completes a Normal departure declaration that was previously pre-lodged
     When I submit an IE015 Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
