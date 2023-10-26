@@ -64,4 +64,43 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a UN LOCODE for the place of loading\?' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingAddUnLocodePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
+    PlaceOfLoadingUnLocodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add extra information for the place of loading\?' page$"""
+  ) { (answer: String) =>
+    PlaceOfLoadingAddExtraInformationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the presentation 'In which country is the place of loading\?' page$""") { (answer: String) =>
+    PlaceOfLoadingCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'Where in (.*) is the place of loading\?' page$""") {
+    (answer: String, countryInTitle: String) =>
+      PlaceOfLoadingLocationPage
+        .loadPage(countryInTitle)
+        .fillInput(answer)
+        .submitPage()
+  }
+
 }
