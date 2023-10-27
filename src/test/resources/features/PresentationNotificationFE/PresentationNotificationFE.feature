@@ -23,6 +23,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I enter Locator Joe on the presentation 'Who is the contact for the location of goods?' page
     And I enter +432 1212 1212 on the presentation 'What is the phone number for the location of goods’ contact?' page
 
+
     And I choose radio option Yes on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
     And I enter DEAAL on the presentation 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the presentation 'Do you want to add extra information for the place of loading?' page

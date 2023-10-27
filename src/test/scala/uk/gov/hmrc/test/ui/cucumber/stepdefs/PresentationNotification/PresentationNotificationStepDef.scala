@@ -104,6 +104,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+
   And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a UN LOCODE for the place of loading\?' page$""") {
     (answer: String) =>
       PlaceOfLoadingAddUnLocodePage
@@ -142,5 +143,6 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
+
 
 }
