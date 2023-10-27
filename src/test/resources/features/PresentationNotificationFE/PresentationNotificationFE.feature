@@ -23,6 +23,12 @@ Feature: Manage transit movements frontend tests for Departures
     And I enter Locator Joe on the presentation 'Who is the contact for the location of goods?' page
     And I enter +432 1212 1212 on the presentation 'What is the phone number for the location of goods’ contact?' page
 
+    And I choose radio option Yes on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
+    And I enter DEAAL on the presentation 'What is the UN LOCODE for the place of loading?' page
+    And I choose radio option Yes on the presentation 'Do you want to add extra information for the place of loading?' page
+    And I select United Kingdom on the presentation 'In which country is the place of loading?' page
+    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
+
 
   Scenario: 02 Trader completes a Simplified departure declaration that was previously pre-lodged
     When I submit an IE015 Simplified Prelodged Departure Declaration
@@ -49,8 +55,6 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
 
     And I click the Continue button on the presentation 'More information needed to complete declaration' page
-    And I choose radio option Yes on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I enter DEAAL on the presentation 'What is the UN LOCODE for the place of loading?' page
-    And I choose radio option Yes on the presentation 'Do you want to add extra information for the place of loading?' page
+    And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
     And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
