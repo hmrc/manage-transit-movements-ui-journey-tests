@@ -1,6 +1,6 @@
-    <ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+<ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
     <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
+    <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC056C</messageType>
@@ -16,7 +16,7 @@
         <rejectionReason>string</rejectionReason>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>stringst</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
@@ -40,48 +40,6 @@
         <status>token</status>
     </Representative>
     <!--0 to 9999 repetitions:-->
-    <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was an error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was another error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>There was a violation on a submitted codelist</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
-        <errorCode>15</errorCode>
-        <errorReason>Value appeared when it should'nt have been possible</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
         <errorCode>14</errorCode>
