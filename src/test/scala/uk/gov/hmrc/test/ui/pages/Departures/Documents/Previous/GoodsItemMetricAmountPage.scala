@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object GoodsItemMetricAmountPage extends StringPage {
 
-  override def title(args: String*): String = "How many of these do the goods include?"
+  override def title(args: String*): String = "How many of this metric do the goods include?"
 
 }
