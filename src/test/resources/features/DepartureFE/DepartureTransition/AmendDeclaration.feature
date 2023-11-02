@@ -133,7 +133,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     Then I submit an IE028 MRN Allocated
     Then I submit an IE013 Declaration Amendment
     And I submit an IE056 Amendment Rejection With Amendable Errors
-    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -146,8 +146,8 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I should see ERROR status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
-    And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
-    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
+    And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
+    And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
     And I submit on the 'Trader details Check your answers' page
     And I should see AMENDED status for trader details on the 'Declaration summary' page
 

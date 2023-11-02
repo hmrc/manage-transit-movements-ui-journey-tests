@@ -146,8 +146,8 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see ERROR status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
-    And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
-    And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
+    And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
+    And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
     And I submit on the 'Trader details Check your answers' page
     And I should see AMENDED status for trader details on the 'Declaration summary' page
 
