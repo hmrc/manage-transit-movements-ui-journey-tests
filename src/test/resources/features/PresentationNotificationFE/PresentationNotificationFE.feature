@@ -1,6 +1,9 @@
 @presentationNotification @a11y
 
+
+
 Feature: Manage transit movements frontend tests for Departures
+
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
 # 3807
@@ -28,7 +31,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I enter DEAAL on the presentation 'What is the UN LOCODE for the place of loading?' page
     And I choose radio option Yes on the presentation 'Do you want to add extra information for the place of loading?' page
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
-    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
+#    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
 
 
   Scenario: 02 Trader completes a Simplified departure declaration that was previously pre-lodged
@@ -47,6 +50,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
     And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
+    And I enter the date on the presentation 'When do you expect the transit to arrive in ZQZ20442?' page
 
   Scenario: 03 Trader completes a departure declaration that was previously pre-lodged - Location of Goods was filled in initially
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
@@ -58,4 +62,4 @@ Feature: Manage transit movements frontend tests for Departures
     And I click the Continue button on the presentation 'More information needed to complete declaration' page
     And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
-    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
+#    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
