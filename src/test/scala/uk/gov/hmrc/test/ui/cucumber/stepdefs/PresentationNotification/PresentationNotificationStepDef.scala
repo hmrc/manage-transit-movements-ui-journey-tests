@@ -21,25 +21,29 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
 
-  And("""^(?:I )?click the Continue button on the presentation 'More information needed to complete declaration' page$""") { () =>
+  And(
+    """^(?:I )?click the Continue button on the presentation 'More information needed to complete declaration' page$"""
+  ) { () =>
     MoreInformationPage
       .loadPage()
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location are the goods in\?' page$""") { (answer: String) =>
-    LocationOfGoodsTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?choose a radio option (.*) on the presentation 'How do you want to identify the location of goods\?' page$""") {
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location are the goods in\?' page$""") {
     (answer: String) =>
-      LocationOfGoodsIdentificationPage
+      LocationOfGoodsTypePage
         .loadPage()
         .select(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose a radio option (.*) on the presentation 'How do you want to identify the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the presentation 'In which country is the location of goods\?' page$""") {
@@ -49,42 +53,47 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-  And("""^(?:I )?fill in the address on the presentation 'What is the address for the location of goods\?' page$""") { () =>
-    LocationOfGoodsAddressPage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the presentation 'What is the authorisation number for the location of goods\?' page$""") {
-    (answer: String) =>
-      LocationOfGoodsAuthorisationNumberPage
+  And("""^(?:I )?fill in the address on the presentation 'What is the address for the location of goods\?' page$""") {
+    () =>
+      LocationOfGoodsAddressPage
         .loadPage()
-        .fillInput(answer)
+        .fillInputs()
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page$""") {
-    (answer: String) =>
-      LocationOfGoodsAddContactPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the presentation 'Who is the contact for the location of goods\?' page$""") { (answer: String) =>
-    LocationOfGoodsContactPage
+  And(
+    """^(?:I )?enter (.+) on the presentation 'What is the authorisation number for the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsAuthorisationNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the presentation 'What is the phone number for the location of goods’ contact\?' page$""") {
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsAddContactPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'Who is the contact for the location of goods\?' page$""") {
     (answer: String) =>
-      LocationOfGoodsContactTelephoneNumberPage
+      LocationOfGoodsContactPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.+) on the presentation 'What is the phone number for the location of goods’ contact\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsContactTelephoneNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
@@ -96,28 +105,30 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the presentation 'What is the additional identifier for the location of goods\?' page$""") {
-    (answer: String) =>
-      LocationOfGoodsAdditionalIdentifierPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
-  }
-
-
-  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a UN LOCODE for the place of loading\?' page$""") {
-    (answer: String) =>
-      PlaceOfLoadingAddUnLocodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the presentation 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
-    PlaceOfLoadingUnLocodePage
+  And(
+    """^(?:I )?enter (.+) on the presentation 'What is the additional identifier for the location of goods\?' page$"""
+  ) { (answer: String) =>
+    LocationOfGoodsAdditionalIdentifierPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a UN LOCODE for the place of loading\?' page$"""
+  ) { (answer: String) =>
+    PlaceOfLoadingAddUnLocodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the UN LOCODE for the place of loading\?' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingUnLocodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
@@ -129,11 +140,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the presentation 'In which country is the place of loading\?' page$""") { (answer: String) =>
-    PlaceOfLoadingCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the presentation 'In which country is the place of loading\?' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation 'Where in (.*) is the place of loading\?' page$""") {
@@ -142,7 +154,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .loadPage(countryInTitle)
         .fillInput(answer)
         .submitPage()
-  };
+  }
 
   And("""^(?:I )?enter the date on the presentation 'When do you expect the transit to arrive in (.*)\?' page$""") {
     (officeOfDestination: String) =>
@@ -151,6 +163,5 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .fillInputs()
         .submitPage()
   }
-
 
 }

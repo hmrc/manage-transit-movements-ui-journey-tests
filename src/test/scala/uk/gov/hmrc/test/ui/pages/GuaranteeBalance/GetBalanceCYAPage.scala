@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@presentationNotification"
-)
-class RunnerForPresentationNotification {}
+object GetBalanceCYAPage extends StringPage with GuaranteeBalancePage {
+
+  override def title(args: String*): String = "Check your answers"
+
+  override def submitPage(): Unit = clickById("continue")
+
+  def clickLinkByIdTextSplit(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
+
+}
