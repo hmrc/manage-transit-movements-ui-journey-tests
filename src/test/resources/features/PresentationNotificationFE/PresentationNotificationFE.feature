@@ -50,7 +50,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
     And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
-    And I enter the date on the presentation 'When do you expect the transit to arrive in ZQZ20442?' page
+    And I enter the date on the presentation 'When do you expect the transit to arrive in Belfast EPU (XI000142)?' page
 
   Scenario: 03 Trader completes a departure declaration that was previously pre-lodged - Location of Goods was filled in initially
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
