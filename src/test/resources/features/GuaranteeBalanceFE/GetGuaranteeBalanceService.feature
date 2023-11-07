@@ -1,5 +1,4 @@
 @getGuaranteeBalanceService
-
 Feature: Get Guarantee Balance frontend journey test
 
   Scenario: 01 Trader is able to see their balance
