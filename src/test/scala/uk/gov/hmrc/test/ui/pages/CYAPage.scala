@@ -20,7 +20,10 @@ import org.openqa.selenium.By
 
 object CYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
+//  override def title(args: String*): String = "Check your answers"
+//
+  override def title(args: String*): String =
+    String.format("Check your answers - %s", args: _*)
 
   def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"

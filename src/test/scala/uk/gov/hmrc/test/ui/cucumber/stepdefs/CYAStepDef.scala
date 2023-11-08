@@ -61,6 +61,12 @@ class CYAStepDef extends BaseStepDef {
 
   }
 
+  And("""^(?:I )?submit on the Check your answers section (.*) page$""") { (subheading: String) =>
+    CYAPage
+      .loadPage(subheading)
+      .submitPage()
+  }
+
   And("""^(?:I )?click the Change link for (.+) on the 'Check your answers' page$""") { (text: String) =>
     CYAPage
       .clickLinkById(text)
