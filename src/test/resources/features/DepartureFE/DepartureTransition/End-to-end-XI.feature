@@ -43,7 +43,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
-    And I submit on the 'Trader details Check your answers' page
+    And I submit on the Check your answers section Trader details page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for trader details on the 'Declaration summary' page
 
@@ -58,14 +58,15 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route?' page
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the 'Route details - Transit route Check your answers' page
+    And I submit on the Check your answers section Route details - Transit route page
 
       ## Location of goods
     And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page
-    And I submit on the 'Route details - Location of goods Check your answers' page
+    And I submit on the Check your answers section Route details - Location of goods page
+
 
       ## Place of loading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -76,8 +77,9 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
     And I select United Kingdom on the 'Which country is the place of unloading in?' page
     And I enter London on the 'Where in United Kingdom is the place of unloading?' page
-    And I submit on the 'Route details - Places of loading and unloading Check your answers' page
-    And I submit on the 'Route details Check your answers' page
+
+    And I submit on the Check your answers section Route details - Places of loading and unloading page
+    And I submit on the Check your answers section Route details page
     Then I should be on the 'Declaration summary' page
 
       ## Guarantee details
@@ -106,7 +108,8 @@ Feature: End to end journey for Northern Ireland office of departure
       ## Border means of transport
     And I choose radio option No on 'Do you want to add a border mode of transport?' page
     And I choose radio option No on the border means 'Do you want to add identification for this vehicle?' page
-    And I submit the 'Check your answers' page
+    And I submit on the Check your answers section Modes and means of transport page
+
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -136,7 +139,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option No on the 'Are all the items being dispatched from the same country?' page
     And click the Change link for Are all the items being transported to the same country? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
-    And I submit on the 'Transport details Check your answers' page
+    And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 
     # Documents
@@ -149,12 +152,14 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 10001 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the 'Documents Check your answers' page
+    And I submit on the Check your answers section Documents page
+
     And I choose radio option Yes on the 'You have added 1 document' page
 #    Transport document from list CL754
     And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
-    And I submit on the 'Documents Check your answers' page
+    And I submit on the Check your answers section Documents page
+
     And I choose radio option Yes on the 'You have added 2 documents' page
     # Previous document from list
     And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
@@ -162,7 +167,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods transported into the UK?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the 'Documents Check your answers' page
+    And I submit on the Check your answers section Documents page
     And I choose radio option No on the 'You have added 3 documents' page
 
       #Items
@@ -204,7 +209,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
-    And I submit on the 'Item 1 Check your answers' page
+    And I submit on the Check your answers section Items page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page

@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.junit.Assert.assertTrue
 import uk.gov.hmrc.test.ui.pages.CYAPage.pageSubheading
 import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.GenericCYAPage
 
 class CYAStepDef extends BaseStepDef {
 
@@ -28,7 +29,7 @@ class CYAStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?submit the 'Check your answers' page$""") { () =>
-    CYAPage
+    GenericCYAPage
       .loadPage()
       .submitPage()
   }
