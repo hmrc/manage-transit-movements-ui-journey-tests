@@ -34,33 +34,6 @@ class CYAStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?submit on the '(Trader details|
-    |Route details - Transit route|
-    |Route details - Office of transit|
-    |Route details - Location of goods|
-    |Route details - Places of loading and unloading|
-    |Route details - Office of exit for transit|
-    |Route details - Office of transit|
-    |Route details|
-    |Transport details - Border means of transport|
-    |Transport details - Modes and means of transport|
-    |Transport details - Transport equipment|
-    |Transport details|
-    |Documents|
-    |Item 1|
-    |Item 2|
-    |Guarantee details|
-    |Arrivals - Authorisations|
-    |Arrivals - Transport equipment|
-    |Arrivals - Incidents|
-    |Arrivals) Check your answers' page$""") { (subheading: String) =>
-    CYAPage
-      .loadPage()
-      .pageSubheading()
-    assertTrue(pageSubheading().contains(subheading))
-    CYAPage.submitPage()
-
-  }
 
   And("""^(?:I )?submit on the Check your answers section (.*) page$""") { (subheading: String) =>
     CYAPage

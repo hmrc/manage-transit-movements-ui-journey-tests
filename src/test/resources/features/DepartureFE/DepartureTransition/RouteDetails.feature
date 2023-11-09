@@ -1,4 +1,4 @@
-@departureRouteDetailsTransition @wip
+@departureRouteDetailsTransition
 
 Feature: Route details journey - Transition
 
@@ -34,20 +34,20 @@ Feature: Route details journey - Transition
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Check your answers section Route details - Transit route page
+    And I submit on the Check your answers section Transit route page
 
         ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
     And I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
-    And I submit on the Check your answers section Route details - Office of transit page
+    And I submit on the Check your answers section Office of transit page
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Bastia port, France?' page
 
-    And I submit on the Check your answers section Route details - Office of transit page
+    And I submit on the Check your answers section Office of transit page
 
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
@@ -58,12 +58,12 @@ Feature: Route details journey - Transition
     And I select Germany on the 'In which country is the office of exit for transit?' page
     When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
 
-    And I submit on the Check your answers section Route details - Office of exit for transit page
+    And I submit on the Check your answers section Office of exit for transit page
     And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
     And I select France on the 'In which country is the office of exit for transit?' page
     And I select Agen bureau on the 'Where in France is the office of exit for transit?' page
 
-    And I submit on the Check your answers section Route details - Office of exit for transit page
+    And I submit on the Check your answers section Office of exit for transit page
     And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit for transit?' page
     And I choose radio option No on the 'You have added 1 office of exit for transit' page
@@ -77,7 +77,7 @@ Feature: Route details journey - Transition
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
     And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
 
-    And I submit on the Check your answers section Route details - Location of goods page
+    And I submit on the Check your answers section Location of goods page
 
       ## Place of loading UN LOCODE
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -92,7 +92,7 @@ Feature: Route details journey - Transition
     And I select Italy on the 'Which country is the place of unloading in?' page
     And I enter Milano on the 'Where in Italy is the place of unloading?' page
 
-    And I submit on the Check your answers section Route details - Places of loading and unloading page
+    And I submit on the Check your answers section Places of loading and unloading page
     And I submit on the Check your answers section Route details page
 
     Then I should be on the 'Declaration summary' page
@@ -116,14 +116,14 @@ Feature: Route details journey - Transition
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route?' page
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Check your answers section Route details - Transit route page
+    And I submit on the Check your answers section Transit route page
 
       ## Location of goods
     And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page
-    And I submit on the Check your answers section Route details - Location of goods page
+    And I submit on the Check your answers section Location of goods page
 
       ## Place of loading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -134,7 +134,7 @@ Feature: Route details journey - Transition
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
     And I select United Kingdom on the 'Which country is the place of unloading in?' page
     And I enter London on the 'Where in United Kingdom is the place of unloading?' page
-    And I submit on the Check your answers section Route details - Places of loading and unloading page
+    And I submit on the Check your answers section Places of loading and unloading page
     And I submit on the Check your answers section Route details page
 
     Then I should be on the 'Declaration summary' page

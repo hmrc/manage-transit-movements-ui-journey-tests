@@ -58,14 +58,14 @@ Feature: End to end journey for Northern Ireland office of departure
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route?' page
     When I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Check your answers section Route details - Transit route page
+    And I submit on the Check your answers section Transit route page
 
       ## Location of goods
     And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I choose radio option Designated location on the 'Which type of location is it?' page
     And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page
     And I select XI on the departure location of goods customs office identification page
-    And I submit on the Check your answers section Route details - Location of goods page
+    And I submit on the Check your answers section Location of goods page
 
 
       ## Place of loading
@@ -78,7 +78,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I select United Kingdom on the 'Which country is the place of unloading in?' page
     And I enter London on the 'Where in United Kingdom is the place of unloading?' page
 
-    And I submit on the Check your answers section Route details - Places of loading and unloading page
+    And I submit on the Check your answers section Places of loading and unloading page
     And I submit on the Check your answers section Route details page
     Then I should be on the 'Declaration summary' page
 
