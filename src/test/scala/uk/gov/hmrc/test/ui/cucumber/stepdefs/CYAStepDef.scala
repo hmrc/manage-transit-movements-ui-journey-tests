@@ -34,7 +34,6 @@ class CYAStepDef extends BaseStepDef {
       .submitPage()
   }
 
-
   And("""^(?:I )?submit on the Check your answers section (.*) page$""") { (subheading: String) =>
     CYAPage
       .loadPage(subheading)
