@@ -23,7 +23,7 @@ Feature: Guarantee details journey
     And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
-    And I submit on the 'Guarantee details Check your answers' page
+    And I submit on the Check your answers section Guarantee details page
     And I click the Remove link on the 'You have added 2 guarantees' page
     And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
     And I choose radio option Yes on the 'You have added 1 guarantee' page
@@ -33,7 +33,7 @@ Feature: Guarantee details journey
     And I enter 0 on the 'How much is the liability in pounds?' page
     And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 123.00 on the 'How much is the liability in pounds?' page
-    And I submit on the 'Guarantee details Check your answers' page
+    And I submit on the Check your answers section Guarantee details page
     And I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page
@@ -42,12 +42,12 @@ Feature: Guarantee details journey
     And I enter 0 on the 'How much is the liability in pounds?' page
     And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
-    And I submit on the 'Guarantee details Check your answers' page
+    And I submit on the Check your answers section Guarantee details page
     And I choose radio option Yes on the 'You have added 3 guarantees' page
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
-    And I submit on the 'Guarantee details Check your answers' page
+    And I submit on the Check your answers section Guarantee details page
     And I choose radio option No on the 'You have added 4 guarantees' page
 
     Then I should be on the 'Declaration summary' page

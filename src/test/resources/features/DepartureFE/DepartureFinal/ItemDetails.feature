@@ -91,7 +91,8 @@ Feature: Item details journey
     And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
-    And I submit the 'Check your answers' page
+
+    And I submit on the Check your answers section Items page
     And I click radio option Yes on the 'You have added 1 item' page
     #Add another Item
     And I enter This is a description on the 'Enter a description of item 2' page
@@ -141,7 +142,7 @@ Feature: Item details journey
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit the 'Check your answers' page
+    And I submit on the Check your answers section Items page
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
     And I sign out
@@ -197,7 +198,7 @@ Feature: Item details journey
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit the 'Check your answers' page
+    And I submit on the Check your answers section Items page
     And I click radio option No on the 'You have added 1 item' page
     And I sign out
 

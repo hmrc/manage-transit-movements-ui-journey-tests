@@ -20,7 +20,10 @@ import org.openqa.selenium.By
 
 object CYAPage extends Page {
 
-  override def title(args: String*): String = "Check your answers"
+//  override def title(args: String*): String = "Check your answers"
+//
+  override def title(args: String*): String =
+    String.format("Check your answers - %s", args: _*)
 
   def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"
@@ -36,7 +39,7 @@ object CYAPage extends Page {
       case "Were there any discrepancies between the transit and the declaration summary?" =>
         clickLinkById("add-unloading-comments")
       case "Do you want to add a contact?"                                                 => clickLinkById("has-transit-holder-contact")
-      case "Do you want to add a contact for the consignor?"                                                 => clickLinkById("has-consignor-contact")
+      case "Do you want to add a contact for the consignor?"                               => clickLinkById("has-consignor-contact")
       case "Do you want to add a contact for the location of goods?"                       => clickLinkById("location-of-goods-add-contact")
       case "Do you want to add a method of payment for transport charges?"                 => clickLinkById("add-payment-method")
       case "Do you want to add any additional information for this document?"              =>
