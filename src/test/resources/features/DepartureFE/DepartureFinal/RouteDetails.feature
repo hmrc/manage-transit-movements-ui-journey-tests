@@ -35,7 +35,6 @@ Feature: Route details journey
     And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Check your answers section Transit route page
-    And I submit on the Check your answers section Transit route page
 
       ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
