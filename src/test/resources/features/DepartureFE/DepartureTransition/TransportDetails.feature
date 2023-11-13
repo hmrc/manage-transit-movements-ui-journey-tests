@@ -44,8 +44,7 @@ Feature: Transport details journey - Transition
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit the 'Check your answers' page
-
+    And I submit on the Check your answers section Modes and means of transport page
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
@@ -78,18 +77,18 @@ Feature: Transport details journey - Transition
     And I click the Remove link  on the 'You have added 2 seals' page
     And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I submit on the 'Transport details - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
     And I choose radio option Yes on the 'You have added 1 transport equipment' page
     And I choose radio option Yes on the 'Do you want to add a container identification number?' page
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
-    And I submit on the 'Transport details - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
     And I click the Remove link on the 'You have added 2 transport equipment' page
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
       ## Charges
-    And I submit on the 'Transport details Check your answers' page
+    And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
@@ -123,7 +122,7 @@ Feature: Transport details journey - Transition
       ## Border means of transport
     And I choose radio option No on 'Do you want to add a border mode of transport?' page
     And I choose radio option No on the border means 'Do you want to add identification for this vehicle?' page
-    And I submit the 'Check your answers' page
+    And I submit on the Check your answers section Modes and means of transport page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -139,7 +138,7 @@ Feature: Transport details journey - Transition
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
 
-    And I submit on the 'Transport details Check your answers' page
+    And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out

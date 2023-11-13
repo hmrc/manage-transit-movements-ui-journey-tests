@@ -50,7 +50,8 @@ Feature: End to end journey Arrival notification feature - Transition
     When I choose radio option Yes on the You have added 1 goods item number page
     And I enter 2 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
+
   #Add Transport Equipment
     When I choose radio option Yes on the You have added 1 transport equipment page
   #Add Container Indicator - 2nd transport equipment iteration
@@ -75,12 +76,13 @@ Feature: End to end journey Arrival notification feature - Transition
     When I click the Remove link on the You have added 2 goods item numbers page
     And I click radio option Yes on the Are you sure you want to remove goods item number 5 page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
-    #Change Transport Equipment
+    And I submit on the Check your answers section Transport equipment page
+
+  #Change Transport Equipment
     When I click the Change link on the You have added 2 transport equipment page
     And I click the Change link for Container identification number on the 'Check your answers' page
     And I enter C003 on the container identification number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
     #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
@@ -89,8 +91,8 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Titanic on the What is the identification number for this page
     And I select France on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
-    #Add Another Incident
+    And I submit on the Check your answers section Incidents page
+      #Add Another Incident
     And I choose radio option Yes on the You have added 1 incident page
     #Add Incident - 2nd iteration
     And I select Italy on the In which country did the incident happen page
@@ -110,7 +112,8 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
+
     #Change an incident
     When I click the Change link on the You have added 2 incidents page
     And I click the Change link for add endorsement on the 'Check your answers' page
@@ -119,13 +122,15 @@ Feature: End to end journey Arrival notification feature - Transition
     And I enter Border Patrol on the endorsement authority page
     And I select France on the endorsement country page
     And I enter Route 1A junction 6 on the endorsement location page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
+
     #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
     And I click radio option Yes on the Are you sure you want to remove incident 1 page
     And I choose radio option No on the You have added 1 incident page
     #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
+
     #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
@@ -170,13 +175,13 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 1 on the What is the goods item number page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the You have added 1 transport equipment page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     And I should be on the 'Arrival notifications' page
@@ -207,11 +212,11 @@ Feature: End to end journey Arrival notification feature - Transition
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
@@ -243,11 +248,11 @@ Feature: End to end journey Arrival notification feature - Transition
   #Incident Identify Location
     And I choose radio option Coordinates on the incident identify location page
     And I enter 50.96622 and 50.96622 on the incident coordinates page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     And I should be on the 'Arrival notifications' page
@@ -283,14 +288,14 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the Arrivals 'You have added 1 seal' page
   #Add Goods Item
     And I choose radio option No on the Do you want to add a goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
   #Add Transport Equipment
     When I choose radio option No on the You have added 1 transport equipment page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
@@ -340,7 +345,7 @@ Feature: End to end journey Arrival notification feature - Transition
     When I choose radio option Yes on the You have added 1 goods item number page
     And I enter 2 on the What is the goods item number page
     And I choose radio option No on the You have added 2 goods item numbers page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
   #Add Transport Equipment
     When I choose radio option Yes on the You have added 1 transport equipment page
   #Add Container Indicator - 2nd transport equipment iteration
@@ -365,12 +370,12 @@ Feature: End to end journey Arrival notification feature - Transition
     When I click the Remove link on the You have added 2 goods item numbers page
     And I click radio option Yes on the Are you sure you want to remove goods item number 5 page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
   #Change Transport Equipment
     When I click the Change link on the You have added 2 transport equipment page
     And I click the Change link for Container identification number on the 'Check your answers' page
     And I enter C003 on the container identification number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
   #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
@@ -379,7 +384,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Titanic on the What is the identification number for this page
     And I select France on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option Yes on the You have added 1 incident page
   #Add Incident - 2nd iteration
@@ -400,7 +405,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Change an incident
     When I click the Change link on the You have added 2 incidents page
     And I click the Change link for add endorsement on the 'Check your answers' page
@@ -409,13 +414,13 @@ Feature: End to end journey Arrival notification feature - Transition
     And I enter Border Patrol on the endorsement authority page
     And I select France on the endorsement country page
     And I enter Route 1A junction 6 on the endorsement location page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
     And I click radio option Yes on the Are you sure you want to remove incident 1 page
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
@@ -456,13 +461,13 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Yes on the Do you want to add a goods item number page
     And I enter 1 on the What is the goods item number page
     And I choose radio option No on the You have added 1 goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the You have added 1 transport equipment page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     And I should be on the 'Arrival notifications' page
@@ -495,11 +500,11 @@ Feature: End to end journey Arrival notification feature - Transition
   #Incidents Identify Location
     And I choose radio option Address on the incident identify location page
     And I fill in address on the incident address page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
@@ -537,18 +542,18 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option No on the Arrivals 'You have added 1 seal' page
   #Add Goods Item
     And I choose radio option No on the Do you want to add a goods item number page
-    And I submit on the 'Arrivals - Transport equipment Check your answers' page
+    And I submit on the Check your answers section Transport equipment page
   #Add Transport Equipment
     And I choose radio option No on the You have added 1 transport equipment page
  #Type of Identification
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the 'Arrivals - Incidents Check your answers' page
+    And I submit on the Check your answers section Incidents page
   #Add Another Incident
     And I choose radio option No on the You have added 1 incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
@@ -566,7 +571,7 @@ Feature: End to end journey Arrival notification feature - Transition
   #Add Incident
     And I choose radio option No on the add incident page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
  #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
