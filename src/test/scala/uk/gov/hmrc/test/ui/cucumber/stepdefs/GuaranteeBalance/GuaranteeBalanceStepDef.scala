@@ -17,12 +17,56 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.GuaranteeRefNumberPage
+import uk.gov.hmrc.test.ui.pages.GuaranteeBalance.{GetBalanceAvailableBalanceConfirmationPage, GetBalanceCYAPage, GetBalanceCantCheckBalancePage, GetBalanceDetailsDoNotMatchPage, GetBalanceGuaranteeAccessCodePage, GetBalanceGuaranteeRefNumberPage}
 
 class GuaranteeBalanceStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(?:should )?be on the 'What is the Guarantee Reference Number\?' page$""") { () =>
-    GuaranteeRefNumberPage
+  Then("""^(?:I )?enter (.+) on the Get Balance 'What is the Guarantee Reference Number\?' page$""") {
+    (answer: String) =>
+      GetBalanceGuaranteeRefNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the Get Balance 'What is the access code\?' page$""") { (answer: String) =>
+    GetBalanceGuaranteeAccessCodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?submit on the Get Balance 'Check your answers' page$""") { () =>
+    GetBalanceCYAPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And("""^(?:I )?click the (.+) link on the 'The Guarantee Reference Number and access code do not match' page$""") {
+    (link: String) =>
+      GetBalanceDetailsDoNotMatchPage
+        .loadPage()
+        .selectAction(link)
+  }
+
+  And("""^(?:I )?click the (.+) link on the 'We could not check your guarantee balance' page$""") { (link: String) =>
+    GetBalanceCantCheckBalancePage
+      .loadPage()
+      .selectAction(link)
+  }
+
+  And("""^(?:I )?I click the change link for (.+) on the 'Check your answers' page$""") { (linkText: String) =>
+    GetBalanceCYAPage
+      .loadPage()
+      .clickLinkByIdTextSplit(linkText)
+  }
+
+  Then("""^I choose to wait for (.+) seconds$""") { (seconds: Int) =>
+    Thread.sleep(seconds * 1000)
+  }
+
+  Then("""^(?:I )?(?:should )?see a confirmation of my balance on the 'Available balance' page$""") { () =>
+    GetBalanceAvailableBalanceConfirmationPage
       .loadPage()
   }
 }

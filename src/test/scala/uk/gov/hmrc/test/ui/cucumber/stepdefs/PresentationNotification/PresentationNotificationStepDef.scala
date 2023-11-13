@@ -154,7 +154,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .loadPage(countryInTitle)
         .fillInput(answer)
         .submitPage()
-  };
+  }
 
   And("""^(?:I )?enter the date on the presentation 'When do you expect the transit to arrive in (.*)\?' page$""") {
     (officeOfDestination: String) =>
