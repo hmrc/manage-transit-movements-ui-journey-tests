@@ -164,4 +164,14 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Are you using any shipping containers to transport the goods\?' page$"""
+  ) { (answer: String) =>
+    ContainersPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+
 }
