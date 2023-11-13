@@ -3,7 +3,7 @@
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
-    <messageType>CC015C</messageType>
+    <messageType>CC013C</messageType>
     <TransitOperation>
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <declarationType>Pbg</declarationType>
@@ -33,6 +33,13 @@
     </Guarantee>
     <Consignment>
         <grossMass>6430669292.48125</grossMass>
+        <LocationOfGoods>
+            <typeOfLocation>A</typeOfLocation>
+            <qualifierOfIdentification>V</qualifierOfIdentification>
+            <CustomsOffice>
+                <referenceNumber>GB000011</referenceNumber>
+            </CustomsOffice>
+        </LocationOfGoods>
         <HouseConsignment>
             <sequenceNumber>48711</sequenceNumber>
             <grossMass>6430669292.48125</grossMass>

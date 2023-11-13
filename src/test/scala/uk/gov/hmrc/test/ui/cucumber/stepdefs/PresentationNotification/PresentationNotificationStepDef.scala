@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.{ActiveBorderMeansOfTransportOfficeOfTransitPage, ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage, ActiveMeansOfBorderAddConveyanceReferenceNumberPage, ActiveMeansOfBorderTransportCountryPage, ActiveMeansOfBorderTransportIdentificationNumberPage, ActiveMeansOfBorderTransportIdentificationPage, ActiveMenasOfBorderConveyanceReferenceNumberPage, BorderMeansOfTransportTransitCrossingAtBorderPage}
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.{ActiveBorderMeansOfTransportOfficeOfTransitPage, ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage, ActiveMeansOfBorderAddConveyanceReferenceNumberPage, ActiveMeansOfBorderRemoveBorderMeansOfTransportPage, ActiveMeansOfBorderTransportCountryPage, ActiveMeansOfBorderTransportIdentificationNumberPage, ActiveMeansOfBorderTransportIdentificationPage, ActiveMenasOfBorderConveyanceReferenceNumberPage, BorderMeansOfTransportTransitCrossingAtBorderPage}
 import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
@@ -234,4 +234,18 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?click radio (.*) on the 'Are you sure you want to remove this border means of transport\?' page$""") { (answer: String) =>
+    ActiveMeansOfBorderRemoveBorderMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?click the (.*) link  on the 'You have added (.*) border means of transport' page$""") {
+    (sectionLink: String, numberOfContainers: String) =>
+      ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
+        .loadPage(numberOfContainers)
+        .clickByPartialLinkText(sectionLink)
+  }
+
 }
