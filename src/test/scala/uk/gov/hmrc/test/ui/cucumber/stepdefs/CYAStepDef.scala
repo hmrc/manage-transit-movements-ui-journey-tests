@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.junit.Assert.assertTrue
 import uk.gov.hmrc.test.ui.pages.CYAPage.pageSubheading
 import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.GenericCYAPage
 
 class CYAStepDef extends BaseStepDef {
 
@@ -28,37 +29,15 @@ class CYAStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?submit the 'Check your answers' page$""") { () =>
-    CYAPage
+    GenericCYAPage
       .loadPage()
       .submitPage()
   }
 
-  And("""^(?:I )?submit on the '(Trader details|
-    |Route details - Transit route|
-    |Route details - Office of transit|
-    |Route details - Location of goods|
-    |Route details - Places of loading and unloading|
-    |Route details - Office of exit for transit|
-    |Route details - Office of transit|
-    |Route details|
-    |Transport details - Border means of transport|
-    |Transport details - Modes and means of transport|
-    |Transport details - Transport equipment|
-    |Transport details|
-    |Documents|
-    |Item 1|
-    |Item 2|
-    |Guarantee details|
-    |Arrivals - Authorisations|
-    |Arrivals - Transport equipment|
-    |Arrivals - Incidents|
-    |Arrivals) Check your answers' page$""") { (subheading: String) =>
+  And("""^(?:I )?submit on the Check your answers section (.*) page$""") { (subheading: String) =>
     CYAPage
-      .loadPage()
-      .pageSubheading()
-    assertTrue(pageSubheading().contains(subheading))
-    CYAPage.submitPage()
-
+      .loadPage(subheading)
+      .submitPage()
   }
 
   And("""^(?:I )?click the Change link for (.+) on the 'Check your answers' page$""") { (text: String) =>

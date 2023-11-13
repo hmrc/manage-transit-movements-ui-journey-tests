@@ -19,7 +19,7 @@ Feature: End to end journey Arrival notification feature
     And I enter John Joe on the arrival location of goods contact page
     And I enter +44 2345 82 83 on the arrival location of goods contact number page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
@@ -36,7 +36,7 @@ Feature: End to end journey Arrival notification feature
     And I choose radio option Customs office identifier on the arrival location of goods identification page
     And I select GB on the arrival location of goods customs office identification page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I click the Check the status of arrival notifications link on the Arrival notification sent page
     And I should be on the 'Arrival notifications' page
@@ -56,7 +56,7 @@ Feature: End to end journey Arrival notification feature
     And I enter John Joe on the arrival location of goods contact page
     And I enter +44 2345 82 83 on the arrival location of goods contact number page
   #Summary CYA page
-    And I submit on the 'Arrivals Check your answers' page
+    And I submit on the Check your answers section Arrivals page
   #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
