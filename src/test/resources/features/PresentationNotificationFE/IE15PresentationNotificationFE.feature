@@ -1,7 +1,5 @@
 @presentationNotificationIe15 @a11y
 
-
-
 Feature: Manage transit movements frontend tests for Departures
 
   Background: I log on to the Manage Transit Movements Hub service
@@ -112,13 +110,4 @@ Feature: Manage transit movements frontend tests for Departures
     And I enter 1234567890 on the presentation 'What is the authorisation number for the location of goods?' page
     And I choose radio option No on the presentation 'Do you want to add an additional identifier for the location of goods?' page
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
-
-    And I choose radio Maritime Transport on the 'How is the transit crossing the border?' page
-    And I choose radio Name of the sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification number GB1234567 on 'What is the identification number for this?' page
-    And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
-    And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I choose radio Yes on the 'Do you want to add a conveyance reference number?' page
-    And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I choose radio Yes on the 'You have added 1 border means of transport' page
 
