@@ -3,7 +3,7 @@
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
-    <messageType>CC015C</messageType>
+    <messageType>CC013C</messageType>
     <TransitOperation>
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <declarationType>Pbg</declarationType>
@@ -11,7 +11,13 @@
         <security>1</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
+        <limitDate>2023-11-15</limitDate>
     </TransitOperation>
+    <Authorisation>
+        <sequenceNumber>1</sequenceNumber>
+        <type>C521</type>
+        <referenceNumber>string</referenceNumber>
+    </Authorisation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
@@ -32,14 +38,11 @@
         <otherGuaranteeReference>1qJMA6MbhnnrOJJjHBHX</otherGuaranteeReference>
     </Guarantee>
     <Consignment>
+        <containerIndicator>1</containerIndicator>
         <grossMass>6430669292.48125</grossMass>
-        <LocationOfGoods>
-            <typeOfLocation>A</typeOfLocation>
-            <qualifierOfIdentification>V</qualifierOfIdentification>
-            <CustomsOffice>
-                <referenceNumber>GB000011</referenceNumber>
-            </CustomsOffice>
-        </LocationOfGoods>
+        <PlaceOfLoading>
+            <country>GB</country>
+        </PlaceOfLoading>
         <HouseConsignment>
             <sequenceNumber>48711</sequenceNumber>
             <grossMass>6430669292.48125</grossMass>

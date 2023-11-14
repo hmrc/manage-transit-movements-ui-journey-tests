@@ -8,7 +8,7 @@
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <declarationType>Pbg</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
-        <security>8</security>
+        <security>1</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
     </TransitOperation>
@@ -18,6 +18,11 @@
     <CustomsOfficeOfDestinationDeclared>
         <referenceNumber>XI000142</referenceNumber>
     </CustomsOfficeOfDestinationDeclared>
+    <CustomsOfficeOfTransitDeclared>
+        <sequenceNumber>1</sequenceNumber>
+        <referenceNumber>XI000142</referenceNumber>
+        <arrivalDateAndTimeEstimated>2023-09-14T10:45:00</arrivalDateAndTimeEstimated>
+    </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>
         <identificationNumber>SFzsisksA</identificationNumber>
     </HolderOfTheTransitProcedure>

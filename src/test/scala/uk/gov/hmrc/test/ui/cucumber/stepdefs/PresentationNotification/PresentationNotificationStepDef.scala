@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.{ActiveBorderMeansOfTransportOfficeOfTransitPage, ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage, ActiveMeansOfBorderAddConveyanceReferenceNumberPage, ActiveMeansOfBorderRemoveBorderMeansOfTransportPage, ActiveMeansOfBorderTransportCountryPage, ActiveMeansOfBorderTransportIdentificationNumberPage, ActiveMeansOfBorderTransportIdentificationPage, ActiveMenasOfBorderConveyanceReferenceNumberPage, BorderMeansOfTransportTransitCrossingAtBorderPage}
 import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
@@ -173,5 +174,78 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
+
+  And("""^(?:I )?choose radio (.*) on the 'How is the transit crossing the border\?' page$""") {
+    (answer: String) =>
+      BorderMeansOfTransportTransitCrossingAtBorderPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio (.*) on the inland mode 'Which identification do you want to use for this vehicle\?' page$"""
+  ) { (answer: String) =>
+    ActiveMeansOfBorderTransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter identification number (.+) on 'What is the identification number for this\?' page$""") {
+    (answer: String) =>
+      ActiveMeansOfBorderTransportIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?select (.+) on the active border mode 'What country is this vehicle registered to\?' page$""") {
+    (answer: String) =>
+      ActiveMeansOfBorderTransportCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on 'Where is the customs office at the border\?' page$""") { (answer: String) =>
+    ActiveBorderMeansOfTransportOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio (.*) on the 'Do you want to add a conveyance reference number\?' page$""") {
+    (answer: String) =>
+      ActiveMeansOfBorderAddConveyanceReferenceNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?enter conveyance reference number (.+) on the 'What is the conveyance reference number\?' page$""") {
+    (answer: String) =>
+      ActiveMenasOfBorderConveyanceReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  When("""^(?:I )?choose radio (.*) on the 'You have added (.*) border means of transport' page$""") {
+    (answer: String, numberOfBorderMeansInTitle: String) =>
+      ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
+        .loadPage(numberOfBorderMeansInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio (.*) on the 'Are you sure you want to remove this border means of transport\?' page$""") { (answer: String) =>
+    ActiveMeansOfBorderRemoveBorderMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?click the (.*) link  on the 'You have added (.*) border means of transport' page$""") {
+    (sectionLink: String, numberOfContainers: String) =>
+      ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
+        .loadPage(numberOfContainers)
+        .clickByPartialLinkText(sectionLink)
+  }
 
 }

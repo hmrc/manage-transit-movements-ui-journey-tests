@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@presentationNotificationIe15 or presentationNotificationIe13"
-)
-class RunnerForPresentationNotification {}
+object ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage extends YesNoPage {
+
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 border means of transport"
+    case _        => String.format("You have added %s border means of transport", args: _*)
+  }
+
+}
