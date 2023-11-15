@@ -183,7 +183,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
   And(
-    """^(?:I )?choose radio (.*) on the inland mode 'Which identification do you want to use for this vehicle\?' page$"""
+    """^(?:I )?choose radio (.*) on the presentation inland mode 'Which identification do you want to use for this vehicle\?' page$"""
   ) { (answer: String) =>
     ActiveMeansOfBorderTransportIdentificationPage
       .loadPage()
