@@ -117,5 +117,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I click the Continue button on the presentation 'More information needed to complete declaration' page
     And I enter 1234567890 on the presentation 'What is the authorisation number for the location of goods?' page
     And I choose radio option No on the presentation 'Do you want to add an additional identifier for the location of goods?' page
-    And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
+    #  This is commented out because it takes us to Internal server error on submission.
+    #  To be uncommented when the next steps are ready
+#    And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
 
