@@ -12,15 +12,15 @@
         <incidentFlag>1</incidentFlag>
     </TransitOperation>
     <Authorisation>
-        <sequenceNumber>123</sequenceNumber>
+        <sequenceNumber>1</sequenceNumber>
         <type>3344</type>
         <referenceNumber>token</referenceNumber>
     </Authorisation>
     <CustomsOfficeOfDestinationActual>
-        <referenceNumber>GB123456</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDestinationActual>
     <TraderAtDestination>
-        <identificationNumber>ezv3Z</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <communicationLanguageAtDestination>sa</communicationLanguageAtDestination>
     </TraderAtDestination>
     <Consignment>
@@ -54,7 +54,7 @@
             </ContactPerson>
         </LocationOfGoods>
         <Incident>
-            <sequenceNumber>12345</sequenceNumber>
+            <sequenceNumber>1</sequenceNumber>
             <code>1</code>
             <text>token</text>
             <Endorsement>
@@ -74,15 +74,15 @@
                 </Address>
             </Location>
             <TransportEquipment>
-                <sequenceNumber>12345</sequenceNumber>
+                <sequenceNumber>1</sequenceNumber>
                 <containerIdentificationNumber>ezv3Z</containerIdentificationNumber>
                 <numberOfSeals>2345</numberOfSeals>
                 <Seal>
-                    <sequenceNumber>12345</sequenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
                     <identifier>token</identifier>
                 </Seal>
                 <GoodsReference>
-                    <sequenceNumber>12345</sequenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
                     <declarationGoodsItemNumber>12</declarationGoodsItemNumber>
                 </GoodsReference>
             </TransportEquipment>

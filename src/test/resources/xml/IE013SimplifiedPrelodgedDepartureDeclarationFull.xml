@@ -6,7 +6,7 @@
     <messageType>CC013C</messageType>
     <TransitOperation>
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
-        <declarationType>Pbg</declarationType>
+        <declarationType>T1</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
         <security>0</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
@@ -16,7 +16,7 @@
     <Authorisation>
         <sequenceNumber>1</sequenceNumber>
         <type>C521</type>
-        <referenceNumber>string</referenceNumber>
+        <referenceNumber>GBDEPAUTH001</referenceNumber>
     </Authorisation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>GB000060</referenceNumber>
@@ -30,30 +30,30 @@
         <arrivalDateAndTimeEstimated>2023-09-14T10:45:00</arrivalDateAndTimeEstimated>
     </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>SFzsisksA</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
     </HolderOfTheTransitProcedure>
     <Guarantee>
-        <sequenceNumber>48711</sequenceNumber>
+        <sequenceNumber>1</sequenceNumber>
         <guaranteeType>1</guaranteeType>
-        <otherGuaranteeReference>1qJMA6MbhnnrOJJjHBHX</otherGuaranteeReference>
+        <otherGuaranteeReference>09GB0000010000084</otherGuaranteeReference>
     </Guarantee>
     <Consignment>
         <containerIndicator>1</containerIndicator>
-        <grossMass>6430669292.48125</grossMass>
+        <grossMass>643.4</grossMass>
         <PlaceOfLoading>
             <country>GB</country>
         </PlaceOfLoading>
         <HouseConsignment>
-            <sequenceNumber>48711</sequenceNumber>
-            <grossMass>6430669292.48125</grossMass>
+            <sequenceNumber>1</sequenceNumber>
+            <grossMass>643.4</grossMass>
             <ConsignmentItem>
-                <goodsItemNumber>18914</goodsItemNumber>
-                <declarationGoodsItemNumber>1458</declarationGoodsItemNumber>
+                <goodsItemNumber>1</goodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
-                    <descriptionOfGoods>ZMyM5HTSTnLqT5FT9aHXwScqXKC1VitlWeO5gs91cVXBXOB8xBdXG5aGhG9VFjjDGiraIETFfbQWeA7VUokO7ngDOrKZ23ccKKMA6C3GpXciUTt9nS2pzCFFFeg4BXdkIe</descriptionOfGoods>
+                    <descriptionOfGoods>This is a description</descriptionOfGoods>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>48711</sequenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
                     <typeOfPackages>Oi</typeOfPackages>
                 </Packaging>
             </ConsignmentItem>

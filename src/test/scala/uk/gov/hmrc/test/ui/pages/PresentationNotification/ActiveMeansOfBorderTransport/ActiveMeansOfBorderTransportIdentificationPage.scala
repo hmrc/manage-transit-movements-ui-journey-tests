@@ -25,14 +25,14 @@ object ActiveMeansOfBorderTransportIdentificationPage extends RadioPage {
   override def select(answer: String): this.type = {
     val vehicleIdentifyCSSValue = answer match {
 
-      case "IMO Ship Identification Number" => "10"
-      case "Name of the sea-going vessel" => "11"
-      case "Train Number" => "21"
-      case "Registration Number of the Road Vehicle" => "30"
-      case "IATA flight number" => "40"
-      case "Registration Number of the Aircraft" => "41"
+      case "IMO Ship Identification Number"                   => "10"
+      case "Name of the sea-going vessel"                     => "11"
+      case "Train Number"                                     => "21"
+      case "Registration Number of the Road Vehicle"          => "30"
+      case "IATA flight number"                               => "40"
+      case "Registration Number of the Aircraft"              => "41"
       case "European Vessel Identification Number (ENI Code)" => "80"
-      case "Name of the inland waterways vessel" => "81"
+      case "Name of the inland waterways vessel"              => "81"
 
     }
     clickRadioBtn(vehicleIdentifyCSSValue)
