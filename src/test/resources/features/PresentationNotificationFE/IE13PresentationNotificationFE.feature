@@ -33,13 +33,13 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option Yes on the presentation 'Are you using any shipping containers to transport the goods?' page
 
    ##Active Means border of transport
-    And I choose radio Air transport on the 'How is the transit crossing the border?' page
+    And I choose radio Air transport on the presentation 'How is the transit crossing the border?' page
     And I choose radio Registration Number of the Aircraft on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number GB1234567 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
     And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I choose radio Yes on the 'You have added 1 border means of transport' page
+    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
 
   Scenario: 02 Trader completes a Simplified departure declaration that was previously pre-lodged
     When I submit an IE015 Simplified Prelodged Departure Declaration
@@ -63,14 +63,14 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
 
      ##Active Means border of transport
-    And I choose radio Maritime Transport on the 'How is the transit crossing the border?' page
+    And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
     And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number GB1234567 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I choose radio Yes on the 'Do you want to add a conveyance reference number?' page
+    And I choose radio Yes on the presentation 'Do you want to add a conveyance reference number?' page
     And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I choose radio Yes on the 'You have added 1 border means of transport' page
+    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
 
   Scenario: 03 Trader completes a departure declaration that was previously pre-lodged - Location of Goods was filled in initially
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
@@ -88,22 +88,22 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
 
  #Active Means border of transport
-    And I choose radio Maritime Transport on the 'How is the transit crossing the border?' page
+    And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
     And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number GB1234567 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I choose radio Yes on the 'Do you want to add a conveyance reference number?' page
+    And I choose radio Yes on the presentation 'Do you want to add a conveyance reference number?' page
     And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I choose radio Yes on the 'You have added 1 border means of transport' page
+    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
     And I choose radio IATA flight number on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number GB1234567 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I choose radio No on the 'Do you want to add a conveyance reference number?' page
+    And I choose radio No on the presentation 'Do you want to add a conveyance reference number?' page
     And I click the Remove link  on the 'You have added 2 border means of transport' page
     And I click radio Yes on the 'Are you sure you want to remove this border means of transport?' page
-    And I choose radio Yes on the 'You have added 1 border means of transport' page
+    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
 
   Scenario: 04 Trader completes a Simplified departure declaration that was previously pre-lodged - includes Container Indicator, Limit Date, Place of Loading and Auth Type
     When I submit an IE015 Simplified Prelodged Departure Declaration Full

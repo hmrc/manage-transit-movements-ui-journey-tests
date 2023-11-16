@@ -175,7 +175,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
   }
 
 
-  And("""^(?:I )?choose radio (.*) on the 'How is the transit crossing the border\?' page$""") {
+  And("""^(?:I )?choose radio (.*) on the presentation 'How is the transit crossing the border\?' page$""") {
     (answer: String) =>
       BorderMeansOfTransportTransitCrossingAtBorderPage
         .loadPage()
@@ -212,7 +212,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio (.*) on the 'Do you want to add a conveyance reference number\?' page$""") {
+  And("""^(?:I )?choose radio (.*) on the presentation 'Do you want to add a conveyance reference number\?' page$""") {
     (answer: String) =>
       ActiveMeansOfBorderAddConveyanceReferenceNumberPage
         .loadPage()
@@ -227,7 +227,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  When("""^(?:I )?choose radio (.*) on the 'You have added (.*) border means of transport' page$""") {
+  When("""^(?:I )?choose radio (.*) on the presentation 'You have added (.*) border means of transport' page$""") {
     (answer: String, numberOfBorderMeansInTitle: String) =>
       ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
         .loadPage(numberOfBorderMeansInTitle)
