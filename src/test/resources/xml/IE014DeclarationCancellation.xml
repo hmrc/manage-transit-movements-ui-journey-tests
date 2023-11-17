@@ -18,7 +18,7 @@
         <decision>0</decision>
         <initiatedByCustoms>1</initiatedByCustoms>
         <!--Optional:-->
-        <justification>string</justification>
+        <justification>Cancelled for a reason</justification>
     </Invalidation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>XI000142</referenceNumber>
