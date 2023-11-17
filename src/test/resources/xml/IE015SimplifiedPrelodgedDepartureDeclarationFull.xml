@@ -8,7 +8,7 @@
         <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <declarationType>T1</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
-        <security>0</security>
+        <security>1</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
         <limitDate>2023-11-15</limitDate>
@@ -40,6 +40,14 @@
     <Consignment>
         <containerIndicator>1</containerIndicator>
         <grossMass>6430669292.48125</grossMass>
+        <ActiveBorderTransportMeans>
+            <sequenceNumber>1</sequenceNumber>
+            <customsOfficeAtBorderReferenceNumber>GB000246</customsOfficeAtBorderReferenceNumber>
+            <typeOfIdentification>11</typeOfIdentification>
+            <identificationNumber>Spideychelle</identificationNumber>
+            <nationality>GB</nationality>
+            <conveyanceReferenceNumber>5555</conveyanceReferenceNumber>
+        </ActiveBorderTransportMeans>
         <PlaceOfLoading>
             <country>GB</country>
         </PlaceOfLoading>
