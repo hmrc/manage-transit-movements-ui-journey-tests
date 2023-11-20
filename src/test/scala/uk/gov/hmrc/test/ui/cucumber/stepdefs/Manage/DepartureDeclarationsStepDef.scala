@@ -94,4 +94,9 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     GoodsNotReleasedDetailsPage
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete declaration' page$""") { () =>
+    ConfirmationNeededToCompleteDeclarationPage
+      .loadPage()
+  }
 }
