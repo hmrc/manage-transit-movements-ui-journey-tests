@@ -21,11 +21,11 @@
         <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <CustomsOfficeOfDestinationDeclared>
-        <referenceNumber>XI000142</referenceNumber>
+        <referenceNumber>FR003000</referenceNumber>
     </CustomsOfficeOfDestinationDeclared>
     <CustomsOfficeOfTransitDeclared>
         <sequenceNumber>1</sequenceNumber>
-        <referenceNumber>XI000142</referenceNumber>
+        <referenceNumber>FR003000</referenceNumber>
         <arrivalDateAndTimeEstimated>2023-09-14T10:45:00</arrivalDateAndTimeEstimated>
     </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>

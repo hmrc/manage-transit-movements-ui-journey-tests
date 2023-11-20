@@ -3,19 +3,18 @@
     <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
     <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
-    <messageType>CC057C</messageType>
+    <messageType>CC004C</messageType>
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
-        <MRN>28BDU7NB98LCWXLNM2</MRN>
-        <amendmentSubmissionDateAndTime>2022-12-25T07:36:28</amendmentSubmissionDateAndTime>
+         <amendmentSubmissionDateAndTime>2022-12-25T07:36:28</amendmentSubmissionDateAndTime>
          <amendmentAcceptanceDateAndTime>2022-12-25T07:36:28</amendmentAcceptanceDateAndTime>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>2</referenceNumber>
+        <referenceNumber>GB000142</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <identificationNumber>GB954131533000</identificationNumber>
-        <TIRHolderIdentificationNumber>trp-id-1</TIRHolderIdentificationNumber>
+        <TIRHolderIdentificationNumber>GB954131533000</TIRHolderIdentificationNumber>
         <name>Jean Doe</name>
         <Address>
             <streetAndNumber>1 avenue marceau</streetAndNumber>

@@ -27,7 +27,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I select United Kingdom on the presentation 'In which country is the place of loading?' page
     And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
 
-    And I enter the date on the presentation 'When do you expect the transit to arrive in Belfast EPU (XI000142)?' page
+    And I enter the date on the presentation 'When do you expect the transit to arrive in Nancy bureau (FR003000)?' page
     And I choose radio option Yes on the presentation 'Are you using any shipping containers to transport the goods?' page
 
      ##Active Means border of transport
@@ -35,7 +35,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number 5h1p1nn on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
-    And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
+    And I select Nancy bureau (FR003000) on 'Where is the customs office at the border?' page
     And I choose radio Yes on the presentation 'Do you want to add a conveyance reference number?' page
     And I enter conveyance reference number 123456123456 on the 'What is the conveyance reference number?' page
     And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
@@ -43,7 +43,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio IATA flight number on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number YATA010 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
-    And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
+    And I select Nancy bureau (FR003000) on 'Where is the customs office at the border?' page
     And I choose radio No on the presentation 'Do you want to add a conveyance reference number?' page
     And I click the Remove link  on the 'You have added 2 border means of transport' page
     And I click radio Yes on the 'Are you sure you want to remove this border means of transport?' page
@@ -79,7 +79,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I click the Continue button on the presentation 'More information needed to complete declaration' page
     And I choose radio option Approved place on the presentation 'Which type of location are the goods in?' page
     And I choose a radio option Address on the presentation 'How do you want to identify the location of goods?' page
-    And I select Italy on the presentation 'In which country is the location of goods?' page
+    And I select United Kingdom on the presentation 'In which country is the location of goods?' page
     And I fill in the address on the presentation 'What is the address for the location of goods?' page
 
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
