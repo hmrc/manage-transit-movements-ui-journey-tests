@@ -1,4 +1,4 @@
-<ncts:CC015C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+<ncts:CC013C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
     <messageSender>token</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
@@ -11,6 +11,7 @@
         <security>0</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
+        <amendmentTypeFlag>1</amendmentTypeFlag>
         <limitDate>2023-11-15</limitDate>
     </TransitOperation>
     <Authorisation>
@@ -59,4 +60,4 @@
             </ConsignmentItem>
         </HouseConsignment>
     </Consignment>
-</ncts:CC015C>
+</ncts:CC013C>

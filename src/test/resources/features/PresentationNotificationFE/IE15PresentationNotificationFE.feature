@@ -60,13 +60,10 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I enter GBDEPE201HZ on the presentation 'What is the authorisation number for the location of goods?' page
     And I choose radio option No on the presentation 'Do you want to add an additional identifier for the location of goods?' page
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
-    And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
-    And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification number 5h1p1nn on 'What is the identification number for this?' page
-
-    #  This is commented out because it takes us to Internal server error on submission.
+        #  This is commented out because it takes loops back to the start.
     #  To be uncommented when the next steps are ready
-#    And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
+    #  And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
+
 
 
   Scenario: 03 'Normal' short journey with security type 1;  answer 'No' to all optional questions
