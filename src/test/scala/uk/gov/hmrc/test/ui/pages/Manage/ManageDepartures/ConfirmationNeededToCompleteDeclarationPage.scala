@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object ConfirmationNeededToCompleteDeclarationPage extends Page {
 
-  override def title(args: String*): String = "Confirmation needed to complete declarationgit statu"
+  override def title(args: String*): String = "Confirmation needed to complete declaration"
 
 }
