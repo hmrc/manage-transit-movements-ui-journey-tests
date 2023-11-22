@@ -18,10 +18,10 @@
         <decision>0</decision>
         <initiatedByCustoms>1</initiatedByCustoms>
         <!--Optional:-->
-        <justification>string</justification>
+        <justification>Cancelled for a reason</justification>
     </Invalidation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB123456</referenceNumber>
+        <referenceNumber>XI000142</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
