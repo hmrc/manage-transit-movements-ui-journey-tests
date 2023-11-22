@@ -5,7 +5,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 1234567890
 
-  Scenario: 01 Full Simplified e2e journey with security type 1 - answer 'YES' to all optional questions
+  Scenario: 01 Full Simplified Amend e2e journey with security type 1 - answer 'YES' to all optional questions
     When I submit an IE015 Simplified Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
     When I submit an IE013 Simplified Prelodged Departure Declaration
@@ -51,7 +51,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I click radio Yes on the 'Are you sure you want to remove this border means of transport?' page
     And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
 
-  Scenario: 02 Trader completes a Simplified departure declaration that was previously pre-lodged - includes Container Indicator, Limit Date, Place of Loading and Auth Type
+  Scenario: 02 Simplified Amend short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Simplified Prelodged Departure Declaration Full
     Then I submit an IE928 Positive Acknowledgment
     When I submit an IE013 Simplified Prelodged Departure Declaration Full
@@ -67,31 +67,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     #  To be uncommented when the next steps are ready
 #    And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
 
-  Scenario: 03 Trader completes a departure declaration that was previously pre-lodged - Location of Goods was filled in initially
-    When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
-    Then I submit an IE928 Positive Acknowledgment
-    When I submit an IE013 Prelodged Departure Declaration With Location Of Goods
-    Then I submit an IE004 Amendment Acceptance
-    And I refresh the page
-    And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
-
-    And I click the Continue button on the presentation 'More information needed to complete declaration' page
-    And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I select United Kingdom on the presentation 'In which country is the place of loading?' page
-    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
-    And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
-
- #Active Means border of transport
-    And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
-    And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
-    And I enter identification number GB1234567 on 'What is the identification number for this?' page
-    And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
-    And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I choose radio No on the presentation 'Do you want to add a conveyance reference number?' page
-    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
-
-      Scenario: 04 Trader completes a Normal departure declaration that was previously pre-lodged - Answer no to optional questions
+  Scenario: 03 'Normal' Amend short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
     When I submit an IE013 Prelodged Departure Declaration
@@ -122,6 +98,25 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
     And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
     And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
+
+  Scenario: 04 'Normal' short journey with security type 0 and location of goods in IE015;  answer 'No' to all optional questions
+    When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
+    Then I submit an IE928 Positive Acknowledgment
+    When I submit an IE013 Prelodged Departure Declaration With Location Of Goods
+    Then I submit an IE004 Amendment Acceptance
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+
+    And I click the Continue button on the presentation 'More information needed to complete declaration' page
+    And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
+    And I select United Kingdom on the presentation 'In which country is the place of loading?' page
+    And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
+
+          ## The below step to be uncommented when the next part of the navigation is ready
+#    And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
+
+      ##Active Border Means of transport is skipped because of security set to 0
 
 
 
