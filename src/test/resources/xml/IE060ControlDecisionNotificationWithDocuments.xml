@@ -12,7 +12,7 @@
         <!--Optional:-->
         <MRN>string</MRN>
         <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
-        <notificationType>token</notificationType>
+        <notificationType>0</notificationType>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>XI000142</referenceNumber>
