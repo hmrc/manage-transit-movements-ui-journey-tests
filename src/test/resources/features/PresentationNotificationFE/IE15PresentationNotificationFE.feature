@@ -62,7 +62,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
         #  This is commented out because it takes loops back to the start.
     #  To be uncommented when the next steps are ready
-    #  And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
+#      And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
 
 
 
@@ -92,8 +92,8 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I enter identification number GB1234567 on 'What is the identification number for this?' page
     And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
-    And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
+    ##The below step will be uncommented when the next part of navigation is ready
+#    And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
 
   Scenario: 04 'Normal' short journey with security type 0 and location of goods in IE015;  answer 'No' to all optional questions
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
