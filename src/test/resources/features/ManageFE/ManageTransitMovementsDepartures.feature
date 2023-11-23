@@ -104,8 +104,18 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
 
+    #3791
+  Scenario: 11 Trader is sent to declaration completed page for a pre-lodge declaration where all details were completed initially
+    When I submit an IE015 Simplified Prelodged Departure Declaration Complete
+    Then I submit an IE928 Positive Acknowledgment
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    Then I should be on the 'Confirmation needed to complete declaration' page
+
+
   # 4085
-  Scenario: 11 Trader is able to review IE035 message details for Goods being recovered
+  Scenario: 12 Trader is able to review IE035 message details for Goods being recovered
     When I submit an IE015 Departure Declaration
     Then I submit an IE035 Recovery Notification
     And I refresh the page
@@ -116,7 +126,7 @@ Feature: Manage transit movements frontend tests for Departures
 
 
   # 4039
-  Scenario: 12 Trader is able to review IE051 message details for Goods not released
+  Scenario: 13 Trader is able to review IE051 message details for Goods not released
     When I submit an IE015 Departure Declaration
     Then I submit an IE051 No Release For Transit
     And I refresh the page
