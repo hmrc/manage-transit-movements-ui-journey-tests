@@ -248,4 +248,19 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
+  And("""^(?:I )?enter (.+) on the presentation 'What is the container identification number\?' page$""") { (answer: String) =>
+    ContainerIdentificationNumberPage
+      .loadPage()
+      .fillInput(answer)
+//      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add any transport equipment\?' page$""") {
+    (answer: String) =>
+      AddTransportEquipmentPage
+        .loadPage()
+        .select(answer)
+//        .submitPage()
+  }
+
 }
