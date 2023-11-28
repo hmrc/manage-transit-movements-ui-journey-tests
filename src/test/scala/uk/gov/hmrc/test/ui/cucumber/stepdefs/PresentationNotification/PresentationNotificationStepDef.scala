@@ -248,11 +248,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?enter (.+) on the presentation 'What is the container identification number\?' page$""") { (answer: String) =>
-    ContainerIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-//      .submitPage()
+  And("""^(?:I )?enter (.+) on the presentation 'What is the container identification number\?' page$""") {
+    (answer: String) =>
+      ContainerIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add any transport equipment\?' page$""") {
@@ -260,7 +261,43 @@ class PresentationNotificationStepDef extends BaseStepDef {
       AddTransportEquipmentPage
         .loadPage()
         .select(answer)
-//        .submitPage()
+        .submitPage()
+  }
+  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a seal\?' page$""") { (answer: String) =>
+    AddSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
+  And("""^(?:I )?enter (.+) on the presentation 'What is the seal identification number\?' page$""") {
+    (answer: String) =>
+      SealIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  When("""^(?:I )?choose radio (.*) on the presentation 'You have added (.*) seal' page$""") {
+    (answer: String, numberOfBorderMeansInTitle: String) =>
+    AddAnotherSealPage
+        .loadPage(numberOfBorderMeansInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link  on the presentation 'You have added (.*) seals' page$""") {
+    (sectionLink: String, numberOfContainers: String) =>
+      AddAnotherSealPage
+        .loadPage(numberOfContainers)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove seal (.*)\?' page$""") {
+    (answer: String, sealIdNumber: String) =>
+      RemoveSealPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
+  }
 }
