@@ -50,7 +50,7 @@ Feature: Route details journey
     And I submit on the Check your answers section Office of transit page
 
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
-    And I choose radio option Yes on the 'Are you sure you want to remove Bastia port as an office of transit?' page
+    And I choose radio option Yes on the 'Are you sure you want to remove Basel as an office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Office of exit - removing an office of exit
