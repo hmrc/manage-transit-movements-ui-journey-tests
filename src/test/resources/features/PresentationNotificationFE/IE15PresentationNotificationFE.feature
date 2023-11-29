@@ -118,5 +118,5 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
     And I choose radio option No on the presentation 'Do you want to add any transport equipment?' page
 
-    ##Active Border Means of transport and Transport equipemnt is skipped because of security set to 0
+    ##Active Border Means of transport and Transport equipment is skipped because of security set to 0
 
