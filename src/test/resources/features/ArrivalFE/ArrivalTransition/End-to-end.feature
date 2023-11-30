@@ -85,7 +85,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I submit on the Check your answers section Transport equipment page
     #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
-    And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
+    And I click radio option Yes on the Are you sure you want to remove transport equipment 1 page
     And I choose radio option No on the You have added 1 transport equipment page
     #Type of Identification 1
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
@@ -378,7 +378,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I submit on the Check your answers section Transport equipment page
   #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
-    And I click radio option Yes on the Are you sure you want to remove transport equipment 2 page
+    And I click radio option Yes on the Are you sure you want to remove transport equipment 1 page
     And I choose radio option No on the You have added 1 transport equipment page
   #Type of Identification 1
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
