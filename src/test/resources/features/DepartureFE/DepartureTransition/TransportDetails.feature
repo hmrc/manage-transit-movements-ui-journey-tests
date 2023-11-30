@@ -84,7 +84,7 @@ Feature: Transport details journey - Transition
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the Check your answers section Transport equipment page
     And I click the Remove link on the 'You have added 2 transport equipment' page
-    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 2?' page
+    And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
       ## Charges
