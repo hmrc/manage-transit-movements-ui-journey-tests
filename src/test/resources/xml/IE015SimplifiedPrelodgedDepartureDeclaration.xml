@@ -52,6 +52,17 @@
                     <typeOfPackages>Oi</typeOfPackages>
                 </Packaging>
             </ConsignmentItem>
+            <ConsignmentItem>
+                <goodsItemNumber>123</goodsItemNumber>
+                <declarationGoodsItemNumber>44</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>foo</descriptionOfGoods>
+                </Commodity>
+                <Packaging>
+                    <sequenceNumber>48711</sequenceNumber>
+                    <typeOfPackages>Oi</typeOfPackages>
+                </Packaging>
+            </ConsignmentItem>
         </HouseConsignment>
     </Consignment>
 </ncts:CC015C>
