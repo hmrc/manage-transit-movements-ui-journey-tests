@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.{ActiveBorderMeansOfTransportOfficeOfTransitPage, ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage, ActiveMeansOfBorderAddConveyanceReferenceNumberPage, ActiveMeansOfBorderRemoveBorderMeansOfTransportPage, ActiveMeansOfBorderTransportCountryPage, ActiveMeansOfBorderTransportIdentificationNumberPage, ActiveMeansOfBorderTransportIdentificationPage, ActiveMenasOfBorderConveyanceReferenceNumberPage, BorderMeansOfTransportTransitCrossingAtBorderPage}
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
@@ -300,4 +300,51 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
+  And("""^(?:I )?select (.+) on the presentation 'Which items does this transport equipment apply to\?' page$""") {
+    (answer: String) =>
+      TransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio (.*) on the presentation 'You have applied (.*) items? to transport equipment (.*)' page$""") {
+    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have applied (.*) item to transport equipment (.*)' page$""") {
+    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+
+  And("""^(?:I )?click the (.*) link  on the presentation 'You have added (.*) transport equipment' page$""") {
+    (sectionLink: String, numberOfTransportEquipment: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    RemoveTransportEquipmentItemPage
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
 }

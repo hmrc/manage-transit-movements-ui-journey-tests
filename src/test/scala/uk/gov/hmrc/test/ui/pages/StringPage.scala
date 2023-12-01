@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, WebElement}
 
 trait StringPage extends Page {
 
@@ -25,11 +25,13 @@ trait StringPage extends Page {
     this
   }
 
-  protected def fillInputById(id: String, text: String): Unit = {
+  def fillInputById(id: String, text: String): Unit = {
     val input = findBy(By.id(id))
-    input.clear()
+    clearInput(input)
     input.sendKeys(text)
   }
+
+  def clearInput(input: WebElement): Unit = input.clear()
 
   protected def randomAlphaNumericString(length: Int): String = {
     val chars = ('a' to 'z') ++ ('A' to 'Z') ++ ('0' to '9')

@@ -45,10 +45,21 @@
                 <goodsItemNumber>1</goodsItemNumber>
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
-                    <descriptionOfGoods>ZMyM5HTSTnLqT5FT9aHXwScqXKC1VitlWeO5gs91cVXBXOB8xBdXG5aGhG9VFjjDGiraIETFfbQWeA7VUokO7ngDOrKZ23ccKKMA6C3GpXciUTt9nS2pzCFFFeg4BXdkIe</descriptionOfGoods>
+                    <descriptionOfGoods>item1</descriptionOfGoods>
                 </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>Oi</typeOfPackages>
+                </Packaging>
+            </ConsignmentItem>
+            <ConsignmentItem>
+                <goodsItemNumber>123</goodsItemNumber>
+                <declarationGoodsItemNumber>44</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>item2</descriptionOfGoods>
+                </Commodity>
+                <Packaging>
+                    <sequenceNumber>48711</sequenceNumber>
                     <typeOfPackages>Oi</typeOfPackages>
                 </Packaging>
             </ConsignmentItem>

@@ -49,7 +49,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I click the Remove link  on the 'You have added 2 border means of transport' page
     And I click radio Yes on the 'Are you sure you want to remove this border means of transport?' page
     And I choose radio No on the presentation 'You have added 1 border means of transport' page
-    #tranpsort Equipment
+    #transport Equipment
     And I enter C001 on the presentation 'What is the container identification number?' page
     And I click radio Yes on the presentation 'Do you want to add a seal?' page
     And I enter S001 on the presentation 'What is the seal identification number?' page
@@ -58,6 +58,16 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I click the Remove link  on the presentation 'You have added 2 seals' page
     And I click radio option Yes on the presentation 'Are you sure you want to remove seal S001?' page
     And I choose radio No on the presentation 'You have added 1 seal' page
+    And I select item1 on the presentation 'Which items does this transport equipment apply to?' page
+    And I click the Change link on the 'You have applied 1 item to transport equipment 1' page
+    And I select item2 on the presentation 'Which items does this transport equipment apply to?' page
+    And I choose radio Yes on the presentation 'You have applied 1 item to transport equipment 1' page
+    And I select item1 on the presentation 'Which items does this transport equipment apply to?' page
+    And I click the Remove link on the 'You have applied 2 item to transport equipment 1' page
+    And I choose radio option Yes for the 'Are you sure you want to remove this item from transport equipment 1?' page
+    And I choose radio No on the presentation 'You have applied 1 item to transport equipment 1' page
+    And I choose radio option Yes on the presentation 'You have added 1 transport equipment' page
+
 
   Scenario: 02 Simplified short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Simplified Prelodged Departure Declaration Full
