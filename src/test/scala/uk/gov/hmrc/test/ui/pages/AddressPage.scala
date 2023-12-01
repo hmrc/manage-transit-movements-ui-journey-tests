@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait AddressPage extends SelectPage {
+trait AddressPage extends StringPage {
 
   val addressLine1: String
   val addressLine2: String

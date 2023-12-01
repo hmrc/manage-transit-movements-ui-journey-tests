@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsUnLocodePage extends SelectPage {
+object LocationOfGoodsUnLocodePage extends StringPage {
 
   override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"
 }

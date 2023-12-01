@@ -16,9 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages.Arrivals.Incident
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IncidentsUnLocodePage extends SelectPage {
+object IncidentsUnLocodePage extends StringPage {
 
   override def title(args: String*): String = "What is the UN/LOCODE for the incident?"
 }
