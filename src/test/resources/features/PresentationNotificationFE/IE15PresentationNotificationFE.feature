@@ -82,7 +82,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
     And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
 
-  @wip
+
   Scenario: 03 'Normal' short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
