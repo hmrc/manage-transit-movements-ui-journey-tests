@@ -324,4 +324,27 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(answer)
   }
 
+  And("""^(?:I )?click the (.*) link  on the presentation 'You have added (.*) transport equipment' page$""") {
+    (sectionLink: String, numberOfTransportEquipment: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    RemoveTransportEquipmentItemPage
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
 }
