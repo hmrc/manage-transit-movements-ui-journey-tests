@@ -347,4 +347,26 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a container identification number\?' page$""") { (answer: String) =>
+    AddContainerIdentificationNumberPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the presentation 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipment: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(answer)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove transport equipment (.*)\?' page$""") {
+    (answer: String, sealIdNumber: String) =>
+      RemoveTransportEquipmentPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
+  }
+
 }
