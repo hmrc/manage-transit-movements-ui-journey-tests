@@ -1,4 +1,4 @@
-@presentationNotificationIe13 @a11y @wip
+@presentationNotificationIe13 @a11y
 
 Feature: Trader completes a departure declaration that was previously pre-lodged and amended
 
