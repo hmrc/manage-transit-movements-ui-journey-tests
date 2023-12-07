@@ -178,7 +178,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I  choose radio option Yes on the 'Do you want to add a Unique Consignment Reference?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter ABC123456 on the 'What is the Customs Union and Statistics code?' page
+    And I enter 0018063-2 on the 'What is the Customs Union and Statistics code?' page
     And I click radio option Yes on the 'Do you want to add a commodity code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page

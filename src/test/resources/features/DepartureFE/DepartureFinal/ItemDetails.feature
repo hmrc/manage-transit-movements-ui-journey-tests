@@ -162,7 +162,7 @@ Feature: Item details journey
     And I select Italy on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter ABC123456 on the 'What is the Customs Union and Statistics code?' page
+    And I enter 0018063-2 on the 'What is the Customs Union and Statistics code?' page
     And I click radio option Yes on the 'Do you want to add a commodity code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
