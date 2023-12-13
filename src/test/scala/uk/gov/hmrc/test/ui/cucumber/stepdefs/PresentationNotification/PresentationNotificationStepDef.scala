@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.{ActiveBorderMeansOfTransportOfficeOfTransitPage, ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage, ActiveMeansOfBorderAddConveyanceReferenceNumberPage, ActiveMeansOfBorderRemoveBorderMeansOfTransportPage, ActiveMeansOfBorderTransportCountryPage, ActiveMeansOfBorderTransportIdentificationNumberPage, ActiveMeansOfBorderTransportIdentificationPage, ActiveMenasOfBorderConveyanceReferenceNumberPage, BorderMeansOfTransportTransitCrossingAtBorderPage}
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
@@ -246,6 +246,127 @@ class PresentationNotificationStepDef extends BaseStepDef {
       ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
         .loadPage(numberOfContainers)
         .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the container identification number\?' page$""") {
+    (answer: String) =>
+      ContainerIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add any transport equipment\?' page$""") {
+    (answer: String) =>
+      AddTransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a seal\?' page$""") { (answer: String) =>
+    AddSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation 'What is the seal identification number\?' page$""") {
+    (answer: String) =>
+      SealIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  When("""^(?:I )?choose radio (.*) on the presentation 'You have added (.*) seal' page$""") {
+    (answer: String, numberOfBorderMeansInTitle: String) =>
+    AddAnotherSealPage
+        .loadPage(numberOfBorderMeansInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link  on the presentation 'You have added (.*) seals' page$""") {
+    (sectionLink: String, numberOfContainers: String) =>
+      AddAnotherSealPage
+        .loadPage(numberOfContainers)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove seal (.*)\?' page$""") {
+    (answer: String, sealIdNumber: String) =>
+      RemoveSealPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the presentation 'Which items does this transport equipment apply to\?' page$""") {
+    (answer: String) =>
+      TransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio (.*) on the presentation 'You have applied (.*) items? to transport equipment (.*)' page$""") {
+    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have applied (.*) item to transport equipment (.*)' page$""") {
+    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+
+  And("""^(?:I )?click the (.*) link  on the presentation 'You have added (.*) transport equipment' page$""") {
+    (sectionLink: String, numberOfTransportEquipment: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    RemoveTransportEquipmentItemPage
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a container identification number\?' page$""") { (answer: String) =>
+    AddContainerIdentificationNumberPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the presentation 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipment: String) =>
+      AddAnotherTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .clickByPartialLinkText(answer)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove transport equipment (.*)\?' page$""") {
+    (answer: String, sealIdNumber: String) =>
+      RemoveTransportEquipmentPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
   }
 
 }

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object LocationOfGoodsUnLocodePage extends StringPage {
+object SealIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"
+  override def title(args: String*): String = "What is the seal identification number?"
+
 }

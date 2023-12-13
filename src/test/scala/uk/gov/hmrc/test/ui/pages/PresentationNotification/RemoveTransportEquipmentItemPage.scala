@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object LocationOfGoodsUnLocodePage extends StringPage {
+object RemoveTransportEquipmentItemPage extends YesNoPage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"
+  override def title(args: String*): String =
+    String.format("Are you sure you want to remove this item from transport equipment %s?", args: _*)
+
 }

@@ -16,7 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
+import org.openqa.selenium.{By, Keys, WebElement}
+
+import scala.jdk.CollectionConverters._
 
 trait SelectPage extends StringPage {
 
@@ -29,6 +31,17 @@ trait SelectPage extends StringPage {
     findBy(By.id(id))
     fillInputById(id, valueOption)
     selectFirstValue(id)
+  }
+
+  override def clearInput(input: WebElement): Unit = {
+    val length = findById("value-select")
+      .findElements(By.tagName("option"))
+      .asScala
+      .find(_.isSelected)
+      .map(_.getAttribute("innerText").length)
+      .getOrElse(0)
+
+    (0 until length).foreach(_ => input.sendKeys(Keys.BACK_SPACE))
   }
 
   protected def openDropdownAndSelectFirstValue(id: String): Unit = {
