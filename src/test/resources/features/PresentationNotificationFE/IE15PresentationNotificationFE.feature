@@ -74,7 +74,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I enter S003 on the presentation 'What is the seal identification number?' page
     And I choose radio No on the presentation 'You have added 1 seal' page
     And I select item3 on the presentation 'Which items does this transport equipment apply to?' page
-    And I choose radio No on the presentation 'You have applied 1 item to transport equipment 1' page
+    And I choose radio No on the presentation 'You have applied 1 item to transport equipment 2' page
     And I click the Remove link on the presentation 'You have added 2 transport equipment' page
     And I click radio option Yes on the presentation 'Are you sure you want to remove transport equipment 1?' page
 
