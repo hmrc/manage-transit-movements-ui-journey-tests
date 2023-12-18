@@ -95,7 +95,6 @@ Feature: Transport details journey - Transition
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
     And I sign out
 
-@wip
   Scenario: 02 Northern Ireland office of departure
     And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
