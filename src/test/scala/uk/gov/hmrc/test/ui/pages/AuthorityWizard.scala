@@ -33,7 +33,7 @@ object AuthorityWizard extends BasePage {
   def fillInputs(eoriNumber: String): this.type = {
     val redirectionUrl = TestConfiguration.authorise("auth-login-stub")
     findById("redirectionUrl").sendKeys(redirectionUrl)
-    findById("credentialStrength").sendKeys("weak")
+    findById("credentialStrength").sendKeys("strong")
     findById("confidenceLevel").sendKeys("50")
     findById("affinityGroupSelect").sendKeys("Organisation")
     findById("enrolment[0].name").sendKeys("HMRC-CTC-ORG")
