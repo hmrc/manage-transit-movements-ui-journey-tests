@@ -126,10 +126,9 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
 
       ## Authorisation
     And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option ACR on the 'Which type of authorisation do you want to add' page
-    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
+    And I choose radio option SSE on the 'Which type of authorisation do you want to add' page
+    And I enter SSE123 reference number on the 'What is the reference number for the SSE authorisation?' page
     When I choose radio option No on the 'You have added 1 transport authorisation' page
-    And I choose radio option No on the 'Do you want to add the arrival date at the office of destination' page
 
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
