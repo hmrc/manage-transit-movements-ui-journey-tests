@@ -91,6 +91,7 @@ Feature: Manage transit movements frontend tests for Departures
 # 3000
   Scenario: 09 Trader is able to cancel a departure declaration
     When I submit an IE015 Departure Declaration
+    Then I submit an IE028 MRN Allocated
     Then I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Cancel declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
