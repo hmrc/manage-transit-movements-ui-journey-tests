@@ -97,8 +97,57 @@ Feature: Transport details journey
     And I sign out
 
 
+  Scenario: 02 Great Britain office of departure - No to optional
+    And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
+    Then I should be on the 'Declaration summary' page
+    And I click the Add transport details link on the 'Declaration summary' page
+    And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
+    And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
-  Scenario: 02 Northern Ireland office of departure
+      ## Container indicator (this drives the departure transport means logic)
+    And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
+
+      ## Inland mode of transport
+    And I choose radio option No on the 'Do you want to add an inland mode of transport?' page
+    And I choose radio option No on the 'Do you want to add the type of identification?' page
+    And I enter registration number GB1234567 on the 'What is the identification number for this?' page
+    And I choose radio option No on the 'Do you want to add the registered country for this vehicle?' page
+
+      ## Border means of transport
+    And I choose radio option No on 'Do you want to add a border mode of transport?' page
+    And I choose radio option No on the border means 'Do you want to add identification for this vehicle?' page
+
+      ## Border means office of transit
+
+      ## Conveyance Reference Number
+    And I submit on the Check your answers section Modes and means of transport page
+      ## Supply chain actor
+    And I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
+
+      ## Authorisation
+    And I enter ACR123 reference number on the 'What is the reference number for the ACR authorisation?' page
+    And I choose radio option No on the 'You have added 1 transport authorisations' page
+    And I enter the date on the 'When do you expect the transit to arrive in AEROPORTO (IT262101)?' page
+
+#      ## Carrier
+    And I choose radio option No on the 'Do you want to add a carrier?' page
+
+#      ## Transport Equipment
+    And I enter C001 on the 'What is the container identification number?' page
+    And I choose radio option No on the 'Do you want to add a seal?' page
+    And I submit on the Check your answers section Transport equipment page
+    And I choose radio option No on the 'You have added 1 transport equipment' page
+
+#      ## Charges
+    And I submit on the Check your answers section Transport details page
+    Then I should be on the 'Declaration summary' page
+    And I should see COMPLETED status for transport details on the 'Declaration summary' page
+    And I sign out
+
+  Scenario: 03 Northern Ireland office of departure
     And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
