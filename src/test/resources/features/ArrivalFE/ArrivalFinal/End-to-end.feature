@@ -4,7 +4,7 @@ Feature: End to end journey Arrival notification feature
   Background:
     Given I login with ID 1234567890
     And I click on the Make an arrival notification link on the 'Manage your transit movements' page
-    And I enter 21GB00014210026352 on the Movement Reference Number page
+    And I enter 29GBQHFCG83AJEB0K1 on the Movement Reference Number page
 
   @a11y
   Scenario: 01 - Simplified - Authorisation number w/ contact
