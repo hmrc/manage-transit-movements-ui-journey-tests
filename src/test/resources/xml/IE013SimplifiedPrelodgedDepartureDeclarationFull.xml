@@ -12,7 +12,6 @@
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
         <amendmentTypeFlag>1</amendmentTypeFlag>
-        <limitDate>2023-11-15</limitDate>
     </TransitOperation>
     <Authorisation>
         <sequenceNumber>1</sequenceNumber>
