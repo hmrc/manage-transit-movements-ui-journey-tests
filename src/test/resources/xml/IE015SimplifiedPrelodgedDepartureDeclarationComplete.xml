@@ -17,7 +17,6 @@
         <!-- <specificCircumstanceIndicator>QRI</specificCircumstanceIndicator> -->
         <communicationLanguageAtDeparture>AT</communicationLanguageAtDeparture>
         <bindingItinerary>0</bindingItinerary>
-        <limitDate>2023-07-30</limitDate>
     </TransitOperation>
     <Authorisation>
         <sequenceNumber>1</sequenceNumber>

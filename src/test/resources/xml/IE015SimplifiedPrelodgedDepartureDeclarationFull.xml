@@ -11,7 +11,6 @@
         <security>1</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
-        <limitDate>2023-11-15</limitDate>
     </TransitOperation>
     <Authorisation>
         <sequenceNumber>1</sequenceNumber>
