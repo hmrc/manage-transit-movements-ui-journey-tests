@@ -78,7 +78,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I click the Remove link on the presentation 'You have added 2 transport equipment' page
     And I click radio option Yes on the presentation 'Are you sure you want to remove transport equipment 1?' page
 
-    @wip
+
   Scenario: 02 Simplified short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Simplified Prelodged Departure Declaration Full
     Then I submit an IE928 Positive Acknowledgment
