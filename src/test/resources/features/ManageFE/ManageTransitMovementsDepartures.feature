@@ -106,6 +106,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
 
     #3791
+  @wip
   Scenario: 11 Trader is sent to declaration completed page for a pre-lodge declaration where all details were completed initially
     When I submit an IE015 Simplified Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
@@ -113,6 +114,8 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     Then I should be on the 'Confirmation needed to complete declaration' page
+    And I click the Continue button on the presentation 'Confirmation needed to complete declaration' page
+    Then I should be on the Presentation Notification 'Check your answers' page
 
 
   # 4085

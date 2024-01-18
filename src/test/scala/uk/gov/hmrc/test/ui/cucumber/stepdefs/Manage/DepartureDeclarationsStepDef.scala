@@ -99,4 +99,9 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     ConfirmationNeededToCompleteDeclarationPage
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the Presentation Notification 'Check your answers' page$""") { () =>
+    PreLodgeCYA
+      .loadPage()
+  }
 }
