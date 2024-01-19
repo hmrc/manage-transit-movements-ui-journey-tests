@@ -145,13 +145,15 @@
           "telephoneNumber" : "+432 1212 1212"
         }
       },
-      "loading" : {
-        "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "CAALK",
-          "name" : "Adlavik"
-        },
-        "addLocationYesNo" : false
+      "loadingAndUnloading" : {
+        "loading": {
+          "addUnLocodeYesNo": true,
+          "unLocode": {
+            "unLocodeExtendedCode": "CAALK",
+            "name": "Adlavik"
+          },
+          "addLocationYesNo": false
+        }
       }
     },
     "transportDetails" : {

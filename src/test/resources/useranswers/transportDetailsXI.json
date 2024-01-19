@@ -109,24 +109,26 @@
           "telephoneNumber" : "+432 1212 1212"
         }
       },
-      "loading" : {
-        "addUnLocodeYesNo" : false,
-        "additionalInformation" : {
-          "country" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
-          },
-          "location" : "London"
-        }
-      },
-      "unloading" : {
-        "addUnLocodeYesNo" : false,
-        "additionalInformation" : {
-          "country" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
-          },
-          "location" : "London"
+      "loadingAndUnloading" : {
+        "loading": {
+          "addUnLocodeYesNo": false,
+          "additionalInformation": {
+            "country": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "location": "London"
+          }
+        },
+        "unloading": {
+          "addUnLocodeYesNo": false,
+          "additionalInformation": {
+            "country": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "location": "London"
+          }
         }
       }
     }
