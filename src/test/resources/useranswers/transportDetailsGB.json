@@ -170,35 +170,37 @@
           "telephoneNumber" : "+432 1212 1212"
         }
       },
-      "loading" : {
-        "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "AEFAT",
-          "name" : "Fateh Terminal"
-        },
-        "addLocationYesNo" : true,
-        "additionalInformation" : {
-          "country" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
+      "loadingAndUnloading" : {
+        "loading": {
+          "addUnLocodeYesNo": true,
+          "unLocode": {
+            "unLocodeExtendedCode": "AEFAT",
+            "name": "Fateh Terminal"
           },
-          "location" : "London"
-        }
-      },
-      "addPlaceOfUnloading" : true,
-      "unloading" : {
-        "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "DEAAL",
-          "name" : "Aalen"
+          "addLocationYesNo": true,
+          "additionalInformation": {
+            "country": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "location": "London"
+          }
         },
-        "addExtraInformationYesNo" : true,
-        "additionalInformation" : {
-          "country" : {
-            "code" : "IT",
-            "description" : "Italy"
+        "addPlaceOfUnloading": true,
+        "unloading": {
+          "addUnLocodeYesNo": true,
+          "unLocode": {
+            "unLocodeExtendedCode": "DEAAL",
+            "name": "Aalen"
           },
-          "location" : "Milano"
+          "addExtraInformationYesNo": true,
+          "additionalInformation": {
+            "country": {
+              "code": "IT",
+              "description": "Italy"
+            },
+            "location": "Milano"
+          }
         }
       }
     }

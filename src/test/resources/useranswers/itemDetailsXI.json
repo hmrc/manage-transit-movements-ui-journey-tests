@@ -111,22 +111,24 @@
           "telephoneNumber" : "+432 1212 1212"
         }
       },
-      "loading" : {
-        "addUnLocodeYesNo" : true,
-        "unLocode" : {
-          "unLocodeExtendedCode" : "ADALV",
-          "name" : "Andorra la Vella"
-        },
-        "addLocationYesNo" : false
-      },
-      "unloading" : {
-        "addUnLocodeYesNo" : false,
-        "additionalInformation" : {
-          "country" : {
-            "code" : "IT",
-            "description" : "Italy"
+      "loadingAndUnloading" : {
+        "loading": {
+          "addUnLocodeYesNo": true,
+          "unLocode": {
+            "unLocodeExtendedCode": "ADALV",
+            "name": "Andorra la Vella"
           },
-          "location" : "Milano"
+          "addLocationYesNo": false
+        },
+        "unloading": {
+          "addUnLocodeYesNo": false,
+          "additionalInformation": {
+            "country": {
+              "code": "IT",
+              "description": "Italy"
+            },
+            "location": "Milano"
+          }
         }
       }
     },
