@@ -30,6 +30,14 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?click the Continue button on the presentation 'Confirmation needed to complete declaration' page$"""
+  ) { () =>
+    ConfirmationNeededPage
+      .loadPage()
+      .submitPage()
+  }
+
   And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location are the goods in\?' page$""") {
     (answer: String) =>
       LocationOfGoodsTypePage

@@ -41,7 +41,7 @@
             <streetAndNumber>1 TRADER STREET</streetAndNumber>
             <postcode>BT12 5EE</postcode>
             <city>Belfast</city>
-            <country>BG</country>
+            <country>GB</country>
         </Address>
         <ContactPerson>
             <name>Claus Thorup</name>
@@ -79,8 +79,8 @@
             <Address>
                 <streetAndNumber>Kapuzinergasse 3</streetAndNumber>
                 <postcode>45596-895</postcode>
-                <city>Liege</city>
-                <country>BG</country>
+                <city>Paris</city>
+                <country>FR</country>
             </Address>
         </Consignor>
         <Consignee>
@@ -89,8 +89,8 @@
             <Address>
                 <streetAndNumber>Spastraat 7</streetAndNumber>
                 <postcode>20034-748</postcode>
-                <city>Varna</city>
-                <country>AE</country>
+                <city>London</city>
+                <country>GB</country>
             </Address>
         </Consignee>
         <TransportEquipment>
@@ -117,16 +117,16 @@
         <!--<CountryOfRoutingOfConsignment><sequenceNumber>1</sequenceNumber><country>BG</country></CountryOfRoutingOfConsignment>-->
         <ActiveBorderTransportMeans>
             <sequenceNumber>1</sequenceNumber>
-            <customsOfficeAtBorderReferenceNumber>XI005220</customsOfficeAtBorderReferenceNumber>
+            <customsOfficeAtBorderReferenceNumber>XI000142</customsOfficeAtBorderReferenceNumber>
             <typeOfIdentification>80</typeOfIdentification>
             <identificationNumber>56984526487521</identificationNumber>
-            <nationality>XI</nationality>
+            <nationality>GB</nationality>
             <conveyanceReferenceNumber>AIR1234b</conveyanceReferenceNumber>
         </ActiveBorderTransportMeans>
         <PlaceOfLoading>
             <UNLocode>ADENC</UNLocode>
-            <country>BG</country>
-            <location>Belfast</location>
+            <country>GB</country>
+            <location>London</location>
         </PlaceOfLoading>
         <!--<PlaceOfUnloading><UNLocode>ADALV</UNLocode><country>GB</country><location>Dover</location></PlaceOfUnloading>-->
         <!--<TransportDocument><sequenceNumber>1</sequenceNumber><type>C664</type><referenceNumber>4785B CV</referenceNumber></TransportDocument>-->
