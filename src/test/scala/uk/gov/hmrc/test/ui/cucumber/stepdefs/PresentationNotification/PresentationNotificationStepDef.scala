@@ -17,7 +17,10 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.TransportIdentificationPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.DepartureMenasOfTransport.{DepartureMeansOfTransportIdentificationNumberPage, DepartureMeansOfTransportTransportCountryPage, DepartureMeansOfTransportWhichIdentificationPage}
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.Represntative._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 
 class PresentationNotificationStepDef extends BaseStepDef {
@@ -377,4 +380,66 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  //Representative
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'Are you acting as a representative\?' page$"""
+  ) { (answer: String) =>
+    ActingAsRepresentative
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your EORI number or TIN\?' page$""") { (answer: String) =>
+    AddEORINumberOrTraderIdentificationNumber
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation representative 'Do you want to add your details\?' page$""") {
+    (answer: String) =>
+      AddContactDetailsRepresentativePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your name\?' page$""") { (answer: String) =>
+    AddContactNameRepresentativePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your phone number\?' page$""") { (answer: String) =>
+    AddContactPhoneNumberRepresentativePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation departure mens of transport 'Which identification do you want to use for the departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    DepartureMeansOfTransportWhichIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter registration number (.+) on the presentation 'What is the identification number for the departure means of transport\?' page$""") {
+    (answer: String) =>
+      DepartureMeansOfTransportIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the presentation 'What country is the departure means of transport registered to\?' page$""") {
+    (answer: String) =>
+      DepartureMeansOfTransportTransportCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
 }
