@@ -9,7 +9,7 @@
         <declarationType>Pbg</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
         <security>0</security>
-        <reducedDatasetIndicator>1</reducedDatasetIndicator>
+        <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
         <!-- <limitDate>2023-11-15</limitDate> -->
     </TransitOperation>
