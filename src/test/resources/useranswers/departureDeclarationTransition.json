@@ -296,47 +296,51 @@
         "code" : "3",
         "description" : "Road transport"
       },
-      "transportMeansDeparture" : {
-        "addIdentificationTypeYesNo" : true,
-        "addIdentificationNumberYesNo" : true,
-        "identification" : {
-          "type" : "31",
-          "description" : "Registration Number of the Road Trailer"
-        },
-        "meansIdentificationNumber" : "GB1234567",
-        "addVehicleCountryYesNo" : true,
-        "vehicleCountry" : {
-          "code" : "GB",
-          "description" : "United Kingdom"
-        }
+      "borderModeOfTransport": {
+        "code": "1",
+        "description": "Maritime Transport"
       },
-      "borderModeOfTransport" : {
-        "code" : "1",
-        "description" : "Maritime Transport"
+      "transportMeans" : {
+        "addDepartureTransportMeansYesNo" : true,
+        "departure": [
+          {
+            "addIdentificationTypeYesNo": true,
+            "addIdentificationNumberYesNo": true,
+            "identification": {
+              "type": "31",
+              "description": "Registration Number of the Road Trailer"
+            },
+            "meansIdentificationNumber": "GB1234567",
+            "addVehicleCountryYesNo": true,
+            "vehicleCountry": {
+              "code": "GB",
+              "description": "United Kingdom"
+            }
+          }
+        ],
+        "active": [
+          {
+            "identification": {
+              "code": "11",
+              "description": "Name of the sea-going vessel"
+            },
+            "identificationNumber": "GB1234567",
+            "addNationalityYesNo": true,
+            "nationality": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "inferredIdentification": "trainNumber",
+            "customsOfficeActiveBorder": {
+              "id": "DE004058",
+              "name": "Basel",
+              "phoneNumber": "+41 61 20114-24"
+            },
+            "conveyanceReferenceNumberYesNo": true,
+            "conveyanceReferenceNumber": "GB123456123456"
+          }
+        ]
       },
-      "transportMeansActiveList" : [
-        {
-          "identification" : {
-            "code" : "11",
-            "description" : "Name of the sea-going vessel"
-          },
-          "identificationNumber" : "GB1234567",
-          "addNationalityYesNo" : true,
-          "nationality" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
-          },
-          "inferredIdentification" : "trainNumber",
-          "identificationNumber" : "GB1234567",
-          "customsOfficeActiveBorder" : {
-            "id" : "DE004058",
-            "name" : "Basel",
-            "phoneNumber" : "+41 61 20114-24"
-          },
-          "conveyanceReferenceNumberYesNo" : true,
-          "conveyanceReferenceNumber" : "GB123456123456"
-        }
-      ],
       "supplyChainActorYesNo" : true,
       "supplyChainActors" : [
         {
@@ -370,8 +374,7 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      },
-      "addDepartureTransportMeansYesNo" : true
+      }
     },
     "documents" : {
       "documents" : [

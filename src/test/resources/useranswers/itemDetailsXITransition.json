@@ -149,37 +149,41 @@
         "code" : "2",
         "description" : "Rail Transport"
       },
-      "addDepartureTransportMeansYesNo" : true,
-      "transportMeansDeparture" : {
-        "addIdentificationTypeYesNo" : true,
-        "identification" : {
-          "code" : "21",
-          "description" : "Train Number"
-        },
-        "addIdentificationNumberYesNo" : true,
-        "meansIdentificationNumber" : "TRA1122"
+      "borderModeOfTransport": "air",
+      "transportMeans" : {
+        "addDepartureTransportMeansYesNo" : true,
+        "departure": [
+          {
+            "addIdentificationTypeYesNo": true,
+            "identification": {
+              "code": "21",
+              "description": "Train Number"
+            },
+            "addIdentificationNumberYesNo": true,
+            "meansIdentificationNumber": "TRA1122"
+          }
+        ],
+        "active": [
+          {
+            "identification": {
+              "code": "41",
+              "description": "Registration Number of the Aircraft"
+            },
+            "identificationNumber": "GB1312312",
+            "addNationalityYesNo": true,
+            "nationality": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "customsOfficeActiveBorder": {
+              "id": "IT018100",
+              "name": "BARI",
+              "phoneNumber": "0039 0805254711 - 0805254755"
+            },
+            "conveyanceReferenceNumber": "Con12312312"
+          }
+        ]
       },
-      "borderModeOfTransport" : "air",
-      "transportMeansActiveList" : [
-        {
-          "identification" : {
-            "code" : "41",
-            "description" : "Registration Number of the Aircraft"
-          },
-          "identificationNumber" : "GB1312312",
-          "addNationalityYesNo" : true,
-          "nationality" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
-          },
-          "customsOfficeActiveBorder" : {
-            "id" : "IT018100",
-            "name" : "BARI",
-            "phoneNumber" : "0039 0805254711 - 0805254755"
-          },
-          "conveyanceReferenceNumber" : "Con12312312"
-        }
-      ],
       "supplyChainActorYesNo" : false,
       "authorisationsAndLimit" : {
         "addAuthorisationsYesNo" : true,
