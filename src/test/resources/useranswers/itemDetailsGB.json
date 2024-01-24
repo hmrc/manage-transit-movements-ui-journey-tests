@@ -186,35 +186,39 @@
         "code" : "3",
         "description" : "Road transport"
       },
-      "transportMeansDeparture" : {
-        "identification" : {
-          "type" : "30",
-          "description" : "Registration Number of the Road Vehicle"
-        },
-        "meansIdentificationNumber" : "REG1231231",
-        "vehicleCountry" : {
-          "code" : "GB",
-          "description" : "United Kingdom"
-        }
+      "borderModeOfTransport": "rail",
+      "transportMeans" : {
+        "departure": [
+          {
+            "identification": {
+              "type": "30",
+              "description": "Registration Number of the Road Vehicle"
+            },
+            "meansIdentificationNumber": "REG1231231",
+            "vehicleCountry": {
+              "code": "GB",
+              "description": "United Kingdom"
+            }
+          }
+        ],
+        "active": [
+          {
+            "inferredIdentification": "trainNumber",
+            "identificationNumber": "T1111",
+            "addNationalityYesNo": true,
+            "nationality": {
+              "code": "GB",
+              "description": "United Kingdom"
+            },
+            "customsOfficeActiveBorder": {
+              "id": "FR000610",
+              "name": "Bordeaux bassens pt bureau",
+              "phoneNumber": "09 70 27 56 60"
+            },
+            "conveyanceReferenceNumberYesNo": false
+          }
+        ]
       },
-      "borderModeOfTransport" : "rail",
-      "transportMeansActiveList" : [
-        {
-          "inferredIdentification" : "trainNumber",
-          "identificationNumber" : "T1111",
-          "addNationalityYesNo" : true,
-          "nationality" : {
-            "code" : "GB",
-            "description" : "United Kingdom"
-          },
-          "customsOfficeActiveBorder" : {
-            "id" : "FR000610",
-            "name" : "Bordeaux bassens pt bureau",
-            "phoneNumber" : "09 70 27 56 60"
-          },
-          "conveyanceReferenceNumberYesNo" : false
-        }
-      ],
       "supplyChainActorYesNo" : true,
       "supplyChainActors" : [
         {
