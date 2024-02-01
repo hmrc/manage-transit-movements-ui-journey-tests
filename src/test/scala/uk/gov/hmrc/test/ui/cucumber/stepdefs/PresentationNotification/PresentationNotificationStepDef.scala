@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.TransportIdentificationPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.DepartureMenasOfTransport.{DepartureMeansOfTransportIdentificationNumberPage, DepartureMeansOfTransportTransportCountryPage, DepartureMeansOfTransportWhichIdentificationPage}
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.Represntative._
@@ -441,5 +440,16 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .loadPage()
         .select(answer)
         .submitPage()
+  }
+
+  And("""^(?:I )?click the (.+) link on the 'Information sent' page$""") { (link: String) =>
+    InformationSentPage
+      .loadPage()
+      .selectLink(link)
+  }
+
+  Then("""^(?:I )?(?:should )?be on the 'Information sent' page$""") { () =>
+    InformationSentPage
+      .loadPage()
   }
 }
