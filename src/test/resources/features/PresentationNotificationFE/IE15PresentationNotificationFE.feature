@@ -77,6 +77,10 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio No on the presentation 'You have applied 1 item to transport equipment 2' page
     And I click the Remove link on the presentation 'You have added 2 transport equipment' page
     And I click radio option Yes on the presentation 'Are you sure you want to remove transport equipment 1?' page
+    And I choose radio option No on the presentation 'You have added 1 transport equipment' page
+    Then I should be on the Presentation Notification 'Check your answers' page
+    And I submit the 'Check your answers' page
+    Then I should be on the 'Information sent' page
 
 
   Scenario: 02 Simplified short journey with security type 1;  answer 'No' to all optional questions
@@ -91,6 +95,9 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
     And I enter the date on the presentation 'When do you expect the transit to arrive in Belfast EPU (XI000142)?' page
     And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
+    Then I should be on the Presentation Notification 'Check your answers' page
+    And I submit the 'Check your answers' page
+    Then I should be on the 'Information sent' page
 
   Scenario: 03 'Normal' short journey with security type 1;  answer 'No' to all optional questions
     When I submit an IE015 Prelodged Departure Declaration
@@ -116,6 +123,9 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I select Belfast EPU (XI000142) on 'Where is the customs office at the border?' page
     And I enter conveyance reference number GB123456123456 on the 'What is the conveyance reference number?' page
     And I choose radio option No on the presentation 'Do you want to add any transport equipment?' page
+    Then I should be on the Presentation Notification 'Check your answers' page
+    And I submit the 'Check your answers' page
+    Then I should be on the 'Information sent' page
 
   Scenario: 04 'Normal' short journey with security type 0 and location of goods in IE015;  answer 'No' to all optional questions
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
@@ -129,6 +139,9 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I enter London on the presentation 'Where in United Kingdom is the place of loading?' page
     And I choose radio option No on the presentation 'Are you using any shipping containers to transport the goods?' page
     And I choose radio option No on the presentation 'Do you want to add any transport equipment?' page
+    Then I should be on the Presentation Notification 'Check your answers' page
+    And I submit the 'Check your answers' page
+    Then I should be on the 'Information sent' page
 
     ##Active Border Means of transport and Transport equipment is skipped because of security set to 0
 
