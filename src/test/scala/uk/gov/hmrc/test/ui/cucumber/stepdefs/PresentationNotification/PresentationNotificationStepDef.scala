@@ -263,7 +263,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
       ContainerIdentificationNumberPage
         .loadPage()
         .fillInput(answer)
-      .submitPage()
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the presentation 'Do you want to add any transport equipment\?' page$""") {
@@ -290,7 +290,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   When("""^(?:I )?choose radio (.*) on the presentation 'You have added (.*) seal' page$""") {
     (answer: String, numberOfBorderMeansInTitle: String) =>
-    AddAnotherSealPage
+      AddAnotherSealPage
         .loadPage(numberOfBorderMeansInTitle)
         .select(answer)
         .submitPage()
@@ -319,8 +319,14 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio (.*) on the presentation 'You have applied (.*) items? to transport equipment (.*)' page$""") {
-    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+  And(
+    """^(?:I )?choose radio (.*) on the presentation 'You have applied (.*) items? to transport equipment (.*)' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfTransportEquipmentItemsInTitle: String,
+      numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
       TransportEquipmentIncrementPage
         .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
         .select(answer)
@@ -328,7 +334,11 @@ class PresentationNotificationStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?click the (.*) link on the 'You have applied (.*) item to transport equipment (.*)' page$""") {
-    (answer: String, numberOfTransportEquipmentItemsInTitle: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    (
+      answer: String,
+      numberOfTransportEquipmentItemsInTitle: String,
+      numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
       TransportEquipmentIncrementPage
         .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
         .clickByPartialLinkText(answer)
@@ -341,7 +351,8 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
+  And(
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
   ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
     RemoveTransportEquipmentItemPage
       .loadPage(numberOfTransportEquipmentIncrementsInTitle)
@@ -357,7 +368,9 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a container identification number\?' page$""") { (answer: String) =>
+  And(
+    """^(?:I )?click radio (.*) on the presentation 'Do you want to add a container identification number\?' page$"""
+  ) { (answer: String) =>
     AddContainerIdentificationNumberPage
       .loadPage()
       .select(answer)
@@ -371,12 +384,13 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(answer)
   }
 
-  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove transport equipment (.*)\?' page$""") {
-    (answer: String, sealIdNumber: String) =>
-      RemoveTransportEquipmentPage
-        .loadPage(sealIdNumber)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove transport equipment (.*)\?' page$"""
+  ) { (answer: String, sealIdNumber: String) =>
+    RemoveTransportEquipmentPage
+      .loadPage(sealIdNumber)
+      .select(answer)
+      .submitPage()
   }
 
   //Representative
@@ -388,19 +402,21 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
-  And("""^(?:I )?enter (.+) on the presentation representative 'What is your EORI number or TIN\?' page$""") { (answer: String) =>
-    AddEORINumberOrTraderIdentificationNumber
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your EORI number or TIN\?' page$""") {
+    (answer: String) =>
+      AddEORINumberOrTraderIdentificationNumber
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the presentation representative 'Do you want to add your details\?' page$""") {
-    (answer: String) =>
-      AddContactDetailsRepresentativePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation representative 'Do you want to add your details\?' page$"""
+  ) { (answer: String) =>
+    AddContactDetailsRepresentativePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation representative 'What is your name\?' page$""") { (answer: String) =>
@@ -410,11 +426,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the presentation representative 'What is your phone number\?' page$""") { (answer: String) =>
-    AddContactPhoneNumberRepresentativePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your phone number\?' page$""") {
+    (answer: String) =>
+      AddContactPhoneNumberRepresentativePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
@@ -426,20 +443,22 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter registration number (.+) on the presentation 'What is the identification number for the departure means of transport\?' page$""") {
-    (answer: String) =>
-      DepartureMeansOfTransportIdentificationNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And(
+    """^(?:I )?enter registration number (.+) on the presentation 'What is the identification number for the departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    DepartureMeansOfTransportIdentificationNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the presentation 'What country is the departure means of transport registered to\?' page$""") {
-    (answer: String) =>
-      DepartureMeansOfTransportTransportCountryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?select (.+) on the presentation 'What country is the departure means of transport registered to\?' page$"""
+  ) { (answer: String) =>
+    DepartureMeansOfTransportTransportCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click the (.+) link on the 'Information sent' page$""") { (link: String) =>

@@ -16,15 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object TransportEquipmentIncrementPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1", transportEquipmentNumber)        => String.format("You have applied 1 item to transport equipment %s", transportEquipmentNumber)
-    case Seq(numberOfItems, transportEquipmentNumber)        => String.format("You have applied %s items to transport equipment %s", numberOfItems, transportEquipmentNumber)
-    case _ => throw new IllegalArgumentException("Unexpected Shape")
-
+    case Seq("1", transportEquipmentNumber)           =>
+      String.format("You have applied 1 item to transport equipment %s", transportEquipmentNumber)
+    case Seq(numberOfItems, transportEquipmentNumber) =>
+      String.format("You have applied %s items to transport equipment %s", numberOfItems, transportEquipmentNumber)
+    case _                                            =>
+      throw InvalidTitleArgsException("Unexpected Shape")
   }
-
 }

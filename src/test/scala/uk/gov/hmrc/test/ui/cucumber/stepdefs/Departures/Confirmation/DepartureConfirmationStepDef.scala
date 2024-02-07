@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Confirmation
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Arrivals.Confirmation.ConfirmationPage
 import uk.gov.hmrc.test.ui.pages.Departures.Confirmation.DepartureConfirmationPage
 
 class DepartureConfirmationStepDef extends BaseStepDef {

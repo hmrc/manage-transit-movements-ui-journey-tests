@@ -16,12 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object AddAnotherGoodsItemPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1")           => String.format("You have added 1 goods item number")
-    case Seq(numberOfSeals) => String.format("You have added %s goods item numbers", numberOfSeals)
+    case Seq("1")                => String.format("You have added 1 goods item number")
+    case Seq(numberOfGoodsItems) => String.format("You have added %s goods item numbers", numberOfGoodsItems)
+    case _                       => throw InvalidTitleArgsException("Expected one argument")
   }
 }
