@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Departures.Items
 
-import org.openqa.selenium.By
-import org.scalatest.compatible.Assertion
 import uk.gov.hmrc.test.ui.pages.Page
 
 object ErrorHintTextPage extends Page {

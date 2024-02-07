@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AddEORINumberOrTraderIdentificationNumber extends StringPage {
 
-  override def title(args: String*): String = String.format("What is your EORI number or Trader Identification Number (TIN)?")
+  override def title(args: String*): String =
+    String.format("What is your EORI number or Trader Identification Number (TIN)?")
 
 }

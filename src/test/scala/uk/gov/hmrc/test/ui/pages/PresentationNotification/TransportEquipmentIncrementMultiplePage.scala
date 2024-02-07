@@ -22,7 +22,7 @@ object TransportEquipmentIncrementMultiplePage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => "You have applied 2 items to transport equipment 1"
-    case _ => String.format("You have applied %s items to transport equipment 1", args: _*)
+    case _        => String.format("You have applied %s items to transport equipment 1", args: _*)
   }
 
 }
