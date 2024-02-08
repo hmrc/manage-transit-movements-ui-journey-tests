@@ -81,12 +81,12 @@
 
 
         </LocationOfGoods>
-        <!-- <DepartureTransportMeans>
+       <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
             <typeOfIdentification>40</typeOfIdentification>
             <identificationNumber>LKW 52/145-6978-569/AF362:1</identificationNumber>
             <nationality>GB</nationality>
-        </DepartureTransportMeans> -->
+        </DepartureTransportMeans>
         <!--<CountryOfRoutingOfConsignment><sequenceNumber>1</sequenceNumber><country>BG</country></CountryOfRoutingOfConsignment>-->
         <ActiveBorderTransportMeans>
             <sequenceNumber>1</sequenceNumber>

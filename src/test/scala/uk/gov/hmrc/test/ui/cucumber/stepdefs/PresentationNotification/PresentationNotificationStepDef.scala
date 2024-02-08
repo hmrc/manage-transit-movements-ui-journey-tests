@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.PreLodgeCYA
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.DepartureMenasOfTransport.{DepartureMeansOfTransportIdentificationNumberPage, DepartureMeansOfTransportTransportCountryPage, DepartureMeansOfTransportWhichIdentificationPage}
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.Represntative._
@@ -434,8 +436,23 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?click the (.*) link on the presentation 'You have added (.*) departure means of transport' page$""") {
+    (answer: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansPage
+        .loadPage(numberOfDepartureMeans)
+        .clickByPartialLinkText(answer)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) departure means of transport' page$""") {
+    (answer: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansPage
+        .loadPage(numberOfDepartureMeans)
+        .select(answer)
+        .submitPage()
+  }
+
   And(
-    """^(?:I )?choose radio option (.*) on the presentation departure mens of transport 'Which identification do you want to use for the departure means of transport\?' page$"""
+    """^(?:I )?choose radio option (.*) on the presentation departure means of transport 'Which identification do you want to use for the departure means of transport\?' page$"""
   ) { (answer: String) =>
     DepartureMeansOfTransportWhichIdentificationPage
       .loadPage()
@@ -459,6 +476,21 @@ class PresentationNotificationStepDef extends BaseStepDef {
       .loadPage()
       .select(answer)
       .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    RemoveDepartureMeansPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click the (.+) link on the Prelodge 'Check your answers' page$""") { (link: String) =>
+    PreLodgeCYA
+      .loadPage()
+      .selectLink(link)
   }
 
   And("""^(?:I )?click the (.+) link on the 'Information sent' page$""") { (link: String) =>

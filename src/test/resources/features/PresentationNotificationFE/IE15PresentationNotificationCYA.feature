@@ -28,7 +28,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Change link for transport inland mode on the 'Check your answers' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Name of a sea-going vessel on the presentation departure mens of transport 'Which identification do you want to use for the departure means of transport?' page
+    And I choose radio option Name of a sea-going vessel on the presentation departure means of transport 'Which identification do you want to use for the departure means of transport?' page
     And I enter registration number GB1234567 on the presentation 'What is the identification number for the departure means of transport?' page
     And I select United Kingdom on the presentation 'What country is the departure means of transport registered to?' page
     Then I should be on the Presentation Notification 'Check your answers' page
@@ -44,5 +44,17 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page
 
-
+  @wip
+  Scenario: 04 Normal prelodge departure declaration complete - Add/Remove a departure transport Means
+    Given I should be on the Presentation Notification 'Check your answers' page
+    And I click the Add or remove departure means of transport link on the Prelodge 'Check your answers' page
+    And I choose radio option Yes on the presentation 'You have added 1 departure means of transport' page
+    And I choose radio option Registration number of an aircraft on the presentation departure means of transport 'Which identification do you want to use for the departure means of transport?' page
+    And I enter registration number GB1234567 on the presentation 'What is the identification number for the departure means of transport?' page
+    And I select United Kingdom on the presentation 'What country is the departure means of transport registered to?' page
+    And I click the Remove link on the presentation 'You have added 2 departure means of transport' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this departure means of transport?' page
+    And I choose radio option No on the presentation 'You have added 1 departure means of transport' page
+    And I submit the 'Check your answers' page
+    Then I should be on the 'Information sent' page
 
