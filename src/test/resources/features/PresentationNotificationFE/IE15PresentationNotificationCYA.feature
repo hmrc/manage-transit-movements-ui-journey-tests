@@ -44,7 +44,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page
 
-  @wip
+
   Scenario: 04 Normal prelodge departure declaration complete - Add/Remove a departure transport Means
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Add or remove departure means of transport link on the Prelodge 'Check your answers' page
