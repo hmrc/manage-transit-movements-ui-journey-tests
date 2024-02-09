@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.PresentationNotification
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.CYAPage
 import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.PreLodgeCYA
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.DepartureMenasOfTransport.{DepartureMeansOfTransportIdentificationNumberPage, DepartureMeansOfTransportTransportCountryPage, DepartureMeansOfTransportWhichIdentificationPage}
