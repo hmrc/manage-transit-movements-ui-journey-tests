@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
+package uk.gov.hmrc.test.ui.pages.PresentationNotification
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object PreLodgeCYA extends Page {
+object RemoveDepartureMeansPage extends YesNoPage {
 
-  override def title(args: String*): String = "Check your answers"
-
-  def selectLink(link: String): Unit =
-    clickByPartialLinkText(link)
+  override def title(args: String*): String =
+    String.format("Are you sure you want to remove this departure means of transport?")
 
 }
