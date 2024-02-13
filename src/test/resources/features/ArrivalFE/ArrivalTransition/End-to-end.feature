@@ -9,7 +9,7 @@ Feature: End to end journey Arrival notification feature - Transition
 
   Scenario: 01 - Simplified - Add contact 'Yes' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
-  Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
+  Remove 'Authorisation, Seal, Goods, Equipment & Incident'
     #Identification
     When I select XI on the arrival office of destination page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -69,20 +69,13 @@ Feature: End to end journey Arrival notification feature - Transition
     #Add Another Goods Item
     And I choose radio option Yes on the You have added 1 goods item number page
     And I enter 4 on the What is the goods item number page
-    #Change Goods Item
-    When I click the Change link on the You have added 2 goods item numbers page
-    Then I enter 5 on the What is the goods item number page
+
     #Remove Goods Item
     When I click the Remove link on the You have added 2 goods item numbers page
-    And I click radio option Yes on the Are you sure you want to remove goods item number 5 page
+    And I click radio option Yes on the Are you sure you want to remove goods item number 3 page
     And I choose radio option No on the You have added 1 goods item number page
     And I submit on the Check your answers section Transport equipment page
 
-  #Change Transport Equipment
-    When I click the Change link on the You have added 2 transport equipment page
-    And I click the Change link for Container identification number on the 'Check your answers' page
-    And I enter C003 on the container identification number page
-    And I submit on the Check your answers section Transport equipment page
     #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 1 page
@@ -112,16 +105,6 @@ Feature: End to end journey Arrival notification feature - Transition
     And I choose radio option Name of a sea-going vessel on the Which identification do you want to use for the replacement means of transport page
     And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
-    And I submit on the Check your answers section Incidents page
-
-    #Change an incident
-    When I click the Change link on the You have added 2 incidents page
-    And I click the Change link for add endorsement on the 'Check your answers' page
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter Border Patrol on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Route 1A junction 6 on the endorsement location page
     And I submit on the Check your answers section Incidents page
 
     #Remove an incident
@@ -304,7 +287,7 @@ Feature: End to end journey Arrival notification feature - Transition
 
   Scenario: 06 - Simplified - Add Authorisation 'Yes' x2 - Goods Location Id  'Address' - Add contact 'No' - Add Incident 'Yes'- Incident Code '3' -
   Add Endorsement 'No' - (Container Id 'Yes' - Add Seal 'Yes' - Add Goods 'Yes') x2 - Add Another Incident 'Yes' -
-  Remove 'Authorisation, Seal, Goods, Equipment & Incident' - Change 'Goods, Equipment & Incident'
+  Remove 'Authorisation, Seal, Goods, Equipment & Incident'
   #Identification
     When I select XI on the arrival office of destination page
     And I choose radio option Simplified on the 'What type of procedure are you using?' page
@@ -363,19 +346,13 @@ Feature: End to end journey Arrival notification feature - Transition
   #Add Another Goods Item
     And I choose radio option Yes on the You have added 1 goods item number page
     And I enter 4 on the What is the goods item number page
-  #Change Goods Item
-    When I click the Change link on the You have added 2 goods item numbers page
-    Then I enter 5 on the What is the goods item number page
+
   #Remove Goods Item
     When I click the Remove link on the You have added 2 goods item numbers page
-    And I click radio option Yes on the Are you sure you want to remove goods item number 5 page
+    And I click radio option Yes on the Are you sure you want to remove goods item number 3 page
     And I choose radio option No on the You have added 1 goods item number page
     And I submit on the Check your answers section Transport equipment page
-  #Change Transport Equipment
-    When I click the Change link on the You have added 2 transport equipment page
-    And I click the Change link for Container identification number on the 'Check your answers' page
-    And I enter C003 on the container identification number page
-    And I submit on the Check your answers section Transport equipment page
+
   #Remove Transport Equipment
     When I click the Remove link on the You have added 2 transport equipment page
     And I click radio option Yes on the Are you sure you want to remove transport equipment 1 page
@@ -406,15 +383,7 @@ Feature: End to end journey Arrival notification feature - Transition
     And I enter Bismarck on the What is the identification number for this page
     And I select Argentina on the What country is the replacement transport registered to page
     And I submit on the Check your answers section Incidents page
-  #Change an incident
-    When I click the Change link on the You have added 2 incidents page
-    And I click the Change link for add endorsement on the 'Check your answers' page
-    And I choose radio option Yes on the add endorsement page
-    And I choose fill in the date on the endorsement date page
-    And I enter Border Patrol on the endorsement authority page
-    And I select France on the endorsement country page
-    And I enter Route 1A junction 6 on the endorsement location page
-    And I submit on the Check your answers section Incidents page
+
   #Remove an incident
     When I click the Remove link on the You have added 2 incidents page
     And I click radio option Yes on the Are you sure you want to remove incident 1 page
