@@ -101,9 +101,9 @@
           "coordinates" : {
             "latitude" : "50.96622",
             "longitude" : "1.86211"
-          },
-          "addContact" : true
+          }
         },
+        "addContact" : true,
         "contact" : {
           "name" : "Locator Joe",
           "telephoneNumber" : "+432 1212 1212"
