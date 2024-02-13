@@ -171,9 +171,9 @@
         "identifier" : {
           "authorisationNumber" : "1234567890",
           "addAdditionalIdentifier" : true,
-          "additionalIdentifier" : "x9x9",
-          "addContact" : true
+          "additionalIdentifier" : "x9x9"
         },
+        "addContact" : true,
         "contact" : {
           "name" : "Locator Joe",
           "telephoneNumber" : "+432 1212 1212"
