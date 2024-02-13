@@ -77,20 +77,20 @@
             <nationality>DE</nationality>
         </DepartureTransportMeans>
         <PreviousDocument>
-            <sequenceNumber>pr-1</sequenceNumber>
-            <type>9811</type>
+            <sequenceNumber>1</sequenceNumber>
+            <type>C512</type>
             <referenceNumber>info1</referenceNumber>
             <complementOfInformation>8</complementOfInformation>
         </PreviousDocument>
         <SupportingDocument>
-            <sequenceNumber>sd-1</sequenceNumber>
-            <type>4567</type>
+            <sequenceNumber>1</sequenceNumber>
+            <type>C085</type>
             <referenceNumber>1234</referenceNumber>
             <complementOfInformation>2</complementOfInformation>
         </SupportingDocument>
         <TransportDocument>
-            <sequenceNumber>td-1</sequenceNumber>
-            <type>4</type>
+            <sequenceNumber>1</sequenceNumber>
+            <type>N235</type>
             <referenceNumber>refn-1</referenceNumber>
         </TransportDocument>
         <AdditionalReference>
@@ -180,20 +180,20 @@
                 <nationality>IT</nationality>
             </DepartureTransportMeans>
             <PreviousDocument>
-                <sequenceNumber>67</sequenceNumber>
-                <type>3</type>
+                <sequenceNumber>1</sequenceNumber>
+                <type>C605</type>
                 <referenceNumber>4</referenceNumber>
                 <complementOfInformation>1</complementOfInformation>
             </PreviousDocument>
             <SupportingDocument>
-                <sequenceNumber>3</sequenceNumber>
-                <type>7</type>
+                <sequenceNumber>1</sequenceNumber>
+                <type>C640</type>
                 <referenceNumber>ref4</referenceNumber>
                 <complementOfInformation>6</complementOfInformation>
             </SupportingDocument>
             <TransportDocument>
-                <sequenceNumber>7</sequenceNumber>
-                <type>8</type>
+                <sequenceNumber>1</sequenceNumber>
+                <type>N271</type>
                 <referenceNumber>9</referenceNumber>
             </TransportDocument>
             <AdditionalReference>
@@ -244,21 +244,21 @@
                     <shippingMarks>xyz</shippingMarks>
                 </Packaging>
                 <PreviousDocument>
-                    <sequenceNumber>2</sequenceNumber>
-                    <type>3</type>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>C612</type>
                     <referenceNumber>4</referenceNumber>
                     <goodsItemNumber>5</goodsItemNumber>
                     <complementOfInformation>1</complementOfInformation>
                 </PreviousDocument>
                 <SupportingDocument>
-                    <sequenceNumber>6</sequenceNumber>
-                    <type>7</type>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>C641</type>
                     <referenceNumber>8</referenceNumber>
                     <complementOfInformation>0</complementOfInformation>
                 </SupportingDocument>
                 <TransportDocument>
-                    <sequenceNumber>3</sequenceNumber>
-                    <type>2</type>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>N703</type>
                     <referenceNumber>4</referenceNumber>
                 </TransportDocument>
                 <AdditionalReference>
