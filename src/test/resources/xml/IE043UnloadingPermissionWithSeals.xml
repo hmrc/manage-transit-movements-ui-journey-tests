@@ -95,7 +95,7 @@
         </TransportDocument>
         <AdditionalReference>
             <sequenceNumber>12</sequenceNumber>
-            <type>4</type>
+            <type>Y015</type>
             <referenceNumber>addref-1</referenceNumber>
         </AdditionalReference>
         <AdditionalInformation>
