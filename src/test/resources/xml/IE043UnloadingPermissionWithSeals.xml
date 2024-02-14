@@ -197,9 +197,9 @@
                 <referenceNumber>9</referenceNumber>
             </TransportDocument>
             <AdditionalReference>
-                <sequenceNumber>3</sequenceNumber>
-                <type>5</type>
-                <referenceNumber>4</referenceNumber>
+                <sequenceNumber>1</sequenceNumber>
+                <type>Y015</type>
+                <referenceNumber>addref-1</referenceNumber>
             </AdditionalReference>
             <AdditionalInformation>
                 <sequenceNumber>6</sequenceNumber>
@@ -262,9 +262,9 @@
                     <referenceNumber>4</referenceNumber>
                 </TransportDocument>
                 <AdditionalReference>
-                    <sequenceNumber>4</sequenceNumber>
-                    <type>3</type>
-                    <referenceNumber>1</referenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>Y015</type>
+                    <referenceNumber>addref-1</referenceNumber>
                 </AdditionalReference>
                 <AdditionalInformation>
                     <sequenceNumber>7</sequenceNumber>
