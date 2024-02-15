@@ -99,12 +99,12 @@
             <referenceNumber>addref-1</referenceNumber>
         </AdditionalReference>
         <AdditionalInformation>
-            <sequenceNumber>adref-2</sequenceNumber>
-            <code>6</code>
+            <sequenceNumber>1</sequenceNumber>
+            <code>20100</code>
             <text>additional ref text</text>
         </AdditionalInformation>
         <Incident>
-            <sequenceNumber>23</sequenceNumber>
+            <sequenceNumber>1</sequenceNumber>
             <code>5</code>
             <text>some text 1</text>
             <Endorsement>
@@ -114,7 +114,7 @@
                 <country>DE</country>
             </Endorsement>
             <Location>
-                <qualifierOfIdentification>loc1</qualifierOfIdentification>
+                <qualifierOfIdentification>U</qualifierOfIdentification>
                 <UNLocode>34</UNLocode>
                 <country>DE</country>
                 <GNSS>
@@ -128,31 +128,31 @@
                 </Address>
             </Location>
             <TransportEquipment>
-                <sequenceNumber>te1</sequenceNumber>
+                <sequenceNumber>1</sequenceNumber>
                 <containerIdentificationNumber>tn1</containerIdentificationNumber>
                 <numberOfSeals>34</numberOfSeals>
                 <Seal>
-                    <sequenceNumber>7</sequenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
                     <identifier>sl7</identifier>
                 </Seal>
                 <GoodsReference>
-                    <sequenceNumber>gref-5</sequenceNumber>
+                    <sequenceNumber>1</sequenceNumber>
                     <declarationGoodsItemNumber>78</declarationGoodsItemNumber>
                 </GoodsReference>
             </TransportEquipment>
             <Transhipment>
                 <containerIndicator>1</containerIndicator>
                 <TransportMeans>
-                    <typeOfIdentification>5</typeOfIdentification>
+                    <typeOfIdentification>21</typeOfIdentification>
                     <identificationNumber>44</identificationNumber>
                     <nationality>FR</nationality>
                 </TransportMeans>
             </Transhipment>
         </Incident>
         <HouseConsignment>
-            <sequenceNumber>hc1</sequenceNumber>
+            <sequenceNumber>1</sequenceNumber>
             <grossMass>1234.567</grossMass>
-            <securityIndicatorFromExportDeclaration>si1</securityIndicatorFromExportDeclaration>
+            <securityIndicatorFromExportDeclaration>0</securityIndicatorFromExportDeclaration>
             <Consignor>
                 <identificationNumber>csgr1</identificationNumber>
                 <name>michael doe</name>
@@ -174,8 +174,8 @@
                 </Address>
             </Consignee>
             <DepartureTransportMeans>
-                <sequenceNumber>56</sequenceNumber>
-                <typeOfIdentification>2</typeOfIdentification>
+                <sequenceNumber>1</sequenceNumber>
+                <typeOfIdentification>20</typeOfIdentification>
                 <identificationNumber>23</identificationNumber>
                 <nationality>IT</nationality>
             </DepartureTransportMeans>
@@ -202,14 +202,14 @@
                 <referenceNumber>addref-1</referenceNumber>
             </AdditionalReference>
             <AdditionalInformation>
-                <sequenceNumber>6</sequenceNumber>
-                <code>7</code>
+                <sequenceNumber>1</sequenceNumber>
+                <code>20200</code>
                 <text>8</text>
             </AdditionalInformation>
             <ConsignmentItem>
                 <goodsItemNumber>6</goodsItemNumber>
                 <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
-                <declarationType>2</declarationType>
+                <declarationType>T1</declarationType>
                 <countryOfDestination>DE</countryOfDestination>
                 <Consignee>
                     <identificationNumber>5</identificationNumber>
@@ -223,14 +223,14 @@
                 </Consignee>
                 <Commodity>
                     <descriptionOfGoods>shirts</descriptionOfGoods>
-                    <cusCode>1</cusCode>
+                    <cusCode>0010001-6</cusCode>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>3</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010121</harmonizedSystemSubHeadingCode>
                         <combinedNomenclatureCode>45</combinedNomenclatureCode>
                     </CommodityCode>
                     <DangerousGoods>
-                        <sequenceNumber>5</sequenceNumber>
-                        <UNNumber>1</UNNumber>
+                        <sequenceNumber>1</sequenceNumber>
+                        <UNNumber>0004</UNNumber>
                     </DangerousGoods>
                     <GoodsMeasure>
                         <grossMass>123.45</grossMass>
@@ -238,8 +238,8 @@
                     </GoodsMeasure>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>5</sequenceNumber>
-                    <typeOfPackages>3</typeOfPackages>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>1A</typeOfPackages>
                     <numberOfPackages>99</numberOfPackages>
                     <shippingMarks>xyz</shippingMarks>
                 </Packaging>
@@ -267,8 +267,8 @@
                     <referenceNumber>addref-1</referenceNumber>
                 </AdditionalReference>
                 <AdditionalInformation>
-                    <sequenceNumber>7</sequenceNumber>
-                    <code>6</code>
+                    <sequenceNumber>1</sequenceNumber>
+                    <code>20300</code>
                     <text>additional info text</text>
                 </AdditionalInformation>
             </ConsignmentItem>
