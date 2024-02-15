@@ -7,9 +7,9 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <MRN>38VYQTYFU3T0KUTUM3</MRN>
-        <declarationType>3</declarationType>
+        <declarationType>T</declarationType>
         <declarationAcceptanceDate>2014-06-09+01:00</declarationAcceptanceDate>
-        <security>4</security>
+        <security>0</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
     </TransitOperation>
     <CustomsOfficeOfDestinationActual>
@@ -30,7 +30,7 @@
         <identificationNumber>tad-1</identificationNumber>
     </TraderAtDestination>
     <CTLControl>
-        <continueUnloading>9</continueUnloading>
+        <continueUnloading>1</continueUnloading>
     </CTLControl>
     <Consignment>
         <countryOfDestination>FR</countryOfDestination>
@@ -58,21 +58,21 @@
             </Address>
         </Consignee>
         <TransportEquipment>
-            <sequenceNumber>te1</sequenceNumber>
+            <sequenceNumber>1</sequenceNumber>
             <containerIdentificationNumber>cin-1</containerIdentificationNumber>
             <numberOfSeals>103</numberOfSeals>
             <Seal>
-                <sequenceNumber>1001</sequenceNumber>
+                <sequenceNumber>1</sequenceNumber>
                 <identifier>1002</identifier>
             </Seal>
             <GoodsReference>
-                <sequenceNumber>gref-1</sequenceNumber>
+                <sequenceNumber>1</sequenceNumber>
                 <declarationGoodsItemNumber>108</declarationGoodsItemNumber>
             </GoodsReference>
         </TransportEquipment>
         <DepartureTransportMeans>
-            <sequenceNumber>dtm-1</sequenceNumber>
-            <typeOfIdentification>4</typeOfIdentification>
+            <sequenceNumber>1</sequenceNumber>
+            <typeOfIdentification>10</typeOfIdentification>
             <identificationNumber>28</identificationNumber>
             <nationality>DE</nationality>
         </DepartureTransportMeans>
