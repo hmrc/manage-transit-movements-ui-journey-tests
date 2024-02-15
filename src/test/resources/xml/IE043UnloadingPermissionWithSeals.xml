@@ -84,7 +84,7 @@
         </PreviousDocument>
         <SupportingDocument>
             <sequenceNumber>1</sequenceNumber>
-            <type>C085</type>
+            <type>C651</type>
             <referenceNumber>1234</referenceNumber>
             <complementOfInformation>2</complementOfInformation>
         </SupportingDocument>
@@ -187,7 +187,7 @@
             </PreviousDocument>
             <SupportingDocument>
                 <sequenceNumber>1</sequenceNumber>
-                <type>C640</type>
+                <type>N002</type>
                 <referenceNumber>ref4</referenceNumber>
                 <complementOfInformation>6</complementOfInformation>
             </SupportingDocument>
@@ -252,7 +252,7 @@
                 </PreviousDocument>
                 <SupportingDocument>
                     <sequenceNumber>1</sequenceNumber>
-                    <type>C641</type>
+                    <type>L100</type>
                     <referenceNumber>8</referenceNumber>
                     <complementOfInformation>0</complementOfInformation>
                 </SupportingDocument>
