@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object MoreInformationPage extends Page {
 
-  override def title(args: String*): String = "More information needed to complete declaration"
+  override def title(args: String*): String = "More information needed to complete pre-lodged declaration"
 
 }

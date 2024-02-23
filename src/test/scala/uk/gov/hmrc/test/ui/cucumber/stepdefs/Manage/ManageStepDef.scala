@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage}
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage}
 import uk.gov.hmrc.test.ui.pages.Manage._
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
@@ -45,6 +45,11 @@ class ManageStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Goods under control' page$""") { () =>
     GoodsUnderControlPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$""") { () =>
+    PreLodgedGoodsUnderControlPage
       .loadPage()
   }
 

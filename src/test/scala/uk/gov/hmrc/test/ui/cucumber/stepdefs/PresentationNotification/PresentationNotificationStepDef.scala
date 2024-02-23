@@ -26,7 +26,7 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification._
 class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
-    """^(?:I )?click the Continue button on the presentation 'More information needed to complete declaration' page$"""
+    """^(?:I )?click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page$"""
   ) { () =>
     MoreInformationPage
       .loadPage()
@@ -34,7 +34,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?click the Continue button on the presentation 'Confirmation needed to complete declaration' page$"""
+    """^(?:I )?click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page$"""
   ) { () =>
     ConfirmationNeededPage
       .loadPage()

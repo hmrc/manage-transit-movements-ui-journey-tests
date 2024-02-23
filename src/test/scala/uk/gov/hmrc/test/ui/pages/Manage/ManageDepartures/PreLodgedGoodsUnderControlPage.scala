@@ -18,8 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-object ConfirmationNeededToCompleteDeclarationPage extends Page {
+object PreLodgedGoodsUnderControlPage extends Page {
 
-  override def title(args: String*): String = "Confirmation needed to complete pre-lodged declaration"
+  override def title(args: String*): String = "Intention to control - complete pre-lodged declaration"
 
 }

@@ -95,7 +95,7 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete declaration' page$""") { () =>
+  Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete pre-lodged declaration' page$""") { () =>
     ConfirmationNeededToCompleteDeclarationPage
       .loadPage()
   }

@@ -15,13 +15,12 @@
         <security>0</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <!-- <specificCircumstanceIndicator>QRI</specificCircumstanceIndicator> -->
-        <communicationLanguageAtDeparture>AT</communicationLanguageAtDeparture>
         <bindingItinerary>0</bindingItinerary>
     </TransitOperation>
     <Authorisation>
         <sequenceNumber>1</sequenceNumber>
         <type>C521</type>
-        <referenceNumber>testString</referenceNumber>
+        <referenceNumber>XIDESAUTH002</referenceNumber>
     </Authorisation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>XI000081</referenceNumber>
@@ -35,7 +34,7 @@
     </CustomsOfficeOfTransitDeclared>
     <!--<CustomsOfficeOfExitForTransitDeclared><sequenceNumber>1</sequenceNumber><referenceNumber>GB000120</referenceNumber></CustomsOfficeOfExitForTransitDeclared>-->
     <HolderOfTheTransitProcedure>
-        <identificationNumber>XI985524247819</identificationNumber>
+<!--        <identificationNumber>XI985524247819</identificationNumber>-->
         <name>Trader 1</name>
         <Address>
             <streetAndNumber>1 TRADER STREET</streetAndNumber>
@@ -69,12 +68,12 @@
         <inlandModeOfTransport>4</inlandModeOfTransport>
         <modeOfTransportAtTheBorder>1</modeOfTransportAtTheBorder>
         <grossMass>60000.204</grossMass>
-        <referenceNumberUCR>TEST123456</referenceNumberUCR>
+        <referenceNumberUCR>UCR342</referenceNumberUCR>
         <Carrier>
             <identificationNumber>NL023111152</identificationNumber>
         </Carrier>
         <Consignor>
-            <identificationNumber>NL023111152</identificationNumber>
+<!--            <identificationNumber>NL023111152</identificationNumber>-->
             <name>Klein Georg</name>
             <Address>
                 <streetAndNumber>Kapuzinergasse 3</streetAndNumber>
@@ -85,13 +84,13 @@
         </Consignor>
         <Consignee>
             <identificationNumber>NL023111152</identificationNumber>
-            <name>Sofia Lemmens</name>
-            <Address>
-                <streetAndNumber>Spastraat 7</streetAndNumber>
-                <postcode>20034-748</postcode>
-                <city>London</city>
-                <country>GB</country>
-            </Address>
+<!--            <name>Sofia Lemmens</name>-->
+<!--            <Address>-->
+<!--                <streetAndNumber>Spastraat 7</streetAndNumber>-->
+<!--                <postcode>20034-748</postcode>-->
+<!--                <city>London</city>-->
+<!--                <country>GB</country>-->
+<!--            </Address>-->
         </Consignee>
         <TransportEquipment>
             <sequenceNumber>1</sequenceNumber>

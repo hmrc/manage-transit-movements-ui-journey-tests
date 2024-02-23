@@ -1,0 +1,35 @@
+<ncts:CC060C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+    <messageSender>token</messageSender>
+    <messageRecipient>token</messageRecipient>
+    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageIdentification>token</messageIdentification>
+    <messageType>CC060C</messageType>
+    <!--Optional:-->
+    <correlationIdentifier>token</correlationIdentifier>
+    <TransitOperation>
+        <!--Optional:-->
+        <LRN>Pre-lodge_Contol</LRN>
+        <!--Optional:-->
+        <MRN>28BDU7NB98LCWXLNM2</MRN>
+        <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
+        <notificationType>2</notificationType>
+    </TransitOperation>
+    <CustomsOfficeOfDeparture>
+        <referenceNumber>GB000060</referenceNumber>
+    </CustomsOfficeOfDeparture>
+    <HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <identificationNumber>GB0031012301203</identificationNumber>
+    </HolderOfTheTransitProcedure>
+    <!--0 to 99 repetitions:-->
+    <RequestedDocument>
+        <sequenceNumber>1</sequenceNumber>
+        <documentType>66</documentType>
+        <!--Optional:-->
+        <description>Document description</description>
+    </RequestedDocument>
+    <RequestedDocument>
+        <sequenceNumber>2</sequenceNumber>
+        <documentType>271</documentType>
+    </RequestedDocument>
+</ncts:CC060C>
