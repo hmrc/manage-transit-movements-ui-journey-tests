@@ -70,11 +70,11 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Given("""^(?:I )?click the (.+) link on the 'Cross-check the transit with this declaration summary' page$""") {
-    (link: String) =>
+  Given("""^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
+    (index: String) =>
       DeclarationSummaryPage
         .loadPage()
-        .selectAction(link)
+        .selectAction(index)
   }
 
   Given(

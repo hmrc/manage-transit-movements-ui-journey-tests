@@ -22,11 +22,10 @@ object DeclarationSummaryPage extends Page {
 
   override def title(args: String*): String = "Cross-check the transit with this declaration summary"
 
-  def selectAction(link: String): this.type = {
-    link match {
-      case "More details"        => clickById("view_link.id")
-      case "House consignment 1" => clickById("houseConsignment1")
-    }
+  def selectAction(index: String): this.type = {
+    clickById("houseConsignments")
+    clickById(s"houseConsignment$index")
+    clickById(s"view-house-consignment-$index")
     this
   }
 
