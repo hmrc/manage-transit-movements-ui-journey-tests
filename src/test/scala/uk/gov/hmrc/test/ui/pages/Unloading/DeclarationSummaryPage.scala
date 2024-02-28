@@ -26,6 +26,7 @@ object DeclarationSummaryPage extends Page {
     link match {
       case "More details"        => clickById("view_link.id")
       case "House consignment 1" => clickById("houseConsignment1")
+      case "House consignments"  => clickById("houseConsignments")
     }
     this
   }
