@@ -13,9 +13,7 @@ Feature: Submit unloading remarks with seals
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
-    And I click the House consignments link on the 'Cross-check the transit with this declaration summary' page
-    And I click the House consignment 1 link on the 'Cross-check the transit with this declaration summary' page
-    And I click the More details link on the 'Cross-check the transit with this declaration summary' page
+    And I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Back to summary button on the 'Cross-check the transit with house consignment 1' page
     And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option No on the 'Were there any discrepancies between the transit and the declaration summary?' page
