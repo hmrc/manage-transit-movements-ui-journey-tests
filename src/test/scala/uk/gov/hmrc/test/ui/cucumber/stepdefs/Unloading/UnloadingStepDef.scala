@@ -17,6 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{CountryForNewDepartureMeansOfTransportPage, DocumentsNewReferenceNumber, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -201,4 +203,69 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  Given("""^(?:I )?click the 'Documents' link for Documents (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
+    (index: String) =>
+      DeclarationSummaryPage
+        .loadPage()
+        .selectDocAction(index)
+  }
+  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with this declaration summary' page$""") { (text: String) =>
+    DeclarationSummaryPage
+      .clickLinkById(text)
+  }
+
+  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") {
+    (answer: String) =>
+      NewDocumentType
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?enter reference number (.+) on 'What is the document’s new reference number\?' page$""") {
+    (answer: String) =>
+      DocumentsNewReferenceNumber
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter additional information (.+) on 'Enter the new additional information\?' page$""") {
+    (answer: String) =>
+      NewAdditionalInformation
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  Given("""^(?:I )?click the 'Departure means of transport' link for Departure means of transport (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
+    (index: String) =>
+      DeclarationSummaryPage
+        .loadPage()
+        .selectDepartureTransportAction(index)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for the new departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    IdentificationForNewDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter identification number (.+) on 'What is the identification number for the new departure means of transport\?' page$""") {
+    (answer: String) =>
+      IdentificationNumberForNewDepartureMeansOfTransportPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What country is the new departure means of transport registered to\?' page$""") {
+    (answer: String) =>
+      CountryForNewDepartureMeansOfTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
 }
