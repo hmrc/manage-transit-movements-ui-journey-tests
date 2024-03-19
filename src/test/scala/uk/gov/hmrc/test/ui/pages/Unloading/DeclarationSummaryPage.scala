@@ -16,16 +16,37 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
+import org.openqa.selenium.By.{cssSelector, xpath}
+import org.openqa.selenium.{By, WebElement}
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
+import uk.gov.hmrc.test.ui.pages.AuthorityWizard.findElementBy
 import uk.gov.hmrc.test.ui.pages.Page
 
 object DeclarationSummaryPage extends Page {
 
   override def title(args: String*): String = "Cross-check the transit with this declaration summary"
 
+  def clickLinkById(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
+
   def selectAction(index: String): this.type = {
     clickById("houseConsignments")
     clickById(s"houseConsignment$index")
     clickById(s"view-house-consignment-$index")
+    this
+  }
+
+  def selectDocAction(index: String): this.type = {
+    clickById("documents")
+    clickById(s"document$index")
+    this
+  }
+
+  def selectDepartureTransportAction(index: String): this.type = {
+    clickById("departureTransportMeans")
+    clickById(s"departureTransportMeans$index")
     this
   }
 
