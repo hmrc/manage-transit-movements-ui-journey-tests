@@ -13,6 +13,7 @@ And I choose radio option fully on the 'Have you fully or partially unloaded the
 And I fill in the date on the 'When were the goods unloaded?' page
 And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
 And I choose radio option No on the 'Are any of the seals broken?' page
+
 ## docuements section
   And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for document type 1 on the 'Cross-check the transit with this declaration summary' page
