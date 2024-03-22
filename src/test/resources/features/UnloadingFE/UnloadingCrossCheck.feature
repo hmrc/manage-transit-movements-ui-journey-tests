@@ -1,8 +1,8 @@
 @wip
-Feature: Navigating to Pages from Cross-check the transit with this declaration summary
+Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
 
-Scenario: 01 - Unloading remarks - Navigate the Cross check consignment page and hit change links for all sections with in consignment item
+Scenario: 01 - Unloading remarks - Navigate to Cross check consignment page and hit change links for all sections with in consignment item
 Given I login with ID 1234567890
 When I submit an IE007 Arrival Notification
 And I submit an IE043 Unloading Permission With Seals
@@ -13,7 +13,7 @@ And I choose radio option fully on the 'Have you fully or partially unloaded the
 And I fill in the date on the 'When were the goods unloaded?' page
 And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
 And I choose radio option No on the 'Are any of the seals broken?' page
-## docuements section
+### docuements section
   And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for document type 1 on the 'Cross-check the transit with this declaration summary' page
   And I select Supporting - (C641) Dissostichus on the 'What is the new document type?' page
@@ -23,8 +23,19 @@ And I choose radio option No on the 'Are any of the seals broken?' page
   And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for document additional information 1 on the 'Cross-check the transit with this declaration summary' page
   And I enter additional information 1234 on 'Enter the new additional information?' page
+  #add/remove documents flow
+  And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the link add-remove-documents on the 'Cross-check the transit with this declaration summary' page
+  And I choose radio option Yes on the 'You have added 2 documents to all items' page
+  And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
+  And I enter reference number ref1234 on 'What is the document’s reference number?' page
+  And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
+  And I enter additional information 12345 on documents 'Enter the additional information?' page
+  And I choose to click on the Remove link on the 'You have added 3 documents to all items' page
+  And I choose radio option Yes on the documents 'Are you sure you want to remove this document from all items?' page
+  And I choose radio option No on the 'You have added 2 documents to all items' page
 
-  #Departure Means of Transport
+#  #Departure Means of Transport
   And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for transport means identification 1 on the 'Cross-check the transit with this declaration summary' page
   And I choose radio option Name of the sea-going vessel on the 'Which identification do you want to use for the new departure means of transport?' page
@@ -34,6 +45,89 @@ And I choose radio option No on the 'Are any of the seals broken?' page
   And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for registered country on the 'Cross-check the transit with this declaration summary' page
   And I select Germany - DE on the 'What country is the new departure means of transport registered to?' page
+##Add/remove Departure means of transport
+  And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the link add-remove-departure-transport-means on the 'Cross-check the transit with this declaration summary' page
+  And I choose radio option Yes on the 'You have added 1 departure means of transport' page
+  And I choose radio option Yes on the documents 'Do you want to add the type of identification for the departure means of transport?' page
+  And I choose radio option IMO Ship Identification Number on the 'Which identification do you want to use for the departure means of transport?' page
+  And I choose radio option Yes on the documents 'Do you want to add an identification number for this vehicle?' page
+  And I enter identification number Identify1234 on 'What is the identification number for this vehicle?' page
+  And I choose radio option Yes on the documents 'Do you want to add the registered country for this vehicle?' page
+  And I select Germany - DE on the 'What country is this vehicle registered to?' page
+  And I choose to click on the Remove link on the 'You have added 2 departure means of transport' page
+  And I choose radio option Yes on the documents 'Are you sure you want to remove departure means of transport 1?' page
+  And I choose radio option No on the 'You have added 1 departure means of transport' page
+
+  #Transport Equipment
+  And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the Change link for container identification number 1 on the 'Cross-check the transit with this declaration summary' page
+  And I enter identification number NewContainer1234 on 'What is the new container identification number?' page
+  And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the link transport-equipment-1-seals on the 'Cross-check the transit with this declaration summary' page
+  And I click the Change link for seal details 1 1 on the 'Cross-check the transit with this declaration summary' page
+  And I enter seal identification number Seal1234 on 'What is the new seal identification number?' page
+  And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the link transport-equipment-1-items on the 'Cross-check the transit with this declaration summary' page
+  And I click the Change link for consignment item details 1 1 on the 'Cross-check the transit with this declaration summary' page
+  And I select 100 on the 'Which item does this transport equipment apply to?' page
+  And I click continue 'You have applied 1 item to transport equipment 1' page
+  And I choose radio option No on the cross check 'You have added 1 transport equipment' page
+
+  #add/remove transport equipment
+  And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
+  And I click the link add-remove-transport-equipment on the 'Cross-check the transit with this declaration summary' page
+  And I choose radio option Yes on the cross check 'You have added 1 transport equipment' page
+  And I choose radio option Yes on the cross check 'Do you want to add a container identification number for the transport equipment?' page
+  And I enter identification number Container1234 on 'What is the container identification number?' page
+  And I choose radio option Yes on the cross check 'Do you want to add a seal for the transport equipment?' page
+  And I enter identification number Seal1234 on 'What is the seal identification number?' page
+  And I click Remove on 'You have added 1 seals to transport equipment 2' page
+  And I choose radio option Yes on 'Are you sure you want to remove seal Seal1234 from transport equipment 2?' page
+  And I click radio option No on the 'You have added 0 seals to transport equipment 2' page
+  And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
+  And I select 100 on the 'Which item does this transport equipment apply to?' page
+  And I click Remove on 'You have applied 1 item to transport equipment 2' page
+  And I choose radio option Yes on the 'Are you sure you want to remove this item from transport equipment 2?' page
+  And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
+  And I select 100 on the 'Which item does this transport equipment apply to?' page
+  And I click continue 'You have applied 1 item to transport equipment 2' page
+  And I choose to click on the Remove link on the 'You have added 2 transport equipment' page
+  And I choose radio option Yes on the documents 'Are you sure you want to remove transport equipment 1?' page
+  And I choose radio option No on the cross check 'You have added 1 transport equipment' page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
