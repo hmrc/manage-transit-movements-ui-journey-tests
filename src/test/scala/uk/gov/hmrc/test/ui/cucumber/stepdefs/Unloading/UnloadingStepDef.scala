@@ -17,8 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{CountryForNewDepartureMeansOfTransportPage, DocumentsNewReferenceNumber, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsNewReferenceNumber, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveCommodityCodePage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -267,5 +266,94 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage()
         .select(answer)
         .submitPage()
+  }
+
+  Given("""^(?:I )?click the 'Items' link for Items (.+) on the 'Cross-check the transit with house consignment (.+)' page$""") {
+    (index: String, HCIndex: String) =>
+      CrossCheckHouseConsignmentPage
+        .loadPage(HCIndex)
+        .selectItemAction(index)
+  }
+
+  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+    CrossCheckHouseConsignmentPage
+      .clickLinkById(text)
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeGrossWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the Remove link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+    CrossCheckHouseConsignmentPage
+      .clickLinkByIdRemove(text)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveGrossWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new net weight of item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeNetWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveNetWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeCUSCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeCommodityCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveCommodityCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeNomenclatureCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveNomenclatureCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 }
