@@ -71,8 +71,6 @@ And I choose radio option No on the 'Are any of the seals broken?' page
   And I click the link transport-equipment-1-items on the 'Cross-check the transit with this declaration summary' page
   And I click the Change link for consignment item details 1 1 on the 'Cross-check the transit with this declaration summary' page
   And I select 100 on the 'Which item does this transport equipment apply to?' page
-  And I click continue 'You have applied 1 item to transport equipment 1' page
-  And I choose radio option No on the cross check 'You have added 1 transport equipment' page
 
   #add/remove transport equipment
   And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
@@ -89,9 +87,7 @@ And I choose radio option No on the 'Are any of the seals broken?' page
   And I select 100 on the 'Which item does this transport equipment apply to?' page
   And I click Remove on 'You have applied 1 item to transport equipment 2' page
   And I choose radio option Yes on the 'Are you sure you want to remove this item from transport equipment 2?' page
-  And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
-  And I select 100 on the 'Which item does this transport equipment apply to?' page
-  And I click continue 'You have applied 1 item to transport equipment 2' page
+  And I click radio option No on the 'You have applied 0 items to transport equipment 2' page
   And I choose to click on the Remove link on the 'You have added 2 transport equipment' page
   And I choose radio option Yes on the documents 'Are you sure you want to remove transport equipment 1?' page
   And I choose radio option No on the cross check 'You have added 1 transport equipment' page
