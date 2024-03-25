@@ -571,4 +571,17 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?click radio option (.*) on the 'You have applied (.*) ite(?: m|ms )to transport equipment (.*)' page$"""
+  ) {
+    (answer: String,
+     numberOfTransportEquipmentItemInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
 }
