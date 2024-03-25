@@ -50,4 +50,10 @@ object DeclarationSummaryPage extends Page {
     this
   }
 
+  def selectTransportEquipmentAction(index: String): this.type = {
+    clickById("transportEquipments")
+    clickById(s"transportEquipment$index")
+    this
+  }
+
 }

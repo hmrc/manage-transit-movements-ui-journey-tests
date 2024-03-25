@@ -17,7 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsNewReferenceNumber, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveCommodityCodePage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
+import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, CountryForNewDepartureMeansOfTransportPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumber, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveDocumentFromAllItemsPage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -71,11 +75,12 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Given("""^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
-    (index: String) =>
-      DeclarationSummaryPage
-        .loadPage()
-        .selectAction(index)
+  Given(
+    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+  ) { (index: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectAction(index)
   }
 
   Given(
@@ -202,23 +207,25 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Given("""^(?:I )?click the 'Documents' link for Documents (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
-    (index: String) =>
-      DeclarationSummaryPage
-        .loadPage()
-        .selectDocAction(index)
+  Given(
+    """^(?:I )?click the 'Documents' link for Documents (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+  ) { (index: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectDocAction(index)
   }
-  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with this declaration summary' page$""") { (text: String) =>
+  And(
+    """^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+  ) { (text: String) =>
     DeclarationSummaryPage
       .clickLinkById(text)
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") {
-    (answer: String) =>
-      NewDocumentType
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") { (answer: String) =>
+    NewDocumentType
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
   And("""^(?:I )?enter reference number (.+) on 'What is the document’s new reference number\?' page$""") {
     (answer: String) =>
@@ -236,11 +243,12 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Given("""^(?:I )?click the 'Departure means of transport' link for Departure means of transport (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
-    (index: String) =>
-      DeclarationSummaryPage
-        .loadPage()
-        .selectDepartureTransportAction(index)
+  Given(
+    """^(?:I )?click the 'Departure means of transport' link for Departure means of transport (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+  ) { (index: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectDepartureTransportAction(index)
   }
 
   And(
@@ -252,12 +260,13 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter identification number (.+) on 'What is the identification number for the new departure means of transport\?' page$""") {
-    (answer: String) =>
-      IdentificationNumberForNewDepartureMeansOfTransportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And(
+    """^(?:I )?enter identification number (.+) on 'What is the identification number for the new departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    IdentificationNumberForNewDepartureMeansOfTransportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'What country is the new departure means of transport registered to\?' page$""") {
@@ -268,92 +277,298 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Given("""^(?:I )?click the 'Items' link for Items (.+) on the 'Cross-check the transit with house consignment (.+)' page$""") {
-    (index: String, HCIndex: String) =>
-      CrossCheckHouseConsignmentPage
-        .loadPage(HCIndex)
-        .selectItemAction(index)
+  And("""^(?:I )?click the link (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
+    (text: String) =>
+      DeclarationSummaryPage
+        .clickById(text)
+
   }
 
-  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
-    CrossCheckHouseConsignmentPage
-      .clickLinkById(text)
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherDocumentsPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
   }
-
-  And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item 1 in house consignment 1\?' page$""") {
+  And("""^(?:I )?Add (.+) on the 'What type of document do you want to add\?' page$""") { (answer: String) =>
+    AddDocumentTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter reference number (.+) on 'What is the document’s reference number\?' page$""") {
     (answer: String) =>
-      ChangeGrossWeightPage
+      DocumentsReferenceNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?click the Remove link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
-    CrossCheckHouseConsignmentPage
-      .clickLinkByIdRemove(text)
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1\?' page$"""
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Do you want to add any additional information for this document\?' page$"""
   ) { (answer: String) =>
-    RemoveGrossWeightsPage
+    AddAdditionalInformationForDocumentPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new net weight of item 1 in house consignment 1\?' page$""") {
+  And("""^(?:I )?enter additional information (.+) on documents 'Enter the additional information\?' page$""") {
     (answer: String) =>
-      ChangeNetWeightPage
+      AdditionalInformationPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1\?' page$"""
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) documen(?:t |ts )to all items' page$"""
+  ) { (sectionLink: String, numberOfDocumentsAdded: String) =>
+    DocumentsAddAnotherDocumentsPage
+      .loadPage(numberOfDocumentsAdded)
+      .clickByPartialLinkText(sectionLink)
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove this document from all items\?' page$"""
   ) { (answer: String) =>
-    RemoveNetWeightsPage
+    RemoveDocumentFromAllItemsPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1\?' page$""") {
-    (answer: String) =>
-      ChangeCUSCodePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item 1 in house consignment 1\?' page$""") {
-    (answer: String) =>
-      ChangeCommodityCodePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1\?' page$"""
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Do you want to add the type of identification for the departure means of transport\?' page$"""
   ) { (answer: String) =>
-    RemoveCommodityCodePage
+    AddIdentificationTypeForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    IdentificationForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Do you want to add an identification number for this vehicle\?' page$"""
+  ) { (answer: String) =>
+    AddIdentificationNumberForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter identification number (.+) on 'What is the identification number for this vehicle\?' page$""") {
+    (answer: String) =>
+      IdentificationNumberForDepartureTransportMeansPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Do you want to add the registered country for this vehicle\?' page$"""
+  ) { (answer: String) =>
+    AddRegisterCountryForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?select (.+) on the 'What country is this vehicle registered to\?' page$""") { (answer: String) =>
+    CountryTypeVehicleRegisteredPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item 1 in house consignment 1\?' page$""") {
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) departure means of transport' page$"""
+  ) { (sectionLink: String, numberOfDeparturesAdded: String) =>
+    AddAnotherDepartureMeansOfTransportPage
+      .loadPage(numberOfDeparturesAdded)
+      .clickByPartialLinkText(sectionLink)
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove departure means of transport (.+)\?' page$"""
+  ) { (answer: String, removeCount: String) =>
+    RemoveDepartureMeansOfTransportPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      AddAnotherDepartureMeansOfTransportPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
+  }
+
+  //TransportEquipment
+  Given(
+    """^(?:I )?click the 'Transport equipment' link for Transport equipment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+  ) { (index: String) =>
+    DeclarationSummaryPage
+      .loadPage()
+      .selectTransportEquipmentAction(index)
+  }
+  And("""^(?:I )?enter identification number (.+) on 'What is the new container identification number\?' page$""") {
     (answer: String) =>
-      ChangeNomenclatureCodePage
+      NewContainerIdentificationNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1\?' page$"""
-  ) { (answer: String) =>
-    RemoveNomenclatureCodePage
+  And("""^(?:I )?enter seal identification number (.+) on 'What is the new seal identification number\?' page$""") {
+    (answer: String) =>
+      NewSealIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?select (.+) on the 'Which item does this transport equipment apply to\?' page$""") { (answer: String) =>
+    ItemTypeForTransportEquipmentPage
       .loadPage()
       .select(answer)
       .submitPage()
   }
+  And(
+    """^(?:I )?click continue 'You have applied (.*) item to transport equipment (.*)' page$"""
+  ) {
+    (
+      numberOfTransportEquipmentItemsInTitle: String,
+      numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the cross check 'You have added (.*) transport equipment' page$""") {
+    (answer: String, numberOfTransportEquipment: String) =>
+      AddAnotherForTransportEquipmentPage
+        .loadPage(numberOfTransportEquipment)
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the cross check 'Do you want to add a container identification number for the transport equipment\?' page$""") {
+    (answer: String) =>
+      OptionToAddContainerIdentificationNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?enter identification number (.+) on 'What is the container identification number\?' page$""") {
+    (answer: String) =>
+      ContainerIdentificationNumberforTransportEquipmentPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the cross check 'Do you want to add a seal for the transport equipment\?' page$""") {
+    (answer: String) =>
+      OptionToAddSealPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?enter identification number (.+) on 'What is the seal identification number\?' page$""") {
+    (answer: String) =>
+      SealIdentificationNumberForTransportEquipmentPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on 'You have added (.*) sea(?: l|ls )to transport equipment (.*)' page$"""
+  ) {
+    (answer: String,
+     numberOfTransportEquipmentSealInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      SealsIncrementPage
+        .loadPage(numberOfTransportEquipmentSealInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove seal (.*) from transport equipment (.*)\?' page$"""
+  ) {
+    (answer: String,
+     SealValue: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      RemoveSealFromTransportEquipmentPage
+        .loadPage(SealValue, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click radio option (.*) on the 'You have added (.*) sea(?: l|ls )to transport equipment (.*)' page$"""
+  ) {
+    (answer: String,
+     numberOfTransportEquipmentSealInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      SealsIncrementPage
+        .loadPage(numberOfTransportEquipmentSealInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And("""^(?:I )?choose radio option (.*) on the cross check 'Do any items apply to this transport equipment\?' page$""") {
+    (answer: String) =>
+      OptionToAddItemsApplyPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on 'You have applied (.*) item to transport equipment (.*)' page$"""
+  ) {
+    (answer: String,
+     numberOfTransportEquipmentSealInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentSealInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
+  ) { (answer: String, removeCount: String) =>
+    RemoveItemFromTransportEquipmentPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?click radio option (.*) on the 'You have applied (.*) item to transport equipment (.*)' page$"""
+  ) {
+    (answer: String,
+     numberOfTransportEquipmentItemsInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
+    ) =>
+      TransportEquipmentIncrementPage
+        .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) transport equipment' page$"""
+  ) { (sectionLink: String, numberOfTransportEquipAdded: String) =>
+    AddAnotherForTransportEquipmentPage
+      .loadPage(numberOfTransportEquipAdded)
+      .clickByPartialLinkText(sectionLink)
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove transport equipment (.+)\?' page$"""
+  ) { (answer: String, removeCount: String) =>
+    RemoveTransportEquipmentFromCorssCheckPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
+  }
+
 }
