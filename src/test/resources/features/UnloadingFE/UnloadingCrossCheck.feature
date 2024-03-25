@@ -13,7 +13,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
-### docuements section
+
+# Documents Section
     And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Change link for document type 1 on the 'Cross-check the transit with this declaration summary' page
     And I select Supporting - (C641) Dissostichus on the 'What is the new document type?' page
@@ -23,7 +24,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Change link for document additional information 1 on the 'Cross-check the transit with this declaration summary' page
     And I enter additional information 1234 on 'Enter the new additional information?' page
-  #add/remove documents flow
+
+#Add/Remove Documents Flow
     And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the link add-remove-documents on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option Yes on the 'You have added 2 documents to all items' page
@@ -35,7 +37,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the documents 'Are you sure you want to remove this document from all items?' page
     And I choose radio option No on the 'You have added 2 documents to all items' page
 
-#  #Departure Means of Transport
+#Departure Means of Transport
     And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Change link for transport means identification 1 on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option Name of the sea-going vessel on the 'Which identification do you want to use for the new departure means of transport?' page
@@ -45,7 +47,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Change link for registered country on the 'Cross-check the transit with this declaration summary' page
     And I select Germany - DE on the 'What country is the new departure means of transport registered to?' page
-##Add/remove Departure means of transport
+
+#Add/Remove Departure Means of Transport
     And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the link add-remove-departure-transport-means on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option Yes on the 'You have added 1 departure means of transport' page
@@ -59,7 +62,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the documents 'Are you sure you want to remove departure means of transport 1?' page
     And I choose radio option No on the 'You have added 1 departure means of transport' page
 
-  #Transport Equipment
+#Transport Equipment
     And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the Change link for container identification number 1 on the 'Cross-check the transit with this declaration summary' page
     And I enter identification number NewContainer1234 on 'What is the new container identification number?' page
@@ -72,7 +75,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Change link for consignment item details 1 1 on the 'Cross-check the transit with this declaration summary' page
     And I select 100 on the 'Which item does this transport equipment apply to?' page
 
-  #add/remove transport equipment
+#Add/Remove Transport Equipment
     And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
     And I click the link add-remove-transport-equipment on the 'Cross-check the transit with this declaration summary' page
     And I choose radio option Yes on the cross check 'You have added 1 transport equipment' page
@@ -92,7 +95,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the documents 'Are you sure you want to remove transport equipment 1?' page
     And I choose radio option No on the cross check 'You have added 1 transport equipment' page
 
-## House Consignment - Consignment Item
+# House Consignment - Consignment Item
   And I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
   Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
   And I click the Change link for Gross Weight 1 on the 'Cross-check the transit with house consignment 1' page
