@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTra
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, CountryForNewDepartureMeansOfTransportPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumber, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveDocumentFromAllItemsPage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumber, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -431,7 +431,7 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
   And("""^(?:I )?select (.+) on the 'Which item does this transport equipment apply to\?' page$""") { (answer: String) =>
-      ItemTypeForTransportEquipmentPage
+    ItemTypeForTransportEquipmentPage
       .loadPage()
       .select(answer)
       .submitPage()
@@ -486,8 +486,8 @@ class UnloadingStepDef extends BaseStepDef {
     """^(?:I )?click (.*) on 'You have added (.*) sea(?: l|ls )to transport equipment (.*)' page$"""
   ) {
     (answer: String,
-      numberOfTransportEquipmentSealInTitle: String,
-      numberOfTransportEquipmentIncrementsInTitle: String
+     numberOfTransportEquipmentSealInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
     ) =>
       SealsIncrementPage
         .loadPage(numberOfTransportEquipmentSealInTitle, numberOfTransportEquipmentIncrementsInTitle)
@@ -547,8 +547,8 @@ class UnloadingStepDef extends BaseStepDef {
     """^(?:I )?click radio option (.*) on the 'You have applied (.*) item to transport equipment (.*)' page$"""
   ) {
     (answer: String,
-      numberOfTransportEquipmentItemsInTitle: String,
-      numberOfTransportEquipmentIncrementsInTitle: String
+     numberOfTransportEquipmentItemsInTitle: String,
+     numberOfTransportEquipmentIncrementsInTitle: String
     ) =>
       TransportEquipmentIncrementPage
         .loadPage(numberOfTransportEquipmentItemsInTitle, numberOfTransportEquipmentIncrementsInTitle)
@@ -567,6 +567,108 @@ class UnloadingStepDef extends BaseStepDef {
   ) { (answer: String, removeCount: String) =>
     RemoveTransportEquipmentFromCorssCheckPage
       .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
+
+    And(
+      """^(?:I )?click radio option (.*) on the 'You have applied (.*) ite(?: m|ms )to transport equipment (.*)' page$"""
+    ) {
+      (answer: String,
+       numberOfTransportEquipmentItemInTitle: String,
+       numberOfTransportEquipmentIncrementsInTitle: String
+      ) =>
+        TransportEquipmentIncrementPage
+          .loadPage(numberOfTransportEquipmentItemInTitle, numberOfTransportEquipmentIncrementsInTitle)
+          .select(answer)
+          .submitPage()
+    }
+
+  }
+  Given("""^(?:I )?click the 'Items' link for Items (.+) on the 'Cross-check the transit with house consignment (.+)' page$""") {
+    (index: String, HCIndex: String) =>
+      CrossCheckHouseConsignmentPage
+        .loadPage(HCIndex)
+        .selectItemAction(index)
+  }
+
+  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+    CrossCheckHouseConsignmentPage
+      .clickLinkById(text)
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeGrossWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the Remove link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+    CrossCheckHouseConsignmentPage
+      .clickLinkByIdRemove(text)
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveGrossWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new net weight of item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeNetWeightPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveNetWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeCUSCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeCommodityCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveCommodityCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      ChangeNomenclatureCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    RemoveNomenclatureCodePage
+      .loadPage()
       .select(answer)
       .submitPage()
   }
