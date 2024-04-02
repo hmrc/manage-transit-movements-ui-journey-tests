@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTra
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumber, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformation, NewDocumentType, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -29,6 +29,16 @@ class UnloadingStepDef extends BaseStepDef {
   Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
     UnloadingGuidancePage
       .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Cross-check the transit with this declaration summary' page$""") { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?should be on the 'Cross-check the transit with house consignment (.+)' page$""") { (houseConsignments:String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignments)
   }
 
   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
@@ -70,7 +80,7 @@ class UnloadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") {
     () =>
-      DeclarationSummaryPage
+      ConsignmentCrossCheckPage
         .loadPage()
         .submitPage()
   }
@@ -78,7 +88,7 @@ class UnloadingStepDef extends BaseStepDef {
   Given(
     """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
   ) { (index: String) =>
-    DeclarationSummaryPage
+    ConsignmentCrossCheckPage
       .loadPage()
       .selectAction(index)
   }
@@ -210,34 +220,70 @@ class UnloadingStepDef extends BaseStepDef {
   Given(
     """^(?:I )?click the 'Documents' link for Documents (.+) on the 'Cross-check the transit with this declaration summary' page$"""
   ) { (index: String) =>
-    DeclarationSummaryPage
+    ConsignmentCrossCheckPage
       .loadPage()
       .selectDocAction(index)
   }
   And(
     """^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with this declaration summary' page$"""
   ) { (text: String) =>
-    DeclarationSummaryPage
+    ConsignmentCrossCheckPage
       .clickLinkById(text)
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") { (answer: String) =>
-    NewDocumentType
+  And(
+    """^(?:I )?click the (.+) Change link for section (.+) (.+)$"""
+  ) { (changeLinkText: String, section: String, index:String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectSection(section)
+      .selectSectionChild(section,index)
+      .clickLinkByIdBySection(changeLinkText)
+  }
+
+  And(
+    """^(?:I )?click the Change (.+) link for sub-section (.+) of section (.+) (.+)$"""
+  ) { (changeLinkText: String, subSection: String, section:String, index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectSection(section)
+      .selectSectionChild(section, index)
+      .selectSubSection(subSection)
+      .clickLinkByIdBySection(changeLinkText)
+  }
+
+  And("""^(?:I )?select (.+) on the 'What is the new additional reference type\?' page$""") { (answer: String) =>
+    NewAdditionalReferenceTypePage
       .loadPage()
       .select(answer)
       .submitPage()
   }
-  And("""^(?:I )?enter reference number (.+) on 'What is the document’s new reference number\?' page$""") {
+
+  And("""^(?:I )?enter additional reference (.+) on the 'What is the new additional reference number\?' page$""") {
     (answer: String) =>
-      DocumentsNewReferenceNumber
+      NewAdditionalReferenceNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
   }
 
-  And("""^(?:I )?enter additional information (.+) on 'Enter the new additional information\?' page$""") {
+  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") { (answer: String) =>
+    NewDocumentTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter reference number (.+) on the 'What is the document’s new reference number\?' page$""") {
     (answer: String) =>
-      NewAdditionalInformation
+      DocumentsNewReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter additional information (.+) on the 'Enter the new additional information\?' page$""") {
+    (answer: String) =>
+      NewAdditionalInformationPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
@@ -246,7 +292,7 @@ class UnloadingStepDef extends BaseStepDef {
   Given(
     """^(?:I )?click the 'Departure means of transport' link for Departure means of transport (.+) on the 'Cross-check the transit with this declaration summary' page$"""
   ) { (index: String) =>
-    DeclarationSummaryPage
+    ConsignmentCrossCheckPage
       .loadPage()
       .selectDepartureTransportAction(index)
   }
@@ -261,7 +307,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter identification number (.+) on 'What is the identification number for the new departure means of transport\?' page$"""
+    """^(?:I )?enter identification number (.+) on the 'What is the identification number for the new departure means of transport\?' page$"""
   ) { (answer: String) =>
     IdentificationNumberForNewDepartureMeansOfTransportPage
       .loadPage()
@@ -279,7 +325,7 @@ class UnloadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?click the link (.+) on the 'Cross-check the transit with this declaration summary' page$""") {
     (text: String) =>
-      DeclarationSummaryPage
+      ConsignmentCrossCheckPage
         .clickById(text)
 
   }
@@ -411,7 +457,7 @@ class UnloadingStepDef extends BaseStepDef {
   Given(
     """^(?:I )?click the 'Transport equipment' link for Transport equipment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
   ) { (index: String) =>
-    DeclarationSummaryPage
+    ConsignmentCrossCheckPage
       .loadPage()
       .selectTransportEquipmentAction(index)
   }
@@ -423,7 +469,7 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter seal identification number (.+) on 'What is the new seal identification number\?' page$""") {
+  And("""^(?:I )?enter seal identification number (.+) on the 'What is the new seal identification number\?' page$""") {
     (answer: String) =>
       NewSealIdentificationNumberPage
         .loadPage()

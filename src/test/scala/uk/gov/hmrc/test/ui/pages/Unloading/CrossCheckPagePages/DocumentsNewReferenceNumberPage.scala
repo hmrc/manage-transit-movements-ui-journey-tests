@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object DocumentsNewReferenceNumber extends StringPage {
+object DocumentsNewReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String =
     String.format("What is the document’s new reference number?")
