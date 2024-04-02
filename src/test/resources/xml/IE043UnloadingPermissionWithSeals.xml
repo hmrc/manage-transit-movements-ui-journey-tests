@@ -95,7 +95,7 @@
         </TransportDocument>
         <AdditionalReference>
             <sequenceNumber>1</sequenceNumber>
-            <type>Y015</type>
+            <type>Y024</type>
             <referenceNumber>addref-1</referenceNumber>
         </AdditionalReference>
         <AdditionalInformation>
@@ -198,7 +198,7 @@
             </TransportDocument>
             <AdditionalReference>
                 <sequenceNumber>1</sequenceNumber>
-                <type>Y015</type>
+                <type>Y024</type>
                 <referenceNumber>addref-1</referenceNumber>
             </AdditionalReference>
             <AdditionalInformation>
@@ -263,7 +263,7 @@
                 </TransportDocument>
                 <AdditionalReference>
                     <sequenceNumber>1</sequenceNumber>
-                    <type>Y015</type>
+                    <type>Y024</type>
                     <referenceNumber>addref-1</referenceNumber>
                 </AdditionalReference>
                 <AdditionalInformation>

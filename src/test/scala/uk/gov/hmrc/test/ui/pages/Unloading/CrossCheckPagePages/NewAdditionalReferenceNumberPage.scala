@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object NewAdditionalInformation extends StringPage {
+object NewAdditionalReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("Enter the new additional information")
+    String.format("What is the new additional reference number?")
 
 }
