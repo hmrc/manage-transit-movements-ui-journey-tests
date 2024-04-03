@@ -84,10 +84,10 @@ object ConsignmentCrossCheckPage extends Page {
 
   def clickLinkByIdBySection(text: String): Unit = {
     val value = text match {
-      case "Departure means identification type" => "change-transport-means-identification-1"
-      case "Departure identification number" => "change-transport-means-identification-number-1"
-      case "Departure registered country" => "change-registered-country"
-      case "Container identification number" => "change-container-identification-number-1"
+      case "Departure means identification type Change" => "change-transport-means-identification-1"
+      case "Departure identification number Change" => "change-transport-means-identification-number-1"
+      case "Departure registered country Change" => "change-registered-country"
+      case "Container identification number Change" => "change-container-identification-number-1"
       case "seal1" => "change-seal-details-1-1"
       case "item1" => "change-consignment-item-details-1-1"
       case "Document type Change" => "change-document-type-1"
@@ -99,14 +99,12 @@ object ConsignmentCrossCheckPage extends Page {
       case "Gross weight Remove" => "remove-gross-weight-1"
       case "Net weight Change" => "change-net-weight-1"
       case "Net weight Remove" => "remove-net-weight-1"
+      case "Add or remove additional reference" => "add-remove-additional-reference"
+      case "Add or remove document" => "add-remove-documents"
+      case "Add or remove transport equipment" => "add-remove-transport-equipment"
+      case "Add or remove departure means" => "add-remove-departure-transport-means"
     }
     clickById(value)
   }
-//
-//  def selectAdditionalRefAction(index: String): this.type = {
-//    clickById("additionalReferences")
-//    clickById(s"additionalReference$index")
-//    this
-//  }
 
 }

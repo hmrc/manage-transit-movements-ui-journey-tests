@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.AddNewConsignmentAdditionalReferenceNumberPage
 class ItemDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.*) on the 'Enter a description of item (.*)' page$""") {
@@ -367,6 +368,13 @@ class ItemDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.*) on the 'Enter the additional reference number' page$""") { (answer: String) =>
     AdditionalReferenceEnterNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page$""") { (answer: String) =>
+    AddNewConsignmentAdditionalReferenceNumberPage
       .loadPage()
       .fillInput(answer)
       .submitPage()

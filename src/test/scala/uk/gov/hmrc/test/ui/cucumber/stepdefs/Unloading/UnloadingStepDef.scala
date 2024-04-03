@@ -232,7 +232,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?click the (.+) Change link for section (.+) (.+)$"""
+    """^(?:I )?click the (.+) link for section (.+) (.+)$"""
   ) { (changeLinkText: String, section: String, index:String) =>
     ConsignmentCrossCheckPage
       .loadPage()

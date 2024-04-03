@@ -13,11 +13,10 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
 
-  Scenario: 01 - Unloading remarks - Consignment level Cross-check page in change mode
+  Scenario: 01 - Unloading remarks - Consignment level Cross-check page add and remove journeys
 
     #Add/Remove Departure Means of Transport
-    And I click the 'Departure means of transport' link for Departure means of transport 1 on the 'Cross-check the transit with this declaration summary' page
-    And I click the link add-remove-departure-transport-means on the 'Cross-check the transit with this declaration summary' page
+    And I click the Add or remove departure means link for section Departure means of transport 1
     And I choose radio option Yes on the 'You have added 1 departure means of transport' page
     And I choose radio option Yes on the documents 'Do you want to add the type of identification for the departure means of transport?' page
     And I choose radio option IMO Ship Identification Number on the 'Which identification do you want to use for the departure means of transport?' page
@@ -31,8 +30,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
 
     #Add/Remove Transport Equipment
-    And I click the 'Transport equipment' link for Transport equipment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I click the link add-remove-transport-equipment on the 'Cross-check the transit with this declaration summary' page
+    And I click the Add or remove transport equipment link for section Transport equipment 1
     And I choose radio option Yes on the cross check 'You have added 1 transport equipment' page
     And I choose radio option Yes on the cross check 'Do you want to add a container identification number for the transport equipment?' page
     And I enter identification number Container1234 on 'What is the container identification number?' page
@@ -52,8 +50,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
 
       # Add/Remove Documents Flow
-    And I click the 'Documents' link for Documents 1 on the 'Cross-check the transit with this declaration summary' page
-    And I click the link add-remove-documents on the 'Cross-check the transit with this declaration summary' page
+    And I click the Add or remove document link for section Document 1
     And I choose radio option Yes on the 'You have added 2 documents to all items' page
     And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
     And I enter reference number ref1234 on 'What is the document’s reference number?' page
@@ -64,13 +61,13 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option No on the 'You have added 2 documents to all items' page
 
       # Add/Remove Additional reference Flow
-    And I click the add or remove additional reference link
+    And I click the Add or remove additional reference link for section Additional reference 1
     And I click radio option Yes on the 'You have added 1 additional reference' page
-    And I add Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
-    And I choose radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
     And I enter additional reference newRef999 on the 'What is the additional reference number?' page
     And I click the Remove link on the 'You have added 2 additional references' page
-    And I choose radio option Yes on the 'Are you sure you want to remove this additional reference?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And I click radio option No on the 'You have added 1 additional reference' page
 
 
