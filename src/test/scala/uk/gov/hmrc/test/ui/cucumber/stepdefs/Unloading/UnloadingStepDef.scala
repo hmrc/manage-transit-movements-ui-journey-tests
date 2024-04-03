@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTra
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, HouseConsignmentPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -242,12 +242,34 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
+    """^(?:I )?click the (.+) link for (.+) in House consignment (.+)$"""
+  ) { (changeLinkText: String, section: String, index: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectSection(section)
+      .selectItem(section)
+      .clickLinkByIdBySection(changeLinkText)
+  }
+
+  And(
     """^(?:I )?click the Change (.+) link for sub-section (.+) of section (.+) (.+)$"""
   ) { (changeLinkText: String, subSection: String, section:String, index: String) =>
     ConsignmentCrossCheckPage
       .loadPage()
       .selectSection(section)
       .selectSectionChild(section, index)
+      .selectSubSection(subSection)
+      .clickLinkByIdBySection(changeLinkText)
+  }
+
+  And(
+    """^(?:I )?click the (.+) link in House consignment (.+) sub-section (.+) of section (.+)$"""
+  ) { (changeLinkText: String,  index: String, subSection: String, section: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectSection(section)
+      .selectItem(section)
+      .selectSectionChild(subSection)
       .selectSubSection(subSection)
       .clickLinkByIdBySection(changeLinkText)
   }
@@ -259,9 +281,24 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?select (.+) on the 'What is the new additional reference type for item 1 in house consignment 1\?' page$""") { (answer: String) =>
+    NewItemLevelAdditionalReferenceTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?enter additional reference (.+) on the 'What is the new additional reference number\?' page$""") {
     (answer: String) =>
       NewAdditionalReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter additional reference (.+) on the 'What is the new additional reference number for item 1 in house consignment 1\?' page$""") {
+    (answer: String) =>
+      NewItemLevelAdditionalReferenceNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()
@@ -630,14 +667,14 @@ class UnloadingStepDef extends BaseStepDef {
     }
 
   }
-  Given("""^(?:I )?click the 'Items' link for Items (.+) on the 'Cross-check the transit with house consignment (.+)' page$""") {
+  And("""^(?:I )?click the 'Items' link for Items (.+)$""") {
     (index: String, HCIndex: String) =>
       CrossCheckHouseConsignmentPage
         .loadPage(HCIndex)
         .selectItemAction(index)
   }
 
-  And("""^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+  And("""^(?:I )?click the Change link for (.+)$""") { (text: String) =>
     CrossCheckHouseConsignmentPage
       .clickLinkById(text)
   }
@@ -650,7 +687,7 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the Remove link for (.+) on the 'Cross-check the transit with house consignment 1' page$""") { (text: String) =>
+  And("""^(?:I )?click the Remove link for (.+)$""") { (text: String) =>
     CrossCheckHouseConsignmentPage
       .clickLinkByIdRemove(text)
   }

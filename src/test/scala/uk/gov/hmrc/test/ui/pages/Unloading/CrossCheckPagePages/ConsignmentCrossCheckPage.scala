@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import org.openqa.selenium.By.{cssSelector, xpath}
-import org.openqa.selenium.{By, WebElement}
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard.findElementBy
 import uk.gov.hmrc.test.ui.pages.Page
 
 object ConsignmentCrossCheckPage extends Page {
@@ -61,7 +57,6 @@ object ConsignmentCrossCheckPage extends Page {
        case "Transport equipment" => "transportEquipments"
        case "Document" => "documents"
        case "Additional reference" => "additionalReferences"
-
      }
            clickById(value)
            this
@@ -95,11 +90,15 @@ object ConsignmentCrossCheckPage extends Page {
       case "Container identification number" => "change-container-identification-number-1"
       case "seal1" => "change-seal-details-1-1"
       case "item1" => "change-consignment-item-details-1-1"
-      case "Document type" => "change-document-type-1"
-      case "Document reference number" => "change-document-reference-number-1"
-      case "Document additional information" => "change-document-additional-information-1"
-      case "Additional reference type" => "change-additional-reference-type-1"
-      case "Additional reference number" => "change-additional-reference-number-1"
+      case "Document type Change" => "change-document-type-1"
+      case "Document reference number Change" => "change-document-reference-number-1"
+      case "Document additional information Change" => "change-document-additional-information-1"
+      case "Additional reference type Change" => "change-additional-reference-type-1"
+      case "Additional reference number Change" => "change-additional-reference-number-1"
+      case "Gross weight Change" => "change-gross-weight-1"
+      case "Gross weight Remove" => "remove-gross-weight-1"
+      case "Net weight Change" => "change-net-weight-1"
+      case "Net weight Remove" => "remove-net-weight-1"
     }
     clickById(value)
   }

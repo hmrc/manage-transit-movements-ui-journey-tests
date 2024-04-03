@@ -63,8 +63,15 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the documents 'Are you sure you want to remove this document from all items?' page
     And I choose radio option No on the 'You have added 2 documents to all items' page
 
-
-
+      # Add/Remove Additional reference Flow
+    And I click the add or remove additional reference link
+    And I click radio option Yes on the 'You have added 1 additional reference' page
+    And I add Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I choose radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I click the Remove link on the 'You have added 2 additional references' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this additional reference?' page
+    And I click radio option No on the 'You have added 1 additional reference' page
 
 
 

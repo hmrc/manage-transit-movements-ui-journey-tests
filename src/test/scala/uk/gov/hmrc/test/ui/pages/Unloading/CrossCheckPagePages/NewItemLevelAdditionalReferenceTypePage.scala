@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object HouseConsignmentPage extends Page {
+object NewItemLevelAdditionalReferenceTypePage extends SelectPage {
 
-  override def title(args: String*): String =
-    String.format("Cross-check the transit with house consignment %s", args: _*)
+  override def title(args: String*): String = "What is the new additional reference type for item 1 in house consignment 1?"
 
 }
