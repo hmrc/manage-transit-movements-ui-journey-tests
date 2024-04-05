@@ -674,11 +674,6 @@ class UnloadingStepDef extends BaseStepDef {
         .selectItemAction(index)
   }
 
-  And("""^(?:I )?click the Change link for (.+)$""") { (text: String) =>
-    CrossCheckHouseConsignmentPage
-      .clickLinkById(text)
-  }
-
   And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item 1 in house consignment 1\?' page$""") {
     (answer: String) =>
       ChangeGrossWeightPage
