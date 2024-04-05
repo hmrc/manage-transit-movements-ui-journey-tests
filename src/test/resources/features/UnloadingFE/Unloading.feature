@@ -41,5 +41,3 @@ Feature: Submit unloading remarks with seals
     And I submit the 'Check your answers' page
     Then I should be on the 'You cannot send these unloading remarks' page
     And I sign out
-
-
