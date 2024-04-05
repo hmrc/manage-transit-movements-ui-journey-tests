@@ -47,41 +47,53 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Additional reference number Change link for section Additional reference 1
     And I enter additional reference additionalRef123 on the 'What is the new additional reference number?' page
 
+
   Scenario: 02 - Unloading remarks - Item level Cross-check page in change mode
-    # House Consignment - Consignment Item
+  # House Consignment - Consignment Item
     Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
     And I should be on the 'Cross-check the transit with house consignment 1' page
 
-    And I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Change link for Gross Weight 1 on the 'Cross-check the transit with house consignment 1' page
+  # Gross weight
+    And I click the Change Gross weight link for Item 1 in House consignment 1
     And enter number 741.56 on 'What is the new gross weight of item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Remove link for Gross Weight 1 on the 'Cross-check the transit with house consignment 1' page
+    And I click the Remove Gross weight link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Change link for Net Weight 1 on the 'Cross-check the transit with house consignment 1' page
+
+  # Net weight
+    And I click the Change Net weight link for Item 1 in House consignment 1
     And I enter number 5681.22 on 'What is the new net weight of item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Remove link for Net Weight 1 on the 'Cross-check the transit with house consignment 1' page
+    And I click the Remove Net weight link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Change link for CUS Code 1 on the 'Cross-check the transit with house consignment 1' page
+
+  # Cus code
+    And I click the Change Cus code link for Item 1 in House consignment 1
     And I enter number 0018063-2 on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Change link for Commodity Code 1 on the 'Cross-check the transit with house consignment 1' page
+
+  # Commodity code
+    And I click the Change Commodity code link for Item 1 in House consignment 1
     And I enter number 716812 on 'What is the new commodity code for item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Remove link for Commodity Code 1 on the 'Cross-check the transit with house consignment 1' page
+    And I click the Remove Commodity code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Change link for Nomenclature Code 1 on the 'Cross-check the transit with house consignment 1' page
+
+  # Nomeclature code
+    And I click the Change Nomenclature code link for Item 1 in House consignment 1
     And I enter number 84 on 'What is the new combined nomenclature code for item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
-    And I click the Remove link for Nomenclature Code 1 on the 'Cross-check the transit with house consignment 1' page
+    And I click the Remove Nomenclature code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1?' page
-    Given I click the 'Items' link for Items 1 on the 'Cross-check the transit with house consignment 1' page
 
+  #ToDo
+    ## Documents
+    #######################
 
+    ## Additional Reference
+    And I click the Change additional reference Type link in House consignment 1 sub-section Additional reference 1 of section Item 1
+    And I select Y023 - Consignee (AEO certificate number) on the 'What is the new additional reference type for item 1 in house consignment 1?' page
+    And I click the Change additional reference number link in House consignment 1 sub-section Additional reference 1 of section Item 1
+    And I enter additional reference NewReference323 on the 'What is the new additional reference number for item 1 in house consignment 1?' page
+
+  #ToDo
+    ## Packages
+    #######################
 
 
 
