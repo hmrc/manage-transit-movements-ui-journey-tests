@@ -41,7 +41,7 @@ object HouseConsignmentPage extends Page {
 
   def selectSectionChild(answer: String): this.type = {
     val value = answer match {
-      case "Item 1" => "item-1"
+      case "Item 1"                 => "item-1"
       case "Additional reference 1" => "item-1-additional-references"
     }
     clickById(value)
@@ -50,16 +50,16 @@ object HouseConsignmentPage extends Page {
 
   def clickLinkByIdBySection(text: String): Unit = {
     val value = text match {
-      case "Change Gross weight" => "change-gross-weight-1"
-      case "Remove Gross weight" => "remove-gross-weight-1"
-      case "Change Net weight" => "change-net-weight-1"
-      case "Remove Net weight" => "remove-net-weight-1"
-      case "Change Cus code" => "change-cus-code-1"
-      case "Change Commodity code" => "change-commodity-code-1"
-      case "Remove Commodity code" => "remove-commodity-code-1"
-      case "Change Nomenclature code" => "change-nomenclature-code-1"
-      case "Remove Nomenclature code" => "remove-nomenclature-code-1"
-      case "Change additional reference Type" => "change-additional-reference-type-1-1"
+      case "Change Gross weight"                => "change-gross-weight-1"
+      case "Remove Gross weight"                => "remove-gross-weight-1"
+      case "Change Net weight"                  => "change-net-weight-1"
+      case "Remove Net weight"                  => "remove-net-weight-1"
+      case "Change Cus code"                    => "change-cus-code-1"
+      case "Change Commodity code"              => "change-commodity-code-1"
+      case "Remove Commodity code"              => "remove-commodity-code-1"
+      case "Change Nomenclature code"           => "change-nomenclature-code-1"
+      case "Remove Nomenclature code"           => "remove-nomenclature-code-1"
+      case "Change additional reference Type"   => "change-additional-reference-type-1-1"
       case "Change additional reference number" => "change-additional-reference-number-1-1"
     }
     clickById(value)
@@ -72,8 +72,5 @@ object HouseConsignmentPage extends Page {
     clickById(value)
     this
   }
-
-
-
 
 }

@@ -23,7 +23,6 @@ object ChangeNetWeightPage extends StringPage {
   override def title(args: String*): String =
     String.format("What is the new net weight of item 1 in house consignment 1?")
 
-
   def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"
     clickById(id)

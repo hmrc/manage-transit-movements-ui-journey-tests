@@ -51,20 +51,20 @@ object ConsignmentCrossCheckPage extends Page {
     clickById(s"transportEquipment$index")
     this
   }
-   def selectSection(answer: String): this.type = {
-     val value = answer match {
-       case "Departure means of transport" => "departureTransportMeans"
-       case "Transport equipment" => "transportEquipments"
-       case "Document" => "documents"
-       case "Additional reference" => "additionalReferences"
-     }
-           clickById(value)
-           this
-   }
+  def selectSection(answer: String): this.type = {
+    val value = answer match {
+      case "Departure means of transport" => "departureTransportMeans"
+      case "Transport equipment"          => "transportEquipments"
+      case "Document"                     => "documents"
+      case "Additional reference"         => "additionalReferences"
+    }
+    clickById(value)
+    this
+  }
 
   def selectSubSection(answer: String): this.type = {
     val value = answer match {
-      case "Seals" => "transport-equipment-1-seals"
+      case "Seals"         => "transport-equipment-1-seals"
       case "Items applied" => "transport-equipment-1-items"
     }
 
@@ -74,35 +74,35 @@ object ConsignmentCrossCheckPage extends Page {
   def selectSectionChild(answer: String, index: String): this.type = {
     val value = answer match {
       case "Departure means of transport" => s"departureTransportMeans$index"
-      case "Transport equipment" => s"transportEquipment$index"
-      case "Document" => s"document$index"
-      case "Additional reference" => s"additionalReference$index"
+      case "Transport equipment"          => s"transportEquipment$index"
+      case "Document"                     => s"document$index"
+      case "Additional reference"         => s"additionalReference$index"
     }
-      clickById(value)
-      this
+    clickById(value)
+    this
   }
 
   def clickLinkByIdBySection(text: String): Unit = {
     val value = text match {
       case "Departure means identification type Change" => "change-transport-means-identification-1"
-      case "Departure identification number Change" => "change-transport-means-identification-number-1"
-      case "Departure registered country Change" => "change-registered-country"
-      case "Container identification number Change" => "change-container-identification-number-1"
-      case "seal1" => "change-seal-details-1-1"
-      case "item1" => "change-consignment-item-details-1-1"
-      case "Document type Change" => "change-document-type-1"
-      case "Document reference number Change" => "change-document-reference-number-1"
-      case "Document additional information Change" => "change-document-additional-information-1"
-      case "Additional reference type Change" => "change-additional-reference-type-1"
-      case "Additional reference number Change" => "change-additional-reference-number-1"
-      case "Gross weight Change" => "change-gross-weight-1"
-      case "Gross weight Remove" => "remove-gross-weight-1"
-      case "Net weight Change" => "change-net-weight-1"
-      case "Net weight Remove" => "remove-net-weight-1"
-      case "Add or remove additional reference" => "add-remove-additional-reference"
-      case "Add or remove document" => "add-remove-documents"
-      case "Add or remove transport equipment" => "add-remove-transport-equipment"
-      case "Add or remove departure means" => "add-remove-departure-transport-means"
+      case "Departure identification number Change"     => "change-transport-means-identification-number-1"
+      case "Departure registered country Change"        => "change-registered-country"
+      case "Container identification number Change"     => "change-container-identification-number-1"
+      case "seal1"                                      => "change-seal-details-1-1"
+      case "item1"                                      => "change-consignment-item-details-1-1"
+      case "Document type Change"                       => "change-document-type-1"
+      case "Document reference number Change"           => "change-document-reference-number-1"
+      case "Document additional information Change"     => "change-document-additional-information-1"
+      case "Additional reference type Change"           => "change-additional-reference-type-1"
+      case "Additional reference number Change"         => "change-additional-reference-number-1"
+      case "Gross weight Change"                        => "change-gross-weight-1"
+      case "Gross weight Remove"                        => "remove-gross-weight-1"
+      case "Net weight Change"                          => "change-net-weight-1"
+      case "Net weight Remove"                          => "remove-net-weight-1"
+      case "Add or remove additional reference"         => "add-remove-additional-reference"
+      case "Add or remove document"                     => "add-remove-documents"
+      case "Add or remove transport equipment"          => "add-remove-transport-equipment"
+      case "Add or remove departure means"              => "add-remove-departure-transport-means"
     }
     clickById(value)
   }

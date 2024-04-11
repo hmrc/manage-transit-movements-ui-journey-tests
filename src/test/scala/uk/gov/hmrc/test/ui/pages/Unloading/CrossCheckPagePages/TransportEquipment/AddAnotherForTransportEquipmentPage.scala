@@ -22,7 +22,7 @@ object AddAnotherForTransportEquipmentPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => "You have added 1 transport equipment"
-    case _ =>
+    case _        =>
       String.format(
         "You have added %s transport equipment",
         args: _*

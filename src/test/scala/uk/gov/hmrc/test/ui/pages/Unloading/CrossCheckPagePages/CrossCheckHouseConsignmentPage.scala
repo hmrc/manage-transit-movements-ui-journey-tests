@@ -19,7 +19,6 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 import uk.gov.hmrc.test.ui.pages.Page
 import uk.gov.hmrc.test.ui.pages.Unloading.NetWeightPage.fillInputById
 
-
 object CrossCheckHouseConsignmentPage extends Page {
 
   override def title(args: String*): String =

@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AnyOtherItemsApplyForTransportAccountPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do any other items apply to transport equipment %s?", args: _*)
+  override def title(args: String*): String =
+    String.format("Do any other items apply to transport equipment %s?", args: _*)
 
 }
