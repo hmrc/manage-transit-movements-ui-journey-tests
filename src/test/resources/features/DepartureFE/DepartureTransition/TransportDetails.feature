@@ -87,7 +87,7 @@ Feature: Transport details journey - Transition
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
-      ## Charges
+
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page
@@ -136,7 +136,7 @@ Feature: Transport details journey - Transition
     And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
-#      ## Charges
+
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see COMPLETED status for transport details on the 'Declaration summary' page

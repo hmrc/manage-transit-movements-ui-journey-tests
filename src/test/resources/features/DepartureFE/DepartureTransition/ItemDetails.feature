@@ -4,6 +4,7 @@ Feature: Item details journey
 
   Background:
     Given I login with ID 1234567890
+
   Scenario: 01 Office Departure 'GB', Declaration 'T'
     And the user has submitted itemDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
@@ -87,8 +88,6 @@ Feature: Item details journey
     And I click the Remove link on the 'You have added 2 additional information' page
     And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
-    And I click radio option Yes on the 'Do you want to add a method of payment for this item’s transport charges?' page
-    And I click radio option Payment by credit card on the 'Which method of payment do you want to use for transport charges?' page
     #Items Summary page
     And I submit on the Check your answers section Items page
     And I click radio option Yes on the 'You have added 1 item' page
@@ -134,7 +133,6 @@ Feature: Item details journey
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
-    And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
     And I submit on the Check your answers section Items page
     And I click the Remove link on the 'You have added 2 items' page

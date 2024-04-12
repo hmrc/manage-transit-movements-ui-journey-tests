@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveGrossWeightsPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove the gross weight from item 1 in house consignment 1?"
+  override def title(args: String*): String =
+    "Are you sure you want to remove the gross weight from item 1 in house consignment 1?"
 
 }

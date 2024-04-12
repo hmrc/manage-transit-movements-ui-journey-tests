@@ -608,8 +608,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
-    And I click radio option Yes on the 'Do you want to add a method of payment for this item’s transport charges?' page
-    And I click radio option Payment by credit card on the 'Which method of payment do you want to use for transport charges?' page
     #Items Summary
     And I submit on the Check your answers section Items page
 

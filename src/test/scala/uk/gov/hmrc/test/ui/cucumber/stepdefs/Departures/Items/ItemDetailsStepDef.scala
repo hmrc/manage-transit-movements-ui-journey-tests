@@ -373,11 +373,12 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page$""") { (answer: String) =>
-    AddNewConsignmentAdditionalReferenceNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page$""") {
+    (answer: String) =>
+      AddNewConsignmentAdditionalReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional references?' page$""") {

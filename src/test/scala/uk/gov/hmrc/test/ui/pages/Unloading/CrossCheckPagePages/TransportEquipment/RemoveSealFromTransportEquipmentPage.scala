@@ -22,8 +22,12 @@ object RemoveSealFromTransportEquipmentPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq(sealName, transportEquipmentNumber) =>
-      String.format("Are you sure you want to remove seal %s from transport equipment %s?", sealName, transportEquipmentNumber)
-    case _ =>
+      String.format(
+        "Are you sure you want to remove seal %s from transport equipment %s?",
+        sealName,
+        transportEquipmentNumber
+      )
+    case _                                       =>
       throw InvalidTitleArgsException("Unexpected Shape")
   }
 }

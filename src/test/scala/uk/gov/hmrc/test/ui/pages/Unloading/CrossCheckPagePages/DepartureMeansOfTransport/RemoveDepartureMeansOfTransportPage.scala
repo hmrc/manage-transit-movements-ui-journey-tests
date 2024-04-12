@@ -20,8 +20,9 @@ import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object RemoveDepartureMeansOfTransportPage extends YesNoPage {
   override def title(args: String*): String = args match {
-    case Seq(departureMeansNo) => String.format("Are you sure you want to remove departure means of transport %s?", departureMeansNo)
-    case _ => throw InvalidTitleArgsException(s"Expected a departure means  number but got: $args")
+    case Seq(departureMeansNo) =>
+      String.format("Are you sure you want to remove departure means of transport %s?", departureMeansNo)
+    case _                     => throw InvalidTitleArgsException(s"Expected a departure means  number but got: $args")
   }
 
 }

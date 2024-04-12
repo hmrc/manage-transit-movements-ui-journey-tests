@@ -442,12 +442,13 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(answer)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) departure means of transport' page$""") {
-    (answer: String, numberOfDepartureMeans: String) =>
-      AddAnotherDepartureMeansPage
-        .loadPage(numberOfDepartureMeans)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) departure means of transport' page$"""
+  ) { (answer: String, numberOfDepartureMeans: String) =>
+    AddAnotherDepartureMeansPage
+      .loadPage(numberOfDepartureMeans)
+      .select(answer)
+      .submitPage()
   }
 
   And(

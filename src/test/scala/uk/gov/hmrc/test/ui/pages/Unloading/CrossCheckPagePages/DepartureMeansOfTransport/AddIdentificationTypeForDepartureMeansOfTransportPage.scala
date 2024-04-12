@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddIdentificationTypeForDepartureMeansOfTransportPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add the type of identification for the departure means of transport?"
+  override def title(args: String*): String =
+    "Do you want to add the type of identification for the departure means of transport?"
 
 }

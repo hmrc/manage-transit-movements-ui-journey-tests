@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object IdentificationForNewDepartureMeansOfTransportPage extends RadioPage {
 
-  override def title(args: String*): String = "Which identification do you want to use for the new departure means of transport?"
+  override def title(args: String*): String =
+    "Which identification do you want to use for the new departure means of transport?"
 
   override def select(answer: String): this.type = {
     val vehicleIdentifyCSSValue = answer match {
