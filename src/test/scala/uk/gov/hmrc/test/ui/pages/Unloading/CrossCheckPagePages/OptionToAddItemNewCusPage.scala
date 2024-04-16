@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object ChangeGrossWeightPage extends StringPage {
+object OptionToAddItemNewCusPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("What is the new gross weight of item %s in house consignment 1?",args: _*)
+  override def title(args: String*): String = "Do you want to add a Customs Union and Statistics (CUS) code for the item?"
 
 }

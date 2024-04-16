@@ -103,6 +103,7 @@ object ConsignmentCrossCheckPage extends Page {
       case "Add or remove document"                     => "add-remove-documents"
       case "Add or remove transport equipment"          => "add-remove-transport-equipment"
       case "Add or remove departure means"              => "add-remove-departure-transport-means"
+      case "Add or remove item"                         => "add-remove-items"
     }
     clickById(value)
   }

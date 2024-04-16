@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Page
 
 object HouseConsignmentPage extends Page {
@@ -25,7 +26,7 @@ object HouseConsignmentPage extends Page {
 
   def selectSection(answer: String): this.type = {
     val value = answer match {
-      case "Item 1" => "items"
+      case "Items" => "items"
     }
     clickById(value)
     this
@@ -61,6 +62,7 @@ object HouseConsignmentPage extends Page {
       case "Remove Nomenclature code"           => "remove-nomenclature-code-1"
       case "Change additional reference Type"   => "change-additional-reference-type-1-1"
       case "Change additional reference number" => "change-additional-reference-number-1-1"
+      case "Add or remove item"                 => "add-remove-items"
     }
     clickById(value)
   }
