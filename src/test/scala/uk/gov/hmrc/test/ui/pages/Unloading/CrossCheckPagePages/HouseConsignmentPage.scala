@@ -26,7 +26,7 @@ object HouseConsignmentPage extends Page {
 
   def selectSection(answer: String): this.type = {
     val value = answer match {
-      case "Items" => "items"
+      case "Item 1" => "items"
     }
     clickById(value)
     this
@@ -44,6 +44,14 @@ object HouseConsignmentPage extends Page {
     val value = answer match {
       case "Item 1"                 => "item-1"
       case "Additional reference 1" => "item-1-additional-references"
+    }
+    clickById(value)
+    this
+  }
+
+  def selectItemSection(answer: String): this.type = {
+    val value = answer match {
+      case "Items" => "items"
     }
     clickById(value)
     this

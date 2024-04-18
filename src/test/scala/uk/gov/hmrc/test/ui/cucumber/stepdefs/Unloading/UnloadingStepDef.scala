@@ -786,7 +786,7 @@ class UnloadingStepDef extends BaseStepDef {
   ) { (changeLinkText: String, section: String, index: String) =>
     HouseConsignmentPage
       .loadPage(index)
-      .selectSection(section)
+      .selectItemSection(section)
       .clickLinkByIdBySection(changeLinkText)
   }
   And(
