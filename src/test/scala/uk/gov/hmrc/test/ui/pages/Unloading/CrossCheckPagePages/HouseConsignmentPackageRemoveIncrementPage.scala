@@ -16,11 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
-object ChangeGrossWeightPage extends StringPage {
+object HouseConsignmentPackageRemoveIncrementPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("What is the new gross weight of item %s in house consignment 1?",args: _*)
-
+  override def title(args: String*): String = args match {
+    case Seq(numberOfItems) =>
+      String.format("Are you sure you want to remove this package from item %s in house consignment 1?", numberOfItems)
+    case _                                            =>
+      throw InvalidTitleArgsException("Unexpected Shape")
+  }
 }

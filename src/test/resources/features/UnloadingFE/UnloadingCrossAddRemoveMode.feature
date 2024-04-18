@@ -70,6 +70,85 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And I click radio option No on the 'You have added 1 additional reference' page
 
+  Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
+  # House Consignment - Consignment Item
+    Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
+    And I should be on the 'Cross-check the transit with house consignment 1' page
+    And I click the Add or remove item link on house consignment for section Items 1
+    And I click radio option Yes on the 'You have added 1 item for house consignment 1' page
+    And I enter testing on the 'Enter the new description of item 2 in house consignment 1' page
+    And I choose radio option Yes on the 'Do you want to add the item’s gross weight?' page
+    And enter number 741.56 on 'What is the new gross weight of item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add the item’s net weight?' page
+    And I enter number 5681.22 on 'What is the new net weight of item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item?' page
+    And I enter number 0018063-2 on 'What is the new Customs Union and Statistics CUS code for item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
+    And I enter number 716812 on 'What is the new commodity code for item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add a combined nomenclature code for the item?' page
+    And I enter number 84 on 'What is the new combined nomenclature code for item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add a document for the item?' page
+    And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
+    And I enter reference number ref1234 on 'What is the document’s reference number?' page
+    And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
+    And I enter additional information 12345 on documents 'Enter the additional information?' page
+    And I click Yes on house consignment document 'You have added 1 document to item 2 in house consignment 1' page
+    And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
+    And I enter reference number ref1234 on 'What is the document’s reference number?' page
+    And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
+    And I enter additional information 12345 on documents 'Enter the additional information?' page
+    And I click Remove on 'You have added 2 documents to item 2 in house consignment 1' page
+    And I click radio option Yes on the 'Are you sure you want to remove this document from item 2 in house consignment 1?' page
+    And I click No on house consignment document 'You have added 1 documents to item 2 in house consignment 1' page
+    And I choose radio option Yes on the 'Do you want to add an additional reference for the item?' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I click Yes on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I click Remove on the 'You have added 2 additional references for item 2 in house consignment 1' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
+    And I click No on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
+    And I choose radio option Yes on the 'Do you want to add a package for the item?' page
+    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I choose radio option Yes on the 'Do you want to add the quantity of this package?' page
+    And I enter 2 on the 'How many of this package are you using?' page
+    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
+    And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
+    And I click Yes on house consignment package 'You have added 1 type of package for item 2 in house consignment 1' page
+    And I select (43) Bag, super bulk on the 'What type of package are you using for the item?' page
+    And I choose radio option No on the 'Do you want to add the quantity of this package?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click Remove on the house consignment package 'You have added 2 types of packages for item 2 in house consignment 1' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from item 2 in house consignment 1?' page
+    And I click No on house consignment package 'You have added 1 type of package for item 2 in house consignment 1' page
+    And I click option Remove on the 'You have added 2 items for house consignment 1' page
+    And I click radio option Yes on item 'Are you sure you want to remove item 1 from house consignment 1?' page
+    And I click radio option No on the 'You have added 1 item for house consignment 1' page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

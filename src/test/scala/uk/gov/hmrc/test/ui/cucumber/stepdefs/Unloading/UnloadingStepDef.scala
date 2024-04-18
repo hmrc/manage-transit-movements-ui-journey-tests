@@ -17,12 +17,14 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, HouseConsignmentPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -682,10 +684,10 @@ class UnloadingStepDef extends BaseStepDef {
       .selectItemAction(index)
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item 1 in house consignment 1\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item (.+) in house consignment 1\?' page$""") {
+    (answer: String, index: String) =>
       ChangeGrossWeightPage
-        .loadPage()
+        .loadPage(index)
         .fillInput(answer)
         .submitPage()
   }
@@ -704,10 +706,10 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new net weight of item 1 in house consignment 1\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?enter number (.+) on 'What is the new net weight of item (.+) in house consignment 1\?' page$""") {
+    (answer: String,index: String) =>
       ChangeNetWeightPage
-        .loadPage()
+        .loadPage(index)
         .fillInput(answer)
         .submitPage()
   }
@@ -722,18 +724,18 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
     ChangeCUSCodePage
-      .loadPage()
+      .loadPage(index)
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item 1 in house consignment 1\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item (.+) in house consignment 1\?' page$""") {
+    (answer: String,index:String) =>
       ChangeCommodityCodePage
-        .loadPage()
+        .loadPage(index)
         .fillInput(answer)
         .submitPage()
   }
@@ -748,10 +750,10 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item 1 in house consignment 1\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String,index: String) =>
     ChangeNomenclatureCodePage
-      .loadPage()
+      .loadPage(index)
       .fillInput(answer)
       .submitPage()
   }
@@ -779,4 +781,229 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And(
+    """^(?:I )?click the (.+) link on house consignment for section (.+) (.+)$"""
+  ) { (changeLinkText: String, section: String, index: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectItemSection(section)
+      .clickLinkByIdBySection(changeLinkText)
+  }
+  And(
+    """^(?:I )?click radio option (.*) on the 'You have added (.*) ite(?:m |ms )for house consignment (.*)' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfItemInTitle: String,
+      numberOfHouseConsignmentsInTitle: String
+    ) =>
+      HouseConsignmentIncrementPage
+        .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.*) on the 'Enter the new description of ite(?:m |ms )(.+) in house consignment (.*)' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfItemInTitle: String,
+      numberOfHouseConsignmentsInTitle: String
+    ) =>
+      HouseConsignmentNewDescriptionIncrementPage
+        .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
+        .fillInput(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the item’s gross weight\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemGrossWeightPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the item’s net weight\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemNetWeightPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Customs Union and Statistics (.*) code for the item\?' page$"""
+  ) { (answer: String,index:String) =>
+    OptionToAddItemNewCusPage
+      .loadPage(index)
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a commodity code for the item\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemCommodityCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a combined nomenclature code for the item\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemCombinedNomenclaturePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a document for the item\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemDocumentPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for the item\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemAdditionalReferencePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on 'You have added (.*) documen(?: t|ts )to item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfDocumentsTitle: String,
+      numberOfItemsInTitle: String,
+    ) =>
+      HouseConsignmentDocumentIncrementPage
+        .loadPage(numberOfDocumentsTitle, numberOfItemsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from item (.+) in house consignment 1\?' page$""") {
+    (answer: String, numberOfItems: String) =>
+      HouseConsignmentDocumentRemoveIncrementPage
+        .loadPage(numberOfItems)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on house consignment document 'You have added (.*) documen(?:t |ts )to item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfDocumentsTitle: String,
+      numberOfItemsInTitle: String,
+    ) =>
+      HouseConsignmentDocumentIncrementPage
+        .loadPage(numberOfDocumentsTitle, numberOfItemsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on additional reference 'You have added (.+) additional referenc(?:e |es)for item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfAdditionalRefTitle: String,
+      numberOfItemsInTitle: String,
+    ) =>
+      HouseConsignmentAdditionalRefIncrementPage
+        .loadPage(numberOfAdditionalRefTitle, numberOfItemsInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on the 'You have added (.+) additional referenc(?:e |es )for item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfAdditionalRefTitle: String,
+      numberOfItemsInTitle: String
+    ) =>
+      HouseConsignmentAdditionalRefIncrementPage
+        .loadPage(numberOfAdditionalRefTitle, numberOfItemsInTitle)
+        .clickByPartialLinkText(answer)
+
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a package for the item\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemPackagePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add the quantity of this package\?' page$"""
+  ) { (answer: String) =>
+    OptionToAddItemPackageQuantityPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+  And("""^(?:I )?enter (.*) on the 'How many of this package are you using\?' page$""") { (answer: String) =>
+    PackagesTypeQuantityPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on house consignment package 'You have added (.*) typ(?:e |es )of packag(?:e |es )for item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfTypesInTitle: String,
+      numberOfPackagesInTitle: String,
+    ) =>
+      HouseConsignmentPackageIncrementPage
+        .loadPage(numberOfTypesInTitle, numberOfPackagesInTitle)
+        .select(answer)
+        .submitPage()
+  }
+  And(
+    """^(?:I )?click (.*) on the house consignment package 'You have added (.*) typ(?:e |es )of packag(?:e |es )for item (.+) in house consignment 1' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfTypesInTitle: String,
+      numberOfPackagesInTitle: String,
+    ) =>
+      HouseConsignmentPackageIncrementPage
+        .loadPage(numberOfTypesInTitle, numberOfPackagesInTitle)
+        .clickByPartialLinkText(answer)
+
+  }
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from item (.+) in house consignment 1\?' page$""") {
+    (answer: String, numberOfItems: String) =>
+      HouseConsignmentPackageRemoveIncrementPage
+        .loadPage(numberOfItems)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click option (.*) on the 'You have added (.*) ite(?:m |ms )for house consignment (.*)' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfItemInTitle: String,
+      numberOfHouseConsignmentsInTitle: String
+    ) =>
+      HouseConsignmentIncrementPage
+        .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
+        .clickByPartialLinkText(answer)
+  }
+  And("""^(?:I )?click radio option (.*) on item 'Are you sure you want to remove item (.+) from house consignment 1\?' page$""") {
+    (answer: String, numberOfItems: String) =>
+      HouseConsignmentRemoveItemPage
+        .loadPage(numberOfItems)
+        .select(answer)
+        .submitPage()
+  }
 }
