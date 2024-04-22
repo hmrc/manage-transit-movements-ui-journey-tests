@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object BorderMeansOfTransportIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = String.format("What is the identification number for this vehicle?")
+  override def title(args: String*): String = String.format("What is the identification for this vehicle?")
 
 }

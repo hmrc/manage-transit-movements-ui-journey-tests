@@ -707,7 +707,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And("""^(?:I )?enter number (.+) on 'What is the new net weight of item (.+) in house consignment 1\?' page$""") {
-    (answer: String,index: String) =>
+    (answer: String, index: String) =>
       ChangeNetWeightPage
         .loadPage(index)
         .fillInput(answer)
@@ -732,12 +732,13 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter number (.+) on 'What is the new commodity code for item (.+) in house consignment 1\?' page$""") {
-    (answer: String,index:String) =>
-      ChangeCommodityCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  And(
+    """^(?:I )?enter number (.+) on 'What is the new commodity code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    ChangeCommodityCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
@@ -751,7 +752,7 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item (.+) in house consignment 1\?' page$"""
-  ) { (answer: String,index: String) =>
+  ) { (answer: String, index: String) =>
     ChangeNomenclatureCodePage
       .loadPage(index)
       .fillInput(answer)
@@ -835,7 +836,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a Customs Union and Statistics (.*) code for the item\?' page$"""
-  ) { (answer: String,index:String) =>
+  ) { (answer: String, index: String) =>
     OptionToAddItemNewCusPage
       .loadPage(index)
       .select(answer)
@@ -879,18 +880,19 @@ class UnloadingStepDef extends BaseStepDef {
     (
       answer: String,
       numberOfDocumentsTitle: String,
-      numberOfItemsInTitle: String,
+      numberOfItemsInTitle: String
     ) =>
       HouseConsignmentDocumentIncrementPage
         .loadPage(numberOfDocumentsTitle, numberOfItemsInTitle)
         .clickByPartialLinkText(answer)
   }
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from item (.+) in house consignment 1\?' page$""") {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentDocumentRemoveIncrementPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentDocumentRemoveIncrementPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
   And(
     """^(?:I )?click (.*) on house consignment document 'You have added (.*) documen(?:t |ts )to item (.+) in house consignment 1' page$"""
@@ -898,7 +900,7 @@ class UnloadingStepDef extends BaseStepDef {
     (
       answer: String,
       numberOfDocumentsTitle: String,
-      numberOfItemsInTitle: String,
+      numberOfItemsInTitle: String
     ) =>
       HouseConsignmentDocumentIncrementPage
         .loadPage(numberOfDocumentsTitle, numberOfItemsInTitle)
@@ -911,7 +913,7 @@ class UnloadingStepDef extends BaseStepDef {
     (
       answer: String,
       numberOfAdditionalRefTitle: String,
-      numberOfItemsInTitle: String,
+      numberOfItemsInTitle: String
     ) =>
       HouseConsignmentAdditionalRefIncrementPage
         .loadPage(numberOfAdditionalRefTitle, numberOfItemsInTitle)
@@ -959,7 +961,7 @@ class UnloadingStepDef extends BaseStepDef {
     (
       answer: String,
       numberOfTypesInTitle: String,
-      numberOfPackagesInTitle: String,
+      numberOfPackagesInTitle: String
     ) =>
       HouseConsignmentPackageIncrementPage
         .loadPage(numberOfTypesInTitle, numberOfPackagesInTitle)
@@ -972,19 +974,20 @@ class UnloadingStepDef extends BaseStepDef {
     (
       answer: String,
       numberOfTypesInTitle: String,
-      numberOfPackagesInTitle: String,
+      numberOfPackagesInTitle: String
     ) =>
       HouseConsignmentPackageIncrementPage
         .loadPage(numberOfTypesInTitle, numberOfPackagesInTitle)
         .clickByPartialLinkText(answer)
 
   }
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from item (.+) in house consignment 1\?' page$""") {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentPackageRemoveIncrementPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentPackageRemoveIncrementPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -999,11 +1002,12 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
         .clickByPartialLinkText(answer)
   }
-  And("""^(?:I )?click radio option (.*) on item 'Are you sure you want to remove item (.+) from house consignment 1\?' page$""") {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentRemoveItemPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on item 'Are you sure you want to remove item (.+) from house consignment 1\?' page$"""
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentRemoveItemPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
 }
