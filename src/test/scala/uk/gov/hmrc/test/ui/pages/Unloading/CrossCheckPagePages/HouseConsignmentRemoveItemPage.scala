@@ -23,7 +23,7 @@ object HouseConsignmentRemoveItemPage extends YesNoPage {
   override def title(args: String*): String = args match {
     case Seq(numberOfItems) =>
       String.format("Are you sure you want to remove item %s from house consignment 1?", numberOfItems)
-    case _                                            =>
+    case _                  =>
       throw InvalidTitleArgsException("Unexpected Shape")
   }
 }

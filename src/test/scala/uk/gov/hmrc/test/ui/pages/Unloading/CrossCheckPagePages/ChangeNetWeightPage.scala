@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object ChangeNetWeightPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the new net weight of item %s in house consignment 1?",args: _*)
+    String.format("What is the new net weight of item %s in house consignment 1?", args: _*)
 
   def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"

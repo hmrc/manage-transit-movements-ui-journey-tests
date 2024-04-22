@@ -21,11 +21,11 @@ import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 object HouseConsignmentDocumentIncrementPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1",numberOfItems)           =>
-      String.format("You have added 1 document to item %s in house consignment 1",numberOfItems)
-    case Seq(numberOfDocuments,numberOfItems) =>
+    case Seq("1", numberOfItems)               =>
+      String.format("You have added 1 document to item %s in house consignment 1", numberOfItems)
+    case Seq(numberOfDocuments, numberOfItems) =>
       String.format("You have added %s documents to item %s in house consignment 1", numberOfDocuments, numberOfItems)
-    case _                                            =>
+    case _                                     =>
       throw InvalidTitleArgsException("Unexpected Shape")
   }
 }

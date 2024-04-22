@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object OptionToAddItemNewCusPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a Customs Union and Statistics (CUS) code for the item?"
+  override def title(args: String*): String =
+    "Do you want to add a Customs Union and Statistics (CUS) code for the item?"
 
 }
