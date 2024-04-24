@@ -5,6 +5,7 @@
         "id" : "XI000142",
         "name" : "Belfast EPU",
         "phoneNumber" : "+44 (0)02896 931537",
+        "countryId" : "XI",
         "isInCL112" : false,
         "isInCL147" : true
       },
@@ -67,6 +68,7 @@
           "id" : "IT018101",
           "name" : "Aeroporto Bari - Palese",
           "phoneNumber" : "0039 0805316196",
+          "countryId" : "IT",
           "isInCL112" : false
         },
         "bindingItinerary" : true,
@@ -184,7 +186,8 @@
             "customsOfficeActiveBorder": {
               "id": "IT018101",
               "name": "Aeroporto Bari - Palese",
-              "phoneNumber": "0039 0805316196"
+              "phoneNumber": "0039 0805316196",
+              "countryId" : "IT"
             },
             "conveyanceReferenceNumberYesNo": true,
             "conveyanceReferenceNumber": "CONVEYANCE1231"

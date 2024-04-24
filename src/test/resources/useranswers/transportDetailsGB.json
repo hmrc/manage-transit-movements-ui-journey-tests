@@ -5,6 +5,7 @@
         "id" : "GB000068",
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
+        "countryId" : "GB",
         "isInCL112" : true,
         "isInCL147" : false,
         "isInCL010" : false
@@ -95,6 +96,7 @@
           "id" : "IT262101",
           "name" : "AEROPORTO",
           "phoneNumber" : "0039 0106015339",
+          "countryId" : "IT",
           "isInCL112" : false
         },
         "bindingItinerary" : true,
@@ -127,7 +129,8 @@
             "officeOfTransit" : {
               "id" : "DE004058",
               "name" : "Basel",
-              "phoneNumber" : "+41 61 20114-24"
+              "phoneNumber" : "+41 61 20114-24",
+              "countryId" : "DE"
             },
             "addOfficeOfTransitETAYesNo" : true,
             "arrivalDateTime" : "2023-03-10T06:58:00"
@@ -144,7 +147,8 @@
             "officeOfExit" : {
               "id" : "FR005130",
               "name" : "Agen bureau",
-              "phoneNumber" : "09 70 27 57 70"
+              "phoneNumber" : "09 70 27 57 70",
+              "countryId" : "FR"
             }
           }
         ]

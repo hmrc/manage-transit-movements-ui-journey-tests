@@ -5,6 +5,7 @@
         "id" : "XI000142",
         "name" : "Belfast EPU",
         "phoneNumber" : "+44 (0)02896 931537",
+        "countryId" : "XI",
         "isInCL112" : false,
         "isInCL147" : true,
         "isInCL010" : true
@@ -56,6 +57,7 @@
           "id" : "IT018100",
           "name" : "BARI",
           "phoneNumber" : "0039 0805254711 - 0805254755",
+          "countryId" : "IT",
           "isInCL112" : false
         },
         "bindingItinerary" : false,
@@ -178,7 +180,8 @@
             "customsOfficeActiveBorder": {
               "id": "IT018100",
               "name": "BARI",
-              "phoneNumber": "0039 0805254711 - 0805254755"
+              "phoneNumber": "0039 0805254711 - 0805254755",
+              "countryId" : "IT"
             },
             "conveyanceReferenceNumber": "Con12312312"
           }
