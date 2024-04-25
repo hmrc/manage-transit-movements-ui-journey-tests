@@ -24,6 +24,6 @@ import org.junit.runner.RunWith
   features = Array("src/test/resources/features"),
   glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
   plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@departureGBe2eTransition or @departureXIe2eTransition"
+  tags = "@departureGBe2eTransition or @departureXIe2eTransition or @departureAmendmentTransition"
 )
 class RunnerForDepartureTransition {}
