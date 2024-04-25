@@ -1,0 +1,41 @@
+<ncts:CC055C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
+    <messageSender>token</messageSender>
+    <messageRecipient>token</messageRecipient>
+    <preparationDateAndTime>2022-12-25T07:46:28</preparationDateAndTime>
+    <messageIdentification>token</messageIdentification>
+    <messageType>CC055C</messageType>
+    <!--Optional:-->
+    <correlationIdentifier>token</correlationIdentifier>
+    <TransitOperation>
+        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <declarationAcceptanceDate>2023-09-18</declarationAcceptanceDate>
+    </TransitOperation>
+    <CustomsOfficeOfDeparture>
+        <referenceNumber>stringst</referenceNumber>
+    </CustomsOfficeOfDeparture>
+    <HolderOfTheTransitProcedure>
+        <!--Optional:-->
+        <identificationNumber>string</identificationNumber>
+        <!--Optional:-->
+        <name>string</name>
+        <!--Optional:-->
+        <Address>
+            <streetAndNumber>string</streetAndNumber>
+            <!--Optional:-->
+            <postcode>string</postcode>
+            <city>string</city>
+            <country>st</country>
+        </Address>
+    </HolderOfTheTransitProcedure>
+    <!--1 to 99 repetitions:-->
+    <GuaranteeReference>
+        <sequenceNumber>1</sequenceNumber>
+        <GRN>string</GRN>
+        <InvalidGuaranteeReason>
+            <sequenceNumber>1</sequenceNumber>
+            <code>token</code>
+            <!--Optional:-->
+            <text>string</text>
+        </InvalidGuaranteeReason>
+    </GuaranteeReference>
+</ncts:CC055C>

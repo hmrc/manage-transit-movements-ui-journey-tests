@@ -188,3 +188,28 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I should see AMENDED status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
+
+  Scenario: 04 End to end journey for amending a departure declaration with invalid guarantee
+    Given I login with ID 1234567890
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE028 MRN Allocated
+    Then I submit an IE055 Guarantee Not Valid
+    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend errors button on the 'Amend guarantee errors' page
+    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see COMPLETED status for route details on the 'Declaration summary' page
+    And I should see COMPLETED status for transport details on the 'Declaration summary' page
+    And I should see COMPLETED status for documents on the 'Declaration summary' page
+    And I should see COMPLETED status for items on the 'Declaration summary' page
+    And I should see ERROR status for guarantee details on the 'Declaration summary' page
+
+    And I click on the Edit guarantee details link on the 'Declaration summary' page
+    And I click the Remove link on the 'You have added 4 guarantees' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this guarantee?' page
+    And I choose radio option No on the 'You have added 3 guarantee' page
+
+    And I click the Confirm and resend button on the 'Declaration summary' page
+    And I click the Sign out link on the 'Departure declaration sent' page

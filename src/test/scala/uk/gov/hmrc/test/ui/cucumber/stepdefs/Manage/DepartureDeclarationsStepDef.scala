@@ -70,6 +70,12 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  Given("""^(?:I )?click on the Amend errors button on the 'Amend guarantee errors' page$""") { () =>
+    AmendGuaranteeErrorsPage
+      .loadPage()
+      .submitPage()
+  }
+
   Then("""^(?:I )?(?:should )?be on the 'Review declaration errors' page$""") { () =>
     ReviewDeclarationErrorsPage
       .loadPage()
