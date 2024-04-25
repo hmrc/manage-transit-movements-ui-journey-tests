@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
+package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object IdentificationNumberForNewDepartureMeansOfTransportPage extends StringPage {
+object OtherThingsReportPage extends StringPage {
 
-  override def title(args: String*): String =
-    String.format("What is the identification for the new departure means of transport?")
+  override def title(args: String*): String = "What do you want to report?"
 
 }

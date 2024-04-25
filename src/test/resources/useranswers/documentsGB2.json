@@ -5,6 +5,7 @@
         "id" : "GB000068",
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
+        "countryId" : "GB",
         "isInCL112" : true,
         "isInCL147" : false
       },

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2024 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
+package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IdentificationNumberForNewDepartureMeansOfTransportPage extends StringPage {
+object AnythingReportPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("What is the identification for the new departure means of transport?")
+  override def title(args: String*): String = "Do you have anything else to report?"
 
 }

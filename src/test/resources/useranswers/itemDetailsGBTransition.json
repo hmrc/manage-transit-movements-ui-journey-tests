@@ -5,6 +5,7 @@
         "id" : "GB000068",
         "name" : "Basildon Helipad",
         "phoneNumber" : "+44(0)126 856 1234",
+        "countryId" : "GB",
         "isInCL112" : true,
         "isInCL147" : false
       },
@@ -94,6 +95,7 @@
           "id" : "IT371100",
           "name" : "MILANO 3",
           "phoneNumber" : "0039 0270200470",
+          "countryId" : "IT",
           "isInCL112" : false
         },
         "bindingItinerary" : true,
@@ -118,7 +120,8 @@
             "officeOfTransit" : {
               "id" : "FR000610",
               "name" : "Bordeaux bassens pt bureau",
-              "phoneNumber" : "09 70 27 56 60"
+              "phoneNumber" : "09 70 27 56 60",
+              "countryId" : "FR"
             },
             "addOfficeOfTransitETAYesNo" : false
           }
@@ -213,7 +216,8 @@
             "customsOfficeActiveBorder": {
               "id": "FR000610",
               "name": "Bordeaux bassens pt bureau",
-              "phoneNumber": "09 70 27 56 60"
+              "phoneNumber": "09 70 27 56 60",
+              "countryId" : "FR"
             },
             "conveyanceReferenceNumberYesNo": false
           }
