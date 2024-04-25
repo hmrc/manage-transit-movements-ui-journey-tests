@@ -1,4 +1,4 @@
-@unloading_remarks @wip
+@unloading_remarks
 
 Feature: Submit unloading remarks with seals
 
