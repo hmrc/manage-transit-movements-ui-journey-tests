@@ -24,7 +24,6 @@ import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfT
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -1010,4 +1009,28 @@ class UnloadingStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you have anything else to report\?' page$""") { (answer: String) =>
+    AnythingReportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") {
+    (answer: String) =>
+      OtherThingsReportPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") {
+    (answer: String) =>
+      AddCommentsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
 }
