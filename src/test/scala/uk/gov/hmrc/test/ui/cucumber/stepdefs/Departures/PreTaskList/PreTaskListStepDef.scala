@@ -103,6 +103,11 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
 
   When("""^the user has submitted (.+) for LRN (.+) and EORI number (.+)$""") {
     (fileName: String, lrn: String, eoriNumber: String) =>
-      CacheHelper.submitUserAnswers(fileName, lrn, eoriNumber)
+      CacheHelper.submitDepartureAnswers(fileName, lrn, eoriNumber)
+  }
+
+  When("""^the user has submitted (.+) for MRN (.+) and EORI number (.+)$""") {
+    (fileName: String, mrn: String, eoriNumber: String) =>
+      CacheHelper.submitArrivalAnswers(fileName, mrn, eoriNumber)
   }
 }
