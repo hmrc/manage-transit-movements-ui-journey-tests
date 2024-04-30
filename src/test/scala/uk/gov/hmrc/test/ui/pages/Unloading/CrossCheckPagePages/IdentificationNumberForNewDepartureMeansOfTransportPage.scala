@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object IdentificationNumberForNewDepartureMeansOfTransportPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the identification for the new departure means of transport?")
+    String.format("What is the identification number for the new departure means of transport?")
 
 }
