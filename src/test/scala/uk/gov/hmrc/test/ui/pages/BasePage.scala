@@ -16,18 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.mongodb.scala.MongoClient
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.utils.MongoHelper
+
 import java.time.Duration
-import scala.concurrent.Await
-import scala.concurrent.duration.DurationInt
 import scala.language.postfixOps
 
-trait BasePage extends BrowserDriver with Matchers {
+trait BasePage extends BrowserDriver with Matchers with MongoHelper {
 
   private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
@@ -35,26 +34,6 @@ trait BasePage extends BrowserDriver with Matchers {
     .ignoring(classOf[Exception])
 
   private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
-
-  private lazy val mongoClient: MongoClient = MongoClient()
-
-  def dropCollections(): Unit = {
-    println("============================Dropping dbs")
-
-    def dropCollection(dbName: String, collectionName: String = "user-answers"): Unit =
-      Await.result(
-        mongoClient.getDatabase(dbName).getCollection(collectionName).drop().toFuture(),
-        10 seconds
-      )
-
-    dropCollection("manage-transit-movements-departure-cache")
-    dropCollection("manage-transit-movements-departure-cache", "draft-locks")
-    dropCollection("manage-transit-movements-arrival-cache")
-    dropCollection("manage-transit-movements-arrival-cache", "draft-locks")
-    dropCollection("manage-transit-movements-unloading-frontend")
-    dropCollection("manage-transit-movements-cancellation-frontend")
-    dropCollection("transit-movements", "movements")
-  }
 
   def findSiblingByText(text: String): WebElement =
     driver.findElement(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))

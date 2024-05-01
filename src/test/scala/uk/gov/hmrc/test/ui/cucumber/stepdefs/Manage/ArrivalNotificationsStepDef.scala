@@ -56,6 +56,12 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Then("""^(?:I )?click on the Make another arrival notification link on the 'Review notification errors' page$""") { () =>
+    ReviewNotificationErrorsPage
+      .loadPage()
+      .clickById("arrival-link")
+  }
+
   Then("""^(?:I )?should be on the 'Notification errors' page$""") { () =>
     NotificationErrorsPage
       .loadPage()

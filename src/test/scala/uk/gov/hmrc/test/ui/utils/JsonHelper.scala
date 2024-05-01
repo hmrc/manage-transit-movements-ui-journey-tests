@@ -31,6 +31,8 @@ trait JsonHelper {
 
     def withLrn(lrn: String): JsValue = put(__ \ "lrn", lrn)
 
+    def withMrn(mrn: String): JsValue = put(__ \ "mrn", mrn)
+
     def withEoriNumber(eoriNumber: String): JsValue = put(__ \ "eoriNumber", eoriNumber)
 
     def pick(path: JsPath): String =
