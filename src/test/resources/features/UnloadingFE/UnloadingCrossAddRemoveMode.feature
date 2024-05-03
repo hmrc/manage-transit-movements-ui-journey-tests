@@ -12,7 +12,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
-    And I choose radio option Yes on the 'Were there any discrepancies between the transit and the declaration summary?' page
+    And I choose radio option Yes on the 'Were there any discrepancies between the transit and unloading permission?' page
 
 
   Scenario: 01 - Unloading remarks - Consignment level Cross-check page add and remove journeys

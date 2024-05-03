@@ -104,7 +104,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit and the declaration summary\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit and unloading permission\?' page$"""
   ) { (answer: String) =>
     DifferencesPage
       .loadPage()
