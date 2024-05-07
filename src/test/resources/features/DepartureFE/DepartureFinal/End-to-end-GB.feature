@@ -99,19 +99,6 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Are you sure you want to remove Basel as an office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
-#      ## Office of exit - removing an office of exit
-#    And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
-#    And I select Germany on the 'In which country is the office of exit for transit?' page
-#    When I select Dortmund on the 'Where in Germany is the office of exit for transit?' page
-#    And I submit on the Check your answers section Office of exit for transit page
-#    And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
-#    And I select France on the 'In which country is the office of exit for transit?' page
-#    And I select Agen bureau on the 'Where in France is the office of exit for transit?' page
-#    And I submit on the Check your answers section Office of exit for transit page
-#    And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
-#    And I choose radio option Yes on the 'Are you sure you want to remove Dortmund - Flughafen as an office of exit for transit?' page
-#    And I choose radio option No on the 'You have added 1 office of exit for transit' page
-
       ## Location of goods
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
