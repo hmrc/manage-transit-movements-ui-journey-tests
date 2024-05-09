@@ -37,7 +37,7 @@ object CYAPage extends Page {
         clickLinkById("using-same-country-of-dispatch")
       case "Are all the items being transported to the same country?"                      => clickLinkById("transported-to-same-country")
       case "Were there any discrepancies between the transit and unloading permission?" =>
-        clickLinkById("add-unloading-comments")
+        clickLinkById("add-discrepancies")
       case "Do you want to add a contact?"                                                 => clickLinkById("has-transit-holder-contact")
       case "Do you want to add a contact for the consignor?"                               => clickLinkById("has-consignor-contact")
       case "Do you want to add a contact for the location of goods?"                       => clickLinkById("location-of-goods-add-contact")
