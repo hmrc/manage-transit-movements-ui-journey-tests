@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTra
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, EnterCUSCodePage, EnterCommodityCodePage, EnterGrossWeightPage, EnterItemDescriptionPage, EnterNetWeightPage, EnterNomenclatureCodePage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -691,6 +691,14 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?enter number (.+) on 'What is the gross weight of item (.+) in house consignment 1\?' page$""") {
+    (answer: String, index: String) =>
+      EnterGrossWeightPage
+        .loadPage(index)
+        .fillInput(answer)
+        .submitPage()
+  }
+
   And("""^(?:I )?click the Remove link for (.+)$""") { (text: String) =>
     CrossCheckHouseConsignmentPage
       .clickLinkByIdRemove(text)
@@ -708,6 +716,14 @@ class UnloadingStepDef extends BaseStepDef {
   And("""^(?:I )?enter number (.+) on 'What is the new net weight of item (.+) in house consignment 1\?' page$""") {
     (answer: String, index: String) =>
       ChangeNetWeightPage
+        .loadPage(index)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the net weight of item (.+) in house consignment 1\?' page$""") {
+    (answer: String, index: String) =>
+      EnterNetWeightPage
         .loadPage(index)
         .fillInput(answer)
         .submitPage()
@@ -732,9 +748,27 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
+    """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics CUS code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    EnterCUSCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
     """^(?:I )?enter number (.+) on 'What is the new commodity code for item (.+) in house consignment 1\?' page$"""
   ) { (answer: String, index: String) =>
     ChangeCommodityCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter number (.+) on 'What is the commodity code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    EnterCommodityCodePage
       .loadPage(index)
       .fillInput(answer)
       .submitPage()
@@ -753,6 +787,15 @@ class UnloadingStepDef extends BaseStepDef {
     """^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item (.+) in house consignment 1\?' page$"""
   ) { (answer: String, index: String) =>
     ChangeNomenclatureCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter number (.+) on 'What is the combined nomenclature code for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    EnterNomenclatureCodePage
       .loadPage(index)
       .fillInput(answer)
       .submitPage()
@@ -812,6 +855,20 @@ class UnloadingStepDef extends BaseStepDef {
       numberOfHouseConsignmentsInTitle: String
     ) =>
       HouseConsignmentNewDescriptionIncrementPage
+        .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.*) on the 'Enter the description of ite(?:m |ms )(.+) in house consignment (.*)' page$"""
+  ) {
+    (
+      answer: String,
+      numberOfItemInTitle: String,
+      numberOfHouseConsignmentsInTitle: String
+    ) =>
+      EnterItemDescriptionPage
         .loadPage(numberOfItemInTitle, numberOfHouseConsignmentsInTitle)
         .fillInput(answer)
         .submitPage()
