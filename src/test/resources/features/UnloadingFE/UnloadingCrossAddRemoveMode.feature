@@ -78,17 +78,17 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I should be on the 'Cross-check the transit with house consignment 1' page
     And I click the Add or remove item link on house consignment for section Items 1
     And I click radio option Yes on the 'You have added 1 item for house consignment 1' page
-    And I enter testing on the 'Enter the new description of item 2 in house consignment 1' page
+    And I enter testing on the 'Enter the description of item 2 in house consignment 1' page
     And I choose radio option Yes on the 'Do you want to add the item’s gross weight?' page
-    And enter number 741.56 on 'What is the new gross weight of item 2 in house consignment 1?' page
+    And enter number 741.56 on 'What is the gross weight of item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add the item’s net weight?' page
-    And I enter number 5681.22 on 'What is the new net weight of item 2 in house consignment 1?' page
+    And I enter number 5681.22 on 'What is the net weight of item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item?' page
-    And I enter number 0018063-2 on 'What is the new Customs Union and Statistics CUS code for item 2 in house consignment 1?' page
+    And I enter number 0018063-2 on 'What is the Customs Union and Statistics CUS code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
-    And I enter number 716812 on 'What is the new commodity code for item 2 in house consignment 1?' page
+    And I enter number 716812 on 'What is the commodity code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a combined nomenclature code for the item?' page
-    And I enter number 84 on 'What is the new combined nomenclature code for item 2 in house consignment 1?' page
+    And I enter number 84 on 'What is the combined nomenclature code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a document for the item?' page
     And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
     And I enter reference number ref1234 on 'What is the document’s reference number?' page
