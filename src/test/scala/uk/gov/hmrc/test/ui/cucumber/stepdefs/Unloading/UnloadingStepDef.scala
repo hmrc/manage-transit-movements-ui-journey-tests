@@ -20,9 +20,10 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.ConsignmentCrossCheckPage.selectAddRemoveHouseConsignment
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddDocumentTypePage, AdditionalInformationPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, EnterCUSCodePage, EnterCommodityCodePage, EnterGrossWeightPage, EnterItemDescriptionPage, EnterNetWeightPage, EnterNomenclatureCodePage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddAnotherDepartureMeansOfTransportHCPage, AddDocumentTypePage, AdditionalInformationPage, AdditionalReferenceAddAnotherHCPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsHCPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, EnterCUSCodePage, EnterCommodityCodePage, EnterGrossWeightHCPage, EnterGrossWeightPage, EnterItemDescriptionPage, EnterNetWeightPage, EnterNomenclatureCodePage, HouseConsignmentAddAdditionalReferencePage, HouseConsignmentAddAnotherHCPage, HouseConsignmentAddDepartureTransportMeansPage, HouseConsignmentAddDocumentsPage, HouseConsignmentAddItemPage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveHCPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -241,6 +242,14 @@ class UnloadingStepDef extends BaseStepDef {
       .selectSection(section)
       .selectSectionChild(section, index)
       .clickLinkByIdBySection(changeLinkText)
+  }
+
+  And(
+    """^(?:I )?click the add or remove house consignment link$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+    .selectAddRemoveHouseConsignment
   }
 
   And(
@@ -1088,6 +1097,95 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage()
         .select(answer)
         .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) house consignment' page$""") {
+    (answer: String, numberOfHC: String) =>
+      HouseConsignmentAddAnotherHCPage
+        .loadPage(numberOfHC)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter number (.+) on 'What is the gross weight of House Consignment (.+)\?' page$""") {
+    (answer: String, index: String) =>
+      EnterGrossWeightHCPage
+        .loadPage(index)
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a departure means of transport for house consignment (.*)\?' page$""") {
+    (answer: String, HCNumber: String) =>
+      HouseConsignmentAddDepartureTransportMeansPage
+        .loadPage(HCNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport for house consignment 2' page$""") {
+    (answer: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansOfTransportHCPage
+        .loadPage(numberOfDepartureMeans)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page$""") {
+    (answer: String, HCNumber: String) =>
+      HouseConsignmentAddDocumentsPage
+        .loadPage(HCNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items in house consignment 2' page$""") {
+    (answer: String, numberOfDocuments: String) =>
+      DocumentsAddAnotherDocumentsHCPage
+        .loadPage(numberOfDocuments)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page$""") {
+    (answer: String, HCNumber: String) =>
+      HouseConsignmentAddAdditionalReferencePage
+        .loadPage(HCNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional reference for house consignment 2' page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherHCPage
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page$""") {
+    (answer: String, HCNumber: String) =>
+      HouseConsignmentAddItemPage
+        .loadPage(HCNumber)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the (.*) link on the 'You have added (.*) house consignments' page$"""
+  ) { (sectionLink: String, numberOfHCAdded: String) =>
+    HouseConsignmentAddAnotherHCPage
+      .loadPage(numberOfHCAdded)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove house consignment (.+)\?' page$"""
+  ) { (answer: String, hcNumber: String) =>
+    HouseConsignmentRemoveHCPage
+      .loadPage(hcNumber)
+      .select(answer)
+      .submitPage()
   }
 
 }
