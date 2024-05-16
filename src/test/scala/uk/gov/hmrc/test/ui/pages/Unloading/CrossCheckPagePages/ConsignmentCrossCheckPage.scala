@@ -34,6 +34,12 @@ object ConsignmentCrossCheckPage extends Page {
     this
   }
 
+  def selectAddRemoveHouseConsignment: this.type = {
+    clickById("houseConsignments")
+    clickById("add-remove-house-consignment")
+    this
+  }
+
   def selectDocAction(index: String): this.type = {
     clickById("documents")
     clickById(s"document$index")
@@ -104,6 +110,8 @@ object ConsignmentCrossCheckPage extends Page {
       case "Add or remove transport equipment"          => "add-remove-transport-equipment"
       case "Add or remove departure means"              => "add-remove-departure-transport-means"
       case "Add or remove item"                         => "add-remove-items"
+      case "Add or remove house consignment"            => "add-remove-house-consignment"
+
     }
     clickById(value)
   }
