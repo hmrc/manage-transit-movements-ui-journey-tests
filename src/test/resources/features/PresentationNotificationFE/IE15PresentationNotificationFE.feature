@@ -1,4 +1,3 @@
-@presentationNotificationIe15
 
 Feature: Trader completes a departure declaration that was previously pre-lodged
 

@@ -1,4 +1,3 @@
-@presentationNotificationIe15
 
 Feature: Trader sends in fully complete IE015 to goes to the CYA page
 
