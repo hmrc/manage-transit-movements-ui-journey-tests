@@ -249,7 +249,7 @@ class UnloadingStepDef extends BaseStepDef {
   ) { () =>
     ConsignmentCrossCheckPage
       .loadPage()
-    .selectAddRemoveHouseConsignment
+      .selectAddRemoveHouseConsignment
   }
 
   And(
@@ -1083,20 +1083,18 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") {
-    (answer: String) =>
-      OtherThingsReportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") { (answer: String) =>
+    OtherThingsReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") {
-    (answer: String) =>
-      AddCommentsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") { (answer: String) =>
+    AddCommentsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'You have added (.*) house consignment' page$""") {
@@ -1115,52 +1113,58 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a departure means of transport for house consignment (.*)\?' page$""") {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddDepartureTransportMeansPage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a departure means of transport for house consignment (.*)\?' page$"""
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddDepartureTransportMeansPage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport for house consignment 2' page$""") {
-    (answer: String, numberOfDepartureMeans: String) =>
-      AddAnotherDepartureMeansOfTransportHCPage
-        .loadPage(numberOfDepartureMeans)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport for house consignment 2' page$"""
+  ) { (answer: String, numberOfDepartureMeans: String) =>
+    AddAnotherDepartureMeansOfTransportHCPage
+      .loadPage(numberOfDepartureMeans)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page$""") {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddDocumentsPage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page$"""
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddDocumentsPage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items in house consignment 2' page$""") {
-    (answer: String, numberOfDocuments: String) =>
-      DocumentsAddAnotherDocumentsHCPage
-        .loadPage(numberOfDocuments)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items in house consignment 2' page$"""
+  ) { (answer: String, numberOfDocuments: String) =>
+    DocumentsAddAnotherDocumentsHCPage
+      .loadPage(numberOfDocuments)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page$""") {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddAdditionalReferencePage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page$"""
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddAdditionalReferencePage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional reference for house consignment 2' page$""") {
-    (answer: String, numberOfReferences: String) =>
-      AdditionalReferenceAddAnotherHCPage
-        .loadPage(numberOfReferences)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the 'You have added (.*) additional reference for house consignment 2' page$"""
+  ) { (answer: String, numberOfReferences: String) =>
+    AdditionalReferenceAddAnotherHCPage
+      .loadPage(numberOfReferences)
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page$""") {

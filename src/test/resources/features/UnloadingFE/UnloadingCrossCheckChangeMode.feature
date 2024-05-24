@@ -5,7 +5,11 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-    Then I click on the View arrival notifications link on the 'Manage your transit movements' page
+            #cut-over
+    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
