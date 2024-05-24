@@ -9,7 +9,7 @@ Feature: Cancellation frontend journey test
     Then I submit an IE028 MRN Allocated
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -25,7 +25,7 @@ Feature: Cancellation frontend journey test
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page

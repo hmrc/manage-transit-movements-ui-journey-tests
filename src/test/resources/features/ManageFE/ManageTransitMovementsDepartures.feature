@@ -28,7 +28,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE060 Control Decision Notification With Documents
     And I refresh the page
       #cut-over
-  And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+  And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     # And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -42,7 +42,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE060 Control Decision Notification With No Documents
     And I refresh the page
         #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -56,7 +56,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE056 Rejection With No Amendable Errors
     And I refresh the page
         #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -71,7 +71,7 @@ Feature: Manage transit movements frontend tests for Departures
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
         #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -88,7 +88,7 @@ Feature: Manage transit movements frontend tests for Departures
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -104,7 +104,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I submit an IE056 Cancellation Rejection With No Amendable Errors
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -117,7 +117,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE028 MRN Allocated
     Then I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
   # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Cancel declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -160,7 +160,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE035 Recovery Notification
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
@@ -175,7 +175,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE051 No Release For Transit
     And I refresh the page
     #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
 
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page

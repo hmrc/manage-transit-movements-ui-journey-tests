@@ -9,7 +9,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
       #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -75,7 +75,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
       #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -142,7 +142,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
       #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
@@ -206,7 +206,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
     And I refresh the page
       #cut-over
-    And I click on the View NCTS 5 departure declaration link on the 'Manage your transit movements' page
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
     # TODO 1 July
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
