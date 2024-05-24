@@ -31,15 +31,15 @@ object ManageTransitMovementsPage extends Page {
 
   def selectAction(link: String): this.type = {
     link match {
-      case "Make an arrival notification"      => clickById("make-arrival-notification")
-      case "View arrival notifications"        => clickById("view-arrival-notifications")
-      case "Make a departure declaration"      => clickById("make-departure-declaration")
-      case "View departure declarations"       => clickById("view-departure-declarations")
+      case "Make an arrival notification"       => clickById("make-arrival-notification")
+      case "View arrival notifications"         => clickById("view-arrival-notifications")
+      case "Make a departure declaration"       => clickById("make-departure-declaration")
+      case "View departure declarations"        => clickById("view-departure-declarations")
       // TODO remove NCTS 5 links 1 July
       case "View NCTS 5 arrival notifications"  => clickById("view-ncts-5-arrival-notifications")
-      case "View NCTS 5 departure declarations"  => clickById("view-ncts-5-departure-declarations")
-      case "Check your guarantee balance"      => clickById("check-guarantee-balance")
-      case "View draft departure declarations" => clickById("view-draft-departures")
+      case "View NCTS 5 departure declarations" => clickById("view-ncts-5-departure-declarations")
+      case "Check your guarantee balance"       => clickById("check-guarantee-balance")
+      case "View draft departure declarations"  => clickById("view-draft-departures")
     }
     this
   }
