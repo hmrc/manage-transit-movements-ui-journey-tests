@@ -59,7 +59,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
     And I submit on the Check your answers section Trader details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
 
       ## Route details
     When I click the Add route details link on the 'Declaration summary' page
@@ -435,7 +435,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I submit on the Check your answers section Trader details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
 
     # Route details
     When I click the Add route details link on the 'Declaration summary' page
