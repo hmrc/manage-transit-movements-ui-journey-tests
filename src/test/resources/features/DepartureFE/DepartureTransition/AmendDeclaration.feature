@@ -15,30 +15,30 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
 
-    And I should see ERROR status for trader details on the 'Declaration summary' page
-    And I should see ERROR status for route details on the 'Declaration summary' page
-    And I should see ERROR status for transport details on the 'Declaration summary' page
-    And I should see ERROR status for documents on the 'Declaration summary' page
-    And I should see ERROR status for items on the 'Declaration summary' page
-    And I should see ERROR status for guarantee details on the 'Declaration summary' page
+    And I should see Error status for trader details on the 'Declaration summary' page
+    And I should see Error status for route details on the 'Declaration summary' page
+    And I should see Error status for transport details on the 'Declaration summary' page
+    And I should see Error status for documents on the 'Declaration summary' page
+    And I should see Error status for items on the 'Declaration summary' page
+    And I should see Error status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
     And I submit on the Check your answers section Trader details page
-    And I should see AMENDED status for trader details on the 'Declaration summary' page
+    And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Edit route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the Check your answers section Route details page
-    And I should see AMENDED status for route details on the 'Declaration summary' page
+    And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Edit transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I submit on the Check your answers section Transport details page
-    And I should see AMENDED status for transport details on the 'Declaration summary' page
+    And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 3 documents' page
@@ -46,7 +46,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
     And I choose radio option No on the 'You have added 3 documents' page
-    And I should see AMENDED status for documents on the 'Declaration summary' page
+    And I should see Amended status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 1 item' page
@@ -54,7 +54,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add supplementary units?' page
     And I submit on the Check your answers section Items page
     And I click radio option No on the 'You have added 1 item' page
-    And I should see AMENDED status for items on the 'Declaration summary' page
+    And I should see Amended status for items on the 'Declaration summary' page
 
     And I click on the Edit guarantee details link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 4 guarantees' page
@@ -62,7 +62,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I enter 999.99 on the 'How much is the liability in pounds?' page
     And I submit on the Check your answers section Guarantee details page
     And I choose radio option No on the 'You have added 4 guarantees' page
-    And I should see AMENDED status for guarantee details on the 'Declaration summary' page
+    And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
@@ -84,30 +84,30 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend errors button on the 'Amend declaration errors' page
     Then I input a random LRN on the 'What is the new Local Reference Number?' page
 
-    And I should see ERROR status for trader details on the 'Declaration summary' page
-    And I should see ERROR status for route details on the 'Declaration summary' page
-    And I should see ERROR status for transport details on the 'Declaration summary' page
-    And I should see ERROR status for documents on the 'Declaration summary' page
-    And I should see ERROR status for items on the 'Declaration summary' page
-    And I should see ERROR status for guarantee details on the 'Declaration summary' page
+    And I should see Error status for trader details on the 'Declaration summary' page
+    And I should see Error status for route details on the 'Declaration summary' page
+    And I should see Error status for transport details on the 'Declaration summary' page
+    And I should see Error status for documents on the 'Declaration summary' page
+    And I should see Error status for items on the 'Declaration summary' page
+    And I should see Error status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
     And I submit on the Check your answers section Trader details page
-    And I should see AMENDED status for trader details on the 'Declaration summary' page
+    And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Edit route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the Check your answers section Route details page
-    And I should see AMENDED status for route details on the 'Declaration summary' page
+    And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Edit transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I submit on the Check your answers section Transport details page
-    And I should see AMENDED status for transport details on the 'Declaration summary' page
+    And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 3 documents' page
@@ -115,7 +115,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
     And I choose radio option No on the 'You have added 3 documents' page
-    And I should see AMENDED status for documents on the 'Declaration summary' page
+    And I should see Amended status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 1 item' page
@@ -123,7 +123,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add supplementary units?' page
     And I submit on the Check your answers section Items page
     And I click radio option No on the 'You have added 1 item' page
-    And I should see AMENDED status for items on the 'Declaration summary' page
+    And I should see Amended status for items on the 'Declaration summary' page
 
     And I click on the Edit guarantee details link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 4 guarantees' page
@@ -131,7 +131,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I enter 999.99 on the 'How much is the liability in pounds?' page
     And I submit on the Check your answers section Guarantee details page
     And I choose radio option No on the 'You have added 4 guarantees' page
-    And I should see AMENDED status for guarantee details on the 'Declaration summary' page
+    And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
@@ -150,30 +150,30 @@ Feature: End to end journey for amending a departure declaration - Transition
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
-    And I should see ERROR status for trader details on the 'Declaration summary' page
-    And I should see ERROR status for route details on the 'Declaration summary' page
-    And I should see ERROR status for transport details on the 'Declaration summary' page
-    And I should see ERROR status for documents on the 'Declaration summary' page
-    And I should see ERROR status for items on the 'Declaration summary' page
-    And I should see ERROR status for guarantee details on the 'Declaration summary' page
+    And I should see Error status for trader details on the 'Declaration summary' page
+    And I should see Error status for route details on the 'Declaration summary' page
+    And I should see Error status for transport details on the 'Declaration summary' page
+    And I should see Error status for documents on the 'Declaration summary' page
+    And I should see Error status for items on the 'Declaration summary' page
+    And I should see Error status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
     And I submit on the Check your answers section Trader details page
-    And I should see AMENDED status for trader details on the 'Declaration summary' page
+    And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Edit route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
     And I submit on the Check your answers section Route details page
-    And I should see AMENDED status for route details on the 'Declaration summary' page
+    And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Edit transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I submit on the Check your answers section Transport details page
-    And I should see AMENDED status for transport details on the 'Declaration summary' page
+    And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Edit documents link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 3 documents' page
@@ -181,7 +181,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
     And I choose radio option No on the 'You have added 3 documents' page
-    And I should see AMENDED status for documents on the 'Declaration summary' page
+    And I should see Amended status for documents on the 'Declaration summary' page
 
     And I click on the Edit items link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 1 item' page
@@ -189,7 +189,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click radio option No on the 'Do you want to add supplementary units?' page
     And I submit on the Check your answers section Items page
     And I click radio option No on the 'You have added 1 item' page
-    And I should see AMENDED status for items on the 'Declaration summary' page
+    And I should see Amended status for items on the 'Declaration summary' page
 
     And I click on the Edit guarantee details link on the 'Declaration summary' page
     And I click the Change link on the 'You have added 4 guarantees' page
@@ -197,7 +197,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I enter 999.99 on the 'How much is the liability in pounds?' page
     And I submit on the Check your answers section Guarantee details page
     And I choose radio option No on the 'You have added 4 guarantees' page
-    And I should see AMENDED status for guarantee details on the 'Declaration summary' page
+    And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
@@ -215,12 +215,12 @@ Feature: End to end journey for amending a departure declaration - Transition
     #And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend guarantee errors' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
-    And I should see COMPLETED status for route details on the 'Declaration summary' page
-    And I should see COMPLETED status for transport details on the 'Declaration summary' page
-    And I should see COMPLETED status for documents on the 'Declaration summary' page
-    And I should see COMPLETED status for items on the 'Declaration summary' page
-    And I should see ERROR status for guarantee details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
+    And I should see Completed status for route details on the 'Declaration summary' page
+    And I should see Completed status for transport details on the 'Declaration summary' page
+    And I should see Completed status for documents on the 'Declaration summary' page
+    And I should see Completed status for items on the 'Declaration summary' page
+    And I should see Error status for guarantee details on the 'Declaration summary' page
 
     And I click on the Edit guarantee details link on the 'Declaration summary' page
     And I click the Remove link on the 'You have added 4 guarantees' page

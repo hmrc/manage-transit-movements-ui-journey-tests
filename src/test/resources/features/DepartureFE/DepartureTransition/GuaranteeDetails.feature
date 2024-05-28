@@ -53,7 +53,7 @@ Feature: Guarantee details journey - Transition
     And I choose radio option No on the 'You have added 4 guarantees' page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
+    And I should see Completed status for guarantee details on the 'Declaration summary' page
     And I sign out
 
   Scenario: 02 Northern Ireland office of departure
@@ -68,5 +68,5 @@ Feature: Guarantee details journey - Transition
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for guarantee details on the 'Declaration summary' page
+    And I should see Completed status for guarantee details on the 'Declaration summary' page
     And I sign out

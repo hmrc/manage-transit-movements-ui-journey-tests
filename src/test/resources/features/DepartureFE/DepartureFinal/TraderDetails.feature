@@ -50,7 +50,7 @@ Feature: Trader details journey
     And I submit on the Check your answers section Trader details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
     And I sign out
 
 
@@ -96,7 +96,7 @@ Feature: Trader details journey
     And I submit on the Check your answers section Trader details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
     And I sign out
 
 
@@ -137,6 +137,6 @@ Feature: Trader details journey
     And I submit on the Check your answers section Trader details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
     And I sign out
 

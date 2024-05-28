@@ -58,7 +58,7 @@ Feature: End to end journey for Great Britain office of departure
     And I fill in the address on the 'What is the consignee’s address?' page
     And I submit on the Check your answers section Trader details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
 
       ## Route details
     When I click the Add route details link on the 'Declaration summary' page
@@ -431,7 +431,7 @@ Feature: End to end journey for Great Britain office of departure
 
     And I submit on the Check your answers section Trader details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for trader details on the 'Declaration summary' page
+    And I should see Completed status for trader details on the 'Declaration summary' page
 
     # Route details
     When I click the Add route details link on the 'Declaration summary' page
