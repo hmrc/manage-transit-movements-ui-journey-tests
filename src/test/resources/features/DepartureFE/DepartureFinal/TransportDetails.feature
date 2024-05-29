@@ -99,7 +99,7 @@ Feature: Transport details journey
 
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for transport details on the 'Declaration summary' page
+    And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
 
   @wip
@@ -152,7 +152,7 @@ Feature: Transport details journey
 #      ## Charges
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for transport details on the 'Declaration summary' page
+    And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
 
   Scenario: 03 Northern Ireland office of departure
@@ -213,5 +213,5 @@ Feature: Transport details journey
 
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for transport details on the 'Declaration summary' page
+    And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out

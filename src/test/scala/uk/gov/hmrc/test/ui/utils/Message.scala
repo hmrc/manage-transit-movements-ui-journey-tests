@@ -44,7 +44,7 @@ object Message {
     case "IE013" => IE013(World.departureId)
     case "IE004" => IE004(World.departureId)
     case "IE055" => IE055(World.departureId)
-    case _ => throw new RuntimeException(s"$value not recognised")
+    case _       => throw new RuntimeException(s"$value not recognised")
   }
 }
 

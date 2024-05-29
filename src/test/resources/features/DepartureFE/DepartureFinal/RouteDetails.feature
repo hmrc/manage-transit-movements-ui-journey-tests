@@ -78,7 +78,7 @@ Feature: Route details journey
     And I submit on the Check your answers section Route details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for route details on the 'Declaration summary' page
+    And I should see Completed status for route details on the 'Declaration summary' page
     And I sign out
 
 
@@ -122,5 +122,5 @@ Feature: Route details journey
     And I submit on the Check your answers section Route details page
 
     Then I should be on the 'Declaration summary' page
-    And I should see COMPLETED status for route details on the 'Declaration summary' page
+    And I should see Completed status for route details on the 'Declaration summary' page
     And I sign out
