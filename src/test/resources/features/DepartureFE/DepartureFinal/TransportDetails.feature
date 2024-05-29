@@ -102,7 +102,6 @@ Feature: Transport details journey
     And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
 
-  @wip
   Scenario: 02 Great Britain office of departure - No to optional
     And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
