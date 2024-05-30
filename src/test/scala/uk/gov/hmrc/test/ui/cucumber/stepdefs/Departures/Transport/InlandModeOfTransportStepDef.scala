@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Transport
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport.AddNewBorderModeOfTransportPage
+import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddNewBorderModeOfTransportPage, RemoveDepartureMeansOfTransportPage}
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport.{AddVehicleIdentificationInlandModeOfTransport, IdentificationNumberPage, InlandModeOfTransportPage, TransportCountryPage, TransportIdentificationPage}
 
 class InlandModeOfTransportStepDef extends BaseStepDef {
@@ -68,6 +68,30 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
     """^(?:I )?choose radio option (.*) on the inland mode 'Do you want to add identification for this vehicle\?' page$"""
   ) { (answer: String) =>
     AddVehicleIdentificationInlandModeOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select radio option (.*) on the 'You have added (.+) departure means of transport?' page$""") {
+    (answer: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansOfTransportPage
+        .loadPage(numberOfDepartureMeans)
+        .select(answer)
+        .submitPage()
+  }
+
+  When("""^(?:I )?choose to click on the (.*) link on the You have added (.+) departure means of transport' page$""") {
+    (sectionLink: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansOfTransportPage
+        .loadPage(numberOfDepartureMeans)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport\?' page$"""
+  ) { (answer: String) =>
+    RemoveDepartureMeansOfTransportPage
       .loadPage()
       .select(answer)
       .submitPage()
