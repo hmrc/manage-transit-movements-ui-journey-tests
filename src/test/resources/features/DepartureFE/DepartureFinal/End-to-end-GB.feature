@@ -6,8 +6,8 @@ Feature: End to end journey for Great Britain office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
-#    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
+#    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
+    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select GB on the 'Where is the office of departure?' page
 
 

@@ -6,8 +6,8 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
-#    And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
+#    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
+    And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
     And I select XI on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option TIR on the 'Which type of declaration do you want to create?' page
@@ -69,7 +69,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I submit on the Check your answers section Location of goods page
 
       ## Place of loading
-#    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
+    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
@@ -97,7 +97,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I select United Kingdom on the transport details 'What is the country of destination?' page
 
       ## Container indicator
-    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
+    And I choose radio option Not sure on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
@@ -135,7 +135,6 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport charges
-    And I choose radio option No on the 'Do you want to add any transport equipment?' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
 
       ##CYA changes to NO to test in Items details
