@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.PreTaskList
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList._
+import uk.gov.hmrc.test.ui.pages.Departures.StandardDeclarationMoreInformationPage
 import uk.gov.hmrc.test.ui.utils.CacheHelper
 
 class PreTaskListStepDef extends BaseStepDef with BasePage {
@@ -109,5 +110,12 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
   When("""^the user has submitted (.+) for MRN (.+) and EORI number (.+)$""") {
     (fileName: String, mrn: String, eoriNumber: String) =>
       CacheHelper.submitArrivalAnswers(fileName, mrn, eoriNumber)
+  }
+  And(
+    """^(?:I )?click the Continue button on the standard declaration 'You can only make a standard declaration' page$"""
+  ) { () =>
+    StandardDeclarationMoreInformationPage
+      .loadPage()
+      .submitPage()
   }
 }
