@@ -162,7 +162,6 @@
           }
         ]
       },
-      "addLocationOfGoods" : true,
       "locationOfGoods" : {
         "typeOfLocation" : {
           "type" : "B",
