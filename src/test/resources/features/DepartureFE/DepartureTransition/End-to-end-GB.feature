@@ -6,7 +6,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
+    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
+#    And I choose radio option A on the 'Is this a standard or pre-lodged declaration?' page
     And I select GB on the 'Where is the office of departure?' page
 
   Scenario: 01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -
@@ -102,7 +103,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
-    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
+#    And I choose radio option Yes on the 'Do you want to add a location of goods?' page
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
     And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page
     And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page
