@@ -186,12 +186,18 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
     And I choose radio option Yes on the inland mode 'Do you want to add identification for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add the type of identification?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
-    And I choose radio option Yes on the 'Do you want to add an identification number for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+    And I submit on the Check your answers section Departure means of transport page
+    And I select radio option Yes on the 'You have added 1 departure means of transport' page
+    And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter registration number GB1234567 on the 'What is the identification number for this?' page
+    And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
+    And I submit on the Check your answers section Departure means of transport page
+    And I choose to click on the Remove link on the You have added 2 departure means of transport' page
+    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport?' page
+    And I select radio option No on the 'You have added 1 departure means of transport' page
     And I choose radio option Channel Tunnel on the 'How is the transit crossing the border?' page
     And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
@@ -499,6 +505,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+    And I submit on the Check your answers section Departure means of transport page
+    And I select radio option No on the 'You have added 1 departure means of transport' page
    ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
     And I choose radio option Air on the 'How is the transit crossing the border?' page
