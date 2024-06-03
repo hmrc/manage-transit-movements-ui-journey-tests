@@ -95,7 +95,7 @@ class RouteDetailsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove Andorra from the transit route\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this country from the transit route\?' page$"""
   ) { (answer: String) =>
     TransitRouteRemoveCountryPage
       .loadPage()

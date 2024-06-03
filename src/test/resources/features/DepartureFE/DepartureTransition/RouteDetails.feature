@@ -32,7 +32,7 @@ Feature: Route details journey - Transition
     And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
     And I select Germany on the 'Which country do you want to add to the transit route?' page
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
-    And I choose radio option Yes on the 'Are you sure you want to remove Andorra from the transit route?' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Check your answers section Transit route page
 
@@ -50,7 +50,7 @@ Feature: Route details journey - Transition
     And I submit on the Check your answers section Office of transit page
 
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
-    And I choose radio option Yes on the 'Are you sure you want to remove Basel as an office of transit?' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods

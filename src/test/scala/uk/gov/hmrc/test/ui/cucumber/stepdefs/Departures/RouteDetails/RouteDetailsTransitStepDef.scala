@@ -97,10 +97,10 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove (.*) as an office of transit\?' page$"""
-  ) { (answer: String, transitOfficeInTitle: String) =>
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this office of transit?\?' page$"""
+  ) { (answer: String) =>
     ConfirmRemoveOfficeOfTransitPage
-      .loadPage(transitOfficeInTitle)
+      .loadPage()
       .select(answer)
       .submitPage()
   }
