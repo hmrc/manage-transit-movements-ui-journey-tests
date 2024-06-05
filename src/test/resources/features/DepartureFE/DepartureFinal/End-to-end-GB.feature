@@ -243,7 +243,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
-    And I click radio option Yes on the 'Do you want to add an additional reference for all items?' page
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 
