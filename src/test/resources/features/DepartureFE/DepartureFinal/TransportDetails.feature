@@ -1,4 +1,4 @@
-@departureTransportDetails
+@departureTransportDetails @wip
 Feature: Transport details journey
 
   Background:
@@ -97,6 +97,7 @@ Feature: Transport details journey
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for transport details on the 'Declaration summary' page
@@ -147,6 +148,8 @@ Feature: Transport details journey
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the 'You have added 1 transport equipment' page
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+
 
 #      ## Charges
     And I submit on the Check your answers section Transport details page
@@ -209,6 +212,8 @@ Feature: Transport details journey
 
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+
 
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page

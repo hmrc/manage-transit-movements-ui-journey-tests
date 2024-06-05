@@ -380,7 +380,9 @@
           "name" : "Moseley",
           "telephoneNumber" : "+88 888 888"
         }
-      }
+      },
+      "addAdditionalInformationYesNo": false,
+      "addAdditionalReferenceYesNo": false
     },
     "documents" : {
       "documents" : [

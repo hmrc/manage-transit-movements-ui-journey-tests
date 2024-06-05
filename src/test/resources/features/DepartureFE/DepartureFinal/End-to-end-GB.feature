@@ -243,6 +243,7 @@ Feature: End to end journey for Great Britain office of departure
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference for all items?' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 
@@ -397,7 +398,6 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Sign out link on the 'Departure declaration sent' page
 
 
-
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
@@ -518,10 +518,12 @@ Feature: End to end journey for Great Britain office of departure
     When I choose radio option No on the 'Do you want to add a carrier?' page
 
       ## Transport equipment
-    And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
-    And I choose radio option No on the 'Do you want to add a seal?' page
-    And I submit on the Check your answers section Transport equipment page
-    And I choose radio option No on the 'You have added 1 transport equipment' page
+    And I choose radio option No on the 'Do you want to add any transport equipment?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference for all items?' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter 12345 on the 'Enter the additional reference number' page
+    And I click radio option No on the 'You have added 1 additional reference for all items' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 
