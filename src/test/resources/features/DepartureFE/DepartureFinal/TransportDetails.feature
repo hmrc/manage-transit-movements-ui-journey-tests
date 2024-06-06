@@ -1,4 +1,4 @@
-@departureTransportDetails @wip
+@departureTransportDetails
 Feature: Transport details journey
 
   Background:

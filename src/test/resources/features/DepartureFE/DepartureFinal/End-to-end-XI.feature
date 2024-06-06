@@ -1,4 +1,4 @@
-@departureXIe2e @wip
+@departureXIe2e
 
 Feature: End to end journey for Prelodged Northern Ireland office of departure
 
