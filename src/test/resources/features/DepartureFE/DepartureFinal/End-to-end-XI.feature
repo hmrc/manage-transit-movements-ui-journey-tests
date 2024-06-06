@@ -136,7 +136,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
 
       ## Transport charges
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
-
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
       ##CYA changes to NO to test in Items details
     And click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
