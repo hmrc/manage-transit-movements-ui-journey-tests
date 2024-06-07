@@ -88,7 +88,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the 'Do you want to add the item’s net weight?' page
     And I enter number 5681.22 on 'What is the net weight of item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item?' page
-    And I enter number 0018063-2 on 'What is the Customs Union and Statistics CUS code for item 2 in house consignment 1?' page
+    And I enter number 0018063-2 on 'What is the Customs Union and Statistics CUS code?' page
     And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
     And I enter number 716812 on 'What is the commodity code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a combined nomenclature code for the item?' page
