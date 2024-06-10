@@ -243,7 +243,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'You have added 1 seal' page
     And I enter S002 on the 'What is the seal identification number?' page
     And I click the Remove link  on the 'You have added 2 seals' page
-    And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
     And I submit on the Check your answers section Transport equipment page
 
