@@ -17,13 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Items.{AdditionalReferenceEnterNumberPage, PackagesTypeQuantityPage}
-import uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTransport.ActiveMeansOfBorderTransportIdentificationNumberPage
+import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.ConsignmentCrossCheckPage.selectAddRemoveHouseConsignment
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.{AddAnotherDepartureMeansOfTransportPage, AddIdentificationNumberForDepartureMeansOfTransportPage, AddIdentificationTypeForDepartureMeansOfTransportPage, AddRegisterCountryForDepartureMeansOfTransportPage, CountryTypeVehicleRegisteredPage, IdentificationForDepartureMeansOfTransportPage, IdentificationNumberForDepartureTransportMeansPage, RemoveDepartureMeansOfTransportPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.{AddAnotherForTransportEquipmentPage, ContainerIdentificationNumberforTransportEquipmentPage, ItemTypeForTransportEquipmentPage, NewContainerIdentificationNumberPage, NewSealIdentificationNumberPage, OptionToAddContainerIdentificationNumberPage, OptionToAddItemsApplyPage, OptionToAddSealPage, RemoveItemFromTransportEquipmentPage, RemoveSealFromTransportEquipmentPage, RemoveTransportEquipmentFromCorssCheckPage, SealIdentificationNumberForTransportEquipmentPage, SealsIncrementPage}
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.{AddAdditionalInformationForDocumentPage, AddAnotherDepartureMeansOfTransportHCPage, AddDocumentTypePage, AddNewConsignmentAdditionalReferenceNumberPage, AdditionalInformationPage, AdditionalReferenceAddAnotherHCPage, AdditionalReferenceAddAnotherUnloadingPage, AdditionalReferenceRemoveUnloadingPage, AdditionalReferenceTypeUnloadingPage, ChangeCUSCodePage, ChangeCommodityCodePage, ChangeGrossWeightPage, ChangeNetWeightPage, ChangeNomenclatureCodePage, ConsignmentCrossCheckPage, CountryForNewDepartureMeansOfTransportPage, CrossCheckHouseConsignmentPage, DocumentsAddAnotherDocumentsHCPage, DocumentsAddAnotherDocumentsPage, DocumentsNewReferenceNumberPage, DocumentsReferenceNumberPage, EnterCUSCodePage, EnterCommodityCodePage, EnterGrossWeightHCPage, EnterGrossWeightPage, EnterItemDescriptionPage, EnterNetWeightPage, EnterNomenclatureCodePage, HouseConsignmentAddAdditionalReferencePage, HouseConsignmentAddAnotherHCPage, HouseConsignmentAddDepartureTransportMeansPage, HouseConsignmentAddDocumentsPage, HouseConsignmentAddItemPage, HouseConsignmentAdditionalRefIncrementPage, HouseConsignmentDocumentIncrementPage, HouseConsignmentDocumentRemoveIncrementPage, HouseConsignmentIncrementPage, HouseConsignmentNewDescriptionIncrementPage, HouseConsignmentPackageIncrementPage, HouseConsignmentPackageRemoveIncrementPage, HouseConsignmentPage, HouseConsignmentRemoveHCPage, HouseConsignmentRemoveItemPage, IdentificationForNewDepartureMeansOfTransportPage, IdentificationNumberForNewDepartureMeansOfTransportPage, NewAdditionalInformationPage, NewAdditionalReferenceNumberPage, NewAdditionalReferenceTypePage, NewDocumentTypePage, NewItemLevelAdditionalReferenceNumberPage, NewItemLevelAdditionalReferenceTypePage, OptionToAddItemAdditionalReferencePage, OptionToAddItemCombinedNomenclaturePage, OptionToAddItemCommodityCodePage, OptionToAddItemDocumentPage, OptionToAddItemGrossWeightPage, OptionToAddItemNetWeightPage, OptionToAddItemNewCusPage, OptionToAddItemPackagePage, OptionToAddItemPackageQuantityPage, PackageTypeUnloadingPage, PackagesAddShippingMarkUnloadingPage, PackagesShippingMarkUnloadingPage, PackagesTypeQuantityUnloadingPage, RemoveCommodityCodePage, RemoveDocumentFromAllItemsPage, RemoveGrossWeightsPage, RemoveNetWeightsPage, RemoveNomenclatureCodePage}
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport._
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment._
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages._
 import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
@@ -757,10 +755,10 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics CUS code for item (.+) in house consignment 1\?' page$"""
-  ) { (answer: String, index: String) =>
+    """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics CUS code\?' page$"""
+  ) { (answer: String) =>
     EnterCUSCodePage
-      .loadPage(index)
+      .loadPage()
       .fillInput(answer)
       .submitPage()
   }

@@ -534,7 +534,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Transport equipment
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
-    And I choose radio option No on the 'Do you want to add a seal?' page
+    And I enter S001 on the 'What is the seal identification number?' page
+    And I choose radio option No on the 'You have added 1 seal' page
     And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the 'You have added 1 transport equipment' page
     And I submit on the Check your answers section Transport details page
