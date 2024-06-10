@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
+import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport._
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment._

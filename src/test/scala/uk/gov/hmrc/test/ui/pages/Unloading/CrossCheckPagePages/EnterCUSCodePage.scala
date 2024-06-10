@@ -22,8 +22,7 @@ object EnterCUSCodePage extends StringPage {
 
   override def title(args: String*): String =
     String.format(
-      "What is the Customs Union and Statistics (CUS) code for item %s in house consignment 1?",
-      args: _*
+      "What is the Customs Union and Statistics (CUS) code?"
     )
 
 }
