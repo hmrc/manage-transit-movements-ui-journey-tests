@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object ConsigneeNamePage extends StringPage {
 
-  override def title(args: String*): String = "What is the consignee’s name?"
+  override def title(args: String*): String = "What is the consignee’s name? - Departure declarations"
 
 }

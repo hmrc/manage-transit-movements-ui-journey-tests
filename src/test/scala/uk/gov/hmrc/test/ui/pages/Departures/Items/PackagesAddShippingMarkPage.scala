@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object PackagesAddShippingMarkPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a shipping mark?"
+  override def title(args: String*): String = "Do you want to add a shipping mark? - Departure declarations"
 
 }

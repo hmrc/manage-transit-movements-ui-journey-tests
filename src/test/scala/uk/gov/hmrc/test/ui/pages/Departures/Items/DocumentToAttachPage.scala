@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DocumentToAttachPage extends YesNoPage {
 
-  override def title(args: String*): String = "Which document do you want to attach?"
+  override def title(args: String*): String = "Which document do you want to attach? - Departure declarations"
 
 }

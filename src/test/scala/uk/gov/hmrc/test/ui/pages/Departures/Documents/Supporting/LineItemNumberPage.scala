@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object LineItemNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the line item number?"
+  override def title(args: String*): String = "What is the line item number? - Departure declarations"
 
 }

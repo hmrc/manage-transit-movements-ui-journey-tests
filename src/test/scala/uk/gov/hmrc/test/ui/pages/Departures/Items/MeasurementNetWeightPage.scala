@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object MeasurementNetWeightPage extends StringPage {
 
-  override def title(args: String*): String = "What is the item’s net weight?"
+  override def title(args: String*): String = "What is the item’s net weight? - Departure declarations"
 
 }

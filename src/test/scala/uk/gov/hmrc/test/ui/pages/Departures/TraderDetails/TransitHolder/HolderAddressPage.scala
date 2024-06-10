@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.AddressPage
 
 object HolderAddressPage extends AddressPage {
 
-  override def title(args: String*): String = "What is the transit holder’s address?"
+  override def title(args: String*): String = "What is the transit holder’s address? - Departure declarations"
 
   override val addressLine1: String = "1 Church lane"
   override val addressLine2: String = "Godrics Hollow"

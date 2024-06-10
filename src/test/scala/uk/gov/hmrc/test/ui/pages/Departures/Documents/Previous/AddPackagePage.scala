@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPackagePage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add a package to the document?")
+  override def title(args: String*): String = String.format("Do you want to add a package to the document? - Departure declarations")
 
 }

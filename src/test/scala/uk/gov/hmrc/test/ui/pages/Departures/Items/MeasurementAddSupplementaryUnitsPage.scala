@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object MeasurementAddSupplementaryUnitsPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add supplementary units?"
+  override def title(args: String*): String = "Do you want to add supplementary units? - Departure declarations"
 
 }

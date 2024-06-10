@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object DangerousGoodsUnNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the UN number for the dangerous goods?"
+  override def title(args: String*): String = "What is the UN number for the dangerous goods? - Departure declarations"
 
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AdditionalReferenceAddPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an additional reference for this item?"
+  override def title(args: String*): String = "Do you want to add an additional reference for this item? - Departure declarations"
 
 }

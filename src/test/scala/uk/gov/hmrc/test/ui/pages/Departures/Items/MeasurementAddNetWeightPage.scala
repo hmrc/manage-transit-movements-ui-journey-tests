@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object MeasurementAddNetWeightPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add the item’s net weight?"
+  override def title(args: String*): String = "Do you want to add the item’s net weight? - Departure declarations"
 
 }

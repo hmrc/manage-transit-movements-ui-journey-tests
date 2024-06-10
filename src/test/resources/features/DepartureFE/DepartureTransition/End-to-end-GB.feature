@@ -58,7 +58,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
 
@@ -277,7 +277,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
@@ -287,13 +287,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 010101 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 2 documents' page
         #  Add a Transport document from list 754
     Then I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     Then I choose radio option No on the 'You have added 3 documents' page
 
@@ -366,7 +366,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click radio option Yes on the 'You have added 1 item' page
 
@@ -400,7 +400,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #2nd Item - Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #2nd Item - Items Summary
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
@@ -439,7 +439,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
@@ -554,12 +554,12 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 document' page
     And I select Transport - (N705) Bill of lading on the 'What type of document do you want to add?' page
     And I enter 4312 on the 'What is the document’s reference number?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option No on the 'You have added 2 document' page
 
@@ -601,7 +601,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page

@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AdditionalReferenceAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 additional reference"
-    case _        => String.format("You have added %s additional references", args: _*)
+    case Seq("1") => "You have added 1 additional reference - Departure declarations"
+    case _        => String.format("You have added %s additional references - Departure declarations", args: _*)
   }
 }

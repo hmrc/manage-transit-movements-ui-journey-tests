@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object RepresentativePhoneNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is your phone number?"
+  override def title(args: String*): String = "What is your phone number? - Departure declarations"
 
 }

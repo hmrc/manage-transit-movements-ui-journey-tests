@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPackageQuantityPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add a goods item number?")
+  override def title(args: String*): String = String.format("Do you want to add a goods item number? - Departure declarations")
 
 }

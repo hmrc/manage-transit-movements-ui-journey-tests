@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object DangerousGoodsUnNumberAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 UN number for dangerous goods"
-    case _        => String.format("You have added %s UN numbers for dangerous goods", args: _*)
+    case Seq("1") => "You have added 1 UN number for dangerous goods - Departure declarations"
+    case _        => String.format("You have added %s UN numbers for dangerous goods - Departure declarations", args: _*)
   }
 }

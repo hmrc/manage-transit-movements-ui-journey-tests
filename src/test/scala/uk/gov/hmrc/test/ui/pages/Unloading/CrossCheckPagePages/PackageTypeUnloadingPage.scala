@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Items
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object RemovePackagePage extends YesNoPage {
+object PackageTypeUnloadingPage extends SelectPage {
 
-  override def title(args: String*): String =
-    String.format("Are you sure you want to remove %s from this item? - Departure declarations", args: _*)
+  override def title(args: String*): String = "What type of package are you using for the item?"
+
 }

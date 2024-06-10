@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object MetricTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What metric do you want to use for the quantity of goods?"
+  override def title(args: String*): String = "What metric do you want to use for the quantity of goods? - Departure declarations"
 
 }

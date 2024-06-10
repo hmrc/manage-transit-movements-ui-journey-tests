@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Items
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RemovePackagePage extends YesNoPage {
+object AdditionalReferenceRemoveUnloadingPage extends YesNoPage {
 
   override def title(args: String*): String =
-    String.format("Are you sure you want to remove %s from this item? - Departure declarations", args: _*)
+    String.format("Are you sure you want to remove this additional reference?")
 }

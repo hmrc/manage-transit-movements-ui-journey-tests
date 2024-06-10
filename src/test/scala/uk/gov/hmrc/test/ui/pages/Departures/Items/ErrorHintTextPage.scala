@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object ErrorHintTextPage extends Page {
 
-  override def title(args: String*): String = "Before you continue"
+  override def title(args: String*): String = "Before you continue - Departure declarations"
 }

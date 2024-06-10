@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object PackagesShippingMarkPage extends StringPage {
 
-  override def title(args: String*): String = "What is the shipping mark?"
+  override def title(args: String*): String = "What is the shipping mark? - Departure declarations"
 
 }

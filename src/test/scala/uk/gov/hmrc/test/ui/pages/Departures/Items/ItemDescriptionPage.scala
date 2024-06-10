@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object ItemDescriptionPage extends StringPage {
 
-  override def title(args: String*): String = String.format("Enter a description of item %s", args: _*)
+  override def title(args: String*): String = String.format("Enter a description of item %s - Departure declarations", args: _*)
 
 }

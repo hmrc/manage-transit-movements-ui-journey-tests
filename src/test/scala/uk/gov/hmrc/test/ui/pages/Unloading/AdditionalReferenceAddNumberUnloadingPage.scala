@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Items
+package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object RemovePackagePage extends YesNoPage {
+object AdditionalReferenceAddNumberUnloadingPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    String.format("Are you sure you want to remove %s from this item? - Departure declarations", args: _*)
+  override def title(args: String*): String = "Do you want to add an additional reference number?"
+
 }

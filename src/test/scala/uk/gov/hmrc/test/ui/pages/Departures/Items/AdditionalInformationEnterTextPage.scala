@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AdditionalInformationEnterTextPage extends StringPage {
 
-  override def title(args: String*): String = "Enter the additional information"
+  override def title(args: String*): String = "Enter the additional information - Departure declarations"
 
 }

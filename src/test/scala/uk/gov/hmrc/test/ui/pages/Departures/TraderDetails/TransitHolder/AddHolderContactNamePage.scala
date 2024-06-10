@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AddHolderContactNamePage extends StringPage {
 
-  override def title(args: String*): String = "What is the contact’s name?"
+  override def title(args: String*): String = "What is the contact’s name? - Departure declarations"
 
 }

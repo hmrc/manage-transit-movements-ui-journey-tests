@@ -68,13 +68,13 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
       # Add/Remove Additional reference Flow
     And I click the Add or remove additional reference link for section Additional reference 1
-    And I click radio option Yes on the 'You have added 1 additional reference' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
-    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
-    And I click the Remove link on the 'You have added 2 additional references' page
-    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
-    And I click radio option No on the 'You have added 1 additional reference' page
+    And I click radio option Yes on the unloading 'You have added 1 additional reference' page
+    And I select Y023 - Consignee (AEO certificate number) on the unloading 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the unloading 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the unloading 'What is the additional reference number?' page
+    And I click the Remove link on the unloading 'You have added 2 additional references' page
+    And I click radio option Yes on the unloading 'Are you sure you want to remove this additional reference?' page
+    And I click radio option No on the unloading 'You have added 1 additional reference' page
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
   # House Consignment - Consignment Item
@@ -107,26 +107,26 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click radio option Yes on the 'Are you sure you want to remove this document from item 2 in house consignment 1?' page
     And I click No on house consignment document 'You have added 1 documents to item 2 in house consignment 1' page
     And I choose radio option Yes on the 'Do you want to add an additional reference for the item?' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
-    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I select Y023 - Consignee (AEO certificate number) on the unloading 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the unloading 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the unloading 'What is the additional reference number?' page
     And I click Yes on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
-    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I select Y023 - Consignee (AEO certificate number) on the unloading 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the unloading 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the unloading 'What is the additional reference number?' page
     And I click Remove on the 'You have added 2 additional references for item 2 in house consignment 1' page
-    And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
+    And I click radio option Yes on the unloading 'Are you sure you want to remove this additional reference?' page
     And I click No on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
     And I choose radio option Yes on the 'Do you want to add a package for the item?' page
-    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I select (AE) Aerosol on the unloading 'What type of package are you using for the item?' page
     And I choose radio option Yes on the 'Do you want to add the quantity of this package?' page
     And I enter 2 on the 'How many of this package are you using?' page
-    And I click radio option Yes on the 'Do you want to add a shipping mark?' page
-    And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
+    And I click radio option Yes on the unloading 'Do you want to add a shipping mark?' page
+    And I enter This is a description of the cargo 1 on the unloading 'What is the shipping mark?' page
     And I click Yes on house consignment package 'You have added 1 type of package for item 2 in house consignment 1' page
-    And I select (43) Bag, super bulk on the 'What type of package are you using for the item?' page
+    And I select (43) Bag, super bulk on the unloading 'What type of package are you using for the item?' page
     And I choose radio option No on the 'Do you want to add the quantity of this package?' page
-    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click radio option No on the unloading 'Do you want to add a shipping mark?' page
     And I click Remove on the house consignment package 'You have added 2 types of packages for item 2 in house consignment 1' page
     And I click radio option Yes on the 'Are you sure you want to remove this package from item 2 in house consignment 1?' page
     And I click No on house consignment package 'You have added 1 type of package for item 2 in house consignment 1' page
@@ -151,9 +151,9 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I enter additional information 12345 on documents 'Enter the additional information?' page
     And I choose radio option No on the 'You have added 1 document to all items in house consignment 2' page
     And I choose radio option Yes on the 'Do you want to add an additional reference for house consignment 2?' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
-    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I select Y023 - Consignee (AEO certificate number) on the unloading 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the unloading 'Do you want to add an additional reference number?' page
+    And I enter additional reference newRef999 on the unloading 'What is the additional reference number?' page
     And I click radio option No on the 'You have added 1 additional reference for house consignment 2' page
     And I choose radio option No on the 'Do you want to add an item for house consignment 2?' page
     And I click the Remove link on the 'You have added 2 house consignments' page

@@ -44,7 +44,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
 
@@ -154,13 +154,13 @@ Feature: End to end journey for Northern Ireland office of departure
     And I enter 10001 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 document' page
 #    Transport document from list CL754
     And I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter air1234 on the 'What is the document’s reference number?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 2 documents' page
     # Previous document from list
@@ -169,7 +169,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
     And I click radio option No on the 'Do you want to declare the quantity of goods transported into the UK?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
     And I choose radio option No on the 'You have added 3 documents' page
 
       #Items
@@ -211,7 +211,7 @@ Feature: End to end journey for Northern Ireland office of departure
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     And I click radio option No on the 'Do you want to add a method of payment for this item’s transport charges?' page
     #Items Summary
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page

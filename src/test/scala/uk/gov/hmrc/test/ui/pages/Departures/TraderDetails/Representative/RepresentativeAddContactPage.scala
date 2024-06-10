@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RepresentativeAddContactPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add your details?"
+  override def title(args: String*): String = "Do you want to add your details? - Departure declarations"
 
 }

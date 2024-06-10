@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object CommodityCodePage extends StringPage {
 
-  override def title(args: String*): String = "What is the commodity code?"
+  override def title(args: String*): String = "What is the commodity code? - Departure declarations"
 
 }

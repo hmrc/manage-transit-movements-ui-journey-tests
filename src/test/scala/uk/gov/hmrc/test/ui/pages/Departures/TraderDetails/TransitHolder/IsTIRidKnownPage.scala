@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object IsTIRidKnownPage extends YesNoPage {
 
-  override def title(args: String*): String = "Is the TIR holder’s identification number known?"
+  override def title(args: String*): String = "Is the TIR holder’s identification number known? - Departure declarations"
 }

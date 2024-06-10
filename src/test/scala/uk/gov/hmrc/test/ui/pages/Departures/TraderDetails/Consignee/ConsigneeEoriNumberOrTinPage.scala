@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object ConsigneeEoriNumberOrTinPage extends StringPage {
 
   override def title(args: String*): String =
-    "What is the consignee’s EORI number or Trader Identification Number (TIN)?"
+    "What is the consignee’s EORI number or Trader Identification Number (TIN)? - Departure declarations"
 }

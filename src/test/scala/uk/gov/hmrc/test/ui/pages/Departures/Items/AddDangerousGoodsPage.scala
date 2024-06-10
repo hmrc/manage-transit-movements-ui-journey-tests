@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddDangerousGoodsPage extends YesNoPage {
 
-  override def title(args: String*): String = "Does the item contain any dangerous goods?"
+  override def title(args: String*): String = "Does the item contain any dangerous goods? - Departure declarations"
 
 }

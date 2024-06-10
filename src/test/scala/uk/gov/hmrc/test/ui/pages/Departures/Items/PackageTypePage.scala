@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object PackageTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What type of package are you using for the item?"
+  override def title(args: String*): String = "What type of package are you using for the item? - Departure declarations"
 
 }
