@@ -22,7 +22,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 object HouseConsignmentPage extends Page {
 
   override def title(args: String*): String =
-    String.format("Cross-check the transit with house consignment %s", args: _*)
+    String.format("House consignment %s", args: _*)
 
   def selectSection(answer: String): this.type = {
     val value = answer match {

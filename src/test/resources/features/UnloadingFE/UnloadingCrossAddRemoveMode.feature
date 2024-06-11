@@ -78,8 +78,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
   # House Consignment - Consignment Item
-    Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I should be on the 'Cross-check the transit with house consignment 1' page
+    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit and unloading permission' page
+    And I should be on the 'House consignment 1' page
     And I click the Add or remove item link on house consignment for section Items 1
     And I click radio option Yes on the 'You have added 1 item for house consignment 1' page
     And I enter testing on the 'Enter the description of item 2 in house consignment 1' page
@@ -133,6 +133,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click option Remove on the 'You have added 2 items for house consignment 1' page
     And I click radio option Yes on item 'Are you sure you want to remove item 1 from house consignment 1?' page
     And I click radio option No on the 'You have added 1 item for house consignment 1' page
+
 
   Scenario: 03 - Unloading remarks - Cross-check page add and remove House Consignment
     And I click the add or remove house consignment link

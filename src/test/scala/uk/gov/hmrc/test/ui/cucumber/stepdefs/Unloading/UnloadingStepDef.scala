@@ -31,15 +31,15 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Cross-check the transit with this declaration summary' page$""") { () =>
-    ConsignmentCrossCheckPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit and unloading permission' page$""") {
+    () =>
+      ConsignmentCrossCheckPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Cross-check the transit with house consignment (.+)' page$""") {
-    (houseConsignments: String) =>
-      HouseConsignmentPage
-        .loadPage(houseConsignments)
+  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") { (houseConsignments: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignments)
   }
 
   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
@@ -79,15 +79,16 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .submitPage()
+  And(
+    """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .submitPage()
   }
 
   Given(
-    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Enter the discrepancies between the transit and unloading permission' page$"""
   ) { (index: String) =>
     ConsignmentCrossCheckPage
       .loadPage()
@@ -95,7 +96,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   Given(
-    """^(?:I )?click the Back to summary button on the 'Cross-check the transit with house consignment (.*)' page$"""
+    """^(?:I )?click the Back to summary button on the 'House consignment (.*)' page$"""
   ) { (houseConsignmentNumber: String) =>
     HouseConsignmentPage
       .loadPage(houseConsignmentNumber)
