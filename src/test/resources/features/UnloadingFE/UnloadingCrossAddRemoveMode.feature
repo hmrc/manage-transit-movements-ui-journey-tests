@@ -134,7 +134,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click radio option Yes on item 'Are you sure you want to remove item 1 from house consignment 1?' page
     And I click radio option No on the 'You have added 1 item for house consignment 1' page
 
-    
+
   Scenario: 03 - Unloading remarks - Cross-check page add and remove House Consignment
     And I click the add or remove house consignment link
     And I click radio option Yes on the 'You have added 1 house consignment' page

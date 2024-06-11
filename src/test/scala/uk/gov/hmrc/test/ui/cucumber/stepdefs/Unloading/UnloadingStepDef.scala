@@ -31,15 +31,15 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit and unloading permission' page$""") { () =>
-    ConsignmentCrossCheckPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit and unloading permission' page$""") {
+    () =>
+      ConsignmentCrossCheckPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") {
-    (houseConsignments: String) =>
-      HouseConsignmentPage
-        .loadPage(houseConsignments)
+  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") { (houseConsignments: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignments)
   }
 
   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
@@ -79,11 +79,12 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page$""") {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .submitPage()
+  And(
+    """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .submitPage()
   }
 
   Given(
