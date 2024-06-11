@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object ItemDeclarationTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of declaration do you want to create for this item?"
+  override def title(args: String*): String = "Which type of declaration do you want to create for this item? - Departure declarations"
 
   override def select(answer: String): this.type = {
     clickRadioBtn(answer)

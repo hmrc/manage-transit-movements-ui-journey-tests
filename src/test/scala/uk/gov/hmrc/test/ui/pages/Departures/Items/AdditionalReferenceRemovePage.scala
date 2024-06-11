@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AdditionalReferenceRemovePage extends YesNoPage {
 
   override def title(args: String*): String =
-    String.format("Are you sure you want to remove this additional reference?")
+    String.format("Are you sure you want to remove this additional reference? - Departure declarations")
 }

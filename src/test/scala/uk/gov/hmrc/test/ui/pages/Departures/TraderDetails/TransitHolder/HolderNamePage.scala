@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object HolderNamePage extends StringPage {
 
-  override def title(args: String*): String = "What is the transit holder’s name?"
+  override def title(args: String*): String = "What is the transit holder’s name? - Departure declarations"
 
 }

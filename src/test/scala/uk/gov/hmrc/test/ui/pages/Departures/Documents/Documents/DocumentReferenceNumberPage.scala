@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object DocumentReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the document’s reference number?"
+  override def title(args: String*): String = "What is the document’s reference number? - Departure declarations"
 
 }

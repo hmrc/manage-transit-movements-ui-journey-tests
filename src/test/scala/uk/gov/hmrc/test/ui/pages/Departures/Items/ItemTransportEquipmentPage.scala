@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object ItemTransportEquipmentPage extends SelectPage {
 
-  override def title(args: String*): String = "Which transport equipment are you using for this item?"
+  override def title(args: String*): String = "Which transport equipment are you using for this item? - Departure declarations"
 
 }

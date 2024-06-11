@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AdditionalReferenceAddNumberPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an additional reference number?"
+  override def title(args: String*): String = "Do you want to add an additional reference number? - Departure declarations"
 
 }

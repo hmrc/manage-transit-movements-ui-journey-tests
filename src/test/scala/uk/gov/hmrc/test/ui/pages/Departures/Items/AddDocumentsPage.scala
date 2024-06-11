@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddDocumentsPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add any documents?")
+  override def title(args: String*): String = String.format("Do you want to add any documents? - Departure declarations")
 
 }

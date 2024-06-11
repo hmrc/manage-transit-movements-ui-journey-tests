@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
+import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport._
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment._
@@ -938,6 +938,61 @@ class UnloadingStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?select (.+) on the unloading 'What type of additional reference do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceTypeUnloadingPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the unloading 'Do you want to add an additional reference number\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddNumberUnloadingPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the unloading 'Enter the additional reference number' page$""") { (answer: String) =>
+    AdditionalReferenceEnterNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter additional reference (.*) on the unloading 'What is the additional reference number\?' page$""") {
+    (answer: String) =>
+      AddNewConsignmentAdditionalReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the unloading 'You have added (.*) additional references?' page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherUnloadingPage
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the unloading 'You have added (.*) additional references?' page$""") {
+    (sectionLink: String, numberOfReferences: String) =>
+      AdditionalReferenceAddAnotherUnloadingPage
+        .loadPage(numberOfReferences)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the unloading 'Are you sure you want to remove this additional reference\?' page$"""
+  ) { (answer: String) =>
+    AdditionalReferenceRemoveUnloadingPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
   And(
     """^(?:I )?click (.*) on 'You have added (.*) documen(?: t|ts )to item (.+) in house consignment 1' page$"""
   ) {
@@ -1005,6 +1060,14 @@ class UnloadingStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?select (.+) on the unloading 'What type of package are you using for the item\?' page$""") { (answer: String) =>
+    PackageTypeUnloadingPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the quantity of this package\?' page$"""
   ) { (answer: String) =>
@@ -1014,7 +1077,7 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
   And("""^(?:I )?enter (.*) on the 'How many of this package are you using\?' page$""") { (answer: String) =>
-    PackagesTypeQuantityPage
+    PackagesTypeQuantityUnloadingPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
@@ -1051,6 +1114,20 @@ class UnloadingStepDef extends BaseStepDef {
     HouseConsignmentPackageRemoveIncrementPage
       .loadPage(numberOfItems)
       .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?click radio option (.*) on the unloading 'Do you want to add a shipping mark\?' page$""") { (answer: String) =>
+    PackagesAddShippingMarkUnloadingPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the unloading 'What is the shipping mark\?' page$""") { (answer: String) =>
+    PackagesShippingMarkUnloadingPage
+      .loadPage()
+      .fillInput(answer)
       .submitPage()
   }
 

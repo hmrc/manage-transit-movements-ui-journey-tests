@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object CUSCodePage extends StringPage {
 
-  override def title(args: String*): String = "What is the Customs Union and Statistics (CUS) code?"
+  override def title(args: String*): String = "What is the Customs Union and Statistics (CUS) code? - Departure declarations"
 
 }

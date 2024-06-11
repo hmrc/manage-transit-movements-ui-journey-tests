@@ -47,7 +47,7 @@ Feature: Trader details journey
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
@@ -93,7 +93,7 @@ Feature: Trader details journey
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
@@ -134,7 +134,7 @@ Feature: Trader details journey
     And I choose radio option Yes on the 'Do you know the consignee’s EORI number or TIN?' page
     And I enter GE00101001 on the 'What is the consignee’s EORI number or TIN?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page

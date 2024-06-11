@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object DocumentTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What type of document do you want to add?"
+  override def title(args: String*): String = "What type of document do you want to add? - Departure declarations"
 
 }
