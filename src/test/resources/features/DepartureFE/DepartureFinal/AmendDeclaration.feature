@@ -25,7 +25,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click on the Amend trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Amend route details link on the 'Declaration summary' page
@@ -44,7 +44,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
     And I choose radio option No on the 'You have added 3 documents' page
     And I should see Amended status for documents on the 'Declaration summary' page
 
@@ -52,7 +52,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 1 item' page
     And I click the Change link for Do you want to add supplementary units? on the Item 1 'Check your answers' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
     And I click radio option No on the 'You have added 1 item' page
     And I should see Amended status for items on the 'Declaration summary' page
 
@@ -92,7 +92,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click on the Amend trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the transit holder?' page
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Amend route details link on the 'Declaration summary' page
@@ -111,7 +111,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
     And I choose radio option No on the 'You have added 3 documents' page
     And I should see Amended status for documents on the 'Declaration summary' page
 
@@ -119,7 +119,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 1 item' page
     And I click the Change link for Do you want to add supplementary units? on the Item 1 'Check your answers' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
     And I click radio option No on the 'You have added 1 item' page
     And I should see Amended status for items on the 'Declaration summary' page
 
@@ -157,7 +157,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click on the Amend trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     And I should see Amended status for trader details on the 'Declaration summary' page
 
     And I click on the Amend route details link on the 'Declaration summary' page
@@ -176,7 +176,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 3 documents' page
     And I click the Change link for Do you want to add any additional information for this document? on the Documents 'Check your answers' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
     And I choose radio option No on the 'You have added 3 documents' page
     And I should see Amended status for documents on the 'Declaration summary' page
 
@@ -184,7 +184,7 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
     And I click the Change link on the 'You have added 1 item' page
     And I click the Change link for Do you want to add supplementary units? on the Item 1 'Check your answers' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
     And I click radio option No on the 'You have added 1 item' page
     And I should see Amended status for items on the 'Declaration summary' page
 

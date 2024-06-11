@@ -93,4 +93,27 @@ class TransportDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?choose (.+) on the 'What type of additional reference do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceTypeTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference number\?' page$""") {
+    (answer: String) =>
+      AdditionalReferenceAddNumberTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?input (.*) on the 'Enter the additional reference number' page$""") { (answer: String) =>
+    AdditionalReferenceEnterNumberTransportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
 }
