@@ -1,4 +1,4 @@
-@UnloadingCrossCheck
+@UnloadingCrossCheck @wip
 Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
   Background:
@@ -78,8 +78,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
   # House Consignment - Consignment Item
-    Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I should be on the 'Cross-check the transit with house consignment 1' page
+    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit and unloading permission' page
+    And I should be on the 'House consignment 1' page
     And I click the Add or remove item link on house consignment for section Items 1
     And I click radio option Yes on the 'You have added 1 item for house consignment 1' page
     And I enter testing on the 'Enter the description of item 2 in house consignment 1' page

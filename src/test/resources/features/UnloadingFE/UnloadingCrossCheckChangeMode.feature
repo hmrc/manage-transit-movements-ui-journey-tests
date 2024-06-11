@@ -1,4 +1,4 @@
-@UnloadingCrossCheck
+@UnloadingCrossCheck @wip
 Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
   Background:
@@ -22,7 +22,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 01 - Unloading remarks - Consignment level Cross-check page in change mode
 
-    And I should be on the 'Cross-check the transit with this declaration summary' page
+    And I should be on the 'Enter the discrepancies between the transit and unloading permission' page
 
   # Departure Means of Transport
     And I click the Departure means identification type Change link for section Departure means of transport 1
@@ -57,8 +57,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page in change mode
   # House Consignment - Consignment Item
-    Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I should be on the 'Cross-check the transit with house consignment 1' page
+    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit and unloading permission' page
+    And I should be on the 'House consignment 1' page
 
   # Gross weight
     And I click the Change Gross weight link for Item 1 in House consignment 1
