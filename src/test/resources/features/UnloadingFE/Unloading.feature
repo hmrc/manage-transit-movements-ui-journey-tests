@@ -19,15 +19,15 @@ Feature: Submit unloading remarks with seals
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
     And I choose radio option Yes on the 'Were there any discrepancies between the transit and unloading permission?' page
-    And I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I click the Back to summary button on the 'Cross-check the transit with house consignment 1' page
-    And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
+    And I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit and unloading permission' page
+    And I click the Back to summary button on the 'House consignment 1' page
+    And I click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page
     And I click radio option No on the 'Do you want to add any comments?' page
     And I choose radio option No on the 'Do you have anything else to report?' page
 
     And I click the Change link for Were there any discrepancies between the transit and unloading permission? on the Unloading 'Check your answers' page
     And I choose radio option Yes on the 'Were there any discrepancies between the transit and unloading permission?' page
-    And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
+    And I click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page
     And I click radio option No on the 'Do you want to add any comments?' page
     And I choose radio option No on the 'Do you have anything else to report?' page
     And I submit the 'Check your answers' page
@@ -50,7 +50,7 @@ Feature: Submit unloading remarks with seals
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
     And I choose radio option Yes on the 'Were there any discrepancies between the transit and unloading permission?' page
-    And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
+    And I click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page
     And I click radio option No on the 'Do you want to add any comments?' page
     And I choose radio option No on the 'Do you have anything else to report?' page
 
@@ -93,7 +93,7 @@ Feature: Submit unloading remarks with seals
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option No on the 'Are all the seal identification numbers or marks readable?' page
     And I choose radio option No on the 'Are any of the seals broken?' page
-    And I click the Continue button on the 'Cross-check the transit with this declaration summary' page
+    And I click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page
     And I click radio option No on the 'Do you want to add any comments?' page
     And I choose radio option No on the 'Do you have anything else to report?' page
 

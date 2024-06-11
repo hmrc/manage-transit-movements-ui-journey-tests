@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object ConsignmentCrossCheckPage extends Page {
 
-  override def title(args: String*): String = "Cross-check the transit with this declaration summary"
+  override def title(args: String*): String = "Enter the discrepancies between the transit and unloading permission"
 
   def clickLinkById(text: String): Unit = {
     val id = s"change-${text.replace(" ", "-").toLowerCase}"
