@@ -15,7 +15,7 @@
         <notificationType>0</notificationType>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>XI000142</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
@@ -54,15 +54,27 @@
     </Representative>
     <!--0 to 99 repetitions:-->
     <TypeOfControls>
-        <sequenceNumber>token</sequenceNumber>
-        <type>str</type>
+        <sequenceNumber>1</sequenceNumber>
+        <type>42</type>
+        <!--Optional:-->
+        <text>string</text>
+    </TypeOfControls>
+    <TypeOfControls>
+        <sequenceNumber>2</sequenceNumber>
+        <type>44</type>
         <!--Optional:-->
         <text>string</text>
     </TypeOfControls>
     <!--0 to 99 repetitions:-->
     <RequestedDocument>
-        <sequenceNumber>token</sequenceNumber>
-        <documentType>token</documentType>
+        <sequenceNumber>1</sequenceNumber>
+        <documentType>C605</documentType>
+        <!--Optional:-->
+        <description>string</description>
+    </RequestedDocument>
+    <RequestedDocument>
+        <sequenceNumber>2</sequenceNumber>
+        <documentType>Y951</documentType>
         <!--Optional:-->
         <description>string</description>
     </RequestedDocument>
