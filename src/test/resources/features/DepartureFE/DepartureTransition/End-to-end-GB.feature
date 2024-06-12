@@ -186,7 +186,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the inland mode 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page

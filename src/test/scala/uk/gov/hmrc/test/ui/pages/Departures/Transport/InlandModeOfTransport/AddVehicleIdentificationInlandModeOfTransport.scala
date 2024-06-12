@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddVehicleIdentificationInlandModeOfTransport extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to add identification for this vehicle?"
+  override def title(args: String*): String = String.format("%s", args: _*)
 
 }
