@@ -33,7 +33,7 @@ Feature: Transport details journey
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
     And I submit on the Check your answers section Departure means of transport page
     And I choose to click on the Remove link on the You have added 2 departure means of transport' page
-    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport?' page
+    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page
     And I select radio option No on the 'You have added 1 departure means of transport' page
 
       ## Border means of transport
