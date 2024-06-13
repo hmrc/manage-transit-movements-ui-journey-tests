@@ -20,6 +20,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemovePageAdditionalInformation extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove this additional information from all items?"
+  override def title(args: String*): String =
+    "Are you sure you want to remove this additional information from all items?"
 
 }
