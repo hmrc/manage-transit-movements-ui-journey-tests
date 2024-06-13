@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.AddAnotherPageAdditionalInformation
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Routing._
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.T2DeclarationPage
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DocumentsAddAnotherDocumentsPage
 
 class RouteDetailsStepDef extends BaseStepDef {
 

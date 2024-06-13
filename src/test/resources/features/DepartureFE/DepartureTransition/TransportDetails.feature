@@ -33,7 +33,7 @@ Feature: Transport details journey - Transition
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
     And I submit on the Check your answers section Departure means of transport page
     And I choose to click on the Remove link on the You have added 2 departure means of transport' page
-    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport?' page
+    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page
     And I select radio option No on the 'You have added 1 departure means of transport' page
 
       ## Border means of transport
@@ -81,7 +81,7 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'You have added 1 seal' page
     And I enter S002 on the 'What is the seal identification number?' page
     And I click the Remove link  on the 'You have added 2 seals' page
-    And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
     And I submit on the Check your answers section Transport equipment page
     And I choose radio option Yes on the 'You have added 1 transport equipment' page
