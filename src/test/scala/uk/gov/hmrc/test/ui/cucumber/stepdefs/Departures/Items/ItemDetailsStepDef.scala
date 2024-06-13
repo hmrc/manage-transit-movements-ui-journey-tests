@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AddAnotherPageAdditionalInformation, AddPageAdditionalInformation}
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference}
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
@@ -555,6 +556,23 @@ class ItemDetailsStepDef extends BaseStepDef {
     (answer: String, numberOfReferences: String) =>
       AddAnotherPageAdditionalReference
         .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for all items\?' page$"""
+  ) { (answer: String) =>
+    AddPageAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of additional information do you want to add\?' page$""") {
+    (answer: String) =>
+      AdditionalInformationTypePage
+        .loadPage()
         .select(answer)
         .submitPage()
   }
