@@ -89,10 +89,10 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport (.+)\?' page$"""
+  ) { (answer: String, departureMeansNo: String) =>
     RemoveDepartureMeansOfTransportPage
-      .loadPage()
+      .loadPage(departureMeansNo)
       .select(answer)
       .submitPage()
   }
