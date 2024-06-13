@@ -18,10 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object AddAnotherPageAdditionalInformation extends YesNoPage {
+object AddCommentAdditionalInformation extends YesNoPage {
 
-  override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 additional information for all items"
-    case _        => String.format("You have added %s additional information for all items", args: _*)
-  }
+  override def title(args: String*): String = "Do you want to add any comments for the additional information?"
+
 }
