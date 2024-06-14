@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
+import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AddAnotherPageAdditionalInformation, AddCommentAdditionalInformation, AddPageAdditionalInformation, EnterCommentAdditionalInformation, RemovePageAdditionalInformation}
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference}
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
@@ -557,6 +558,56 @@ class ItemDetailsStepDef extends BaseStepDef {
         .loadPage(numberOfReferences)
         .select(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for all items\?' page$"""
+  ) { (answer: String) =>
+    AddPageAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any comments for the additional information\?' page$"""
+  ) { (answer: String) =>
+    AddCommentAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter your comments for the additional information\' page$""") { (answer: String) =>
+    EnterCommentAdditionalInformation
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) additional information for all items' page$"""
+  ) { (sectionLink: String, numberOfAdditionalInfoInTitle: String) =>
+    AddAnotherPageAdditionalInformation
+      .loadPage(numberOfAdditionalInfoInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional information for all items' page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AddAnotherPageAdditionalInformation
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional information from all items\?' page$"""
+  ) { (answer: String) =>
+    RemovePageAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }
