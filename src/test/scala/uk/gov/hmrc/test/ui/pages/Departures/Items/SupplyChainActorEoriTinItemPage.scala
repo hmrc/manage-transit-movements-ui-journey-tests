@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object SupplyChainActorEoriTinItemPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the EORI number or Trader Identification Number (TIN) for the %s?", args: _*)
+    String.format("What is the EORI number or Third Country Unique Identification Number (TCUIN) for the %s?", args: _*)
 
 }
