@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveDangerousGoodsPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Are you sure you want to remove UN number %s?", args: _*)
+  override def title(args: String*): String = "Are you sure you want to remove this UN number?"
 }
