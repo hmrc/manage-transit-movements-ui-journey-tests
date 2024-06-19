@@ -1191,12 +1191,4 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And(
-    """^(?:I )?choose radio option (.*) on the 'Are you using the new procedure\?' page$"""
-  ) { (answer: String) =>
-    NewProcedureYesNoPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
 }

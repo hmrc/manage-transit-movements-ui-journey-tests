@@ -294,7 +294,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
     And I enter 1234 on the 'What is the UN number for the dangerous goods?' page
     And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
-    And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this UN number?' page
     And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
       #Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
@@ -314,7 +314,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click continue on the 'Before you continue' page
     And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 3 types of packages' page
-    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page
     And I click radio option No on the 'You have added 2 type of package' page
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page

@@ -43,7 +43,7 @@ Feature: Item details journey
     And I enter 0 on the 'How many of these are you using?' page
     And I enter This is a description on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 2 types of packages' page
-    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page
     And I click radio option No on the 'You have added 1 type of package' page
     #Consignee
     And I choose radio option Yes on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item?' page

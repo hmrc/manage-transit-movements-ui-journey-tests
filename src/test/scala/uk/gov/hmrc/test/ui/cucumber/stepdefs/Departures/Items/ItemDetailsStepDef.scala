@@ -152,10 +152,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove UN number (.*)\?' page$""") {
-    (answer: String, documentTypeToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this UN number\?' page$""") {
+    (answer: String) =>
       RemoveDangerousGoodsPage
-        .loadPage(documentTypeToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
@@ -247,10 +247,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove (.*) from this item\?' page$""") {
-    (answer: String, documentTypeToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from the item\?' page$""") {
+    (answer: String) =>
       RemovePackagePage
-        .loadPage(documentTypeToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }

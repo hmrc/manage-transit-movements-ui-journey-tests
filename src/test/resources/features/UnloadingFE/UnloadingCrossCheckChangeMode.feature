@@ -12,7 +12,6 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     #When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
-    And I choose radio option No on the 'Are you using the new procedure?' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
