@@ -261,8 +261,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
-      @wip
-  Scenario: 05 User is unable to continue with an amendment if an IE029 message is received while amending
+  Scenario: 06 User is unable to continue with an amendment if an IE029 message is received while amending
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
