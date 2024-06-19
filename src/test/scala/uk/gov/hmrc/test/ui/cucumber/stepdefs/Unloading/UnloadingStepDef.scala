@@ -594,10 +594,10 @@ class UnloadingStepDef extends BaseStepDef {
         .clickByPartialLinkText(answer)
   }
   And(
-    """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove seal (.*) from transport equipment (.*)\?' page$"""
-  ) { (answer: String, SealValue: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove this seal from transport equipment (.*)\?' page$"""
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
     RemoveSealFromTransportEquipmentPage
-      .loadPage(SealValue, numberOfTransportEquipmentIncrementsInTitle)
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
       .select(answer)
       .submitPage()
   }

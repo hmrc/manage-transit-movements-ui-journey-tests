@@ -118,5 +118,4 @@ class RouteDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-
 }

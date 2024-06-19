@@ -43,7 +43,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the cross check 'Do you want to add a seal for the transport equipment?' page
     And I enter identification number Seal1234 on 'What is the seal identification number?' page
     And I click Remove on 'You have added 1 seals to transport equipment 2' page
-    And I choose radio option Yes on 'Are you sure you want to remove seal Seal1234 from transport equipment 2?' page
+    And I choose radio option Yes on 'Are you sure you want to remove this seal from transport equipment 2?' page
     And I click radio option No on the 'You have added 0 seals to transport equipment 2' page
     And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
     And I select 100 on the 'Which item does this transport equipment apply to?' page
