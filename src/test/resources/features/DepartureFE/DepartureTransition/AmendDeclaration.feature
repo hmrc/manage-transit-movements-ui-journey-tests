@@ -66,7 +66,6 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
-
   Scenario: End to end journey for amending a departure declaration after MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
