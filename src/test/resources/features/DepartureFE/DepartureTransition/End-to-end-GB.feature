@@ -324,7 +324,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 0 on the 'How many of these are you using?' page
     And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 3 types of packages' page
-    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page
     And I click radio option No on the 'You have added 2 type of package' page
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
