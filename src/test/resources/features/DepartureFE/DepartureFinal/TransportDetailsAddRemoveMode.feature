@@ -4,7 +4,7 @@ Feature: Transport details journey
   Background:
     Given I login with ID 1234567890
 
-  Scenario: 01 Add/Remove Additional Information
+  Scenario: 01 Add/Remove Additional References and Additional Information
     And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -49,7 +49,20 @@ Feature: Transport details journey
     And I choose radio option No on the 'Do you want to add a seal?' page
     And I submit on the Check your answers section Transport equipment page
     And I choose radio option No on the 'You have added 1 transport equipment' page
-    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference for all items?' page
+    And I select Y022 - Consignor / exporter (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+    And I enter 12345 on the 'Enter the additional reference number' page
+
+    And I choose radio option Yes on the 'You have added 1 additional reference for all items' page
+    And I select Y025 - Representative (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I click radio option No on the 'Do you want to add an additional reference number?' page
+    And I click the Remove link on the 'You have added 2 additional references for all items?' page
+    And I click radio option No on the 'Are you sure you want to remove this additional reference from all items?' page
+    And I click the Remove link on the 'You have added 2 additional references for all items?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this additional reference from all items?' page
+    And I choose radio option No on the 'You have added 1 additional reference for all items' page
+
     And I click radio option Yes on the 'Do you want to add any additional information for all items?' page
     And I select 20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction on the 'What type of additional information do you want to add?' page
     And I click radio option Yes on the 'Do you want to add any comments for the additional information?' page
@@ -70,3 +83,4 @@ Feature: Transport details journey
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
+
