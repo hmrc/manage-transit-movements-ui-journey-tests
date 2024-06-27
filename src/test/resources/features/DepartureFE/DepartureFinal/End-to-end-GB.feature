@@ -397,8 +397,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
-
-  @wip
+    
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
