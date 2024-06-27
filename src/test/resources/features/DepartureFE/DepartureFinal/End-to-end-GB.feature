@@ -397,8 +397,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
-
-
+    
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
@@ -525,7 +524,11 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'Do you want to add an additional reference number?' page
     And I enter 12345 on the 'Enter the additional reference number' page
     And I click radio option No on the 'You have added 1 additional reference for all items' page
-    And I click radio option No on the 'Do you want to add any additional information for all items?' page
+    And I click radio option Yes on the 'Do you want to add any additional information for all items?' page
+    And I select 20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction on the 'What type of additional information do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add any comments for the additional information?' page
+    And I enter Comment 1 on the 'Enter your comments for the additional information' page
+    And I click radio option No on the 'You have added 1 additional information for all items' page
 
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
