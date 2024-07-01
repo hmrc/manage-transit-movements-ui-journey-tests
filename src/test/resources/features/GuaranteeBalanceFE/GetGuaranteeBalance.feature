@@ -22,3 +22,13 @@ Feature: Get Guarantee Balance frontend journey test
     Then I should see a confirmation of my balance on the 'Available balance' page
 
     And I sign out
+    
+  Scenario: 02 Invalid guarantee type
+    Given I login with ID 1234567890
+    And I click on the Check your guarantee balance link on the 'Manage your transit movements' page
+    And I enter 02GB1234567890120 on the Get Balance 'What is the Guarantee Reference Number?' page
+    And I enter AB12 on the Get Balance 'What is the access code?' page
+    And I submit on the Get Balance 'Check your answers' page
+    Then I should be on the 'We cannot get the balance for this type of guarantee' page
+
+    And I sign out

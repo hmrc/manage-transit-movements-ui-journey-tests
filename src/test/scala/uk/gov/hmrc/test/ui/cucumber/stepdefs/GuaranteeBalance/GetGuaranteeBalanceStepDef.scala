@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 
 import org.scalatest.concurrent.Eventually.eventually
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance.{GetBalanceAvailableBalanceConfirmationPage, GetBalanceCYAPage, GetBalanceCantCheckBalancePage, GetBalanceDetailsDoNotMatchPage, GetBalanceGuaranteeAccessCodePage, GetBalanceGuaranteeRefNumberPage, GuaranteeRefNumberPage}
+import uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance.{GetBalanceAvailableBalanceConfirmationPage, GetBalanceCYAPage, GetBalanceCantCheckBalancePage, GetBalanceDetailsDoNotMatchPage, GetBalanceGuaranteeAccessCodePage, GetBalanceGuaranteeRefNumberPage, GetBalanceInvalidGuaranteePage, GuaranteeRefNumberPage}
 
 class GetGuaranteeBalanceStepDef extends BaseStepDef {
 
@@ -69,6 +69,11 @@ class GetGuaranteeBalanceStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(?:should )?see a confirmation of my balance on the 'Available balance' page$""") { () =>
     GetBalanceAvailableBalanceConfirmationPage
+      .loadPage()
+  }
+
+  Then("""^(?:I )?(?:should )?be on the 'We cannot get the balance for this type of guarantee' page$""") { () =>
+    GetBalanceInvalidGuaranteePage
       .loadPage()
   }
 }
