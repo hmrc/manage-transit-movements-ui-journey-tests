@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-trait GuaranteeBalancePage {
-  this: Page =>
+object GetBalanceGuaranteeAccessCodePage extends StringPage with GuaranteeBalancePage {
 
-  override val serviceName: String = "Check your transit guarantee balance"
+  override def title(args: String*): String = "What is the access code?"
+
+  override def submitPage(): Unit = clickById("continue")
 }
