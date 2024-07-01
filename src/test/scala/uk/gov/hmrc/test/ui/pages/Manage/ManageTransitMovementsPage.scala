@@ -38,7 +38,7 @@ object ManageTransitMovementsPage extends Page {
       // TODO remove NCTS 5 links 1 July
       case "View NCTS 5 arrival notifications"  => clickById("view-ncts-5-arrival-notifications")
       case "View NCTS 5 departure declarations" => clickById("view-ncts-5-departure-declarations")
-      case "Check your guarantee balance"       => clickById("check-guarantee-balance")
+      case "Check your guarantee balance"      => clickById("check-guarantee-balance")
       case "View draft departure declarations"  => clickById("view-draft-departures")
     }
     this

@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
-import org.scalatest.concurrent.Eventually.eventually
+import uk.gov.hmrc.test.ui.pages.Page
 
-class CommonStepDef extends BaseStepDef {
+trait GuaranteeBalancePage {
+  this: Page =>
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
-    val time = t * 1000
-    eventually(Thread.sleep(time))
-  }
-
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
-  }
+  override val serviceName: String = "Check your transit guarantee balance"
 }
