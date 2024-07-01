@@ -26,4 +26,3 @@ object GetBalanceDetailsDoNotMatchPage extends StringPage with GuaranteeBalanceP
     clickByPartialLinkText(sectionLink)
 
 }
-

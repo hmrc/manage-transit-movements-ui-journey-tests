@@ -26,7 +26,7 @@ object RemoveSealFromTransportEquipmentPage extends YesNoPage {
         "Are you sure you want to remove this seal from transport equipment %s?",
         transportEquipmentNumber
       )
-    case _                                       =>
+    case _                             =>
       throw InvalidTitleArgsException("Unexpected Shape")
   }
 }

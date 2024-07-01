@@ -22,7 +22,7 @@ Feature: Get Guarantee Balance frontend journey test
     Then I should see a confirmation of my balance on the 'Available balance' page
 
     And I sign out
-    
+
   Scenario: 02 Invalid guarantee type
     Given I login with ID 1234567890
     And I click on the Check your guarantee balance link on the 'Manage your transit movements' page
