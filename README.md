@@ -19,14 +19,9 @@ This is the UI journey test repository for the following frontend services:
 * Docker
     * [Ubuntu](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-docker-ubuntu)
     * [macOS](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-docker-macos)
-* Docker compose
-    * [Ubuntu](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-the-docker-packages)
-    * [macOS](https://formulae.brew.sh/formula/docker-compose) (Ensure the symlink step is followed so Docker can find the plugin)
-* [Docker selenium grid](https://github.com/hmrc/docker-selenium-grid)
 * [MongoDB](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/set-up-mongodb.html)
 
 ## How to run the journey tests
-* Ensure that you have cloned docker-selenium-grid and have executed `./start.sh` to run the relevant containers
 * Start the relevant services in service manager with either:
   * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE` - for services in Post transition mode
   * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE_TRANSITION` - for services in Transition mode
@@ -61,7 +56,7 @@ This is the UI journey test repository for the following frontend services:
 
 
 
-* To see the journey tests happening, navigate to `localhost:4444`
+* To view the tests running in a browser, add `-Dbrowser.option.headless=false` to the relevant `sbt` command.
 
 ## Security Tests
 Security testing is done through the `UITestJobBuilder` in `build-jobs`
