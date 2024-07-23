@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GuaranteeRefNumberPage extends StringPage with GuaranteeBalancePage {
+object GetBalanceAvailableBalanceConfirmationPage extends StringPage with GuaranteeBalancePage {
 
-  override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
+  override def title(args: String*): String = "Available balance"
+
 }

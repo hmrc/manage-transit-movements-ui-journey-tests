@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.stepdefs
+package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
-import org.scalatest.concurrent.Eventually.eventually
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-class CommonStepDef extends BaseStepDef {
+object GetBalanceCantCheckBalancePage extends StringPage with GuaranteeBalancePage {
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
-    val time = t * 1000
-    eventually(Thread.sleep(time))
-  }
+  override def title(args: String*): String = "We could not check your guarantee balance"
 
-  And("""^(?:I )?refresh the page$""") { () =>
-    driver.navigate().refresh()
-  }
+  def selectAction(sectionLink: String): Unit =
+    clickByPartialLinkText(sectionLink)
+
 }
