@@ -97,8 +97,23 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'What is the new Local Reference Number?' page
     And I sign out
 
+
+  Scenario: 08 - Trader is able to review errors for a amended departure declaration with no functional errors
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE013 Declaration Amendment
+    And I submit an IE056 Amendment Rejection With NO Amendable Errors
+    And I refresh the page
+    #cut-over
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
+    # TODO 1 July
+    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    Then I should be on the 'Declaration errors' page
+    And I sign out
+
+
 # 2898
-  Scenario: 08 - Trader is able to review cancellation errors for a departure declaration
+  Scenario: 09 - Trader is able to review cancellation errors for a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE014 Declaration Cancellation
     And I submit an IE056 Cancellation Rejection With No Amendable Errors
@@ -112,7 +127,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I sign out
 
 # 3000
-  Scenario: 09 Trader is able to cancel a departure declaration
+  Scenario: 10 Trader is able to cancel a departure declaration
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     Then I refresh the page
@@ -155,7 +170,7 @@ Feature: Manage transit movements frontend tests for Departures
 #    And I sign out
 
   # 4085
-  Scenario: 13 Trader is able to review IE035 message details for Goods being recovered
+  Scenario: 11 Trader is able to review IE035 message details for Goods being recovered
     When I submit an IE015 Departure Declaration
     Then I submit an IE035 Recovery Notification
     And I refresh the page
@@ -170,7 +185,7 @@ Feature: Manage transit movements frontend tests for Departures
 
 
   # 4039
-  Scenario: 14 Trader is able to review IE051 message details for Goods not released
+  Scenario: 12 Trader is able to review IE051 message details for Goods not released
     When I submit an IE015 Departure Declaration
     Then I submit an IE051 No Release For Transit
     And I refresh the page
