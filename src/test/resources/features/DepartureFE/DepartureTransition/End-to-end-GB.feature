@@ -268,13 +268,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     When I click the Add documents link on the 'Declaration summary' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the Check your answers section Documents page
@@ -546,13 +539,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Do you want to add any documents?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the Check your answers section Documents page
