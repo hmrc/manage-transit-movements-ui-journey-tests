@@ -16,13 +16,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345,6789 on the Documents 'Enter the additional information' page
     And I submit on the Check your answers section Documents page
@@ -30,8 +23,6 @@ Feature: Journeys for Previous, Transport & Supporting documents
     And I click radio option No on the 'Do you want to use this document for all items?' page
     And I select Previous - (N380) Commercial invoice on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I click radio option No on the 'Do you want to declare the quantity of goods transported into the UK?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
     When I choose to click on the Remove link on the 'You have added 2 documents' page
