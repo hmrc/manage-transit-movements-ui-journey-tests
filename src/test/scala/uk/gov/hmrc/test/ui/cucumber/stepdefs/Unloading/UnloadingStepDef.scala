@@ -31,10 +31,11 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit movement and unloading permission' page$""") {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
+  Then(
+    """^(?:I )?should be on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") { (houseConsignments: String) =>

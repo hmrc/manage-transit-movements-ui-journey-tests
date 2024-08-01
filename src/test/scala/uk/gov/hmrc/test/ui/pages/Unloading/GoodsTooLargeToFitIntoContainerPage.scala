@@ -23,4 +23,3 @@ object GoodsTooLargeToFitIntoContainerPage extends YesNoPage {
   override def title(args: String*): String = "Are the goods too large to fit into a container?"
 
 }
-

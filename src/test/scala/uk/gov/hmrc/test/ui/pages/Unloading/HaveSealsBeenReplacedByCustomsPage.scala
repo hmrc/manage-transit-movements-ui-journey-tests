@@ -23,4 +23,3 @@ object HaveSealsBeenReplacedByCustomsPage extends YesNoPage {
   override def title(args: String*): String = "Have any seals been replaced by a customs authority?"
 
 }
-
