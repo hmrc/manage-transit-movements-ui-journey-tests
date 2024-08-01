@@ -27,11 +27,11 @@ import uk.gov.hmrc.test.ui.pages.Unloading._
 class UnloadingStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
-    UnloadingGuidancePage
+    UnloadAndNoteDiscrepanciesPage
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit and unloading permission' page$""") {
+  Then("""^(?:I )?should be on the 'Enter the discrepancies between the transit movement and unloading permission' page$""") {
     () =>
       ConsignmentCrossCheckPage
         .loadPage()
@@ -80,7 +80,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit and unloading permission' page$"""
+    """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
   ) { () =>
     ConsignmentCrossCheckPage
       .loadPage()
@@ -88,7 +88,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   Given(
-    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Enter the discrepancies between the transit and unloading permission' page$"""
+    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
   ) { (index: String) =>
     ConsignmentCrossCheckPage
       .loadPage()
@@ -118,12 +118,6 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage()
         .fillInput(answer)
         .submitPage()
-  }
-
-  And("""^(?:I )?click the Continue button on the 'Unload the goods before you make unloading remarks' page$""") { () =>
-    UnloadingGuidancePage
-      .loadPage()
-      .submitPage()
   }
 
   And(
