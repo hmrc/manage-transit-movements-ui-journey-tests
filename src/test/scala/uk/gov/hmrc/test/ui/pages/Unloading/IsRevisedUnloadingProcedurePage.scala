@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object DifferencesPage extends YesNoPage {
+object IsRevisedUnloadingProcedurePage extends YesNoPage  {
 
-  override def title(args: String*): String =
-    "Were there any discrepancies between the transit movement and unloading permission?"
+  override def title(args: String*): String = "Do you want to use the revised unloading procedure?"
 
 }
+

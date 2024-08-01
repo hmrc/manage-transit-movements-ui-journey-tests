@@ -18,9 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object DifferencesPage extends YesNoPage {
+object GoodsTooLargeToFitIntoContainerPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Were there any discrepancies between the transit movement and unloading permission?"
+  override def title(args: String*): String = "Are the goods too large to fit into a container?"
 
 }
+

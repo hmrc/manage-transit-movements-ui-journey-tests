@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-object DifferencesPage extends YesNoPage {
+object EnterAllSealsIdentificationNumbersPage extends StringPage {
 
-  override def title(args: String*): String =
-    "Were there any discrepancies between the transit movement and unloading permission?"
+  override def title(args: String*): String = "Enter all the seal identification numbers"
 
 }

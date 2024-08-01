@@ -126,6 +126,57 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to use the revised unloading procedure\?' page$"""
+  ) { (answer: String) =>
+    IsRevisedUnloadingProcedurePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are the goods too large to fit into a container\?' page$"""
+  ) { (answer: String) =>
+    GoodsTooLargeToFitIntoContainerPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Have any seals been replaced by a customs authority\?' page$"""
+  ) { (answer: String) =>
+    HaveSealsBeenReplacedByCustomsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Check the goods and note any discrepancies' page$"""
+  ) { () =>
+    CheckGoodsAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Unload the goods and note any discrepancies' page$"""
+  ) { () =>
+    UnloadAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Download the unloading permission' page$"""
+  ) { () =>
+    DownloadUnloadingPermissionsPage
+      .loadPage()
+      .submitPage()
+  }
+
   When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") { (sectionLink: String) =>
     UnloadingSummaryPage
       .loadPage()
@@ -1084,6 +1135,20 @@ class UnloadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") { (answer: String) =>
     OtherThingsReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter all the original seal identification numbers' page$""") { (answer: String) =>
+    EnterOriginalSealsIdentificationCommentPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter all the seal identification numbers' page$""") { (answer: String) =>
+    EnterAllSealsIdentificationNumbersPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
