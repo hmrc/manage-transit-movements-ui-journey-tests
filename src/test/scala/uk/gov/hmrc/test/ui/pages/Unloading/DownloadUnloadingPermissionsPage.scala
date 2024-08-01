@@ -16,11 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import uk.gov.hmrc.test.ui.pages.Page
 
-object DifferencesPage extends YesNoPage {
+object DownloadUnloadingPermissionsPage extends Page {
 
-  override def title(args: String*): String =
-    "Were there any discrepancies between the transit movement and unloading permission?"
+  override def title(args: String*): String = "Download the unloading permission"
 
 }

@@ -3,6 +3,62 @@
 Feature: Submit unloading remarks with seals
 
 
+  Scenario: 00 - Unloading remarks with new agreement, no new seals and with other things to report
+    Given I login with ID 1234567890
+    When I submit an IE007 Arrival Notification
+    And I submit an IE043 Unloading Permission With Seals
+            #cut-over
+    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option No on the 'Are the goods too large to fit into a container?' page
+    Then I click the Continue button on the 'Download the unloading permission' page
+    And I choose radio option No on the 'Have any seals been replaced by a customs authority?' page
+    And I enter Seal1 Seal2 Seal3 on the 'Enter all the original seal identification numbers' page
+
+    And I submit the 'Check your answers' page
+    And I should be on the 'Unloading remarks sent' page
+
+  Scenario: 000 - Unloading remarks with new agreement, with new seals
+    Given I login with ID 1234567890
+    When I submit an IE007 Arrival Notification
+    And I submit an IE043 Unloading Permission With Seals
+            #cut-over
+    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option No on the 'Are the goods too large to fit into a container?' page
+    Then I click the Continue button on the 'Download the unloading permission' page
+    And I choose radio option Yes on the 'Have any seals been replaced by a customs authority?' page
+    And I enter NewSeal1 NewSeal2 NewSeal3 on the 'Enter all the seal identification numbers' page
+
+    And I submit the 'Check your answers' page
+    And I should be on the 'Unloading remarks sent' page
+
+  Scenario: 0000 - Unloading remarks with new agreement and no discrepancies
+    Given I login with ID 1234567890
+    When I submit an IE007 Arrival Notification
+    And I submit an IE043 Unloading Permission With Seals
+            #cut-over
+    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
+    Then I click the Continue button on the 'Check the goods and note any discrepancies' page
+    And I choose radio option No on the 'Were there any discrepancies between the transit and unloading permission?' page
+
+    And I submit the 'Check your answers' page
+    And I should be on the 'Unloading remarks sent' page
+
   Scenario: 01 - Unloading remarks with changes to summary answers & add/remove comment & adds new seals and changes the check seals section from CYA page
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
