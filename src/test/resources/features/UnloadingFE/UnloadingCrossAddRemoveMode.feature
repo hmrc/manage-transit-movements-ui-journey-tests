@@ -11,7 +11,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     # TODO 1 July
     #When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
-    Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
+    And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
+    Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
@@ -78,7 +79,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
   # House Consignment - Consignment Item
-    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit and unloading permission' page
+    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit movement and unloading permission' page
     And I should be on the 'House consignment 1' page
     And I click the Add or remove item link on house consignment for section Items 1
     And I click radio option Yes on the 'You have added 1 item for house consignment 1' page

@@ -18,9 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object IsRevisedUnloadingProcedurePage extends YesNoPage  {
+object IsRevisedUnloadingProcedurePage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to use the revised unloading procedure?"
 
 }
-
