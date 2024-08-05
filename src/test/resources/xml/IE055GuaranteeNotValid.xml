@@ -33,7 +33,7 @@
         <GRN>string</GRN>
         <InvalidGuaranteeReason>
             <sequenceNumber>1</sequenceNumber>
-            <code>token</code>
+            <code>G02</code>
             <!--Optional:-->
             <text>string</text>
         </InvalidGuaranteeReason>
