@@ -26,8 +26,8 @@ import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
-    UnloadAndNoteDiscrepanciesPage
+  Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>
+    IsRevisedUnloadingProcedurePage
       .loadPage()
   }
 

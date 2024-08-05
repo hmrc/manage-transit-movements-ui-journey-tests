@@ -15,7 +15,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     # TODO 1 July
     #When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
-    Then I should be on the 'Unload the goods before you make unloading remarks' page
+    Then I should be on the 'Do you want to use the revised unloading procedure?' page
     And I sign out
 
 
