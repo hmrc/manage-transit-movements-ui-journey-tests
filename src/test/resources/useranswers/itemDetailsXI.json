@@ -11,8 +11,8 @@
       },
       "procedureType" : "normal",
       "declarationType" : {
-        "code": "TIR",
-        "description": "TIR carnet"
+        "code" : "TIR",
+        "description" : "TIR carnet"
       },
       "additionalDeclarationType" : {
         "code" : "A",
@@ -20,8 +20,8 @@
       },
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : {
-        "code": "1",
-        "description": "ENS"
+        "code" : "1",
+        "description" : "ENS"
       },
       "detailsConfirmed" : true
     },
@@ -114,22 +114,22 @@
         }
       },
       "loadingAndUnloading" : {
-        "loading": {
-          "addUnLocodeYesNo": true,
-          "unLocode": {
-            "unLocodeExtendedCode": "ADALV",
-            "name": "Andorra la Vella"
+        "loading" : {
+          "addUnLocodeYesNo" : true,
+          "unLocode" : {
+            "unLocodeExtendedCode" : "ADALV",
+            "name" : "Andorra la Vella"
           },
-          "addLocationYesNo": false
+          "addLocationYesNo" : false
         },
-        "unloading": {
-          "addUnLocodeYesNo": false,
-          "additionalInformation": {
-            "country": {
-              "code": "IT",
-              "description": "Italy"
+        "unloading" : {
+          "addUnLocodeYesNo" : false,
+          "additionalInformation" : {
+            "country" : {
+              "code" : "IT",
+              "description" : "Italy"
             },
-            "location": "Milano"
+            "location" : "Milano"
           }
         }
       }
@@ -156,41 +156,42 @@
           "description" : "Electronic credit transfer"
         }
       },
-      "inlandMode" : {
-        "code" : "3",
-        "description" : "Road transport"
+      "borderModeOfTransport" : {
+        "code" : "1",
+        "description" : "Maritime Transport"
       },
-      "borderModeOfTransport" : "maritime",
       "transportMeans" : {
-        "departure": [
+        "departure" : [
           {
-            "identification": {
-              "type": "30",
-              "description": "Registration Number of the Road Vehicle"
+            "identification" : {
+              "type" : "30",
+              "description" : "Registration Number of the Road Vehicle"
             },
-            "meansIdentificationNumber": "REG00101",
-            "vehicleCountry": {
-              "code": "GB",
-              "description": "United Kingdom"
+            "meansIdentificationNumber" : "REG00101",
+            "vehicleCountry" : {
+              "code" : "GB",
+              "description" : "United Kingdom"
             }
           }
         ],
-        "active": [
+        "active" : [
           {
-            "identification": {
-              "code": "10",
-              "description": "IMO Ship Identification Number"
+            "identification" : {
+              "code" : "11",
+              "description" : "Name of the sea-going vessel"
             },
-            "identificationNumber": "SHIPA",
-            "addNationalityYesNo": false,
-            "customsOfficeActiveBorder": {
-              "id": "IT018101",
-              "name": "Aeroporto Bari - Palese",
-              "phoneNumber": "0039 0805316196",
-              "countryId" : "IT"
+            "identificationNumber" : "boatymc",
+            "addNationalityYesNo" : true,
+            "nationality" : {
+              "code" : "GB",
+              "description" : "United Kingdom"
             },
-            "conveyanceReferenceNumberYesNo": true,
-            "conveyanceReferenceNumber": "CONVEYANCE1231"
+            "customsOfficeActiveBorder" : {
+              "id" : "IT018101",
+              "name" : "Aeroporto Bari - Palese",
+              "phoneNumber" : "0039 0805316196"
+            },
+            "conveyanceReferenceNumberYesNo" : false
           }
         ]
       },
@@ -211,48 +212,60 @@
       "carrierDetails" : {
         "identificationNumber" : "GB123456789007",
         "addContactYesNo" : false
-      }
+      },
+      "addInlandModeYesNo" : false,
+      "addAdditionalReferenceYesNo" : false,
+      "addAdditionalInformationYesNo" : true,
+      "additionalInformation" : [
+        {
+          "type" : {
+            "code" : "20300",
+            "description" : "Export"
+          },
+          "addCommentsYesNo" : false
+        }
+      ]
     },
     "documents" : {
-      "addDocumentsYesNo": true,
+      "addDocumentsYesNo" : true,
       "documents" : [
         {
-          "attachToAllItems": true,
-          "type": {
-            "type": "Previous",
-            "code": "C605",
-            "description": "Information sheet INF3"
+          "attachToAllItems" : true,
+          "type" : {
+            "type" : "Previous",
+            "code" : "C605",
+            "description" : "Information sheet INF3"
           },
-          "details": {
-            "documentReferenceNumber": "1234567",
-            "uuid": "61ea7b0b-f10f-4811-a387-b5952a76d97d",
-            "addAdditionalInformationYesNo": false
+          "details" : {
+            "documentReferenceNumber" : "1234567",
+            "uuid" : "61ea7b0b-f10f-4811-a387-b5952a76d97d",
+            "addAdditionalInformationYesNo" : false
           }
         },
         {
-          "attachToAllItems": false,
-          "type": {
-            "type": "Transport",
-            "code": "N741",
-            "description": "Master airwaybill"
+          "attachToAllItems" : false,
+          "type" : {
+            "type" : "Transport",
+            "code" : "N741",
+            "description" : "Master airwaybill"
           },
-          "details": {
-            "documentReferenceNumber": "1234",
-            "uuid": "ddcca71c-6b43-4295-b5e9-e3ee95c39286"
+          "details" : {
+            "documentReferenceNumber" : "1234",
+            "uuid" : "ddcca71c-6b43-4295-b5e9-e3ee95c39286"
           }
         },
         {
-          "attachToAllItems": false,
-          "type": {
-            "type": "Support",
-            "code": "C673",
-            "description": "Catch certificate"
+          "attachToAllItems" : false,
+          "type" : {
+            "type" : "Support",
+            "code" : "C673",
+            "description" : "Catch certificate"
           },
-          "details": {
-            "documentReferenceNumber": "12345",
-            "uuid": "411d05f0-386f-4689-a285-2145cfed4946",
-            "addLineItemNumberYesNo": false,
-            "addAdditionalInformationYesNo": false
+          "details" : {
+            "documentReferenceNumber" : "12345",
+            "uuid" : "411d05f0-386f-4689-a285-2145cfed4946",
+            "addLineItemNumberYesNo" : false,
+            "addAdditionalInformationYesNo" : false
           }
         }
       ]

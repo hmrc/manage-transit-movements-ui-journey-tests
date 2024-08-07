@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GuaranteeRefNumberPage extends StringPage with GuaranteeBalancePage {
+object EnterAllSealsIdentificationNumbersPage extends StringPage {
 
-  override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
+  override def title(args: String*): String = "Enter all the seal identification numbers"
+
 }

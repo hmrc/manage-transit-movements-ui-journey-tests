@@ -2,7 +2,7 @@
 
 Feature: End to end journey for amending a departure declaration - Transition
 
-  Scenario: End to end journey for amending a departure declaration before MRN allocation
+  Scenario: 01 End to end journey for amending a departure declaration before MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
@@ -66,8 +66,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
-
-  Scenario: End to end journey for amending a departure declaration after MRN allocation
+  Scenario: 02 End to end journey for amending a departure declaration after MRN allocation
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
@@ -229,3 +228,55 @@ Feature: End to end journey for amending a departure declaration - Transition
 
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
+
+  Scenario: 05 End to end journey for amending a departure declaration after MRN allocation no errors
+    Given I login with ID 1234567890
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE028 MRN Allocated
+    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And I refresh the page
+
+    #cut-over
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+
+    And I should see Completed status for trader details on the 'Declaration summary' page
+    And I should see Completed status for route details on the 'Declaration summary' page
+    And I should see Completed status for transport details on the 'Declaration summary' page
+    And I should see Completed status for documents on the 'Declaration summary' page
+    And I should see Completed status for items on the 'Declaration summary' page
+    And I should see Completed status for guarantee details on the 'Declaration summary' page
+
+    And I click on the Edit items link on the 'Declaration summary' page
+    And I click the Change link on the 'You have added 1 item' page
+    And I click the Change link for Do you want to add supplementary units? on the Item 1 'Check your answers' page
+    And I click radio option No on the 'Do you want to add supplementary units?' page
+    And I submit on the Check your answers section Items page
+    And I click radio option No on the 'You have added 1 item' page
+    And I should see Amended status for items on the 'Declaration summary' page
+    And I click the Confirm and resend button on the 'Declaration summary' page
+    And I click the Sign out link on the 'Departure declaration sent' page
+
+  Scenario: 06 User is unable to continue with an amendment if an IE029 message is received while amending
+    Given I login with ID 1234567890
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE028 MRN Allocated
+    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And I refresh the page
+
+    #cut-over
+    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
+
+    # TODO 1 July
+    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+
+    And I click on the Edit trader details link on the 'Declaration summary' page
+    And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
+    And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
+    When I submit an IE029 Release For Transit
+    And I submit on the Check your answers section Trader details page
+    Then I should be on the 'For your security we signed you out' page

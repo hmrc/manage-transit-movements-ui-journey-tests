@@ -7,7 +7,9 @@
         "phoneNumber" : "+44(0)126 856 1234",
         "countryId" : "GB",
         "isInCL112" : true,
-        "isInCL147" : false
+        "isInCL147" : false,
+        "isInCL010" : false
+
       },
       "procedureType" : "normal",
       "declarationType" : {
@@ -204,9 +206,14 @@
             }
           }
         ],
+        "addDepartureTransportMeansYesNo" : true,
+        "addActiveBorderTransportMeansYesNo" : true,
         "active": [
           {
-            "inferredIdentification": "trainNumber",
+            "identification" : {
+              "code" : "21",
+              "description" : "Train Number"
+            },
             "identificationNumber": "T1111",
             "addNationalityYesNo": true,
             "nationality": {
@@ -236,13 +243,15 @@
       "authorisationsAndLimit" : {
         "authorisations" : [
           {
-            "authorisationType" : {
-              "code" : "C521",
-              "description" : "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
+            "inferredAuthorisationType" : {
+              "code" : "C524",
+              "description" : "TRD - Authorisation to use transit declaration with a reduced dataset (Column 9e, Annex A of Delegated Regulation (EU) 2015/2446)"
             },
-            "authorisationReferenceNumber" : "12312"
+            "isMandatory" : true,
+            "authorisationReferenceNumber" : "grfgdf"
           }
         ],
+        "authorisationsInferred" : true,
         "limit" : {
           "limitDate" : "2023-03-25"
         }
@@ -251,7 +260,9 @@
       "carrierDetails" : {
         "identificationNumber" : "GB123456789000",
         "addContactYesNo" : false
-      }
+      },
+      "addInlandModeYesNo" : true,
+      "addBorderModeOfTransportYesNo" : false
     },
     "documents" : {
       "addDocumentsYesNo" : true,

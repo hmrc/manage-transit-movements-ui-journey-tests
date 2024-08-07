@@ -154,17 +154,22 @@
       "borderModeOfTransport": "air",
       "transportMeans" : {
         "addDepartureTransportMeansYesNo" : true,
-        "departure": [
+        "departure" : [
           {
-            "addIdentificationTypeYesNo": true,
-            "identification": {
-              "code": "21",
-              "description": "Train Number"
+            "addIdentificationTypeYesNo" : true,
+            "identification" : {
+              "type" : "21",
+              "description" : "Train Number"
             },
-            "addIdentificationNumberYesNo": true,
-            "meansIdentificationNumber": "TRA1122"
+            "addIdentificationNumberYesNo" : true,
+            "meansIdentificationNumber" : "TRA1N",
+            "vehicleCountry" : {
+              "code" : "GB",
+              "description" : "United Kingdom"
+            }
           }
         ],
+        "addActiveBorderTransportMeansYesNo" : true,
         "active": [
           {
             "identification": {
@@ -183,6 +188,7 @@
               "phoneNumber": "0039 0805254711 - 0805254755",
               "countryId" : "IT"
             },
+            "conveyanceReferenceNumberYesNo" : true,
             "conveyanceReferenceNumber": "Con12312312"
           }
         ]
@@ -204,7 +210,11 @@
       "carrierDetails" : {
         "identificationNumber" : "GB142414124",
         "addContactYesNo" : false
-      }
+      },
+      "addAdditionalReferenceYesNo" : false,
+      "addAdditionalInformationYesNo" : false,
+      "addInlandModeYesNo" : false,
+      "addBorderModeOfTransportYesNo" : false
     },
     "documents" : {
       "addDocumentsYesNo" : true,

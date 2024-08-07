@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GuaranteeBalance
+package uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-trait GuaranteeBalancePage {
-  this: Page =>
+object AdditionalReferenceAllItemsRemovePage extends YesNoPage {
 
-  override val serviceName: String = "Check your transit guarantee balance"
+  override def title(args: String*): String =
+    String.format("Are you sure you want to remove this additional reference from all items?")
 }

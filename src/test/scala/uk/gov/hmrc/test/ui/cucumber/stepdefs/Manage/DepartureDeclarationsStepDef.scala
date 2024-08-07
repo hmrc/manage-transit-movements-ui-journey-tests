@@ -86,6 +86,11 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Then("""^(?:I )?(?:should )?be on the 'Declaration errors' page$""") { () =>
+    DeclarationNonFunctionalErrorsPage
+      .loadPage()
+  }
+
   Then("""^(?:I )?(?:should )?be on the 'Cancellation errors' page$""") { () =>
     CancellationErrorsPage
       .loadPage()

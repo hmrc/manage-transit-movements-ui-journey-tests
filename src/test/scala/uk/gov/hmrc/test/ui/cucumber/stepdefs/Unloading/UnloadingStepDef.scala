@@ -26,20 +26,21 @@ import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Unload the goods before you make unloading remarks' page$""") { () =>
-    UnloadingGuidancePage
+  Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>
+    IsRevisedUnloadingProcedurePage
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Cross-check the transit with this declaration summary' page$""") { () =>
+  Then(
+    """^(?:I )?should be on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
+  ) { () =>
     ConsignmentCrossCheckPage
       .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Cross-check the transit with house consignment (.+)' page$""") {
-    (houseConsignments: String) =>
-      HouseConsignmentPage
-        .loadPage(houseConsignments)
+  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") { (houseConsignments: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignments)
   }
 
   And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
@@ -79,15 +80,16 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Cross-check the transit with this declaration summary' page$""") {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .submitPage()
+  And(
+    """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .submitPage()
   }
 
   Given(
-    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
+    """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
   ) { (index: String) =>
     ConsignmentCrossCheckPage
       .loadPage()
@@ -95,7 +97,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   Given(
-    """^(?:I )?click the Back to summary button on the 'Cross-check the transit with house consignment (.*)' page$"""
+    """^(?:I )?click the Back to summary button on the 'House consignment (.*)' page$"""
   ) { (houseConsignmentNumber: String) =>
     HouseConsignmentPage
       .loadPage(houseConsignmentNumber)
@@ -119,8 +121,53 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Unload the goods before you make unloading remarks' page$""") { () =>
-    UnloadingGuidancePage
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to use the revised unloading procedure\?' page$"""
+  ) { (answer: String) =>
+    IsRevisedUnloadingProcedurePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are the goods too large to fit into a container\?' page$"""
+  ) { (answer: String) =>
+    GoodsTooLargeToFitIntoContainerPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Have any seals been replaced by a customs authority\?' page$"""
+  ) { (answer: String) =>
+    HaveSealsBeenReplacedByCustomsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Check the goods and note any discrepancies' page$"""
+  ) { () =>
+    CheckGoodsAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Unload the goods and note any discrepancies' page$"""
+  ) { () =>
+    UnloadAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Download the unloading permission' page$"""
+  ) { () =>
+    DownloadUnloadingPermissionsPage
       .loadPage()
       .submitPage()
   }
@@ -593,10 +640,10 @@ class UnloadingStepDef extends BaseStepDef {
         .clickByPartialLinkText(answer)
   }
   And(
-    """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove seal (.*) from transport equipment (.*)\?' page$"""
-  ) { (answer: String, SealValue: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove this seal from transport equipment (.*)\?' page$"""
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
     RemoveSealFromTransportEquipmentPage
-      .loadPage(SealValue, numberOfTransportEquipmentIncrementsInTitle)
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
       .select(answer)
       .submitPage()
   }
@@ -1160,6 +1207,20 @@ class UnloadingStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") { (answer: String) =>
     OtherThingsReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter all the original seal identification numbers' page$""") { (answer: String) =>
+    EnterOriginalSealsIdentificationCommentPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter all the seal identification numbers' page$""") { (answer: String) =>
+    EnterAllSealsIdentificationNumbersPage
       .loadPage()
       .fillInput(answer)
       .submitPage()

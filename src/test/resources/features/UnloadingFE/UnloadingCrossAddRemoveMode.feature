@@ -11,7 +11,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     # TODO 1 July
     #When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
-    Then I click the Continue button on the 'Unload the goods before you make unloading remarks' page
+    And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
+    Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
     And I fill in the date on the 'When were the goods unloaded?' page
     And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
@@ -43,7 +44,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the cross check 'Do you want to add a seal for the transport equipment?' page
     And I enter identification number Seal1234 on 'What is the seal identification number?' page
     And I click Remove on 'You have added 1 seals to transport equipment 2' page
-    And I choose radio option Yes on 'Are you sure you want to remove seal Seal1234 from transport equipment 2?' page
+    And I choose radio option Yes on 'Are you sure you want to remove this seal from transport equipment 2?' page
     And I click radio option No on the 'You have added 0 seals to transport equipment 2' page
     And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
     And I select 100 on the 'Which item does this transport equipment apply to?' page
@@ -78,8 +79,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page add and remove journeys
   # House Consignment - Consignment Item
-    Given I click the 'More details' link for house consignment 1 on the 'Cross-check the transit with this declaration summary' page
-    And I should be on the 'Cross-check the transit with house consignment 1' page
+    Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit movement and unloading permission' page
+    And I should be on the 'House consignment 1' page
     And I click the Add or remove item link on house consignment for section Items 1
     And I click radio option Yes on the 'You have added 1 item for house consignment 1' page
     And I enter testing on the 'Enter the description of item 2 in house consignment 1' page
@@ -133,6 +134,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click option Remove on the 'You have added 2 items for house consignment 1' page
     And I click radio option Yes on item 'Are you sure you want to remove item 1 from house consignment 1?' page
     And I click radio option No on the 'You have added 1 item for house consignment 1' page
+
 
   Scenario: 03 - Unloading remarks - Cross-check page add and remove House Consignment
     And I click the add or remove house consignment link

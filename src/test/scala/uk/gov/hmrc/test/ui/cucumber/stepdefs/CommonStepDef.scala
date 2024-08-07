@@ -16,11 +16,13 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import org.scalatest.concurrent.Eventually.eventually
+
 class CommonStepDef extends BaseStepDef {
 
   And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
     val time = t * 1000
-    Thread.sleep(time)
+    eventually(Thread.sleep(time))
   }
 
   And("""^(?:I )?refresh the page$""") { () =>

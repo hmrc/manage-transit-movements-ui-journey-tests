@@ -229,7 +229,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'You have added 1 seal' page
     And I enter S002 on the 'What is the seal identification number?' page
     And I click the Remove link  on the 'You have added 2 seals' page
-    And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
 
     And I submit on the Check your answers section Transport equipment page
@@ -244,6 +244,7 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
     And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+    And I click radio option No on the 'Do you want to add any additional information for all items?' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 
@@ -252,13 +253,6 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to use this document for all items?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
 
@@ -293,7 +287,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page
     And I enter 1234 on the 'What is the UN number for the dangerous goods?' page
     And I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page
-    And I click radio option Yes on the 'Are you sure you want to remove UN number AB12?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this UN number?' page
     And I click radio option No on the 'You have added 1 UN number for dangerous goods' page
       #Measurement section
     And I enter 100 on the 'What is the item’s gross weight?' page
@@ -313,7 +307,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click continue on the 'Before you continue' page
     And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 3 types of packages' page
-    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page
     And I click radio option No on the 'You have added 2 type of package' page
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
@@ -396,8 +390,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
-
-
+    
   Scenario: 02 Procedure 'Normal' - Declaration 'T' - Security '0' - Consignee in Item level, destination countries at Item level
   - Container Ind 'No' - CL214 Documents
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
@@ -524,6 +517,12 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Do you want to add an additional reference number?' page
     And I input 12345 on the 'Enter the additional reference number' page
     And I click radio option No on the 'You have added 1 additional reference for all items' page
+    And I click radio option Yes on the 'Do you want to add any additional information for all items?' page
+    And I select 20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction on the 'What type of additional information do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add any comments for the additional information?' page
+    And I enter Comment 1 on the 'Enter your comments for the additional information' page
+    And I click radio option No on the 'You have added 1 additional information for all items' page
+
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
 

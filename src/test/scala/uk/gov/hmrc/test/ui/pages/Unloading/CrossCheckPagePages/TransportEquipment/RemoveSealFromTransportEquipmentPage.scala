@@ -21,13 +21,12 @@ import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 object RemoveSealFromTransportEquipmentPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq(sealName, transportEquipmentNumber) =>
+    case Seq(transportEquipmentNumber) =>
       String.format(
-        "Are you sure you want to remove seal %s from transport equipment %s?",
-        sealName,
+        "Are you sure you want to remove this seal from transport equipment %s?",
         transportEquipmentNumber
       )
-    case _                                       =>
+    case _                             =>
       throw InvalidTitleArgsException("Unexpected Shape")
   }
 }

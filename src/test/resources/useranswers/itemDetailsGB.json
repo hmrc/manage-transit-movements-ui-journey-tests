@@ -11,16 +11,16 @@
       },
       "procedureType" : "normal",
       "declarationType" : {
-        "code": "T",
-        "description": "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
+        "code" : "T",
+        "description" : "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
       },
       "additionalDeclarationType" : {
         "code" : "A",
         "description" : "for a standard customs declaration (under Article 162 of the Code)"
       },
       "securityDetailsType" : {
-        "code": "0",
-        "description": "Not used for safety and security purposes"
+        "code" : "0",
+        "description" : "Not used for safety and security purposes"
       },
       "detailsConfirmed" : true
     },
@@ -149,13 +149,13 @@
         }
       },
       "loadingAndUnloading" : {
-        "loading": {
-          "addUnLocodeYesNo": true,
-          "unLocode": {
-            "unLocodeExtendedCode": "CAALK",
-            "name": "Adlavik"
+        "loading" : {
+          "addUnLocodeYesNo" : true,
+          "unLocode" : {
+            "unLocodeExtendedCode" : "CAALK",
+            "name" : "Adlavik"
           },
-          "addLocationYesNo": false
+          "addLocationYesNo" : false
         }
       }
     },
@@ -185,43 +185,21 @@
           }
         ]
       },
-      "inlandMode" : {
-        "code" : "3",
-        "description" : "Road transport"
-      },
-      "borderModeOfTransport": "rail",
       "transportMeans" : {
-        "departure": [
+        "departure" : [
           {
-            "identification": {
-              "type": "30",
-              "description": "Registration Number of the Road Vehicle"
+            "identification" : {
+              "type" : "30",
+              "description" : "Registration Number of the Road Vehicle"
             },
-            "meansIdentificationNumber": "REG1231231",
-            "vehicleCountry": {
-              "code": "GB",
-              "description": "United Kingdom"
+            "meansIdentificationNumber" : "REG1231231",
+            "vehicleCountry" : {
+              "code" : "GB",
+              "description" : "United Kingdom"
             }
           }
         ],
-        "active": [
-          {
-            "inferredIdentification": "trainNumber",
-            "identificationNumber": "T1111",
-            "addNationalityYesNo": true,
-            "nationality": {
-              "code": "GB",
-              "description": "United Kingdom"
-            },
-            "customsOfficeActiveBorder": {
-              "id": "FR000610",
-              "name": "Bordeaux bassens pt bureau",
-              "phoneNumber": "09 70 27 56 60",
-              "countryId" : "FR"
-            },
-            "conveyanceReferenceNumberYesNo": false
-          }
-        ]
+        "addActiveBorderTransportMeansYesNo" : false
       },
       "supplyChainActorYesNo" : true,
       "supplyChainActors" : [
@@ -236,32 +214,35 @@
       "authorisationsAndLimit" : {
         "authorisations" : [
           {
-            "authorisationType" : {
-              "code" : "C521",
-              "description" : "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
+            "inferredAuthorisationType" : {
+              "code" : "C524",
+              "description" : "TRD - Authorisation to use transit declaration with a reduced dataset (Column 9e, Annex A of Delegated Regulation (EU) 2015/2446)"
             },
-            "authorisationReferenceNumber" : "12312"
+            "isMandatory" : true,
+            "authorisationReferenceNumber" : "gfsdg"
           }
         ],
-        "limit" : {
-          "limitDate" : "2023-03-25"
-        }
+        "authorisationsInferred" : true
       },
       "carrierDetailYesNo" : true,
       "carrierDetails" : {
         "identificationNumber" : "GB123456789000",
         "addContactYesNo" : false
-      }
+      },
+      "addInlandModeYesNo" : false,
+      "addBorderModeOfTransportYesNo" : false,
+      "addAdditionalReferenceYesNo" : false,
+      "addAdditionalInformationYesNo" : false
     },
     "documents" : {
       "addDocumentsYesNo" : true,
       "documents" : [
         {
-          "attachToAllItems": true,
+          "attachToAllItems" : true,
           "previousDocumentType" : {
             "type" : "Previous",
-            "code": "C605",
-            "description": "Information sheet INF3"
+            "code" : "C605",
+            "description" : "Information sheet INF3"
           },
           "details" : {
             "documentReferenceNumber" : "123456",
@@ -282,37 +263,35 @@
           }
         },
         {
-          "attachToAllItems": false,
+          "attachToAllItems" : false,
           "type" : {
             "type" : "Support",
-            "code": "C673",
-            "description": "Catch certificate"
+            "code" : "C673",
+            "description" : "Catch certificate"
           },
           "details" : {
             "documentReferenceNumber" : "98765",
             "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02a",
             "addLineItemNumberYesNo" : true,
             "lineItemNumber" : 10101,
-            "addAdditionalInformationYesNo": true,
-            "additionalInformation": "12345"
-
+            "addAdditionalInformationYesNo" : true,
+            "additionalInformation" : "12345"
           }
         },
         {
-          "attachToAllItems": false,
+          "attachToAllItems" : false,
           "type" : {
             "type" : "Support",
-            "code": "C673",
-            "description": "Catch certificate"
+            "code" : "C673",
+            "description" : "Catch certificate"
           },
           "details" : {
             "documentReferenceNumber" : "98762",
             "uuid" : "a573bfd3-6470-40c4-a290-ea2d8d43c02c",
             "addLineItemNumberYesNo" : true,
             "lineItemNumber" : 10102,
-            "addAdditionalInformationYesNo": true,
-            "additionalInformation": "12345"
-
+            "addAdditionalInformationYesNo" : true,
+            "additionalInformation" : "12345"
           }
         }
       ]

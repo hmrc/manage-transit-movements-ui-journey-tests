@@ -137,6 +137,8 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
       ## Transport charges
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
     And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+    And I click radio option No on the 'Do you want to add any additional information for all items?' page
+
       ##CYA changes to NO to test in Items details
     And click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
@@ -170,8 +172,6 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     # Previous document from list
     And I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option No on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I click radio option No on the 'Do you want to declare the quantity of goods transported into the UK?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents - Departure declarations page
     And I choose radio option No on the 'You have added 3 documents' page

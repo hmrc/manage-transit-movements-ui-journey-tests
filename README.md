@@ -19,16 +19,26 @@ This is the UI journey test repository for the following frontend services:
 * Docker
     * [Ubuntu](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-docker-ubuntu)
     * [macOS](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-docker-macos)
-* Docker compose
-    * [Ubuntu](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/install-docker.html#install-the-docker-packages)
-    * [macOS](https://formulae.brew.sh/formula/docker-compose) (Ensure the symlink step is followed so Docker can find the plugin)
-* [Docker selenium grid](https://github.com/hmrc/docker-selenium-grid)
 * [MongoDB](https://docs.tax.service.gov.uk/mdtp-handbook/documentation/developer-set-up/set-up-mongodb.html)
 
 ## How to run the journey tests
-* Ensure that you have cloned docker-selenium-grid and have executed `./start.sh` to run the relevant containers
-* Start the relevant services in service manager with `sm2 --start CTC_TRADERS_P5_ACCEPTANCE`
-* Run:
+* Start the relevant services in service manager with either:
+  * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE` - for services in Post transition mode
+  * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE_TRANSITION` - for services in Transition mode
+      * note - Post Transition services do not have prelodgement disabled (additional declaration type)
+
+
+* Run Transition mode tests:
+  * all tests with `./run_tests_for_transition.sh`
+  * isolated tests with:
+    * `./run_with_tags.sh DepartureTransition`
+    * `./run_with_tags.sh ArrivalTransition`
+    * `./run_with_tags.sh Cancellation`
+    * `./run_with_tags.sh Unloading`
+    * `./run_with_tags.sh Manage`
+
+
+* Run Post Transition mode tests:
   * all tests with `./run_tests.sh`
   * isolated tests with:
     * `./run_with_tags.sh Departure`
@@ -36,7 +46,17 @@ This is the UI journey test repository for the following frontend services:
     * `./run_with_tags.sh Cancellation`
     * `./run_with_tags.sh Unloading`
     * `./run_with_tags.sh Manage`
-* To see the journey tests happening, navigate to `localhost:4444`
+
+
+* Run individual departure journey tests
+  * Using the `./run_with_tags.sh` script you can add on the departure journey you want, eg:
+    * `./run_with_tags.sh DepartureRouteDetails` or `./run_with_tags.sh DepartureRouteDetailsTransition`
+    * The full list of runners can be found in `src/test/scala/uk/gov/hmrc/test/ui/cucumber/runner` whatever comes after the '`RunnerFor`' 
+      can be appended to the `./run_with_tags.sh` script to run those tests
+
+
+
+* To view the tests running in a browser, add `-Dbrowser.option.headless=false` to the relevant `sbt` command.
 
 ## Security Tests
 Security testing is done through the `UITestJobBuilder` in `build-jobs`

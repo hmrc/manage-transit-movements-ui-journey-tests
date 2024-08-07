@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.Items
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference}
+import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AddAnotherPageAdditionalInformation, AddCommentAdditionalInformation, AddPageAdditionalInformation, EnterCommentAdditionalInformation, RemovePageAdditionalInformation}
+import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference, AdditionalReferenceAllItemsAddAnotherPage, AdditionalReferenceAllItemsRemovePage}
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.AddNewConsignmentAdditionalReferenceNumberPage
@@ -151,10 +152,10 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove UN number (.*)\?' page$""") {
-    (answer: String, documentTypeToRemove: String) =>
+  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this UN number\?' page$""") {
+    (answer: String) =>
       RemoveDangerousGoodsPage
-        .loadPage(documentTypeToRemove)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
@@ -246,12 +247,13 @@ class ItemDetailsStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove (.*) from this item\?' page$""") {
-    (answer: String, documentTypeToRemove: String) =>
-      RemovePackagePage
-        .loadPage(documentTypeToRemove)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from the item\?' page$"""
+  ) { (answer: String) =>
+    RemovePackagePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add a supply chain actor for this item\?' page$""") {
@@ -557,6 +559,80 @@ class ItemDetailsStepDef extends BaseStepDef {
         .loadPage(numberOfReferences)
         .select(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for all items\?' page$"""
+  ) { (answer: String) =>
+    AddPageAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Do you want to add any comments for the additional information\?' page$"""
+  ) { (answer: String) =>
+    AddCommentAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter (.+) on the 'Enter your comments for the additional information\' page$""") { (answer: String) =>
+    EnterCommentAdditionalInformation
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) additional information for all items' page$"""
+  ) { (sectionLink: String, numberOfAdditionalInfoInTitle: String) =>
+    AddAnotherPageAdditionalInformation
+      .loadPage(numberOfAdditionalInfoInTitle)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?click radio option (.*) on the 'You have added (.*) additional information for all items' page$""") {
+    (answer: String, numberOfReferences: String) =>
+      AddAnotherPageAdditionalInformation
+        .loadPage(numberOfReferences)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional information from all items\?' page$"""
+  ) { (answer: String) =>
+    RemovePageAdditionalInformation
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) additional reference for all items' page$""") {
+    (answer: String, numberOfContainers: String) =>
+      AdditionalReferenceAllItemsAddAnotherPage
+        .loadPage(numberOfContainers)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?click the (.*) link on the 'You have added (.*) additional references for all items\?' page$""") {
+    (sectionLink: String, numberOfReferences: String) =>
+      AdditionalReferenceAllItemsAddAnotherPage
+        .loadPage(numberOfReferences)
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And(
+    """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this additional reference from all items\?' page$"""
+  ) { (answer: String) =>
+    AdditionalReferenceAllItemsRemovePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }

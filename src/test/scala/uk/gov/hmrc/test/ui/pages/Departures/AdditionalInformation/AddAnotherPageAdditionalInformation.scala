@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
+package uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation
 
-import uk.gov.hmrc.test.ui.pages.Page
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-object UnloadingGuidancePage extends Page {
+object AddAnotherPageAdditionalInformation extends YesNoPage {
 
-  override def title(args: String*): String = "Unload the goods before you make unloading remarks"
-
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 additional information for all items"
+    case _        => String.format("You have added %s additional information for all items", args: _*)
+  }
 }

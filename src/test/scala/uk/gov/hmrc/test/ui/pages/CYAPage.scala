@@ -47,7 +47,8 @@ object CYAPage extends Page {
       case "Do you want to add supplementary units?"                                    => clickLinkById("add-supplementary-units")
       case "Liability amount"                                                           => clickLinkById("liability-amount")
       case "Other"                                                                      => clickById("value_3")
-
+      case "Are the goods too large to fit into a container"                            =>
+        clickByPartialLinkText("Are the goods too large to fit into a container?")
     }
     this
   }

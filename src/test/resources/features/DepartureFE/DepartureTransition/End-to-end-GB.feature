@@ -186,7 +186,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the inland mode 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
@@ -197,7 +197,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
     And I submit on the Check your answers section Departure means of transport page
     And I choose to click on the Remove link on the You have added 2 departure means of transport' page
-    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport?' page
+    And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page
     And I select radio option No on the 'You have added 1 departure means of transport' page
     And I choose radio option Channel Tunnel on the 'How is the transit crossing the border?' page
     And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
@@ -243,7 +243,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'You have added 1 seal' page
     And I enter S002 on the 'What is the seal identification number?' page
     And I click the Remove link  on the 'You have added 2 seals' page
-    And I click radio option Yes on the 'Are you sure you want to remove seal S001?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
     And I submit on the Check your answers section Transport equipment page
 
@@ -268,13 +268,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     When I click the Add documents link on the 'Declaration summary' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the Check your answers section Documents - Departure declarations page
@@ -324,7 +317,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 0 on the 'How many of these are you using?' page
     And I enter This is a description of the cargo 3 on the 'What is the shipping mark?' page
     And I click the Remove link on the 'You have added 3 types of packages' page
-    And I click radio option Yes on the 'Are you sure you want to remove (NE) Unpacked or unpackaged from this item?' page
+    And I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page
     And I click radio option No on the 'You have added 2 type of package' page
     #Supply Chain Actor section
     And I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page
@@ -546,13 +539,6 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Do you want to add any documents?' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to declare the package used to transport the goods into the UK?' page
-    And I select (BG) Bag on the 'What type of package was used to transport the goods into the UK?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of this package?' page
-    And I enter 50 on the documents 'How many of these were there?' page
-    And I click radio option Yes on the 'Do you want to declare the quantity of goods transported into the UK?' page
-    And I select (GRM) Gram on the 'What metric do you want to use for the quantity of goods?' page
-    And I enter 1500 on the 'How many of these do the goods include?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
     And I submit on the Check your answers section Documents - Departure declarations page

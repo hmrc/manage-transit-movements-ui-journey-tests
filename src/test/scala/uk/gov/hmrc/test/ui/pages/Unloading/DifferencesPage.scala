@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object DifferencesPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Were there any discrepancies between the transit and unloading permission?"
+    "Were there any discrepancies between the transit movement and unloading permission?"
 
 }

@@ -65,10 +65,10 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the inland mode 'Do you want to add identification for this vehicle\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?choose radio option (.*) on the departure means '(.*)' page$"""
+  ) { (answer: String, pageTitle: String) =>
     AddVehicleIdentificationInlandModeOfTransport
-      .loadPage()
+      .loadPage(pageTitle)
       .select(answer)
       .submitPage()
   }
@@ -89,10 +89,10 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport (.+)\?' page$"""
+  ) { (answer: String, departureMeansNo: String) =>
     RemoveDepartureMeansOfTransportPage
-      .loadPage()
+      .loadPage(departureMeansNo)
       .select(answer)
       .submitPage()
   }
