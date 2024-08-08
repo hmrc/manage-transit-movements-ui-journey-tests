@@ -254,7 +254,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Change link on the 'You have added 1 item' page
     And I click the Change link for Do you want to add supplementary units? on the Item 1 'Check your answers' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
     And I click radio option No on the 'You have added 1 item' page
     And I should see Amended status for items on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
@@ -278,5 +278,5 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
     When I submit an IE029 Release For Transit
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     Then I should be on the 'For your security we signed you out' page
