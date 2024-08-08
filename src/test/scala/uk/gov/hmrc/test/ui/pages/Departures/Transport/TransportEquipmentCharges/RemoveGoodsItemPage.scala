@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object RemoveGoodsItemPage extends YesNoPage {
   override def title(args: String*): String = args match {
-    case Seq(goodsItemNo) => String.format("Are you sure you want to remove goods item number %s?", goodsItemNo)
+    case Seq(goodsItemNo) => String.format("Are you sure you want to remove goods item number %s? - Departure declarations", goodsItemNo)
     case _                => throw InvalidTitleArgsException(s"Expected a goods item number but got: $args")
   }
 }

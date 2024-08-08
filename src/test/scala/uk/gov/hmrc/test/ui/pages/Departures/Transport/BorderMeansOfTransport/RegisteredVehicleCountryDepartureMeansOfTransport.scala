@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object RegisteredVehicleCountryDepartureMeansOfTransport extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add the registered country for this vehicle?"
+    "Do you want to add the registered country for this vehicle? - Departure declarations"
 
 }

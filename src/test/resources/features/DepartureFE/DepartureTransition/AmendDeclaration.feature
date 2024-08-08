@@ -37,7 +37,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
     And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Amend documents link on the 'Declaration summary' page
@@ -105,7 +105,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
     And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Amend documents link on the 'Declaration summary' page
@@ -171,7 +171,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend transport details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a method of payment for transport charges?' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
     And I should see Amended status for transport details on the 'Declaration summary' page
 
     And I click on the Amend documents link on the 'Declaration summary' page

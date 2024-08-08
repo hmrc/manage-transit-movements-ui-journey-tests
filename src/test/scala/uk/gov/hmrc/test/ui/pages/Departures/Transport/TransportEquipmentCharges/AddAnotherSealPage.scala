@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 object AddAnotherSealPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1")           => "You have added 1 seal"
-    case Seq(numberOfSeals) => String.format("You have added %s seals", numberOfSeals)
+    case Seq("1")           => "You have added 1 seal - Departure declarations"
+    case Seq(numberOfSeals) => String.format("You have added %s seals - Departure declarations", numberOfSeals)
     case _                  => throw InvalidTitleArgsException("Expected one argument")
   }
 }

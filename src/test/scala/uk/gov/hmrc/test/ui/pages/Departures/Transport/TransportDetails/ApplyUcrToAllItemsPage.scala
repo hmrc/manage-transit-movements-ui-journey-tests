@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object ApplyUcrToAllItemsPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to use the same Unique Consignment Reference (UCR) for all items?"
+    "Do you want to use the same Unique Consignment Reference (UCR) for all items? - Departure declarations"
 
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object ItemsDestinationCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "What is the country of destination?"
+  override def title(args: String*): String = "What is the country of destination? - Departure declarations"
 
 }

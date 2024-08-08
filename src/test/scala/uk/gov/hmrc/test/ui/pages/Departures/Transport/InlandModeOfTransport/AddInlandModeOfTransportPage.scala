@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddInlandModeOfTransportPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an inland mode of transport?"
+  override def title(args: String*): String = "Do you want to add an inland mode of transport? - Departure declarations"
 
 }

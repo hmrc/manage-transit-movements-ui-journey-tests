@@ -186,16 +186,16 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle? - Departure declarations' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I select radio option Yes on the 'You have added 1 departure means of transport' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I choose to click on the Remove link on the You have added 2 departure means of transport' page
     And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page
     And I select radio option No on the 'You have added 1 departure means of transport' page
@@ -211,7 +211,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the Check your answers section Modes and means of transport page
+    And I submit on the Check your answers section Modes and means of transport - Departure declarations page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -245,13 +245,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click the Remove link  on the 'You have added 2 seals' page
     And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 transport equipment' page
     And I choose radio option Yes on the 'Do you want to add a container identification number?' page
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
 
     And I click the Remove link on the 'You have added 2 transport equipment' page
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
@@ -260,7 +260,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
 
@@ -499,7 +499,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I select radio option No on the 'You have added 1 departure means of transport' page
    ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
@@ -514,7 +514,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
           ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the Check your answers section Modes and means of transport page
+    And I submit on the Check your answers section Modes and means of transport - Departure declarations page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -529,9 +529,9 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I enter S001 on the 'What is the seal identification number?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
     And I choose radio option No on the 'You have added 1 transport equipment' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
     Then I should be on the 'Declaration summary' page
 
     # Documents - Previous document from list CL214

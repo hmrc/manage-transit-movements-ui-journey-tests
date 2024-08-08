@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AddConveyanceReferenceNumberPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add a conveyance reference number?"
+    "Do you want to add a conveyance reference number? - Departure declarations"
 
 }

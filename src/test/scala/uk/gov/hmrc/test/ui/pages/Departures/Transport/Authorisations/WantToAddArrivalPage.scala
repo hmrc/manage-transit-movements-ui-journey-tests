@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object WantToAddArrivalPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add the arrival date at the office of destination?"
+    "Do you want to add the arrival date at the office of destination? - Departure declarations"
 
 }

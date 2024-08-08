@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object ItemsSameDestinationCountryPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Are all the items being transported to the same country?"
+    "Are all the items being transported to the same country? - Departure declarations"
 
 }

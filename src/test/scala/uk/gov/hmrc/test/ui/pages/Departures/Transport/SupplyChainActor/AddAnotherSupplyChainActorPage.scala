@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AddAnotherSupplyChainActorPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 supply chain actor"
-    case _        => String.format("You have added %s supply chain actors", args: _*)
+    case Seq("1") => "You have added 1 supply chain actor - Departure declarations"
+    case _        => String.format("You have added %s supply chain actors - Departure declarations", args: _*)
   }
 }

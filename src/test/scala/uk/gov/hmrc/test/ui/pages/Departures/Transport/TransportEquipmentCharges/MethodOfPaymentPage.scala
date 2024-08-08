@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object MethodOfPaymentPage extends RadioPage {
 
-  override def title(args: String*): String = "Which method of payment do you want to use for transport charges?"
+  override def title(args: String*): String = "Which method of payment do you want to use for transport charges? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val methodOfPayment = answer match {

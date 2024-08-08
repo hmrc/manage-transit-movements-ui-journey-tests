@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddSealPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add a seal?", args: _*)
+  override def title(args: String*): String = String.format("Do you want to add a seal? - Departure declarations", args: _*)
 
 }

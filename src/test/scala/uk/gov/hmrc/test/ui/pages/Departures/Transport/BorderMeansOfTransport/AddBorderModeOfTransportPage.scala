@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AddBorderModeOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Are you using another vehicle to cross the border?"
+    "Are you using another vehicle to cross the border? - Departure declarations"
 
 }
