@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object OtherGuarantee3ReferencePage extends StringPage {
 
-  override def title(args: String*): String = "What is the reference for the guarantee?"
+  override def title(args: String*): String = "What is the reference for the guarantee? - Departure declarations"
 
 }

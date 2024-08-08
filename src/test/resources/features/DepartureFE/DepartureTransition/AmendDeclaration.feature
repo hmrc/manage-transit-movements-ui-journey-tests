@@ -60,7 +60,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Change link on the 'You have added 4 guarantees' page
     And I click the Change link for Liability amount on the Guarantee details 'Check your answers' page
     And I enter 999.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
@@ -128,7 +128,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Change link on the 'You have added 4 guarantees' page
     And I click the Change link for Liability amount on the Guarantee details 'Check your answers' page
     And I enter 999.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page
@@ -194,7 +194,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click the Change link on the 'You have added 4 guarantees' page
     And I click the Change link for Liability amount on the Guarantee details 'Check your answers' page
     And I enter 999.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
     And I choose radio option No on the 'You have added 4 guarantees' page
     And I should see Amended status for guarantee details on the 'Declaration summary' page
     And I click the Confirm and resend button on the 'Declaration summary' page

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmRemoveGuaranteePage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove this guarantee?"
+  override def title(args: String*): String = "Are you sure you want to remove this guarantee? - Departure declarations"
 
 }

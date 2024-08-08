@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.Page
 
 object GuaranteeBForTIRDeclarationPage extends Page {
 
-  override def title(args: String*): String = "Guarantee added for TIR declaration"
+  override def title(args: String*): String = "Guarantee added for TIR declaration - Departure declarations"
 
 }
