@@ -22,6 +22,6 @@ object AddAnotherOfficeOfExitPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
     case Seq("1") => "You have added 1 office of exit for transit"
-    case _        => String.format("You have added %s offices of exit for transit", args: _*)
+    case _        => String.format("You have added %s offices of exit for transit - Departure declarations", args: _*)
   }
 }

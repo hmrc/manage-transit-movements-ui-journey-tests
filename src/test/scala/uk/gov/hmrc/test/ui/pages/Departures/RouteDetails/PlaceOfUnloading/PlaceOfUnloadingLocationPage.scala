@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object PlaceOfUnloadingLocationPage extends StringPage {
 
-  override def title(args: String*): String = String.format("Where in %s is the place of unloading?", args: _*)
+  override def title(args: String*): String = String.format("Where in %s is the place of unloading? - Departure declarations", args: _*)
 
 }

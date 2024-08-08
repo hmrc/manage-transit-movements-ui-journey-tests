@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object LocationOfGoodsAddIdentificationPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an additional identifier for the location of goods?"
+  override def title(args: String*): String = "Do you want to add an additional identifier for the location of goods? - Departure declarations"
 
 }

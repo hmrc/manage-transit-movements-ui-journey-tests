@@ -31,7 +31,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Route details - Departure declarations page
     And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Amend transport details link on the 'Declaration summary' page
@@ -99,7 +99,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Route details - Departure declarations page
     And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Amend transport details link on the 'Declaration summary' page
@@ -165,7 +165,7 @@ Feature: End to end journey for amending a departure declaration - Transition
     And I click on the Amend route details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the location of goods? on the Route details 'Check your answers' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Route details - Departure declarations page
     And I should see Amended status for route details on the 'Declaration summary' page
 
     And I click on the Amend transport details link on the 'Declaration summary' page

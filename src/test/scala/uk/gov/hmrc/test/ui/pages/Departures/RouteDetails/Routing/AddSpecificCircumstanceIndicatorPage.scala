@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddSpecificCircumstanceIndicatorPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a specific circumstance indicator?"
+  override def title(args: String*): String = "Do you want to add a specific circumstance indicator? - Departure declarations"
 
 }

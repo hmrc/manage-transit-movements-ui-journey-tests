@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object PlaceOfUnloadingUnLocodePage extends StringPage {
 
-  override def title(args: String*): String = "What is the UN/LOCODE for the place of unloading?"
+  override def title(args: String*): String = "What is the UN/LOCODE for the place of unloading? - Departure declarations"
 
 }

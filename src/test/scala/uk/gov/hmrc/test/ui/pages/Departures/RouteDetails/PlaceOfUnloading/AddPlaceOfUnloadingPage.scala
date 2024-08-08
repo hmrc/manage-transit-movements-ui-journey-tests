@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPlaceOfUnloadingPage extends YesNoPage {
 
-  override def title(args: String*) = "Do you want to add a place of unloading?"
+  override def title(args: String*) = "Do you want to add a place of unloading? - Departure declarations"
 
 }

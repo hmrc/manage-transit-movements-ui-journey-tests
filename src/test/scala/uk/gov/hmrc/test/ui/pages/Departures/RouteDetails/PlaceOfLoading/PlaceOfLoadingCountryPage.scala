@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object PlaceOfLoadingCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "In which country is the place of loading?"
+  override def title(args: String*): String = "In which country is the place of loading? - Departure declarations"
 
 }

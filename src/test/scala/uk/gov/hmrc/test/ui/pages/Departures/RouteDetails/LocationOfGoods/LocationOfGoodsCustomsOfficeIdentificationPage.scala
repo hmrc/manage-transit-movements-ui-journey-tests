@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
-  override def title(args: String*): String = "What is the customs office identifier for the location of goods?"
+  override def title(args: String*): String = "What is the customs office identifier for the location of goods? - Departure declarations"
 
 }

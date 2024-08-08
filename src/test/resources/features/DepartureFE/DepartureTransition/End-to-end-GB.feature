@@ -83,7 +83,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Check your answers section Transit route page
+    And I submit on the Check your answers section Transit route - Departure declarations page
 
       ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
@@ -91,13 +91,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
 
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Bastia port, France?' page
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
@@ -110,7 +110,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
     And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
-    And I submit on the Check your answers section Location of goods page
+    And I submit on the Check your answers section Location of goods - Departure declarations page
 
       ## Place of loading UN LOCODE
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -125,8 +125,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select Italy on the 'Which country is the place of unloading in?' page
     And I enter Milano on the 'Where in Italy is the place of unloading?' page
 
-    And I submit on the Check your answers section Places of loading and unloading page
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Places of loading and unloading - Departure declarations page
+    And I submit on the Check your answers section Route details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
 
@@ -448,7 +448,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
       ## Transit route country optional
-    And I submit on the Check your answers section Transit route page
+    And I submit on the Check your answers section Transit route - Departure declarations page
 
       ## Country of Transit
     And I choose radio option Yes on the 'Does the transit include any T2 declarations?' page
@@ -456,7 +456,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)?' page
 
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
@@ -465,10 +465,10 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option GPS coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
-    And I submit on the Check your answers section Location of goods page
+    And I submit on the Check your answers section Location of goods - Departure declarations page
 
     ## Route details CYA
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Route details - Departure declarations page
     Then I should be on the 'Declaration summary' page
 
      ## Guarantee details

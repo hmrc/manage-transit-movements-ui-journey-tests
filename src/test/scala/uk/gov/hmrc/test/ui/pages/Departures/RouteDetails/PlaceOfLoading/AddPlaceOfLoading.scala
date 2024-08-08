@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPlaceOfLoading extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a place of loading?"
+  override def title(args: String*): String = "Do you want to add a place of loading? - Departure declarations"
 
 }
