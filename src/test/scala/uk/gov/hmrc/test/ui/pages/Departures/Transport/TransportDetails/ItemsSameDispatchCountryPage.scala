@@ -21,5 +21,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object ItemsSameDispatchCountryPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Are all the items being dispatched from the same country?"
+    "Are all the items being dispatched from the same country? - Departure declarations"
 }

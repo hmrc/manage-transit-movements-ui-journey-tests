@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object TypeSupplyChainActorPage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of supply chain actor do you want to add?"
+  override def title(args: String*): String = "Which type of supply chain actor do you want to add? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val typeSupplyChainActor = answer match {

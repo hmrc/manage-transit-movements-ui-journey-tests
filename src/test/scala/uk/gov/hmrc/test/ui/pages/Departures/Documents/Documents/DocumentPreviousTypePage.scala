@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object DocumentPreviousTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What previous document do you want to add?"
+  override def title(args: String*): String = "What previous document do you want to add? - Departure declarations"
 
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddContainerIdentificationNumberPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a container identification number?"
+  override def title(args: String*): String = "Do you want to add a container identification number? - Departure declarations"
 
 }

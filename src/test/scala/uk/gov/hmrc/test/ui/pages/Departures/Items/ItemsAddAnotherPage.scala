@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object ItemsAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 item"
-    case _        => String.format("You have added %s items", args: _*)
+    case Seq("1") => "You have added 1 item - Departure declarations"
+    case _        => String.format("You have added %s items - Departure declarations", args: _*)
   }
 }

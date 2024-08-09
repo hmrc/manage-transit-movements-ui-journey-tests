@@ -58,7 +58,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select United Kingdom on the 'Which country is the consignee based in?' page
     And I fill in the address on the 'What is the consignee’s address?' page
 
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
 
@@ -83,7 +83,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
-    And I submit on the Check your answers section Transit route page
+    And I submit on the Check your answers section Transit route - Departure declarations page
 
       ## Office of transit country page - removing a transit office
     And I select Germany on the 'Which country is the office of transit in?' page
@@ -91,13 +91,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
 
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
     And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page
     And I choose fill in the date and time on the 'When do you expect the transit to arrive in Bastia port, France?' page
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page
     And I choose radio option No on the 'You have added 1 office of transit' page
@@ -110,7 +110,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add a contact for the location of goods?' page
     And I enter Locator Joe on the 'Who is the contact for the location of goods?' page
     And I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page
-    And I submit on the Check your answers section Location of goods page
+    And I submit on the Check your answers section Location of goods - Departure declarations page
 
       ## Place of loading UN LOCODE
     And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page
@@ -125,8 +125,8 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select Italy on the 'Which country is the place of unloading in?' page
     And I enter Milano on the 'Where in Italy is the place of unloading?' page
 
-    And I submit on the Check your answers section Places of loading and unloading page
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Places of loading and unloading - Departure declarations page
+    And I submit on the Check your answers section Route details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
 
@@ -142,7 +142,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 120 on the 'How much is the liability in pounds?' page
     And I enter AC01 on the 'What is the access code?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
 
 
     And I click the Remove link on the 'You have added 2 guarantees' page
@@ -153,7 +153,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 123.00 on the 'How much is the liability in pounds?' page
 
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 2 guarantees' page
     And I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page
@@ -161,14 +161,14 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 3 guarantees' page
     And I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page
     And I choose radio option Yes on the 'Do you want to add a liability for the guarantee?' page
     And I select GBP on the 'What currency do you want to use for the liability?' page
     And I enter 54.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
 
     And I choose radio option No on the 'You have added 4 guarantees' page
     Then I should be on the 'Declaration summary' page
@@ -186,16 +186,16 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Inland mode of transport
     And I choose radio option Yes on the 'Do you want to add an inland mode of transport?' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
-    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle?' page
+    And I choose radio option Yes on the departure means 'Do you want to add identification for this vehicle? - Departure declarations' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I select radio option Yes on the 'You have added 1 departure means of transport' page
     And I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number GB1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the inland mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I choose to click on the Remove link on the You have added 2 departure means of transport' page
     And I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page
     And I select radio option No on the 'You have added 1 departure means of transport' page
@@ -211,7 +211,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the Check your answers section Modes and means of transport page
+    And I submit on the Check your answers section Modes and means of transport - Departure declarations page
 
       ## Supply chain actor
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
@@ -245,13 +245,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click the Remove link  on the 'You have added 2 seals' page
     And I click radio option Yes on the 'Are you sure you want to remove this seal?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 transport equipment' page
     And I choose radio option Yes on the 'Do you want to add a container identification number?' page
     And I enter C002 on the 'What is the container identification number?' page
     And I choose radio option No on the 'Do you want to add a seal?' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
 
     And I click the Remove link on the 'You have added 2 transport equipment' page
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
@@ -260,7 +260,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
       ## Charges
     And I choose radio option Yes on the 'Do you want to add a method of payment for transport charges?' page
     And I choose radio option Credit card on the 'Which method of payment do you want to use for transport charges?' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
 
@@ -270,7 +270,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     #  Add a Supporting document from list 213
     And I choose radio option Yes on the 'You have added 1 document' page
@@ -280,13 +280,13 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 010101 on the 'What is the line item number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 2 documents' page
         #  Add a Transport document from list 754
     Then I select Transport - (N741) Master airwaybill on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     Then I choose radio option No on the 'You have added 3 documents' page
 
@@ -359,7 +359,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I click radio option Yes on the 'Are you sure you want to remove this additional information?' page
     And I click radio option No on the 'You have added 1 additional information' page
     #Items Summary page
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click radio option Yes on the 'You have added 1 item' page
 
@@ -393,7 +393,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #2nd Item - Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #2nd Item - Items Summary
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click the Remove link on the 'You have added 2 items' page
     And I click radio option Yes on the 'Are you sure you want to remove item 1?' page
@@ -432,7 +432,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
 
       ## Consignee
     And I choose radio option Yes on the 'Is there more than one consignee?' page
-    And I submit on the Check your answers section Trader details page
+    And I submit on the Check your answers section Trader details - Departure declarations page
 
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for trader details on the 'Declaration summary' page
@@ -448,7 +448,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option No on the 'Are you using a binding itinerary?' page
 
       ## Transit route country optional
-    And I submit on the Check your answers section Transit route page
+    And I submit on the Check your answers section Transit route - Departure declarations page
 
       ## Country of Transit
     And I choose radio option Yes on the 'Does the transit include any T2 declarations?' page
@@ -456,7 +456,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I select Brest bureau (FR000690) on the 'Where in France is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in Brest bureau (FR000690)?' page
 
-    And I submit on the Check your answers section Office of transit page
+    And I submit on the Check your answers section Office of transit - Departure declarations page
     And I choose radio option No on the 'You have added 1 office of transit' page
 
       ## Location of goods
@@ -465,10 +465,10 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option GPS coordinates on the 'How do you want to identify the location of goods?' page
     And I enter 50.96622 and 1.86211 on the 'What are the coordinates for the location of goods' page
     And I choose radio option No on the 'Do you want to add a contact for the location of goods?' page
-    And I submit on the Check your answers section Location of goods page
+    And I submit on the Check your answers section Location of goods - Departure declarations page
 
     ## Route details CYA
-    And I submit on the Check your answers section Route details page
+    And I submit on the Check your answers section Route details - Departure declarations page
     Then I should be on the 'Declaration summary' page
 
      ## Guarantee details
@@ -480,7 +480,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 0 on the 'How much is the liability in pounds?' page
     And I choose radio option No on the 'Do you want to use the default liability amount of 10000 euros?' page
     And I enter 1299.99 on the 'How much is the liability in pounds?' page
-    And I submit on the Check your answers section Guarantee details page
+    And I submit on the Check your answers section Guarantee details - Departure declarations page
 
     And I choose radio option No on the 'You have added 1 guarantee' page
     Then I should be on the 'Declaration summary' page
@@ -499,7 +499,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option IATA flight number on the inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter registration number 1234567 on the 'What is the identification number for this?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
-    And I submit on the Check your answers section Departure means of transport page
+    And I submit on the Check your answers section Departure means of transport - Departure declarations page
     And I select radio option No on the 'You have added 1 departure means of transport' page
    ## Border means of transport
     And I choose radio option Yes on 'Do you want to add a border mode of transport?' page
@@ -514,7 +514,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
           ## Conveyance Reference Number
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
-    And I submit on the Check your answers section Modes and means of transport page
+    And I submit on the Check your answers section Modes and means of transport - Departure declarations page
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
@@ -529,9 +529,9 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
     And I enter S001 on the 'What is the seal identification number?' page
     And I choose radio option No on the 'You have added 1 seal' page
-    And I submit on the Check your answers section Transport equipment page
+    And I submit on the Check your answers section Transport equipment - Departure declarations page
     And I choose radio option No on the 'You have added 1 transport equipment' page
-    And I submit on the Check your answers section Transport details page
+    And I submit on the Check your answers section Transport details - Departure declarations page
     Then I should be on the 'Declaration summary' page
 
     # Documents - Previous document from list CL214
@@ -541,12 +541,12 @@ Feature: End to end journey for Great Britain office of departure - Transition
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
     And I enter 12345 on the Documents 'Enter the additional information' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option Yes on the 'You have added 1 document' page
     And I select Transport - (N705) Bill of lading on the 'What type of document do you want to add?' page
     And I enter 4312 on the 'What is the document’s reference number?' page
-    And I submit on the Check your answers section Documents page
+    And I submit on the Check your answers section Documents - Departure declarations page
 
     And I choose radio option No on the 'You have added 2 document' page
 
@@ -588,7 +588,7 @@ Feature: End to end journey for Great Britain office of departure - Transition
     #Additional Information
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
     #Items Summary
-    And I submit on the Check your answers section Items page
+    And I submit on the Check your answers section Items - Departure declarations page
 
     And I click radio option No on the 'You have added 1 item' page
     And I click the Confirm and send button on the 'Declaration summary' page

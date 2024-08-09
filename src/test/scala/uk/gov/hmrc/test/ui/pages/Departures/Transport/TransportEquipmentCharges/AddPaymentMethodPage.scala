@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPaymentMethodPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a method of payment for transport charges?"
+  override def title(args: String*): String = "Do you want to add a method of payment for transport charges? - Departure declarations"
 }

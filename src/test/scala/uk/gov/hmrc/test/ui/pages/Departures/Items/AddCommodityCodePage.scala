@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddCommodityCodePage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add a commodity code?")
+  override def title(args: String*): String = String.format("Do you want to add a commodity code? - Departure declarations")
 
 }

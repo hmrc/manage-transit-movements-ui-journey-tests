@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DeclareQuantityOfPackagePage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to declare the quantity of this package?")
+  override def title(args: String*): String = String.format("Do you want to declare the quantity of this package? - Departure declarations")
 
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddCarrierPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a carrier?"
+  override def title(args: String*): String = "Do you want to add a carrier? - Departure declarations"
 
 }

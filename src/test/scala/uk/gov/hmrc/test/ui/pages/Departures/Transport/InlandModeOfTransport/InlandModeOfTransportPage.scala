@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object InlandModeOfTransportPage extends RadioPage {
 
-  override def title(args: String*): String = "Which inland mode of transport are you using?"
+  override def title(args: String*): String = "Which inland mode of transport are you using? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val modeOfTransportCSSValue = answer match {

@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object AuthorisationTypePage extends RadioPage {
 
-  override def title(args: String*): String = "Which type of authorisation do you want to add?"
+  override def title(args: String*): String = "Which type of authorisation do you want to add? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val authorisationType = answer match {

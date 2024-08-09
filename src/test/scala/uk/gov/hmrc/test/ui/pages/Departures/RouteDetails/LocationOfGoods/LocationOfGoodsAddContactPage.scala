@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object LocationOfGoodsAddContactPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a contact for the location of goods?"
+  override def title(args: String*): String = "Do you want to add a contact for the location of goods? - Departure declarations"
 
 }

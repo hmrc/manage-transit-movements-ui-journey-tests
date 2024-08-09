@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddLineItemNumberPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a line item number?"
+  override def title(args: String*): String = "Do you want to add a line item number? - Departure declarations"
 
 }

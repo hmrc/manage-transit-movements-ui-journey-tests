@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object WantToAddAuthorisation extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add an authorisation?"
+    "Do you want to add an authorisation? - Departure declarations"
 
 }

@@ -20,5 +20,5 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveSupplyChainActorPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove this supply chain actor?"
+  override def title(args: String*): String = "Are you sure you want to remove this supply chain actor? - Departure declarations"
 }

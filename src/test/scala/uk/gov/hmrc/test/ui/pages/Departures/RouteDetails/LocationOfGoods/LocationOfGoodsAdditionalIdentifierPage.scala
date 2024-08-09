@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object LocationOfGoodsAdditionalIdentifierPage extends StringPage {
 
-  override def title(args: String*): String = "What is the additional identifier for the location of goods?"
+  override def title(args: String*): String = "What is the additional identifier for the location of goods? - Departure declarations"
 
 }

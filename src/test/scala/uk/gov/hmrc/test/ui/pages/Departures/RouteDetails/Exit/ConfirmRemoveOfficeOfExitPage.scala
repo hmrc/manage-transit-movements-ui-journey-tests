@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmRemoveOfficeOfExitPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove this office of exit for transit?"
+  override def title(args: String*): String = "Are you sure you want to remove this office of exit for transit? - Departure declarations"
 
 }

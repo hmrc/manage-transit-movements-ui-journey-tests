@@ -21,8 +21,8 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object AddAnotherBorderMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 border means of transport"
-    case _        => String.format("You have added %s border means of transport", args: _*)
+    case Seq("1") => "You have added 1 border means of transport - Departure declarations"
+    case _        => String.format("You have added %s border means of transport - Departure declarations", args: _*)
   }
 
 }

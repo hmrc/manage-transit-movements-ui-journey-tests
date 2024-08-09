@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object TransportCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "What country is this vehicle registered to?"
+  override def title(args: String*): String = "What country is this vehicle registered to? - Departure declarations"
 
 }

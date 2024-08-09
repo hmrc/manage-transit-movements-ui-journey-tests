@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object MeasurementSupplementaryUnitsPage extends StringPage {
 
-  override def title(args: String*): String = "How many supplementary units does the item include?"
+  override def title(args: String*): String = "How many supplementary units does the item include? - Departure declarations"
 
 }

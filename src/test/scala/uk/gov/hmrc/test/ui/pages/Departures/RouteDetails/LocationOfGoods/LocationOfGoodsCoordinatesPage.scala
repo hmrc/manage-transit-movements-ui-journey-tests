@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.CoordinatesPage
 
 object LocationOfGoodsCoordinatesPage extends CoordinatesPage {
 
-  override def title(args: String*): String = "What are the coordinates for the location of goods?"
+  override def title(args: String*): String = "What are the coordinates for the location of goods? - Departure declarations"
 
 }

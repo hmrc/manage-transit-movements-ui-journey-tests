@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object LiabilityForGuarantee extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a liability for the guarantee?"
+  override def title(args: String*): String = "Do you want to add a liability for the guarantee? - Departure declarations"
 
 }

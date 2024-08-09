@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object ConveyanceReferenceNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the conveyance reference number?"
+  override def title(args: String*): String = "What is the conveyance reference number? - Departure declarations"
 
 }

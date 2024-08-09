@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddCustomsOfficeOfExitPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add a customs office of exit?"
+  override def title(args: String*): String = "Do you want to add a customs office of exit? - Departure declarations"
 
 }

@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object PlaceOfLoadingLocationPage extends StringPage {
 
-  override def title(args: String*): String = String.format("Where in %s is the place of loading?", args: _*)
+  override def title(args: String*): String = String.format("Where in %s is the place of loading? - Departure declarations", args: _*)
 
 }

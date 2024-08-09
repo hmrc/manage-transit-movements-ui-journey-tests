@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object ContainersPage extends RadioPage {
 
-  override def title(args: String*): String = "Are you using any shipping containers to transport the goods?"
+  override def title(args: String*): String = "Are you using any shipping containers to transport the goods? - Departure declarations"
 
   override def select(answer: String): this.type = {
     answer match {

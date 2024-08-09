@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmRemoveDocumentFromItemPage extends YesNoPage {
 
-  override def title(args: String*): String = "Are you sure you want to remove this document from the item?"
+  override def title(args: String*): String = "Are you sure you want to remove this document from the item? - Departure declarations"
 
 }

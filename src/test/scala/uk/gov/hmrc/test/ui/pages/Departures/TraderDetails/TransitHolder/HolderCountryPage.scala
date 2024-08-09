@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object HolderCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "Which country is the transit holder based in?"
+  override def title(args: String*): String = "Which country is the transit holder based in? - Departure declarations"
 
 }

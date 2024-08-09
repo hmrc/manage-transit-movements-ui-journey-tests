@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object ConsignorCountryPage extends SelectPage {
 
-  override def title(args: String*): String = "Which country is the consignor based in?"
+  override def title(args: String*): String = "Which country is the consignor based in? - Departure declarations"
 
 }

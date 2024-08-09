@@ -23,7 +23,7 @@ object OfficeOfTransitEtaPage extends DateTimePage {
   override def title(args: String*): String = args match {
     case Seq(office, country) =>
       String.format(
-        "When do you expect the transit to arrive in %s, %s?",
+        "When do you expect the transit to arrive in %s, %s? - Departure declarations",
         office,
         country
       )

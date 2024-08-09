@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object MeasurementGrossWeightPage extends StringPage {
 
-  override def title(args: String*): String = "What is the item’s gross weight?"
+  override def title(args: String*): String = "What is the item’s gross weight? - Departure declarations"
 
 }

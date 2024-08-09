@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddAnotherContainerPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("You have added %s transport equipment", args: _*)
+  override def title(args: String*): String = String.format("You have added %s transport equipment - Departure declarations", args: _*)
 
 }

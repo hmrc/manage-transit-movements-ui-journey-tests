@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object RemoveBorderMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Are you sure you want to remove this border means of transport?"
+    "Are you sure you want to remove this border means of transport? - Departure declarations"
 
 }

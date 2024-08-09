@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object GuaranteeLiabilityAmount extends StringPage {
 
-  override def title(args: String*): String = "How much is the liability amount?"
+  override def title(args: String*): String = "How much is the liability amount? - Departure declarations"
 
 }

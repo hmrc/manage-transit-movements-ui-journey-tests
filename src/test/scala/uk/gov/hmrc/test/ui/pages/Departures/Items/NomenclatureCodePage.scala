@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object NomenclatureCodePage extends StringPage {
 
-  override def title(args: String*): String = "What is the combined nomenclature code?"
+  override def title(args: String*): String = "What is the combined nomenclature code? - Departure declarations"
 
 }

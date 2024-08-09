@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.PostalCodePage
 
 object LocationOfGoodsPostalCodePage extends PostalCodePage {
 
-  override def title(args: String*): String = "What is the address for the location of goods?"
+  override def title(args: String*): String = "What is the address for the location of goods? - Departure declarations"
 
   override val streetNumber: String = "121"
   override val postalCode: String   = "M19 6LL"

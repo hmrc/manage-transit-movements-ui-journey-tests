@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object PackageTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What type of package was used to transport the goods into the UK?"
+  override def title(args: String*): String = "What type of package was used to transport the goods into the UK? - Departure declarations"
 
 }

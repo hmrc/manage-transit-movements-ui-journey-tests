@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object ContainerIdentificationNumberPage extends StringPage {
 
-  override def title(args: String*): String = "What is the container identification number?"
+  override def title(args: String*): String = "What is the container identification number? - Departure declarations"
 
 }

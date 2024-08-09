@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AdditionalReferenceEnterNumberPage extends StringPage {
 
-  override def title(args: String*): String = "Enter the additional reference number"
+  override def title(args: String*): String = "Enter the additional reference number - Departure declarations"
 
 }

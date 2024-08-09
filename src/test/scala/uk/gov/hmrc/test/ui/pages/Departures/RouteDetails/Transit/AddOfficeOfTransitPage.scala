@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddOfficeOfTransitPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an office of transit?"
+  override def title(args: String*): String = "Do you want to add an office of transit? - Departure declarations"
 
 }

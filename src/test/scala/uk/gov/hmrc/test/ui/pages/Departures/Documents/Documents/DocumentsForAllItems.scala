@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object DocumentsForAllItems extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to use this document for all items?")
+  override def title(args: String*): String = String.format("Do you want to use this document for all items? - Departure declarations")
 
 }

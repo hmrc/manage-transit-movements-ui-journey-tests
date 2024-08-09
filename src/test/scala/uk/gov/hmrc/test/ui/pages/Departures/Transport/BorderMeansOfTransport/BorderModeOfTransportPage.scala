@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object BorderModeOfTransportPage extends RadioPage {
 
-  override def title(args: String*): String = "How is the transit crossing the border?"
+  override def title(args: String*): String = "How is the transit crossing the border? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val modeOfTransportCSSValue = answer match {

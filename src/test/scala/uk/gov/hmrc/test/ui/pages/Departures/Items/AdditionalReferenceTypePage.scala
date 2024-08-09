@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object AdditionalReferenceTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What type of additional reference do you want to add?"
+  override def title(args: String*): String = "What type of additional reference do you want to add? - Departure declarations"
 
 }

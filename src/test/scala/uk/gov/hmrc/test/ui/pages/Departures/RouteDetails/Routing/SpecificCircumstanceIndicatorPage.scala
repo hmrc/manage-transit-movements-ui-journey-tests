@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object SpecificCircumstanceIndicatorPage extends RadioPage {
 
-  override def title(args: String*): String = "Which specific circumstance indicator do you want to add?"
+  override def title(args: String*): String = "Which specific circumstance indicator do you want to add? - Departure declarations"
 
   override def select(answer: String): this.type = {
     val value = answer match {
