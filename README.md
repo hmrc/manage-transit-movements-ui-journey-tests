@@ -14,6 +14,7 @@ This is the UI journey test repository for the following frontend services:
 - manage-transit-movements-cancellation-frontend
 - manage-transit-movements-unloading-frontend
 - ctc-presentation-notification-frontend
+- ctc-guarantee-balance-frontend-v2
 
 ## Prerequisites
 * Docker
@@ -26,6 +27,7 @@ This is the UI journey test repository for the following frontend services:
   * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE` - for services in Post transition mode
   * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE_TRANSITION` - for services in Transition mode
       * note - Post Transition services do not have prelodgement disabled (additional declaration type)
+  * * `sm2 --start CTC_TRADERS_GUARANTEE_BALANCE_ACCEPTANCE_V2` - for check guarantee balance service
 
 
 * Run Transition mode tests:
@@ -46,6 +48,9 @@ This is the UI journey test repository for the following frontend services:
     * `./run_with_tags.sh Cancellation`
     * `./run_with_tags.sh Unloading`
     * `./run_with_tags.sh Manage`
+
+* Run Check Guarantee Balance tests:
+  * isolated test with `./run_with_tags.sh GetGuaranteeBalance`
 
 
 * Run individual departure journey tests
