@@ -25,10 +25,17 @@ trait Page extends BasePage {
     this
   }
 
+  val departureSection: String = "Departure declarations"
+  val arrivalSection: String = "Arrival notifications"
+  val guaranteeSection: String = "Guarantee balance"
+
   val serviceName: String = "Manage your transit movements"
 
   private def onPage(pageTitle: String): Unit =
-    if (driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
+    if (driver.getTitle != s"$pageTitle - $arrivalSection - $serviceName - GOV.UK" &
+      driver.getTitle != s"$pageTitle - $departureSection - $serviceName - GOV.UK" &
+      driver.getTitle != s"$pageTitle - $guaranteeSection - $serviceName - GOV.UK" &
+      driver.getTitle != s"$pageTitle - $serviceName - GOV.UK")
       throw PageNotFoundException(
         s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
       )
