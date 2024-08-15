@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GetBalanceGuaranteeAccessCodePage extends StringPage with GuaranteeBalancePage {
+object GetBalanceGuaranteeAccessCodePage extends StringPage {
 
   override def title(args: String*): String = "What is the access code?"
 
