@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GetBalanceCYAPage extends StringPage with GuaranteeBalancePage {
+object GetBalanceCYAPage extends StringPage {
 
   override def title(args: String*): String = "Check your answers"
 

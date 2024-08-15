@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GetBalanceCantCheckBalancePage extends StringPage with GuaranteeBalancePage {
+object GetBalanceCantCheckBalancePage extends StringPage {
 
   override def title(args: String*): String = "We could not check your guarantee balance"
 

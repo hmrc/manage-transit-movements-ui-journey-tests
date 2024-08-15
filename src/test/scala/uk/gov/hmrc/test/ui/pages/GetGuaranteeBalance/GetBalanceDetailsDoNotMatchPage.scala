@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GetBalanceDetailsDoNotMatchPage extends StringPage with GuaranteeBalancePage {
+object GetBalanceDetailsDoNotMatchPage extends StringPage {
 
   override def title(args: String*): String = "The Guarantee Reference Number (GRN) and access code do not match"
 

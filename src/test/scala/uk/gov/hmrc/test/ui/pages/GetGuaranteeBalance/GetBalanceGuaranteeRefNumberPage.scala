@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object GetBalanceGuaranteeRefNumberPage extends StringPage with GuaranteeBalancePage {
+object GetBalanceGuaranteeRefNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
   override def submitPage(): Unit           = clickById("continue")
