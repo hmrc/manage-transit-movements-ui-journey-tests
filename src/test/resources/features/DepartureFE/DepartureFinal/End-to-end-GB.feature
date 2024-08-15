@@ -75,21 +75,21 @@ Feature: End to end journey for Great Britain office of departure
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
 
       ## Country of routing - removing a transit country
-    And I select Andorra on the 'Which country do you want to add to the transit route?' page
+    And I select Germany on the 'Which country do you want to add to the transit route?' page
     And I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select France on the 'Which country do you want to add to the transit route?' page
     And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
-    And I select Germany on the 'Which country do you want to add to the transit route?' page
+    And I select Andorra on the 'Which country do you want to add to the transit route?' page
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
     And I choose radio option No on the 'You have added 2 countries to the transit route' page
     And I submit on the Check your answers section Transit route page
 
       ## Office of transit country page - removing a transit office
-    And I select Germany on the 'Which country is the office of transit in?' page
-    And I select Basel (DE004058) on the 'Where in Germany is the office of transit?' page
-    And I choose radio option Yes on the 'Do you want to add a time of arrival in Basel (DE004058)?' page
-    And I choose fill in the date and time on the 'When do you expect the transit to arrive in Basel, Germany?' page
+    And I select Andorra on the 'Which country is the office of transit in?' page
+    And I select CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) on the 'Where in Andorra is the office of transit?' page
+    And I choose radio option Yes on the 'Do you want to add a time of arrival in ADUANA DE ST. JULIÀ DE LÒRIA (AD000001)?' page
+    And I choose fill in the date and time on the 'When do you expect the transit to arrive in ADUANA DE ST. JULIÀ DE LÒRIA, Andorra?' page
     And I submit on the Check your answers section Office of transit page
     And I choose radio option Yes on the 'You have added 1 office of transit' page
     And I select France on the 'Which country is the office of transit in?' page
