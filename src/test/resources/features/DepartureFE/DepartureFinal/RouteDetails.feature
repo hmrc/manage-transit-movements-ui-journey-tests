@@ -39,8 +39,8 @@ Feature: Route details journey
       ## Office of transit country page - removing a transit office
     And I select Andorra on the 'Which country is the office of transit in?' page
     And I select CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) on the 'Where in Andorra is the office of transit?' page
-    And I choose radio option Yes on the 'Do you want to add a time of arrival in ADUANA DE ST. JULIÀ DE LÒRIA (AD000001)?' page
-    And I choose fill in the date and time on the 'When do you expect the transit to arrive in ADUANA DE ST. JULIÀ DE LÒRIA, Andorra?' page
+    And I choose radio option Yes on the 'Do you want to add a time of arrival in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)?' page
+    And I choose fill in the date and time on the 'When do you expect the transit to arrive in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA, Andorra?' page
     And I submit on the Check your answers section Office of transit page
 
     And I choose radio option Yes on the 'You have added 1 office of transit' page
