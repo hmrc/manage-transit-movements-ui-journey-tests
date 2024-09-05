@@ -20,7 +20,7 @@ import org.scalatest.concurrent.Eventually.eventually
 
 class CommonStepDef extends BaseStepDef {
 
-  And("""^(?:I )?wait for (.*) seconds$""") { t: Int =>
+  And("""^(?:I )?wait for (.*) seconds$""") { (t: Int) =>
     val time = t * 1000
     eventually(Thread.sleep(time))
   }

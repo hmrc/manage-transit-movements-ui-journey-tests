@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import org.mongodb.scala.MongoClient
+import org.mongodb.scala.{MongoClient, SingleObservableFuture}
 
 import scala.language.postfixOps
 

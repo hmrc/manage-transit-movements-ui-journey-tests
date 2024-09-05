@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.utils
 
 import org.mongodb.scala.bson.BsonDocument
+import org.mongodb.scala.{SingleObservableFuture, bsonDocumentToDocument}
 import play.api.libs.json.Json
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
@@ -41,7 +42,7 @@ object CacheHelper extends HttpClient with FileHelper with JsonHelper with Mongo
       mongoClient
         .getDatabase("manage-transit-movements-arrival-cache")
         .getCollection("user-answers")
-        .insertOne(BsonDocument.apply(Json.stringify(json)))
+        .insertOne(bsonDocumentToDocument(BsonDocument(Json.stringify(json))))
         .toFuture()
     }
   }
