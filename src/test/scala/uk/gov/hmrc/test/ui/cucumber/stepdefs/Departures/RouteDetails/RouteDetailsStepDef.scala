@@ -17,7 +17,6 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.RouteDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.AddAnotherPageAdditionalInformation
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Routing._
 import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.T2DeclarationPage
 
@@ -73,7 +72,7 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   Then(
     """^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the 'You have added (.+) countr(?:y |ies )to the transit route' page$"""
-  ) { (numberOfCountries: String, numberOfCountriesInTitle: String) =>
+  ) { (numberOfCountries: String, _: String) =>
     TransitRouteAddAnotherCountryPage
       .loadPage(numberOfCountries)
   }

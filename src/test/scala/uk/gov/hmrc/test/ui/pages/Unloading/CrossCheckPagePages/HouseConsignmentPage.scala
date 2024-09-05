@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.Page
 
 object HouseConsignmentPage extends Page {

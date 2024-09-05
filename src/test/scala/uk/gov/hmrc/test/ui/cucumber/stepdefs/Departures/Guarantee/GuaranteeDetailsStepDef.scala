@@ -60,7 +60,7 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?(?:should )?have (.+) guarantees? added on 'You have added (.*) guarantees?' page$""") {
-    (numberOfGuarantees: String, guaranteesInTitle: String) =>
+    (numberOfGuarantees: String, _: String) =>
       AddAnotherGuaranteePage
         .loadPage(numberOfGuarantees)
   }

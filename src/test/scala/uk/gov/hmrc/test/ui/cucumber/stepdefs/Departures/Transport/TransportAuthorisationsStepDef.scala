@@ -31,7 +31,7 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?should have (.*) authorisations? on the 'You have added (.*) authorisations?' page$""") {
-    (numberOfAuthorisations: String, authorisationsInTitle: String) =>
+    (numberOfAuthorisations: String, _: String) =>
       AuthorisationAddAnotherPage
         .loadPage(numberOfAuthorisations)
   }

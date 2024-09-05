@@ -75,7 +75,7 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
 
   Then(
     """^(?:I )?(?:should )?have (.+) offices? of transit added on the 'You have added (.*) offices? of transit' page$"""
-  ) { (numberOfOffices: String, numberOfCountriesInTitle: String) =>
+  ) { (numberOfOffices: String, _: String) =>
     AddAnotherOfficeOfTransitPage
       .loadPage(numberOfOffices)
   }

@@ -16,9 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.GuaranteeBalance
 
-import org.scalatest.concurrent.Eventually.eventually
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance.{GetBalanceAvailableBalanceConfirmationPage, GetBalanceCYAPage, GetBalanceCantCheckBalancePage, GetBalanceDetailsDoNotMatchPage, GetBalanceGuaranteeAccessCodePage, GetBalanceGuaranteeRefNumberPage, GetBalanceInvalidGuaranteePage, GuaranteeRefNumberPage}
+import uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance.*
 
 class GetGuaranteeBalanceStepDef extends BaseStepDef {
 
