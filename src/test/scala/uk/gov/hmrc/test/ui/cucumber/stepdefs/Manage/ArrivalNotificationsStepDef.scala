@@ -33,6 +33,12 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
         .selectArrivalAction(linkText, mrn)
   }
 
+  And("""^(?:I )?click on the Make unloading remarks on the 'Review unloading remarks errors' page$""") {
+    () =>
+      ReviewUnloadingRemarksErrorsPage
+        .clickById("submit")
+  }
+
   Given("""^(?:I )?click on the (.+) link on the 'Arrival notifications' page$""") { (link: String) =>
     ArrivalNotificationsPage
       .loadPage()

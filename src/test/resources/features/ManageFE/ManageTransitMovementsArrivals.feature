@@ -22,6 +22,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 #    2929
   Scenario: 02 - Trader is able to view unloading remarks for all errors
     When I submit an IE007 Arrival Notification
+    And I submit an IE043 Unloading Permission With Seals
     And I submit an IE044 Unloading Remarks Notification With Seals
     And I submit an IE057 Unloading Remarks Rejection
         #cut-over
@@ -32,6 +33,14 @@ Feature: Manage transit movements frontend tests for Arrivals
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I should be on the 'Review unloading remarks errors' page
+    And I click on the Make unloading remarks on the 'Review unloading remarks errors' page
+    And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
+    Then I click the Continue button on the 'Check the goods and note any discrepancies' page
+    And I choose radio option No on the 'Were there any discrepancies between the transit and unloading permission?' page
+
+    And I submit the 'Check your answers' page
+    And I should be on the 'Unloading remarks sent' page
     And I sign out
 
 
