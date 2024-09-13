@@ -7,12 +7,7 @@ Feature: End to end journey for amending an arrival notification - Final
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Arrival Notification Rejection
     And the user has submitted arrivalNotification.json for MRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
-
-        #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I should be on the 'Review notification errors' page
