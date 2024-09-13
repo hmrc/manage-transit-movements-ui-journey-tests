@@ -9,11 +9,7 @@ Feature: Manage transit movements frontend tests for Arrivals
   Scenario: 01 - Trader is able to view and make unloading remarks
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-        #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I should be on the 'Do you want to use the revised unloading procedure?' page
     And I sign out
@@ -25,11 +21,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I submit an IE043 Unloading Permission With Seals
     And I submit an IE044 Unloading Remarks Notification With Seals
     And I submit an IE057 Unloading Remarks Rejection
-        #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I should be on the 'Review unloading remarks errors' page
@@ -48,11 +40,7 @@ Feature: Manage transit movements frontend tests for Arrivals
   Scenario: 03 - Trader is able to view arrival notification rejections for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Arrival Notification Rejection
-        #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+   When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
     And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     Then I should be on the 'Review notification errors' page
