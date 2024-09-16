@@ -7,11 +7,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option No on the 'Are the goods too large to fit into a container?' page
@@ -29,11 +25,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
@@ -47,11 +39,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
@@ -79,11 +67,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
@@ -105,11 +89,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
@@ -125,11 +105,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
@@ -145,11 +121,7 @@ Feature: Submit unloading remarks with seals
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With No Seals
-            #cut-over
-    And I click on the View NCTS 5 arrival notifications link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #When I click on the View arrival notifications link on the 'Manage your transit movements' page
+    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page

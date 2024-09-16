@@ -6,11 +6,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
-        #cut-over
-    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page

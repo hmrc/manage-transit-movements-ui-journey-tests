@@ -8,11 +8,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     When I submit an IE015 Simplified Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
-        #cut-over
-    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page
     And I enter GBDEPE201HZ on the presentation 'What is the authorisation number for the location of goods?' page
@@ -90,11 +86,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     When I submit an IE015 Simplified Prelodged Departure Declaration Full
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
-        #cut-over
-    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page
     And I enter GBDEPE201HZ on the presentation 'What is the authorisation number for the location of goods?' page
@@ -110,11 +102,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     When I submit an IE015 Prelodged Departure Declaration
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
-        #cut-over
-    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page
     And I choose radio option Approved place on the presentation 'Which type of location are the goods in?' page
@@ -142,11 +130,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     When I submit an IE015 Prelodged Departure Declaration With Location Of Goods
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
-        #cut-over
-    And I click on the View NCTS 5 departure declarations link on the 'Manage your transit movements' page
-
-    # TODO 1 July
-    #And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     And I click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page
     And I choose radio option No on the presentation 'Do you want to add a UN LOCODE for the place of loading?' page
