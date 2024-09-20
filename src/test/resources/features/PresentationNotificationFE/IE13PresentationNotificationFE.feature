@@ -42,7 +42,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I select Amiens bureau (FR000100) on 'Where is the customs office at the border?' page
     And I choose radio No on the presentation 'Do you want to add a conveyance reference number?' page
     And I click the Remove link  on the 'You have added 2 border means of transport' page
-    And I click radio Yes on the 'Are you sure you want to remove this border means of transport?' page
+    And I click radio Yes on the 'Are you sure you want to remove border means of transport 1?' page
     And I choose radio Yes on the presentation 'You have added 1 border means of transport' page
     And I choose radio IATA flight number on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification number YATA011 on 'What is the identification number for this?' page
@@ -57,7 +57,7 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio Yes on the presentation 'You have added 1 seal' page
     And I enter S002 on the presentation 'What is the seal identification number?' page
     And I click the Remove link  on the presentation 'You have added 2 seals' page
-    And I click radio option Yes on the presentation 'Are you sure you want to remove seal S001?' page
+    And I click radio option Yes on the presentation 'Are you sure you want to remove this seal?' page
     And I choose radio No on the presentation 'You have added 1 seal' page
     And I select item1 on the presentation 'Which items does this transport equipment apply to?' page
     And I click the Change link on the 'You have applied 1 item to transport equipment 1' page

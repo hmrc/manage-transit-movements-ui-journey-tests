@@ -245,10 +245,10 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click radio (.*) on the 'Are you sure you want to remove this border means of transport\?' page$""") {
-    (answer: String) =>
+  And("""^(?:I )?click radio (.*) on the 'Are you sure you want to remove border means of transport (.*)\?' page$""") {
+    (answer: String, borderMeansOfTransportNumber: String) =>
       ActiveMeansOfBorderRemoveBorderMeansOfTransportPage
-        .loadPage()
+        .loadPage(borderMeansOfTransportNumber)
         .select(answer)
         .submitPage()
   }
@@ -304,10 +304,10 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove seal (.*)\?' page$""") {
-    (answer: String, sealIdNumber: String) =>
+  And("""^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove this seal\?' page$""") {
+    (answer: String) =>
       RemoveSealPage
-        .loadPage(sealIdNumber)
+        .loadPage()
         .select(answer)
         .submitPage()
   }
@@ -479,10 +479,10 @@ class PresentationNotificationStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this departure means of transport\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove departure means of transport (.*)\?' page$"""
+  ) { (answer: String, numberOfDepartureMeans: String) =>
     RemoveDepartureMeansPage
-      .loadPage()
+      .loadPage(numberOfDepartureMeans)
       .select(answer)
       .submitPage()
   }
