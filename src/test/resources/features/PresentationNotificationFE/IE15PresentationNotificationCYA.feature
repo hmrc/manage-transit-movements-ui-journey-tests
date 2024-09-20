@@ -52,7 +52,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     And I enter registration number NC15REG on the presentation 'What is the identification number for the departure means of transport?' page
     And I select United Kingdom on the presentation 'What country is the departure means of transport registered to?' page
     And I click the Remove link on the presentation 'You have added 2 departure means of transport' page
-    And I choose radio option Yes on the 'Are you sure you want to remove this departure means of transport?' page
+    And I choose radio option Yes on the 'Are you sure you want to remove departure means of transport 1?' page
     And I choose radio option No on the presentation 'You have added 1 departure means of transport' page
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page
