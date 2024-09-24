@@ -20,7 +20,6 @@ Feature: Submit unloading remarks with seals
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
 
-
   Scenario: 02 - Unloading remarks with new agreement and no discrepancies
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
@@ -30,8 +29,12 @@ Feature: Submit unloading remarks with seals
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
     Then I click the Continue button on the 'Check the goods and note any discrepancies' page
+    And I choose radio option Yes on the 'Were there any discrepancies between the transit and unloading permission?' page
+    Then I click the Continue button on the 'You cannot use the revised unloading procedure' page
+    And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
+    Then I click the Continue button on the 'Check the goods and note any discrepancies' page
     And I choose radio option No on the 'Were there any discrepancies between the transit and unloading permission?' page
-
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
 
