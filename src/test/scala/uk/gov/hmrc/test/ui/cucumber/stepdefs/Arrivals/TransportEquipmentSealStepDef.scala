@@ -21,30 +21,34 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal.{AddAnotherA
 
 class TransportEquipmentSealStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the add transport equipment page$""") { (answer: String) =>
-    AddTransportEquipmentPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add transport equipment page$""") {
+    (answer: String) =>
+      AddTransportEquipmentPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add seals page$""") { (answer: String) =>
-    AddContainerSealPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add seals page$""") {
+    (answer: String) =>
+      AddContainerSealPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the seal identification number page$""") { (answer: String) =>
-    ContainerSealIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the seal identification number page$""") {
+    (answer: String) =>
+      ContainerSealIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  When("""^(?:I )?click the (.*) link on the add another container seal page$""") { (sectionLink: String) =>
-    AddAnotherArrivalSealPage
-      .clickByPartialLinkText(sectionLink)
+  When("""^(?:I )?click the (.*) link on the add another container seal page$""") {
+    (sectionLink: String) =>
+      AddAnotherArrivalSealPage
+        .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?choose radio option (.*) on the Arrivals 'You have added (.*) seals?' page$""") {
@@ -63,10 +67,11 @@ class TransportEquipmentSealStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") { (answer: String) =>
-    SealIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.*) on the What is the seal identification number page$""") {
+    (answer: String) =>
+      SealIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 }

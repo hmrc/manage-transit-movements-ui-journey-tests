@@ -58,7 +58,8 @@ object ConsignmentCrossCheckPage extends Page {
     clickById(s"transportEquipment$index")
     this
   }
-  def selectSection(answer: String): this.type = {
+
+  def selectSection(answer: String): this.type                 = {
     val value = answer match {
       case "Departure means of transport" => "departureTransportMeans"
       case "Transport equipment"          => "transportEquipments"
@@ -69,7 +70,7 @@ object ConsignmentCrossCheckPage extends Page {
     this
   }
 
-  def selectSubSection(answer: String): this.type = {
+  def selectSubSection(answer: String): this.type                  = {
     val value = answer match {
       case "Seals"         => "transport-equipment-1-seals"
       case "Items applied" => "transport-equipment-1-items"
@@ -78,6 +79,7 @@ object ConsignmentCrossCheckPage extends Page {
     clickById(value)
     this
   }
+
   def selectSectionChild(answer: String, index: String): this.type = {
     val value = answer match {
       case "Departure means of transport" => s"departureTransportMeans$index"

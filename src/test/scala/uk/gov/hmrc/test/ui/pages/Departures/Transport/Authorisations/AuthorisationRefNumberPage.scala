@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.Authorisations
 import uk.gov.hmrc.test.ui.pages.StringPage
 
 object AuthorisationRefNumberPage extends StringPage {
+
   override def title(args: String*): String =
     String.format("What is the reference number for the %s authorisation?", args: _*)
 }

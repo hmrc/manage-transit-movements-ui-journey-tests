@@ -21,21 +21,24 @@ import uk.gov.hmrc.test.ui.pages.Departures.DeclarationSummary.DeclarationSummar
 
 class TaskListStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(?:should )?be on the 'Declaration summary' page$""") { () =>
-    DeclarationSummaryPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Declaration summary' page$""") {
+    () =>
+      DeclarationSummaryPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?click the (.+) link on the 'Declaration summary' page$""") { (answer: String) =>
-    DeclarationSummaryPage
-      .loadPage()
-      .selectDeclarationSection(answer)
+  Then("""^(?:I )?click the (.+) link on the 'Declaration summary' page$""") {
+    (answer: String) =>
+      DeclarationSummaryPage
+        .loadPage()
+        .selectDeclarationSection(answer)
   }
 
-  Then("""^(?:I )?click on the (.+) link on the 'Declaration summary' page$""") { (answer: String) =>
-    DeclarationSummaryPage
-      .loadPage()
-      .selectDeclarationSection(answer)
+  Then("""^(?:I )?click on the (.+) link on the 'Declaration summary' page$""") {
+    (answer: String) =>
+      DeclarationSummaryPage
+        .loadPage()
+        .selectDeclarationSection(answer)
   }
 
   And("""^(?:I )?should see (.*) status for (.+) on the 'Declaration summary' page$""") {
@@ -44,10 +47,11 @@ class TaskListStepDef extends BaseStepDef {
         .checkStatus(section, status)
   }
 
-  And("""^(?:I )?click the (?:Confirm and resend|Confirm and send) button on the 'Declaration summary' page$""") { () =>
-    DeclarationSummaryPage
-      .loadPage()
-      .submitPage()
+  And("""^(?:I )?click the (?:Confirm and resend|Confirm and send) button on the 'Declaration summary' page$""") {
+    () =>
+      DeclarationSummaryPage
+        .loadPage()
+        .submitPage()
   }
 
 }

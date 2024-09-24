@@ -21,9 +21,10 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals._
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") { () =>
-    ArrivalNotificationsPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") {
+    () =>
+      ArrivalNotificationsPage
+        .loadPage()
   }
 
   And("""^(?:I )?click on the (.*) link for MRN (.*) on the 'Arrival notifications' page$""") {
@@ -39,27 +40,32 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
         .clickById("submit")
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Arrival notifications' page$""") { (link: String) =>
-    ArrivalNotificationsPage
-      .loadPage()
-      .selectAction(link)
+  Given("""^(?:I )?click on the (.+) link on the 'Arrival notifications' page$""") {
+    (link: String) =>
+      ArrivalNotificationsPage
+        .loadPage()
+        .selectAction(link)
   }
 
-  And("""^(?:I )?enter (.+) in the Search field on the 'Arrival notifications' page$""") { (searchString: String) =>
-    ArrivalNotificationsPage
-      .loadPage()
-      .fillInput(searchString)
-      .clickById("submit")
-  }
-  And("""^(?:I )?should see the content (.*) on the 'Arrival notifications' page$""") { (content: String) =>
-    ArrivalNotificationsPage
-      .loadPage()
-      .checkForContent(content)
+  And("""^(?:I )?enter (.+) in the Search field on the 'Arrival notifications' page$""") {
+    (searchString: String) =>
+      ArrivalNotificationsPage
+        .loadPage()
+        .fillInput(searchString)
+        .clickById("submit")
   }
 
-  Then("""^(?:I )?should be on the 'Review notification errors' page$""") { () =>
-    ReviewNotificationErrorsPage
-      .loadPage()
+  And("""^(?:I )?should see the content (.*) on the 'Arrival notifications' page$""") {
+    (content: String) =>
+      ArrivalNotificationsPage
+        .loadPage()
+        .checkForContent(content)
+  }
+
+  Then("""^(?:I )?should be on the 'Review notification errors' page$""") {
+    () =>
+      ReviewNotificationErrorsPage
+        .loadPage()
   }
 
   Then("""^(?:I )?click on the Make another arrival notification link on the 'Review notification errors' page$""") {
@@ -69,19 +75,22 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
         .clickById("arrival-link")
   }
 
-  Then("""^(?:I )?should be on the 'Notification errors' page$""") { () =>
-    NotificationErrorsPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'Notification errors' page$""") {
+    () =>
+      NotificationErrorsPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") { () =>
-    ReviewUnloadingRemarksErrorsPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") {
+    () =>
+      ReviewUnloadingRemarksErrorsPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Unloading remarks errors' page$""") { () =>
-    UnloadingRemarksErrors
-      .loadPage()
+  Then("""^(?:I )?should be on the 'Unloading remarks errors' page$""") {
+    () =>
+      UnloadingRemarksErrors
+        .loadPage()
   }
 
 }

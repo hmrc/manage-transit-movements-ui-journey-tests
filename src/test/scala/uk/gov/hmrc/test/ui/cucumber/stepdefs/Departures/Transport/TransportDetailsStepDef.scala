@@ -30,11 +30,12 @@ class TransportDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the UCR\?' page$""") { (answer: String) =>
-    UniqueConsignmentReferencePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the UCR\?' page$""") {
+    (answer: String) =>
+      UniqueConsignmentReferencePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Are all the items being transported to the same country\?' page$""") {
@@ -55,42 +56,48 @@ class TransportDetailsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page$"""
-  ) { (answer: String) =>
-    ContainersPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ContainersPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
+
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an inland mode of transport\?' page$"""
-  ) { (answer: String) =>
-    AddInlandModeOfTransportPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      AddInlandModeOfTransportPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are all the items being dispatched from the same country\?' page$"""
-  ) { (answer: String) =>
-    ItemsSameDispatchCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ItemsSameDispatchCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the country of dispatch\?' page$""") { (answer: String) =>
-    CountryOfDispatchPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'What is the country of dispatch\?' page$""") {
+    (answer: String) =>
+      CountryOfDispatchPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the same destination country page$""") { (answer: String) =>
-    ItemsSameDestinationCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the same destination country page$""") {
+    (answer: String) =>
+      ItemsSameDestinationCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
 }

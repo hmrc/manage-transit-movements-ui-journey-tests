@@ -39,11 +39,12 @@ class SupplyChainActorStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter (.+) on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the (.*)\?' page$"""
-  ) { (answer: String, typeVal: String) =>
-    EoriTinSupplyChainActorPage
-      .loadPage(typeVal)
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String, typeVal: String) =>
+      EoriTinSupplyChainActorPage
+        .loadPage(typeVal)
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.+) supply chain actors?' page$""") {

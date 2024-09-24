@@ -23,20 +23,22 @@ class IncidentTransportMeansStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the Which identification do you want to use for the replacement means of transport page$"""
-  ) { (answer: String) =>
-    ReplacementTransportTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ReplacementTransportTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?enter (.+) on the What is the identification number for this page$"""
-  ) { (answer: String) =>
-    ReplacementTransportIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ReplacementTransportIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the What country is the replacement transport registered to page$""") {

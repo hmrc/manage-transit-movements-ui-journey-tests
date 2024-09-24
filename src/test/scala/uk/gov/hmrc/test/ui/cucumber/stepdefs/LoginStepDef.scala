@@ -32,16 +32,17 @@ object World {
 
 class LoginStepDef extends BaseStepDef {
 
-  And("""^I login with ID (.*)$""") { (id: String) =>
-    AuthorityWizard
-      .loadPage()
-      .fillInputs(id)
-      .submitPage()
+  And("""^I login with ID (.*)$""") {
+    (id: String) =>
+      AuthorityWizard
+        .loadPage()
+        .fillInputs(id)
+        .submitPage()
 
-    World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
-    World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
+      World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
+      World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
 
-    navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
+      navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
   }
 
 }
