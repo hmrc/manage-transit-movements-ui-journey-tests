@@ -24,35 +24,40 @@ import uk.gov.hmrc.test.ui.utils.CacheHelper
 
 class PreTaskListStepDef extends BaseStepDef with BasePage {
 
-  When("""^I input a random LRN on the 'What is the Local Reference Number\?' page$""") { () =>
-    LocalReferenceNumberPage
-      .loadPage()
-      .fillInput()
-      .submitPage()
+  When("""^I input a random LRN on the 'What is the Local Reference Number\?' page$""") {
+    () =>
+      LocalReferenceNumberPage
+        .loadPage()
+        .fillInput()
+        .submitPage()
   }
 
-  When("""^I input a random LRN on the 'What is the new Local Reference Number\?' page$""") { () =>
-    NewLocalReferenceNumberPage
-      .loadPage()
-      .fillInput()
-      .submitPage()
+  When("""^I input a random LRN on the 'What is the new Local Reference Number\?' page$""") {
+    () =>
+      NewLocalReferenceNumberPage
+        .loadPage()
+        .fillInput()
+        .submitPage()
   }
 
-  Then("""^(?:I )?enter (.+) on the 'What is the Local Reference Number\?' page$""") { (answer: String) =>
-    LocalReferenceNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  Then("""^(?:I )?enter (.+) on the 'What is the Local Reference Number\?' page$""") {
+    (answer: String) =>
+      LocalReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  Then("""^(?:I )?should be on the 'What is the Local Reference Number\?' page$""") { () =>
-    LocalReferenceNumberPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'What is the Local Reference Number\?' page$""") {
+    () =>
+      LocalReferenceNumberPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'What is the new Local Reference Number\?' page$""") { () =>
-    NewLocalReferenceNumberPage
-      .loadPage()
+  Then("""^(?:I )?should be on the 'What is the new Local Reference Number\?' page$""") {
+    () =>
+      NewLocalReferenceNumberPage
+        .loadPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Is this a standard or pre-lodged declaration\?' page$""") {
@@ -63,11 +68,12 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") { (answer: String) =>
-    OfficeOfDeparturePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Where is the office of departure\?' page$""") {
+    (answer: String) =>
+      OfficeOfDeparturePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Which type of procedure are you using\?' page$""") {
@@ -86,20 +92,22 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the TIR carnet reference\?' page$""") { (answer: String) =>
-    TIRCarnetPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the TIR carnet reference\?' page$""") {
+    (answer: String) =>
+      TIRCarnetPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Which type of safety and security details do you want to add\?' page$"""
-  ) { (answer: String) =>
-    SecurityDetailsPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      SecurityDetailsPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   When("""^the user has submitted (.+) for LRN (.+) and EORI number (.+)$""") {
@@ -111,11 +119,13 @@ class PreTaskListStepDef extends BaseStepDef with BasePage {
     (fileName: String, mrn: String, eoriNumber: String) =>
       CacheHelper.submitArrivalAnswers(fileName, mrn, eoriNumber)
   }
+
   And(
     """^(?:I )?click the Continue button on the standard declaration 'You can only make a standard declaration' page$"""
-  ) { () =>
-    StandardDeclarationMoreInformationPage
-      .loadPage()
-      .submitPage()
+  ) {
+    () =>
+      StandardDeclarationMoreInformationPage
+        .loadPage()
+        .submitPage()
   }
 }

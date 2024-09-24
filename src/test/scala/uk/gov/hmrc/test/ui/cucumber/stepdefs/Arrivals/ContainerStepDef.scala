@@ -18,26 +18,30 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Arrivals
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Arrivals.Container._
+
 class ContainerStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the container indicator page$""") { (answer: String) =>
-    ContainerIndicatorPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the container indicator page$""") {
+    (answer: String) =>
+      ContainerIndicatorPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the container identification number page$""") { (answer: String) =>
-    ContainerIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the container identification number page$""") {
+    (answer: String) =>
+      ContainerIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add container identification number page$""") { (answer: String) =>
-    AddContainerIdentificationNumberPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add container identification number page$""") {
+    (answer: String) =>
+      AddContainerIdentificationNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 }

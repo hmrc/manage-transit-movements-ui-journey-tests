@@ -21,15 +21,17 @@ import uk.gov.hmrc.test.ui.pages.Departures.Confirmation.DepartureConfirmationPa
 
 class DepartureConfirmationStepDef extends BaseStepDef {
 
-  And("""^(?:I )?click the (.+) link on the 'Departure declaration sent' page$""") { (link: String) =>
-    DepartureConfirmationPage
-      .loadPage()
-      .selectLink(link)
+  And("""^(?:I )?click the (.+) link on the 'Departure declaration sent' page$""") {
+    (link: String) =>
+      DepartureConfirmationPage
+        .loadPage()
+        .selectLink(link)
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Departure declaration sent' page$""") { () =>
-    DepartureConfirmationPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Departure declaration sent' page$""") {
+    () =>
+      DepartureConfirmationPage
+        .loadPage()
   }
 
 }

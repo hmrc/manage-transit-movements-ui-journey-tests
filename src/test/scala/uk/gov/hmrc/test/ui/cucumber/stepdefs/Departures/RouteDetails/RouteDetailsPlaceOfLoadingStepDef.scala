@@ -28,6 +28,7 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a place of loading\?' page$""") {
     (answer: String) =>
       AddPlaceOfLoading
@@ -36,27 +37,30 @@ class RouteDetailsPlaceOfLoadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") { (answer: String) =>
-    PlaceOfLoadingUnLocodePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of loading\?' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingUnLocodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of loading\?' page$"""
-  ) { (answer: String) =>
-    PlaceOfLoadingAddExtraInformationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      PlaceOfLoadingAddExtraInformationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'In which country is the place of loading\?' page$""") { (answer: String) =>
-    PlaceOfLoadingCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'In which country is the place of loading\?' page$""") {
+    (answer: String) =>
+      PlaceOfLoadingCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of loading\?' page$""") {

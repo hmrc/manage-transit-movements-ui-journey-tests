@@ -23,11 +23,12 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter (.+) reference number on the 'What is the reference number for the (.+) authorisation\?' page$"""
-  ) { (answer: String, authorisation: String) =>
-    AuthorisationRefNumberPage
-      .loadPage(authorisation)
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String, authorisation: String) =>
+      AuthorisationRefNumberPage
+        .loadPage(authorisation)
+        .fillInput(answer)
+        .submitPage()
   }
 
   Then("""^(?:I )?should have (.*) authorisations? on the 'You have added (.*) authorisations?' page$""") {
@@ -61,11 +62,12 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this (.+) authorisation\?' page$"""
-  ) { (answer: String, authorisationType: String) =>
-    RemoveAuthPage
-      .loadPage(authorisationType)
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String, authorisationType: String) =>
+      RemoveAuthPage
+        .loadPage(authorisationType)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page$""") {
@@ -78,20 +80,22 @@ class TransportAuthorisationsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page$"""
-  ) { (answer: String) =>
-    WantToAddAuthorisation
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      WantToAddAuthorisation
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the arrival date at the office of destination' page$"""
-  ) { (answer: String) =>
-    WantToAddArrivalPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      WantToAddArrivalPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
 }

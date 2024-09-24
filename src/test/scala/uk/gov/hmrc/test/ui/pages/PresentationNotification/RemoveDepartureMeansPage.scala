@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveDepartureMeansPage extends YesNoPage {
 
-
   override def title(args: String*): String =
     String.format("Are you sure you want to remove departure means of transport %s?", args: _*)
 

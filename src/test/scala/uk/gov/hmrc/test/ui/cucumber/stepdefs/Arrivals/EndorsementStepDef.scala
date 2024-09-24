@@ -21,39 +21,44 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Endorsement._
 
 class EndorsementStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the add endorsement page$""") { (answer: String) =>
-    AddEndorsementPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add endorsement page$""") {
+    (answer: String) =>
+      AddEndorsementPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?choose fill in the date on the endorsement date page$""") { () =>
-    EndorsementDatePage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?choose fill in the date on the endorsement date page$""") {
+    () =>
+      EndorsementDatePage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the endorsement authority page$""") { (answer: String) =>
-    EndorsementAuthorityPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the endorsement authority page$""") {
+    (answer: String) =>
+      EndorsementAuthorityPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the endorsement country page$""") { (answer: String) =>
-    EndorsementCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the endorsement country page$""") {
+    (answer: String) =>
+      EndorsementCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the endorsement location page$""") { (answer: String) =>
-    EndorsementLocationPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the endorsement location page$""") {
+    (answer: String) =>
+      EndorsementLocationPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
 }

@@ -22,25 +22,28 @@ import uk.gov.hmrc.test.ui.pages.Departures.Documents.Supporting.{AddLineItemNum
 
 class DocumentsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?select (.+) on the 'What type of document do you want to add\?' page$""") { (answer: String) =>
-    DocumentTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'What type of document do you want to add\?' page$""") {
+    (answer: String) =>
+      DocumentTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What previous document do you want to add\?' page$""") { (answer: String) =>
-    DocumentPreviousTypePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'What previous document do you want to add\?' page$""") {
+    (answer: String) =>
+      DocumentPreviousTypePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the document’s reference number\?' page$""") { (answer: String) =>
-    DocumentReferenceNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the document’s reference number\?' page$""") {
+    (answer: String) =>
+      DocumentReferenceNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) documents?' page$""") {
@@ -66,19 +69,21 @@ class DocumentsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the line item number\?' page$""") { (answer: String) =>
-    LineItemNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the line item number\?' page$""") {
+    (answer: String) =>
+      LineItemNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) documents?' page$"""
-  ) { (sectionLink: String, numberOfDocuments: String) =>
-    DocumentAddAnotherPage
-      .loadPage(numberOfDocuments)
-      .clickByPartialLinkText(sectionLink)
+  ) {
+    (sectionLink: String, numberOfDocuments: String) =>
+      DocumentAddAnotherPage
+        .loadPage(numberOfDocuments)
+        .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document\?' page$""") {

@@ -49,19 +49,21 @@ class RouteDetailsOfficeOfExitStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) offices? of exit for transit' page$"""
-  ) { (sectionLink: String, officesOfExitInTitle: String) =>
-    AddAnotherOfficeOfExitPage
-      .loadPage(officesOfExitInTitle)
-      .clickByPartialLinkText(sectionLink)
+  ) {
+    (sectionLink: String, officesOfExitInTitle: String) =>
+      AddAnotherOfficeOfExitPage
+        .loadPage(officesOfExitInTitle)
+        .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this office of exit for transit\?' page$"""
-  ) { (answer: String) =>
-    ConfirmRemoveOfficeOfExitPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ConfirmRemoveOfficeOfExitPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.) offices? of exit for transit' page$""") {

@@ -21,9 +21,10 @@ import uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance.*
 
 class GetGuaranteeBalanceStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?(?:should )?be on the 'What is the Guarantee Reference Number\?' page$""") { () =>
-    GuaranteeRefNumberPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'What is the Guarantee Reference Number\?' page$""") {
+    () =>
+      GuaranteeRefNumberPage
+        .loadPage()
   }
 
   Then("""^(?:I )?enter (.+) on the Get Balance 'What is the Guarantee Reference Number\?' page$""") {
@@ -34,17 +35,19 @@ class GetGuaranteeBalanceStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the Get Balance 'What is the access code\?' page$""") { (answer: String) =>
-    GetBalanceGuaranteeAccessCodePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the Get Balance 'What is the access code\?' page$""") {
+    (answer: String) =>
+      GetBalanceGuaranteeAccessCodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?submit on the Get Balance 'Check your answers' page$""") { () =>
-    GetBalanceCYAPage
-      .loadPage()
-      .submitPage()
+  And("""^(?:I )?submit on the Get Balance 'Check your answers' page$""") {
+    () =>
+      GetBalanceCYAPage
+        .loadPage()
+        .submitPage()
   }
 
   And("""^(?:I )?click the (.+) link on the 'The Guarantee Reference Number and access code do not match' page$""") {
@@ -54,25 +57,29 @@ class GetGuaranteeBalanceStepDef extends BaseStepDef {
         .selectAction(link)
   }
 
-  And("""^(?:I )?click the (.+) link on the 'We could not check your guarantee balance' page$""") { (link: String) =>
-    GetBalanceCantCheckBalancePage
-      .loadPage()
-      .selectAction(link)
+  And("""^(?:I )?click the (.+) link on the 'We could not check your guarantee balance' page$""") {
+    (link: String) =>
+      GetBalanceCantCheckBalancePage
+        .loadPage()
+        .selectAction(link)
   }
 
-  And("""^(?:I )?I click the change link for (.+) on the 'Check your answers' page$""") { (linkText: String) =>
-    GetBalanceCYAPage
-      .loadPage()
-      .clickLinkByIdTextSplit(linkText)
+  And("""^(?:I )?I click the change link for (.+) on the 'Check your answers' page$""") {
+    (linkText: String) =>
+      GetBalanceCYAPage
+        .loadPage()
+        .clickLinkByIdTextSplit(linkText)
   }
 
-  Then("""^(?:I )?(?:should )?see a confirmation of my balance on the 'Available balance' page$""") { () =>
-    GetBalanceAvailableBalanceConfirmationPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?see a confirmation of my balance on the 'Available balance' page$""") {
+    () =>
+      GetBalanceAvailableBalanceConfirmationPage
+        .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'We cannot get the balance for this type of guarantee' page$""") { () =>
-    GetBalanceInvalidGuaranteePage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'We cannot get the balance for this type of guarantee' page$""") {
+    () =>
+      GetBalanceInvalidGuaranteePage
+        .loadPage()
   }
 }

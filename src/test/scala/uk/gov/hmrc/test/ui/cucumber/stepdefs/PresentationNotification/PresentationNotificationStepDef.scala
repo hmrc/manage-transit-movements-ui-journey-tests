@@ -27,18 +27,20 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click the Continue button on the presentation 'More information needed to complete pre-lodged declaration' page$"""
-  ) { () =>
-    MoreInformationPage
-      .loadPage()
-      .submitPage()
+  ) {
+    () =>
+      MoreInformationPage
+        .loadPage()
+        .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page$"""
-  ) { () =>
-    ConfirmationNeededPage
-      .loadPage()
-      .submitPage()
+  ) {
+    () =>
+      ConfirmationNeededPage
+        .loadPage()
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the presentation 'Which type of location are the goods in\?' page$""") {
@@ -51,11 +53,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose a radio option (.*) on the presentation 'How do you want to identify the location of goods\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the presentation 'In which country is the location of goods\?' page$""") {
@@ -65,6 +68,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
   And("""^(?:I )?fill in the address on the presentation 'What is the address for the location of goods\?' page$""") {
     () =>
       LocationOfGoodsAddressPage
@@ -75,20 +79,22 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter (.+) on the presentation 'What is the authorisation number for the location of goods\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsAuthorisationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsAuthorisationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsAddContactPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsAddContactPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation 'Who is the contact for the location of goods\?' page$""") {
@@ -101,38 +107,42 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter (.+) on the presentation 'What is the phone number for the location of goods’ contact\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsContactTelephoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsContactTelephoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add an additional identifier for the location of goods\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsAddIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsAddIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?enter (.+) on the presentation 'What is the additional identifier for the location of goods\?' page$"""
-  ) { (answer: String) =>
-    LocationOfGoodsAdditionalIdentifierPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      LocationOfGoodsAdditionalIdentifierPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add a UN LOCODE for the place of loading\?' page$"""
-  ) { (answer: String) =>
-    PlaceOfLoadingAddUnLocodePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      PlaceOfLoadingAddUnLocodePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation 'What is the UN LOCODE for the place of loading\?' page$""") {
@@ -145,11 +155,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Do you want to add extra information for the place of loading\?' page$"""
-  ) { (answer: String) =>
-    PlaceOfLoadingAddExtraInformationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      PlaceOfLoadingAddExtraInformationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the presentation 'In which country is the place of loading\?' page$""") {
@@ -178,11 +189,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Are you using any shipping containers to transport the goods\?' page$"""
-  ) { (answer: String) =>
-    ContainersPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ContainersPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio (.*) on the presentation 'How is the transit crossing the border\?' page$""") {
@@ -192,14 +204,17 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
   And(
     """^(?:I )?choose radio (.*) on the presentation inland mode 'Which identification do you want to use for this vehicle\?' page$"""
-  ) { (answer: String) =>
-    ActiveMeansOfBorderTransportIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ActiveMeansOfBorderTransportIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
+
   And("""^(?:I )?enter identification number (.+) on 'What is the identification number for this\?' page$""") {
     (answer: String) =>
       ActiveMeansOfBorderTransportIdentificationNumberPage
@@ -207,6 +222,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
+
   And("""^(?:I )?select (.+) on the active border mode 'What country is this vehicle registered to\?' page$""") {
     (answer: String) =>
       ActiveMeansOfBorderTransportCountryPage
@@ -215,11 +231,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on 'Where is the customs office at the border\?' page$""") { (answer: String) =>
-    ActiveBorderMeansOfTransportOfficeOfTransitPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on 'Where is the customs office at the border\?' page$""") {
+    (answer: String) =>
+      ActiveBorderMeansOfTransportOfficeOfTransitPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio (.*) on the presentation 'Do you want to add a conveyance reference number\?' page$""") {
@@ -229,6 +246,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
   And("""^(?:I )?enter conveyance reference number (.+) on the 'What is the conveyance reference number\?' page$""") {
     (answer: String) =>
       ActiveMenasOfBorderConveyanceReferenceNumberPage
@@ -252,6 +270,7 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
+
   And("""^(?:I )?click the (.*) link  on the 'You have added (.*) border means of transport' page$""") {
     (sectionLink: String, numberOfContainers: String) =>
       ActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage
@@ -274,11 +293,13 @@ class PresentationNotificationStepDef extends BaseStepDef {
         .select(answer)
         .submitPage()
   }
-  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a seal\?' page$""") { (answer: String) =>
-    AddSealPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+
+  And("""^(?:I )?click radio (.*) on the presentation 'Do you want to add a seal\?' page$""") {
+    (answer: String) =>
+      AddSealPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation 'What is the seal identification number\?' page$""") {
@@ -354,11 +375,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
-  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
-    RemoveTransportEquipmentItemPage
-      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+      RemoveTransportEquipmentItemPage
+        .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) transport equipment' page$""") {
@@ -371,11 +393,12 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click radio (.*) on the presentation 'Do you want to add a container identification number\?' page$"""
-  ) { (answer: String) =>
-    AddContainerIdentificationNumberPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      AddContainerIdentificationNumberPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?click the (.*) link on the presentation 'You have added (.*) transport equipment' page$""") {
@@ -387,22 +410,25 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click radio option (.*) on the presentation 'Are you sure you want to remove transport equipment (.*)\?' page$"""
-  ) { (answer: String, sealIdNumber: String) =>
-    RemoveTransportEquipmentPage
-      .loadPage(sealIdNumber)
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String, sealIdNumber: String) =>
+      RemoveTransportEquipmentPage
+        .loadPage(sealIdNumber)
+        .select(answer)
+        .submitPage()
   }
 
-  //Representative
+  // Representative
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'Are you acting as a representative\?' page$"""
-  ) { (answer: String) =>
-    ActingAsRepresentative
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      ActingAsRepresentative
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
+
   And("""^(?:I )?enter (.+) on the presentation representative 'What is your EORI number or TIN\?' page$""") {
     (answer: String) =>
       AddEORINumberOrTraderIdentificationNumber
@@ -413,18 +439,20 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation representative 'Do you want to add your details\?' page$"""
-  ) { (answer: String) =>
-    AddContactDetailsRepresentativePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      AddContactDetailsRepresentativePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the presentation representative 'What is your name\?' page$""") { (answer: String) =>
-    AddContactNameRepresentativePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the presentation representative 'What is your name\?' page$""") {
+    (answer: String) =>
+      AddContactNameRepresentativePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the presentation representative 'What is your phone number\?' page$""") {
@@ -444,63 +472,71 @@ class PresentationNotificationStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation 'You have added (.*) departure means of transport' page$"""
-  ) { (answer: String, numberOfDepartureMeans: String) =>
-    AddAnotherDepartureMeansPage
-      .loadPage(numberOfDepartureMeans)
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String, numberOfDepartureMeans: String) =>
+      AddAnotherDepartureMeansPage
+        .loadPage(numberOfDepartureMeans)
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the presentation departure means of transport 'Which identification do you want to use for the departure means of transport\?' page$"""
-  ) { (answer: String) =>
-    DepartureMeansOfTransportWhichIdentificationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      DepartureMeansOfTransportWhichIdentificationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?enter registration number (.+) on the presentation 'What is the identification number for the departure means of transport\?' page$"""
-  ) { (answer: String) =>
-    DepartureMeansOfTransportIdentificationNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      DepartureMeansOfTransportIdentificationNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?select (.+) on the presentation 'What country is the departure means of transport registered to\?' page$"""
-  ) { (answer: String) =>
-    DepartureMeansOfTransportTransportCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      DepartureMeansOfTransportTransportCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove departure means of transport (.*)\?' page$"""
-  ) { (answer: String, numberOfDepartureMeans: String) =>
-    RemoveDepartureMeansPage
-      .loadPage(numberOfDepartureMeans)
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String, numberOfDepartureMeans: String) =>
+      RemoveDepartureMeansPage
+        .loadPage(numberOfDepartureMeans)
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?click the (.+) link on the Prelodge 'Check your answers' page$""") { (link: String) =>
-    PreLodgeCYA
-      .loadPage()
-      .selectLink(link)
+  And("""^(?:I )?click the (.+) link on the Prelodge 'Check your answers' page$""") {
+    (link: String) =>
+      PreLodgeCYA
+        .loadPage()
+        .selectLink(link)
   }
 
-  And("""^(?:I )?click the (.+) link on the 'Information sent' page$""") { (link: String) =>
-    InformationSentPage
-      .loadPage()
-      .selectLink(link)
+  And("""^(?:I )?click the (.+) link on the 'Information sent' page$""") {
+    (link: String) =>
+      InformationSentPage
+        .loadPage()
+        .selectLink(link)
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Information sent' page$""") { () =>
-    InformationSentPage
-      .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Information sent' page$""") {
+    () =>
+      InformationSentPage
+        .loadPage()
   }
 }

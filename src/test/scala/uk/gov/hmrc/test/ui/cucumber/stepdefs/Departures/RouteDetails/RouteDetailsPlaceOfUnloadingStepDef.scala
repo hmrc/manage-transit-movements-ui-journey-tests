@@ -31,34 +31,38 @@ class RouteDetailsPlaceOfUnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of unloading\?' page$"""
-  ) { (answer: String) =>
-    PlaceOfUnloadingAddUnLocodePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      PlaceOfUnloadingAddUnLocodePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") { (answer: String) =>
-    PlaceOfUnloadingUnLocodePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the UN LOCODE for the place of unloading\?' page$""") {
+    (answer: String) =>
+      PlaceOfUnloadingUnLocodePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add extra information for the place of unloading\?' page$"""
-  ) { (answer: String) =>
-    PlaceOfUnloadingAddExtraInformationPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  ) {
+    (answer: String) =>
+      PlaceOfUnloadingAddExtraInformationPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the place of unloading in\?' page$""") { (answer: String) =>
-    PlaceOfUnloadingCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Which country is the place of unloading in\?' page$""") {
+    (answer: String) =>
+      PlaceOfUnloadingCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'Where in (.*) is the place of unloading\?' page$""") {

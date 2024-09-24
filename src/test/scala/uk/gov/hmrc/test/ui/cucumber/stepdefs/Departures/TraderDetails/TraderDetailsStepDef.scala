@@ -33,34 +33,39 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s EORI number\?' page$""") { (answer: String) =>
-    HolderEoriNumberOrTinPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s EORI number\?' page$""") {
+    (answer: String) =>
+      HolderEoriNumberOrTinPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s name\?' page$""") { (answer: String) =>
-    HolderNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the transit holder’s name\?' page$""") {
+    (answer: String) =>
+      HolderNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the transit holder based in\?' page$""") { (answer: String) =>
-    HolderCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-  And("""^(?:I )?fill in the address on the 'What is the transit holder’s address\?' page$""") { () =>
-    HolderAddressPage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Which country is the transit holder based in\?' page$""") {
+    (answer: String) =>
+      HolderCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  //Transit holder contact person
+  And("""^(?:I )?fill in the address on the 'What is the transit holder’s address\?' page$""") {
+    () =>
+      HolderAddressPage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
+  }
+
+  // Transit holder contact person
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the transit holder\?' page$""") {
     (answer: String) =>
@@ -70,11 +75,12 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the contact’s name\?' page$""") { (answer: String) =>
-    AddHolderContactNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the contact’s name\?' page$""") {
+    (answer: String) =>
+      AddHolderContactNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the phone number for the transit holder’s contact\?' page$""") {
@@ -85,20 +91,22 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  //Representative
+  // Representative
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you acting as a representative\?' page$""") { (answer: String) =>
-    ActingAsRepresentativePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Are you acting as a representative\?' page$""") {
+    (answer: String) =>
+      ActingAsRepresentativePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the representative 'What is your EORI number or TIN\?' page$""") { (answer: String) =>
-    RepresentativeEoriNumbeOrTinPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the representative 'What is your EORI number or TIN\?' page$""") {
+    (answer: String) =>
+      RepresentativeEoriNumbeOrTinPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the representative 'Do you want to add your details\?' page$""") {
@@ -109,21 +117,23 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the representative 'What is your name\?' page$""") { (answer: String) =>
-    RepresentativeNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the representative 'What is your name\?' page$""") {
+    (answer: String) =>
+      RepresentativeNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the representative 'What is your phone number\?' page$""") { (answer: String) =>
-    RepresentativePhoneNumberPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the representative 'What is your phone number\?' page$""") {
+    (answer: String) =>
+      RepresentativePhoneNumberPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  //Approved operator - data set indicator
+  // Approved operator - data set indicator
   Then("""^(?:I )?choose radio option (.*) on the 'Do you want to use a reduced data set\?' page""") {
     (answer: String) =>
       SetReducedDataSetIndicatorPage
@@ -132,7 +142,7 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  //Consignor
+  // Consignor
   And("""^(?:I )?choose radio option (.*) on the 'Is the TIR holder’s identification number known\?' page$""") {
     (answer: String) =>
       IsTIRidKnownPage
@@ -141,11 +151,12 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the TIR holder’s identification number\?' page$""") { (answer: String) =>
-    TirHolderIdPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the TIR holder’s identification number\?' page$""") {
+    (answer: String) =>
+      TirHolderIdPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you know the consignor’s EORI number or TIN\?' page$""") {
@@ -156,33 +167,39 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the consignor’s EORI number or TIN\?' page$""") { (answer: String) =>
-    ConsignorEoriNumberOrTinPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the consignor’s EORI number or TIN\?' page$""") {
+    (answer: String) =>
+      ConsignorEoriNumberOrTinPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the consignor’s name\?' page$""") { (answer: String) =>
-    ConsignorNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-  And("""^(?:I )?select (.+) on the 'Which country is the consignee based in\?' page$""") { (answer: String) =>
-    ConsigneeCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-  And("""^(?:I )?fill in the address on the 'What is the consignor’s address\?' page$""") { () =>
-    ConsignorAddressPage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the consignor’s name\?' page$""") {
+    (answer: String) =>
+      ConsignorNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  //Consignor contact
+  And("""^(?:I )?select (.+) on the 'Which country is the consignee based in\?' page$""") {
+    (answer: String) =>
+      ConsigneeCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?fill in the address on the 'What is the consignor’s address\?' page$""") {
+    () =>
+      ConsignorAddressPage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
+  }
+
+  // Consignor contact
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a contact for the consignor\?' page$""") {
     (answer: String) =>
       AddConsignorContactPersonPage
@@ -191,11 +208,12 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the contact's name\?' page$""") { (answer: String) =>
-    AddConsignorContactNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the contact's name\?' page$""") {
+    (answer: String) =>
+      AddConsignorContactNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the phone number for the consignor’s contact\?' page$""") {
@@ -206,12 +224,13 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  //Consignee
-  And("""^(?:I )?choose radio option (.*) on the 'Is there more than one consignee\?' page$""") { (answer: String) =>
-    MoreThanOneConsigneePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  // Consignee
+  And("""^(?:I )?choose radio option (.*) on the 'Is there more than one consignee\?' page$""") {
+    (answer: String) =>
+      MoreThanOneConsigneePage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you know the consignee’s EORI number or TIN\?' page$""") {
@@ -222,32 +241,36 @@ class TraderDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the consignee’s EORI number or TIN\?' page$""") { (answer: String) =>
-    ConsigneeEoriNumberOrTinPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the consignee’s EORI number or TIN\?' page$""") {
+    (answer: String) =>
+      ConsigneeEoriNumberOrTinPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the consignee’s name\?' page$""") { (answer: String) =>
-    ConsigneeNamePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the consignee’s name\?' page$""") {
+    (answer: String) =>
+      ConsigneeNamePage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the consignor based in\?' page$""") { (answer: String) =>
-    ConsignorCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the 'Which country is the consignor based in\?' page$""") {
+    (answer: String) =>
+      ConsignorCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?fill in the address on the 'What is the consignee’s address\?' page$""") { () =>
-    ConsigneeAddressPage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
+  And("""^(?:I )?fill in the address on the 'What is the consignee’s address\?' page$""") {
+    () =>
+      ConsigneeAddressPage
+        .loadPage()
+        .fillInputs()
+        .submitPage()
   }
 
 }
