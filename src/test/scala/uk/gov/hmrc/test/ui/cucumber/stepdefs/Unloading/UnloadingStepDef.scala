@@ -155,6 +155,13 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
       .submitPage()
   }
+  And(
+    """^(?:I )?click the Continue button on the 'You cannot use the revised unloading procedure' page$"""
+  ) { () =>
+    RevisedUnloadingProcedurePage
+      .loadPage()
+      .submitPage()
+  }
 
   And(
     """^(?:I )?click the Continue button on the 'Unload the goods and note any discrepancies' page$"""
