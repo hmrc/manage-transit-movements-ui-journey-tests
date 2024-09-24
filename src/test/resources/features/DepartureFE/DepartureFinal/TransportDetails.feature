@@ -207,12 +207,6 @@ Feature: Transport details journey
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
 
-      ## Authorisation
-    And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
-    When I choose radio option No on the 'You have added 1 transport authorisation' page
-
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
     And I click radio option No on the 'Do you want to add an additional reference for all items?' page

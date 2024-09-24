@@ -148,7 +148,7 @@ Feature: Transport details journey - Transition
     And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
 
-  Scenario: 03 Northern Ireland office of departure
+  Scenario: 03 Northern Ireland office of departure - Normal declaration type
     And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
@@ -182,12 +182,6 @@ Feature: Transport details journey - Transition
 
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
-
-      ## Authorisation
-    And I choose radio option Yes on the 'Do you want to add an authorisation' page
-    And I choose radio option TRD on the 'Which type of authorisation do you want to add' page
-    And I enter TRD123 reference number on the 'What is the reference number for the TRD authorisation?' page
-    When I choose radio option No on the 'You have added 1 transport authorisation' page
 
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
