@@ -21,18 +21,16 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{DeleteDraftDeclaration
 
 class DraftDepartureDeclarationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?click on the link for LRN (.*) on the 'Draft departure declarations' page""") {
-    (link: String) =>
-      DraftDepartureDelcarationsPage
-        .loadPage()
-        .selectDraftDeclarationLink(link)
+  And("""^(?:I )?click on the link for LRN (.*) on the 'Draft departure declarations' page""") { (link: String) =>
+    DraftDepartureDelcarationsPage
+      .loadPage()
+      .selectDraftDeclarationLink(link)
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Draft departure declarations' page$""") {
-    (link: String) =>
-      DraftDepartureDelcarationsPage
-        .loadPage()
-        .selectDraftDeclarationLink(link)
+  Given("""^(?:I )?click on the (.+) link on the 'Draft departure declarations' page$""") { (link: String) =>
+    DraftDepartureDelcarationsPage
+      .loadPage()
+      .selectDraftDeclarationLink(link)
   }
 
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to delete this declaration\?' page$""") {
@@ -51,11 +49,10 @@ class DraftDepartureDeclarationsStepDef extends BaseStepDef {
         .clickById("submit")
   }
 
-  And("""^(?:I )?should see the content (.*) on the 'Draft departure declarations' page$""") {
-    (content: String) =>
-      DraftDepartureDelcarationsPage
-        .loadPage()
-        .checkForContent(content)
+  And("""^(?:I )?should see the content (.*) on the 'Draft departure declarations' page$""") { (content: String) =>
+    DraftDepartureDelcarationsPage
+      .loadPage()
+      .checkForContent(content)
   }
 
 }

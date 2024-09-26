@@ -24,30 +24,27 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a specific circumstance indicator\?' page$"""
-  ) {
-    (answer: String) =>
-      AddSpecificCircumstanceIndicatorPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddSpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Which specific circumstance indicator do you want to add\?' page$"""
-  ) {
-    (answer: String) =>
-      SpecificCircumstanceIndicatorPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    SpecificCircumstanceIndicatorPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What country is the office of destination in\?' page$""") {
-    (answer: String) =>
-      CountryOfDestinationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'What country is the office of destination in\?' page$""") { (answer: String) =>
+    CountryOfDestinationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'Where in (.+) is the office of destination\?' page$""") {
@@ -58,12 +55,11 @@ class RouteDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are you using a binding itinerary\?' page$""") {
-    (answer: String) =>
-      BindingItineraryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Are you using a binding itinerary\?' page$""") { (answer: String) =>
+    BindingItineraryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'Which country do you want to add to the transit route\?' page$""") {
@@ -76,10 +72,9 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   Then(
     """^(?:I )?(?:should )?have (.+) countr(?:y |ies )added to the 'You have added (.+) countr(?:y |ies )to the transit route' page$"""
-  ) {
-    (numberOfCountries: String, _: String) =>
-      TransitRouteAddAnotherCountryPage
-        .loadPage(numberOfCountries)
+  ) { (numberOfCountries: String, _: String) =>
+    TransitRouteAddAnotherCountryPage
+      .loadPage(numberOfCountries)
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) countr(?:y |ies )to the transit route' page$""") {
@@ -92,29 +87,26 @@ class RouteDetailsStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) countr(?:y |ies )to the transit route' page$"""
-  ) {
-    (sectionLink: String, numberOfCountriesInTitle: String) =>
-      TransitRouteAddAnotherCountryPage
-        .loadPage(numberOfCountriesInTitle)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfCountriesInTitle: String) =>
+    TransitRouteAddAnotherCountryPage
+      .loadPage(numberOfCountriesInTitle)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this country from the transit route\?' page$"""
-  ) {
-    (answer: String) =>
-      TransitRouteRemoveCountryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    TransitRouteRemoveCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") {
-    (answer: String) =>
-      TransitRouteAddCountryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the transit route add country page$""") { (answer: String) =>
+    TransitRouteAddCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Does the transit include any T2 declarations\?' page$""") {

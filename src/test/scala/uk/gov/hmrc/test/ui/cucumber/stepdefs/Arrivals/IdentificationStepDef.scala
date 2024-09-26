@@ -29,44 +29,39 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the arrival office of destination page$""") {
-    (answer: String) =>
-      OfficeOfDestinationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the arrival office of destination page$""") { (answer: String) =>
+    OfficeOfDestinationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the consignee eori tin page$""") {
-    (answer: String) =>
-      ConsigneeEoriTinPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the consignee eori tin page$""") { (answer: String) =>
+    ConsigneeEoriTinPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the Movement Reference Number page$""") {
-    (answer: String) =>
-      MovementReferenceNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the Movement Reference Number page$""") { (answer: String) =>
+    MovementReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the authorisations type page$""") {
-    (answer: String) =>
-      AuthorisationsTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the authorisations type page$""") { (answer: String) =>
+    AuthorisationsTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the authorisations reference number page$""") {
-    (answer: String) =>
-      AuthorisationsReferenceNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the authorisations reference number page$""") { (answer: String) =>
+    AuthorisationsReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?should have (.*) authorisations? on the add another authorisation page$""") {
@@ -75,17 +70,15 @@ class IdentificationStepDef extends BaseStepDef {
         .loadPage(numberOfOffices)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add another authorisation page$""") {
-    (answer: String) =>
-      AuthorisationsAddAnotherPage
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add another authorisation page$""") { (answer: String) =>
+    AuthorisationsAddAnotherPage
+      .select(answer)
+      .submitPage()
   }
 
-  When("""^(?:I )?choose to click on (.*) link on the add another authorisation page$""") {
-    (sectionLink: String) =>
-      AuthorisationsAddAnotherPage
-        .clickByPartialLinkText(sectionLink)
+  When("""^(?:I )?choose to click on (.*) link on the add another authorisation page$""") { (sectionLink: String) =>
+    AuthorisationsAddAnotherPage
+      .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?choose radio option (.*) for the (.+) authorisation (.+) on the remove authorisation page$""") {
@@ -96,9 +89,8 @@ class IdentificationStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the What is the Movement Reference Number page$""") {
-    () =>
-      MovementReferenceNumberPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the What is the Movement Reference Number page$""") { () =>
+    MovementReferenceNumberPage
+      .loadPage()
   }
 }

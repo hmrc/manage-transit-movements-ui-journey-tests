@@ -20,14 +20,12 @@ import org.scalatest.concurrent.Eventually.eventually
 
 class CommonStepDef extends BaseStepDef {
 
-  And("""^(?:I )?wait for (.*) seconds$""") {
-    (t: Int) =>
-      val time = t * 1000
-      eventually(Thread.sleep(time))
+  And("""^(?:I )?wait for (.*) seconds$""") { (t: Int) =>
+    val time = t * 1000
+    eventually(Thread.sleep(time))
   }
 
-  And("""^(?:I )?refresh the page$""") {
-    () =>
-      driver.navigate().refresh()
+  And("""^(?:I )?refresh the page$""") { () =>
+    driver.navigate().refresh()
   }
 }

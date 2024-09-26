@@ -21,28 +21,25 @@ import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit._
 
 class RouteDetailsTransitStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") {
-    (answer: String) =>
-      T2DeclarationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the t2 declaration page$""") { (answer: String) =>
+    T2DeclarationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add office of transit page$""") {
-    (answer: String) =>
-      AddOfficeOfTransitPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add office of transit page$""") { (answer: String) =>
+    AddOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Which country is the office of transit in\?' page$""") {
-    (answer: String) =>
-      OfficeOfTransitCountryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'Which country is the office of transit in\?' page$""") { (answer: String) =>
+    OfficeOfTransitCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+) as office of transit on the office of transit page$""") {
@@ -69,20 +66,18 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)\?' page$"""
-  ) {
-    (office: String, country: String) =>
-      OfficeOfTransitEtaPage
-        .loadPage(office, country)
-        .fillInputs()
-        .submitPage()
+  ) { (office: String, country: String) =>
+    OfficeOfTransitEtaPage
+      .loadPage(office, country)
+      .fillInputs()
+      .submitPage()
   }
 
   Then(
     """^(?:I )?(?:should )?have (.+) offices? of transit added on the 'You have added (.*) offices? of transit' page$"""
-  ) {
-    (numberOfOffices: String, _: String) =>
-      AddAnotherOfficeOfTransitPage
-        .loadPage(numberOfOffices)
+  ) { (numberOfOffices: String, _: String) =>
+    AddAnotherOfficeOfTransitPage
+      .loadPage(numberOfOffices)
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) offices? of transit' page$""") {
@@ -95,34 +90,30 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) offices? of transit' page$"""
-  ) {
-    (sectionLink: String, numberOfOfficeInTitle: String) =>
-      AddAnotherOfficeOfTransitPage
-        .loadPage(numberOfOfficeInTitle)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfOfficeInTitle: String) =>
+    AddAnotherOfficeOfTransitPage
+      .loadPage(numberOfOfficeInTitle)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this office of transit?\?' page$"""
-  ) {
-    (answer: String) =>
-      ConfirmRemoveOfficeOfTransitPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    ConfirmRemoveOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose to click on (.*) link on the add another office of transit page$""") {
-    (sectionLink: String) =>
-      AddAnotherOfficeOfTransitPage
-        .clickByPartialLinkText(sectionLink)
+  And("""^(?:I )?choose to click on (.*) link on the add another office of transit page$""") { (sectionLink: String) =>
+    AddAnotherOfficeOfTransitPage
+      .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the confirm remove office of transit page$""") {
-    (answer: String) =>
-      ConfirmRemoveOfficeOfTransitPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the confirm remove office of transit page$""") { (answer: String) =>
+    ConfirmRemoveOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 }

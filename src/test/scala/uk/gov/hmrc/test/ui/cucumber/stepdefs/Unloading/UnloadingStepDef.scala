@@ -26,39 +26,34 @@ import uk.gov.hmrc.test.ui.pages.Unloading._
 
 class UnloadingStepDef extends BaseStepDef {
 
-  Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") {
-    () =>
-      IsRevisedUnloadingProcedurePage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>
+    IsRevisedUnloadingProcedurePage
+      .loadPage()
   }
 
   Then(
     """^(?:I )?should be on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
-  ) {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") {
-    (houseConsignments: String) =>
-      HouseConsignmentPage
-        .loadPage(houseConsignments)
+  Then("""^(?:I )?should be on the 'House consignment (.+)' page$""") { (houseConsignments: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignments)
   }
 
-  And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") {
-    (content: String) =>
-      UnloadingRejectionPage
-        .loadPage()
-        .checkForContent(content)
+  And("""^(?:I )?should see the content (.*) on the Unloading rejection page$""") { (content: String) =>
+    UnloadingRejectionPage
+      .loadPage()
+      .checkForContent(content)
   }
 
-  And("""^(?:I )?fill in the date on the 'When were the goods unloaded\?' page$""") {
-    () =>
-      GoodsUnloadedDatePage
-        .loadPage()
-        .fillInputs()
-        .submitPage()
+  And("""^(?:I )?fill in the date on the 'When were the goods unloaded\?' page$""") { () =>
+    GoodsUnloadedDatePage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Have you fully or partially unloaded the goods\?' page$""") {
@@ -71,57 +66,51 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are all the seal identification numbers or marks readable\?' page$"""
-  ) {
-    (answer: String) =>
-      SealNumbersReadablePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    SealNumbersReadablePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") {
-    (answer: String) =>
-      SealsBrokenPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Are any of the seals broken\?' page$""") { (answer: String) =>
+    SealsBrokenPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
-  ) {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .submitPage()
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .submitPage()
   }
 
   Given(
     """^(?:I )?click the 'More details' link for house consignment (.+) on the 'Enter the discrepancies between the transit movement and unloading permission' page$"""
-  ) {
-    (index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectAction(index)
+  ) { (index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectAction(index)
   }
 
   Given(
     """^(?:I )?click the Back to summary button on the 'House consignment (.*)' page$"""
-  ) {
-    (houseConsignmentNumber: String) =>
-      HouseConsignmentPage
-        .loadPage(houseConsignmentNumber)
-        .submitPage()
+  ) { (houseConsignmentNumber: String) =>
+    HouseConsignmentPage
+      .loadPage(houseConsignmentNumber)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit and unloading permission\?' page$"""
-  ) {
-    (answer: String) =>
-      DifferencesPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    DifferencesPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the 'What is the identification number for the new vehicle\?' page$""") {
@@ -134,93 +123,83 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to use the revised unloading procedure\?' page$"""
-  ) {
-    (answer: String) =>
-      IsRevisedUnloadingProcedurePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    IsRevisedUnloadingProcedurePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are the goods too large to fit into a container\?' page$"""
-  ) {
-    (answer: String) =>
-      GoodsTooLargeToFitIntoContainerPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    GoodsTooLargeToFitIntoContainerPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Have any seals been replaced by a customs authority\?' page$"""
-  ) {
-    (answer: String) =>
-      HaveSealsBeenReplacedByCustomsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    HaveSealsBeenReplacedByCustomsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the 'Check the goods and note any discrepancies' page$"""
-  ) {
-    () =>
-      CheckGoodsAndNoteDiscrepanciesPage
-        .loadPage()
-        .submitPage()
+  ) { () =>
+    CheckGoodsAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the 'You cannot use the revised unloading procedure' page$"""
-  ) {
-    () =>
-      RevisedUnloadingProcedurePage
-        .loadPage()
-        .submitPage()
+  ) { () =>
+    RevisedUnloadingProcedurePage
+      .loadPage()
+      .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the 'Unload the goods and note any discrepancies' page$"""
-  ) {
-    () =>
-      UnloadAndNoteDiscrepanciesPage
-        .loadPage()
-        .submitPage()
+  ) { () =>
+    UnloadAndNoteDiscrepanciesPage
+      .loadPage()
+      .submitPage()
   }
 
   And(
     """^(?:I )?click the Continue button on the 'Download the unloading permission' page$"""
-  ) {
-    () =>
-      DownloadUnloadingPermissionsPage
-        .loadPage()
-        .submitPage()
+  ) { () =>
+    DownloadUnloadingPermissionsPage
+      .loadPage()
+      .submitPage()
   }
 
-  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") {
-    (sectionLink: String) =>
-      UnloadingSummaryPage
-        .loadPage()
-        .clickByPartialLinkText(sectionLink)
+  When("""^(?:I )?click the (.*) link on the 'What did you find when unloading\?' page$""") { (sectionLink: String) =>
+    UnloadingSummaryPage
+      .loadPage()
+      .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") {
-    (answer: String) =>
-      UnloadingReportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What do you need to report\?' page$""") { (answer: String) =>
+    UnloadingReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter (.*) on the 'Describe the discrepancies between the transit and the declaration summary' page$"""
-  ) {
-    (answer: String) =>
-      UnloadingCommentsPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    UnloadingCommentsPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click the Change link for (.+) on the 'What did you find when unloading\?' page$""") {
@@ -238,20 +217,18 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") {
-    (answer: String) =>
-      SealNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What is the new seal number\?' page$""") { (answer: String) =>
+    SealNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") {
-    (answer: String) =>
-      ContainerNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'What is the new container identification number\?' page$""") { (answer: String) =>
+    ContainerNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.*) on the 'What is the new gross weight of item (.*)\?' page$""") {
@@ -278,16 +255,14 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Unloading remarks sent' page$""") {
-    () =>
-      UnloadingConfirmationPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Unloading remarks sent' page$""") { () =>
+    UnloadingConfirmationPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'You cannot send these unloading remarks' page$""") {
-    () =>
-      CannotSendUnloadingPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'You cannot send these unloading remarks' page$""") { () =>
+    CannotSendUnloadingPage
+      .loadPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'Are you sure you want to remove your comments\?' page$""") {
@@ -300,93 +275,84 @@ class UnloadingStepDef extends BaseStepDef {
 
   Given(
     """^(?:I )?click the 'Documents' link for Documents (.+) on the 'Cross-check the transit with this declaration summary' page$"""
-  ) {
-    (index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectDocAction(index)
+  ) { (index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectDocAction(index)
   }
 
   And(
     """^(?:I )?click the Change link for (.+) on the 'Cross-check the transit with this declaration summary' page$"""
-  ) {
-    (text: String) =>
-      ConsignmentCrossCheckPage
-        .clickLinkById(text)
+  ) { (text: String) =>
+    ConsignmentCrossCheckPage
+      .clickLinkById(text)
   }
 
   And(
     """^(?:I )?click the (.+) link for section (.+) (.+)$"""
-  ) {
-    (changeLinkText: String, section: String, index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectSection(section)
-        .selectSectionChild(section, index)
-        .clickLinkByIdBySection(changeLinkText)
+  ) { (changeLinkText: String, section: String, index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectSection(section)
+      .selectSectionChild(section, index)
+      .clickLinkByIdBySection(changeLinkText)
   }
 
   And(
     """^(?:I )?click the add or remove house consignment link$"""
-  ) {
-    () =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectAddRemoveHouseConsignment
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectAddRemoveHouseConsignment
   }
 
   And(
     """^(?:I )?click the (.+) link for (.+) in House consignment (.+)$"""
-  ) {
-    (changeLinkText: String, section: String, index: String) =>
-      HouseConsignmentPage
-        .loadPage(index)
-        .selectSection(section)
-        .selectItem(section)
-        .clickLinkByIdBySection(changeLinkText)
+  ) { (changeLinkText: String, section: String, index: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectSection(section)
+      .selectItem(section)
+      .clickLinkByIdBySection(changeLinkText)
   }
 
   And(
     """^(?:I )?click the Change (.+) link for sub-section (.+) of section (.+) (.+)$"""
-  ) {
-    (changeLinkText: String, subSection: String, section: String, index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectSection(section)
-        .selectSectionChild(section, index)
-        .selectSubSection(subSection)
-        .clickLinkByIdBySection(changeLinkText)
+  ) { (changeLinkText: String, subSection: String, section: String, index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectSection(section)
+      .selectSectionChild(section, index)
+      .selectSubSection(subSection)
+      .clickLinkByIdBySection(changeLinkText)
   }
 
   And(
     """^(?:I )?click the (.+) link in House consignment (.+) sub-section (.+) of section (.+)$"""
-  ) {
-    (changeLinkText: String, index: String, subSection: String, section: String) =>
-      HouseConsignmentPage
-        .loadPage(index)
-        .selectSection(section)
-        .selectItem(section)
-        .selectSectionChild(subSection)
-        .selectSubSection(subSection)
-        .clickLinkByIdBySection(changeLinkText)
+  ) { (changeLinkText: String, index: String, subSection: String, section: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectSection(section)
+      .selectItem(section)
+      .selectSectionChild(subSection)
+      .selectSubSection(subSection)
+      .clickLinkByIdBySection(changeLinkText)
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the new additional reference type\?' page$""") {
-    (answer: String) =>
-      NewAdditionalReferenceTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'What is the new additional reference type\?' page$""") { (answer: String) =>
+    NewAdditionalReferenceTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?select (.+) on the 'What is the new additional reference type for item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      NewItemLevelAdditionalReferenceTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    NewItemLevelAdditionalReferenceTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter additional reference (.+) on the 'What is the new additional reference number\?' page$""") {
@@ -399,20 +365,18 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter additional reference (.+) on the 'What is the new additional reference number for item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      NewItemLevelAdditionalReferenceNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    NewItemLevelAdditionalReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") {
-    (answer: String) =>
-      NewDocumentTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") { (answer: String) =>
+    NewDocumentTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter reference number (.+) on the 'What is the document’s new reference number\?' page$""") {
@@ -433,31 +397,28 @@ class UnloadingStepDef extends BaseStepDef {
 
   Given(
     """^(?:I )?click the 'Departure means of transport' link for Departure means of transport (.+) on the 'Cross-check the transit with this declaration summary' page$"""
-  ) {
-    (index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectDepartureTransportAction(index)
+  ) { (index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectDepartureTransportAction(index)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for the new departure means of transport\?' page$"""
-  ) {
-    (answer: String) =>
-      IdentificationForNewDepartureMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    IdentificationForNewDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter identification number (.+) on the 'What is the identification number for the new departure means of transport\?' page$"""
-  ) {
-    (answer: String) =>
-      IdentificationNumberForNewDepartureMeansOfTransportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    IdentificationNumberForNewDepartureMeansOfTransportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'What country is the new departure means of transport registered to\?' page$""") {
@@ -483,12 +444,11 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?Add (.+) on the 'What type of document do you want to add\?' page$""") {
-    (answer: String) =>
-      AddDocumentTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?Add (.+) on the 'What type of document do you want to add\?' page$""") { (answer: String) =>
+    AddDocumentTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter reference number (.+) on 'What is the document’s reference number\?' page$""") {
@@ -501,12 +461,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Do you want to add any additional information for this document\?' page$"""
-  ) {
-    (answer: String) =>
-      AddAdditionalInformationForDocumentPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddAdditionalInformationForDocumentPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter additional information (.+) on documents 'Enter the additional information\?' page$""") {
@@ -519,51 +478,46 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) documen(?:t |ts )to all items' page$"""
-  ) {
-    (sectionLink: String, numberOfDocumentsAdded: String) =>
-      DocumentsAddAnotherDocumentsPage
-        .loadPage(numberOfDocumentsAdded)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfDocumentsAdded: String) =>
+    DocumentsAddAnotherDocumentsPage
+      .loadPage(numberOfDocumentsAdded)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove this document from all items\?' page$"""
-  ) {
-    (answer: String) =>
-      RemoveDocumentFromAllItemsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RemoveDocumentFromAllItemsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Do you want to add the type of identification for the departure means of transport\?' page$"""
-  ) {
-    (answer: String) =>
-      AddIdentificationTypeForDepartureMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddIdentificationTypeForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport\?' page$"""
-  ) {
-    (answer: String) =>
-      IdentificationForDepartureMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    IdentificationForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Do you want to add an identification number for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      AddIdentificationNumberForDepartureMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddIdentificationNumberForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter identification number (.+) on 'What is the identification number for this vehicle\?' page$""") {
@@ -576,39 +530,35 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Do you want to add the registered country for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      AddRegisterCountryForDepartureMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddRegisterCountryForDepartureMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What country is this vehicle registered to\?' page$""") {
-    (answer: String) =>
-      CountryTypeVehicleRegisteredPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'What country is this vehicle registered to\?' page$""") { (answer: String) =>
+    CountryTypeVehicleRegisteredPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) departure means of transport' page$"""
-  ) {
-    (sectionLink: String, numberOfDeparturesAdded: String) =>
-      AddAnotherDepartureMeansOfTransportPage
-        .loadPage(numberOfDeparturesAdded)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfDeparturesAdded: String) =>
+    AddAnotherDepartureMeansOfTransportPage
+      .loadPage(numberOfDeparturesAdded)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove departure means of transport (.+)\?' page$"""
-  ) {
-    (answer: String, removeCount: String) =>
-      RemoveDepartureMeansOfTransportPage
-        .loadPage(removeCount)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, removeCount: String) =>
+    RemoveDepartureMeansOfTransportPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport' page$""") {
@@ -622,11 +572,10 @@ class UnloadingStepDef extends BaseStepDef {
   // TransportEquipment
   Given(
     """^(?:I )?click the 'Transport equipment' link for Transport equipment (.+) on the 'Cross-check the transit with this declaration summary' page$"""
-  ) {
-    (index: String) =>
-      ConsignmentCrossCheckPage
-        .loadPage()
-        .selectTransportEquipmentAction(index)
+  ) { (index: String) =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectTransportEquipmentAction(index)
   }
 
   And("""^(?:I )?enter identification number (.+) on 'What is the new container identification number\?' page$""") {
@@ -675,12 +624,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the cross check 'Do you want to add a container identification number for the transport equipment\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddContainerIdentificationNumberPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddContainerIdentificationNumberPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter identification number (.+) on 'What is the container identification number\?' page$""") {
@@ -693,12 +641,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the cross check 'Do you want to add a seal for the transport equipment\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddSealPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddSealPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter identification number (.+) on 'What is the seal identification number\?' page$""") {
@@ -724,12 +671,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on 'Are you sure you want to remove this seal from transport equipment (.*)\?' page$"""
-  ) {
-    (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
-      RemoveSealFromTransportEquipmentPage
-        .loadPage(numberOfTransportEquipmentIncrementsInTitle)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfTransportEquipmentIncrementsInTitle: String) =>
+    RemoveSealFromTransportEquipmentPage
+      .loadPage(numberOfTransportEquipmentIncrementsInTitle)
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -748,12 +694,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the cross check 'Do any items apply to this transport equipment\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemsApplyPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemsApplyPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -771,12 +716,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove this item from transport equipment (.+)\?' page$"""
-  ) {
-    (answer: String, removeCount: String) =>
-      RemoveItemFromTransportEquipmentPage
-        .loadPage(removeCount)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, removeCount: String) =>
+    RemoveItemFromTransportEquipmentPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -795,43 +739,40 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) transport equipment' page$"""
-  ) {
-    (sectionLink: String, numberOfTransportEquipAdded: String) =>
-      AddAnotherForTransportEquipmentPage
-        .loadPage(numberOfTransportEquipAdded)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfTransportEquipAdded: String) =>
+    AddAnotherForTransportEquipmentPage
+      .loadPage(numberOfTransportEquipAdded)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the documents 'Are you sure you want to remove transport equipment (.+)\?' page$"""
-  ) {
-    (answer: String, removeCount: String) =>
-      RemoveTransportEquipmentFromCorssCheckPage
-        .loadPage(removeCount)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, removeCount: String) =>
+    RemoveTransportEquipmentFromCorssCheckPage
+      .loadPage(removeCount)
+      .select(answer)
+      .submitPage()
 
-      And(
-        """^(?:I )?click radio option (.*) on the 'You have applied (.*) ite(?: m|ms )to transport equipment (.*)' page$"""
-      ) {
-        (
-          answer: String,
-          numberOfTransportEquipmentItemInTitle: String,
-          numberOfTransportEquipmentIncrementsInTitle: String
-        ) =>
-          TransportEquipmentIncrementPage
-            .loadPage(numberOfTransportEquipmentItemInTitle, numberOfTransportEquipmentIncrementsInTitle)
-            .select(answer)
-            .submitPage()
-      }
+    And(
+      """^(?:I )?click radio option (.*) on the 'You have applied (.*) ite(?: m|ms )to transport equipment (.*)' page$"""
+    ) {
+      (
+        answer: String,
+        numberOfTransportEquipmentItemInTitle: String,
+        numberOfTransportEquipmentIncrementsInTitle: String
+      ) =>
+        TransportEquipmentIncrementPage
+          .loadPage(numberOfTransportEquipmentItemInTitle, numberOfTransportEquipmentIncrementsInTitle)
+          .select(answer)
+          .submitPage()
+    }
 
   }
 
-  And("""^(?:I )?click the 'Items' link for Items (.+)$""") {
-    (index: String, HCIndex: String) =>
-      CrossCheckHouseConsignmentPage
-        .loadPage(HCIndex)
-        .selectItemAction(index)
+  And("""^(?:I )?click the 'Items' link for Items (.+)$""") { (index: String, HCIndex: String) =>
+    CrossCheckHouseConsignmentPage
+      .loadPage(HCIndex)
+      .selectItemAction(index)
   }
 
   And("""^(?:I )?enter number (.+) on 'What is the new gross weight of item (.+) in house consignment 1\?' page$""") {
@@ -850,20 +791,18 @@ class UnloadingStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?click the Remove link for (.+)$""") {
-    (text: String) =>
-      CrossCheckHouseConsignmentPage
-        .clickLinkByIdRemove(text)
+  And("""^(?:I )?click the Remove link for (.+)$""") { (text: String) =>
+    CrossCheckHouseConsignmentPage
+      .clickLinkByIdRemove(text)
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      RemoveGrossWeightsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RemoveGrossWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter number (.+) on 'What is the new net weight of item (.+) in house consignment 1\?' page$""") {
@@ -884,92 +823,83 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      RemoveNetWeightsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RemoveNetWeightsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the new Customs Union and Statistics CUS code for item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      ChangeCUSCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    ChangeCUSCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics CUS code\?' page$"""
-  ) {
-    (answer: String) =>
-      EnterCUSCodePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    EnterCUSCodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the new commodity code for item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      ChangeCommodityCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    ChangeCommodityCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the commodity code for item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      EnterCommodityCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    EnterCommodityCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      RemoveCommodityCodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RemoveCommodityCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the new combined nomenclature code for item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      ChangeNomenclatureCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    ChangeNomenclatureCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?enter number (.+) on 'What is the combined nomenclature code for item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      EnterNomenclatureCodePage
-        .loadPage(index)
-        .fillInput(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    EnterNomenclatureCodePage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1\?' page$"""
-  ) {
-    (answer: String) =>
-      RemoveNomenclatureCodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RemoveNomenclatureCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -988,12 +918,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click the (.+) link on house consignment for section (.+) (.+)$"""
-  ) {
-    (changeLinkText: String, section: String, index: String) =>
-      HouseConsignmentPage
-        .loadPage(index)
-        .selectItemSection(section)
-        .clickLinkByIdBySection(changeLinkText)
+  ) { (changeLinkText: String, section: String, index: String) =>
+    HouseConsignmentPage
+      .loadPage(index)
+      .selectItemSection(section)
+      .clickLinkByIdBySection(changeLinkText)
   }
 
   And(
@@ -1040,72 +969,65 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the item’s gross weight\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemGrossWeightPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemGrossWeightPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the item’s net weight\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemNetWeightPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemNetWeightPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a Customs Union and Statistics (.*) code for the item\?' page$"""
-  ) {
-    (answer: String, index: String) =>
-      OptionToAddItemNewCusPage
-        .loadPage(index)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, index: String) =>
+    OptionToAddItemNewCusPage
+      .loadPage(index)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a commodity code for the item\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemCommodityCodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemCommodityCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a combined nomenclature code for the item\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemCombinedNomenclaturePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemCombinedNomenclaturePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a document for the item\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemDocumentPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemDocumentPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for the item\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemAdditionalReferencePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemAdditionalReferencePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -1123,12 +1045,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this document from item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentDocumentRemoveIncrementPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentDocumentRemoveIncrementPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -1175,30 +1096,27 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a package for the item\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemPackagePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemPackagePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the quantity of this package\?' page$"""
-  ) {
-    (answer: String) =>
-      OptionToAddItemPackageQuantityPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    OptionToAddItemPackageQuantityPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the 'How many of this package are you using\?' page$""") {
-    (answer: String) =>
-      PackagesTypeQuantityPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the 'How many of this package are you using\?' page$""") { (answer: String) =>
+    PackagesTypeQuantityPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
@@ -1231,12 +1149,11 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this package from item (.+) in house consignment 1\?' page$"""
-  ) {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentPackageRemoveIncrementPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentPackageRemoveIncrementPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
 
   And(
@@ -1254,52 +1171,46 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click radio option (.*) on item 'Are you sure you want to remove item (.+) from house consignment 1\?' page$"""
-  ) {
-    (answer: String, numberOfItems: String) =>
-      HouseConsignmentRemoveItemPage
-        .loadPage(numberOfItems)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfItems: String) =>
+    HouseConsignmentRemoveItemPage
+      .loadPage(numberOfItems)
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the 'Do you have anything else to report\?' page$""") {
-    (answer: String) =>
-      AnythingReportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Do you have anything else to report\?' page$""") { (answer: String) =>
+    AnythingReportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") {
-    (answer: String) =>
-      OtherThingsReportPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What do you want to report\?' page$""") { (answer: String) =>
+    OtherThingsReportPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Enter all the original seal identification numbers' page$""") {
-    (answer: String) =>
-      EnterOriginalSealsIdentificationCommentPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'Enter all the original seal identification numbers' page$""") { (answer: String) =>
+    EnterOriginalSealsIdentificationCommentPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Enter all the seal identification numbers' page$""") {
-    (answer: String) =>
-      EnterAllSealsIdentificationNumbersPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'Enter all the seal identification numbers' page$""") { (answer: String) =>
+    EnterAllSealsIdentificationNumbersPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") {
-    (answer: String) =>
-      AddCommentsPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") { (answer: String) =>
+    AddCommentsPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?click radio option (.*) on the 'You have added (.*) house consignment' page$""") {
@@ -1320,62 +1231,56 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a departure means of transport for house consignment (.*)\?' page$"""
-  ) {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddDepartureTransportMeansPage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddDepartureTransportMeansPage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport for house consignment 2' page$"""
-  ) {
-    (answer: String, numberOfDepartureMeans: String) =>
-      AddAnotherDepartureMeansOfTransportHCPage
-        .loadPage(numberOfDepartureMeans)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfDepartureMeans: String) =>
+    AddAnotherDepartureMeansOfTransportHCPage
+      .loadPage(numberOfDepartureMeans)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page$"""
-  ) {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddDocumentsPage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddDocumentsPage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items in house consignment 2' page$"""
-  ) {
-    (answer: String, numberOfDocuments: String) =>
-      DocumentsAddAnotherDocumentsHCPage
-        .loadPage(numberOfDocuments)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfDocuments: String) =>
+    DocumentsAddAnotherDocumentsHCPage
+      .loadPage(numberOfDocuments)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page$"""
-  ) {
-    (answer: String, HCNumber: String) =>
-      HouseConsignmentAddAdditionalReferencePage
-        .loadPage(HCNumber)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, HCNumber: String) =>
+    HouseConsignmentAddAdditionalReferencePage
+      .loadPage(HCNumber)
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?click radio option (.*) on the 'You have added (.*) additional reference for house consignment 2' page$"""
-  ) {
-    (answer: String, numberOfReferences: String) =>
-      AdditionalReferenceAddAnotherHCPage
-        .loadPage(numberOfReferences)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, numberOfReferences: String) =>
+    AdditionalReferenceAddAnotherHCPage
+      .loadPage(numberOfReferences)
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page$""") {
@@ -1388,21 +1293,19 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?click the (.*) link on the 'You have added (.*) house consignments' page$"""
-  ) {
-    (sectionLink: String, numberOfHCAdded: String) =>
-      HouseConsignmentAddAnotherHCPage
-        .loadPage(numberOfHCAdded)
-        .clickByPartialLinkText(sectionLink)
+  ) { (sectionLink: String, numberOfHCAdded: String) =>
+    HouseConsignmentAddAnotherHCPage
+      .loadPage(numberOfHCAdded)
+      .clickByPartialLinkText(sectionLink)
   }
 
   And(
     """^(?:I )?click radio option (.*) on the 'Are you sure you want to remove house consignment (.+)\?' page$"""
-  ) {
-    (answer: String, hcNumber: String) =>
-      HouseConsignmentRemoveHCPage
-        .loadPage(hcNumber)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, hcNumber: String) =>
+    HouseConsignmentRemoveHCPage
+      .loadPage(hcNumber)
+      .select(answer)
+      .submitPage()
   }
 
 }

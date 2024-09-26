@@ -21,12 +21,11 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Incident._
 
 class IncidentStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the incident identify location page$""") {
-    (answer: String) =>
-      IncidentsIdentifyLocationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the incident identify location page$""") { (answer: String) =>
+    IncidentsIdentifyLocationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) and (.+) on the incident coordinates page$""") {
@@ -37,52 +36,46 @@ class IncidentStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the incident un locode page$""") {
-    (answer: String) =>
-      IncidentsUnLocodePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the incident un locode page$""") { (answer: String) =>
+    IncidentsUnLocodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?fill in address on the incident address page$""") {
-    () =>
-      IncidentAddressPage
-        .loadPage()
-        .fillInputs()
-        .submitPage()
+  And("""^(?:I )?fill in address on the incident address page$""") { () =>
+    IncidentAddressPage
+      .loadPage()
+      .fillInputs()
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the add incident page$""") {
-    (answer: String) =>
-      AddIncidentPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add incident page$""") { (answer: String) =>
+    AddIncidentPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the In which country did the incident happen page$""") {
-    (answer: String) =>
-      IncidentCountryPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the In which country did the incident happen page$""") { (answer: String) =>
+    IncidentCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the incident code page$""") {
-    (answer: String) =>
-      IncidentCodePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the incident code page$""") { (answer: String) =>
+    IncidentCodePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the incident description page$""") {
-    (answer: String) =>
-      IncidentDescriptionPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the incident description page$""") { (answer: String) =>
+    IncidentDescriptionPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) incidents? page$""") {
