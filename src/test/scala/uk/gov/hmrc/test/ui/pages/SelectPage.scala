@@ -41,9 +41,7 @@ trait SelectPage extends StringPage {
       .map(_.getAttribute("innerText").length)
       .getOrElse(0)
 
-    (0 until length).foreach(
-      _ => input.sendKeys(Keys.BACK_SPACE)
-    )
+    (0 until length).foreach(_ => input.sendKeys(Keys.BACK_SPACE))
   }
 
   protected def openDropdownAndSelectFirstValue(id: String): Unit = {

@@ -22,20 +22,18 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.TransportEquipmentAndSeal.{RemoveGoods
 
 class TransportEquipmentGoodsRefStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number page$""") {
-    (answer: String) =>
-      AddGoodsItemNumberPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the Do you want to add a goods item number page$""") { (answer: String) =>
+    AddGoodsItemNumberPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.*) on the What is the goods item number? page$""") {
-    (answer: String) =>
-      GoodsItemNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.*) on the What is the goods item number? page$""") { (answer: String) =>
+    GoodsItemNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the You have added (.*) goods item numbers? page$""") {

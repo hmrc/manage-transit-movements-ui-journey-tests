@@ -21,23 +21,20 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.Confirmation.ConfirmationPage
 
 class ConfirmationStepDef extends BaseStepDef {
 
-  And("""^(?:I )?click the (.+) link on the Arrival notification sent page$""") {
-    (answer: String) =>
-      ConfirmationPage
-        .loadPage()
-        .selectNotificationLink(answer)
+  And("""^(?:I )?click the (.+) link on the Arrival notification sent page$""") { (answer: String) =>
+    ConfirmationPage
+      .loadPage()
+      .selectNotificationLink(answer)
   }
 
-  And("""^I sign out$""") {
-    () =>
-      ConfirmationPage
-        .selectSignOutLink("Sign out")
+  And("""^I sign out$""") { () =>
+    ConfirmationPage
+      .selectSignOutLink("Sign out")
   }
 
-  Then("""^(?:I )?(?:should )?be on the Arrival notification sent page$""") {
-    () =>
-      ConfirmationPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the Arrival notification sent page$""") { () =>
+    ConfirmationPage
+      .loadPage()
   }
 
 }

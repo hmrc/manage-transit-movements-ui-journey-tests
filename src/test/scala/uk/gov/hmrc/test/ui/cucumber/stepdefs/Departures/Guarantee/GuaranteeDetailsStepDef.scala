@@ -21,20 +21,18 @@ import uk.gov.hmrc.test.ui.pages.Departures.Guarantee._
 
 class GuaranteeDetailsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the 'Which type of guarantee is it\?' page$""") {
-    (answer: String) =>
-      GuaranteeTypePage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the 'Which type of guarantee is it\?' page$""") { (answer: String) =>
+    GuaranteeTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the access code\?' page$""") {
-    (answer: String) =>
-      GuaranteeAccessCodePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the access code\?' page$""") { (answer: String) =>
+    GuaranteeAccessCodePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select (.+) on the 'What currency do you want to use for the liability\?' page$""") {
@@ -45,22 +43,20 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'How much is the liability in pounds\?' page$""") {
-    (answer: String) =>
-      GuaranteeLiabilityAmount
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'How much is the liability in pounds\?' page$""") { (answer: String) =>
+    GuaranteeLiabilityAmount
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to use the default liability amount of 10000 euros\?' page$"""
-  ) {
-    (answer: String) =>
-      GuaranteeDefaultLiabilityPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    GuaranteeDefaultLiabilityPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?have (.+) guarantees? added on 'You have added (.*) guarantees?' page$""") {
@@ -100,35 +96,31 @@ class GuaranteeDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the reference for the guarantee\?' page$""") {
-    (answer: String) =>
-      OtherGuarantee3ReferencePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the reference for the guarantee\?' page$""") { (answer: String) =>
+    OtherGuarantee3ReferencePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the reference\?' page$""") {
-    (answer: String) =>
-      OtherGuarantee8ReferencePage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the reference\?' page$""") { (answer: String) =>
+    OtherGuarantee8ReferencePage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page$""") {
-    (answer: String) =>
-      GuaranteeReferenceNumberPage
-        .loadPage()
-        .fillInput(answer)
-        .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page$""") { (answer: String) =>
+    GuaranteeReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
-  And("""^(?:I )?click the Continue button on the 'Guarantee added for TIR declaration' page$""") {
-    () =>
-      GuaranteeBForTIRDeclarationPage
-        .loadPage()
-        .submitPage()
+  And("""^(?:I )?click the Continue button on the 'Guarantee added for TIR declaration' page$""") { () =>
+    GuaranteeBForTIRDeclarationPage
+      .loadPage()
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a liability for the guarantee\?' page$""") {

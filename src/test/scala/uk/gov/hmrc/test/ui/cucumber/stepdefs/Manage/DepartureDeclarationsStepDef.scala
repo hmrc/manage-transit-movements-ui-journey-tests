@@ -21,17 +21,15 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures._
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?see the status (.*) on the 'Departure declarations' page$""") {
-    (status: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .checkDepartureStatus(status)
+  And("""^(?:I )?see the status (.*) on the 'Departure declarations' page$""") { (status: String) =>
+    DepartureDeclarationsPage
+      .loadPage()
+      .checkDepartureStatus(status)
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Departure declarations' page$""") {
-    () =>
-      DepartureDeclarationsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Departure declarations' page$""") { () =>
+    DepartureDeclarationsPage
+      .loadPage()
   }
 
   And("""^(?:I )?click on the (.*) link for LRN (.*) on the 'Departure declarations' page""") {
@@ -41,94 +39,80 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
         .selectDepartureAction(linkText, lrn)
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Departure declarations' page$""") {
-    (link: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .selectAction(link)
+  Given("""^(?:I )?click on the (.+) link on the 'Departure declarations' page$""") { (link: String) =>
+    DepartureDeclarationsPage
+      .loadPage()
+      .selectAction(link)
   }
 
-  And("""^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$""") {
-    (searchString: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .fillInput(searchString)
-        .clickById("submit")
+  And("""^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$""") { (searchString: String) =>
+    DepartureDeclarationsPage
+      .loadPage()
+      .fillInput(searchString)
+      .clickById("submit")
   }
 
-  And("""^(?:I )?should see the content (.*) on the 'Departure declarations' page$""") {
-    (content: String) =>
-      DepartureDeclarationsPage
-        .loadPage()
-        .checkForContent(content)
+  And("""^(?:I )?should see the content (.*) on the 'Departure declarations' page$""") { (content: String) =>
+    DepartureDeclarationsPage
+      .loadPage()
+      .checkForContent(content)
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") {
-    (declarationLink: String) =>
-      DeclarationErrorsPage
-        .loadPage()
-        .selectDepartureDeclarationLink(declarationLink)
+  Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") { (declarationLink: String) =>
+    DeclarationErrorsPage
+      .loadPage()
+      .selectDepartureDeclarationLink(declarationLink)
   }
 
-  Given("""^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$""") {
-    () =>
-      AmendDeclarationErrorsPage
-        .loadPage()
-        .submitPage()
+  Given("""^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$""") { () =>
+    AmendDeclarationErrorsPage
+      .loadPage()
+      .submitPage()
   }
 
-  Given("""^(?:I )?click on the Amend errors button on the 'Amend guarantee errors' page$""") {
-    () =>
-      AmendGuaranteeErrorsPage
-        .loadPage()
-        .submitPage()
+  Given("""^(?:I )?click on the Amend errors button on the 'Amend guarantee errors' page$""") { () =>
+    AmendGuaranteeErrorsPage
+      .loadPage()
+      .submitPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Review declaration errors' page$""") {
-    () =>
-      ReviewDeclarationErrorsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Review declaration errors' page$""") { () =>
+    ReviewDeclarationErrorsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Review cancellation errors' page$""") {
-    () =>
-      ReviewCancellationErrorsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Review cancellation errors' page$""") { () =>
+    ReviewCancellationErrorsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Declaration errors' page$""") {
-    () =>
-      DeclarationNonFunctionalErrorsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Declaration errors' page$""") { () =>
+    DeclarationNonFunctionalErrorsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Cancellation errors' page$""") {
-    () =>
-      CancellationErrorsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Cancellation errors' page$""") { () =>
+    CancellationErrorsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Goods being recovered' page$""") {
-    () =>
-      GoodsInRecoveryDetailsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Goods being recovered' page$""") { () =>
+    GoodsInRecoveryDetailsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Goods not released' page$""") {
-    () =>
-      GoodsNotReleasedDetailsPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Goods not released' page$""") { () =>
+    GoodsNotReleasedDetailsPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete pre-lodged declaration' page$""") {
-    () =>
-      ConfirmationNeededToCompleteDeclarationPage
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete pre-lodged declaration' page$""") { () =>
+    ConfirmationNeededToCompleteDeclarationPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?(?:should )?be on the Presentation Notification 'Check your answers' page$""") {
-    () =>
-      PreLodgeCYA
-        .loadPage()
+  Then("""^(?:I )?(?:should )?be on the Presentation Notification 'Check your answers' page$""") { () =>
+    PreLodgeCYA
+      .loadPage()
   }
 }

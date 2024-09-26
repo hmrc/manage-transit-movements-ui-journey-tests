@@ -21,12 +21,11 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport._
 
 class BorderMeansOfTransportStepDef extends BaseStepDef {
 
-  And("""^(?:I )?choose radio option (.*) on the add border mode of transport page$""") {
-    (answer: String) =>
-      AddBorderModeOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the add border mode of transport page$""") { (answer: String) =>
+    AddBorderModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'How is the transit crossing the border\?' page$""") {
@@ -39,12 +38,11 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the border mode 'Which identification do you want to use for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      BorderMeansOftransportIdentificationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    BorderMeansOftransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter identification (.+) on the 'What is the identification number for this\?' page$""") {
@@ -63,12 +61,11 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'Where is the customs office at the border\?' page$""") {
-    (answer: String) =>
-      BorderMeansOfTransportOfficeOfTransitPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?select (.+) on the 'Where is the customs office at the border\?' page$""") { (answer: String) =>
+    BorderMeansOfTransportOfficeOfTransitPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a conveyance reference number\?' page$""") {
@@ -93,12 +90,11 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the remove border means of transport page$""") {
-    (answer: String) =>
-      RemoveBorderMeansOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  And("""^(?:I )?choose radio option (.*) on the remove border means of transport page$""") { (answer: String) =>
+    RemoveBorderMeansOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") {
@@ -111,12 +107,11 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the border means 'Do you want to add identification for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      AddVehicleIdentificationBorderMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddVehicleIdentificationBorderMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you want to add the type of identification\?' page$""") {
@@ -129,22 +124,20 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an identification number for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      IdentificationNumberDepartureMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    IdentificationNumberDepartureMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add the registered country for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      RegisteredVehicleCountryDepartureMeansOfTransport
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    RegisteredVehicleCountryDepartureMeansOfTransport
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
 }

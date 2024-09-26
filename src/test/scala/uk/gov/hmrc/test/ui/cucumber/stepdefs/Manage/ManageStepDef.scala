@@ -23,46 +23,39 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
 
-  Given("""^(?:I )?submit an (.+)$""") {
-    (filename: String) =>
-      ApiHelper.insertXML(filename)
+  Given("""^(?:I )?submit an (.+)$""") { (filename: String) =>
+    ApiHelper.insertXML(filename)
   }
 
-  Then("""^(?:I )?should be on the 'Manage your transit movements' page$""") {
-    () =>
-      ManageTransitMovementsPage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'Manage your transit movements' page$""") { () =>
+    ManageTransitMovementsPage
+      .loadPage()
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Manage your transit movements' page$""") {
-    (link: String) =>
-      ManageTransitMovementsPage
-        .loadPage()
-        .selectAction(link)
+  Given("""^(?:I )?click on the (.+) link on the 'Manage your transit movements' page$""") { (link: String) =>
+    ManageTransitMovementsPage
+      .loadPage()
+      .selectAction(link)
   }
 
-  Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") {
-    () =>
-      GoodsUnderControlDocumentsRequestedPage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
+    GoodsUnderControlDocumentsRequestedPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Goods under control' page$""") {
-    () =>
-      GoodsUnderControlPage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'Goods under control' page$""") { () =>
+    GoodsUnderControlPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$""") {
-    () =>
-      PreLodgedGoodsUnderControlPage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$""") { () =>
+    PreLodgedGoodsUnderControlPage
+      .loadPage()
   }
 
-  Then("""^(?:I )?should be on the 'For your security we signed you out' page$""") {
-    () =>
-      ForYourSecuritySignedOutPage
-        .loadPage()
+  Then("""^(?:I )?should be on the 'For your security we signed you out' page$""") { () =>
+    ForYourSecuritySignedOutPage
+      .loadPage()
   }
 
 }

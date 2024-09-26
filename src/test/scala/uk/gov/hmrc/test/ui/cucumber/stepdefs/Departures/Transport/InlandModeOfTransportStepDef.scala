@@ -32,12 +32,11 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on the inland mode 'Which identification do you want to use for this vehicle\?' page$"""
-  ) {
-    (answer: String) =>
-      TransportIdentificationPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    TransportIdentificationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter registration number (.+) on the 'What is the identification number for this\?' page$""") {
@@ -58,22 +57,20 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) on 'Do you want to add a border mode of transport\?' page$"""
-  ) {
-    (answer: String) =>
-      AddNewBorderModeOfTransportPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
+  ) { (answer: String) =>
+    AddNewBorderModeOfTransportPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
   }
 
   And(
     """^(?:I )?choose radio option (.*) on the departure means '(.*)' page$"""
-  ) {
-    (answer: String, pageTitle: String) =>
-      AddVehicleIdentificationInlandModeOfTransport
-        .loadPage(pageTitle)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, pageTitle: String) =>
+    AddVehicleIdentificationInlandModeOfTransport
+      .loadPage(pageTitle)
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?select radio option (.*) on the 'You have added (.+) departure means of transport?' page$""") {
@@ -93,12 +90,11 @@ class InlandModeOfTransportStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?choose radio option (.*) for the 'Are you sure you want to remove departure means of transport (.+)\?' page$"""
-  ) {
-    (answer: String, departureMeansNo: String) =>
-      RemoveDepartureMeansOfTransportPage
-        .loadPage(departureMeansNo)
-        .select(answer)
-        .submitPage()
+  ) { (answer: String, departureMeansNo: String) =>
+    RemoveDepartureMeansOfTransportPage
+      .loadPage(departureMeansNo)
+      .select(answer)
+      .submitPage()
   }
 
 }
