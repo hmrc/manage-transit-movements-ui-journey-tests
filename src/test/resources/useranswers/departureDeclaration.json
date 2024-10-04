@@ -471,7 +471,11 @@
         ],
         "documentsInProgress" : false,
         "addAdditionalReferenceYesNo" : false,
-        "addAdditionalInformationYesNo" : false
+        "addAdditionalInformationYesNo" : false,
+        "countryOfDispatch" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        }
       }
     ]
   },
