@@ -166,6 +166,8 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter GB123456123456 on the 'What is the UCR?' page
+    And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
+    And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
     And I select Italy on the transport details 'What is the country of destination?' page
 
@@ -279,7 +281,6 @@ Feature: End to end journey for Great Britain office of departure
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
     And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
-    And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     # Dangerous goods section
@@ -356,7 +357,6 @@ Feature: End to end journey for Great Britain office of departure
     #Add another Item
     And I enter This is a description on the 'Enter a description of item 2' page
     And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
-    And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter ABC123 on the 'What is the commodity code?' page
     #2nd Item - Dangerous goods section
@@ -483,6 +483,7 @@ Feature: End to end journey for Great Britain office of departure
      ## Transport details
     When I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
+    And I choose radio option No on the 'Are all the items being dispatched from the same country?' page
     And I choose radio option No on the 'Are all the items being transported to the same country?' page
 
      ## Container indicator

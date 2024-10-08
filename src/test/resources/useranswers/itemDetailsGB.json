@@ -162,6 +162,7 @@
     "transportDetails" : {
       "preRequisites" : {
         "sameUcrYesNo" : false,
+        "sameCountryOfDispatchYesNo" : false,
         "transportedToSameCountryYesNo" : false,
         "containerIndicator" : true
       },
