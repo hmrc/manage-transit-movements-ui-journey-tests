@@ -264,6 +264,11 @@
       "preRequisites" : {
         "sameUcrYesNo" : true,
         "uniqueConsignmentReference" : "GB123456123456",
+        "sameCountryOfDispatchYesNo" : true,
+        "countryOfDispatch" : {
+          "code" : "GB",
+          "description" : "United Kingdom"
+        },
         "transportedToSameCountryYesNo" : true,
         "itemsDestinationCountry" : {
           "code" : "IT",
