@@ -13,9 +13,8 @@ Feature: Transport details journey
     And I click the Add transport details link on the 'Declaration summary' page
     And I choose radio option No on the 'Do you want to use the same UCR for all items?' page
     And I choose radio option No on the 'Are all the items being dispatched from the same country?' page
-    And I choose radio option No on the 'Are all the items being transported to the same country?' page
-
       ## Container indicator (this drives the departure transport means logic)
+    And I choose radio option No on the 'Are the goods being transported to another country after the end of this transit movement?' page
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport

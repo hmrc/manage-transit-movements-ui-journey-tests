@@ -61,6 +61,14 @@ class TransportDetailsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Are the goods being transported to another country after the end of this transit movement\?' page$"""
+  ) { (answer: String) =>
+    ItemsBeingTransportedToAnotherCountry
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add an inland mode of transport\?' page$"""
