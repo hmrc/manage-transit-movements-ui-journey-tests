@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object HaveSealsBeenReplacedByCustomsPage extends YesNoPage {
 
-  override def title(args: String*): String = "Have any seals been replaced by a customs authority?"
+  override def title(args: String*): String = "Has the external seal been replaced by a customs authority?"
 
 }
