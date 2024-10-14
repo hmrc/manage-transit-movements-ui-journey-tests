@@ -14,7 +14,7 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'Do you want to use the same UCR for all items?' page
     And I enter UCR23456 on the 'What is the UCR?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
-    And I select Italy on the transport details 'What is the country of destination?' page
+    And I select Italy on the transport details 'What country are the items being transported to?' page
 
       ## Container indicator
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
@@ -161,7 +161,7 @@ Feature: Transport details journey - Transition
     And I choose radio option Yes on the 'Are all the items being dispatched from the same country?' page
     And I select United Kingdom on the 'What is the country of dispatch?' page
     And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
-    And I select United Kingdom on the transport details 'What is the country of destination?' page
+    And I select United Kingdom on the transport details 'What country are the items being transported to?' page
 
       ## Container indicator
     And I choose radio option Not sure on the 'Are you using any shipping containers to transport the goods?' page
