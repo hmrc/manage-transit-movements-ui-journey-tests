@@ -269,6 +269,7 @@
           "code" : "GB",
           "description" : "United Kingdom"
         },
+        "addCountryOfDestination" : true,
         "transportedToSameCountryYesNo" : true,
         "itemsDestinationCountry" : {
           "code" : "IT",
