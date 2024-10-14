@@ -45,7 +45,7 @@ class TransportDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the transport details 'What is the country of destination\?' page$""") {
+  And("""^(?:I )?select (.+) on the transport details 'What country are the items being transported to\?' page$""") {
     (answer: String) =>
       ItemsDestinationCountryPage
         .loadPage()
