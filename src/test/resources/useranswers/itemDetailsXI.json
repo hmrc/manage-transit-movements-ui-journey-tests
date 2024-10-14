@@ -138,6 +138,7 @@
       "preRequisites" : {
         "sameUcrYesNo" : false,
         "sameCountryOfDispatchYesNo" : false,
+        "addCountryOfDestination" : true,
         "transportedToSameCountryYesNo" : false,
         "containerIndicator" : true
       },

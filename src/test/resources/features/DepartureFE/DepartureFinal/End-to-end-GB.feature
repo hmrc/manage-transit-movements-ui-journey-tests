@@ -171,7 +171,8 @@ Feature: End to end journey for Great Britain office of departure
 
       ## Container indicator
     And I choose radio option Yes on the 'Are the goods being transported to another country after the end of this transit movement?' page
-    And I choose radio option No on the 'Are all the items being transported to the same country?' page
+    And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
+    And I select Italy on the transport details 'What country are the items being transported to?' page
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
