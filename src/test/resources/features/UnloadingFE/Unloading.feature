@@ -13,10 +13,10 @@ Feature: Submit unloading remarks with seals
     And I choose radio option No on the 'Are the goods too large to fit into a container?' page
     Then I click the Continue button on the 'Download the unloading permission' page
     And I choose radio option No on the 'Have any seals been replaced by a customs authority?' page
-    And I enter Seal1 Seal2 Seal3 on the 'Enter all the original seal identification numbers' page
+    And I enter Seal1 on the 'Enter all the original seal identification numbers' page
     And I click the Change link for Have any seals been replaced by a customs authority? on the Unloading 'Check your answers' page
     And I choose radio option Yes on the 'Have any seals been replaced by a customs authority?' page
-    And I enter NewSeal1 NewSeal2 NewSeal3 on the 'Enter all the seal identification numbers' page
+    And I enter NewSeal1 on the 'Enter all the seal identification numbers' page
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
 

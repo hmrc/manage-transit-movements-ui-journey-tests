@@ -20,6 +20,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 
 object EnterOriginalSealsIdentificationCommentPage extends StringPage {
 
-  override def title(args: String*): String = "Enter all the original seal identification numbers"
+  override def title(args: String*): String = "What is the identification number for the external seal?"
 
 }
