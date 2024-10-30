@@ -25,21 +25,21 @@ trait Page extends BasePage {
     this
   }
 
-  val departureSection: String = "Departure declarations"
-  val arrivalSection: String   = "Arrival notifications"
-  val guaranteeSection: String = "Guarantee balance"
+  private def onPage(expectedTitle: String): Unit = {
+    val title = driver.getTitle
+    val regex = "(.+) - Manage your transit movements - GOV.UK".r
+    title match
+      case regex(s"$expectedTitle - Departure declarations") => ()
+      case regex(s"$expectedTitle - Arrival notifications") => ()
+      case regex(s"$expectedTitle - Guarantee balance") => ()
+      case regex(expectedTitle) => ()
+      case _ => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
+  }
 
-  val serviceName: String = "Manage your transit movements"
+}
 
-  private def onPage(pageTitle: String): Unit =
-    if (
-      driver.getTitle != s"$pageTitle - $arrivalSection - $serviceName - GOV.UK" &
-        driver.getTitle != s"$pageTitle - $departureSection - $serviceName - GOV.UK" &
-        driver.getTitle != s"$pageTitle - $guaranteeSection - $serviceName - GOV.UK" &
-        driver.getTitle != s"$pageTitle - $serviceName - GOV.UK"
-    )
-      throw PageNotFoundException(
-        s"Expected '$pageTitle' page, but found '${driver.getTitle}' page."
-      )
+object Page extends BasePage {
 
+  def selectSignOutLink(signOutLink: String): Unit =
+    clickByPartialLinkText(signOutLink)
 }

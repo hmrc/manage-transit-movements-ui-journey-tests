@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.scalatest.concurrent.Eventually.eventually
+import uk.gov.hmrc.test.ui.pages.Page
 
 class CommonStepDef extends BaseStepDef {
 
@@ -27,5 +28,10 @@ class CommonStepDef extends BaseStepDef {
 
   And("""^(?:I )?refresh the page$""") { () =>
     driver.navigate().refresh()
+  }
+
+  And("""^I sign out$""") { () =>
+    Page
+      .selectSignOutLink("Sign out")
   }
 }
