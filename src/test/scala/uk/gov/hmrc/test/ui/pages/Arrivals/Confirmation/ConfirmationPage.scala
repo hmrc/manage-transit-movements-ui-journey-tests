@@ -25,7 +25,4 @@ object ConfirmationPage extends Page {
   def selectNotificationLink(notificationLink: String): Unit =
     clickByPartialLinkText(notificationLink)
 
-  def selectSignOutLink(signOutLink: String): Unit =
-    clickByPartialLinkText(signOutLink)
-
 }
