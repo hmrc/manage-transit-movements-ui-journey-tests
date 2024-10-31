@@ -20,7 +20,8 @@ import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object ItemsBeingTransportedToAnotherCountry extends RadioPage {
 
-  override def title(args: String*): String = "Are the goods being transported to another country after the end of this transit movement?"
+  override def title(args: String*): String =
+    "Are the goods being transported to another country after the end of this transit movement?"
 
   override def select(answer: String): this.type = {
     answer match {

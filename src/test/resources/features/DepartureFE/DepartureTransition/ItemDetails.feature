@@ -150,6 +150,7 @@ Feature: Item details journey
     ## Item details
     When I click the Add items link on the 'Declaration summary' page
     And I enter This is a description on the 'Enter a description of item 1' page
+    And I select (1) Transport equipment - Cont3333 on the 'Which transport equipment are you using for this item?' page
     And I select United Kingdom on the 'What is the item’s country of dispatch?' page
     And I select Italy on the 'What is the item’s country of destination?' page
     And I  choose radio option Yes on the 'Do you want to add a Unique Consignment Reference?' page
