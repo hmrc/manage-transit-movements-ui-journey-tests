@@ -30,10 +30,10 @@ trait Page extends BasePage {
     val regex = "(.+) - Manage your transit movements - GOV.UK".r
     title match
       case regex(s"$expectedTitle - Departure declarations") => ()
-      case regex(s"$expectedTitle - Arrival notifications") => ()
-      case regex(s"$expectedTitle - Guarantee balance") => ()
-      case regex(expectedTitle) => ()
-      case _ => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
+      case regex(s"$expectedTitle - Arrival notifications")  => ()
+      case regex(s"$expectedTitle - Guarantee balance")      => ()
+      case regex(expectedTitle)                              => ()
+      case _                                                 => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
   }
 
 }
