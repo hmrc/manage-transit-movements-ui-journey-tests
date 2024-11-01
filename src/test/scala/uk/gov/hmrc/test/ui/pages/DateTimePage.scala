@@ -29,11 +29,11 @@ trait DateTimePage extends StringPage {
   final val minute: String = now.getMinute.toString
 
   def fillInputs(): this.type = {
-    fillInputById("dateDay", day)
-    fillInputById("dateMonth", month)
-    fillInputById("dateYear", year)
-    fillInputById("timeHour", hour)
-    fillInputById("timeMinute", minute)
+    fillInputById("value.day", day)
+    fillInputById("value.month", month)
+    fillInputById("value.year", year)
+    fillInputById("value.hour", hour)
+    fillInputById("value.minute", minute)
 
     this
   }

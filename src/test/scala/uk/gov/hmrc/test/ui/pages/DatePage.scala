@@ -19,9 +19,9 @@ package uk.gov.hmrc.test.ui.pages
 trait DatePage extends DateTimePage {
 
   override def fillInputs(): this.type = {
-    fillInputById("value_day", day)
-    fillInputById("value_month", month)
-    fillInputById("value_year", year)
+    fillInputById("value.day", day)
+    fillInputById("value.month", month)
+    fillInputById("value.year", year)
 
     this
   }
