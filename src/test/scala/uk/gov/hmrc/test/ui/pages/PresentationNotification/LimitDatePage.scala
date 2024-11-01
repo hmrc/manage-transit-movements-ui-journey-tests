@@ -27,9 +27,9 @@ object LimitDatePage extends DatePage {
   override lazy val now: LocalDateTime = LocalDateTime.now().plusDays(2)
 
   override def fillInputs(): this.type = {
-    fillInputById("valueDay", day)
-    fillInputById("valueMonth", month)
-    fillInputById("valueYear", year)
+    fillInputById("value.day", day)
+    fillInputById("value.month", month)
+    fillInputById("value.year", year)
 
     this
   }
