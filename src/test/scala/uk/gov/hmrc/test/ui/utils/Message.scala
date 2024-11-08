@@ -45,6 +45,7 @@ object Message {
     case "IE013" => IE013(World.departureId)
     case "IE004" => IE004(World.departureId)
     case "IE055" => IE055(World.departureId)
+    case "IE170" => IE170(World.departureId)
     case _       => throw new RuntimeException(s"$value not recognised")
   }
 }
@@ -79,6 +80,10 @@ case class IE014(departureId: String) extends Message {
   override val endpoint: String = s"$departureId/departure-outbound-message"
 }
 
+case class IE170(departureId: String) extends Message {
+  override val endpoint: String = s"$departureId/departure-outbound-message"
+}
+
 case class IE060(departureId: String) extends DepartureInboundMessage
 case class IE056(departureId: String) extends DepartureInboundMessage
 case class IE035(departureId: String) extends DepartureInboundMessage
@@ -89,6 +94,7 @@ case class IE928(departureId: String) extends DepartureInboundMessage
 case class IE013(departureId: String) extends DepartureInboundMessage
 case class IE004(departureId: String) extends DepartureInboundMessage
 case class IE055(departureId: String) extends DepartureInboundMessage
+
 
 case class IE057(arrivalId: String) extends ArrivalInboundMessage
 case class IE043(arrivalId: String) extends ArrivalInboundMessage
