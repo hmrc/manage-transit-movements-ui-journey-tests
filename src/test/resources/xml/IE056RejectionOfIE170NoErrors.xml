@@ -2,42 +2,40 @@
     <messageSender>token</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
-    <messageIdentification>token</messageIdentification>
+    <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC056C</messageType>
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <MRN>string</MRN>
+        <MRN>38VYQTYFU3T0KUTUM3</MRN>
         <businessRejectionType>170</businessRejectionType>
         <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>token</rejectionCode>
+        <rejectionCode>C012</rejectionCode>
         <!--Optional:-->
-        <rejectionReason>string</rejectionReason>
+        <rejectionReason>something bad</rejectionReason>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>stringst</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
+        <identificationNumber>GB954131533000</identificationNumber>
+
+        <name>Swaylor Tift</name>
         <!--Optional:-->
         <Address>
-            <streetAndNumber>string</streetAndNumber>
+            <streetAndNumber>10 Corneilia Street</streetAndNumber>
             <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
+            <postcode>TS15WT</postcode>
+            <city>London</city>
+            <country>GB</country>
         </Address>
     </HolderOfTheTransitProcedure>
     <!--Optional:-->
     <Representative>
-        <identificationNumber>string</identificationNumber>
-        <status>token</status>
+        <identificationNumber>GB954131533000</identificationNumber>
+        <status>1</status>
     </Representative>
     <!--0 to 9999 repetitions:-->
 </ncts:CC056C>

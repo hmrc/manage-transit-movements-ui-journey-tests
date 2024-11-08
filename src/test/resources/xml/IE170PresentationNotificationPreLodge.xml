@@ -2,12 +2,12 @@
     <messageSender>token</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
-    <messageIdentification>token</messageIdentification>
+    <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC170C</messageType>
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <LRN>string</LRN>
+        <LRN>38VYQTYFU3T0KUTUM3</LRN>
         <!--Optional:-->
         <limitDate>2014-06-09</limitDate>
     </TransitOperation>
@@ -16,17 +16,15 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
+        <name>Taylor Swift</name>
         <!--Optional:-->
         <Address>
-            <streetAndNumber>string</streetAndNumber>
+            <streetAndNumber>1 Coneilia Street</streetAndNumber>
             <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
+            <postcode>TS1SWT</postcode>
+            <city>London</city>
             <country>GB</country>
         </Address>
     </HolderOfTheTransitProcedure>
@@ -36,8 +34,8 @@
         <status>1</status>
         <!--Optional:-->
         <ContactPerson>
-            <name>string</name>
-            <phoneNumber>token</phoneNumber>
+            <name>Travis</name>
+            <phoneNumber>018789123455</phoneNumber>
         </ContactPerson>
     </Representative>
     <Consignment>
@@ -51,12 +49,12 @@
         <TransportEquipment>
             <sequenceNumber>1</sequenceNumber>
             <!--Optional:-->
-            <containerIdentificationNumber>string</containerIdentificationNumber>
+            <containerIdentificationNumber>ID1</containerIdentificationNumber>
             <numberOfSeals>100</numberOfSeals>
             <!--0 to 99 repetitions:-->
             <Seal>
                 <sequenceNumber>1</sequenceNumber>
-                <identifier>string</identifier>
+                <identifier>Seal01</identifier>
             </Seal>
             <!--0 to 9999 repetitions:-->
             <GoodsReference>
@@ -68,70 +66,52 @@
             <typeOfLocation>A</typeOfLocation>
             <qualifierOfIdentification>A</qualifierOfIdentification>
             <!--Optional:-->
-            <authorisationNumber>string</authorisationNumber>
-            <!--Optional:-->
-            <additionalIdentifier>stri</additionalIdentifier>
-            <!--Optional:-->
-            <UNLocode>token</UNLocode>
-            <!--Optional:-->
+            <authorisationNumber>GBDEPAUTH001</authorisationNumber>
             <CustomsOffice>
-                <referenceNumber>GB123456</referenceNumber>
+                <referenceNumber>GB000060</referenceNumber>
             </CustomsOffice>
             <!--Optional:-->
             <GNSS>
                 <latitude>+90.000000</latitude>
                 <longitude>-180.000000</longitude>
             </GNSS>
-            <!--Optional:-->
-            <EconomicOperator>
-                <identificationNumber>string</identificationNumber>
-            </EconomicOperator>
-            <!--Optional:-->
             <Address>
-                <streetAndNumber>string</streetAndNumber>
+                <streetAndNumber>22 Swift Street</streetAndNumber>
                 <!--Optional:-->
-                <postcode>string</postcode>
-                <city>string</city>
+                <postcode>TS1 4WT</postcode>
+                <city>London</city>
                 <country>GB</country>
             </Address>
-            <!--Optional:-->
-            <PostcodeAddress>
-                <!--Optional:-->
-                <houseNumber>string</houseNumber>
-                <postcode>string</postcode>
-                <country>GB</country>
-            </PostcodeAddress>
-            <!--Optional:-->
             <ContactPerson>
-                <name>string</name>
-                <phoneNumber>token</phoneNumber>
+                <name>Dear John</name>
+                <phoneNumber>8675309</phoneNumber>
             </ContactPerson>
         </LocationOfGoods>
         <!--0 to 999 repetitions:-->
         <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
             <typeOfIdentification>10</typeOfIdentification>
-            <identificationNumber>string</identificationNumber>
+            <identificationNumber>NC15REG</identificationNumber>
             <nationality>GB</nationality>
         </DepartureTransportMeans>
         <!--0 to 9 repetitions:-->
         <ActiveBorderTransportMeans>
             <sequenceNumber>1</sequenceNumber>
-            <customsOfficeAtBorderReferenceNumber>GB123456</customsOfficeAtBorderReferenceNumber>
+            <customsOfficeAtBorderReferenceNumber>GB000060</customsOfficeAtBorderReferenceNumber>
             <typeOfIdentification>10</typeOfIdentification>
-            <identificationNumber>string</identificationNumber>
+            <identificationNumber>NC01R3G</identificationNumber>
             <nationality>GB</nationality>
             <!--Optional:-->
-            <conveyanceReferenceNumber>string</conveyanceReferenceNumber>
+            <conveyanceReferenceNumber>12345667</conveyanceReferenceNumber>
         </ActiveBorderTransportMeans>
         <!--Optional:-->
         <PlaceOfLoading>
             <!--Optional:-->
-            <UNLocode>token</UNLocode>
+            <UNLocode>GBBEL</UNLocode>
             <!--Optional:-->
             <country>GB</country>
             <!--Optional:-->
-            <location>string</location>
+            <location>Labyrinth</location>
         </PlaceOfLoading>
         <!--1 to 99 repetitions:-->
         <HouseConsignment>
@@ -140,7 +120,7 @@
             <DepartureTransportMeans>
                 <sequenceNumber>1</sequenceNumber>
                 <typeOfIdentification>10</typeOfIdentification>
-                <identificationNumber>string</identificationNumber>
+                <identificationNumber>NE521RG</identificationNumber>
                 <nationality>GB</nationality>
             </DepartureTransportMeans>
         </HouseConsignment>
