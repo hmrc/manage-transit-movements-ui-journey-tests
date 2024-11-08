@@ -115,4 +115,9 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     PreLodgeCYA
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the 'Prelodged declaration errors' page$""") { () =>
+    PrelodgedDeclarationErrors
+      .loadPage()
+  }
 }
