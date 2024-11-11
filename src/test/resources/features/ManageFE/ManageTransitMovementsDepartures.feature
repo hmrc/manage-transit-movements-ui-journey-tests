@@ -140,7 +140,7 @@ Feature: Manage transit movements frontend tests for Departures
 #    Then I should be on the 'Intention to control - complete pre-lodged declaration' page
 #    And I sign out
 
-  Scenario: 13 Trader receives IE056 with 0 errors after submitting an IE170
+  Scenario: 13 Trader receives IE056 with no functional errors after submitting an IE170
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE170 Presentation Notification PreLodge
@@ -151,7 +151,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Prelodged declaration errors' page
     And I sign out
 
-  Scenario: 14 Trader receives IE056 with errors after submitting an IE170
+  Scenario: 14 Trader receives IE056 with functional errors after submitting an IE170
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE170 Presentation Notification PreLodge
