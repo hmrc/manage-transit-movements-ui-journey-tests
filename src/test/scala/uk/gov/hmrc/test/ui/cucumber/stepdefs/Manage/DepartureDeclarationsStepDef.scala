@@ -120,4 +120,9 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     PrelodgedDeclarationErrors
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the 'Review prelodged declaration errors' page$""") { () =>
+    ReviewPrelodgedDeclarationErrors
+      .loadPage()
+  }
 }
