@@ -5,7 +5,7 @@ Feature: Transport details journey - Transition
     Given I login with ID 1234567890
 
   Scenario: 01 Great Britain office of departure
-    And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And the user has submitted transportDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
@@ -100,7 +100,7 @@ Feature: Transport details journey - Transition
     And I sign out
 
   Scenario: 02 Great Britain office of departure - No to optional
-    And the user has submitted transportDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And the user has submitted transportDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
@@ -149,7 +149,7 @@ Feature: Transport details journey - Transition
     And I sign out
 
   Scenario: 03 Northern Ireland office of departure - Normal declaration type
-    And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
+    And the user has submitted transportDetailsXITransition.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page

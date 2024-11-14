@@ -7,7 +7,8 @@
         "phoneNumber" : "+44 (0)3001060726/27/28/30/31/32",
         "countryId" : "GB",
         "isInCL112" : true,
-        "isInCL147" : false
+        "isInCL147" : false,
+        "isInCL010" : false
       },
       "procedureType" : "simplified",
       "declarationType" : {
@@ -26,7 +27,7 @@
     }
   },
   "isSubmitted" : "notSubmitted",
-  "isTransitional" : false,
+  "isTransitional" : true,
   "tasks" : {
     ".preTaskList" : "completed"
   }

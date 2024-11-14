@@ -8,7 +8,7 @@ Feature: Trader details journey - Transition
   Scenario: 01 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration
   with EORI numbers, Contacts, Representatives, single Consignee
 
-    And the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And the user has submitted traderDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
@@ -58,7 +58,7 @@ Feature: Trader details journey - Transition
   Scenario: 02 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration,
   no EORI numbers, no Contacts, no Representative, single Consignee
 
-    And the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890
+    And the user has submitted traderDetailsGBTransition.json for LRN 1234567890TDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page
@@ -106,7 +106,7 @@ Feature: Trader details journey - Transition
   Scenario: 03 Northern Ireland office of departure, TIR declaration type, entrySummaryDeclaration,
   no EORI numbers, no Contacts, no Representative, multi Consignees
 
-    And the user has submitted traderDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
+    And the user has submitted traderDetailsXITransition.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page

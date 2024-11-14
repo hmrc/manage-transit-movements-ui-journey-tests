@@ -9,24 +9,24 @@
         "isInCL112" : true,
         "isInCL147" : false
       },
-      "procedureType" : "simplified",
+      "procedureType" : "normal",
       "declarationType" : {
-        "code": "T2",
-        "description": "Goods having the customs status of Union goods, which are placed under the common transit procedure"
+        "code": "T",
+        "description": "Mixed consignments comprising both goods to be placed under external Union transit procedure and goods which are to be placed under the internal Union transit procedure."
       },
       "additionalDeclarationType" : {
         "code" : "A",
         "description" : "for a standard customs declaration (under Article 162 of the Code)"
       },
       "securityDetailsType" : {
-        "code": "2",
-        "description": "EXS"
+        "code": "0",
+        "description": "Not used for safety and security purposes"
       },
       "detailsConfirmed" : true
     }
   },
   "isSubmitted" : "notSubmitted",
-  "isTransitional" : false,
+  "isTransitional" : true,
   "tasks" : {
     ".preTaskList" : "completed"
   }

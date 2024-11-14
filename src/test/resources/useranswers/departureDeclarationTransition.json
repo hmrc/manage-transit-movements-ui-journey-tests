@@ -517,6 +517,7 @@
     ]
   },
   "isSubmitted" : "notSubmitted",
+  "isTransitional" : true,
   "lastUpdated" : "2023-09-26T16:16:44.504+0000",
   "tasks" : {
     ".traderDetails" : "completed",
