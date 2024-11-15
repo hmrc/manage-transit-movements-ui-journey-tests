@@ -125,4 +125,9 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
     ReviewPrelodgedDeclarationErrors
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?be on the 'This declaration is no longer available' page$""") { () =>
+    DeclarationNoLongerAvailablePage
+      .loadPage()
+  }
 }
