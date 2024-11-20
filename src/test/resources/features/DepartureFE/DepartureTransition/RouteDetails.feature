@@ -7,7 +7,7 @@ Feature: Route details journey - Transition
 
 
   Scenario: 01 Great Britain office of departure
-    And the user has submitted routeDetailsGB.json for LRN 1234567890RDGB and EORI number 1234567890
+    And the user has submitted routeDetailsGBTransition.json for LRN 1234567890RDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890RDGB on the 'Draft departure declarations' page
@@ -85,7 +85,7 @@ Feature: Route details journey - Transition
 
 
   Scenario: 02 Northern Ireland office of departure
-    And the user has submitted routeDetailsXI.json for LRN 1234567890RDXI and EORI number 1234567890
+    And the user has submitted routeDetailsXITransition.json for LRN 1234567890RDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890RDXI on the 'Draft departure declarations' page

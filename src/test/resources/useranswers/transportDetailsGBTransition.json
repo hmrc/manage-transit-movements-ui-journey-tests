@@ -210,7 +210,7 @@
     }
   },
   "isSubmitted" : "notSubmitted",
-  "isTransitional" : false,
+  "isTransitional" : true,
   "tasks" : {
     ".preTaskList" : "completed",
     ".traderDetails" : "completed",

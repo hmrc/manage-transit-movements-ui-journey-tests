@@ -5,7 +5,7 @@ Feature: Journeys for Previous, Transport & Supporting documents - Transition
     Given I login with ID 1234567890
 
   Scenario: 01 Departure Office 'GB' - Declaration 'T2' - Documents - 'Previous'
-    And the user has submitted documentsGB1.json for LRN 1234567890DGB1 and EORI number 1234567890
+    And the user has submitted documentsGB1Transition.json for LRN 1234567890DGB1 and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890DGB1 on the 'Draft departure declarations' page
@@ -32,7 +32,7 @@ Feature: Journeys for Previous, Transport & Supporting documents - Transition
 
 
   Scenario: 02 Departure Office 'GB' - Declaration 'T' - Documents - 'Transport'
-    And the user has submitted documentsGB2.json for LRN 1234567890DGB2 and EORI number 1234567890
+    And the user has submitted documentsGB2Transition.json for LRN 1234567890DGB2 and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890DGB2 on the 'Draft departure declarations' page
@@ -50,7 +50,7 @@ Feature: Journeys for Previous, Transport & Supporting documents - Transition
 
 
   Scenario: 03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'
-    And the user has submitted documentsXI.json for LRN 1234567890DXI and EORI number 1234567890
+    And the user has submitted documentsXITransition.json for LRN 1234567890DXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890DXI on the 'Draft departure declarations' page

@@ -6,7 +6,7 @@ Feature: Guarantee details journey - Transition
 
   Scenario: 01 Great Britain office of departure
 
-    And the user has submitted guaranteeDetailsGB.json for LRN 1234567890GDGB and EORI number 1234567890
+    And the user has submitted guaranteeDetailsGBTransition.json for LRN 1234567890GDGB and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890GDGB on the 'Draft departure declarations' page
@@ -58,7 +58,7 @@ Feature: Guarantee details journey - Transition
 
   Scenario: 02 Northern Ireland office of departure
 
-    And the user has submitted guaranteeDetailsXI.json for LRN 1234567890GDXI and EORI number 1234567890
+    And the user has submitted guaranteeDetailsXITransition.json for LRN 1234567890GDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
     Then I click on the link for LRN 1234567890GDXI on the 'Draft departure declarations' page

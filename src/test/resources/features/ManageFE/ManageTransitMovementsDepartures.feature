@@ -174,7 +174,7 @@ Feature: Manage transit movements frontend tests for Departures
 
 
   # 4039
-  Scenario: 12 Trader is able to review IE051 message details for Goods not released
+  Scenario: 16 Trader is able to review IE051 message details for Goods not released
     When I submit an IE015 Departure Declaration
     Then I submit an IE051 No Release For Transit
     And I refresh the page
@@ -182,3 +182,13 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     Then I should be on the 'Goods not released' page
     And I sign out
+
+    #ToDo This test will fail if ran in transition mode - will pass in pipelines as it is ran against final in those
+  Scenario: 17 Trader cannot access a Transitional draft declaration when in Final mode
+    And the user has submitted itemDetailsGBTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And I refresh the page
+    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
+    And I click on the link for LRN 38VYQTYFU3T0KUTUM3 on the 'Draft departure declarations' page
+    Then I should be on the 'This declaration is no longer available' page
+    And I sign out
+
