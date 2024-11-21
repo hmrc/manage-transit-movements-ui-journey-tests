@@ -44,7 +44,7 @@ Feature: Transport details journey
     And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+#    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means office of transit
@@ -195,7 +195,7 @@ Feature: Transport details journey
     And I choose radio option Yes on the border means 'Do you want to add identification for this vehicle?' page
     And I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page
     And I enter identification GB1234567 on the 'What is the identification number for this?' page
-    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
+#    And I choose radio option Yes on the 'Do you want to add the registered country for this vehicle?' page
     And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
 
       ## Border means of transport - office of transit
