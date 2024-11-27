@@ -126,6 +126,12 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Given("""^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$""") { (declarationLink: String) =>
+    ReviewPrelodgedDeclarationErrors
+      .loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
+  }
+
   Then("""^(?:I )?(?:should )?be on the 'This declaration is no longer available' page$""") { () =>
     DeclarationNoLongerAvailablePage
       .loadPage()

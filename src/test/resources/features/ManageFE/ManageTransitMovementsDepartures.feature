@@ -148,7 +148,8 @@ Feature: Manage transit movements frontend tests for Departures
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
-    Then I should be on the 'Prelodged declaration errors' page
+    And I click on the Complete pre-lodged declaration link on the 'Prelodged declaration errors' page
+    Then I should be on the 'More information needed to complete pre-lodged declaration' page
     And I sign out
 
   Scenario: 14 Trader receives IE056 with functional errors after submitting an IE170

@@ -511,4 +511,11 @@ class PresentationNotificationStepDef extends BaseStepDef {
     InformationSentPage
       .loadPage()
   }
+
+  And(
+    """^(?:I )?should be on the 'More information needed to complete pre-lodged declaration' page$"""
+  ) { () =>
+    MoreInformationPage
+      .loadPage()
+  }
 }
