@@ -22,4 +22,6 @@ object ReviewPrelodgedDeclarationErrors extends Page {
 
   override def title(args: String*): String = "Review pre-lodged declaration errors"
 
+  def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
+    clickByPartialLinkText(declarationLink)
 }
