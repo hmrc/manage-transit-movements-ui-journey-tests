@@ -84,4 +84,9 @@ class ArrivalNotificationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Then("""^(?:I )?(?:should )?be on the 'This arrival notification is no longer available' page$""") { () =>
+    ArrivalNotificationNotAvailablePage
+      .loadPage()
+  }
+
 }
