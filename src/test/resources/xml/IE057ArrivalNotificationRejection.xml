@@ -6,7 +6,7 @@
     <messageType>CC057C</messageType>
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
-        <MRN>28BDU7NB98LCWXLNM2</MRN>
+        <MRN>21GB00014210026352</MRN>
         <businessRejectionType>007</businessRejectionType>
         <rejectionDateAndTime>2014-12-25T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>2</rejectionCode>

@@ -95,7 +95,6 @@ case class IE013(departureId: String) extends DepartureInboundMessage
 case class IE004(departureId: String) extends DepartureInboundMessage
 case class IE055(departureId: String) extends DepartureInboundMessage
 
-
 case class IE057(arrivalId: String) extends ArrivalInboundMessage
 case class IE043(arrivalId: String) extends ArrivalInboundMessage
 case class IE044(arrivalId: String) extends ArrivalInboundMessage
