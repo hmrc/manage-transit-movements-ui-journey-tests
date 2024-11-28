@@ -48,7 +48,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 
 
    #TODO This test will fail if ran in transition mode - will pass in pipelines as it is ran against final in those
-  Scenario: 17 Trader cannot access a transitional arrival notification after rejection once switched to final mode
+  Scenario: 04 - Trader cannot access a transitional arrival notification after rejection once switched to final mode
     When I submit an IE007 Transition Arrival Notification
     And I submit an IE057 Arrival Notification Rejection
     And the user has submitted arrivalNotificationTransition.json for MRN 21GB00014210026352 and EORI number 1234567890
