@@ -637,4 +637,12 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?click the Go to your Documents section to add another document link on the 'You do not have any documents to attach' page$"""
+  ) { () =>
+    YouDoNotHaveDocumentsToAttachPage
+      .loadPage()
+      .clickById("documents")
+  }
+
 }
