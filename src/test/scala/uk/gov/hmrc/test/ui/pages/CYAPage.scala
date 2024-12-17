@@ -37,7 +37,7 @@ object CYAPage extends Page {
         clickLinkById("using-same-country-of-dispatch")
       case "Are all the items being transported to the same country?"                   => clickLinkById("transported-to-same-country")
       case "Were there any discrepancies between the transit and unloading permission?" =>
-        clickLinkById("add-discrepancies")
+        clickLinkById("add-large-unsealed-goods-record-discrepancies")
       case "Do you want to add a contact?"                                              => clickLinkById("has-transit-holder-contact")
       case "Do you want to add a contact for the consignor?"                            => clickLinkById("has-consignor-contact")
       case "Do you want to add a contact for the location of goods?"                    => clickLinkById("location-of-goods-add-contact")
@@ -49,7 +49,7 @@ object CYAPage extends Page {
       case "Other"                                                                      => clickById("value_3")
       case "Do you want to use the revised unloading procedure?"                        => clickLinkById("new-auth-yes-no")
       case "Are the goods too large to fit into a container?"                           => clickLinkById("goods-too-large-yes-no")
-      case "Have any seals been replaced by a customs authority?"                       => clickLinkById("seals-replaced-customs-yes-no")
+      case "Has the external seal been replaced by a customs authority?"                       => clickLinkById("seals-replaced-customs-yes-no")
       case "What do you want to report?"                                                => clickLinkById("report")
       case "Are the goods too large to fit into a container"                            =>
         clickByPartialLinkText("Are the goods too large to fit into a container?")

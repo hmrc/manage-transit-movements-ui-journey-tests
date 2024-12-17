@@ -105,7 +105,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit and unloading permission\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Were there any discrepancies between the transit movement and unloading permission\?' page$"""
   ) { (answer: String) =>
     DifferencesPage
       .loadPage()
@@ -131,6 +131,15 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
+    """^(?:I )?choose radio option (.*) on the 'Conditions for using the revised unloading procedure' page$"""
+  ) { (answer: String) =>
+    IsRevisedProcedureConditionPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
     """^(?:I )?choose radio option (.*) on the 'Are the goods too large to fit into a container\?' page$"""
   ) { (answer: String) =>
     GoodsTooLargeToFitIntoContainerPage
@@ -140,7 +149,7 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Have any seals been replaced by a customs authority\?' page$"""
+    """^(?:I )?choose radio option (.*) on the 'Has the external seal been replaced by a customs authority\?' page$"""
   ) { (answer: String) =>
     HaveSealsBeenReplacedByCustomsPage
       .loadPage()
@@ -176,6 +185,14 @@ class UnloadingStepDef extends BaseStepDef {
     """^(?:I )?click the Continue button on the 'Download the unloading permission' page$"""
   ) { () =>
     DownloadUnloadingPermissionsPage
+      .loadPage()
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?click the Continue button on the 'Take a photograph of the external seal before it is broken' page$"""
+  ) { () =>
+    TakeAPhotographOfSealPage
       .loadPage()
       .submitPage()
   }
@@ -1192,14 +1209,14 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Enter all the original seal identification numbers' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the external seal\?' page$""") { (answer: String) =>
     EnterOriginalSealsIdentificationCommentPage
       .loadPage()
       .fillInput(answer)
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'Enter all the seal identification numbers' page$""") { (answer: String) =>
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the replacement external seal\?' page$""") { (answer: String) =>
     EnterAllSealsIdentificationNumbersPage
       .loadPage()
       .fillInput(answer)
