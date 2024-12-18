@@ -117,7 +117,7 @@ Feature: Transport details journey
 
       ## Container indicator (this drives the departure transport means logic)
     And I choose radio option No on the 'Are the goods being transported to another country after the end of this transit movement?' page
-    And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
+    And I choose radio option No on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
     And I choose radio option No on the 'Do you want to add an inland mode of transport?' page
@@ -147,14 +147,19 @@ Feature: Transport details journey
     And I choose radio option No on the 'Do you want to add a carrier?' page
 
 #      ## Transport Equipment
-    And I enter C001 on the 'What is the container identification number?' page
-    And I choose radio option No on the 'Do you want to add a seal?' page
+    And I choose radio option Yes on the 'Do you want to add any transport equipment?' page
+    And I enter S001 on the 'What is the seal identification number?' page
+    And I choose radio option No on the 'You have added 1 seal' page
     And I submit on the Check your answers section Transport equipment page
-    And I choose radio option No on the 'You have added 1 transport equipment' page
-    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+    And I choose radio option Yes on the 'You have added 1 transport equipment' page
+    And I enter S0021 on the 'What is the seal identification number?' page
+    And I choose radio option No on the 'You have added 1 seal' page
+    And I submit on the Check your answers section Transport equipment page
+    And I choose radio option No on the 'You have added 2 transport equipment' page
+
+
+  And I click radio option No on the 'Do you want to add an additional reference for all items?' page
     And I click radio option No on the 'Do you want to add any additional information for all items?' page
-
-
 
 #      ## Charges
     And I submit on the Check your answers section Transport details page
