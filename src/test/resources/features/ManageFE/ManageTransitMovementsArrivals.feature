@@ -27,10 +27,15 @@ Feature: Manage transit movements frontend tests for Arrivals
     Then I should be on the 'Review unloading remarks errors' page
     And I click on the Make unloading remarks on the 'Review unloading remarks errors' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
+    And I choose radio option Yes on the 'Conditions for using the revised unloading procedure' page
     And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
     Then I click the Continue button on the 'Check the goods and note any discrepancies' page
-    And I choose radio option No on the 'Were there any discrepancies between the transit and unloading permission?' page
-
+    And I choose radio option No on the 'Were there any discrepancies between the transit movement and unloading permission?' page
+    And I click the Change link for Were there any discrepancies between the transit and unloading permission? on the Unloading 'Check your answers' page
+    And I choose radio option Yes on the 'Were there any discrepancies between the transit movement and unloading permission?' page
+    And I click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page
+    And I click radio option No on the 'Do you want to add any comments?' page
+    And I choose radio option No on the 'Do you have anything else to report?' page
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
     And I sign out
