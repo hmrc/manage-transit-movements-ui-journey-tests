@@ -156,7 +156,7 @@ Feature: Manage transit movements frontend tests for Departures
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE170 Presentation Notification PreLodge
-    Then I submit an IE056 Rejection Of IE170 No Errors
+    Then I submit an IE056 Rejection Of IE170 With Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
     And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
