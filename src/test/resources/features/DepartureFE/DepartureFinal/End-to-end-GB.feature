@@ -575,7 +575,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click the Sign out link on the 'Departure declaration sent' page
 
 
-  Scenario: 03 Required document is missing - Declaration 'T' - Item declaration type T2 - Consignment Level Previous document added
+  Scenario: 03 Required document is missing - Declaration 'T' - Item declaration type T2 - Item Level Previous document added
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option T on the 'Which type of declaration do you want to create?' page
     And I choose radio option No security on the 'Which type of safety and security details do you want to add?' page
@@ -747,17 +747,15 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
     #Documents section
-    And I click the Go to your Documents section to add another document link on the 'You do not have any documents to attach' page
-    And I choose radio option Yes on the 'You have added 1 document' page
-    And I click radio option Yes on the 'Do you want to use this document for all items?' page
+    And I click the Go to your Documents section to add another document link on the 'You do not have any previous documents to attach' page
     Then I select Previous - (C605) Information sheet INF3 on the 'What type of document do you want to add?' page
     And I enter 1234 on the 'What is the document’s reference number?' page
     And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
-    And I choose radio option No on the 'You have added 2 document' page
+    And I choose radio option No on the 'You have added 2 documents' page
     And I click the Edit items link on the 'Declaration summary' page
+    And I select Previous - (C605) Information sheet INF3 - 1234 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
-
 
        #Additional Reference section
     And I click radio option No on the 'Do you want to add an additional reference for this item?' page
