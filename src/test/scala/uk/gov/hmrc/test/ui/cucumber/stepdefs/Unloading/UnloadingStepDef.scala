@@ -1223,10 +1223,10 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?click radio option (.*) on the 'Do you want to add any comments\?' page$""") { (answer: String) =>
-    AddCommentsPage
+  And("""^(?:I )?enter (.*) on the 'Enter your comments' page$""") { (answer: String) =>
+    EnterCommentsPage
       .loadPage()
-      .select(answer)
+      .fillInput(answer)
       .submitPage()
   }
 

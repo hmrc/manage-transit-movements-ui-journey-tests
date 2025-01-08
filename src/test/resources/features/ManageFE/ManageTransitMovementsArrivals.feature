@@ -16,6 +16,7 @@ Feature: Manage transit movements frontend tests for Arrivals
 
 
 #    2929
+
   Scenario: 02 - Trader is able to view unloading remarks for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
@@ -33,8 +34,11 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I choose radio option No on the 'Were there any discrepancies between the transit movement and unloading permission?' page
     And I click the Change link for Were there any discrepancies between the transit and unloading permission? on the Unloading 'Check your answers' page
     And I choose radio option Yes on the 'Were there any discrepancies between the transit movement and unloading permission?' page
+    Then I click the Continue button on the 'You cannot use the revised unloading procedure' page
+    And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
+    And I choose radio option No on the 'Are any of the seals broken?' page
     And I click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page
-    And I click radio option No on the 'Do you want to add any comments?' page
+    And I enter remarks on the 'Enter your comments' page
     And I choose radio option No on the 'Do you have anything else to report?' page
     And I submit the 'Check your answers' page
     And I should be on the 'Unloading remarks sent' page
