@@ -85,6 +85,14 @@ class RouteDetailsStepDef extends BaseStepDef {
         .submitPage()
   }
 
+  And("""^(?:I )?choose radio option (.*) on the 'Do you want to add a country to the transit route\?' page$""") {
+    (answer: String) =>
+      TransitRouteAddCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
+  }
+
   And(
     """^(?:I )?choose to click on the (.*) link on the 'You have added (.*) countr(?:y |ies )to the transit route' page$"""
   ) { (sectionLink: String, numberOfCountriesInTitle: String) =>
