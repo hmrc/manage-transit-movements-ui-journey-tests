@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Unloading
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object EnterCommentsPage extends  StringPage {
+object EnterCommentsPage extends StringPage {
 
   override def title(args: String*): String = "Enter your comments"
 

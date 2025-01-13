@@ -1209,18 +1209,20 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the identification number for the external seal\?' page$""") { (answer: String) =>
-    EnterOriginalSealsIdentificationCommentPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the external seal\?' page$""") {
+    (answer: String) =>
+      EnterOriginalSealsIdentificationCommentPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the 'What is the identification number for the replacement external seal\?' page$""") { (answer: String) =>
-    EnterAllSealsIdentificationNumbersPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
+  And("""^(?:I )?enter (.+) on the 'What is the identification number for the replacement external seal\?' page$""") {
+    (answer: String) =>
+      EnterAllSealsIdentificationNumbersPage
+        .loadPage()
+        .fillInput(answer)
+        .submitPage()
   }
 
   And("""^(?:I )?enter (.*) on the 'Enter your comments' page$""") { (answer: String) =>
