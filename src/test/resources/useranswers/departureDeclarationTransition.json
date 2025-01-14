@@ -442,7 +442,7 @@
     "items" : [
       {
         "description" : "item",
-        "inferredTransportEquipment" : "a98d90a0-9b35-470d-bb78-81a3c0ff8b40",
+        "transportEquipment" : "a98d90a0-9b35-470d-bb78-81a3c0ff8b40",
         "countryOfDispatch" : {
           "code" : "IT",
           "description" : "Italy"
