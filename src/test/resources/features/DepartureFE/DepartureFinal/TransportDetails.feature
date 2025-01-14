@@ -18,7 +18,8 @@ Feature: Transport details journey
 
       ## Container indicator
     And I choose radio option Yes on the 'Are the goods being transported to another country after the end of this transit movement?' page
-    And I choose radio option No on the 'Are all the items being transported to the same country?' page
+    And I choose radio option Yes on the 'Are all the items being transported to the same country?' page
+    And I select Italy on the transport details 'What country are the items being transported to?' page
     And I choose radio option Yes on the 'Are you using any shipping containers to transport the goods?' page
 
       ## Inland mode of transport
@@ -53,6 +54,15 @@ Feature: Transport details journey
     And I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page
     And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page
     And I submit on the Check your answers section Border means of transport page
+    And I choose radio option Yes on the 'You have added 1 border means of transport' page
+    And I choose radio option Registration number of the road vehicle on the border mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification GB15REG on the 'What is the identification number for this?' page
+    And I select United Kingdom on the border mode 'What country is this vehicle registered to?' page
+    And I select Basel (DE004058) on the 'Where is the customs office at the border?' page
+    And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
+    And I submit on the Check your answers section Border means of transport page
+    And I choose to click on Remove link on the add another border means of transport page
+    And I click radio Yes on the 'Are you sure you want to remove border means of transport 1?' page
     And I choose radio option No on the 'You have added 1 border means of transport' page
     And I submit on the Check your answers section Modes and means of transport page
 
@@ -60,6 +70,11 @@ Feature: Transport details journey
     And I choose radio option Yes on the 'Do you want to add a supply chain actor for all items?' page
     And I choose radio option Consolidator on the 'Which type of supply chain actor do you want to add?' page
     And I enter FR98472189002 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator?' page
+    And I choose radio option Yes on the 'You have added 1 supply chain actor' page
+    And I choose radio option Manufacturer on the 'Which type of supply chain actor do you want to add?' page
+    And I enter GB0101010101 on the 'What is the EORI number or Third Country Unique Identification Number TCUIN for the manufacturer?' page
+    And I choose to click on Remove link on the 'You have added 2 supply chain actors' page
+    And I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page
     And I choose radio option No on the 'You have added 1 supply chain actor' page
 
       ## Authorisation
@@ -98,11 +113,35 @@ Feature: Transport details journey
     And I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page
     And I choose radio option No on the 'You have added 1 transport equipment' page
 
-    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
-    And I click radio option No on the 'Do you want to add any additional information for all items?' page
+    ## Additional Reference
+  And I click radio option Yes on the 'Do you want to add an additional reference for all items?' page
+  And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+  And I click radio option Yes on the 'Do you want to add an additional reference number?' page
+  And I enter 12345 on the 'Enter the additional reference number' page
+  And I click radio option Yes on the 'You have added 1 additional reference for all items' page
+  And I select Y025 - Representative (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+  And I click radio option No on the 'Do you want to add an additional reference number?' page
+  And I click the Remove link on the 'You have added 2 additional references for all items?' page
+  And I click radio option No on the 'Are you sure you want to remove this additional reference from all items?' page
+  And I click the Remove link on the 'You have added 2 additional references for all items?' page
+  And I click radio option Yes on the 'Are you sure you want to remove this additional reference from all items?' page
+  And I choose radio option No on the 'You have added 1 additional reference for all items' page
+
+  ## Additional Information
+    And I click radio option Yes on the 'Do you want to add any additional information for all items?' page
+    And I select 20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction on the 'What type of additional information do you want to add?' page
+    And I click radio option Yes on the 'Do you want to add any comments for the additional information?' page
+    And I enter Comment 1 on the 'Enter your comments for the additional information' page
+    And I click radio option Yes on the 'You have added 1 additional information for all items' page
+    And I select 20300 - Export on the 'What type of additional information do you want to add?' page
+    And I click radio option No on the 'Do you want to add any comments for the additional information?' page
+    And I choose to click on the Remove link on the 'You have added 2 additional information for all items' page
+    And click radio option Yes on the 'Are you sure you want to remove this additional information from all items?' page
+    And I click radio option No on the 'You have added 1 additional information for all items' page
     And I submit on the Check your answers section Transport details page
     Then I should be on the 'Declaration summary' page
     And I should see Completed status for transport details on the 'Declaration summary' page
+
     And I sign out
 
   Scenario: 02 Great Britain office of departure - No to optional
@@ -158,7 +197,7 @@ Feature: Transport details journey
     And I choose radio option No on the 'You have added 2 transport equipment' page
 
 
-  And I click radio option No on the 'Do you want to add an additional reference for all items?' page
+    And I click radio option No on the 'Do you want to add an additional reference for all items?' page
     And I click radio option No on the 'Do you want to add any additional information for all items?' page
 
 #      ## Charges
@@ -167,7 +206,7 @@ Feature: Transport details journey
     And I should see Completed status for transport details on the 'Declaration summary' page
     And I sign out
 
-  Scenario: 03 Northern Ireland office of departure
+  Scenario: 03 Northern Ireland office of departure with declaration type TIR and additional declaration type D
     And the user has submitted transportDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
