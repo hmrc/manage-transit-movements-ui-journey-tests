@@ -43,6 +43,7 @@ object HouseConsignmentPage extends Page {
     val value = answer match {
       case "Item 1"                 => "item-1"
       case "Additional reference 1" => "item-1-additional-references"
+      case "Packages"               => "item-1-packages"
     }
     clickById(value)
     this
@@ -70,6 +71,9 @@ object HouseConsignmentPage extends Page {
       case "Change additional reference Type"   => "change-additional-reference-type-1-1"
       case "Change additional reference number" => "change-additional-reference-number-1-1"
       case "Add or remove item"                 => "add-remove-items"
+      case "Change package type"                => "change-package-type-1-1"
+      case "Change package quantity"            => "change-package-count-1-1"
+      case "Change shipping mark"               => "change-package-mark-1-1"
     }
     clickById(value)
   }
@@ -77,6 +81,7 @@ object HouseConsignmentPage extends Page {
   def selectSubSection(answer: String): this.type = {
     val value = answer match {
       case "Additional reference 1" => "item-1-additional-reference-1"
+      case "Packages"               => "item-1-package-1"
     }
     clickById(value)
     this

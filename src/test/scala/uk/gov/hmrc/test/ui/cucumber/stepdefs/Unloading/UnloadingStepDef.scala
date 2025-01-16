@@ -389,6 +389,33 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?select (.+) on the 'What is the new package type for item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    NewItemLevelPackageTypePage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter quantity (.+) on the 'How many of this package are you using for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    ChangePackageQuantityPage
+      .loadPage(index)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter shipping mark (.+) on the 'What is the new shipping mark for item 1 in house consignment 1\?' page$"""
+  ) { (answer: String) =>
+    NewItemLevelPackageShippingMarkPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?select (.+) on the 'What is the new document type\?' page$""") { (answer: String) =>
     NewDocumentTypePage
       .loadPage()
