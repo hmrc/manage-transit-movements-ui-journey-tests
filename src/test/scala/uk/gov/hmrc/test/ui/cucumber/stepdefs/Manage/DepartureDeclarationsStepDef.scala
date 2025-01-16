@@ -132,8 +132,14 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
-  Given("""^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$""") { (declarationLink: String) =>
+  Given("""^(?:I )?click on the (.+) link on the 'Review pre-lodged declaration errors' page$""") { (declarationLink: String) =>
     ReviewPrelodgedDeclarationErrors
+      .loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
+  }
+
+  Given("""^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$""") { (declarationLink: String) =>
+    PrelodgedDeclarationErrors
       .loadPage()
       .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }
