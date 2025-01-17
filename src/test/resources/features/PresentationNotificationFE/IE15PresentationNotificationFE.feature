@@ -94,6 +94,12 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I choose radio option No on the presentation 'Do you want to add a contact for the location of goods?' page
     And I enter the date on the presentation 'When do you expect the transit to arrive in Belfast (XI000142)?' page
     And I choose radio Maritime Transport on the presentation 'How is the transit crossing the border?' page
+    And I choose radio Name of the sea-going vessel on the presentation inland mode 'Which identification do you want to use for this vehicle?' page
+    And I enter identification number GB1234567 on 'What is the identification number for this?' page
+    And I select United Kingdom on the active border mode 'What country is this vehicle registered to?' page
+    And I select Belfast (XI000142) on 'Where is the customs office at the border?' page
+    And I choose radio No on the presentation 'Do you want to add a conveyance reference number?' page
+    And I choose radio No on the presentation 'You have added 1 border means of transport' page
     Then I should be on the Presentation Notification 'Check your answers' page
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page

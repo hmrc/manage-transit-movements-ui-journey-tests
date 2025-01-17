@@ -22,6 +22,6 @@ object ActiveMeansOfBorderRemoveBorderMeansOfTransportPage extends YesNoPage {
 
   //TODO We need to update this title with '?' once the bug is fixed
   override def title(args: String*): String =
-    String.format("Are you sure you want to remove border means of transport %s", args: _*)
+    String.format("Are you sure you want to remove border means of transport %s?", args: _*)
 
 }
