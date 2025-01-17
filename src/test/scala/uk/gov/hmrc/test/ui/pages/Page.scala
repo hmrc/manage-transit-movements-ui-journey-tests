@@ -24,26 +24,26 @@ trait Page extends BasePage {
     onPage(title(args: _*))
     this
   }
-  
+
   private def onPage(expectedTitle: String): Unit = {
     val escapedTitle = java.util.regex.Pattern.quote(expectedTitle)
-    val regex = s"^$escapedTitle(?: - (Departure declarations|Arrival notifications|Guarantee balance))? - Manage your transit movements - GOV.UK$$".r
-    
+    val regex        =
+      s"^$escapedTitle(?: - (Departure declarations|Arrival notifications|Guarantee balance))? - Manage your transit movements - GOV.UK$$".r
+
     val title = driver.getTitle
-    
+
 //    println(s"Expected title: '$expectedTitle'")
 //    println(s"Actual title: '$title'")
-    
+
     title match {
       case regex(_) => () // Match passed
-      case _ => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
+      case _        => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
     }
   }
 }
 
-  object Page extends BasePage {
+object Page extends BasePage {
 
-    def selectSignOutLink(signOutLink: String): Unit =
-      clickByPartialLinkText(signOutLink)
-  }
-
+  def selectSignOutLink(signOutLink: String): Unit =
+    clickByPartialLinkText(signOutLink)
+}

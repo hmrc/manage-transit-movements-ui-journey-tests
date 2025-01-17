@@ -19,9 +19,9 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveBorderMeansOfTransportPage extends YesNoPage {
-  
-  //TODO We need to update this title with '?' once the bug is fixed
+
+  // TODO We need to update this title with '?' once the bug is fixed - CTCP-6199
   override def title(args: String*): String =
     String.format("Are you sure you want to remove border means of transport %s", args: _*)
-  
+
 }

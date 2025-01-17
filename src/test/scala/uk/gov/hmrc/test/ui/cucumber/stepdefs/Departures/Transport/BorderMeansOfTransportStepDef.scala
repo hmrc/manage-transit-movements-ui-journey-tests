@@ -90,13 +90,14 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?select radio option (.*) on the 'Are you sure you want to remove border means of transport (.*)\?' page$""") {
-        (answer: String, borderMeansOfTransportNumber: String) =>
-          RemoveBorderMeansOfTransportPage
-            .loadPage(borderMeansOfTransportNumber)
-            .select(answer)
-            .submitPage()
-      }
+  And(
+    """^(?:I )?select radio option (.*) on the 'Are you sure you want to remove border means of transport (.*)\?' page$"""
+  ) { (answer: String, borderMeansOfTransportNumber: String) =>
+    RemoveBorderMeansOfTransportPage
+      .loadPage(borderMeansOfTransportNumber)
+      .select(answer)
+      .submitPage()
+  }
 
   When("""^(?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page$""") {
     (answer: String, numberOfBorderMeansInTitle: String) =>

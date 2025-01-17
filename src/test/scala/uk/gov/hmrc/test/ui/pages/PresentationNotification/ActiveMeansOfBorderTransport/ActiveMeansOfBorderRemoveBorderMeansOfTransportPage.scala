@@ -19,7 +19,7 @@ package uk.gov.hmrc.test.ui.pages.PresentationNotification.ActiveMeansOfBorderTr
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ActiveMeansOfBorderRemoveBorderMeansOfTransportPage extends YesNoPage {
-  
+
   override def title(args: String*): String =
     String.format("Are you sure you want to remove border means of transport %s?", args: _*)
 
