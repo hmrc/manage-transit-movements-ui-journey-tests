@@ -62,7 +62,7 @@ Feature: Transport details journey
     And I choose radio option No on the 'Do you want to add a conveyance reference number?' page
     And I submit on the Check your answers section Border means of transport page
     And I choose to click on Remove link on the add another border means of transport page
-    And I click radio Yes on the 'Are you sure you want to remove border means of transport 1?' page
+    And I select radio option Yes on the 'Are you sure you want to remove border means of transport 1?' page
     And I choose radio option No on the 'You have added 1 border means of transport' page
     And I submit on the Check your answers section Modes and means of transport page
 

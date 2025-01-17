@@ -19,8 +19,9 @@ package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object RemoveBorderMeansOfTransportPage extends YesNoPage {
-
+  
+  //TODO We need to update this title with '?' once the bug is fixed
   override def title(args: String*): String =
-    "Are you sure you want to remove this border means of transport?"
-
+    String.format("Are you sure you want to remove border means of transport %s", args: _*)
+  
 }
