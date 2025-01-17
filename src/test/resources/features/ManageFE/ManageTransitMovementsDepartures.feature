@@ -155,6 +155,16 @@ Feature: Manage transit movements frontend tests for Departures
     And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
     Then I should be on the 'More information needed to complete pre-lodged declaration' page
 
+  Scenario: 15 Trader completes a pre-lodge departure followed by an amendment and is able to complete a pre-lodge 
+    When I submit an IE015 Simplified Prelodged Departure Declaration Full
+    Then I submit an IE928 Positive Acknowledgment
+    When I submit an IE013 Simplified Prelodged Departure Declaration Full
+    Then I submit an IE004 Amendment Acceptance
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    Then I should be on the 'More information needed to complete pre-lodged declaration' page
+
 
   Scenario: 15 Trader is sent to declaration completed page for a pre-lodge declaration where all details were completed initially
     When I submit an IE015 Normal Prelodged Departure Declaration Complete

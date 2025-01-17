@@ -1,5 +1,5 @@
-@presentationNotificationIe15
-Feature: Trader sends in fully complete IE015 to goes to the CYA page
+@presentationNotification
+Feature: Trader sends in fully completed pre-lodged departure declaration type D (IE015) and reviews their answers in presentation notification service (IE170) via CYA page
 
   Background: I log on to the Manage Transit Movements Hub service
     Given I login with ID 123456789
@@ -11,7 +11,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page
 
-  Scenario: 01 Normal prelodge departure declaration complete for representative section
+  Scenario: 01 Representative section for a complete Normal pre-lodge departure declaration
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Change link for acting as representative on the 'Check your answers' page
     And I choose radio option Yes on the presentation 'Are you acting as a representative?' page
@@ -23,7 +23,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page
 
-  Scenario: 02 Normal prelodge departure declaration complete for Departure means of transport section with Mode as other than Mail
+  Scenario: 02 Departure means of transport section with Mode as other than Mail for a complete Normal pre-lodge departure declaration
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Change link for transport inland mode on the 'Check your answers' page
     And I choose radio option Maritime on the 'Which inland mode of transport are you using?' page
@@ -35,7 +35,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     Then I should be on the 'Information sent' page
 
 
-  Scenario: 03 Normal prelodge departure declaration complete for inland mode of transport section with mode as Mail
+  Scenario: 03 Inland mode of transport section with mode as Mail for a complete Normal pre-lodge departure declaration
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Change link for transport inland mode on the 'Check your answers' page
     And I choose radio option Mail on the 'Which inland mode of transport are you using?' page
@@ -44,7 +44,7 @@ Feature: Trader sends in fully complete IE015 to goes to the CYA page
     Then I should be on the 'Information sent' page
 
 
-  Scenario: 04 Normal prelodge departure declaration complete - Add/Remove a departure transport Means
+  Scenario: 04 Add and Remove a departure transport Means for a complete Normal pre-lodge departure declaration
     Given I should be on the Presentation Notification 'Check your answers' page
     And I click the Add or remove departure means of transport link on the Prelodge 'Check your answers' page
     And I choose radio option Yes on the presentation 'You have added 1 departure means of transport' page
