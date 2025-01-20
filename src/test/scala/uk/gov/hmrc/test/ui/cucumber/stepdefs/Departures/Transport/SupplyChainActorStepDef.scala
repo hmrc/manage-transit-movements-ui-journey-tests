@@ -54,7 +54,7 @@ class SupplyChainActorStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  When("""^(?:I )?choose to click on the (.*) link on the You have added (.+) supply chain actors? page$""") {
+  When("""^(?:I )?choose to click on (.*) link on the 'You have added (.+) supply chain actors' page$""") {
     (sectionLink: String, numberOfActors: String) =>
       AddAnotherSupplyChainActorPage
         .loadPage(numberOfActors)

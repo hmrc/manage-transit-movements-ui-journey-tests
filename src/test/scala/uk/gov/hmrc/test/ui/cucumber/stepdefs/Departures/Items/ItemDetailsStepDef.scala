@@ -645,7 +645,6 @@ class ItemDetailsStepDef extends BaseStepDef {
       .clickById("documents")
   }
 
-
   And(
     """^(?:I )?click the Go to your Documents section to add another document link on the 'You do not have any previous documents to attach' page$"""
   ) { () =>

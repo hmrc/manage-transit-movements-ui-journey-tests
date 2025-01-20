@@ -33,7 +33,9 @@ Feature: Route details journey
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
-    And I choose radio option No on the 'You have added 2 countries to the transit route' page
+    And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
+    And I select Serbia on the 'Which country do you want to add to the transit route?' page
+    And I choose radio option No on the 'You have added 3 countries to the transit route' page
     And I submit on the Check your answers section Transit route page
 
       ## Office of transit country page - removing a transit office
@@ -51,7 +53,26 @@ Feature: Route details journey
 
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page
-    And I choose radio option No on the 'You have added 1 office of transit' page
+    And I choose radio option Yes on the 'You have added 1 office of transit' page
+    And I select Serbia on the 'Which country is the office of transit in?' page
+    And I select CI GRADINA (RS013277) on the 'Where in Serbia is the office of transit?' page
+    And I choose radio option No on the 'Do you want to add a time of arrival in CI GRADINA (RS013277)?' page
+    And I submit on the Check your answers section Office of transit page
+    And I choose radio option No on the 'You have added 2 offices of transit' page
+
+
+    And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
+    And I select France on the 'In which country is the office of exit for transit?' page
+    And I select Dijon bureau (FR001170) on the 'Where in France is the office of exit for transit?' page
+    And I submit on the Check your answers section Office of exit for transit page
+    And I choose radio option Yes on the 'You have added 1 office of exit for transit' page
+    And I select France on the 'In which country is the office of exit for transit?' page
+    And I select Brest bureau (FR000690) on the 'Where in France is the office of exit for transit?' page
+    And I submit on the Check your answers section Office of exit for transit page
+    And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page
+    And I choose radio option Yes on the 'Are you sure you want to remove this office of exit for transit?' page
+    And I choose radio option No on the 'You have added 1 office of exit for transit' page
+
 
       ## Location of goods
     And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page
@@ -95,6 +116,7 @@ Feature: Route details journey
     And I select Italy on the 'What country is the office of destination in?' page
     And I select Bari on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
+    And I choose radio option Yes on the 'Do you want to add a country to the transit route?' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
     When I choose radio option Yes on the 'You have added 1 country to the transit route' page
     And I select Argentina on the 'Which country do you want to add to the transit route?' page
@@ -113,11 +135,6 @@ Feature: Route details journey
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
     And I select United Kingdom on the 'In which country is the place of loading?' page
     When I enter London on the 'Where in United Kingdom is the place of loading?' page
-
-      ## Place of unloading
-    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
-    And I select United Kingdom on the 'Which country is the place of unloading in?' page
-    And I enter London on the 'Where in United Kingdom is the place of unloading?' page
     And I submit on the Check your answers section Places of loading and unloading page
     And I submit on the Check your answers section Route details page
 

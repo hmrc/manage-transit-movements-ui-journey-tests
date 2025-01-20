@@ -1,4 +1,4 @@
-@managehub
+@manageFrontEnd
 
 Feature: Manage transit movements frontend tests for Arrivals
 
@@ -40,7 +40,6 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I sign out
 
 
-   #TODO This test will fail if ran in transition mode - will pass in pipelines as it is ran against final in those
   Scenario: 04 - Trader cannot access a transitional arrival notification after rejection once switched to final mode
     When I submit an IE007 Transition Arrival Notification
     And I submit an IE057 Arrival Notification Rejection

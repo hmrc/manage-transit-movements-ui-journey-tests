@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object LocationOfGoodsTypePage extends RadioPage {
+object NewItemLevelPackageTypePage extends SelectPage {
 
-  override def title(args: String*): String = "Which type of location are the goods in?"
+  override def title(args: String*): String =
+    "What is the new package type for item 1 in house consignment 1?"
 
-  override def select(answer: String): this.type = {
-    val value = answer match {
-      case "Designated destination" => "A"
-      case "Approved place"         => "C"
-      case "Other"                  => "D"
-    }
-    clickRadioBtn(value)
-    this
-  }
 }

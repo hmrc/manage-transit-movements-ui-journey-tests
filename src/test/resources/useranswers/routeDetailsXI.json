@@ -20,8 +20,8 @@
       },
       "tirCarnetReference" : "1234567",
       "securityDetailsType" : {
-        "code": "1",
-        "description": "ENS"
+        "code": "0",
+        "description": "Not used for safety and security purposes"
       },
       "detailsConfirmed" : true
     }

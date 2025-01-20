@@ -53,41 +53,37 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
 
   Scenario: 02 - Unloading remarks - Item level Cross-check page in change mode
-  # House Consignment - Consignment Item
+    ## House Consignment - Consignment Item
     Given I click the 'More details' link for house consignment 1 on the 'Enter the discrepancies between the transit movement and unloading permission' page
     And I should be on the 'House consignment 1' page
 
-  # Gross weight
+    ## Gross weight
     And I click the Change Gross weight link for Item 1 in House consignment 1
     And enter number 741.56 on 'What is the new gross weight of item 1 in house consignment 1?' page
     And I click the Remove Gross weight link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the gross weight from item 1 in house consignment 1?' page
 
-  # Net weight
+    ## Net weight
     And I click the Change Net weight link for Item 1 in House consignment 1
     And I enter number 5681.22 on 'What is the new net weight of item 1 in house consignment 1?' page
     And I click the Remove Net weight link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the net weight from item 1 in house consignment 1?' page
 
-  # Cus code
+   ## Cus code
     And I click the Change Cus code link for Item 1 in House consignment 1
     And I enter number 0018063-2 on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1?' page
 
-  # Commodity code
+   ## Commodity code
     And I click the Change Commodity code link for Item 1 in House consignment 1
     And I enter number 716812 on 'What is the new commodity code for item 1 in house consignment 1?' page
     And I click the Remove Commodity code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1?' page
 
-  # Nomeclature code
+    ## Nomeclature code
     And I click the Change Nomenclature code link for Item 1 in House consignment 1
     And I enter number 84 on 'What is the new combined nomenclature code for item 1 in house consignment 1?' page
     And I click the Remove Nomenclature code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1?' page
-
-  #ToDo
-    ## Documents
-    #######################
 
     ## Additional Reference
     And I click the Change additional reference Type link in House consignment 1 sub-section Additional reference 1 of section Item 1
@@ -95,9 +91,13 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Change additional reference number link in House consignment 1 sub-section Additional reference 1 of section Item 1
     And I enter additional reference NewReference323 on the 'What is the new additional reference number for item 1 in house consignment 1?' page
 
-  #ToDo
     ## Packages
-    #######################
+    And I click the Change package type link in House consignment 1 sub-section Packages of section Item 1
+    And I select (BG) Bag on the 'What is the new package type for item 1 in house consignment 1?' page
+    And I click the Change package quantity link in House consignment 1 sub-section Packages of section Item 1
+    And I enter quantity 150 on the 'How many of this package are you using for item 1 in house consignment 1?' page
+    And I click the Change shipping mark link in House consignment 1 sub-section Packages of section Item 1
+    And I enter shipping mark abc on the 'What is the new shipping mark for item 1 in house consignment 1?' page
 
 
 

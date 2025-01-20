@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures._
+import uk.gov.hmrc.test.ui.pages.Cancellations.ConfirmCancellationPage
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.*
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
@@ -86,6 +87,11 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Then("""^(?:I )?(?:should )?be on the 'Are you sure you want to cancel this declaration\?' page$""") { () =>
+    ConfirmCancellationPage
+      .loadPage()
+  }
+
   Then("""^(?:I )?(?:should )?be on the 'Declaration errors' page$""") { () =>
     DeclarationNonFunctionalErrorsPage
       .loadPage()
@@ -126,8 +132,15 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
       .loadPage()
   }
 
+  Given("""^(?:I )?click on the (.+) link on the 'Review pre-lodged declaration errors' page$""") {
+    (declarationLink: String) =>
+      ReviewPrelodgedDeclarationErrors
+        .loadPage()
+        .selectPrelodgeDepartureDeclarationLink(declarationLink)
+  }
+
   Given("""^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$""") { (declarationLink: String) =>
-    ReviewPrelodgedDeclarationErrors
+    PrelodgedDeclarationErrors
       .loadPage()
       .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }

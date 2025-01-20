@@ -18,7 +18,6 @@
         "code" : "A",
         "description" : "for a standard customs declaration (under Article 162 of the Code)"
       },
-      "tirCarnetReference" : "1234567",
       "securityDetailsType" : {
         "code" : "1",
         "description" : "ENS"

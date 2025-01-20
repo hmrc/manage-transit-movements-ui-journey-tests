@@ -90,9 +90,11 @@ class BorderMeansOfTransportStepDef extends BaseStepDef {
         .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?choose radio option (.*) on the remove border means of transport page$""") { (answer: String) =>
+  And(
+    """^(?:I )?select radio option (.*) on the 'Are you sure you want to remove border means of transport (.*)\?' page$"""
+  ) { (answer: String, borderMeansOfTransportNumber: String) =>
     RemoveBorderMeansOfTransportPage
-      .loadPage()
+      .loadPage(borderMeansOfTransportNumber)
       .select(answer)
       .submitPage()
   }

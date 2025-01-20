@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Items
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object ItemUCRPage extends StringPage {
+object ChangePackageQuantityPage extends StringPage {
 
-  override def title(args: String*): String = "What is the Unique Consignment Reference (UCR)?"
+  override def title(args: String*): String =
+    String.format("How many of this package are you using for item %s in house consignment 1?", args: _*)
 
+  def clickLinkById(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
 }

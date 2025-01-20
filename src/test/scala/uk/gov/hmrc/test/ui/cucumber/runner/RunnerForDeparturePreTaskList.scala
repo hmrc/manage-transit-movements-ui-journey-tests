@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Arrivals.LocationOfGoodsType
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-object LocationOfGoodsTypePage extends RadioPage {
-
-  override def title(args: String*): String = "Which type of location are the goods in?"
-
-  override def select(answer: String): this.type = {
-    val value = answer match {
-      case "Designated destination" => "A"
-      case "Approved place"         => "C"
-      case "Other"                  => "D"
-    }
-    clickRadioBtn(value)
-    this
-  }
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@departurePreTaskList"
+)
+class RunnerForDeparturePreTaskList {}
