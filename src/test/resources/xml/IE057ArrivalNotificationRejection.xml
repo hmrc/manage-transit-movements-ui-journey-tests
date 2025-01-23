@@ -1,14 +1,14 @@
 <ncts:CC057C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
     <messageSender>token</messageSender>
     <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
-    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-22T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC057C</messageType>
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
-        <MRN>21GB00014210026352</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
         <businessRejectionType>007</businessRejectionType>
-        <rejectionDateAndTime>2014-12-25T16:15:04+01:00</rejectionDateAndTime>
+        <rejectionDateAndTime>2025-01-22T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>2</rejectionCode>
         <rejectionReason>N5t6u7</rejectionReason>
     </TransitOperation>
