@@ -8,9 +8,9 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <LRN>string</LRN>
+        <LRN>GB8dc4b88e4b0062044174</LRN>
         <!--Optional:-->
-        <MRN>string</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
         <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
         <notificationType>0</notificationType>
     </TransitOperation>

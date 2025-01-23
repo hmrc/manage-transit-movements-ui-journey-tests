@@ -8,7 +8,7 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <MRN>string</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
         <businessRejectionType>015</businessRejectionType>
         <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>token</rejectionCode>

@@ -8,7 +8,7 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
         <businessRejectionType>170</businessRejectionType>
         <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
         <rejectionCode>C012</rejectionCode>

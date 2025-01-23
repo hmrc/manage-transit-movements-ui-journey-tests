@@ -10,7 +10,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     Then I should be on the 'Do you want to use the revised unloading procedure?' page
     And I sign out
 
@@ -24,7 +24,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I submit an IE057 Unloading Remarks Rejection
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
-    And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     Then I should be on the 'Review unloading remarks errors' page
     And I sign out
 
@@ -35,7 +35,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I submit an IE057 Arrival Notification Rejection
    When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
-    And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     Then I should be on the 'Review notification errors' page
     And I sign out
 

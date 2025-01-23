@@ -8,7 +8,7 @@
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <!--Optional:-->
-        <LRN>Pre-lodge_Contol</LRN>
+        <LRN>GB8dc4b88e4b0062044174</LRN>
         <!--Optional:-->
         <MRN>28BDU7NB98LCWXLNM2</MRN>
         <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
