@@ -1,4 +1,4 @@
-@departureDocumentsTransition
+
 Feature: Journeys for Previous, Transport & Supporting documents - Transition
 
   Background:
