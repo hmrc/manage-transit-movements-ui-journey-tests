@@ -1,4 +1,3 @@
-@departureTraderDetailsTransition
 
 Feature: Trader details journey - Transition
 

@@ -1,4 +1,3 @@
-@departureGuaranteeDetailsTransition
 Feature: Guarantee details journey - Transition
 
   Background:

@@ -6,7 +6,6 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     Given I login with ID 1234567890
     When I click on the Make a departure declaration link on the 'Manage your transit movements' page
     Then I input a random LRN on the 'What is the Local Reference Number?' page
-#    And I click the Continue button on the standard declaration 'You can only make a standard declaration' page
     And I choose radio option D on the 'Is this a standard or pre-lodged declaration?' page
     And I select XI on the 'Where is the office of departure?' page
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
@@ -69,10 +68,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I submit on the Check your answers section Location of goods page
 
       ## Place of loading
-    And I choose radio option Yes on the 'Do you want to add a place of loading?' page
-    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page
-    And I select United Kingdom on the 'In which country is the place of loading?' page
-    When I enter London on the 'Where in United Kingdom is the place of loading?' page
+    And I choose radio option No on the 'Do you want to add a place of loading?' page
 
       ## Place of unloading
     And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
@@ -149,10 +145,8 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
 #    Supporting document from list CL213 Supporting docs
     Then I select Supporting - (C673) Catch certificate on the 'What type of document do you want to add?' page
     And I enter RefNoCL213Doc1 on the 'What is the document’s reference number?' page
-    And I click radio option Yes on the 'Do you want to add a line item number?' page
-    And I enter 10001 on the 'What is the line item number?' page
-    And I click radio option Yes on the 'Do you want to add any additional information for this document?' page
-    And I enter 12345 on the Documents 'Enter the additional information' page
+    And I click radio option No on the 'Do you want to add a line item number?' page
+    And I click radio option No on the 'Do you want to add any additional information for this document?' page
     And I submit on the Check your answers section Documents page
     And I choose radio option Yes on the 'You have added 1 document' page
     And I click radio option Yes on the 'Do you want to use this document for all items?' page
@@ -195,7 +189,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     #Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
       #Documents section
-    And I click radio option Yes on the 'Do you want to attach any documents to this item?' page
+    And I click radio option Yes on the 'You have attached 1 document to this item' page
     And I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
 

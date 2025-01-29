@@ -21,8 +21,7 @@
       "securityDetailsType" : {
         "code" : "0",
         "description" : "Not used for safety and security purposes"
-      },
-      "detailsConfirmed" : true
+      }
     },
     "traderDetails" : {
       "holderOfTransit" : {
@@ -51,7 +50,7 @@
         "telephoneNumber" : "+11 1111 1111"
       },
       "consignment" : {
-        "approvedOperator" : true,
+        "approvedOperator" : false,
         "consignor" : {
           "eoriYesNo" : false,
           "name" : "Pip Consignor",
@@ -98,7 +97,7 @@
           "countryId" : "IT",
           "isInCL112" : false
         },
-        "bindingItinerary" : true,
+        "bindingItinerary" : false,
         "countriesOfRouting" : [
           {
             "countryOfRouting" : {
@@ -111,6 +110,7 @@
         ]
       },
       "transit" : {
+        "t2DeclarationTypeYesNo" : true,
         "officesOfTransit" : [
           {
             "inferredOfficeOfTransitCountry" : {
@@ -217,8 +217,8 @@
         "authorisations" : [
           {
             "inferredAuthorisationType" : {
-              "code" : "C524",
-              "description" : "TRD - Authorisation to use transit declaration with a reduced dataset (Column 9e, Annex A of Delegated Regulation (EU) 2015/2446)"
+              "code" : "C521",
+              "description" : "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
             },
             "isMandatory" : true,
             "authorisationReferenceNumber" : "gfsdg"

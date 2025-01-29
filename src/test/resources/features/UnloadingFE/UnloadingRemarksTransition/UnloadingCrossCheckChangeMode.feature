@@ -1,4 +1,3 @@
-@UnloadingCrossCheckTransition
 Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
   Background:
@@ -84,10 +83,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I enter number 84 on 'What is the new combined nomenclature code for item 1 in house consignment 1?' page
     And I click the Remove Nomenclature code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the combined nomenclature code from item 1 in house consignment 1?' page
-
-  #ToDo
-    ## Documents
-    #######################
+    
 
     ## Additional Reference
     And I click the Change additional reference Type link in House consignment 1 sub-section Additional reference 1 of section Item 1
@@ -95,11 +91,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Change additional reference number link in House consignment 1 sub-section Additional reference 1 of section Item 1
     And I enter additional reference NewReference323 on the 'What is the new additional reference number for item 1 in house consignment 1?' page
 
-  #ToDo
-    ## Packages
-    #######################
-
-
+  
 
 
 

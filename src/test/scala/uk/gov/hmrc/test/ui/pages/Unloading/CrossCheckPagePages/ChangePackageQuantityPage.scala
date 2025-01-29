@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.cucumber.runner
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import io.cucumber.junit.{Cucumber, CucumberOptions}
-import org.junit.runner.RunWith
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-@RunWith(classOf[Cucumber])
-@CucumberOptions(
-  features = Array("src/test/resources/features"),
-  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
-  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
-  tags = "@departureTraderDetailsTransition"
-)
-class RunnerForDepartureTraderDetailsTransition {}
+object ChangePackageQuantityPage extends StringPage {
+
+  override def title(args: String*): String =
+    String.format("How many of this package are you using for item %s in house consignment 1?", args: _*)
+
+  def clickLinkById(text: String): Unit = {
+    val id = s"change-${text.replace(" ", "-").toLowerCase}"
+    clickById(id)
+  }
+}

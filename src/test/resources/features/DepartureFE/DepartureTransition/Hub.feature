@@ -1,4 +1,3 @@
-@departureHubTransition
 
 Feature: Hub journey (pre-task list and declaration) - Transition
 

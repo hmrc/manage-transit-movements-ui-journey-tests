@@ -1,4 +1,3 @@
-@arrivalAmendmentTransition
 Feature: End to end journey for amending an arrival notification - Transition
 
   Scenario: 01 - Arrival rejected. Resubmit.
