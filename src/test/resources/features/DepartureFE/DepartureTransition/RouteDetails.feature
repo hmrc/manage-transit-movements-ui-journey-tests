@@ -1,4 +1,3 @@
-@departureRouteDetailsTransition
 
 Feature: Route details journey - Transition
 

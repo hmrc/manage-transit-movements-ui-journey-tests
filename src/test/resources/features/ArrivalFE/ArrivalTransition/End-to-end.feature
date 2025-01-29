@@ -1,4 +1,3 @@
-@arrivalE2eTransition
 Feature: End to end journey Arrival notification feature - Transition
 
   Background:

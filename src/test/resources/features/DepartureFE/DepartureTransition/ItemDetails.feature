@@ -1,4 +1,4 @@
-@departureItemDetailsTransition
+
 
 Feature: Item details journey
 
