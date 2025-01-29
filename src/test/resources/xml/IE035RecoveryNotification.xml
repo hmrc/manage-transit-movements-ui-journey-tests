@@ -22,8 +22,8 @@
         <referenceNumber>DOVER-2</referenceNumber>
     </CustomsOfficeOfRecoveryAtDeparture>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>30001</identificationNumber>
-        <TIRHolderIdentificationNumber>30002</TIRHolderIdentificationNumber>
+        <identificationNumber>XI882242478098</identificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <name>Smith</name>
         <Address>
             <streetAndNumber>10 The High Street</streetAndNumber>
@@ -33,7 +33,7 @@
         </Address>
     </HolderOfTheTransitProcedure>
     <Guarantor>
-        <identificationNumber>23456</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <name>Jane Doe</name>
         <Address>
             <streetAndNumber>Main Street 2</streetAndNumber>

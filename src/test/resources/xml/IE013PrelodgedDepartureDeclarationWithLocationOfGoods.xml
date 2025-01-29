@@ -35,11 +35,16 @@
     <Consignment>
         <grossMass>643.4</grossMass>
         <LocationOfGoods>
-            <typeOfLocation>A</typeOfLocation>
-            <qualifierOfIdentification>V</qualifierOfIdentification>
-            <CustomsOffice>
-                <referenceNumber>GB000011</referenceNumber>
-            </CustomsOffice>
+            <typeOfLocation>C</typeOfLocation>
+            <qualifierOfIdentification>X</qualifierOfIdentification>
+            <additionalIdentifier>x9x9</additionalIdentifier>
+            <EconomicOperator>
+                <identificationNumber>GB123456789000</identificationNumber>
+            </EconomicOperator>
+            <ContactPerson>
+                <name>Location Contactov</name>
+                <phoneNumber>+44999999999</phoneNumber>
+            </ContactPerson>
         </LocationOfGoods>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>

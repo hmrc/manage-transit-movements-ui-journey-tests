@@ -17,7 +17,7 @@
     </CustomsOfficeOfDestinationActual>
     <HolderOfTheTransitProcedure>
         <identificationNumber>GB954131533000</identificationNumber>
-        <TIRHolderIdentificationNumber>trp-id-1</TIRHolderIdentificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <name>Jean Doe</name>
         <Address>
             <streetAndNumber>1 avenue marceau</streetAndNumber>
@@ -27,7 +27,7 @@
         </Address>
     </HolderOfTheTransitProcedure>
     <TraderAtDestination>
-        <identificationNumber>tad-1</identificationNumber>
+        <identificationNumber>XI882242478098</identificationNumber>
     </TraderAtDestination>
     <CTLControl>
         <continueUnloading>1</continueUnloading>
@@ -38,7 +38,7 @@
         <inlandModeOfTransport>2</inlandModeOfTransport>
         <grossMass>1000.99</grossMass>
         <Consignor>
-            <identificationNumber>id2</identificationNumber>
+            <identificationNumber>GB954131533000</identificationNumber>
             <name>john doe</name>
             <Address>
                 <streetAndNumber>1 high street</streetAndNumber>
@@ -48,7 +48,7 @@
             </Address>
         </Consignor>
         <Consignee>
-            <identificationNumber>csgnee-1</identificationNumber>
+            <identificationNumber>XI882242478098</identificationNumber>
             <name>Jane Doe</name>
             <Address>
                 <streetAndNumber>1 Champs Elysees</streetAndNumber>
@@ -68,30 +68,30 @@
         </TransportEquipment>
         <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
-            <typeOfIdentification>10</typeOfIdentification>
-            <identificationNumber>28</identificationNumber>
+            <typeOfIdentification>20</typeOfIdentification>
+            <identificationNumber>NC15REG</identificationNumber>
             <nationality>DE</nationality>
         </DepartureTransportMeans>
         <PreviousDocument>
             <sequenceNumber>1</sequenceNumber>
-            <type>C512</type>
+            <type>N740</type>
             <referenceNumber>info1</referenceNumber>
             <complementOfInformation>8</complementOfInformation>
         </PreviousDocument>
         <SupportingDocument>
             <sequenceNumber>1</sequenceNumber>
-            <type>C651</type>
+            <type>C641</type>
             <referenceNumber>1234</referenceNumber>
             <complementOfInformation>2</complementOfInformation>
         </SupportingDocument>
         <TransportDocument>
             <sequenceNumber>1</sequenceNumber>
-            <type>N235</type>
+            <type>N785</type>
             <referenceNumber>refn-1</referenceNumber>
         </TransportDocument>
         <AdditionalReference>
             <sequenceNumber>1</sequenceNumber>
-            <type>Y024</type>
+            <type>Y022</type>
             <referenceNumber>addref-1</referenceNumber>
         </AdditionalReference>
         <AdditionalInformation>

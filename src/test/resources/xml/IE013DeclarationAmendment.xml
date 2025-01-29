@@ -7,7 +7,7 @@
     <TransitOperation>
         <LRN>GB8dc4b88e4b0062044174</LRN>
         <declarationType>T1</declarationType>
-        <additionalDeclarationType>O</additionalDeclarationType>
+        <additionalDeclarationType>A</additionalDeclarationType>
         <security>1</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>

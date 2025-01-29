@@ -37,63 +37,103 @@
         <otherGuaranteeReference>09GB0000010000084</otherGuaranteeReference>
     </Guarantee>
     <Consignment>
-        <grossMass>643.4</grossMass>
+        <grossMass>1700</grossMass>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
-            <grossMass>643.4</grossMass>
+            <grossMass>1700</grossMass>
             <ConsignmentItem>
                 <goodsItemNumber>1</goodsItemNumber>
-                <declarationGoodsItemNumber>12</declarationGoodsItemNumber>
-                <Commodity>
-                    <descriptionOfGoods>This is a description</descriptionOfGoods>
-                </Commodity>
-                <Packaging>
-                    <sequenceNumber>1</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
-                </Packaging>
-            </ConsignmentItem>
-            <ConsignmentItem>
-                <goodsItemNumber>123</goodsItemNumber>
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>item1</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>500</grossMass>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>48711</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BG</typeOfPackages>
+                    <numberOfPackages>15</numberOfPackages>
+                    <shippingMarks>Bag ship mark</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
             <ConsignmentItem>
-                <goodsItemNumber>123</goodsItemNumber>
+                <goodsItemNumber>2</goodsItemNumber>
                 <declarationGoodsItemNumber>2</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>item2</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>500</grossMass>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>48711</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BG</typeOfPackages>
+                    <numberOfPackages>15</numberOfPackages>
+                    <shippingMarks>Bag ship mark</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
             <ConsignmentItem>
-                <goodsItemNumber>123</goodsItemNumber>
+                <goodsItemNumber>3</goodsItemNumber>
                 <declarationGoodsItemNumber>3</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>item3</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>300</grossMass>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>48711</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>12</numberOfPackages>
+                    <shippingMarks>Box shipping mark</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
             <ConsignmentItem>
-                <goodsItemNumber>123</goodsItemNumber>
+                <goodsItemNumber>4</goodsItemNumber>
                 <declarationGoodsItemNumber>4</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>item4</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>300</grossMass>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
-                    <sequenceNumber>48711</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>12</numberOfPackages>
+                    <shippingMarks>Box shipping mark</shippingMarks>
+                </Packaging>
+            </ConsignmentItem>
+            <ConsignmentItem>
+                <goodsItemNumber>5</goodsItemNumber>
+                <declarationGoodsItemNumber>5</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>item5</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>300</grossMass>
+                    </GoodsMeasure>
+                </Commodity>
+                <Packaging>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>12</numberOfPackages>
+                    <shippingMarks>Box shipping mark</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
         </HouseConsignment>

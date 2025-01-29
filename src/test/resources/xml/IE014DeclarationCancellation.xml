@@ -25,23 +25,23 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
+        <identificationNumber>GB123456789000</identificationNumber>
         <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <!--Optional:-->
-        <name>string</name>
+        <name>Joe Holderov</name>
         <!--Optional:-->
         <Address>
-            <streetAndNumber>string</streetAndNumber>
+            <streetAndNumber>1 Street</streetAndNumber>
             <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
+            <postcode>NE11EN</postcode>
+            <city>Newcastle</city>
             <country>GB</country>
         </Address>
         <!--Optional:-->
         <ContactPerson>
-            <name>string</name>
-            <phoneNumber>token</phoneNumber>
+            <name>Holder Holderov</name>
+            <phoneNumber>+4401010010101</phoneNumber>
         </ContactPerson>
     </HolderOfTheTransitProcedure>
 </ncts:CC014C>

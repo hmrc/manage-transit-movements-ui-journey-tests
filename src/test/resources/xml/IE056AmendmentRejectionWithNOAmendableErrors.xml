@@ -23,7 +23,7 @@
         <!--Optional:-->
         <identificationNumber>string</identificationNumber>
         <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <!--Optional:-->
         <name>string</name>
         <!--Optional:-->

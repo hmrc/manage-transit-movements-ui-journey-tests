@@ -213,3 +213,19 @@ Feature: End to end journey for amending a departure declaration - Post Transiti
 
     And I click the Confirm and resend button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
+
+  Scenario: 05 User is unable to continue with an amendment if an IE029 message is received while amending
+    Given I login with ID 1234567890
+    When I submit an IE015 Departure Declaration
+    Then I submit an IE028 MRN Allocated
+    And the user has submitted departureDeclaration.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
+    And I refresh the page
+    And I click on the View departure declarations link on the 'Manage your transit movements' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
+
+    And I click on the Edit trader details link on the 'Declaration summary' page
+    And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page
+    And I choose radio option No on the 'Do you want to add a contact for the consignor?' page
+    When I submit an IE029 Release For Transit
+    And I submit on the Check your answers section Trader details page
+    Then I should be on the 'For your security we signed you out' page
