@@ -1,93 +1,38 @@
-<ncts:CC057C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
-    <preparationDateAndTime>2025-01-22T07:36:28</preparationDateAndTime>
-    <messageIdentification>6Onxa3En</messageIdentification>
+<ncts:CC057C xmlns:ncts="http://ncts.dgtaxud.ec" PhaseID="NCTS5.1">
+    <messageSender>NTA.GB</messageSender>
+    <messageRecipient>Neda-test</messageRecipient>
+    <preparationDateAndTime>2025-01-30T11:40:44</preparationDateAndTime>
+    <messageIdentification>NQQ2FS42W6HNTY</messageIdentification>
     <messageType>CC057C</messageType>
-    <correlationIdentifier>co-id-1</correlationIdentifier>
+    <correlationIdentifier>E9Hyb7oT4POBibX0hfysTr6LGvj0nxl3gJL</correlationIdentifier>
     <TransitOperation>
         <MRN>25GB000246TK0E6WJ1</MRN>
         <businessRejectionType>007</businessRejectionType>
-        <rejectionDateAndTime>2025-01-22T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>2</rejectionCode>
-        <rejectionReason>N5t6u7</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T11:40:44</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDestinationActual>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>GB000011</referenceNumber>
     </CustomsOfficeOfDestinationActual>
     <TraderAtDestination>
-        <identificationNumber>1</identificationNumber>
+        <identificationNumber>GB123456789000</identificationNumber>
     </TraderAtDestination>
     <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
+        <errorPointer>//Authorisation[1]/referenceNumber</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>G0033</errorReason>
+        <originalAttributeValue>OOhNO</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
+        <errorPointer>//TraderAtDestination/identificationNumber</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>R0850</errorReason>
+        <originalAttributeValue>GB123456789000</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
+        <errorPointer>//ErrorPointer[1]/fieldItsPointingTo</errorPointer>
+        <errorCode>12</errorCode>
         <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>2</errorPointer>
-        <errorCode>13</errorCode>
-        <errorReason>waf 12</errorReason>
-        <originalAttributeValue>2</originalAttributeValue>
+        <originalAttributeValue>ThisIsIncorrect</originalAttributeValue>
     </FunctionalError>
 </ncts:CC057C>

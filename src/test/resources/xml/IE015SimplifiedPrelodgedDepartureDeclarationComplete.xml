@@ -55,8 +55,8 @@
     <Consignment>
         <countryOfDestination>GB</countryOfDestination>
         <containerIndicator>1</containerIndicator>
-        <inlandModeOfTransport>4</inlandModeOfTransport>
-        <modeOfTransportAtTheBorder>1</modeOfTransportAtTheBorder>
+        <inlandModeOfTransport>3</inlandModeOfTransport>
+        <modeOfTransportAtTheBorder>3</modeOfTransportAtTheBorder>
         <grossMass>60000.204</grossMass>
         <referenceNumberUCR>UCR342</referenceNumberUCR>
         <Carrier>
@@ -95,7 +95,7 @@
         <ActiveBorderTransportMeans>
             <sequenceNumber>1</sequenceNumber>
             <customsOfficeAtBorderReferenceNumber>XI000142</customsOfficeAtBorderReferenceNumber>
-            <typeOfIdentification>80</typeOfIdentification>
+            <typeOfIdentification>30</typeOfIdentification>
             <identificationNumber>56984526487521</identificationNumber>
             <nationality>GB</nationality>
             <conveyanceReferenceNumber>AIR1234b</conveyanceReferenceNumber>

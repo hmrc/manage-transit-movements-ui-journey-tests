@@ -213,7 +213,7 @@
         <!--Optional:-->
         <inlandModeOfTransport>3</inlandModeOfTransport>
         <!--Optional:-->
-        <modeOfTransportAtTheBorder>30</modeOfTransportAtTheBorder>
+        <modeOfTransportAtTheBorder>3</modeOfTransportAtTheBorder>
         <grossMass>1000.000000000000</grossMass>
         <!--Optional:-->
         <referenceNumberUCR>UCR131231</referenceNumberUCR>

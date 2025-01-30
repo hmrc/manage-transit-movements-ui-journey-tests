@@ -45,7 +45,7 @@
         <countryOfDestination>IT</countryOfDestination>
         <containerIndicator>1</containerIndicator>
         <inlandModeOfTransport>3</inlandModeOfTransport>
-        <modeOfTransportAtTheBorder>1</modeOfTransportAtTheBorder>
+        <modeOfTransportAtTheBorder>3</modeOfTransportAtTheBorder>
         <grossMass>1000</grossMass>
         <referenceNumberUCR>UCR1234</referenceNumberUCR>
         <Carrier>

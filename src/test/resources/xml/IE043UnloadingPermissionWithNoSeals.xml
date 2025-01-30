@@ -8,12 +8,12 @@
     <TransitOperation>
         <MRN>25GB000246TK0E6WJ1</MRN>
         <declarationType>T</declarationType>
-        <declarationAcceptanceDate>2014-06-09+01:00</declarationAcceptanceDate>
+        <declarationAcceptanceDate>2025-01-09+01:00</declarationAcceptanceDate>
         <security>0</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
     </TransitOperation>
     <CustomsOfficeOfDestinationActual>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>XI000142</referenceNumber>
     </CustomsOfficeOfDestinationActual>
     <HolderOfTheTransitProcedure>
         <identificationNumber>GB954131533000</identificationNumber>
@@ -23,7 +23,7 @@
             <streetAndNumber>1 avenue marceau</streetAndNumber>
             <postcode>10006</postcode>
             <city>Paris</city>
-            <country>FR</country>
+            <country>GB</country>
         </Address>
     </HolderOfTheTransitProcedure>
     <TraderAtDestination>
@@ -33,9 +33,8 @@
         <continueUnloading>1</continueUnloading>
     </CTLControl>
     <Consignment>
-        <countryOfDestination>FR</countryOfDestination>
+        <countryOfDestination>XI</countryOfDestination>
         <containerIndicator>1</containerIndicator>
-        <inlandModeOfTransport>2</inlandModeOfTransport>
         <grossMass>1000.99</grossMass>
         <Consignor>
             <identificationNumber>GB954131533000</identificationNumber>
@@ -54,23 +53,23 @@
                 <streetAndNumber>1 Champs Elysees</streetAndNumber>
                 <postcode>75008</postcode>
                 <city>Paris</city>
-                <country>FR</country>
+                <country>GB</country>
             </Address>
         </Consignee>
         <TransportEquipment>
             <sequenceNumber>1</sequenceNumber>
-            <containerIdentificationNumber>cin-1</containerIdentificationNumber>
+            <containerIdentificationNumber>WGPCGR</containerIdentificationNumber>
             <numberOfSeals>0</numberOfSeals>
             <GoodsReference>
                 <sequenceNumber>1</sequenceNumber>
-                <declarationGoodsItemNumber>108</declarationGoodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
             </GoodsReference>
         </TransportEquipment>
         <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
-            <typeOfIdentification>20</typeOfIdentification>
+            <typeOfIdentification>30</typeOfIdentification>
             <identificationNumber>NC15REG</identificationNumber>
-            <nationality>DE</nationality>
+            <nationality>GB</nationality>
         </DepartureTransportMeans>
         <PreviousDocument>
             <sequenceNumber>1</sequenceNumber>
@@ -125,38 +124,38 @@
             </Location>
             <TransportEquipment>
                 <sequenceNumber>1</sequenceNumber>
-                <containerIdentificationNumber>tn1</containerIdentificationNumber>
+                <containerIdentificationNumber>WGPCGR</containerIdentificationNumber>
                 <numberOfSeals>0</numberOfSeals>
                 <GoodsReference>
                     <sequenceNumber>1</sequenceNumber>
-                    <declarationGoodsItemNumber>78</declarationGoodsItemNumber>
+                    <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 </GoodsReference>
             </TransportEquipment>
             <Transhipment>
                 <containerIndicator>1</containerIndicator>
                 <TransportMeans>
-                    <typeOfIdentification>21</typeOfIdentification>
-                    <identificationNumber>44</identificationNumber>
-                    <nationality>FR</nationality>
+                    <typeOfIdentification>30</typeOfIdentification>
+                    <identificationNumber>NC15REG</identificationNumber>
+                    <nationality>GB</nationality>
                 </TransportMeans>
             </Transhipment>
         </Incident>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
-            <grossMass>1234.567</grossMass>
+            <grossMass>1000.99</grossMass>
             <securityIndicatorFromExportDeclaration>0</securityIndicatorFromExportDeclaration>
             <Consignor>
-                <identificationNumber>csgr1</identificationNumber>
+                <identificationNumber>GB954131533000</identificationNumber>
                 <name>michael doe</name>
                 <Address>
                     <streetAndNumber>3 main street</streetAndNumber>
                     <postcode>bc2 45d</postcode>
                     <city>city4</city>
-                    <country>FR</country>
+                    <country>GB</country>
                 </Address>
             </Consignor>
             <Consignee>
-                <identificationNumber>csgee1</identificationNumber>
+                <identificationNumber>GB954131536000</identificationNumber>
                 <name>John Smith</name>
                 <Address>
                     <streetAndNumber>5 main street</streetAndNumber>
@@ -167,9 +166,9 @@
             </Consignee>
             <DepartureTransportMeans>
                 <sequenceNumber>1</sequenceNumber>
-                <typeOfIdentification>20</typeOfIdentification>
-                <identificationNumber>23</identificationNumber>
-                <nationality>IT</nationality>
+                <typeOfIdentification>30</typeOfIdentification>
+                <identificationNumber>NC15REG</identificationNumber>
+                <nationality>GB</nationality>
             </DepartureTransportMeans>
             <PreviousDocument>
                 <sequenceNumber>1</sequenceNumber>
@@ -199,20 +198,9 @@
                 <text>8</text>
             </AdditionalInformation>
             <ConsignmentItem>
-                <goodsItemNumber>6</goodsItemNumber>
-                <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
-                <declarationType>T1</declarationType>
-                <countryOfDestination>DE</countryOfDestination>
-                <Consignee>
-                    <identificationNumber>5</identificationNumber>
-                    <name>Smith</name>
-                    <Address>
-                        <streetAndNumber>5 main street</streetAndNumber>
-                        <postcode>ab12 3cd</postcode>
-                        <city>Newcastle</city>
-                        <country>GB</country>
-                    </Address>
-                </Consignee>
+                <goodsItemNumber>1</goodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
+                <declarationType>T2</declarationType>
                 <Commodity>
                     <descriptionOfGoods>shirts</descriptionOfGoods>
                     <cusCode>0010001-6</cusCode>
@@ -225,21 +213,21 @@
                         <UNNumber>0004</UNNumber>
                     </DangerousGoods>
                     <GoodsMeasure>
-                        <grossMass>123.45</grossMass>
-                        <netMass>123.45</netMass>
+                        <grossMass>1000.99</grossMass>
+                        <netMass>900</netMass>
                     </GoodsMeasure>
                 </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
-                    <typeOfPackages>1A</typeOfPackages>
-                    <numberOfPackages>99</numberOfPackages>
-                    <shippingMarks>xyz</shippingMarks>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>1</numberOfPackages>
+                    <shippingMarks>GB box</shippingMarks>
                 </Packaging>
                 <PreviousDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>C612</type>
                     <referenceNumber>4</referenceNumber>
-                    <goodsItemNumber>5</goodsItemNumber>
+                    <goodsItemNumber>1</goodsItemNumber>
                     <complementOfInformation>1</complementOfInformation>
                 </PreviousDocument>
                 <SupportingDocument>

@@ -1,276 +1,97 @@
-<ncts:CC043C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
-    <messageIdentification>token</messageIdentification>
+<ncts:CC043C xmlns:ncts="http://ncts.dgtaxud.ec" PhaseID="NCTS5.0">
+    <messageSender>NTA.XI</messageSender>
+    <messageRecipient>Neda-test</messageRecipient>
+    <preparationDateAndTime>2025-01-07T13:35:19</preparationDateAndTime>
+    <messageIdentification>0V9MCN9AUBI9YC</messageIdentification>
     <messageType>CC043C</messageType>
-    <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
         <MRN>25GB000246TK0E6WJ1</MRN>
-        <declarationType>T</declarationType>
-        <declarationAcceptanceDate>2014-06-09+01:00</declarationAcceptanceDate>
+        <declarationType>T1</declarationType>
+        <declarationAcceptanceDate>2025-01-07</declarationAcceptanceDate>
         <security>0</security>
-        <reducedDatasetIndicator>1</reducedDatasetIndicator>
+        <reducedDatasetIndicator>0</reducedDatasetIndicator>
     </TransitOperation>
     <CustomsOfficeOfDestinationActual>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>XI000081</referenceNumber>
     </CustomsOfficeOfDestinationActual>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>GB954131533000</identificationNumber>
-        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
-        <name>Jean Doe</name>
+        <identificationNumber>GB201909015000</identificationNumber>
+        <name>TT INVENTORY</name>
         <Address>
-            <streetAndNumber>1 avenue marceau</streetAndNumber>
-            <postcode>10006</postcode>
-            <city>Paris</city>
-            <country>FR</country>
+            <streetAndNumber>3 LONDON ROAD</streetAndNumber>
+            <postcode>IP1 2JJ</postcode>
+            <city>IPSWICH</city>
+            <country>GB</country>
         </Address>
     </HolderOfTheTransitProcedure>
     <TraderAtDestination>
-        <identificationNumber>tad-1</identificationNumber>
+        <identificationNumber>XI673265407737</identificationNumber>
     </TraderAtDestination>
-    <CTLControl>
-        <continueUnloading>1</continueUnloading>
-    </CTLControl>
     <Consignment>
-        <countryOfDestination>FR</countryOfDestination>
+        <countryOfDestination>XI</countryOfDestination>
         <containerIndicator>1</containerIndicator>
-        <inlandModeOfTransport>2</inlandModeOfTransport>
-        <grossMass>1000.99</grossMass>
+        <grossMass>1000</grossMass>
         <Consignor>
-            <identificationNumber>id2</identificationNumber>
-            <name>john doe</name>
+            <identificationNumber>GB201909015000</identificationNumber>
+            <name>TT INVENTORY</name>
             <Address>
-                <streetAndNumber>1 high street</streetAndNumber>
-                <postcode>N1 99Z</postcode>
-                <city>Newcastle</city>
+                <streetAndNumber>3 LONDON ROAD</streetAndNumber>
+                <postcode>IP1 2JJ</postcode>
+                <city>IPSWICH</city>
                 <country>GB</country>
             </Address>
         </Consignor>
         <Consignee>
-            <identificationNumber>csgnee-1</identificationNumber>
-            <name>Jane Doe</name>
+            <identificationNumber>XI985524247819</identificationNumber>
+            <name>---</name>
             <Address>
-                <streetAndNumber>1 Champs Elysees</streetAndNumber>
-                <postcode>75008</postcode>
-                <city>Paris</city>
-                <country>FR</country>
+                <streetAndNumber>---</streetAndNumber>
+                <postcode>---</postcode>
+                <city>---</city>
+                <country>GB</country>
             </Address>
         </Consignee>
         <TransportEquipment>
             <sequenceNumber>1</sequenceNumber>
-            <containerIdentificationNumber>cin-1</containerIdentificationNumber>
-            <numberOfSeals>103</numberOfSeals>
+            <containerIdentificationNumber>WGPCGR</containerIdentificationNumber>
+            <numberOfSeals>1</numberOfSeals>
             <Seal>
                 <sequenceNumber>1</sequenceNumber>
-                <identifier>1002</identifier>
+                <identifier>1234</identifier>
             </Seal>
             <GoodsReference>
                 <sequenceNumber>1</sequenceNumber>
-                <declarationGoodsItemNumber>108</declarationGoodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
             </GoodsReference>
         </TransportEquipment>
         <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
-            <typeOfIdentification>10</typeOfIdentification>
-            <identificationNumber>28</identificationNumber>
-            <nationality>DE</nationality>
+            <typeOfIdentification>30</typeOfIdentification>
+            <identificationNumber>NC15REG</identificationNumber>
+            <nationality>GB</nationality>
         </DepartureTransportMeans>
-        <PreviousDocument>
-            <sequenceNumber>1</sequenceNumber>
-            <type>C512</type>
-            <referenceNumber>info1</referenceNumber>
-            <complementOfInformation>8</complementOfInformation>
-        </PreviousDocument>
-        <SupportingDocument>
-            <sequenceNumber>1</sequenceNumber>
-            <type>C651</type>
-            <referenceNumber>1234</referenceNumber>
-            <complementOfInformation>2</complementOfInformation>
-        </SupportingDocument>
-        <TransportDocument>
-            <sequenceNumber>1</sequenceNumber>
-            <type>N235</type>
-            <referenceNumber>refn-1</referenceNumber>
-        </TransportDocument>
-        <AdditionalReference>
-            <sequenceNumber>1</sequenceNumber>
-            <type>Y024</type>
-            <referenceNumber>addref-1</referenceNumber>
-        </AdditionalReference>
-        <AdditionalInformation>
-            <sequenceNumber>1</sequenceNumber>
-            <code>20100</code>
-            <text>additional ref text</text>
-        </AdditionalInformation>
-        <Incident>
-            <sequenceNumber>1</sequenceNumber>
-            <code>5</code>
-            <text>some text 1</text>
-            <Endorsement>
-                <date>2013-05-22+01:00</date>
-                <authority>de</authority>
-                <place>Cologne</place>
-                <country>DE</country>
-            </Endorsement>
-            <Location>
-                <qualifierOfIdentification>U</qualifierOfIdentification>
-                <UNLocode>34</UNLocode>
-                <country>DE</country>
-                <GNSS>
-                    <latitude>91.0</latitude>
-                    <longitude>92.0</longitude>
-                </GNSS>
-                <Address>
-                    <streetAndNumber>2 high street</streetAndNumber>
-                    <postcode>ab12 34c</postcode>
-                    <city>city2</city>
-                </Address>
-            </Location>
-            <TransportEquipment>
-                <sequenceNumber>1</sequenceNumber>
-                <containerIdentificationNumber>tn1</containerIdentificationNumber>
-                <numberOfSeals>34</numberOfSeals>
-                <Seal>
-                    <sequenceNumber>1</sequenceNumber>
-                    <identifier>sl7</identifier>
-                </Seal>
-                <GoodsReference>
-                    <sequenceNumber>1</sequenceNumber>
-                    <declarationGoodsItemNumber>78</declarationGoodsItemNumber>
-                </GoodsReference>
-            </TransportEquipment>
-            <Transhipment>
-                <containerIndicator>1</containerIndicator>
-                <TransportMeans>
-                    <typeOfIdentification>21</typeOfIdentification>
-                    <identificationNumber>44</identificationNumber>
-                    <nationality>FR</nationality>
-                </TransportMeans>
-            </Transhipment>
-        </Incident>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
-            <grossMass>1234.567</grossMass>
-            <securityIndicatorFromExportDeclaration>0</securityIndicatorFromExportDeclaration>
-            <Consignor>
-                <identificationNumber>csgr1</identificationNumber>
-                <name>michael doe</name>
-                <Address>
-                    <streetAndNumber>3 main street</streetAndNumber>
-                    <postcode>bc2 45d</postcode>
-                    <city>city4</city>
-                    <country>FR</country>
-                </Address>
-            </Consignor>
-            <Consignee>
-                <identificationNumber>csgee1</identificationNumber>
-                <name>John Smith</name>
-                <Address>
-                    <streetAndNumber>5 main street</streetAndNumber>
-                    <postcode>cd4 56e</postcode>
-                    <city>city5</city>
-                    <country>DE</country>
-                </Address>
-            </Consignee>
-            <DepartureTransportMeans>
-                <sequenceNumber>1</sequenceNumber>
-                <typeOfIdentification>20</typeOfIdentification>
-                <identificationNumber>23</identificationNumber>
-                <nationality>IT</nationality>
-            </DepartureTransportMeans>
-            <PreviousDocument>
-                <sequenceNumber>1</sequenceNumber>
-                <type>C605</type>
-                <referenceNumber>4</referenceNumber>
-                <complementOfInformation>1</complementOfInformation>
-            </PreviousDocument>
-            <SupportingDocument>
-                <sequenceNumber>1</sequenceNumber>
-                <type>N002</type>
-                <referenceNumber>ref4</referenceNumber>
-                <complementOfInformation>6</complementOfInformation>
-            </SupportingDocument>
-            <TransportDocument>
-                <sequenceNumber>1</sequenceNumber>
-                <type>N271</type>
-                <referenceNumber>9</referenceNumber>
-            </TransportDocument>
-            <AdditionalReference>
-                <sequenceNumber>1</sequenceNumber>
-                <type>Y024</type>
-                <referenceNumber>addref-1</referenceNumber>
-            </AdditionalReference>
-            <AdditionalInformation>
-                <sequenceNumber>1</sequenceNumber>
-                <code>20200</code>
-                <text>8</text>
-            </AdditionalInformation>
+            <grossMass>1000</grossMass>
             <ConsignmentItem>
-                <goodsItemNumber>6</goodsItemNumber>
-                <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
-                <declarationType>T1</declarationType>
-                <countryOfDestination>DE</countryOfDestination>
-                <Consignee>
-                    <identificationNumber>5</identificationNumber>
-                    <name>Smith</name>
-                    <Address>
-                        <streetAndNumber>5 main street</streetAndNumber>
-                        <postcode>ab12 3cd</postcode>
-                        <city>Newcastle</city>
-                        <country>GB</country>
-                    </Address>
-                </Consignee>
+                <goodsItemNumber>1</goodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
-                    <descriptionOfGoods>shirts</descriptionOfGoods>
-                    <cusCode>0010001-6</cusCode>
+                    <descriptionOfGoods>Toys</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>010121</harmonizedSystemSubHeadingCode>
-                        <combinedNomenclatureCode>45</combinedNomenclatureCode>
+                        <harmonizedSystemSubHeadingCode>392690</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
-                    <DangerousGoods>
-                        <sequenceNumber>1</sequenceNumber>
-                        <UNNumber>0004</UNNumber>
-                    </DangerousGoods>
                     <GoodsMeasure>
-                        <grossMass>123.45</grossMass>
-                        <netMass>123.45</netMass>
+                        <grossMass>1000</grossMass>
+                        <netMass>950</netMass>
                     </GoodsMeasure>
                 </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
-                    <typeOfPackages>1A</typeOfPackages>
-                    <numberOfPackages>99</numberOfPackages>
-                    <shippingMarks>xyz</shippingMarks>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>1</numberOfPackages>
+                    <shippingMarks>GB box</shippingMarks>
                 </Packaging>
-                <PreviousDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>C612</type>
-                    <referenceNumber>4</referenceNumber>
-                    <goodsItemNumber>5</goodsItemNumber>
-                    <complementOfInformation>1</complementOfInformation>
-                </PreviousDocument>
-                <SupportingDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>L100</type>
-                    <referenceNumber>8</referenceNumber>
-                    <complementOfInformation>0</complementOfInformation>
-                </SupportingDocument>
-                <TransportDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>N703</type>
-                    <referenceNumber>4</referenceNumber>
-                </TransportDocument>
-                <AdditionalReference>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>Y024</type>
-                    <referenceNumber>addref-1</referenceNumber>
-                </AdditionalReference>
-                <AdditionalInformation>
-                    <sequenceNumber>1</sequenceNumber>
-                    <code>20300</code>
-                    <text>additional info text</text>
-                </AdditionalInformation>
             </ConsignmentItem>
         </HouseConsignment>
     </Consignment>
