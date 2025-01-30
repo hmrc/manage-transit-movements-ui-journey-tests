@@ -7,35 +7,16 @@
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <!--Optional:-->
-        <MRN>25GB000246TK0E6WJ1</MRN>
+        <LRN>GB8dd47c1f2f001h2ce671</LRN>
         <businessRejectionType>170</businessRejectionType>
-        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>C012</rejectionCode>
-        <!--Optional:-->
-        <rejectionReason>something bad</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T13:28:00</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <!--Optional:-->
-        <identificationNumber>GB954131533000</identificationNumber>
-
-        <name>Swaylor Tift</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>10 Corneilia Street</streetAndNumber>
-            <!--Optional:-->
-            <postcode>TS15WT</postcode>
-            <city>London</city>
-            <country>GB</country>
-        </Address>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
-    <!--Optional:-->
-    <Representative>
-        <identificationNumber>GB954131533000</identificationNumber>
-        <status>1</status>
-    </Representative>
     <!--0 to 9999 repetitions:-->
 </ncts:CC056C>

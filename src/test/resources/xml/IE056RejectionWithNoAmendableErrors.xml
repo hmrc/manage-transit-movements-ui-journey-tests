@@ -7,116 +7,30 @@
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <!--Optional:-->
-        <LRN>string</LRN>
-        <!--Optional:-->
-        <MRN>25GB000246TK0E6WJ1</MRN>
+        <LRN>25GB000246TK0E6WJ1</LRN>
         <businessRejectionType>015</businessRejectionType>
-        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>token</rejectionCode>
-        <!--Optional:-->
-        <rejectionReason>string</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T13:28:00</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>stringst</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>string</streetAndNumber>
-            <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
-        </Address>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
-    <!--Optional:-->
-    <Representative>
-        <identificationNumber>string</identificationNumber>
-        <status>token</status>
-    </Representative>
     <!--0 to 9999 repetitions:-->
     <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorPointer>/CC015C/NonAmendable[1]/LocoNumber</errorPointer>
+        <errorCode>15</errorCode>
+        <errorReason>G0033</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>NonAmendable</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
+        <errorCode>15</errorCode>
+        <errorReason>G0033</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>Value of an element in a message is outside the predefined set of values or not part of the applicable business</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>NonAmendable2</originalAttributeValue>
     </FunctionalError>
 </ncts:CC056C>

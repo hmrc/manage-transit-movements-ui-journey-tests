@@ -7,198 +7,58 @@
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <!--Optional:-->
-        <MRN>string</MRN>
+        <LRN>GB8dd47c1f2f001h2ce671</LRN>
         <businessRejectionType>013</businessRejectionType>
-        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>token</rejectionCode>
-        <!--Optional:-->
-        <rejectionReason>string</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T13:28:00</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>string</streetAndNumber>
-            <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
-        </Address>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
-    <!--Optional:-->
-    <Representative>
-        <identificationNumber>string</identificationNumber>
-        <status>token</status>
-    </Representative>
     <!--0 to 9999 repetitions:-->
     <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was an error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
         <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
         <errorCode>14</errorCode>
-        <errorReason>There was another error</errorReason>
+        <errorReason>G0033</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>ShouldBe0Or1</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
         <errorCode>12</errorCode>
-        <errorReason>There was a violation on a submitted codelist</errorReason>
+        <errorReason>R0840</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>GB123456789000</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
         <errorCode>15</errorCode>
-        <errorReason>Value appeared when it should'nt have been possible</errorReason>
+        <errorReason>G0033</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>Z</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
+        <errorCode>12</errorCode>
+        <errorReason>G0033</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>LO100</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
+        <errorCode>12</errorCode>
+        <errorReason>R0840</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>GB123456789000</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was an error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was another error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
         <errorCode>12</errorCode>
-        <errorReason>There was a violation on a submitted codelist</errorReason>
+        <errorReason>R0076</errorReason>
         <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
-        <errorCode>15</errorCode>
-        <errorReason>Value appeared when it should'nt have been possible</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Authorisation[1]/type</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was an error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/TransitOperation/bindingItinerary</errorPointer>
-        <errorCode>14</errorCode>
-        <errorReason>There was another error</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/HolderOfTheTransitProcedure/TIRHolderIdentificationNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>There was a violation on a submitted codelist</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Guarantee[1]/guaranteeType</errorPointer>
-        <errorCode>15</errorCode>
-        <errorReason>Value appeared when it should'nt have been possible</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/PreviousDocument[5]/type</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
-    </FunctionalError>
-    <FunctionalError>
-        <errorPointer>/CC015C/Consignment/HouseConsignment[5]/ConsignmentItem[10]/consignor</errorPointer>
-        <errorCode>26</errorCode>
-        <errorReason>This message ID has already been submitted</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>string</originalAttributeValue>
+        <originalAttributeValue>O00hN000oo</originalAttributeValue>
     </FunctionalError>
 </ncts:CC056C>
