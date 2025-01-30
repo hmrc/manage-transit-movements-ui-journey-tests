@@ -19,17 +19,19 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>GB0031012301203</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
     </HolderOfTheTransitProcedure>
     <!--0 to 99 repetitions:-->
     <RequestedDocument>
         <sequenceNumber>1</sequenceNumber>
-        <documentType>66</documentType>
+        <documentType>C641</documentType>
         <!--Optional:-->
-        <description>Document description</description>
+        <description>Supporting Document</description>
     </RequestedDocument>
     <RequestedDocument>
         <sequenceNumber>2</sequenceNumber>
-        <documentType>271</documentType>
+        <documentType>N785</documentType>
+        <!--Optional:-->
+        <description>Transport Document</description>
     </RequestedDocument>
 </ncts:CC060C>

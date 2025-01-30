@@ -19,37 +19,37 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <!--Optional:-->
         <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <!--Optional:-->
-        <name>string</name>
+        <name>Marie Holderova</name>
         <!--Optional:-->
         <Address>
-            <streetAndNumber>string</streetAndNumber>
+            <streetAndNumber>1 Some Street</streetAndNumber>
             <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
+            <postcode>NE11EN</postcode>
+            <city>Newcastle</city>
+            <country>GB</country>
         </Address>
         <!--Optional:-->
         <ContactPerson>
-            <name>string</name>
-            <phoneNumber>token</phoneNumber>
+            <name>Persona Contactova</name>
+            <phoneNumber>+3242353453453</phoneNumber>
             <!--Optional:-->
-            <eMailAddress>string</eMailAddress>
+            <eMailAddress>persona@persona.pr</eMailAddress>
         </ContactPerson>
     </HolderOfTheTransitProcedure>
     <!--Optional:-->
     <Representative>
-        <identificationNumber>string</identificationNumber>
-        <status>token</status>
+        <identificationNumber>GB954131535000</identificationNumber>
+        <status>1</status>
         <!--Optional:-->
         <ContactPerson>
-            <name>string</name>
-            <phoneNumber>token</phoneNumber>
+            <name>Rep Contactov</name>
+            <phoneNumber>+09959595959595</phoneNumber>
             <!--Optional:-->
-            <eMailAddress>string</eMailAddress>
+            <eMailAddress>rep@rep.rep</eMailAddress>
         </ContactPerson>
     </Representative>
     <!--0 to 99 repetitions:-->
@@ -57,12 +57,12 @@
         <sequenceNumber>1</sequenceNumber>
         <type>42</type>
         <!--Optional:-->
-        <text>string</text>
+        <text>Intrusive inspection</text>
     </TypeOfControls>
     <TypeOfControls>
         <sequenceNumber>2</sequenceNumber>
-        <type>44</type>
+        <type>40</type>
         <!--Optional:-->
-        <text>string</text>
+        <text>Physical controls</text>
     </TypeOfControls>
 </ncts:CC060C>

@@ -11,31 +11,31 @@
         <declarationAcceptanceDate>2023-09-18</declarationAcceptanceDate>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>stringst</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <!--Optional:-->
-        <name>string</name>
+        <name>Joe Holderov</name>
         <!--Optional:-->
         <Address>
-            <streetAndNumber>string</streetAndNumber>
+            <streetAndNumber>1 Some Street</streetAndNumber>
             <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
+            <postcode>NE11EN</postcode>
+            <city>Newcastle</city>
+            <country>GB</country>
         </Address>
     </HolderOfTheTransitProcedure>
     <!--1 to 99 repetitions:-->
     <GuaranteeReference>
         <sequenceNumber>1</sequenceNumber>
-        <GRN>string</GRN>
+        <GRN>09GB0000010000084</GRN>
         <InvalidGuaranteeReason>
             <sequenceNumber>1</sequenceNumber>
             <code>G02</code>
             <!--Optional:-->
-            <text>string</text>
+            <text>Invalidation reason</text>
         </InvalidGuaranteeReason>
     </GuaranteeReference>
 </ncts:CC055C>

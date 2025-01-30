@@ -91,7 +91,6 @@ Feature: Submit unloading remarks with seals
     Then I should be on the 'You cannot send these unloading remarks' page
     And I sign out
 
-
   Scenario: 05 - Trader is able to view unloading remarks with rejections and resubmit
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification

@@ -15,7 +15,6 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I sign out
 
 
-#    2929
 
   Scenario: 02 - Trader is able to view unloading remarks for all errors
     When I submit an IE007 Arrival Notification
@@ -29,7 +28,7 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I sign out
 
 
-#    2917
+
   Scenario: 03 - Trader is able to view arrival notification rejections for all errors
     When I submit an IE007 Arrival Notification
     And I submit an IE057 Arrival Notification Rejection
