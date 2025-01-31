@@ -1,22 +1,22 @@
 <ncts:CC044C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC044C</messageType>
     <TransitOperation>
-        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
     </TransitOperation>
     <CustomsOfficeOfDestinationActual>
         <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDestinationActual>
     <TraderAtDestination>
-        <identificationNumber>GB00123131543</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
     </TraderAtDestination>
     <UnloadingRemark>
         <conform>0</conform>
         <unloadingCompletion>1</unloadingCompletion>
-        <unloadingDate>2018-11-01</unloadingDate>
+        <unloadingDate>2025-11-01</unloadingDate>
     </UnloadingRemark>
     <Consignment>
         <grossMass>1000</grossMass>
@@ -24,56 +24,62 @@
             <sequenceNumber>1</sequenceNumber>
             <Seal>
                 <sequenceNumber>1</sequenceNumber>
-                <identifier>id1</identifier>
+                <identifier>Seal1</identifier>
             </Seal>
             <GoodsReference>
                 <sequenceNumber>1</sequenceNumber>
-                <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
+                <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
             </GoodsReference>
         </TransportEquipment>
         <DepartureTransportMeans>
             <sequenceNumber>1</sequenceNumber>
+            <typeOfIdentification>30</typeOfIdentification>
+            <identificationNumber>NC15REG</identificationNumber>
         </DepartureTransportMeans>
         <SupportingDocument>
             <sequenceNumber>1</sequenceNumber>
+            <type>C641</type>
+            <referenceNumber>1234</referenceNumber>
+            <complementOfInformation>2</complementOfInformation>
         </SupportingDocument>
         <TransportDocument>
             <sequenceNumber>1</sequenceNumber>
+            <type>N785</type>
+            <referenceNumber>refn-1</referenceNumber>
         </TransportDocument>
         <AdditionalReference>
             <sequenceNumber>1</sequenceNumber>
+            <type>Y022</type>
+            <referenceNumber>addref-1</referenceNumber>
         </AdditionalReference>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
             <grossMass>3000</grossMass>
-            <DepartureTransportMeans>
-                <sequenceNumber>1</sequenceNumber>
-            </DepartureTransportMeans>
-            <SupportingDocument>
-                <sequenceNumber>1</sequenceNumber>
-            </SupportingDocument>
-            <TransportDocument>
-                <sequenceNumber>1</sequenceNumber>
-            </TransportDocument>
-            <AdditionalReference>
-                <sequenceNumber>1</sequenceNumber>
-            </AdditionalReference>
             <ConsignmentItem>
                 <goodsItemNumber>1</goodsItemNumber>
-                <declarationGoodsItemNumber>100</declarationGoodsItemNumber>
+                <declarationGoodsItemNumber>12</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>This is a description</descriptionOfGoods>
+                </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BG</typeOfPackages>
                 </Packaging>
                 <SupportingDocument>
                     <sequenceNumber>1</sequenceNumber>
+                    <type>C641</type>
+                    <referenceNumber>1234</referenceNumber>
+                    <complementOfInformation>2</complementOfInformation>
                 </SupportingDocument>
                 <TransportDocument>
                     <sequenceNumber>1</sequenceNumber>
-                    <type>ABCD</type>
-                    <referenceNumber>A1</referenceNumber>
+                    <type>N785</type>
+                    <referenceNumber>refn-1</referenceNumber>
                 </TransportDocument>
                 <AdditionalReference>
                     <sequenceNumber>1</sequenceNumber>
+                    <type>Y022</type>
+                    <referenceNumber>addref-1</referenceNumber>
                 </AdditionalReference>
             </ConsignmentItem>
         </HouseConsignment>

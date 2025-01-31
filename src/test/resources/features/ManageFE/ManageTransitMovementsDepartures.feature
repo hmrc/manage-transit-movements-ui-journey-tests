@@ -36,7 +36,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE060 Control Decision Notification With Documents
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Goods under control - document requested' page
     And I sign out
 
@@ -46,7 +46,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE060 Control Decision Notification With No Documents
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Goods under control' page
     And I sign out
 
@@ -56,7 +56,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE056 Rejection With No Amendable Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Review declaration errors' page
     And I sign out
 
@@ -64,10 +64,10 @@ Feature: Manage transit movements frontend tests for Departures
   Scenario: 06 - Trader is able to amend a declaration error for a departure declaration before MRN allocation
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclaration.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
     Then I should be on the 'Declaration summary' page
     And I sign out
@@ -77,10 +77,10 @@ Feature: Manage transit movements frontend tests for Departures
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     And I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclaration.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclaration.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
     Then I should be on the 'What is the new Local Reference Number?' page
     And I sign out
@@ -92,7 +92,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I submit an IE056 Amendment Rejection With NO Amendable Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Declaration errors' page
     And I sign out
 
@@ -103,7 +103,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I submit an IE056 Cancellation Rejection With No Amendable Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Review cancellation errors' page
     And I sign out
 
@@ -113,7 +113,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE028 MRN Allocated
     Then I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Cancel declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I should be on the 'Are you sure you want to cancel this declaration?' page
     And I sign out
 
@@ -123,7 +123,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE035 Recovery Notification
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Goods being recovered' page
     And I sign out
 
@@ -133,16 +133,16 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE051 No Release For Transit
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Goods not released' page
     And I sign out
 
 
   Scenario: 13 Trader cannot access a Transitional draft declaration when in Final mode
-    And the user has submitted itemDetailsGBTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted itemDetailsGBTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     When I click on the View draft departure declarations link on the 'Manage your transit movements' page
-    And I click on the link for LRN 38VYQTYFU3T0KUTUM3 on the 'Draft departure declarations' page
+    And I click on the link for LRN 25GB000246TK0E6WJ1 on the 'Draft departure declarations' page
     Then I should be on the 'This declaration is no longer available' page
     And I sign out
 
@@ -152,7 +152,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'More information needed to complete pre-lodged declaration' page
 
   Scenario: 15 Trader completes a pre-lodge departure followed by an amendment and is able to complete a pre-lodge 
@@ -162,7 +162,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE004 Amendment Acceptance
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'More information needed to complete pre-lodged declaration' page
 
 
@@ -171,7 +171,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page
     Then I should be on the Presentation Notification 'Check your answers' page
@@ -183,7 +183,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE060 Control Decision Type 2
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View details link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Intention to control - complete pre-lodged declaration' page
     And I sign out
 
@@ -194,7 +194,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE056 Rejection Of IE170 No Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Complete pre-lodged declaration link on the 'Prelodged declaration errors' page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I sign out
@@ -206,7 +206,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I submit an IE056 Rejection Of IE170 With Errors
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Complete pre-lodged declaration link on the 'Review pre-lodged declaration errors' page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I sign out

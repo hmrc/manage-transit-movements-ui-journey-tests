@@ -1,5 +1,5 @@
 <ncts:CC014C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
@@ -7,13 +7,13 @@
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
     </TransitOperation>
     <Invalidation>
         <!--Optional:-->
-        <requestDateAndTime>2014-06-09T16:15:04</requestDateAndTime>
+        <requestDateAndTime>2025-01-01T16:15:04</requestDateAndTime>
         <!--Optional:-->
-        <decisionDateAndTime>2008-11-15T16:52:58</decisionDateAndTime>
+        <decisionDateAndTime>2025-01-01T16:52:58</decisionDateAndTime>
         <!--Optional:-->
         <decision>0</decision>
         <initiatedByCustoms>1</initiatedByCustoms>
@@ -25,23 +25,6 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>string</streetAndNumber>
-            <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>GB</country>
-        </Address>
-        <!--Optional:-->
-        <ContactPerson>
-            <name>string</name>
-            <phoneNumber>token</phoneNumber>
-        </ContactPerson>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
 </ncts:CC014C>

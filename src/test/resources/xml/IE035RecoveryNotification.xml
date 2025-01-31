@@ -1,29 +1,29 @@
 <ncts:CC035C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>GdOcminxBxSLGm1rRUn0q96S2</messageSender>
-    <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC035C</messageType>
     <correlationIdentifier>cn-id-1</correlationIdentifier>
     <TransitOperation>
-        <MRN>11FVMYDFJJ6WCQCVB0</MRN>
-        <declarationAcceptanceDate>2023-09-09+01:00</declarationAcceptanceDate>
+        <MRN>25GB000246FDFV3GJ4</MRN>
+        <declarationAcceptanceDate>2025-01-01+01:00</declarationAcceptanceDate>
     </TransitOperation>
     <RecoveryNotification>
-        <recoveryNotificationDate>2023-11-15</recoveryNotificationDate>
+        <recoveryNotificationDate>2025-01-15</recoveryNotificationDate>
         <recoveryNotificationText>recovery Notification Text</recoveryNotificationText>
         <amountClaimed>1000.01</amountClaimed>
         <currency>EURO</currency>
     </RecoveryNotification>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>DOVER-1</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <CustomsOfficeOfRecoveryAtDeparture>
-        <referenceNumber>DOVER-2</referenceNumber>
+        <referenceNumber>GB000001</referenceNumber>
     </CustomsOfficeOfRecoveryAtDeparture>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>30001</identificationNumber>
-        <TIRHolderIdentificationNumber>30002</TIRHolderIdentificationNumber>
+        <identificationNumber>XI882242478098</identificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <name>Smith</name>
         <Address>
             <streetAndNumber>10 The High Street</streetAndNumber>
@@ -33,7 +33,7 @@
         </Address>
     </HolderOfTheTransitProcedure>
     <Guarantor>
-        <identificationNumber>23456</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
         <name>Jane Doe</name>
         <Address>
             <streetAndNumber>Main Street 2</streetAndNumber>

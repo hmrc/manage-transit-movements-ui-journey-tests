@@ -1,14 +1,14 @@
 <ncts:CC015C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.XI</messageRecipient>
-    <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-01T07:43:36</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC015C</messageType>
     <TransitOperation>
-        <LRN>38VYQTYFU3T0KUTUM3</LRN>
+        <LRN>25GB000246TK0E6WJ1</LRN>
         <declarationType>TIR</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
-        <TIRCarnetNumber>12312</TIRCarnetNumber>
+        <TIRCarnetNumber>1234</TIRCarnetNumber>
         <security>3</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <specificCircumstanceIndicator>XXX</specificCircumstanceIndicator>
@@ -45,11 +45,11 @@
         <countryOfDestination>IT</countryOfDestination>
         <containerIndicator>1</containerIndicator>
         <inlandModeOfTransport>3</inlandModeOfTransport>
-        <modeOfTransportAtTheBorder>1</modeOfTransportAtTheBorder>
+        <modeOfTransportAtTheBorder>3</modeOfTransportAtTheBorder>
         <grossMass>1000</grossMass>
-        <referenceNumberUCR>AB1234</referenceNumberUCR>
+        <referenceNumberUCR>UCR1234</referenceNumberUCR>
         <Carrier>
-            <identificationNumber>GB123456</identificationNumber>
+            <identificationNumber>GB123456789000</identificationNumber>
         </Carrier>
         <Consignor>
             <identificationNumber>GB954131533000</identificationNumber>
@@ -72,7 +72,7 @@
             <numberOfSeals>1</numberOfSeals>
             <Seal>
                 <sequenceNumber>1</sequenceNumber>
-                <identifier>1234</identifier>
+                <identifier>Seal1234</identifier>
             </Seal>
             <GoodsReference>
                 <sequenceNumber>1</sequenceNumber>
@@ -109,12 +109,12 @@
             <conveyanceReferenceNumber>5555</conveyanceReferenceNumber>
         </ActiveBorderTransportMeans>
         <PlaceOfLoading>
-            <UNLocode>DEBER</UNLocode>
+            <UNLocode>GBDVR</UNLocode>
             <country>GB</country>
             <location>Dover</location>
         </PlaceOfLoading>
         <PlaceOfUnloading>
-            <UNLocode>DEBER</UNLocode>
+            <UNLocode>GBBEL</UNLocode>
             <country>XI</country>
             <location>Belfast</location>
         </PlaceOfUnloading>
@@ -123,7 +123,7 @@
         </TransportCharges>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
-            <grossMass>1000</grossMass>
+            <grossMass>2000</grossMass>
             <ConsignmentItem>
                 <goodsItemNumber>1</goodsItemNumber>
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
@@ -157,32 +157,27 @@
                 <PreviousDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>C512</type>
-                    <referenceNumber>XYZ</referenceNumber>
-                    <goodsItemNumber>1</goodsItemNumber>
-                    <typeOfPackages>BX</typeOfPackages>
-                    <numberOfPackages>1</numberOfPackages>
-                    <measurementUnitAndQualifier>MIL</measurementUnitAndQualifier>
-                    <quantity>10</quantity>
+                    <referenceNumber>PrevD03</referenceNumber>
                 </PreviousDocument>
                 <TransportDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>N235</type>
-                    <referenceNumber>XYZ</referenceNumber>
+                    <referenceNumber>TraspD03</referenceNumber>
                 </TransportDocument>
                 <AdditionalReference>
                     <sequenceNumber>1</sequenceNumber>
                     <type>C651</type>
-                    <referenceNumber>XYZ</referenceNumber>
+                    <referenceNumber>AddR3F1</referenceNumber>
                 </AdditionalReference>
                 <AdditionalReference>
                     <sequenceNumber>2</sequenceNumber>
                     <type>Y023</type>
-                    <referenceNumber>xi881</referenceNumber>
+                    <referenceNumber>AddR3F2</referenceNumber>
                 </AdditionalReference>
                 <AdditionalInformation>
                     <sequenceNumber>1</sequenceNumber>
                     <code>20100</code>
-                    <text>XYZ</text>
+                    <text>AddInf0</text>
                 </AdditionalInformation>
             </ConsignmentItem>
             <ConsignmentItem>
@@ -218,32 +213,27 @@
                 <PreviousDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>C512</type>
-                    <referenceNumber>XYZ</referenceNumber>
-                    <goodsItemNumber>1</goodsItemNumber>
-                    <typeOfPackages>BX</typeOfPackages>
-                    <numberOfPackages>1</numberOfPackages>
-                    <measurementUnitAndQualifier>MIL</measurementUnitAndQualifier>
-                    <quantity>10</quantity>
+                    <referenceNumber>Pr3VD0CIt3M2</referenceNumber>
                 </PreviousDocument>
                 <TransportDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>N235</type>
-                    <referenceNumber>XYZ</referenceNumber>
+                    <referenceNumber>TransPD0CIt3M2</referenceNumber>
                 </TransportDocument>
                 <AdditionalReference>
                     <sequenceNumber>1</sequenceNumber>
                     <type>C651</type>
-                    <referenceNumber>XYZ</referenceNumber>
+                    <referenceNumber>AddR3FIt3M2</referenceNumber>
                 </AdditionalReference>
                 <AdditionalReference>
                     <sequenceNumber>2</sequenceNumber>
                     <type>Y023</type>
-                    <referenceNumber>xi881</referenceNumber>
+                    <referenceNumber>AddR3F2It3M2</referenceNumber>
                 </AdditionalReference>
                 <AdditionalInformation>
                     <sequenceNumber>1</sequenceNumber>
                     <code>20100</code>
-                    <text>XYZ</text>
+                    <text>AddInf0It3M2</text>
                 </AdditionalInformation>
             </ConsignmentItem>
         </HouseConsignment>

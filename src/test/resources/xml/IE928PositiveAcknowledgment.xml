@@ -1,16 +1,16 @@
 <ns2:CC928C xmlns:ns2="http://ncts.dgtaxud.ec" PhaseID="NCTS5.1">
-    <messageSender>NTA.LU</messageSender>
-    <messageRecipient>LU11868245</messageRecipient>
-    <preparationDateAndTime>2021-10-19T06:44:30</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T06:44:30</preparationDateAndTime>
     <messageIdentification>5b839278095847eb830e48965a68d4b2</messageIdentification>
     <messageType>CC928C</messageType>
     <TransitOperation>
-        <LRN>38VYQTYFU3T0KUTUM3</LRN>
+        <LRN>25GB000246TK0E6WJ1</LRN>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>LU715000</referenceNumber>
+        <referenceNumber>GB000060</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>LU14900721</identificationNumber>
+        <identificationNumber>GB954131533000</identificationNumber>
     </HolderOfTheTransitProcedure>
 </ns2:CC928C>
