@@ -1,5 +1,5 @@
 <ncts:CC014C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
@@ -11,9 +11,9 @@
     </TransitOperation>
     <Invalidation>
         <!--Optional:-->
-        <requestDateAndTime>2014-06-09T16:15:04</requestDateAndTime>
+        <requestDateAndTime>2025-01-01T16:15:04</requestDateAndTime>
         <!--Optional:-->
-        <decisionDateAndTime>2008-11-15T16:52:58</decisionDateAndTime>
+        <decisionDateAndTime>2025-01-01T16:52:58</decisionDateAndTime>
         <!--Optional:-->
         <decision>0</decision>
         <initiatedByCustoms>1</initiatedByCustoms>
@@ -26,22 +26,5 @@
     <HolderOfTheTransitProcedure>
         <!--Optional:-->
         <identificationNumber>GB123456789000</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>Joe Holderov</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>1 Street</streetAndNumber>
-            <!--Optional:-->
-            <postcode>NE11EN</postcode>
-            <city>Newcastle</city>
-            <country>GB</country>
-        </Address>
-        <!--Optional:-->
-        <ContactPerson>
-            <name>Holder Holderov</name>
-            <phoneNumber>+4401010010101</phoneNumber>
-        </ContactPerson>
     </HolderOfTheTransitProcedure>
 </ncts:CC014C>

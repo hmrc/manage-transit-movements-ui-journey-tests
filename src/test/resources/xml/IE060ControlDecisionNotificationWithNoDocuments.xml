@@ -1,7 +1,7 @@
 <ncts:CC060C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC060C</messageType>
     <!--Optional:-->
@@ -11,7 +11,7 @@
         <LRN>GB8dc4b88e4b0062044174</LRN>
         <!--Optional:-->
         <MRN>28BDU7NB98LCWXLNM2</MRN>
-        <controlNotificationDateAndTime>2014-06-09T16:15:04+01:00</controlNotificationDateAndTime>
+        <controlNotificationDateAndTime>2025-01-01T16:15:04+01:00</controlNotificationDateAndTime>
         <notificationType>0</notificationType>
     </TransitOperation>
     <CustomsOfficeOfDeparture>

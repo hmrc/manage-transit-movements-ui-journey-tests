@@ -1,7 +1,7 @@
 <ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC056C</messageType>
     <!--Optional:-->
@@ -20,11 +20,10 @@
     </HolderOfTheTransitProcedure>
     <!--0 to 9999 repetitions:-->
     <FunctionalError>
-        <errorPointer>/CC015C/NonAmendable[1]/LocoNumber</errorPointer>
-        <errorCode>15</errorCode>
-        <errorReason>G0033</errorReason>
-        <!--Optional:-->
-        <originalAttributeValue>NonAmendable</originalAttributeValue>
+        <errorPointer>/CC015C/TransitOperation/declarationType</errorPointer>
+        <errorCode>14</errorCode>
+        <errorReason>R0601</errorReason>
+        <originalAttributeValue>T1</originalAttributeValue>
     </FunctionalError>
     <FunctionalError>
         <errorPointer>/CC015C/NonAmendable[1]/referenceNumber</errorPointer>

@@ -1,14 +1,14 @@
 <ncts:CC051C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC051C</messageType>
     <!--Optional:-->
     <correlationIdentifier>Correlation identifier</correlationIdentifier>
     <TransitOperation>
         <MRN>30OWNA2F5ORCIUZIR5</MRN>
-        <declarationSubmissionDateAndTime>2014-06-09T16:15:04+01:00</declarationSubmissionDateAndTime>
+        <declarationSubmissionDateAndTime>2025-01-01T16:15:04+01:00</declarationSubmissionDateAndTime>
         <noReleaseMotivationCode>no Release Motivation Code</noReleaseMotivationCode>
         <noReleaseMotivationText>no Release Motivation Text</noReleaseMotivationText>
     </TransitOperation>

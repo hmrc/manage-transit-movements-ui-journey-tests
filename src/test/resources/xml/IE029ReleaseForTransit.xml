@@ -1,7 +1,7 @@
 <ncts:CC029C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>token</messageRecipient>
-    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC029C</messageType>
     <!--Optional:-->
@@ -13,7 +13,7 @@
         <additionalDeclarationType>A</additionalDeclarationType>
         <!--Optional:-->
         <TIRCarnetNumber>1234</TIRCarnetNumber>
-        <declarationAcceptanceDate>2024-06-18</declarationAcceptanceDate>
+        <declarationAcceptanceDate>2025-01-01</declarationAcceptanceDate>
         <releaseDate>2024-06-18</releaseDate>
         <security>3</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>

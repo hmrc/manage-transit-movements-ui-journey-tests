@@ -1,6 +1,6 @@
 <ncts:CC057C xmlns:ncts="http://ncts.dgtaxud.ec" PhaseID="NCTS5.1">
-    <messageSender>NTA.GB</messageSender>
-    <messageRecipient>Neda-test</messageRecipient>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
     <preparationDateAndTime>2025-01-30T11:40:44</preparationDateAndTime>
     <messageIdentification>NQQ2FS42W6HNTY</messageIdentification>
     <messageType>CC057C</messageType>

@@ -1,13 +1,14 @@
 <ncts:CC004C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
     <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
-    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC004C</messageType>
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
-         <amendmentSubmissionDateAndTime>2022-12-25T07:36:28</amendmentSubmissionDateAndTime>
-         <amendmentAcceptanceDateAndTime>2022-12-25T07:36:28</amendmentAcceptanceDateAndTime>
+         <amendmentSubmissionDateAndTime>2025-01-25T07:36:28</amendmentSubmissionDateAndTime>
+         <amendmentAcceptanceDateAndTime>2025-01-25T07:36:28</amendmentAcceptanceDateAndTime>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
         <referenceNumber>GB000142</referenceNumber>
