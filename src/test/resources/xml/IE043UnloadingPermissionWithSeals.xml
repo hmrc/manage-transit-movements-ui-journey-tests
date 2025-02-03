@@ -70,6 +70,33 @@
             <identificationNumber>NC15REG</identificationNumber>
             <nationality>GB</nationality>
         </DepartureTransportMeans>
+        <PreviousDocument>
+            <sequenceNumber>1</sequenceNumber>
+            <type>C512</type>
+            <referenceNumber>PrevDoc</referenceNumber>
+            <complementOfInformation>AddInfo</complementOfInformation>
+        </PreviousDocument>
+        <SupportingDocument>
+            <sequenceNumber>1</sequenceNumber>
+            <type>C641</type>
+            <referenceNumber>SupportDoc</referenceNumber>
+            <complementOfInformation>SuppoSaddInfo</complementOfInformation>
+        </SupportingDocument>
+        <TransportDocument>
+            <sequenceNumber>1</sequenceNumber>
+            <type>N703</type>
+            <referenceNumber>TransportBill</referenceNumber>
+        </TransportDocument>
+        <AdditionalReference>
+            <sequenceNumber>1</sequenceNumber>
+            <type>Y023</type>
+            <referenceNumber>addref-1</referenceNumber>
+        </AdditionalReference>
+        <AdditionalInformation>
+            <sequenceNumber>1</sequenceNumber>
+            <code>20100</code>
+            <text>additional ref text</text>
+        </AdditionalInformation>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
             <grossMass>1000</grossMass>
@@ -78,8 +105,10 @@
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>Toys</descriptionOfGoods>
+                    <cusCode>0010001-6</cusCode>
                     <CommodityCode>
                         <harmonizedSystemSubHeadingCode>392690</harmonizedSystemSubHeadingCode>
+                        <combinedNomenclatureCode>45</combinedNomenclatureCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>1000</grossMass>
@@ -92,6 +121,28 @@
                     <numberOfPackages>1</numberOfPackages>
                     <shippingMarks>GB box</shippingMarks>
                 </Packaging>
+                <PreviousDocument>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>C512</type>
+                    <referenceNumber>ItemPrevDoc</referenceNumber>
+                    <complementOfInformation>ItemPrevDocAddInfo</complementOfInformation>
+                </PreviousDocument>
+                <SupportingDocument>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>C641</type>
+                    <referenceNumber>ItemSuppDoc</referenceNumber>
+                    <complementOfInformation>ItemSuppDocAddInfo</complementOfInformation>
+                </SupportingDocument>
+                <AdditionalReference>
+                    <sequenceNumber>1</sequenceNumber>
+                    <type>Y023</type>
+                    <referenceNumber>addref-1</referenceNumber>
+                </AdditionalReference>
+                <AdditionalInformation>
+                    <sequenceNumber>1</sequenceNumber>
+                    <code>20100</code>
+                    <text>additional ref text</text>
+                </AdditionalInformation>
             </ConsignmentItem>
         </HouseConsignment>
     </Consignment>
