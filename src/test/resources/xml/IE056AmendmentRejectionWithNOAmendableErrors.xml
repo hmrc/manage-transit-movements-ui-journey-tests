@@ -1,44 +1,21 @@
-
 <ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
-    <preparationDateAndTime>2007-10-26T07:36:28</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>token</messageIdentification>
     <messageType>CC056C</messageType>
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <!--Optional:-->
-        <MRN>string</MRN>
+        <LRN>GB8dd47c1f2f001h2ce671</LRN>
         <businessRejectionType>013</businessRejectionType>
-        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>token</rejectionCode>
-        <!--Optional:-->
-        <rejectionReason>string</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T13:28:00</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <!--Optional:-->
-        <identificationNumber>string</identificationNumber>
-        <!--Optional:-->
-        <TIRHolderIdentificationNumber>string</TIRHolderIdentificationNumber>
-        <!--Optional:-->
-        <name>string</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>string</streetAndNumber>
-            <!--Optional:-->
-            <postcode>string</postcode>
-            <city>string</city>
-            <country>st</country>
-        </Address>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
-    <!--Optional:-->
-    <Representative>
-        <identificationNumber>string</identificationNumber>
-        <status>token</status>
-    </Representative>
-    <!--0 to 9999 repetitions:-->
 </ncts:CC056C>

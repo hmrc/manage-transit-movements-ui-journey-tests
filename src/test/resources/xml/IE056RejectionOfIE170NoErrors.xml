@@ -1,41 +1,22 @@
 <ncts:CC056C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
-    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC056C</messageType>
     <!--Optional:-->
     <correlationIdentifier>token</correlationIdentifier>
     <TransitOperation>
-        <!--Optional:-->
-        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <LRN>GB8dd47c1f2f001h2ce671</LRN>
         <businessRejectionType>170</businessRejectionType>
-        <rejectionDateAndTime>2014-06-09T16:15:04+01:00</rejectionDateAndTime>
-        <rejectionCode>C012</rejectionCode>
-        <!--Optional:-->
-        <rejectionReason>something bad</rejectionReason>
+        <rejectionDateAndTime>2025-01-30T13:28:00</rejectionDateAndTime>
+        <rejectionCode>12</rejectionCode>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>GB000060</referenceNumber>
+        <referenceNumber>GB000246</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <!--Optional:-->
-        <identificationNumber>GB954131533000</identificationNumber>
-
-        <name>Swaylor Tift</name>
-        <!--Optional:-->
-        <Address>
-            <streetAndNumber>10 Corneilia Street</streetAndNumber>
-            <!--Optional:-->
-            <postcode>TS15WT</postcode>
-            <city>London</city>
-            <country>GB</country>
-        </Address>
+        <identificationNumber>GB123456789000</identificationNumber>
     </HolderOfTheTransitProcedure>
-    <!--Optional:-->
-    <Representative>
-        <identificationNumber>GB954131533000</identificationNumber>
-        <status>1</status>
-    </Representative>
     <!--0 to 9999 repetitions:-->
 </ncts:CC056C>

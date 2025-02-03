@@ -5,10 +5,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
 
     And I should see Error status for trader details on the 'Declaration summary' page
@@ -67,10 +67,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     And I submit an IE056 Rejection With Amendable Errors
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
     Then I input a random LRN on the 'What is the new Local Reference Number?' page
 
@@ -131,10 +131,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     Then I submit an IE028 MRN Allocated
     Then I submit an IE013 Declaration Amendment
     And I submit an IE056 Amendment Rejection With Amendable Errors
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend declaration errors' page
     And I should see Error status for trader details on the 'Declaration summary' page
     And I should see Error status for route details on the 'Declaration summary' page
@@ -192,10 +192,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
     Then I submit an IE055 Guarantee Not Valid
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the View errors link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     And I click on the Amend errors button on the 'Amend guarantee errors' page
     And I should see Completed status for trader details on the 'Declaration summary' page
     And I should see Completed status for route details on the 'Declaration summary' page
@@ -216,10 +216,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
 
     And I should see Completed status for trader details on the 'Declaration summary' page
     And I should see Completed status for route details on the 'Declaration summary' page
@@ -242,10 +242,10 @@ Feature: End to end journey for amending a departure declaration - Transition
     Given I login with ID 1234567890
     When I submit an IE015 Departure Declaration
     Then I submit an IE028 MRN Allocated
-    And the user has submitted departureDeclarationTransition.json for LRN 38VYQTYFU3T0KUTUM3 and EORI number 1234567890
+    And the user has submitted departureDeclarationTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Amend declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
 
     And I click on the Edit trader details link on the 'Declaration summary' page
     And I click the Change link for Do you want to add a contact for the consignor? on the Trader details 'Check your answers' page

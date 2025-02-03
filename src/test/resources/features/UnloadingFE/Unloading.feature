@@ -7,7 +7,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option Yes on the 'Conditions for using the revised unloading procedure' page
     And I choose radio option No on the 'Are the goods too large to fit into a container?' page
@@ -27,7 +27,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option Yes on the 'Conditions for using the revised unloading procedure' page
     And I choose radio option Yes on the 'Are the goods too large to fit into a container?' page
@@ -49,7 +49,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
     And I choose radio option No on the 'Conditions for using the revised unloading procedure' page
     And I click the Continue button on the 'You cannot use the revised unloading procedure' page
@@ -74,7 +74,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
@@ -91,7 +91,6 @@ Feature: Submit unloading remarks with seals
     Then I should be on the 'You cannot send these unloading remarks' page
     And I sign out
 
-
   Scenario: 05 - Trader is able to view unloading remarks with rejections and resubmit
     Given I login with ID 1234567890
     When I submit an IE007 Arrival Notification
@@ -100,7 +99,7 @@ Feature: Submit unloading remarks with seals
     And I submit an IE057 Unloading Remarks Rejection
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     Then I should be on the 'Arrival notifications' page
-    And I click on the View errors link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     Then I should be on the 'Review unloading remarks errors' page
     And I click on the Make unloading remarks on the 'Review unloading remarks errors' page
     And I choose radio option Yes on the 'Do you want to use the revised unloading procedure?' page
@@ -126,7 +125,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
@@ -142,7 +141,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
@@ -158,7 +157,7 @@ Feature: Submit unloading remarks with seals
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With No Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page

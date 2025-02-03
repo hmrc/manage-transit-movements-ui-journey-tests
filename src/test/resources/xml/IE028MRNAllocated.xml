@@ -1,13 +1,13 @@
 <ncts:CC028C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
-    <messageRecipient>FdOcminxBxSLGm1rRUn0q96S1</messageRecipient>
-    <preparationDateAndTime>2022-12-25T07:36:28</preparationDateAndTime>
+    <messageSender>1234567890</messageSender>
+    <messageRecipient>NTA.GB</messageRecipient>
+    <preparationDateAndTime>2025-01-01T07:36:28</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC028C</messageType>
     <correlationIdentifier>co-id-1</correlationIdentifier>
     <TransitOperation>
-        <LRN>38VYQTYFU3T0KUTUM3</LRN>
-        <MRN>38VYQTYFU3T0KUTUM3</MRN>
+        <LRN>25GB000246TK0E6WJ1</LRN>
+        <MRN>25GB000246TK0E6WJ1</MRN>
         <declarationAcceptanceDate>2022-12-25</declarationAcceptanceDate>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
@@ -15,7 +15,7 @@
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
         <identificationNumber>GB954131533000</identificationNumber>
-        <TIRHolderIdentificationNumber>trp-id-1</TIRHolderIdentificationNumber>
+        <TIRHolderIdentificationNumber>AAA/999/99999</TIRHolderIdentificationNumber>
         <name>Jean Doe</name>
         <Address>
             <streetAndNumber>1 avenue marceau</streetAndNumber>

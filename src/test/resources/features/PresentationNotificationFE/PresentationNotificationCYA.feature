@@ -7,7 +7,7 @@ Feature: Trader sends in fully completed pre-lodged departure declaration type D
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
     And I click on the View departure declarations link on the 'Manage your transit movements' page
-    And I click on the Complete pre lodged declaration link for LRN 38VYQTYFU3T0KUTUM3 on the 'Departure declarations' page
+    And I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page
 

@@ -6,7 +6,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     When I submit an IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 38VYQTYFU3T0KUTUM3 on the 'Arrival notifications' page
+    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
     Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
     And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page

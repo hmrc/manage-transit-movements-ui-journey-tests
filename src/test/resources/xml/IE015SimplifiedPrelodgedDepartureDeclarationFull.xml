@@ -1,11 +1,11 @@
 <ncts:CC015C PhaseID="NCTS5.0" xmlns:ncts="http://ncts.dgtaxud.ec">
-    <messageSender>token</messageSender>
+    <messageSender>1234567890</messageSender>
     <messageRecipient>NTA.GB</messageRecipient>
-    <preparationDateAndTime>2022-01-22T07:43:36</preparationDateAndTime>
+    <preparationDateAndTime>2025-01-02T07:43:36</preparationDateAndTime>
     <messageIdentification>6Onxa3En</messageIdentification>
     <messageType>CC015C</messageType>
     <TransitOperation>
-        <LRN>38VYQTYFU3T0KUTUM3</LRN>
+        <LRN>25GB000246TK0E6WJ1</LRN>
         <declarationType>T1</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
         <security>1</security>
@@ -26,7 +26,7 @@
     <CustomsOfficeOfTransitDeclared>
         <sequenceNumber>1</sequenceNumber>
         <referenceNumber>XI000142</referenceNumber>
-        <arrivalDateAndTimeEstimated>2025-01-20T01:01:00</arrivalDateAndTimeEstimated>
+        <arrivalDateAndTimeEstimated>2025-01-01T01:01:00</arrivalDateAndTimeEstimated>
     </CustomsOfficeOfTransitDeclared>
     <HolderOfTheTransitProcedure>
         <identificationNumber>GB201909015000</identificationNumber>
