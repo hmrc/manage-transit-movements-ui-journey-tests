@@ -35,7 +35,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Change seal1 link for sub-section Seals of section Transport equipment 1
     And I enter seal identification number Seal1234 on the 'What is the new seal identification number?' page
     And I click the Change item1 link for sub-section Items applied of section Transport equipment 1
-    And I select 100 on the 'Which item does this transport equipment apply to?' page
+    And I select 1 on the 'Which item does this transport equipment apply to?' page
 
   # Documents Section
     And I click the Document type Change link for section Document 1

@@ -43,7 +43,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on 'Are you sure you want to remove this seal from transport equipment 2?' page
     And I click radio option No on the 'You have added 0 seals to transport equipment 2' page
     And I choose radio option Yes on the cross check 'Do any items apply to this transport equipment?' page
-    And I select 100 on the 'Which item does this transport equipment apply to?' page
+    And I select 1 on the 'Which item does this transport equipment apply to?' page
     And I click Remove on 'You have applied 1 item to transport equipment 2' page
     And I choose radio option Yes on the 'Are you sure you want to remove this item from transport equipment 2?' page
     And I click radio option No on the 'You have applied 0 items to transport equipment 2' page
