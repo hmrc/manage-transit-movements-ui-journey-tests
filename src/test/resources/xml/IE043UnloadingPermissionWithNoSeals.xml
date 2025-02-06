@@ -172,7 +172,7 @@
             </DepartureTransportMeans>
             <PreviousDocument>
                 <sequenceNumber>1</sequenceNumber>
-                <type>C605</type>
+                <type>N830</type>
                 <referenceNumber>4</referenceNumber>
                 <complementOfInformation>1</complementOfInformation>
             </PreviousDocument>
@@ -225,7 +225,7 @@
                 </Packaging>
                 <PreviousDocument>
                     <sequenceNumber>1</sequenceNumber>
-                    <type>C612</type>
+                    <type>N830</type>
                     <referenceNumber>4</referenceNumber>
                     <goodsItemNumber>1</goodsItemNumber>
                     <complementOfInformation>1</complementOfInformation>
