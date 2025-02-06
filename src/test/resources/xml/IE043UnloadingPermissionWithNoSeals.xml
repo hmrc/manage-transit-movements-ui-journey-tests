@@ -173,7 +173,7 @@
             <PreviousDocument>
                 <sequenceNumber>1</sequenceNumber>
                 <type>N830</type>
-                <referenceNumber>4</referenceNumber>
+                <referenceNumber>PrevDocN830HC</referenceNumber>
                 <complementOfInformation>1</complementOfInformation>
             </PreviousDocument>
             <SupportingDocument>
@@ -223,13 +223,6 @@
                     <numberOfPackages>1</numberOfPackages>
                     <shippingMarks>GB box</shippingMarks>
                 </Packaging>
-                <PreviousDocument>
-                    <sequenceNumber>1</sequenceNumber>
-                    <type>N830</type>
-                    <referenceNumber>4</referenceNumber>
-                    <goodsItemNumber>1</goodsItemNumber>
-                    <complementOfInformation>1</complementOfInformation>
-                </PreviousDocument>
                 <SupportingDocument>
                     <sequenceNumber>1</sequenceNumber>
                     <type>L100</type>
