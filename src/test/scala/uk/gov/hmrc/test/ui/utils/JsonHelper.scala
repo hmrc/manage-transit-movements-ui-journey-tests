@@ -16,24 +16,34 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import play.api.libs.json._
+import play.api.libs.json.*
 import play.api.libs.ws.StandaloneWSResponse
+
+import java.time.Instant
+import java.util.UUID
 
 trait JsonHelper {
 
   implicit class RichJsValue(json: JsValue) {
 
-    private def put(path: JsPath, value: String): JsValue =
-      json.transform(__.json.update(path.json.put(JsString(value)))) match {
+    private def put(path: JsPath, value: JsValue): JsValue =
+      json.transform(__.json.update(path.json.put(value))) match {
         case JsSuccess(value, _) => value
         case JsError(errors)     => throw new Exception(s"Error adding LRN: $errors")
       }
 
-    def withLrn(lrn: String): JsValue = put(__ \ "lrn", lrn)
+    def withLrn(lrn: String): JsValue = put(__ \ "lrn", JsString(lrn))
 
-    def withMrn(mrn: String): JsValue = put(__ \ "mrn", mrn)
+    def withMrn(mrn: String): JsValue = put(__ \ "mrn", JsString(mrn))
 
-    def withEoriNumber(eoriNumber: String): JsValue = put(__ \ "eoriNumber", eoriNumber)
+    def withCreatedAt(): JsValue = put(__ \ "createdAt" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
+
+    def withLastUpdated(): JsValue = put(__ \ "lastUpdated" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
+    
+    def withId(): JsValue = put(__ \ "_id", JsString(UUID.randomUUID().toString))
+
+
+    def withEoriNumber(eoriNumber: String): JsValue = put(__ \ "eoriNumber", JsString(eoriNumber))
 
     def pick(path: JsPath): String =
       json.transform(path.json.pick[JsString]).map(_.value).getOrElse {
