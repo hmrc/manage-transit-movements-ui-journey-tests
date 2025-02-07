@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.TraderDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.{ConsigneeAddressPage, ConsigneeCountryPage, ConsigneeEoriNumberOrTinPage, ConsigneeNamePage, IsConsigneeEoriNumberOrTinKnownPage, MoreThanOneConsigneePage}
+import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.{ConsigneeAddressPage, ConsigneeCountryPage, ConsigneeEoriNumberOrTinPage, ConsigneeNamePage, IsConsigneeEoriNumberOrTinKnownPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignor.{AddConsignorContactNamePage, AddConsignorContactPersonPage, AddConsignorContactPhoneNumberPage, ConsignorAddressPage, ConsignorCountryPage, ConsignorEoriNumberOrTinPage, ConsignorNamePage, IsConsignorEoriNumberOrTinKnownPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative.{ActingAsRepresentativePage, RepresentativeAddContactPage, RepresentativeEoriNumbeOrTinPage, RepresentativeNamePage, RepresentativePhoneNumberPage}
 import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.SetReducedDataSetIndicatorPage
@@ -208,14 +208,7 @@ class TraderDetailsStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
-
-  // Consignee
-  And("""^(?:I )?choose radio option (.*) on the 'Is there more than one consignee\?' page$""") { (answer: String) =>
-    MoreThanOneConsigneePage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
+  
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you know the consignee’s EORI number or TIN\?' page$""") {
     (answer: String) =>
