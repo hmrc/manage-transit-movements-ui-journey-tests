@@ -28,13 +28,6 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods eori tin page$""") { (answer: String) =>
-    LocationOfGoodsEoriTinPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-
   And("""^(?:I )?choose radio option (.*) on the arrival location of goods identification page$""") {
     (answer: String) =>
       LocationOfGoodsIdentificationPage
@@ -51,26 +44,12 @@ class LocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?enter (.+) on the arrival location of goods customs un locode page$""") { (answer: String) =>
-    LocationOfGoodsUnLocodePage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-
   And("""^(?:I )?select (.+) on the arrival location of goods customs office identification page$""") {
     (answer: String) =>
       LocationOfGoodsCustomsOfficeIdentificationPage
         .loadPage()
         .select(answer)
         .submitPage()
-  }
-
-  And("""^(?:I )?fill in address on the arrival location of goods postal code page$""") { () =>
-    LocationOfGoodsPostalCodePage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
   }
 
   And("""^(?:I )?enter (.+) on the arrival location of goods authorisation number page$""") { (answer: String) =>
@@ -101,32 +80,4 @@ class LocationOfGoodsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose radio option (.*) on the arrival location of goods add additional identifier page$""") {
-    (answer: String) =>
-      LocationOfGoodsAddAdditionalIdentifierPage
-        .loadPage()
-        .select(answer)
-        .submitPage()
-  }
-
-  And("""^(?:I )?enter (.+) on the arrival location of goods additional identifier page$""") { (answer: String) =>
-    LocationOfGoodsAdditionalIdentifierPage
-      .loadPage()
-      .fillInput(answer)
-      .submitPage()
-  }
-
-  And("""^(?:I )?fill in address on the arrival location of goods address page$""") { () =>
-    LocationOfGoodsAddressPage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
-  }
-
-  And("""^(?:I )?select (.+) on the In which country is the location of goods page$""") { (answer: String) =>
-    LocationOfGoodsCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
 }
