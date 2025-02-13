@@ -457,7 +457,6 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-
   And(
     """^(?:I )?click radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$"""
   ) { (answer: String) =>
@@ -512,7 +511,6 @@ class ItemDetailsStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
-  
 
   And("""^(?:I )? choose radio option (.*) on the 'Do you want to attach any documents to this item\?' page$""") {
     (answer: String) =>

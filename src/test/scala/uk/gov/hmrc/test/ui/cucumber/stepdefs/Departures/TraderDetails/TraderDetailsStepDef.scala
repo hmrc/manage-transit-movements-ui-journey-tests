@@ -208,7 +208,6 @@ class TraderDetailsStepDef extends BaseStepDef {
         .fillInput(answer)
         .submitPage()
   }
-  
 
   And("""^(?:I )?choose radio option (.*) on the 'Do you know the consignee’s EORI number or TIN\?' page$""") {
     (answer: String) =>
