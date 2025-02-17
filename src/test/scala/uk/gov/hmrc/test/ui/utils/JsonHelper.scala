@@ -36,12 +36,13 @@ trait JsonHelper {
 
     def withMrn(mrn: String): JsValue = put(__ \ "mrn", JsString(mrn))
 
-    def withCreatedAt(): JsValue = put(__ \ "createdAt" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
+    def withCreatedAt(): JsValue =
+      put(__ \ "createdAt" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
 
-    def withLastUpdated(): JsValue = put(__ \ "lastUpdated" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
-    
+    def withLastUpdated(): JsValue =
+      put(__ \ "lastUpdated" \ "$date" \ "$numberLong", JsString(Instant.now().toEpochMilli.toString))
+
     def withId(): JsValue = put(__ \ "_id", JsString(UUID.randomUUID().toString))
-
 
     def withEoriNumber(eoriNumber: String): JsValue = put(__ \ "eoriNumber", JsString(eoriNumber))
 

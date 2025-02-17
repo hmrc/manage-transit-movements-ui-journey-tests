@@ -25,22 +25,11 @@ This is the UI journey test repository for the following frontend services:
 ## How to run the journey tests
 * Start the relevant services in service manager with either:
   * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE` - for services in Post transition mode
-  * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE_TRANSITION` - for services in Transition mode
-      * note - Post Transition services do not have prelodgement disabled (additional declaration type)
-  * * `sm2 --start CTC_TRADERS_GUARANTEE_BALANCE_ACCEPTANCE_V2` - for check guarantee balance service
+  * `sm2 --start CTC_TRADERS_GUARANTEE_BALANCE_ACCEPTANCE_V2` - for check guarantee balance service
+  * `sbt -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes run` - If running frontends or customs-reference-data service locally with sbt, make sure you run them in test only mode
 
 
-* Run Transition mode tests:
-  * all tests with `./run_tests_for_transition.sh`
-  * isolated tests with:
-    * `./run_with_tags.sh DepartureTransition`
-    * `./run_with_tags.sh ArrivalTransition`
-    * `./run_with_tags.sh Cancellation`
-    * `./run_with_tags.sh Unloading`
-    * `./run_with_tags.sh Manage`
-
-
-* Run Post Transition mode tests:
+* Run tests:
   * all tests with `./run_tests.sh`
   * isolated tests with:
     * `./run_with_tags.sh Departure`
@@ -55,7 +44,7 @@ This is the UI journey test repository for the following frontend services:
 
 * Run individual departure journey tests
   * Using the `./run_with_tags.sh` script you can add on the departure journey you want, eg:
-    * `./run_with_tags.sh DepartureRouteDetails` or `./run_with_tags.sh DepartureRouteDetailsTransition`
+    * `./run_with_tags.sh DepartureRouteDetails`
     * The full list of runners can be found in `src/test/scala/uk/gov/hmrc/test/ui/cucumber/runner` whatever comes after the '`RunnerFor`' 
       can be appended to the `./run_with_tags.sh` script to run those tests
 

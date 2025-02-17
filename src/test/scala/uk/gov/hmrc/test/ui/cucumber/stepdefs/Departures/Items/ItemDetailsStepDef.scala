@@ -458,15 +458,6 @@ class ItemDetailsStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?click radio option (.*) on the 'Do you want to add a method of payment for this item’s transport charges\?' page$"""
-  ) { (answer: String) =>
-    ItemTransportChargesAddPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-
-  And(
     """^(?:I )?click radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$"""
   ) { (answer: String) =>
     ItemTransportChargesPage
@@ -518,24 +509,6 @@ class ItemDetailsStepDef extends BaseStepDef {
     AddDocumentsPage
       .loadPage()
       .select(answer)
-      .submitPage()
-  }
-
-  And(
-    """^(?:I )?choose radio option (.*) on the 'Do you know the consignee EORI number or Trader Identification Number TIN for this item\?' page$"""
-  ) { (answer: String) =>
-    ItemsIsConsigneeEoriNumberOrTinKnownPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
-  }
-
-  And(
-    """^(?:I )?enter (.*) on the consignee 'What is the consignee’s EORI number or Trader Identification Number TIN\?' page$"""
-  ) { (answer: String) =>
-    ConsigneeEoriNumberOrTinPage
-      .loadPage()
-      .fillInput(answer)
       .submitPage()
   }
 
