@@ -59,3 +59,23 @@ Feature: End to end journey Arrival notification feature
   #Confirmation
     And I should be on the Arrival notification sent page
     And I sign out
+
+  Scenario: 04 - User cannot re-enter their Arrival notification after submission
+  #Identification
+    When I select GB on the arrival office of destination page
+    And I choose radio option Simplified on the 'What type of procedure are you using?' page
+    And I enter GB123456789000 on the consignee eori tin page
+    And I enter XIACT24A7770003 on the authorisations reference number page
+  #Location Of goods - Location of goods - X Eori Number
+    And I enter XI DES BT1 3ET on the arrival location of goods authorisation number page
+    And I choose radio option Yes on the arrival location of goods add contact page
+    And I enter John Joe on the arrival location of goods contact page
+    And I enter +44 2345 82 83 on the arrival location of goods contact number page
+  #Summary CYA page
+    And I submit on the Check your answers section Arrivals page
+  #Confirmation
+    And I click the Make another arrival notification link on the Arrival notification sent page
+    And I should be on the What is the Movement Reference Number page
+    And I enter 29GBQHFCG83AJEB0K1 on the Movement Reference Number page
+    Then I should be on the 'Sorry there is a problem with the service' page
+    And I sign out
