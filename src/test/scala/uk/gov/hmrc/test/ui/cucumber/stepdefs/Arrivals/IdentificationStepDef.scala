@@ -61,4 +61,9 @@ class IdentificationStepDef extends BaseStepDef {
     MovementReferenceNumberPage
       .loadPage()
   }
+
+  Then("""^(?:I )?(?:should )?see an error on the What is the Movement Reference Number page$""") { () =>
+    ErrorMovementReferenceNumberPage
+      .loadPage()
+  }
 }

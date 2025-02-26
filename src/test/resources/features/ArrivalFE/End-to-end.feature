@@ -77,5 +77,5 @@ Feature: End to end journey Arrival notification feature
     And I click the Make another arrival notification link on the Arrival notification sent page
     And I should be on the What is the Movement Reference Number page
     And I enter 29GBQHFCG83AJEB0K1 on the Movement Reference Number page
-    Then I should be on the 'Sorry there is a problem with the service' page
+    And I should see an error on the What is the Movement Reference Number page
     And I sign out
