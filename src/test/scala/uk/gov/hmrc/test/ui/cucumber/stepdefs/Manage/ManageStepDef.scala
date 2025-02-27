@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{ForYourSecuritySignedOutPage, GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage}
-import uk.gov.hmrc.test.ui.pages.Manage._
+import uk.gov.hmrc.test.ui.pages.Manage.*
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
