@@ -17,7 +17,7 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Manage
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{ForYourSecuritySignedOutPage, GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage, ProblemWithServicePage}
+import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{ForYourSecuritySignedOutPage, GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage}
 import uk.gov.hmrc.test.ui.pages.Manage.*
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
@@ -55,11 +55,6 @@ class ManageStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'For your security we signed you out' page$""") { () =>
     ForYourSecuritySignedOutPage
-      .loadPage()
-  }
-
-  Then("""^(?:I )?should be on the 'Sorry there is a problem with the service' page$""") { () =>
-    ProblemWithServicePage
       .loadPage()
   }
 
