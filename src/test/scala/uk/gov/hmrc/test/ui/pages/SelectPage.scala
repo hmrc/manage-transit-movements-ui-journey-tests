@@ -21,20 +21,21 @@ import org.openqa.selenium.{By, Keys, WebElement}
 import scala.jdk.CollectionConverters._
 
 trait SelectPage extends StringPage {
+  
+  val id: String = "value"
 
   def select(answer: String): this.type = {
     selectValueFromDropDown(answer)
     this
   }
 
-  protected def selectValueFromDropDown(valueOption: String, id: String = "value"): Unit = {
-    findBy(By.id(id))
+  protected def selectValueFromDropDown(valueOption: String): Unit = {
     fillInputById(id, valueOption)
     selectFirstValue(id)
   }
 
   override def clearInput(input: WebElement): Unit = {
-    val length = findById("value-select")
+    val length = findById(s"$id-select")
       .findElements(By.tagName("option"))
       .asScala
       .find(_.isSelected)
