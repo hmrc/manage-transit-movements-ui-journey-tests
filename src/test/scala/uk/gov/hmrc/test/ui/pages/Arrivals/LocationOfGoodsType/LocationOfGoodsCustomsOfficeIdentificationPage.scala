@@ -22,4 +22,7 @@ object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
   override def title(args: String*): String = "What is the customs office identifier for the location of goods?"
 
+  override val id: String = "office"
+
+
 }
