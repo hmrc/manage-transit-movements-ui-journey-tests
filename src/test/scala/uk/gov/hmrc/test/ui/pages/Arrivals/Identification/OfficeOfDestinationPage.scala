@@ -22,4 +22,5 @@ object OfficeOfDestinationPage extends SelectPage {
 
   override def title(args: String*): String = "Where is the office of destination?"
 
+  override val id: String = "office"
 }
