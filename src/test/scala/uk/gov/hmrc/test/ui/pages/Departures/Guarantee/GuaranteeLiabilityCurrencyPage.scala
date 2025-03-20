@@ -22,4 +22,6 @@ object GuaranteeLiabilityCurrencyPage extends SelectPage {
 
   override def title(args: String*): String = "What currency do you want to use for the liability?"
 
+  override val id: String = "currency"
+
 }

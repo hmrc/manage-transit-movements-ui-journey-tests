@@ -22,4 +22,6 @@ object ActiveBorderMeansOfTransportOfficeOfTransitPage extends SelectPage {
 
   override def title(args: String*): String = "Where is the customs office at the border?"
 
+  override val id: String = "office"
+
 }

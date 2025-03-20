@@ -20,7 +20,6 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AddAnotherPageAdditionalInformation, AddCommentAdditionalInformation, AddPageAdditionalInformation, EnterCommentAdditionalInformation, RemovePageAdditionalInformation}
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference, AdditionalReferenceAllItemsAddAnotherPage, AdditionalReferenceAllItemsRemovePage}
 import uk.gov.hmrc.test.ui.pages.Departures.Items._
-import uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee.ConsigneeEoriNumberOrTinPage
 import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.AddNewConsignmentAdditionalReferenceNumberPage
 
 class ItemDetailsStepDef extends BaseStepDef {
