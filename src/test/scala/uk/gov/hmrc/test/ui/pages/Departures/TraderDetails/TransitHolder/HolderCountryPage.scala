@@ -22,4 +22,6 @@ object HolderCountryPage extends SelectPage {
 
   override def title(args: String*): String = "Which country is the transit holder based in?"
 
+  override val id: String = "country"
+
 }

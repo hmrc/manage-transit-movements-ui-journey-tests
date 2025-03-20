@@ -22,4 +22,6 @@ object ConsigneeCountryPage extends SelectPage {
 
   override def title(args: String*): String = "Which country is the consignee based in?"
 
+  override val id: String = "country"
+
 }
