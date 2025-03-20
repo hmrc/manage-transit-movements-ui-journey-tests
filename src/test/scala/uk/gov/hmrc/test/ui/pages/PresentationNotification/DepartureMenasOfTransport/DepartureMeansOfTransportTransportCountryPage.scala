@@ -22,4 +22,5 @@ object DepartureMeansOfTransportTransportCountryPage extends SelectPage {
 
   override def title(args: String*): String = "What country is the departure means of transport registered to?"
 
+  override val id: String = "country"
 }
