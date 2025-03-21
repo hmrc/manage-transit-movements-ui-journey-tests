@@ -22,4 +22,6 @@ object PackageTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of package are you using for the item?"
 
+  override val id: String = "package"
+
 }

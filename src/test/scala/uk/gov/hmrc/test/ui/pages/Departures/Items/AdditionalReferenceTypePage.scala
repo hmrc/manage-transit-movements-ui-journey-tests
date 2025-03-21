@@ -22,4 +22,7 @@ object AdditionalReferenceTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of additional reference do you want to add?"
 
+  override val id: String = "additional-reference"
+
+
 }

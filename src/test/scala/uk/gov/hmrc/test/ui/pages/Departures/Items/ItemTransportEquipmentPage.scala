@@ -22,4 +22,6 @@ object ItemTransportEquipmentPage extends SelectPage {
 
   override def title(args: String*): String = "Which transport equipment are you using for this item?"
 
+  override val id: String = "equipment"
+
 }
