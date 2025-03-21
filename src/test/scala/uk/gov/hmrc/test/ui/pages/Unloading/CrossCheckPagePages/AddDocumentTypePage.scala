@@ -22,4 +22,6 @@ object AddDocumentTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of document do you want to add?"
 
+  override val id: String = "document"
+
 }

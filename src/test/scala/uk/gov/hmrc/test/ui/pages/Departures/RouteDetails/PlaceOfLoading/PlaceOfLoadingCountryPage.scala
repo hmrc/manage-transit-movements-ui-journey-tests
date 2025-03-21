@@ -22,4 +22,6 @@ object PlaceOfLoadingCountryPage extends SelectPage {
 
   override def title(args: String*): String = "In which country is the place of loading?"
 
+  override val id: String = "country"
+
 }

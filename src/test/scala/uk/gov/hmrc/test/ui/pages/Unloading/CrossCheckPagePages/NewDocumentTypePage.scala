@@ -22,4 +22,6 @@ object NewDocumentTypePage extends SelectPage {
 
   override def title(args: String*): String = "What is the new document type?"
 
+  override val id: String = "document"
+
 }

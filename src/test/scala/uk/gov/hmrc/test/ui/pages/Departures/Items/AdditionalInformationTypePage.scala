@@ -22,4 +22,6 @@ object AdditionalInformationTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of additional information do you want to add?"
 
+  override val id: String = "additional-information"
+
 }

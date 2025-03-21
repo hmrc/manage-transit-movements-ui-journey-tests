@@ -22,4 +22,6 @@ object DocumentPreviousTypePage extends SelectPage {
 
   override def title(args: String*): String = "What previous document do you want to add?"
 
+  override val id: String = "document"
+
 }
