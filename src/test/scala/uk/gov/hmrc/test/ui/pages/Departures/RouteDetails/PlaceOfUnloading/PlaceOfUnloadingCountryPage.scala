@@ -22,4 +22,6 @@ object PlaceOfUnloadingCountryPage extends SelectPage {
 
   override def title(args: String*): String = "Which country is the place of unloading in?"
 
+  override val id: String = "country"
+
 }
