@@ -22,4 +22,7 @@ object DocumentsWhichDocumentPage extends SelectPage {
 
   override def title(args: String*): String = "Which document do you want to attach?"
 
+  override val id: String = "document"
+
+
 }
