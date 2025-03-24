@@ -121,13 +121,6 @@ class RouteDetailsLocationOfGoodsStepDef extends BaseStepDef {
         .submitPage()
   }
 
-  And("""^(?:I )?fill in address on the departure location of goods postal code page$""") { () =>
-    LocationOfGoodsPostalCodePage
-      .loadPage()
-      .fillInputs()
-      .submitPage()
-  }
-
   And("""^(?:I )?enter (.+) on the 'Who is the contact for the location of goods\?' page$""") { (answer: String) =>
     LocationOfGoodsContactPage
       .loadPage()
