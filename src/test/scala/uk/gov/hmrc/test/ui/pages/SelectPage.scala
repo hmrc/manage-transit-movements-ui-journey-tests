@@ -29,8 +29,8 @@ trait SelectPage extends StringPage {
     this
   }
 
-  protected def selectValueFromDropDown(valueOption: String): Unit = {
-    fillInputById(id, valueOption)
+  private def selectValueFromDropDown(answer: String): Unit = {
+    fillInputById(id, answer)
     selectFirstValue(id)
   }
 
@@ -43,11 +43,6 @@ trait SelectPage extends StringPage {
       .getOrElse(0)
 
     (0 until length).foreach(_ => input.sendKeys(Keys.BACK_SPACE))
-  }
-
-  protected def openDropdownAndSelectFirstValue(id: String): Unit = {
-    clickById(id)
-    selectFirstValue(id)
   }
 
   private def selectFirstValue(id: String): Unit =
