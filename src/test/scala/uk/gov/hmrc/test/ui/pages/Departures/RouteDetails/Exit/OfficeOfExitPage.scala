@@ -22,4 +22,6 @@ object OfficeOfExitPage extends SelectPage {
 
   override def title(args: String*): String = String.format("Where in %s is the office of exit for transit?", args: _*)
 
+  override val id: String = "office"
+
 }

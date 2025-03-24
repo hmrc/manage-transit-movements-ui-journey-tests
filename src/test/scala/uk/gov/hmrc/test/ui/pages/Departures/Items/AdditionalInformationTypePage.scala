@@ -24,5 +24,4 @@ object AdditionalInformationTypePage extends SelectPage {
 
   override val id: String = "additional-information"
 
-
 }

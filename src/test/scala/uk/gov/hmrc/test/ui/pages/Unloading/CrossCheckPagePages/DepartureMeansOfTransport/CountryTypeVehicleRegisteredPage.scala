@@ -22,4 +22,6 @@ object CountryTypeVehicleRegisteredPage extends SelectPage {
 
   override def title(args: String*): String = "What country is this vehicle registered to?"
 
+  override val id: String = "country"
+
 }
