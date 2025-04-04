@@ -17,7 +17,8 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.RouteDetails
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit._
+import uk.gov.hmrc.test.ui.pages.CYAPage
+import uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit.*
 
 class RouteDetailsTransitStepDef extends BaseStepDef {
 
@@ -116,4 +117,19 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
       .select(answer)
       .submitPage()
   }
+
+  And("""^(?:I )?choose to click on (.*) link on the 'No offices of transit' page$""") {
+    (sectionLink: String) =>
+      NoTransitOfficesPage
+        .loadPage()
+        .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?choose to click on (.*) link on the Check your answers section (.*) page$""") {
+    (sectionLink: String, subheading: String) =>
+      CYAPage
+        .loadPage(subheading)
+        .clickByPartialLinkText(sectionLink)
+  }
+
 }
