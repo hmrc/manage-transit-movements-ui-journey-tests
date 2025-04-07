@@ -13,29 +13,35 @@ Feature: Route details journey
     Then I click on the link for LRN 1234567890RDGB on the 'Draft departure declarations' page
     Then I should be on the 'Declaration summary' page
     And I click the Add route details link on the 'Declaration summary' page
-
-    #Specific Circumstance Indicator (SCI)
+#
+#    #Specific Circumstance Indicator (SCI)
     And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
     And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
-
-      ## Transit route
+#
+#      ## Transit route
     And I select Italy on the 'What country is the office of destination in?' page
     And I select IT on the 'Where in Italy is the office of destination?' page
-
-      ## Binding itinerary indicator
+#
+#      ## Binding itinerary indicator
     And I choose radio option Yes on the 'Are you using a binding itinerary?' page
-
-      ## Country of routing - removing a transit country
-    And I select Germany on the 'Which country do you want to add to the transit route?' page
+#
+#      ## Country of routing - removing a transit country
+    And I select Serbia - XS on the 'Which country do you want to add to the transit route?' page
+    And I choose radio option No on the 'You have added 1 country to the transit route' page
+    And I submit on the Check your answers section Transit route page
+    And I choose to click on transit route summary page link on the 'No offices of transit' page
+    And I choose to click on Add or remove transit route countries link on the Check your answers section Transit route page
     And I choose radio option Yes on the 'You have added 1 country to the transit route' page
+    And I select Germany on the 'Which country do you want to add to the transit route?' page
+    And I choose radio option Yes on the 'You have added 2 country to the transit route' page
     And I select France on the 'Which country do you want to add to the transit route?' page
-    And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
+    And I choose radio option Yes on the 'You have added 3 countries to the transit route' page
     And I select Andorra on the 'Which country do you want to add to the transit route?' page
-    And I choose to click on the Remove link on the 'You have added 3 countries to the transit route' page
+    And I choose to click on the Remove link on the 'You have added 4 countries to the transit route' page
     And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page
-    And I choose radio option Yes on the 'You have added 2 countries to the transit route' page
+    And I choose radio option Yes on the 'You have added 3 countries to the transit route' page
     And I select Serbia on the 'Which country do you want to add to the transit route?' page
-    And I choose radio option No on the 'You have added 3 countries to the transit route' page
+    And I choose radio option No on the 'You have added 4 countries to the transit route' page
     And I submit on the Check your answers section Transit route page
 
       ## Office of transit country page - removing a transit office
@@ -54,12 +60,16 @@ Feature: Route details journey
     And I choose to click on the Remove link on the 'You have added 2 offices of transit' page
     And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page
     And I choose radio option Yes on the 'You have added 1 office of transit' page
+    And I select Germany on the 'Which country is the office of transit in?' page
+    And I select Brake (DE005301) on the 'Where in Germany is the office of transit?' page
+    And I choose radio option No on the 'Do you want to add a time of arrival in Brake (DE005301)?' page
+    And I submit on the Check your answers section Office of transit page
+    And I choose radio option Yes on the 'You have added 2 offices of transit' page
     And I select Serbia on the 'Which country is the office of transit in?' page
     And I select CI GRADINA (RS013277) on the 'Where in Serbia is the office of transit?' page
     And I choose radio option No on the 'Do you want to add a time of arrival in CI GRADINA (RS013277)?' page
     And I submit on the Check your answers section Office of transit page
-    And I choose radio option No on the 'You have added 2 offices of transit' page
-
+    And I choose radio option No on the 'You have added 3 offices of transit' page
 
     And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page
     And I select France on the 'In which country is the office of exit for transit?' page
