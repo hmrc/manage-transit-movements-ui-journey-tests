@@ -20,8 +20,9 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object NewItemLevelAdditionalReferenceTypePage extends SelectPage {
 
-  override def title(args: String*): String = "What is the new additional reference type for item 1 in house consignment 1?"
+  override def title(args: String*): String =
+    "What is the new additional reference type for item 1 in house consignment 1?"
 
-    override val id: String = "additional-reference"
+  override val id: String = "additional-reference"
 
 }
