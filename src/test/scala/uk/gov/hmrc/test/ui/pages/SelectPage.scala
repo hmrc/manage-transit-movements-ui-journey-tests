@@ -21,7 +21,7 @@ import org.openqa.selenium.{By, Keys, WebElement}
 import scala.jdk.CollectionConverters._
 
 trait SelectPage extends StringPage {
-  
+
   val id: String = "value"
 
   def select(answer: String): this.type = {

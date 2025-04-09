@@ -118,11 +118,10 @@ class RouteDetailsTransitStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?choose to click on (.*) link on the 'No offices of transit' page$""") {
-    (sectionLink: String) =>
-      NoTransitOfficesPage
-        .loadPage()
-        .clickByPartialLinkText(sectionLink)
+  And("""^(?:I )?choose to click on (.*) link on the 'No offices of transit' page$""") { (sectionLink: String) =>
+    NoTransitOfficesPage
+      .loadPage()
+      .clickByPartialLinkText(sectionLink)
   }
 
   And("""^(?:I )?choose to click on (.*) link on the Check your answers section (.*) page$""") {

@@ -24,5 +24,4 @@ object LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
   override val id: String = "office"
 
-
 }
