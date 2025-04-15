@@ -22,6 +22,6 @@ object NewItemLevelPackageTypePage extends SelectPage {
 
   override def title(args: String*): String = "What is the new package type for item 1 in house consignment 1?"
 
-    override val id: String = "package"
+  override val id: String = "package"
 
 }

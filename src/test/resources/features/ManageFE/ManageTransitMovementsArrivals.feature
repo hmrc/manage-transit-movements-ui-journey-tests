@@ -37,15 +37,3 @@ Feature: Manage transit movements frontend tests for Arrivals
     And I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     Then I should be on the 'Review notification errors' page
     And I sign out
-
-#TODO Delete end of FEB (after the 21st)
-  Scenario: 04 - Trader cannot access a transitional arrival notification after rejection once switched to final mode
-    When I submit an IE007 Transition Arrival Notification
-    And I submit an IE057 Arrival Notification Rejection
-    And the user has submitted arrivalDraftLockForTransition.json for MRN 21GB00014210026352 and EORI number 1234567890
-    When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the View errors link for MRN 21GB00014210026352 on the 'Arrival notifications' page
-    And I click on the Make another arrival notification link on the 'Review notification errors' page
-    And I enter 21GB00014210026352 on the Movement Reference Number page
-    Then I should be on the 'This arrival notification is no longer available' page
-    And I sign out

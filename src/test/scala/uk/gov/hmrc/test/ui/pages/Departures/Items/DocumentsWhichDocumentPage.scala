@@ -24,5 +24,4 @@ object DocumentsWhichDocumentPage extends SelectPage {
 
   override val id: String = "document"
 
-
 }
