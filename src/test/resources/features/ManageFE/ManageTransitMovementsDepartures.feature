@@ -137,15 +137,6 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Goods not released' page
     And I sign out
 
-#TODO Delete end of FEB (after the 21st)
-  Scenario: 13 Trader cannot access a Transitional draft declaration when in Final mode
-    And the user has submitted itemDetailsGBTransition.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890
-    And I refresh the page
-    When I click on the View draft departure declarations link on the 'Manage your transit movements' page
-    And I click on the link for LRN 25GB000246TK0E6WJ1 on the 'Draft departure declarations' page
-    Then I should be on the 'This declaration is no longer available' page
-    And I sign out
-
 #Pre-lodge
   Scenario: 14 Trader completes a departure declaration that was previously pre-lodged
     When I submit an IE015 Prelodged Departure Declaration
