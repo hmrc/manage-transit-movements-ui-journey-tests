@@ -227,6 +227,14 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
+    """^(?:I )?click the add or remove countries of routing link$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectAddRemoveCountriesOfRouting
+  }
+
+  And(
     """^(?:I )?click the (.+) link for (.+) in House consignment (.+)$"""
   ) { (changeLinkText: String, section: String, index: String) =>
     HouseConsignmentPage
@@ -1177,6 +1185,38 @@ class UnloadingStepDef extends BaseStepDef {
   ) { (answer: String, hcNumber: String) =>
     HouseConsignmentRemoveHCPage
       .loadPage(hcNumber)
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select radio option (.*) on the 'You have added (.*) countr(?:y |ies )to the transit route' page$""") {
+    (answer: String, numberOfCountries: String) =>
+      CountryOfRoutingAddAnotherPage
+        .loadPage(numberOfCountries)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click on the (.*) link on the 'You have added (.*) countr(?:y |ies )to the transit route' page$"""
+  ) { (sectionLink: String, numberOfCountries: String) =>
+    CountryOfRoutingAddAnotherPage
+      .loadPage(numberOfCountries)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?select (.+) on the Unloading 'Which country do you want to add to the transit route\?' page$""") { (answer: String) =>
+    CountryOfRoutingCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?select radio option (.*) on the 'Are you sure you want to remove this country from the transit route\?' page$"""
+  ) { (answer: String) =>
+    CountryOfRoutingRemoveCountryPage
+      .loadPage()
       .select(answer)
       .submitPage()
   }
