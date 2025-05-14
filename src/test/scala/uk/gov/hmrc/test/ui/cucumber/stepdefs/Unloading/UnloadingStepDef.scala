@@ -19,10 +19,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport._
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment._
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages._
-import uk.gov.hmrc.test.ui.pages.Unloading._
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.*
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.*
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.*
+import uk.gov.hmrc.test.ui.pages.Unloading.*
+import uk.gov.hmrc.test.ui.pages.Unloading.P6Pages.{UCRForNewHouseConsignmentPage, UCRForNewHouseConsignmentYesNoPage, UCRForNewItemInHouseConsignmentPage, UCRForNewItemInHouseConsignmentYesNoPage}
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -1218,6 +1219,43 @@ class UnloadingStepDef extends BaseStepDef {
     CountryOfRoutingRemoveCountryPage
       .loadPage()
       .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for house consignment (.+)\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    UCRForNewHouseConsignmentYesNoPage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.+) on the 'What is the Unique Consignment Reference for this house consignment\?' page$"""
+  ) { (answer: String) =>
+    UCRForNewHouseConsignmentPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    UCRForNewItemInHouseConsignmentYesNoPage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter reference (.+) on the 'What is the Unique Consignment Reference for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    UCRForNewItemInHouseConsignmentPage
+      .loadPage(index)
+      .fillInput(answer)
       .submitPage()
   }
 
