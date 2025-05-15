@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Unloading.P6Pages
 
-trait YesNoPage extends RadioPage {
+import uk.gov.hmrc.test.ui.pages.StringPage
 
-  def select(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
-    }
-    this
-  }
+object UCRForNewItemInHouseConsignmentPage extends StringPage {
+
+  override def title(args: String*): String =
+    String.format("What is the Unique Consignment Reference (UCR) for item %s in house consignment 1?", args: _*)
+
 }

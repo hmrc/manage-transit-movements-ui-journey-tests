@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-trait YesNoPage extends RadioPage {
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-  def select(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
-    }
-    this
-  }
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@unloading_remarksP6 or @UnloadingCrossCheckFinalP6"
+)
+class RunnerForUnloadingP6 {}

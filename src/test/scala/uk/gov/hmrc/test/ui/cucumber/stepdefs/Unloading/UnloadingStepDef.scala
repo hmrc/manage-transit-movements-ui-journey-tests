@@ -19,10 +19,11 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs.Unloading
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.TransportEquipmentIncrementPage
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport._
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment._
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages._
-import uk.gov.hmrc.test.ui.pages.Unloading._
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.DepartureMeansOfTransport.*
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.TransportEquipment.*
+import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.*
+import uk.gov.hmrc.test.ui.pages.Unloading.*
+import uk.gov.hmrc.test.ui.pages.Unloading.P6Pages.{UCRForNewHouseConsignmentPage, UCRForNewHouseConsignmentYesNoPage, UCRForNewItemInHouseConsignmentPage, UCRForNewItemInHouseConsignmentYesNoPage}
 
 class UnloadingStepDef extends BaseStepDef {
 
@@ -224,6 +225,14 @@ class UnloadingStepDef extends BaseStepDef {
     ConsignmentCrossCheckPage
       .loadPage()
       .selectAddRemoveHouseConsignment
+  }
+
+  And(
+    """^(?:I )?click the add or remove countries of routing link$"""
+  ) { () =>
+    ConsignmentCrossCheckPage
+      .loadPage()
+      .selectAddRemoveCountriesOfRouting
   }
 
   And(
@@ -1178,6 +1187,75 @@ class UnloadingStepDef extends BaseStepDef {
     HouseConsignmentRemoveHCPage
       .loadPage(hcNumber)
       .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select radio option (.*) on the 'You have added (.*) countr(?:y |ies )to the transit route' page$""") {
+    (answer: String, numberOfCountries: String) =>
+      CountryOfRoutingAddAnotherPage
+        .loadPage(numberOfCountries)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?click on the (.*) link on the 'You have added (.*) countr(?:y |ies )to the transit route' page$"""
+  ) { (sectionLink: String, numberOfCountries: String) =>
+    CountryOfRoutingAddAnotherPage
+      .loadPage(numberOfCountries)
+      .clickByPartialLinkText(sectionLink)
+  }
+
+  And("""^(?:I )?select (.+) on the Unloading 'Which country do you want to add to the transit route\?' page$""") { (answer: String) =>
+    CountryOfRoutingCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?select radio option (.*) on the 'Are you sure you want to remove this country from the transit route\?' page$"""
+  ) { (answer: String) =>
+    CountryOfRoutingRemoveCountryPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this house consignment\?' page$"""
+  ) { (answer: String) =>
+    UCRForNewHouseConsignmentYesNoPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.+) on the 'What is the Unique Consignment Reference for house consignment (.+)\?' page$"""
+  ) { (answer: String, houseConsignmentIndex: String) =>
+    UCRForNewHouseConsignmentPage
+      .loadPage(houseConsignmentIndex)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this item\?' page$"""
+  ) { (answer: String) =>
+    UCRForNewItemInHouseConsignmentYesNoPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter reference (.+) on the 'What is the Unique Consignment Reference for item (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, index: String) =>
+    UCRForNewItemInHouseConsignmentPage
+      .loadPage(index)
+      .fillInput(answer)
       .submitPage()
   }
 
