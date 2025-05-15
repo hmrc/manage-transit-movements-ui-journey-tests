@@ -1223,29 +1223,29 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for house consignment (.+)\?' page$"""
-  ) { (answer: String, itemIndex: String) =>
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this house consignment\?' page$"""
+  ) { (answer: String) =>
     UCRForNewHouseConsignmentYesNoPage
-      .loadPage(itemIndex)
+      .loadPage()
       .select(answer)
       .submitPage()
   }
 
   And(
-    """^(?:I )?enter (.+) on the 'What is the Unique Consignment Reference for this house consignment\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?enter (.+) on the 'What is the Unique Consignment Reference for house consignment (.+)\?' page$"""
+  ) { (answer: String, houseConsignmentIndex: String) =>
     UCRForNewHouseConsignmentPage
-      .loadPage()
+      .loadPage(houseConsignmentIndex)
       .fillInput(answer)
       .submitPage()
   }
 
 
   And(
-    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for item (.+) in house consignment 1\?' page$"""
-  ) { (answer: String, itemIndex: String) =>
+    """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this item\?' page$"""
+  ) { (answer: String) =>
     UCRForNewItemInHouseConsignmentYesNoPage
-      .loadPage(itemIndex)
+      .loadPage()
       .select(answer)
       .submitPage()
   }

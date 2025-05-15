@@ -96,7 +96,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And enter number 741.56 on 'What is the gross weight of item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add the item’s net weight?' page
     And I enter number 5681.22 on 'What is the net weight of item 2 in house consignment 1?' page
-    And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for item 2 in house consignment 1?' page
+    And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for this item?' page
     And I enter reference UCRHC12312 on the 'What is the Unique Consignment Reference for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
     And I enter number 716812 on 'What is the commodity code for item 2 in house consignment 1?' page
@@ -148,8 +148,8 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the add or remove house consignment link
     And I click radio option Yes on the 'You have added 1 house consignment' page
     And I enter number 100 on 'What is the gross weight of House Consignment 2?' page
-    And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for house consignment 2?' page
-    And I enter UCRHC12312 on the 'What is the Unique Consignment Reference for this house consignment?' page
+    And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for this house consignment?' page
+    And I enter UCRHC12312 on the 'What is the Unique Consignment Reference for house consignment 2?' page
     ##Departure means of transport - Yes to adding
     And I choose radio option Yes on the 'Do you want to add a departure means of transport for house consignment 2?' page
     And I choose radio option IMO Ship Identification Number on the 'Which identification do you want to use for the departure means of transport?' page

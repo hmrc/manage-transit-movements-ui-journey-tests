@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object UCRForNewHouseConsignmentPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the Unique Consignment Reference (UCR) for this house consignment?")
+    String.format("What is the Unique Consignment Reference (UCR) for house consignment %s?", args: _*)
 
 }

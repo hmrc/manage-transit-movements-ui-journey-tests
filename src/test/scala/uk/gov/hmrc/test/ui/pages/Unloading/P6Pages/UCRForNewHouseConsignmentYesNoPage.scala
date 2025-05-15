@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.YesNoPage
 object UCRForNewHouseConsignmentYesNoPage extends YesNoPage {
 
   override def title(args: String*): String =
-    String.format("Do you want to add a Unique Consignment Reference (UCR) for house consignment 2?", args: _*)
+    "Do you want to add a Unique Consignment Reference (UCR) for this house consignment?"
 
 }
