@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object AdditionalReferenceHouseConsignmentIItemTypePage extends SelectPage {
+object AdditionalReferenceHouseConsignmentItemTypePage extends SelectPage {
 
   override def title(args: String*): String =
     String.format("What type of additional reference do you want to add for %s in house consignment 1?", args: _*)

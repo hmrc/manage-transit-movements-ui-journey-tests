@@ -506,7 +506,7 @@ class UnloadingStepDef extends BaseStepDef {
   And(
     """^(?:I )?select (.+) on the 'What type of additional reference do you want to add for (.*) in house consignment 1\?' page$"""
   ) { (answer: String, itemIndex: String) =>
-    AdditionalReferenceHouseConsignmentIItemTypePage
+    AdditionalReferenceHouseConsignmentItemTypePage
       .loadPage(itemIndex)
       .select(answer)
       .submitPage()
@@ -843,9 +843,9 @@ class UnloadingStepDef extends BaseStepDef {
 
   And(
     """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics code for (.+) in house consignment 1\?' page$"""
-  ) { (answer: String, numberOfItems: String) =>
+  ) { (answer: String, itemIndex: String) =>
     EnterCUSCodePage
-      .loadPage(numberOfItems)
+      .loadPage(itemIndex)
       .fillInput(answer)
       .submitPage()
   }
