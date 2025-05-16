@@ -16,10 +16,13 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.SelectPage
 
-object EnterCUSCodePage extends StringPage {
+object HouseConsignmentItemAddDocumentTypePage extends SelectPage {
 
   override def title(args: String*): String =
-    String.format("What is the Customs Union and Statistics (CUS) code for %s in house consignment 1?", args: _*)
+    String.format("What type of document do you want to add for %s in house consignment 1?", args: _*)
+
+  override val id: String = "document"
+
 }

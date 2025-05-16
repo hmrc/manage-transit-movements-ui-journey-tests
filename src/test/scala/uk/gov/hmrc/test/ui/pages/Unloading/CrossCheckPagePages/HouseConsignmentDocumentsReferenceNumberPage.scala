@@ -18,8 +18,9 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.StringPage
 
-object EnterCUSCodePage extends StringPage {
+object HouseConsignmentDocumentsReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the Customs Union and Statistics (CUS) code for %s in house consignment 1?", args: _*)
+    "What is the document’s reference number?"
+
 }
