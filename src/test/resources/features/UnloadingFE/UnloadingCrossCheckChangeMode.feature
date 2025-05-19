@@ -95,7 +95,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I click the Change package type link in House consignment 1 sub-section Packages of section Item 1
     And I select (BG) Bag on the 'What is the new package type for item 1 in house consignment 1?' page
     And I click the Change package quantity link in House consignment 1 sub-section Packages of section Item 1
-    And I enter quantity 150 on the 'How many of this package are you using for item 1 in house consignment 1?' page
+    And I enter 150 on the 'How many of this package are you using for item 1 in house consignment 1?' page
     And I click the Change shipping mark link in House consignment 1 sub-section Packages of section Item 1
     And I enter shipping mark abc on the 'What is the new shipping mark for item 1 in house consignment 1?' page
 
