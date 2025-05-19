@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-trait YesNoPage extends RadioPage {
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
-  def select(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
-    }
-    this
+object CountryOfRoutingAddAnotherPage extends YesNoPage {
+
+  override def title(args: String*): String = args match {
+    case Seq("1") => "You have added 1 country to the transit route"
+    case _        => String.format("You have added %s countries to the transit route", args: _*)
   }
 }
