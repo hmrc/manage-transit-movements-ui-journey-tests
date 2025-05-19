@@ -1206,11 +1206,12 @@ class UnloadingStepDef extends BaseStepDef {
       .clickByPartialLinkText(sectionLink)
   }
 
-  And("""^(?:I )?select (.+) on the Unloading 'Which country do you want to add to the transit route\?' page$""") { (answer: String) =>
-    CountryOfRoutingCountryPage
-      .loadPage()
-      .select(answer)
-      .submitPage()
+  And("""^(?:I )?select (.+) on the Unloading 'Which country do you want to add to the transit route\?' page$""") {
+    (answer: String) =>
+      CountryOfRoutingCountryPage
+        .loadPage()
+        .select(answer)
+        .submitPage()
   }
 
   And(
@@ -1239,7 +1240,6 @@ class UnloadingStepDef extends BaseStepDef {
       .fillInput(answer)
       .submitPage()
   }
-
 
   And(
     """^(?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this item\?' page$"""
