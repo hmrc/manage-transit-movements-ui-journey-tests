@@ -25,6 +25,7 @@ import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.*
 import uk.gov.hmrc.test.ui.pages.Unloading.*
 import uk.gov.hmrc.test.ui.pages.Unloading.P6Pages.{UCRForNewHouseConsignmentPage, UCRForNewHouseConsignmentYesNoPage, UCRForNewItemInHouseConsignmentPage, UCRForNewItemInHouseConsignmentYesNoPage}
 
+
 class UnloadingStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>
@@ -311,15 +312,6 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter quantity (.+) on the 'How many of this package are you using for item (.+) in house consignment 1\?' page$"""
-  ) { (answer: String, index: String) =>
-    ChangePackageQuantityPage
-      .loadPage(index)
-      .fillInput(answer)
-      .submitPage()
-  }
-
-  And(
     """^(?:I )?enter shipping mark (.+) on the 'What is the new shipping mark for item 1 in house consignment 1\?' page$"""
   ) { (answer: String) =>
     NewItemLevelPackageShippingMarkPage
@@ -392,6 +384,32 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And(
+    """^(?:I )?Add (.+) on the 'What type of document do you want to add for (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemAddDocumentTypePage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of document do you want to add for house consignment (.*)\?' page$""") {
+    (answer: String, houseConsignmentIndex: String) =>
+      AddDocumentTypeForHouseConsignmentPage
+        .loadPage(houseConsignmentIndex)
+        .select(answer)
+        .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter reference number (.+) on 'What is the document’s reference number for (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemDocsReferenceNumberPage
+      .loadPage(itemIndex)
+      .fillInput(answer)
+      .submitPage()
+  }
+
   And("""^(?:I )?enter reference number (.+) on 'What is the document’s reference number\?' page$""") {
     (answer: String) =>
       DocumentsReferenceNumberPage
@@ -415,6 +433,31 @@ class UnloadingStepDef extends BaseStepDef {
         .loadPage()
         .fillInput(answer)
         .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter additional information (.+) on documents 'Enter the additional information for (.*) in house consignment 1' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemAdditionalInformationPage
+      .loadPage(itemIndex)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?add additional information (.+) on documents 'Enter the additional information in house consignment (.*)' page$"""
+  ) { (answer: String, houseConsignmentIndex: String) =>
+    HouseConsignmentAdditionalInformationPage
+      .loadPage(houseConsignmentIndex)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?enter reference (.*) on the 'What is the additional reference number\?' page$""") { (answer: String) =>
+    AddNewConsignmentAdditionalReferenceNumberPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
   }
 
   And(
@@ -450,6 +493,58 @@ class UnloadingStepDef extends BaseStepDef {
       .loadPage()
       .select(answer)
       .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport in house consignment (.*)\?' page$"""
+  ) { (answer: String, houseConsignmentIndex: String) =>
+    HouseConsignmentIdentificationForDepartureMeansOfTransportPage
+      .loadPage(houseConsignmentIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?select (.+) on the 'What type of additional reference do you want to add for (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    AdditionalReferenceHouseConsignmentItemTypePage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?choose (.+) on the 'What type of additional reference do you want to add for house consignment (.*)\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    AdditionalReferenceHouseConsignmentTypePage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter additional reference (.*) on the 'What is the additional reference number for (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemAddAdditionalReferenceNumberPage
+      .loadPage(itemIndex)
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And("""^(?:I )?select (.+) on the 'What type of package are you using for (.*) in house consignment 1\?' page$""") {
+    (answer: String, itemIndex: String) =>
+      HouseConsignmentItemPackageTypePage
+        .loadPage(itemIndex)
+        .select(answer)
+        .submitPage()
+  }
+
+  And("""^(?:I )?enter (.*) on the 'What is the shipping mark for (.*) in house consignment 1\?' page$""") {
+    (answer: String, itemIndex: String) =>
+      HouseConsignmentItemPackagesShippingMarkPage
+        .loadPage(itemIndex)
+        .fillInput(answer)
+        .submitPage()
   }
 
   And(
@@ -748,10 +843,10 @@ class UnloadingStepDef extends BaseStepDef {
   }
 
   And(
-    """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics CUS code\?' page$"""
-  ) { (answer: String) =>
+    """^(?:I )?enter number (.+) on 'What is the Customs Union and Statistics code for (.+) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
     EnterCUSCodePage
-      .loadPage()
+      .loadPage(itemIndex)
       .fillInput(answer)
       .submitPage()
   }
@@ -995,6 +1090,15 @@ class UnloadingStepDef extends BaseStepDef {
   And("""^(?:I )?enter (.*) on the 'How many of this package are you using\?' page$""") { (answer: String) =>
     PackagesTypeQuantityPage
       .loadPage()
+      .fillInput(answer)
+      .submitPage()
+  }
+
+  And(
+    """^(?:I )?enter (.*) on the 'How many of this package are you using for (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemPackagesTypeQuantityPage
+      .loadPage(itemIndex)
       .fillInput(answer)
       .submitPage()
   }
