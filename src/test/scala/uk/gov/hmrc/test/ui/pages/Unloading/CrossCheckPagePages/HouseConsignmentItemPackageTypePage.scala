@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 object HouseConsignmentItemPackageTypePage extends SelectPage {
 
   override def title(args: String*): String =
-    String.format("What type of package are you using for %s in house consignment 1?", args: _*)
+    String.format("What type of package are you using for item %s in house consignment 1?", args: _*)
 
   override val id: String = "package"
 

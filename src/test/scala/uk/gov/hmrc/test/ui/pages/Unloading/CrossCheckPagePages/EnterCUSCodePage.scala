@@ -16,10 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, StringPage}
+import org.scalactic.Prettifier.default
+
 
 object EnterCUSCodePage extends StringPage {
 
-  override def title(args: String*): String =
-    String.format("What is the Customs Union and Statistics (CUS) code for %s in house consignment 1?", args: _*)
+  override def title(args: String*): String =args match {
+
+  case Seq(itemIndex, hcIndex) =>
+      String.format("What is the Customs Union and Statistics (CUS) code for item %s in house consignment %s?",
+  itemIndex,
+  hcIndex
+  )
+    case _                                            =>
+      throw InvalidTitleArgsException("Unexpected Shape")
+  }
 }

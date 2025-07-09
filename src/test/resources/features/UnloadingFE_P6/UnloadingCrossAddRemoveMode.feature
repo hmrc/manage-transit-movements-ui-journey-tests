@@ -1,4 +1,4 @@
-@UnloadingCrossCheckFinalP6
+@UnloadingCrossCheckFinalP6 @wip
 Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
   Background:
@@ -99,43 +99,43 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for this item?' page
     And I enter reference UCRHC12312 on the 'What is the Unique Consignment Reference for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item?' page
-    And I enter number 0018063-2 on 'What is the Customs Union and Statistics CUS code?' page
+    And I enter number 0018063-2 on 'What is the Customs Union and Statistics code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
     And I enter number 716812 on 'What is the commodity code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a combined nomenclature code for the item?' page
     And I enter number 84 on 'What is the combined nomenclature code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a document for the item?' page
-    And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
-    And I enter reference number ref1234 on 'What is the document’s reference number?' page
+    And I Add Supporting - (C651) on the 'What type of document do you want to add for item 2 in house consignment 1?' page
+    And I enter reference number ref1234 on 'What is the document’s reference number for item 2 in house consignment 1?' page
     And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
-    And I enter additional information 12345 on documents 'Enter the additional information?' page
+    And I enter additional information 12345 on documents 'Enter the additional information for item 2 in house consignment 1' page
     And I click Yes on house consignment document 'You have added 1 document to item 2 in house consignment 1' page
-    And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
-    And I enter reference number ref1234 on 'What is the document’s reference number?' page
+    And I Add Supporting - (C651) on the 'What type of document do you want to add for item 2 in house consignment 1?' page
+    And I enter reference number ref1234 on 'What is the document’s reference number for item 2 in house consignment 1?' page
     And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
-    And I enter additional information 12345 on documents 'Enter the additional information?' page
+    And I enter additional information 12345 on documents 'Enter the additional information for item 2 in house consignment 1' page
     And I click Remove on 'You have added 2 documents to item 2 in house consignment 1' page
     And I click radio option Yes on the 'Are you sure you want to remove this document from item 2 in house consignment 1?' page
     And I click No on house consignment document 'You have added 1 documents to item 2 in house consignment 1' page
     And I choose radio option Yes on the 'Do you want to add an additional reference for the item?' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add for item 2 in house consignment 1?' page
     And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I enter additional reference newRef999 on the 'What is the additional reference number for item 2 in house consignment 1?' page
     And I click Yes on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add for item 2 in house consignment 1?' page
     And I click radio option Yes on the 'Do you want to add an additional reference number?' page
-    And I enter additional reference newRef999 on the 'What is the additional reference number?' page
+    And I enter additional reference newRef999 on the 'What is the additional reference number for item 2 in house consignment 1?' page
     And I click Remove on the 'You have added 2 additional references for item 2 in house consignment 1' page
     And I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page
     And I click No on additional reference 'You have added 1 additional reference for item 2 in house consignment 1' page
     And I choose radio option Yes on the 'Do you want to add a package for the item?' page
-    And I select (AE) Aerosol on the 'What type of package are you using for the item?' page
+    And I select (AE) Aerosol on the 'What type of package are you using for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add the quantity of this package?' page
-    And I enter 2 on the 'How many of this package are you using?' page
+    And I enter 2 on the 'How many of this package are you using for item 2 in house consignment 1?' page
     And I click radio option Yes on the 'Do you want to add a shipping mark?' page
-    And I enter This is a description of the cargo 1 on the 'What is the shipping mark?' page
+    And I enter This is a description of the cargo 1 on the 'What is the shipping mark for item 2 in house consignment 1?' page
     And I click Yes on house consignment package 'You have added 1 type of package for item 2 in house consignment 1' page
-    And I select (43) Bag, super bulk on the 'What type of package are you using for the item?' page
+    And I select (43) Bag, super bulk on the 'What type of package are you using for item 2 in house consignment 1?' page
     And I choose radio option No on the 'Do you want to add the quantity of this package?' page
     And I click radio option No on the 'Do you want to add a shipping mark?' page
     And I click Remove on the house consignment package 'You have added 2 types of packages for item 2 in house consignment 1' page
@@ -154,18 +154,18 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I enter UCRHC12312 on the 'What is the Unique Consignment Reference for house consignment 2?' page
     ##Departure means of transport - Yes to adding
     And I choose radio option Yes on the 'Do you want to add a departure means of transport for house consignment 2?' page
-    And I choose radio option IMO Ship Identification Number on the 'Which identification do you want to use for the departure means of transport?' page
+    And I choose radio option IMO Ship Identification Number on the 'Which identification do you want to use for the departure means of transport in house consignment 2?' page
     And I enter identification number Identify1234 on 'What is the identification number for this vehicle?' page
     And I select Germany - DE on the 'What country is this vehicle registered to?' page
     And I choose radio option No on the 'You have added 1 departure means of transport for house consignment 2' page
     And I choose radio option Yes on the 'Do you want to add any documents for house consignment 2?' page
-    And I Add Supporting - (C651) on the 'What type of document do you want to add?' page
+    And I select Supporting - (C651) on the 'What type of document do you want to add for house consignment 2?' page
     And I enter reference number ref1234 on 'What is the document’s reference number?' page
     And I choose radio option Yes on the documents 'Do you want to add any additional information for this document?' page
-    And I enter additional information 12345 on documents 'Enter the additional information?' page
+    And I add additional information 12345 on documents 'Enter the additional information in house consignment 2' page
     And I choose radio option No on the 'You have added 1 document to all items in house consignment 2' page
     And I choose radio option Yes on the 'Do you want to add an additional reference for house consignment 2?' page
-    And I select Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page
+    And I choose Y023 - Consignee (AEO certificate number) on the 'What type of additional reference do you want to add for house consignment 2?' page
     And I click radio option Yes on the 'Do you want to add an additional reference number?' page
     And I enter additional reference newRef999 on the 'What is the additional reference number?' page
     And I click radio option No on the 'You have added 1 additional reference for house consignment 2' page

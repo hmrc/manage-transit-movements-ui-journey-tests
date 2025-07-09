@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object HouseConsignmentItemPackagesShippingMarkPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("What is the shipping mark for %s in house consignment 1?", args: _*)
+    String.format("What is the shipping mark for item %s in house consignment 1?", args: _*)
 
 }
