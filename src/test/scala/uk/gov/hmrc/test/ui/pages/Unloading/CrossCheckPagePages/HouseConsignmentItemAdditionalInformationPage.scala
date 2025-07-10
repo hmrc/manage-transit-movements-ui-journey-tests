@@ -21,6 +21,6 @@ import uk.gov.hmrc.test.ui.pages.StringPage
 object HouseConsignmentItemAdditionalInformationPage extends StringPage {
 
   override def title(args: String*): String =
-    String.format("Enter the additional information for %s in house consignment 1", args: _*)
+    String.format("Enter the additional information for item %s in house consignment 1", args: _*)
 
 }

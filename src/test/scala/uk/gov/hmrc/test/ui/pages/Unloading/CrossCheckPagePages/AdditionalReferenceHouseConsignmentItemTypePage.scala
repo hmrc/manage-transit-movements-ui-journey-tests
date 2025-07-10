@@ -21,7 +21,7 @@ import uk.gov.hmrc.test.ui.pages.SelectPage
 object AdditionalReferenceHouseConsignmentItemTypePage extends SelectPage {
 
   override def title(args: String*): String =
-    String.format("What type of additional reference do you want to add for %s in house consignment 1?", args: _*)
+    String.format("What type of additional reference do you want to add for item %s in house consignment 1?", args: _*)
 
   override val id: String = "additional-reference"
 }

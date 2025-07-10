@@ -22,6 +22,7 @@ trait YesNoPage extends RadioPage {
     answer match {
       case "Yes" => clickById("value")
       case "No"  => clickById("value-no")
+      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
     }
     this
   }

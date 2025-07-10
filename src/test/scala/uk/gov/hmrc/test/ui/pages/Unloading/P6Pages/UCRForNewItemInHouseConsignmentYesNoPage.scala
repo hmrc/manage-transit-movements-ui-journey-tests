@@ -14,22 +14,13 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
+package uk.gov.hmrc.test.ui.pages.Unloading.P6Pages
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, StringPage}
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
+object UCRForNewItemInHouseConsignmentYesNoPage extends YesNoPage {
 
-object EnterCUSCodePage extends StringPage {
+  override def title(args: String*): String =
+    "Do you want to add a Unique Consignment Reference (UCR) for this item?"
 
-  override def title(args: String*): String = args match {
-
-    case Seq(itemIndex, hcIndex) =>
-      String.format(
-        "What is the Customs Union and Statistics (CUS) code for item %s in house consignment %s?",
-        itemIndex,
-        hcIndex
-      )
-    case _                       =>
-      throw InvalidTitleArgsException("Unexpected Shape")
-  }
 }

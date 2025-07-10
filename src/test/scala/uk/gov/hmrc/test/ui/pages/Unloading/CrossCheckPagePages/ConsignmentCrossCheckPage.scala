@@ -41,6 +41,12 @@ object ConsignmentCrossCheckPage extends Page {
     this
   }
 
+  def selectAddRemoveCountriesOfRouting: this.type = {
+    clickById("countries-of-routing")
+    clickById("add-remove-countries-of-routing")
+    this
+  }
+
   def selectDocAction(index: String): this.type = {
     clickById("documents")
     clickById(s"document$index")

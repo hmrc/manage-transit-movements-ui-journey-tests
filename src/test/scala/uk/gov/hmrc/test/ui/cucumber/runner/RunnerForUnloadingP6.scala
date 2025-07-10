@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
+package uk.gov.hmrc.test.ui.cucumber.runner
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, StringPage}
+import io.cucumber.junit.{Cucumber, CucumberOptions}
+import org.junit.runner.RunWith
 
-
-object EnterCUSCodePage extends StringPage {
-
-  override def title(args: String*): String = args match {
-
-    case Seq(itemIndex, hcIndex) =>
-      String.format(
-        "What is the Customs Union and Statistics (CUS) code for item %s in house consignment %s?",
-        itemIndex,
-        hcIndex
-      )
-    case _                       =>
-      throw InvalidTitleArgsException("Unexpected Shape")
-  }
-}
+@RunWith(classOf[Cucumber])
+@CucumberOptions(
+  features = Array("src/test/resources/features"),
+  glue = Array("uk.gov.hmrc.test.ui.cucumber.stepdefs"),
+  plugin = Array("pretty", "html:target/cucumber", "json:target/cucumber.json"),
+  tags = "@unloading_remarksP6 or @UnloadingCrossCheckFinalP6"
+)
+class RunnerForUnloadingP6 {}

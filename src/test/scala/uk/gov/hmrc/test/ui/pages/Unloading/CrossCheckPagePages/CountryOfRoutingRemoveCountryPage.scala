@@ -16,20 +16,10 @@
 
 package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, StringPage}
+import uk.gov.hmrc.test.ui.pages.YesNoPage
 
+object CountryOfRoutingRemoveCountryPage extends YesNoPage {
 
-object EnterCUSCodePage extends StringPage {
+  override def title(args: String*): String = "Are you sure you want to remove this country from the transit route?"
 
-  override def title(args: String*): String = args match {
-
-    case Seq(itemIndex, hcIndex) =>
-      String.format(
-        "What is the Customs Union and Statistics (CUS) code for item %s in house consignment %s?",
-        itemIndex,
-        hcIndex
-      )
-    case _                       =>
-      throw InvalidTitleArgsException("Unexpected Shape")
-  }
 }
