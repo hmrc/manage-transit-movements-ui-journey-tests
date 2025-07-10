@@ -25,7 +25,6 @@ import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.*
 import uk.gov.hmrc.test.ui.pages.Unloading.*
 import uk.gov.hmrc.test.ui.pages.Unloading.P6Pages.{UCRForNewHouseConsignmentPage, UCRForNewHouseConsignmentYesNoPage, UCRForNewItemInHouseConsignmentPage, UCRForNewItemInHouseConsignmentYesNoPage}
 
-
 class UnloadingStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>
@@ -531,12 +530,13 @@ class UnloadingStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?select (.+) on the 'What type of package are you using for item (.*) in house consignment 1\?' page$""") {
-    (answer: String, itemIndex: String) =>
-      HouseConsignmentItemPackageTypePage
-        .loadPage(itemIndex)
-        .select(answer)
-        .submitPage()
+  And(
+    """^(?:I )?select (.+) on the 'What type of package are you using for item (.*) in house consignment 1\?' page$"""
+  ) { (answer: String, itemIndex: String) =>
+    HouseConsignmentItemPackageTypePage
+      .loadPage(itemIndex)
+      .select(answer)
+      .submitPage()
   }
 
   And("""^(?:I )?enter (.*) on the 'What is the shipping mark for item (.*) in house consignment 1\?' page$""") {

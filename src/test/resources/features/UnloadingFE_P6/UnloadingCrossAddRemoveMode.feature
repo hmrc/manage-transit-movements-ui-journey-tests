@@ -1,4 +1,4 @@
-@UnloadingCrossCheckFinalP6 @wip
+@UnloadingCrossCheckFinalP6
 Feature: Navigating to Pages from Cross-check declaration summary to all individual sections of pages
 
   Background:
