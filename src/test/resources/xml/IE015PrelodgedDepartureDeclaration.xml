@@ -24,22 +24,74 @@
     <Guarantee>
         <sequenceNumber>1</sequenceNumber>
         <guaranteeType>1</guaranteeType>
-        <otherGuaranteeReference>09GB0000010000084</otherGuaranteeReference>
+        <GuaranteeReference>
+            <sequenceNumber>1</sequenceNumber>
+            <GRN>24GB0000010000295</GRN>
+            <accessCode>AC01</accessCode>
+            <amountToBeCovered>10</amountToBeCovered>
+            <currency>GBP</currency>
+        </GuaranteeReference>
     </Guarantee>
     <Consignment>
-        <grossMass>6430669292.48125</grossMass>
+        <grossMass>1700</grossMass>
         <HouseConsignment>
             <sequenceNumber>1</sequenceNumber>
-            <grossMass>6430669292.48125</grossMass>
+            <grossMass>1700</grossMass>
             <ConsignmentItem>
                 <goodsItemNumber>1</goodsItemNumber>
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
-                    <descriptionOfGoods>Optical illusion</descriptionOfGoods>
+                    <descriptionOfGoods>item1</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>500</grossMass>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <typeOfPackages>BG</typeOfPackages>
+                    <numberOfPackages>15</numberOfPackages>
+                    <shippingMarks>Bag ship mark</shippingMarks>
+                </Packaging>
+            </ConsignmentItem>
+            <ConsignmentItem>
+                <goodsItemNumber>2</goodsItemNumber>
+                <declarationGoodsItemNumber>2</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>item2</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>500</grossMass>
+                    </GoodsMeasure>
+                </Commodity>
+                <Packaging>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BG</typeOfPackages>
+                    <numberOfPackages>15</numberOfPackages>
+                    <shippingMarks>Bag ship mark</shippingMarks>
+                </Packaging>
+            </ConsignmentItem>
+            <ConsignmentItem>
+                <goodsItemNumber>3</goodsItemNumber>
+                <declarationGoodsItemNumber>3</declarationGoodsItemNumber>
+                <Commodity>
+                    <descriptionOfGoods>item3</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>300</grossMass>
+                    </GoodsMeasure>
+                </Commodity>
+                <Packaging>
+                    <sequenceNumber>1</sequenceNumber>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>12</numberOfPackages>
+                    <shippingMarks>Box shipping mark</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
         </HouseConsignment>
