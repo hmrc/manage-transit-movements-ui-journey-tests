@@ -35,7 +35,13 @@
     <Guarantee>
         <sequenceNumber>1</sequenceNumber>
         <guaranteeType>1</guaranteeType>
-        <otherGuaranteeReference>09GB0000010000084</otherGuaranteeReference>
+        <GuaranteeReference>
+            <sequenceNumber>1</sequenceNumber>
+            <GRN>24GB0000010000295</GRN>
+            <accessCode>AC01</accessCode>
+            <amountToBeCovered>10</amountToBeCovered>
+            <currency>GBP</currency>
+        </GuaranteeReference>
     </Guarantee>
     <Consignment>
         <containerIndicator>1</containerIndicator>
@@ -51,10 +57,20 @@
                 <declarationGoodsItemNumber>1</declarationGoodsItemNumber>
                 <Commodity>
                     <descriptionOfGoods>This is a description</descriptionOfGoods>
+                    <CommodityCode>
+                        <harmonizedSystemSubHeadingCode>392690</harmonizedSystemSubHeadingCode>
+                    </CommodityCode>
+                    <GoodsMeasure>
+                        <grossMass>1000</grossMass>
+                        <netMass>950</netMass>
+                        <supplementaryUnits>11</supplementaryUnits>
+                    </GoodsMeasure>
                 </Commodity>
                 <Packaging>
                     <sequenceNumber>1</sequenceNumber>
-                    <typeOfPackages>Oi</typeOfPackages>
+                    <typeOfPackages>BX</typeOfPackages>
+                    <numberOfPackages>1</numberOfPackages>
+                    <shippingMarks>GB box</shippingMarks>
                 </Packaging>
             </ConsignmentItem>
         </HouseConsignment>

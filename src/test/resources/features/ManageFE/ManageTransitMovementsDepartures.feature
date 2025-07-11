@@ -157,7 +157,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'More information needed to complete pre-lodged declaration' page
 
 
-  Scenario: 15 Trader is sent to declaration completed page for a pre-lodge declaration where all details were completed initially
+  Scenario: 16 Trader is sent to declaration completed page for a pre-lodge declaration where all details were completed initially
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     And I refresh the page
@@ -168,7 +168,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the Presentation Notification 'Check your answers' page
 
 
-  Scenario: 16 Trader is able to see a control decision notification IE060 for a pre-lodged declaration
+  Scenario: 17 Trader is able to see a control decision notification IE060 for a pre-lodged declaration
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE060 Control Decision Type 2
@@ -178,7 +178,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Intention to control - complete pre-lodged declaration' page
     And I sign out
 
-  Scenario: 17 Trader is able to see a departure rejection WITH NO functional errors for a pre-lodged declaration
+  Scenario: 18 Trader is able to see a departure rejection WITH NO functional errors for a pre-lodged declaration
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE170 Presentation Notification PreLodge
@@ -190,7 +190,7 @@ Feature: Manage transit movements frontend tests for Departures
     Then I should be on the 'Confirmation needed to complete pre-lodged declaration' page
     And I sign out
 
-  Scenario: 18 Trader is able to see a departure rejection WITH functional errors for a pre-lodged declaration
+  Scenario: 19 Trader is able to see a departure rejection WITH functional errors for a pre-lodged declaration
     When I submit an IE015 Normal Prelodged Departure Declaration Complete
     Then I submit an IE928 Positive Acknowledgment
     Then I submit an IE170 Presentation Notification PreLodge

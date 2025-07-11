@@ -30,7 +30,13 @@
     <Guarantee>
         <sequenceNumber>1</sequenceNumber>
         <guaranteeType>1</guaranteeType>
-        <otherGuaranteeReference>09GB0000010000084</otherGuaranteeReference>
+        <GuaranteeReference>
+            <sequenceNumber>1</sequenceNumber>
+            <GRN>24GB0000010000295</GRN>
+            <accessCode>AC01</accessCode>
+            <amountToBeCovered>10</amountToBeCovered>
+            <currency>GBP</currency>
+        </GuaranteeReference>
     </Guarantee>
     <Consignment>
         <grossMass>643.4</grossMass>
