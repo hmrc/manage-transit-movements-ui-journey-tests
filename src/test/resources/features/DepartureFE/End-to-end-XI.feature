@@ -173,7 +173,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter 0018063-2 on the 'What is the Customs Union and Statistics code?' page
     And I click radio option Yes on the 'Do you want to add a commodity code?' page
-    And I enter ABC123 on the 'What is the commodity code?' page
+    And I enter 010130 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
       # Dangerous goods section

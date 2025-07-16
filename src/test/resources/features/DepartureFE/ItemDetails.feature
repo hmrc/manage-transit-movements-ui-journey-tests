@@ -23,7 +23,7 @@ Feature: Item details journey
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
     And I enter 0018063-2 on the 'What is the Customs Union and Statistics code?' page
 
-    And I enter ABC123 on the 'What is the commodity code?' page
+    And I enter 392690 on the 'What is the commodity code?' page
 
     # Dangerous goods section
     And I click radio option Yes on the 'Does the item contain any dangerous goods?' page
@@ -110,7 +110,7 @@ Feature: Item details journey
     And I select Germany on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter ABC123 on the 'What is the commodity code?' page
+    And I enter 392690 on the 'What is the commodity code?' page
     # Dangerous goods section
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
 
@@ -161,7 +161,7 @@ Feature: Item details journey
     And I select Germany on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter ABC123 on the 'What is the commodity code?' page
+    And I enter 392690 on the 'What is the commodity code?' page
     And I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page
     And I enter A1 on the 'What is the combined nomenclature code?' page
 

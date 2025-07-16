@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages
 
 import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, StringPage}
 
-
 object EnterCUSCodePage extends StringPage {
 
   override def title(args: String*): String = args match {
