@@ -53,7 +53,7 @@
                 <Commodity>
                     <descriptionOfGoods>item1</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010130</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>500</grossMass>
@@ -72,7 +72,7 @@
                 <Commodity>
                     <descriptionOfGoods>item2</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010130</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>500</grossMass>
@@ -91,7 +91,7 @@
                 <Commodity>
                     <descriptionOfGoods>item3</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010130</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>300</grossMass>
@@ -110,7 +110,7 @@
                 <Commodity>
                     <descriptionOfGoods>item4</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010130</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>300</grossMass>
@@ -129,7 +129,7 @@
                 <Commodity>
                     <descriptionOfGoods>item5</descriptionOfGoods>
                     <CommodityCode>
-                        <harmonizedSystemSubHeadingCode>0G23AB</harmonizedSystemSubHeadingCode>
+                        <harmonizedSystemSubHeadingCode>010130</harmonizedSystemSubHeadingCode>
                     </CommodityCode>
                     <GoodsMeasure>
                         <grossMass>300</grossMass>

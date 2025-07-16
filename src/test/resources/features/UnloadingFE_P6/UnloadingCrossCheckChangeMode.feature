@@ -75,7 +75,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
    ## Commodity code
     And I click the Change Commodity code link for Item 1 in House consignment 1
-    And I enter number 716812 on 'What is the new commodity code for item 1 in house consignment 1?' page
+    And I enter number 010130 on 'What is the new commodity code for item 1 in house consignment 1?' page
     And I click the Remove Commodity code link for Item 1 in House consignment 1
     And I choose radio option Yes on the 'Are you sure you want to remove the commodity code from item 1 in house consignment 1?' page
 
