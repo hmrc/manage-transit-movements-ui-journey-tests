@@ -36,6 +36,9 @@ trait MongoHelper extends AsyncHelper {
     dropCollection("manage-transit-movements-arrival-cache", "draft-locks")
     dropCollection("manage-transit-movements-unloading-frontend")
     dropCollection("manage-transit-movements-cancellation-frontend")
+    dropCollection("ctc-presentation-notification-frontend")
+    dropCollection("ctc-guarantee-balance-frontend")
+    dropCollection("auth", "session")
     dropCollection("transit-movements", "movements")
   }
 }
