@@ -27,17 +27,17 @@ trait MongoHelper extends AsyncHelper {
   def dropCollections(): Unit = {
     println("============================Dropping dbs")
 
-    def dropCollection(dbName: String, collectionName: String = "user-answers"): Unit =
+    def dropCollection(dbName: String, collectionName: String): Unit =
       awaitResult(mongoClient.getDatabase(dbName).getCollection(collectionName).drop().toFuture())
 
-    dropCollection("manage-transit-movements-departure-cache")
+    dropCollection("manage-transit-movements-departure-cache", "user-answers")
     dropCollection("manage-transit-movements-departure-cache", "draft-locks")
-    dropCollection("manage-transit-movements-arrival-cache")
+    dropCollection("manage-transit-movements-arrival-cache", "user-answers")
     dropCollection("manage-transit-movements-arrival-cache", "draft-locks")
-    dropCollection("manage-transit-movements-unloading-frontend")
-    dropCollection("manage-transit-movements-cancellation-frontend")
-    dropCollection("ctc-presentation-notification-frontend")
-    dropCollection("ctc-guarantee-balance-frontend")
+    dropCollection("manage-transit-movements-unloading-frontend", "user-answers")
+    dropCollection("manage-transit-movements-cancellation-frontend", "user-answers")
+    dropCollection("ctc-presentation-notification-frontend", "user-answers")
+    dropCollection("ctc-guarantee-balance-frontend", "user-answers")
     dropCollection("auth", "session")
     dropCollection("transit-movements", "movements")
   }
