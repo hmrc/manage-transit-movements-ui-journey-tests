@@ -14,7 +14,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
 
   Scenario: 01 Security 'ENS' - Guarantee 'B' - Inland Mode 'Rail' - Border Means 'Air' - Container Ind 'No' - CL213 & CL754 Documents
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
-    And I choose radio option Entry summary declaration (ENS) on the 'Which type of safety and security details do you want to add?' page
+    And I choose radio option Exit summary declaration (EXS) on the 'Which type of safety and security details do you want to add?' page
     And I submit the 'Check your answers' page
 
       ## Trader details
@@ -51,6 +51,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     When I click the Add route details link on the 'Declaration summary' page
 
       ## Transit route
+    And I choose radio option No on the 'Do you want to add a specific circumstance indicator?' page
     And I select Italy on the 'What country is the office of destination in?' page
     And I select IT on the 'Where in Italy is the office of destination?' page
     And I choose radio option No on the 'Are you using a binding itinerary?' page
@@ -71,9 +72,7 @@ Feature: End to end journey for Prelodged Northern Ireland office of departure
     And I choose radio option No on the 'Do you want to add a place of loading?' page
 
       ## Place of unloading
-    And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of unloading?' page
-    And I select United Kingdom on the 'Which country is the place of unloading in?' page
-    And I enter London on the 'Where in United Kingdom is the place of unloading?' page
+    And I choose radio option No on the 'Do you want to add a place of unloading?' page
     And I submit on the Check your answers section Places of loading and unloading page
     And I submit on the Check your answers section Route details page
     Then I should be on the 'Declaration summary' page
