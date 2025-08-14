@@ -15,7 +15,7 @@
         <TIRCarnetNumber>1234</TIRCarnetNumber>
         <declarationAcceptanceDate>2025-01-01</declarationAcceptanceDate>
         <releaseDate>2024-06-18</releaseDate>
-        <security>3</security>
+        <security>2</security>
         <reducedDatasetIndicator>1</reducedDatasetIndicator>
         <!--Optional:-->
         <specificCircumstanceIndicator>xxx</specificCircumstanceIndicator>

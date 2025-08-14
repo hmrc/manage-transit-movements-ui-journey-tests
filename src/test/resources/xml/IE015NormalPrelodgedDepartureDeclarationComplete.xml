@@ -9,7 +9,7 @@
         <declarationType>TIR</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
         <TIRCarnetNumber>1234</TIRCarnetNumber>
-        <security>3</security>
+        <security>2</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <specificCircumstanceIndicator>XXX</specificCircumstanceIndicator>
         <bindingItinerary>1</bindingItinerary>

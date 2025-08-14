@@ -8,7 +8,7 @@
         <LRN>25GB000246TK0E6WJ1</LRN>
         <declarationType>T1</declarationType>
         <additionalDeclarationType>D</additionalDeclarationType>
-        <security>1</security>
+        <security>2</security>
         <reducedDatasetIndicator>0</reducedDatasetIndicator>
         <bindingItinerary>0</bindingItinerary>
     </TransitOperation>

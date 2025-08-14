@@ -20,7 +20,7 @@ Feature: Manage transit movements frontend tests for Departures
     And I choose radio option Normal on the 'Which type of procedure are you using?' page
     And I choose radio option TIR on the 'Which type of declaration do you want to create?' page
     And I enter 1234567 on the 'What is the TIR carnet reference?' page
-    And I choose radio option Entry summary declaration (ENS) on the 'Which type of safety and security details do you want to add?' page
+    And I choose radio option Exit summary declaration (EXS) on the 'Which type of safety and security details do you want to add?' page
     And I submit the 'Check your answers' page
     And I click the Add guarantee details link on the 'Declaration summary' page
     Then I click the Continue button on the 'Guarantee added for TIR declaration' page
