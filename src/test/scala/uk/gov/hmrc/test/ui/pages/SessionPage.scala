@@ -17,24 +17,25 @@
 package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
+import uk.gov.hmrc.test.ui.pages.AuthorityWizardPage.navigateTo
+import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
 
-object AuthorityWizard extends BasePage {
+object SessionPage extends BasePage {
 
   def loadPage(): this.type = {
-    val url: String = TestConfiguration.url("auth-login-stub")
-    driver.navigate().to(url)
+    val url: String = TestConfiguration.authorise("auth-login-stub")
+    navigateTo(url)
     this
   }
 
-  def fillInputs(eoriNumber: String): this.type = {
-    val redirectionUrl = TestConfiguration.authorise("auth-login-stub")
-    findById("redirectionUrl").sendKeys(redirectionUrl)
-    findById("credentialStrength").sendKeys("strong")
-    findById("confidenceLevel").sendKeys("50")
-    findById("affinityGroupSelect").sendKeys("Organisation")
-    findById("enrolment[0].name").sendKeys("HMRC-CTC-ORG")
-    findById("input-0-0-name").sendKeys("EORINumber")
-    findById("input-0-0-value").sendKeys(eoriNumber)
+  def getValues: this.type = {
+    World.bearerToken = findByCssSelector("[data-session-id='authToken']").getText
+    World.sessionId = findByCssSelector("[data-session-id='sessionId']").getText
     this
   }
+
+  def navigate(): Unit =
+    ManageTransitMovementsPage
+      .loadPage()
 }

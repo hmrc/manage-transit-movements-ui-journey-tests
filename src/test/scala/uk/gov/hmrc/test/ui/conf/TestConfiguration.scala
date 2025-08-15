@@ -24,6 +24,9 @@ object TestConfiguration {
   val defaultConfig: Config = config.getConfig("local")
   val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
 
+  val timeout: Int   = config.getInt("wait.timeout.seconds")
+  val pollDelay: Int = config.getInt("wait.poll.seconds")
+
   def url(service: String): String = {
     val host = env match {
       case "local" => s"$environmentHost:${servicePort(service)}"

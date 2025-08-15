@@ -16,9 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures
 
-import org.openqa.selenium.WebElement
-import org.scalatest.Assertion
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 import uk.gov.hmrc.test.ui.pages.StringPage
 
 object DepartureDeclarationsPage extends StringPage {
@@ -37,11 +34,6 @@ object DepartureDeclarationsPage extends StringPage {
   def selectDepartureAction(linkText: String, lrn: String): Unit = {
     val id = s"${linkText.replace(" ", "-")}-$lrn"
     clickById(id)
-  }
-
-  def checkDepartureStatus(status: String): Assertion = {
-    val statusField: WebElement = findSiblingByText(World.lrn)
-    statusField.getText shouldBe status
   }
 
 }
