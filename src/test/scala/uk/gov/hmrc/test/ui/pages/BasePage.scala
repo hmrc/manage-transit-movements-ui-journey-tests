@@ -63,6 +63,8 @@ trait BasePage extends BrowserDriver with Matchers with MongoHelper {
 
   def checkForContent(content: String): Unit =
     findBy(By.id("main-content")).getText.contains(content)
+
+  def navigateTo(url: String): Unit     = driver.navigate().to(url)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)
