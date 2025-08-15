@@ -36,7 +36,7 @@ trait BasePage extends BrowserDriver with Matchers with MongoHelper {
   private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
 
   def findSiblingByText(text: String): WebElement =
-    driver.findElement(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))
+    findBy(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))
 
   def deleteCookies(): Unit = {
     println("============================Clearing cookies")
@@ -64,7 +64,7 @@ trait BasePage extends BrowserDriver with Matchers with MongoHelper {
   def checkForContent(content: String): Unit =
     findBy(By.id("main-content")).getText.contains(content)
 
-  def navigateTo(url: String): Unit     = driver.navigate().to(url)
+  def navigateTo(url: String): Unit = driver.navigate().to(url)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

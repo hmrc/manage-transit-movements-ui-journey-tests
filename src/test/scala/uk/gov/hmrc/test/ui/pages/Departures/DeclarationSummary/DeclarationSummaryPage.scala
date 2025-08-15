@@ -28,7 +28,7 @@ object DeclarationSummaryPage extends Page {
     clickByPartialLinkText(sectionLink)
 
   def checkStatus(section: String, status: String): Assertion = {
-    val statusFieldText: String = driver.findElement(By.id(s"${section.replaceAll(" ", "-")}-status")).getText
+    val statusFieldText: String = findBy(By.id(s"${section.replaceAll(" ", "-")}-status")).getText
     statusFieldText shouldBe status
   }
 }
