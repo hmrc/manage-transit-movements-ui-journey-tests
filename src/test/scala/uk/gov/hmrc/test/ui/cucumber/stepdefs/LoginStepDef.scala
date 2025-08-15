@@ -38,8 +38,8 @@ class LoginStepDef extends BaseStepDef {
       .fillInputs(id)
       .submitPage()
 
-    World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
-    World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
+    World.bearerToken = findElementBy(cssSelector("[data-session-id=\"authToken\"]")).getText
+    World.sessionId = findElementBy(cssSelector("[data-session-id=\"sessionId\"]")).getText
 
     navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
   }
