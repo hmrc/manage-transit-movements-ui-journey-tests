@@ -20,8 +20,8 @@ import org.scalatest.concurrent.Eventually.eventually
 
 object GenericPage extends BasePage {
 
-  def selectSignOutLink(signOutLink: String): Unit =
-    clickByPartialLinkText(signOutLink)
+  def clickLink(linkText: String): Unit =
+    clickByPartialLinkText(linkText)
 
   def refreshPage(): Unit =
     driver.navigate().refresh()

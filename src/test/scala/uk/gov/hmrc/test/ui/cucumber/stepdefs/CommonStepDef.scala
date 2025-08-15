@@ -29,6 +29,6 @@ class CommonStepDef extends BaseStepDef {
   }
 
   And("""^I sign out$""") { () =>
-    GenericPage.selectSignOutLink("Sign out")
+    GenericPage.clickLink("Sign out")
   }
 }

@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, BasePage, SessionPage}
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, SessionPage}
 
 // For caching values between steps
 object World {
@@ -27,7 +27,7 @@ object World {
   var lrn: String         = ""
 }
 
-class LoginStepDef extends BaseStepDef with BasePage {
+class LoginStepDef extends BaseStepDef {
 
   And("""^I login with ID (.*)$""") { (id: String) =>
     AuthorityWizardPage
