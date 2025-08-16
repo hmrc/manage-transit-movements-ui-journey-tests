@@ -52,12 +52,20 @@ object ApiHelper extends HttpClient with FileHelper with DriverHelper {
   private def updateBearerToken(): Unit = {
     val url     = TestConfiguration.authorityWizardSessionPage
     val headers = Seq(
-      "Cookie" -> s"mdtp=${driver.manage().getCookieNamed("mdtp").getValue}"
+      "Cookie" -> Seq(
+        getCookieHeader("mdtp"),
+        getCookieHeader("mdtpdi")
+      ).mkString("; ")
     )
     val result  = get(url, headers)
     val html    = Jsoup.parse(result.body)
-    World.bearerToken = html.selectFirst("[data-session-id='authToken']").text()
-    World.sessionId = html.selectFirst("[data-session-id='sessionId']").text()
-    ()
+
+    try {
+      World.bearerToken = html.selectFirst("[data-session-id='authToken']").text()
+      World.sessionId = html.selectFirst("[data-session-id='sessionId']").text()
+    } catch {
+      case _: Throwable =>
+        throw new Exception("Authority wizard session page did not yield an authToken or sessionId")
+    }
   }
 }

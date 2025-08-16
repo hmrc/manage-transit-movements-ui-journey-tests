@@ -32,6 +32,12 @@ trait DriverHelper extends BrowserDriver {
     driver.manage().deleteAllCookies()
   }
 
+  def getCookie(name: String): String =
+    driver.manage().getCookieNamed(name).getValue
+
+  def getCookieHeader(name: String): String =
+    s"$name=${getCookie(name)}"
+
   def takeScreenshot(scenario: Scenario): Unit =
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")
