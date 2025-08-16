@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.DeclarationSummary
+package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.pages.Page
+import org.scalatest.concurrent.Eventually.eventually
 
-object DeclarationSummaryPage extends Page {
+object CommonPage extends BasePage {
 
-  override def title(args: String*): String = "Declaration summary"
+  def clickLink(linkText: String): Unit =
+    clickByPartialLinkText(linkText)
 
-  def selectDeclarationSection(sectionLink: String): Unit =
-    clickByPartialLinkText(sectionLink)
+  def refreshPage(): Unit =
+    driver.navigate().refresh()
 
-  def checkStatus(section: String, status: String): Unit = {
-    val statusFieldText: String = findById(s"${section.replaceAll(" ", "-")}-status").getText
-    assert(statusFieldText == status)
+  def wait(t: Int): Unit = {
+    val time = t * 1000
+    eventually(Thread.sleep(time))
   }
 }

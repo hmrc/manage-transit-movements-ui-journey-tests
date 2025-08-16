@@ -24,8 +24,4 @@ object InformationSentPage extends Page {
 
   def selectLink(link: String): Unit =
     clickByPartialLinkText(link)
-
-  def selectSignOutLink(signOutLink: String): Unit =
-    clickByPartialLinkText(signOutLink)
-
 }

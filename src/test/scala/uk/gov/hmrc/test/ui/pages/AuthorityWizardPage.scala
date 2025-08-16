@@ -16,22 +16,18 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.{By, WebElement}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object AuthorityWizard extends BasePage {
+object AuthorityWizardPage extends BasePage {
 
   def loadPage(): this.type = {
-    val url: String = TestConfiguration.url("auth-login-stub")
-    driver.navigate().to(url)
+    val url: String = TestConfiguration.authorityWizardPage
+    navigateTo(url)
     this
   }
 
-  def navigateTo(url: String): Unit     = driver.navigate().to(url)
-  def findElementBy(by: By): WebElement = driver.findElement(by)
-
   def fillInputs(eoriNumber: String): this.type = {
-    val redirectionUrl = TestConfiguration.authorise("auth-login-stub")
+    val redirectionUrl = TestConfiguration.authorityWizardSessionPage
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("credentialStrength").sendKeys("strong")
     findById("confidenceLevel").sendKeys("50")

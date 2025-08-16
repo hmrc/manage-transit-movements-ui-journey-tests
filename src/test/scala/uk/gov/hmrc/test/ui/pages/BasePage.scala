@@ -16,38 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
-import org.openqa.selenium.{By, JavascriptExecutor, WebDriver, WebElement}
-import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.conf.TestConfiguration.config
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import uk.gov.hmrc.test.ui.utils.MongoHelper
+import org.openqa.selenium.{By, WebElement}
+import uk.gov.hmrc.test.ui.utils.DriverHelper
 
-import java.time.Duration
 import scala.language.postfixOps
 
-trait BasePage extends BrowserDriver with Matchers with MongoHelper {
+trait BasePage extends DriverHelper {
 
-  private lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(config.getInt("wait.timeout.seconds")))
-    .pollingEvery(Duration.ofMillis(config.getInt("wait.poll.seconds")))
-    .ignoring(classOf[Exception])
+  def findById(id: String): WebElement = find(By.id(id))
 
-  private lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
-
-  def findSiblingByText(text: String): WebElement =
-    driver.findElement(By.xpath(s"//td[contains(.,'$text')]//following-sibling::td[2]"))
-
-  def deleteCookies(): Unit = {
-    println("============================Clearing cookies")
-    driver.manage().deleteAllCookies()
-  }
-
-  def findBy(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
-
-  def findById(id: String): WebElement = findBy(By.id(id))
-
-  def click(by: By): Unit = bringIntoView(by, _.click)
+  def findByCssSelector(cssSelector: String): WebElement = find(By.cssSelector(cssSelector))
 
   def clickById(id: String): Unit = click(By.id(id))
 
@@ -55,14 +33,9 @@ trait BasePage extends BrowserDriver with Matchers with MongoHelper {
 
   def submitPage(): Unit = clickById("submit")
 
-  private def bringIntoView(by: By, action: WebElement => Unit): Unit = {
-    val element = findBy(by)
-    jse.executeScript("arguments[0].scrollIntoView()", element)
-    action(element)
-  }
+  def checkForContent(content: String): Unit = assert(findById("main-content").getText.contains(content))
 
-  def checkForContent(content: String): Unit =
-    findBy(By.id("main-content")).getText.contains(content)
+  def navigateTo(url: String): Unit = driver.navigate().to(url)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

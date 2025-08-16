@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.{By, WebElement}
+import org.openqa.selenium.WebElement
 
 trait StringPage extends Page {
 
@@ -26,7 +26,7 @@ trait StringPage extends Page {
   }
 
   def fillInputById(id: String, text: String): Unit = {
-    val input = findBy(By.id(id))
+    val input = findById(id)
     clearInput(input)
     input.sendKeys(text)
   }

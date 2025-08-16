@@ -21,8 +21,4 @@ import uk.gov.hmrc.test.ui.pages.Page
 object CannotSendUnloadingPage extends Page {
 
   override def title(args: String*): String = "You cannot send these unloading remarks"
-
-  def selectSignOutLink(signOutLink: String): Unit =
-    clickByPartialLinkText(signOutLink)
-
 }

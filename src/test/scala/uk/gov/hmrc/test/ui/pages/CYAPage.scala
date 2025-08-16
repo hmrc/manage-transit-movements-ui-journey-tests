@@ -16,8 +16,6 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.openqa.selenium.By
-
 object CYAPage extends Page {
 
 //  override def title(args: String*): String = "Check your answers"
@@ -57,7 +55,5 @@ object CYAPage extends Page {
     }
     this
   }
-
-  def pageSubheading(): String = driver.findElement(By.cssSelector("h1 > span")).getText
 
 }

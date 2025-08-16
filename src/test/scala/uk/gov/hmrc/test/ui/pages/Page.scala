@@ -41,9 +41,3 @@ trait Page extends BasePage {
     }
   }
 }
-
-object Page extends BasePage {
-
-  def selectSignOutLink(signOutLink: String): Unit =
-    clickByPartialLinkText(signOutLink)
-}
