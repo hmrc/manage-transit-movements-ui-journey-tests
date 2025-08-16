@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import org.scalatest.concurrent.Eventually.eventually
 
-object GenericPage extends BasePage {
+object CommonPage extends BasePage {
 
   def clickLink(linkText: String): Unit =
     clickByPartialLinkText(linkText)

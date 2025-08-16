@@ -21,13 +21,13 @@ import uk.gov.hmrc.test.ui.conf.TestConfiguration
 object AuthorityWizardPage extends BasePage {
 
   def loadPage(): this.type = {
-    val url: String = TestConfiguration.url("auth-login-stub")
+    val url: String = TestConfiguration.authorityWizardPage
     navigateTo(url)
     this
   }
 
   def fillInputs(eoriNumber: String): this.type = {
-    val redirectionUrl = TestConfiguration.authorise("auth-login-stub")
+    val redirectionUrl = TestConfiguration.homePage
     findById("redirectionUrl").sendKeys(redirectionUrl)
     findById("credentialStrength").sendKeys("strong")
     findById("confidenceLevel").sendKeys("50")

@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.conf
 import com.typesafe.config.{Config, ConfigFactory}
 
 object TestConfiguration {
+
   val config: Config        = ConfigFactory.load()
   val env: String           = config.getString("environment")
   val defaultConfig: Config = config.getConfig("local")
@@ -30,24 +31,22 @@ object TestConfiguration {
   def url(service: String): String = {
     val host = env match {
       case "local" => s"$environmentHost:${servicePort(service)}"
-      case _       => s"${envConfig.getString(s"services.host")}"
+      case _       => environmentHost
     }
     s"$host${serviceRoute(service)}"
   }
 
-  def authorise(service: String): String = {
-    val host = env match {
-      case "local" => s"$environmentHost:${servicePort(service)}"
-      case _       => s"${envConfig.getString(s"services.host")}"
-    }
-    s"$host${authRoute(service)}"
-  }
+  lazy val authorityWizardPage: String = s"${url("auth-login-stub")}/gg-sign-in"
 
-  def environmentHost: String = envConfig.getString("services.host")
+  lazy val authorityWizardSessionPage: String = s"${url("auth-login-stub")}/session"
 
-  def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")
+  lazy val manageTransitMovementsFrontend: String = url("manage-transit-movements-frontend")
 
-  def serviceRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.productionRoute")
+  lazy val homePage: String = s"$manageTransitMovementsFrontend/what-do-you-want-to-do"
 
-  def authRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.authorise")
+  private def environmentHost: String = envConfig.getString("services.host")
+
+  private def servicePort(serviceName: String): String = envConfig.getString(s"services.$serviceName.port")
+
+  private def serviceRoute(serviceName: String): String = envConfig.getString(s"services.$serviceName.productionRoute")
 }

@@ -16,19 +16,19 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.GenericPage
+import uk.gov.hmrc.test.ui.pages.CommonPage
 
 class CommonStepDef extends BaseStepDef {
 
   And("""^(?:I )?wait for (.*) seconds$""") { (t: Int) =>
-    GenericPage.wait(t)
+    CommonPage.wait(t)
   }
 
   And("""^(?:I )?refresh the page$""") { () =>
-    GenericPage.refreshPage()
+    CommonPage.refreshPage()
   }
 
   And("""^I sign out$""") { () =>
-    GenericPage.clickLink("Sign out")
+    CommonPage.clickLink("Sign out")
   }
 }
