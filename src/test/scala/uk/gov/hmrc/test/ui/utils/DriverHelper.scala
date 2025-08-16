@@ -17,8 +17,8 @@
 package uk.gov.hmrc.test.ui.utils
 
 import io.cucumber.scala.Scenario
-import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import org.openqa.selenium.*
+import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
@@ -31,12 +31,6 @@ trait DriverHelper extends BrowserDriver {
     println("============================Clearing cookies")
     driver.manage().deleteAllCookies()
   }
-
-  def getCookie(name: String): String =
-    driver.manage().getCookieNamed(name).getValue
-
-  def getCookieHeader(name: String): String =
-    s"$name=${getCookie(name)}"
 
   def takeScreenshot(scenario: Scenario): Unit =
     if (scenario.isFailed) {

@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import org.jsoup.Jsoup
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
@@ -33,7 +32,6 @@ object ApiHelper extends HttpClient with FileHelper with DriverHelper {
     s"${TestConfiguration.manageTransitMovementsFrontend}/test-only/${message.endpoint}"
 
   def insertXML(descriptor: String): Unit = {
-    updateBearerToken()
     val fileName    = descriptor.replaceAll(" ", "")
     val xml         = getXml(s"$fileName.xml")
     val messageType = getMessageType(descriptor)
@@ -46,26 +44,6 @@ object ApiHelper extends HttpClient with FileHelper with DriverHelper {
     val regex = "IE\\d+".r
     regex.findFirstIn(descriptor).getOrElse {
       throw new RuntimeException(s"$descriptor did not contain a message type")
-    }
-  }
-
-  private def updateBearerToken(): Unit = {
-    val url     = TestConfiguration.authorityWizardSessionPage
-    val headers = Seq(
-      "Cookie" -> Seq(
-        getCookieHeader("mdtp"),
-        getCookieHeader("mdtpdi")
-      ).mkString("; ")
-    )
-    val result  = get(url, headers)
-    val html    = Jsoup.parse(result.body)
-
-    try {
-      World.bearerToken = html.selectFirst("[data-session-id='authToken']").text()
-      World.sessionId = html.selectFirst("[data-session-id='sessionId']").text()
-    } catch {
-      case _: Throwable =>
-        throw new Exception("Authority wizard session page did not yield an authToken or sessionId")
     }
   }
 }

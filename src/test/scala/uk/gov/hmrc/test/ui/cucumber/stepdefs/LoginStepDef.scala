@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import uk.gov.hmrc.test.ui.pages.AuthorityWizardPage
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, SessionPage}
 
 // For caching values between steps
 object World {
@@ -34,6 +34,11 @@ class LoginStepDef extends BaseStepDef {
       .loadPage()
       .fillInputs(id)
       .submitPage()
+
+    SessionPage
+      .loadPage()
+      .getValues
+      .navigate()
   }
 
 }
