@@ -26,7 +26,7 @@ object TestConfiguration {
   val envConfig: Config     = config.getConfig(env).withFallback(defaultConfig)
 
   val timeout: Int   = config.getInt("wait.timeout.seconds")
-  val pollDelay: Int = config.getInt("wait.poll.seconds")
+  val pollDelay: Int = config.getInt("wait.poll.millis")
 
   def url(service: String): String = {
     val host = env match {

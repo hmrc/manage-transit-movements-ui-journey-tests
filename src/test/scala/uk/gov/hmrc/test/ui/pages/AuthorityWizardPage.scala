@@ -18,12 +18,13 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object AuthorityWizardPage extends BasePage {
+object AuthorityWizardPage extends Page {
 
-  def loadPage(): this.type = {
-    val url: String = TestConfiguration.authorityWizardPage
-    navigateTo(url)
-    this
+  override def title(args: String*): String = "Authority Wizard"
+
+  override def loadPage(args: String*): AuthorityWizardPage.this.type = {
+    navigateTo(TestConfiguration.authorityWizardPage)
+    super.loadPage(args*)
   }
 
   def fillInputs(eoriNumber: String): this.type = {

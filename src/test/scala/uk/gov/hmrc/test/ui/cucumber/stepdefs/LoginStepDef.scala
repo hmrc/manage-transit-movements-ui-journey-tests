@@ -36,6 +36,7 @@ class LoginStepDef extends BaseStepDef {
       .submitPage()
 
     SessionPage
+      .loadPage()
       .saveBearerToken()
       .saveSessionId()
       .navigate()

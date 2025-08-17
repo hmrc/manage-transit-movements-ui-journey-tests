@@ -25,19 +25,6 @@ trait Page extends BasePage {
     this
   }
 
-  private def onPage(expectedTitle: String): Unit = {
-    val escapedTitle = java.util.regex.Pattern.quote(expectedTitle)
-    val regex        =
-      s"^$escapedTitle(?: - (Departure declarations|Arrival notifications|Guarantee balance))? - Manage your transit movements - GOV.UK$$".r
-
-    val title = driver.getTitle
-
-//    println(s"Expected title: '$expectedTitle'")
-//    println(s"Actual title: '$title'")
-
-    title match {
-      case regex(_) => () // Match passed
-      case _        => throw PageNotFoundException(s"Expected title to be '$expectedTitle', but found '$title'.")
-    }
-  }
+  private def onPage(expectedTitle: String): Unit =
+    fluentWait.until(_.getTitle.contains(expectedTitle))
 }

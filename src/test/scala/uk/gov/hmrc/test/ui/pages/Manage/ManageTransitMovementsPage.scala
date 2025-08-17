@@ -25,7 +25,7 @@ object ManageTransitMovementsPage extends Page {
 
   override def loadPage(args: String*): this.type = {
     navigateTo(TestConfiguration.homePage)
-    super.loadPage(args: _*)
+    super.loadPage(args*)
   }
 
   def selectAction(link: String): this.type = {

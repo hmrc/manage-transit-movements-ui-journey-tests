@@ -39,7 +39,7 @@ trait DriverHelper extends BrowserDriver {
       scenario.attach(screenshot, "image/png", screenshotName)
     }
 
-  lazy val fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
+  def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
     .withTimeout(Duration.ofSeconds(TestConfiguration.timeout))
     .pollingEvery(Duration.ofMillis(TestConfiguration.pollDelay))
     .ignoring(classOf[Exception])
