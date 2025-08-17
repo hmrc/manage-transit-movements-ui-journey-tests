@@ -16,21 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
-import uk.gov.hmrc.test.ui.pages.AuthorityWizardPage.navigateTo
 import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
 
 object SessionPage extends BasePage {
 
-  def loadPage(): this.type = {
-    val url: String = TestConfiguration.authorityWizardSessionPage
-    navigateTo(url)
+  def saveBearerToken(): this.type = {
+    World.bearerToken = findByCssSelector("[data-session-id='authToken']").getText
     this
   }
 
-  def getValues: this.type = {
-    World.bearerToken = findByCssSelector("[data-session-id='authToken']").getText
+  def saveSessionId(): this.type = {
     World.sessionId = findByCssSelector("[data-session-id='sessionId']").getText
     this
   }
