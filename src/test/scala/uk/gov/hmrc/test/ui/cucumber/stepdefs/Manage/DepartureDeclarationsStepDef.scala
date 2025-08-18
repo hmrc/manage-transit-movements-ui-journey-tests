@@ -22,12 +22,6 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.*
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
-  And("""^(?:I )?see the status (.*) on the 'Departure declarations' page$""") { (status: String) =>
-    DepartureDeclarationsPage
-      .loadPage()
-      .checkDepartureStatus(status)
-  }
-
   Then("""^(?:I )?(?:should )?be on the 'Departure declarations' page$""") { () =>
     DepartureDeclarationsPage
       .loadPage()

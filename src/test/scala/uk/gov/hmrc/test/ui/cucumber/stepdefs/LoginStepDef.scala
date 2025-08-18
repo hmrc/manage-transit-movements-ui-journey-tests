@@ -16,10 +16,7 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import org.openqa.selenium.By.cssSelector
-import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard
-import uk.gov.hmrc.test.ui.pages.AuthorityWizard.{findElementBy, navigateTo}
+import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, SessionPage}
 
 // For caching values between steps
 object World {
@@ -33,15 +30,16 @@ object World {
 class LoginStepDef extends BaseStepDef {
 
   And("""^I login with ID (.*)$""") { (id: String) =>
-    AuthorityWizard
+    AuthorityWizardPage
       .loadPage()
       .fillInputs(id)
       .submitPage()
 
-    World.bearerToken = findElementBy(cssSelector("[data-session-id='authToken']")).getText
-    World.sessionId = findElementBy(cssSelector("[data-session-id='sessionId']")).getText
-
-    navigateTo(TestConfiguration.url("manage-transit-movements-frontend"))
+    SessionPage
+      .loadPage()
+      .saveBearerToken()
+      .saveSessionId()
+      .navigate()
   }
 
 }

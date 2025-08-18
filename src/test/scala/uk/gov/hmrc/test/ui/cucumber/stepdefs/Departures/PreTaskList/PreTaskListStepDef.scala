@@ -17,12 +17,11 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs.Departures.PreTaskList
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.BasePage
-import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList._
+import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.*
 import uk.gov.hmrc.test.ui.pages.Departures.StandardDeclarationMoreInformationPage
 import uk.gov.hmrc.test.ui.utils.CacheHelper
 
-class PreTaskListStepDef extends BaseStepDef with BasePage {
+class PreTaskListStepDef extends BaseStepDef {
 
   When("""^I input a random LRN on the 'What is the Local Reference Number\?' page$""") { () =>
     LocalReferenceNumberPage

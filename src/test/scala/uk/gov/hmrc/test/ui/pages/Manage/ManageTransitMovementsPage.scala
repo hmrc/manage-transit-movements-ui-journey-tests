@@ -24,9 +24,8 @@ object ManageTransitMovementsPage extends Page {
   override def title(args: String*): String = "Manage your transit movements"
 
   override def loadPage(args: String*): this.type = {
-    val url: String = TestConfiguration.url("manage-transit-movements-frontend") + "/what-do-you-want-to-do"
-    driver.navigate().to(url)
-    super.loadPage(args: _*)
+    navigateTo(TestConfiguration.homePage)
+    super.loadPage(args*)
   }
 
   def selectAction(link: String): this.type = {

@@ -24,8 +24,8 @@ object SecurityDetailsPage extends RadioPage {
 
   override def select(answer: String): this.type = {
     val securityTypeCSSValue = answer match {
-      case "No security"                                            => "0"
-      case "Exit summary declaration (EXS)"                         => "2"
+      case "No security"                    => "0"
+      case "Exit summary declaration (EXS)" => "2"
     }
     clickRadioBtn(securityTypeCSSValue)
     this
