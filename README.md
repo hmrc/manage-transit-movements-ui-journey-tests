@@ -48,8 +48,6 @@ This is the UI journey test repository for the following frontend services:
     * The full list of runners can be found in `src/test/scala/uk/gov/hmrc/test/ui/cucumber/runner` whatever comes after the '`RunnerFor`' 
       can be appended to the `./run_with_tags.sh` script to run those tests
 
-
-
 * To view the tests running in a browser, add `-Dbrowser.option.headless=false` to the relevant `sbt` command.
 
 ## Security Tests
