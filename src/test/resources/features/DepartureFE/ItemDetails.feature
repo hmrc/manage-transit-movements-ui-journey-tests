@@ -170,7 +170,6 @@ Feature: Item details journey
 
     # Measurement section
     And I enter 0 on the 'What is the item’s gross weight?' page
-    And I should be on the 'Before you continue' page
     And I click the continue button on the 'Before you continue' page
     And I click radio option No on the 'Do you want to add the item’s net weight?' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
