@@ -167,11 +167,6 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
-  And("""^(?:I )?should be on the 'Before you continue' page$""") { () =>
-    MeasurementGrossWeightWarningPage
-      .loadPage()
-  }
-
   And("""^(?:I )?click the continue button on the 'Before you continue' page$""") { () =>
     MeasurementGrossWeightWarningPage
       .loadPage()
