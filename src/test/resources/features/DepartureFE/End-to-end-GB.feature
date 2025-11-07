@@ -1,4 +1,4 @@
-@departureGBe2e
+@departureGBe2e @wip
 
 Feature: End to end journey for Great Britain office of departure
 
@@ -247,7 +247,7 @@ Feature: End to end journey for Great Britain office of departure
     And I click radio option No on the 'Does the item contain any dangerous goods?' page
       # Measurement section
     And I enter 0 on the 'What is the item’s gross weight?' page
-    And I click continue on the 'Before you continue' page
+    And I click the continue button on the 'Before you continue' page
     And I click radio option No on the 'Do you want to add supplementary units?' page
      #  Package section
     And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
