@@ -226,7 +226,6 @@ Feature: End to end journey for Great Britain office of departure
       #  Supply Chain Actor section
     And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
 
-
       #  Items Documents Section -T2 skips Yes/No to add document
     And I select Previous - (C605) Information sheet INF3 on the 'Which document do you want to attach?' page
     And I click radio option No on the 'You have attached 2 documents to this item' page
@@ -237,9 +236,37 @@ Feature: End to end journey for Great Britain office of departure
       #  Additional information section
     And I click radio option No on the 'Do you want to add any additional information for this item?' page
 
-      #  Items Summary page
+      #  Item 2
     And I submit on the Check your answers section Items page
-    And I click radio option No on the 'You have added 1 item' page
+    And I click radio option Yes on the 'You have added 1 item' page
+    And I enter This is a description on the 'Enter a description of item 2' page
+    And I select (1) Transport equipment - C001 on the 'Which transport equipment are you using for this item?' page
+    And I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page
+    And I enter 010130 on the 'What is the commodity code?' page
+      # Dangerous goods section
+    And I click radio option No on the 'Does the item contain any dangerous goods?' page
+      # Measurement section
+    And I enter 0 on the 'What is the item’s gross weight?' page
+    And I click continue on the 'Before you continue' page
+    And I click radio option No on the 'Do you want to add supplementary units?' page
+     #  Package section
+    And I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page
+    And I enter 1 on the 'How many of these are you using?' page
+    And I click radio option No on the 'Do you want to add a shipping mark?' page
+    And I click radio option No on the 'You have added 1 types of package' page
+      #  Supply Chain Actor section
+    And I click radio option No on the 'Do you want to add a supply chain actor for this item?' page
+      #  Items Documents Section
+    And I select Previous - (C605) Information sheet INF3 - 1234 on the 'Which document do you want to attach?' page
+    And I click radio option No on the 'You have attached 2 document to this item' page
+      #  Additional Reference Section
+    And I click radio option No on the 'Do you want to add an additional reference for this item?' page
+      #  Additional information section
+    And I click radio option No on the 'Do you want to add any additional information for this item?' page
+
+      #  Items Summary
+    And I submit on the Check your answers section Items page
+    And I click radio option No on the 'You have added 2 item' page
     And I click the Confirm and send button on the 'Declaration summary' page
     And I click the Sign out link on the 'Departure declaration sent' page
 
