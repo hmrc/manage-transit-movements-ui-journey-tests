@@ -18,10 +18,8 @@ package uk.gov.hmrc.test.ui.pages.Departures.Items
 
 import uk.gov.hmrc.test.ui.pages.Page
 
-
 object MeasurementGrossWeightWarningPage extends Page {
 
   override def title(args: String*): String = "Before you continue"
-  
-  
+
 }
