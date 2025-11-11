@@ -167,6 +167,12 @@ class ItemDetailsStepDef extends BaseStepDef {
       .submitPage()
   }
 
+  And("""^(?:I )?click the continue button on the 'Before you continue' page$""") { () =>
+    MeasurementGrossWeightWarningPage
+      .loadPage()
+      .submitPage()
+  }
+
   And("""^(?:I )?click radio option (.*) on the 'Do you want to add the item’s net weight\?' page$""") {
     (answer: String) =>
       MeasurementAddNetWeightPage
