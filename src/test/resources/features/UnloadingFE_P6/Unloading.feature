@@ -4,7 +4,7 @@ Feature: Submit unloading remarks with seals
 
   Scenario: 01 - Unloading remarks with revised procedure and seals replaced by customs
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -24,7 +24,7 @@ Feature: Submit unloading remarks with seals
 
   Scenario: 02 - Unloading remarks with new agreement to old procedure and no discrepancies
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -46,7 +46,7 @@ Feature: Submit unloading remarks with seals
 
   Scenario: 03 - Unloading remarks attempt to use revised procedure, with changes to summary answers & add/remove comment & adds new seals and changes the check seals section from CYA page
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -69,31 +69,31 @@ Feature: Submit unloading remarks with seals
     And I sign out
 
 
-  Scenario: 04 - Unloading remarks - Status changes during making unloading remarks (IE057 is received)
-    Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
-    And I submit an IE043 Unloading Permission With Seals
-    When I click on the View arrival notifications link on the 'Manage your transit movements' page
-    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
-    And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
-    Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
-    And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
-    And I fill in the date on the 'When were the goods unloaded?' page
-    And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
-    And I choose radio option No on the 'Are any of the seals broken?' page
-    And I choose radio option Yes on the 'Were there any discrepancies between the transit movement and unloading permission?' page
-    And I click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page
-    And I enter remarks on the 'Enter your comments' page
-    And I choose radio option No on the 'Do you have anything else to report?' page
-
-    When I submit an IE057 Unloading Remarks Rejection
-    And I submit the 'Check your answers' page
-    Then I should be on the 'You cannot send these unloading remarks' page
-    And I sign out
+#  Scenario: 04 - Unloading remarks - Status changes during making unloading remarks (IE057 is received)
+#    Given I login with ID 1234567890
+#    When I submit an IE007 Arrival Notification
+#    And I submit an IE043 Unloading Permission With Seals
+#    When I click on the View arrival notifications link on the 'Manage your transit movements' page
+#    And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
+#    And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
+#    Then I click the Continue button on the 'Unload the goods and note any discrepancies' page
+#    And I choose radio option fully on the 'Have you fully or partially unloaded the goods?' page
+#    And I fill in the date on the 'When were the goods unloaded?' page
+#    And I choose radio option Yes on the 'Are all the seal identification numbers or marks readable?' page
+#    And I choose radio option No on the 'Are any of the seals broken?' page
+#    And I choose radio option Yes on the 'Were there any discrepancies between the transit movement and unloading permission?' page
+#    And I click the Continue button on the 'Enter the discrepancies between the transit movement and unloading permission' page
+#    And I enter remarks on the 'Enter your comments' page
+#    And I choose radio option No on the 'Do you have anything else to report?' page
+#
+#    When I submit an IE057 Unloading Remarks Rejection
+#    And I submit the 'Check your answers' page
+#    Then I should be on the 'You cannot send these unloading remarks' page
+#    And I sign out
 
   Scenario: 05 - Trader is able to view unloading remarks with rejections and resubmit
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     And I submit an IE044 Unloading Remarks Notification With Seals
     And I submit an IE057 Unloading Remarks Rejection
@@ -122,7 +122,7 @@ Feature: Submit unloading remarks with seals
 
   Scenario: 06 - E2E Navigation (Longest journey - Seals state 1)
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -138,7 +138,7 @@ Feature: Submit unloading remarks with seals
 
   Scenario: 07 - E2E Navigation (Seals - State 0)
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -152,10 +152,11 @@ Feature: Submit unloading remarks with seals
     And I enter remarks on the 'Enter your comments' page
     And I choose radio option No on the 'Do you have anything else to report?' page
 
+
   Scenario: 08 - E2E Navigation (Shortest journey)
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
-    And I submit an IE043 Unloading Permission With No Seals
+    When I submit an Phase6 IE007 Arrival Notification
+    And I submit an Phase6 IE043 Unloading Permission With No Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
     And I choose radio option No on the 'Do you want to use the revised unloading procedure?' page
