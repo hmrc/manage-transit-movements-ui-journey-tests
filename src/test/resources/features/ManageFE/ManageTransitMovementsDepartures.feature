@@ -1,4 +1,4 @@
-@manageFrontEnd
+@manageFrontEnd @manageFrontEndP6
 
 Feature: Manage transit movements frontend tests for Departures
 

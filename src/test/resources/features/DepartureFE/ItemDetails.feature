@@ -21,7 +21,7 @@ Feature: Item details journey
     And I select Germany on the 'What is the item’s country of destination?' page
     And I enter UCR12312 on the 'What is the Unique Consignment Reference?' page
     And I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page
-    And I enter 0018063-2 on the 'What is the Customs Union and Statistics code?' page
+    And I enter 0010001-6 on the 'What is the Customs Union and Statistics code?' page
 
     And I enter 392690 on the 'What is the commodity code?' page
 
