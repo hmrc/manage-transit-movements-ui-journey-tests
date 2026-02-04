@@ -1,4 +1,4 @@
-@manageFrontEndP6 @wip
+@manageFrontEndP6
 
 Feature: Manage transit movements frontend tests for Arrivals
 

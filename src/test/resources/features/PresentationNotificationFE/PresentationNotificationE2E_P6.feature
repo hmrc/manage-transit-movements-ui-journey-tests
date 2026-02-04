@@ -71,7 +71,6 @@ Feature: Trader completes a departure declaration that was previously pre-lodged
     And I submit the 'Check your answers' page
     Then I should be on the 'Information sent' page
 
-    @wip
   Scenario: 02 Checks for limit date in Presentation Notification for simplified departure
     When I submit an IE015 Simplified Prelodged Departure Declaration Full
     Then I submit an IE928 Positive Acknowledgment
