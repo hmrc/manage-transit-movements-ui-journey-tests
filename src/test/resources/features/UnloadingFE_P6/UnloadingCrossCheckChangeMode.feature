@@ -3,7 +3,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Background:
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -71,7 +71,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
    ## Cus code
     And I click the Change Cus code link for Item 1 in House consignment 1
-    And I enter number 0018063-2 on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1?' page
+    And I enter number 0010003-8 on 'What is the new Customs Union and Statistics CUS code for item 1 in house consignment 1?' page
 
    ## Commodity code
     And I click the Change Commodity code link for Item 1 in House consignment 1

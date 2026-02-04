@@ -3,7 +3,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
 
   Background:
     Given I login with ID 1234567890
-    When I submit an IE007 Arrival Notification
+    When I submit an Phase6 IE007 Arrival Notification
     And I submit an IE043 Unloading Permission With Seals
     When I click on the View arrival notifications link on the 'Manage your transit movements' page
     And I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the 'Arrival notifications' page
@@ -99,7 +99,7 @@ Feature: Navigating to Pages from Cross-check declaration summary to all individ
     And I choose radio option Yes on the 'Do you want to add a Unique Consignment Reference for this item?' page
     And I enter reference UCRHC12312 on the 'What is the Unique Consignment Reference for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item?' page
-    And I enter number 0018063-2 on 'What is the Customs Union and Statistics code for item 2 in house consignment 1?' page
+    And I enter number 0010003-8 on 'What is the Customs Union and Statistics code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a commodity code for the item?' page
     And I enter number 010130 on 'What is the commodity code for item 2 in house consignment 1?' page
     And I choose radio option Yes on the 'Do you want to add a combined nomenclature code for the item?' page

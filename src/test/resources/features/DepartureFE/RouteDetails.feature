@@ -16,7 +16,7 @@ Feature: Route details journey
 #
 #    #Specific Circumstance Indicator (SCI)
     And I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page
-    And I choose radio option XXX - Authorised economic operators on the 'Which specific circumstance indicator do you want to add?' page
+    And I choose radio option A20 - Express consignments in the context of exit summary declarations on the 'Which specific circumstance indicator do you want to add?' page
 #
 #      ## Transit route
     And I select Italy on the 'What country is the office of destination in?' page
