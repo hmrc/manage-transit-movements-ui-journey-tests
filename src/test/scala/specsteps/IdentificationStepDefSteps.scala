@@ -5,7 +5,7 @@ import uk.gov.hmrc.test.ui.pages.Arrivals.*
 object IdentificationStepDefSteps {
 
   // ^(?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'WhatTypeOfProcedureAreYouUsing\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage(answer: String): Unit = {
     Arrivals_ProcedureTypePage
             .loadPage()
             .select(answer)
@@ -13,7 +13,7 @@ object IdentificationStepDefSteps {
   }
 
   // ^(?:I )?select (.+) on the arrival office of destination page$
-  def and(?I)?select(.+)OnTheArrivalOfficeOfDestinationPage(answer: String): Unit = {
+  def andIselectOnTheArrivalOfficeOfDestinationPage(answer: String): Unit = {
     Arrivals_OfficeOfDestinationPage
           .loadPage()
           .select(answer)
@@ -21,7 +21,7 @@ object IdentificationStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the consignee eori tin page$
-  def and(?I)?enter(.+)OnTheConsigneeEoriTinPage(answer: String): Unit = {
+  def andIenterOnTheConsigneeEoriTinPage(answer: String): Unit = {
     Arrivals_ConsigneeEoriTinPage
           .loadPage()
           .fillInput(answer)
@@ -29,7 +29,7 @@ object IdentificationStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the Movement Reference Number page$
-  def and(?I)?enter(.+)OnTheMovementReferenceNumberPage(answer: String): Unit = {
+  def andIenterOnTheMovementReferenceNumberPage(answer: String): Unit = {
     Arrivals_MovementReferenceNumberPage
           .loadPage()
           .fillInput(answer)
@@ -37,7 +37,7 @@ object IdentificationStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the authorisations reference number page$
-  def and(?I)?enter(.+)OnTheAuthorisationsReferenceNumberPage(answer: String): Unit = {
+  def andIenterOnTheAuthorisationsReferenceNumberPage(answer: String): Unit = {
     Arrivals_AuthorisationsReferenceNumberPage
           .loadPage()
           .fillInput(answer)
@@ -45,13 +45,13 @@ object IdentificationStepDefSteps {
   }
 
   // ^(?:I )?(?:should )?be on the What is the Movement Reference Number page$
-  def then(?I)?(?should)?beOnTheWhatIsTheMovementReferenceNumberPage(): Unit = {
+  def thenIshouldbeOnTheWhatIsTheMovementReferenceNumberPage(): Unit = {
     Arrivals_MovementReferenceNumberPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?see an error on the What is the Movement Reference Number page$
-  def then(?I)?(?should)?seeAnErrorOnTheWhatIsTheMovementReferenceNumberPage(): Unit = {
+  def thenIshouldseeAnErrorOnTheWhatIsTheMovementReferenceNumberPage(): Unit = {
     Arrivals_ErrorMovementReferenceNumberPage
           .loadPage()
   }

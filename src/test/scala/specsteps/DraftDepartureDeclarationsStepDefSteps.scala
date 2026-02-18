@@ -4,21 +4,21 @@ import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{DeleteDraftDeclaration
 object DraftDepartureDeclarationsStepDefSteps {
 
   // ^(?:I )?click on the link for LRN (.*) on the 'Draft departure declarations' page
-  def and(?I)?clickOnTheLinkForLRNXOnThe'DraftDepartureDeclarations'Page(link: String): Unit = {
+  def andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage(link: String): Unit = {
     DraftDepartureDelcarationsPage
           .loadPage()
           .selectDraftDeclarationLink(link)
   }
 
   // ^(?:I )?click on the (.+) link on the 'Draft departure declarations' page$
-  def given(?I)?clickOnThe(.+)LinkOnThe'DraftDepartureDeclarations'Page(link: String): Unit = {
+  def givenIclickOnTheLinkOnTheDraftDepartureDeclarationsPage(link: String): Unit = {
     DraftDepartureDelcarationsPage
           .loadPage()
           .selectDraftDeclarationLink(link)
   }
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to delete this declaration\?' page$
-  def and(?I)?clickRadioOptionXOnThe'AreYouSureYouWantToDeleteThisDeclaration\?'Page(answer: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToDeleteThisDeclarationPage(answer: String): Unit = {
     DeleteDraftDeclarationsPage
             .loadPage()
             .select(answer)
@@ -26,7 +26,7 @@ object DraftDepartureDeclarationsStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) in the Search field on the 'Draft departure declarations' page$
-  def and(?I)?enter(.+)InTheSearchFieldOnThe'DraftDepartureDeclarations'Page(searchString: String): Unit = {
+  def andIenterInTheSearchFieldOnTheDraftDepartureDeclarationsPage(searchString: String): Unit = {
     DraftDepartureDelcarationsPage
             .loadPage()
             .fillInput(searchString)
@@ -34,7 +34,7 @@ object DraftDepartureDeclarationsStepDefSteps {
   }
 
   // ^(?:I )?should see the content (.*) on the 'Draft departure declarations' page$
-  def and(?I)?shouldSeeTheContentXOnThe'DraftDepartureDeclarations'Page(content: String): Unit = {
+  def andIshouldSeeTheContentXOnTheDraftDepartureDeclarationsPage(content: String): Unit = {
     DraftDepartureDelcarationsPage
           .loadPage()
           .checkForContent(content)

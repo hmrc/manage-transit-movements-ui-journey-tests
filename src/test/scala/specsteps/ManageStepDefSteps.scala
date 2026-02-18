@@ -6,43 +6,43 @@ import uk.gov.hmrc.test.ui.utils.ApiHelper
 object ManageStepDefSteps {
 
   // ^(?:I )?submit an (.+)$
-  def given(?I)?submitAn(.+)(filename: String): Unit = {
+  def givenIsubmitAFile(filename: String): Unit = {
     ApiHelper.insertXML(filename)
   }
 
   // ^(?:I )?should be on the 'Manage your transit movements' page$
-  def then(?I)?shouldBeOnThe'ManageYourTransitMovements'Page(): Unit = {
+  def thenIshouldBeOnTheManageYourTransitMovementsPage(): Unit = {
     ManageTransitMovementsPage
           .loadPage()
   }
 
   // ^(?:I )?click on the (.+) link on the 'Manage your transit movements' page$
-  def given(?I)?clickOnThe(.+)LinkOnThe'ManageYourTransitMovements'Page(link: String): Unit = {
+  def givenIclickOnTheLinkOnTheManageYourTransitMovementsPage(link: String): Unit = {
     ManageTransitMovementsPage
           .loadPage()
           .selectAction(link)
   }
 
   // ^(?:I )?should be on the 'Goods under control - document requested' page$
-  def then(?I)?shouldBeOnThe'GoodsUnderControl-DocumentRequested'Page(): Unit = {
+  def thenIshouldBeOnTheGoodsUnderControlDocumentRequestedPage(): Unit = {
     GoodsUnderControlDocumentsRequestedPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'Goods under control' page$
-  def then(?I)?shouldBeOnThe'GoodsUnderControl'Page(): Unit = {
+  def thenIshouldBeOnTheGoodsUnderControlPage(): Unit = {
     GoodsUnderControlPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$
-  def then(?I)?shouldBeOnThe'IntentionToControl-CompletePre-lodgedDeclaration'Page(): Unit = {
+  def thenIshouldBeOnTheIntentionToControlCompletePrelodgedDeclarationPage(): Unit = {
     PreLodgedGoodsUnderControlPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'For your security we signed you out' page$
-  def then(?I)?shouldBeOnThe'ForYourSecurityWeSignedYouOut'Page(): Unit = {
+  def thenIshouldBeOnTheForYourSecurityWeSignedYouOutPage(): Unit = {
     ForYourSecuritySignedOutPage
           .loadPage()
   }

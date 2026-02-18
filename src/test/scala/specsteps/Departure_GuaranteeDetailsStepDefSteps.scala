@@ -81,7 +81,7 @@ object Departure_GuaranteeDetailsStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the 'What is the reference for the guarantee\?' page$
-  def and(?I)?enter(.+)OnThe'WhatIsTheReferenceForTheGuarantee\?'Page(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheReferenceForTheGuaranteePage(answer: String): Unit = {
     OtherGuarantee3ReferencePage
           .loadPage()
           .fillInput(answer)
@@ -89,7 +89,7 @@ object Departure_GuaranteeDetailsStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the 'What is the reference\?' page$
-  def and(?I)?enter(.+)OnThe'WhatIsTheReference\?'Page(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheReferencePage(answer: String): Unit = {
     OtherGuarantee8ReferencePage
           .loadPage()
           .fillInput(answer)
