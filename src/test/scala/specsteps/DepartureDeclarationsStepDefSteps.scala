@@ -1,32 +1,33 @@
+import specpage.ConfirmCancellationPage
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Cancellations.ConfirmCancellationPage
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.*
+import uk.gov.hmrc.test.ui.pages.Manage.*
+import uk.gov.hmrc.test.ui.pages.Manage.{ManagedFEAmendDeclarationErrorsPage, ManagedFEAmendGuaranteeErrorsPage, ManagedFECancellationErrorsPage, ManagedFEConfirmationNeededToCompleteDeclarationPage, ManagedFEDeclarationErrorsPage, ManagedFEDeclarationNoLongerAvailablePage, ManagedFEDeclarationNonFunctionalErrorsPage, ManagedFEDepartureDeclarationsPage, ManagedFEGoodsInRecoveryDetailsPage, ManagedFEGoodsNotReleasedDetailsPage, ManagedFEPreLodgeCYA, ManagedFEPrelodgedDeclarationErrors, ManagedFEReviewCancellationErrorsPage, ManagedFEReviewDeclarationErrorsPage, ManagedFEReviewPrelodgedDeclarationErrors}
 
 object DepartureDeclarationsStepDefSteps {
 
   // ^(?:I )?(?:should )?be on the 'Departure declarations' page$
   def thenIshouldbeOnTheDepartureDeclarationsPage(): Unit = {
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
           .loadPage()
   }
 
   // ^(?:I )?click on the (.*) link for LRN (.*) on the 'Departure declarations' page
   def andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage(linkText: String, lrn: String): Unit = {
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
             .loadPage()
             .selectDepartureAction(linkText, lrn)
   }
 
   // ^(?:I )?click on the (.+) link on the 'Departure declarations' page$
   def givenIclickOnTheLinkOnTheDepartureDeclarationsPage(link: String): Unit = {
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
           .loadPage()
           .selectAction(link)
   }
 
   // ^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$
   def andIenterInTheSearchFieldOnTheDepartureDeclarationsPage(searchString: String): Unit = {
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
           .loadPage()
           .fillInput(searchString)
           .clickById("submit")
@@ -34,41 +35,41 @@ object DepartureDeclarationsStepDefSteps {
 
   // ^(?:I )?should see the content (.*) on the 'Departure declarations' page$
   def andIshouldSeeTheContentXOnTheDepartureDeclarationsPage(content: String): Unit = {
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
           .loadPage()
           .checkForContent(content)
   }
 
   // ^(?:I )?click on the (.+) link on the 'Declaration errors' page$
   def givenIclickOnTheLinkOnTheDeclarationErrorsPage(declarationLink: String): Unit = {
-    DeclarationErrorsPage
+    ManagedFEDeclarationErrorsPage
           .loadPage()
           .selectDepartureDeclarationLink(declarationLink)
   }
 
   // ^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$
   def givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage(): Unit = {
-    AmendDeclarationErrorsPage
+    ManagedFEAmendDeclarationErrorsPage
           .loadPage()
           .submitPage()
   }
 
   // ^(?:I )?click on the Amend errors button on the 'Amend guarantee errors' page$
   def givenIclickOnTheAmendErrorsButtonOnTheAmendGuaranteeErrorsPage(): Unit = {
-    AmendGuaranteeErrorsPage
+    ManagedFEAmendGuaranteeErrorsPage
           .loadPage()
           .submitPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Review declaration errors' page$
   def thenIshouldbeOnTheReviewDeclarationErrorsPage(): Unit = {
-    ReviewDeclarationErrorsPage
+    ManagedFEReviewDeclarationErrorsPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Review cancellation errors' page$
   def thenIshouldbeOnTheReviewCancellationErrorsPage(): Unit = {
-    ReviewCancellationErrorsPage
+    ManagedFEReviewCancellationErrorsPage
           .loadPage()
   }
 
@@ -80,69 +81,69 @@ object DepartureDeclarationsStepDefSteps {
 
   // ^(?:I )?(?:should )?be on the 'Declaration errors' page$
   def thenIshouldbeOnTheDeclarationErrorsPage(): Unit = {
-    DeclarationNonFunctionalErrorsPage
+    ManagedFEDeclarationNonFunctionalErrorsPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Cancellation errors' page$
   def thenIshouldbeOnTheCancellationErrorsPage(): Unit = {
-    CancellationErrorsPage
+    ManagedFECancellationErrorsPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Goods being recovered' page$
   def thenIshouldbeOnTheGoodsBeingRecoveredPage(): Unit = {
-    GoodsInRecoveryDetailsPage
+    ManagedFEGoodsInRecoveryDetailsPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Goods not released' page$
   def thenIshouldbeOnTheGoodsNotReleasedPage(): Unit = {
-    GoodsNotReleasedDetailsPage
+    ManagedFEGoodsNotReleasedDetailsPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Confirmation needed to complete pre-lodged declaration' page$
   def thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage(): Unit = {
-    ConfirmationNeededToCompleteDeclarationPage
+    ManagedFEConfirmationNeededToCompleteDeclarationPage
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the Presentation Notification 'Check your answers' page$
   def thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage(): Unit = {
-    PreLodgeCYA
+    ManagedFEPreLodgeCYA
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Prelodged declaration errors' page$
   def thenIshouldbeOnThePrelodgedDeclarationErrorsPage(): Unit = {
-    PrelodgedDeclarationErrors
+    ManagedFEPrelodgedDeclarationErrors
           .loadPage()
   }
 
   // ^(?:I )?(?:should )?be on the 'Review prelodged declaration errors' page$
   def thenIshouldbeOnTheReviewPrelodgedDeclarationErrorsPage(): Unit = {
-    ReviewPrelodgedDeclarationErrors
+    ManagedFEReviewPrelodgedDeclarationErrors
           .loadPage()
   }
 
   // ^(?:I )?click on the (.+) link on the 'Review pre-lodged declaration errors' page$
   def givenIclickOnTheLinkOnTheReviewPrelodgedDeclarationErrorsPage(declarationLink: String): Unit = {
-    ReviewPrelodgedDeclarationErrors
+    ManagedFEReviewPrelodgedDeclarationErrors
             .loadPage()
             .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }
 
   // ^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$
   def givenIclickOnTheLinkOnThePrelodgedDeclarationErrorsPage(declarationLink: String): Unit = {
-    PrelodgedDeclarationErrors
+    ManagedFEPrelodgedDeclarationErrors
           .loadPage()
           .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }
 
   // ^(?:I )?(?:should )?be on the 'This declaration is no longer available' page$
   def thenIshouldbeOnTheThisDeclarationIsNoLongerAvailablePage(): Unit = {
-    DeclarationNoLongerAvailablePage
+    ManagedFEDeclarationNoLongerAvailablePage
           .loadPage()
   }
 

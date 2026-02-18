@@ -16,68 +16,70 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import specpage.ConfirmCancellationPage
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Cancellations.ConfirmCancellationPage
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.*
+import uk.gov.hmrc.test.ui.pages.Cancellations
+import uk.gov.hmrc.test.ui.pages.Manage.*
+import uk.gov.hmrc.test.ui.pages.Manage.{ManagedFEAmendDeclarationErrorsPage, ManagedFEAmendGuaranteeErrorsPage, ManagedFECancellationErrorsPage, ManagedFEConfirmationNeededToCompleteDeclarationPage, ManagedFEDeclarationErrorsPage, ManagedFEDeclarationNoLongerAvailablePage, ManagedFEDeclarationNonFunctionalErrorsPage, ManagedFEDepartureDeclarationsPage, ManagedFEGoodsInRecoveryDetailsPage, ManagedFEGoodsNotReleasedDetailsPage, ManagedFEPreLodgeCYA, ManagedFEPrelodgedDeclarationErrors, ManagedFEReviewCancellationErrorsPage, ManagedFEReviewDeclarationErrorsPage, ManagedFEReviewPrelodgedDeclarationErrors}
 
 class DepartureDeclarationsStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(?:should )?be on the 'Departure declarations' page$""") { () =>
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
       .loadPage()
   }
 
   And("""^(?:I )?click on the (.*) link for LRN (.*) on the 'Departure declarations' page""") {
     (linkText: String, lrn: String) =>
-      DepartureDeclarationsPage
+      ManagedFEDepartureDeclarationsPage
         .loadPage()
         .selectDepartureAction(linkText, lrn)
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Departure declarations' page$""") { (link: String) =>
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
       .loadPage()
       .selectAction(link)
   }
 
   And("""^(?:I )?enter (.+) in the Search field on the 'Departure declarations' page$""") { (searchString: String) =>
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
       .loadPage()
       .fillInput(searchString)
       .clickById("submit")
   }
 
   And("""^(?:I )?should see the content (.*) on the 'Departure declarations' page$""") { (content: String) =>
-    DepartureDeclarationsPage
+    ManagedFEDepartureDeclarationsPage
       .loadPage()
       .checkForContent(content)
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Declaration errors' page$""") { (declarationLink: String) =>
-    DeclarationErrorsPage
+    ManagedFEDeclarationErrorsPage
       .loadPage()
       .selectDepartureDeclarationLink(declarationLink)
   }
 
   Given("""^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$""") { () =>
-    AmendDeclarationErrorsPage
+    ManagedFEAmendDeclarationErrorsPage
       .loadPage()
       .submitPage()
   }
 
   Given("""^(?:I )?click on the Amend errors button on the 'Amend guarantee errors' page$""") { () =>
-    AmendGuaranteeErrorsPage
+    ManagedFEAmendGuaranteeErrorsPage
       .loadPage()
       .submitPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Review declaration errors' page$""") { () =>
-    ReviewDeclarationErrorsPage
+    ManagedFEReviewDeclarationErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Review cancellation errors' page$""") { () =>
-    ReviewCancellationErrorsPage
+    ManagedFEReviewCancellationErrorsPage
       .loadPage()
   }
 
@@ -87,60 +89,60 @@ class DepartureDeclarationsStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Declaration errors' page$""") { () =>
-    DeclarationNonFunctionalErrorsPage
+    ManagedFEDeclarationNonFunctionalErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Cancellation errors' page$""") { () =>
-    CancellationErrorsPage
+    ManagedFECancellationErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Goods being recovered' page$""") { () =>
-    GoodsInRecoveryDetailsPage
+    ManagedFEGoodsInRecoveryDetailsPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Goods not released' page$""") { () =>
-    GoodsNotReleasedDetailsPage
+    ManagedFEGoodsNotReleasedDetailsPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Confirmation needed to complete pre-lodged declaration' page$""") { () =>
-    ConfirmationNeededToCompleteDeclarationPage
+    ManagedFEConfirmationNeededToCompleteDeclarationPage
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the Presentation Notification 'Check your answers' page$""") { () =>
-    PreLodgeCYA
+    ManagedFEPreLodgeCYA
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Prelodged declaration errors' page$""") { () =>
-    PrelodgedDeclarationErrors
+    ManagedFEPrelodgedDeclarationErrors
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'Review prelodged declaration errors' page$""") { () =>
-    ReviewPrelodgedDeclarationErrors
+    ManagedFEReviewPrelodgedDeclarationErrors
       .loadPage()
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Review pre-lodged declaration errors' page$""") {
     (declarationLink: String) =>
-      ReviewPrelodgedDeclarationErrors
+      ManagedFEReviewPrelodgedDeclarationErrors
         .loadPage()
         .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Prelodged declaration errors' page$""") { (declarationLink: String) =>
-    PrelodgedDeclarationErrors
+    ManagedFEPrelodgedDeclarationErrors
       .loadPage()
       .selectPrelodgeDepartureDeclarationLink(declarationLink)
   }
 
   Then("""^(?:I )?(?:should )?be on the 'This declaration is no longer available' page$""") { () =>
-    DeclarationNoLongerAvailablePage
+    ManagedFEDeclarationNoLongerAvailablePage
       .loadPage()
   }
 }

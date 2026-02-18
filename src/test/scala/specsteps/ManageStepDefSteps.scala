@@ -1,6 +1,5 @@
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Manage.*
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{ForYourSecuritySignedOutPage, GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage}
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 object ManageStepDefSteps {
@@ -25,25 +24,25 @@ object ManageStepDefSteps {
 
   // ^(?:I )?should be on the 'Goods under control - document requested' page$
   def thenIshouldBeOnTheGoodsUnderControlDocumentRequestedPage(): Unit = {
-    GoodsUnderControlDocumentsRequestedPage
+    ManagedFEGoodsUnderControlDocumentsRequestedPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'Goods under control' page$
   def thenIshouldBeOnTheGoodsUnderControlPage(): Unit = {
-    GoodsUnderControlPage
+    ManagedFEGoodsUnderControlPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$
   def thenIshouldBeOnTheIntentionToControlCompletePrelodgedDeclarationPage(): Unit = {
-    PreLodgedGoodsUnderControlPage
+    ManagedFEPreLodgedGoodsUnderControlPage
           .loadPage()
   }
 
   // ^(?:I )?should be on the 'For your security we signed you out' page$
   def thenIshouldBeOnTheForYourSecurityWeSignedYouOutPage(): Unit = {
-    ForYourSecuritySignedOutPage
+    ManagedFEForYourSecuritySignedOutPage
           .loadPage()
   }
 

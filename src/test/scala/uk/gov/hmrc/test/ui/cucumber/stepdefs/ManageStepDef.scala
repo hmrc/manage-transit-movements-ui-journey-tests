@@ -18,7 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Manage.*
-import uk.gov.hmrc.test.ui.pages.Manage.ManageDepartures.{ForYourSecuritySignedOutPage, GoodsUnderControlDocumentsRequestedPage, GoodsUnderControlPage, PreLodgedGoodsUnderControlPage}
 import uk.gov.hmrc.test.ui.utils.ApiHelper
 
 class ManageStepDef extends BaseStepDef {
@@ -39,22 +38,22 @@ class ManageStepDef extends BaseStepDef {
   }
 
   Then("""^(?:I )?should be on the 'Goods under control - document requested' page$""") { () =>
-    GoodsUnderControlDocumentsRequestedPage
+    ManagedFEGoodsUnderControlDocumentsRequestedPage
       .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'Goods under control' page$""") { () =>
-    GoodsUnderControlPage
+    ManagedFEGoodsUnderControlPage
       .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'Intention to control - complete pre-lodged declaration' page$""") { () =>
-    PreLodgedGoodsUnderControlPage
+    ManagedFEPreLodgedGoodsUnderControlPage
       .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'For your security we signed you out' page$""") { () =>
-    ForYourSecuritySignedOutPage
+    ManagedFEForYourSecuritySignedOutPage
       .loadPage()
   }
 

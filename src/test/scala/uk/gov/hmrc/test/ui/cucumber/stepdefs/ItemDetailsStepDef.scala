@@ -20,7 +20,7 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AdditionalInformationTypePage, *}
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference, AdditionalReferenceAllItemsAddAnotherPage, AdditionalReferenceAllItemsRemovePage}
 import uk.gov.hmrc.test.ui.pages.Departures.Items.*
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.AddNewConsignmentAdditionalReferenceNumberPage
+import uk.gov.hmrc.test.ui.pages.Unloading.UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage
 
 class ItemDetailsStepDef extends BaseStepDef {
 
@@ -384,7 +384,7 @@ class ItemDetailsStepDef extends BaseStepDef {
 
   And("""^(?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page$""") {
     (answer: String) =>
-      AddNewConsignmentAdditionalReferenceNumberPage
+      UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage
         .loadPage()
         .fillInput(answer)
         .submitPage()

@@ -2,7 +2,7 @@ import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalInformation.{AdditionalInformationTypePage, *}
 import uk.gov.hmrc.test.ui.pages.Departures.AdditionalReference.{AddAnotherPageAdditionalReference, AddPageAdditionalReference, AdditionalReferenceAllItemsAddAnotherPage, AdditionalReferenceAllItemsRemovePage}
 import uk.gov.hmrc.test.ui.pages.Departures.Items.*
-import uk.gov.hmrc.test.ui.pages.Unloading.CrossCheckPagePages.AddNewConsignmentAdditionalReferenceNumberPage
+import uk.gov.hmrc.test.ui.pages.Unloading.UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage
 
 object ItemDetailsStepDefSteps {
 
@@ -378,7 +378,7 @@ object ItemDetailsStepDefSteps {
 
   // ^(?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page$
   def andIenterAdditionalReferenceXOnTheWhatIsTheAdditionalReferenceNumberPage(answer: String): Unit = {
-    AddNewConsignmentAdditionalReferenceNumberPage
+    UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage
             .loadPage()
             .fillInput(answer)
             .submitPage()

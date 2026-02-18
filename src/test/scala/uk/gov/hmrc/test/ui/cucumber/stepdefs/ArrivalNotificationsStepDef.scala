@@ -17,75 +17,76 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
-import uk.gov.hmrc.test.ui.pages.Manage.ManageArrivals.*
+import uk.gov.hmrc.test.ui.pages.Manage.*
+import uk.gov.hmrc.test.ui.pages.Manage.{ManagedFEArrivalNotificationNotAvailablePage, ManagedFEArrivalNotificationsPage, ManagedFENotificationErrorsPage, ManagedFEReviewNotificationErrorsPage, ManagedFEReviewUnloadingRemarksErrorsPage, ManagedFEUnloadingRemarksErrors}
 
 class ArrivalNotificationsStepDef extends BaseStepDef {
 
   Then("""^(?:I )?(?:should )?be on the 'Arrival notifications' page$""") { () =>
-    ArrivalNotificationsPage
+    ManagedFEArrivalNotificationsPage
       .loadPage()
   }
 
   And("""^(?:I )?click on the (.*) link for MRN (.*) on the 'Arrival notifications' page$""") {
     (linkText: String, mrn: String) =>
-      ArrivalNotificationsPage
+      ManagedFEArrivalNotificationsPage
         .loadPage()
         .selectArrivalAction(linkText, mrn)
   }
 
   And("""^(?:I )?click on the Make unloading remarks on the 'Review unloading remarks errors' page$""") { () =>
-    ReviewUnloadingRemarksErrorsPage
+    ManagedFEReviewUnloadingRemarksErrorsPage
       .clickById("submit")
   }
 
   Given("""^(?:I )?click on the (.+) link on the 'Arrival notifications' page$""") { (link: String) =>
-    ArrivalNotificationsPage
+    ManagedFEArrivalNotificationsPage
       .loadPage()
       .selectAction(link)
   }
 
   And("""^(?:I )?enter (.+) in the Search field on the 'Arrival notifications' page$""") { (searchString: String) =>
-    ArrivalNotificationsPage
+    ManagedFEArrivalNotificationsPage
       .loadPage()
       .fillInput(searchString)
       .clickById("submit")
   }
 
   And("""^(?:I )?should see the content (.*) on the 'Arrival notifications' page$""") { (content: String) =>
-    ArrivalNotificationsPage
+    ManagedFEArrivalNotificationsPage
       .loadPage()
       .checkForContent(content)
   }
 
   Then("""^(?:I )?should be on the 'Review notification errors' page$""") { () =>
-    ReviewNotificationErrorsPage
+    ManagedFEReviewNotificationErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?click on the Make another arrival notification link on the 'Review notification errors' page$""") {
     () =>
-      ReviewNotificationErrorsPage
+      ManagedFEReviewNotificationErrorsPage
         .loadPage()
         .clickById("arrival-link")
   }
 
   Then("""^(?:I )?should be on the 'Notification errors' page$""") { () =>
-    NotificationErrorsPage
+    ManagedFENotificationErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'Review unloading remarks errors' page$""") { () =>
-    ReviewUnloadingRemarksErrorsPage
+    ManagedFEReviewUnloadingRemarksErrorsPage
       .loadPage()
   }
 
   Then("""^(?:I )?should be on the 'Unloading remarks errors' page$""") { () =>
-    UnloadingRemarksErrors
+    ManagedFEUnloadingRemarksErrors
       .loadPage()
   }
 
   Then("""^(?:I )?(?:should )?be on the 'This arrival notification is no longer available' page$""") { () =>
-    ArrivalNotificationNotAvailablePage
+    ManagedFEArrivalNotificationNotAvailablePage
       .loadPage()
   }
 
