@@ -4,7 +4,7 @@ import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges.
 object TransportEquipmentChargesStepDefSteps {
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'DoYouWantToAddAnyTransportEquipment\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage(answer: String): Unit = {
     AddTransportEquipmentPage
             .loadPage()
             .select(answer)
@@ -12,7 +12,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a container identification number\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'DoYouWantToAddAContainerIdentificationNumber\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAContainerIdentificationNumberPage(answer: String): Unit = {
     AddContainerIdentificationNumberPage
             .loadPage()
             .select(answer)
@@ -20,7 +20,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'DoYouWantToAddASeal\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddASealPage(answer: String): Unit = {
     AddSealPage
           .loadPage()
           .select(answer)
@@ -28,7 +28,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a goods item number\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'DoYouWantToAddAGoodsItemNumber\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAGoodsItemNumberPage(answer: String): Unit = {
     AddGoodsItemNumberPage
             .loadPage()
             .select(answer)
@@ -36,28 +36,28 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?click the (.*) link on the 'You have added (.*) transport equipment' page$
-  def and(?I)?clickTheXLinkOnThe'YouHaveAddedXTransportEquipment'Page(sectionLink: String, numberOfContainers: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage(sectionLink: String, numberOfContainers: String): Unit = {
     AddAnotherContainerPage
             .loadPage(numberOfContainers)
             .clickByPartialLinkText(sectionLink)
   }
 
   // ^(?:I )?click the (.*) link  on the 'You have added (.*) seals?' page$
-  def and(?I)?clickTheXLinkOnThe'YouHaveAddedXSeals?'Page(sectionLink: String, numberOfSeals: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXSealsPage(sectionLink: String, numberOfSeals: String): Unit = {
     AddAnotherSealPage
             .loadPage(numberOfSeals)
             .clickByPartialLinkText(sectionLink)
   }
 
   // ^(?:I )?click the (.*) link on the 'You have added (.*) goods item numbers?' page$
-  def and(?I)?clickTheXLinkOnThe'YouHaveAddedXGoodsItemNumbers?'Page(sectionLink: String, numberOfGoodsItems: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXGoodsItemNumbersPage(sectionLink: String, numberOfGoodsItems: String): Unit = {
     AddAnotherGoodsItemPage
             .loadPage(numberOfGoodsItems)
             .clickByPartialLinkText(sectionLink)
   }
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) transport equipment' page$
-  def and(?I)?chooseRadioOptionXOnThe'YouHaveAddedXTransportEquipment'Page(answer: String, numberOfContainers: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage(answer: String, numberOfContainers: String): Unit = {
     AddAnotherContainerPage
             .loadPage(numberOfContainers)
             .select(answer)
@@ -65,7 +65,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) seals?' page$
-  def and(?I)?chooseRadioOptionXOnThe'YouHaveAddedXSeals?'Page(answer: String, numberOfSeals: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage(answer: String, numberOfSeals: String): Unit = {
     AddAnotherSealPage
             .loadPage(numberOfSeals)
             .select(answer)
@@ -73,7 +73,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) goods item numbers?' page$
-  def and(?I)?chooseRadioOptionXOnThe'YouHaveAddedXGoodsItemNumbers?'Page(answer: String, numberOfGoodsItems: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXGoodsItemNumbersPage(answer: String, numberOfGoodsItems: String): Unit = {
     AddAnotherGoodsItemPage
             .loadPage(numberOfGoodsItems)
             .select(answer)
@@ -81,7 +81,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the 'What is the container identification number\?' page$
-  def and(?I)?enter(.+)OnThe'WhatIsTheContainerIdentificationNumber\?'Page(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheContainerIdentificationNumberPage(answer: String): Unit = {
     ContainerIdentificationNumberPage
           .loadPage()
           .fillInput(answer)
@@ -89,7 +89,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?enter (.+) on the 'What is the seal identification number\?' page$
-  def and(?I)?enter(.+)OnThe'WhatIsTheSealIdentificationNumber\?'Page(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheSealIdentificationNumberPage(answer: String): Unit = {
     SealIdentificationNumberPage
           .loadPage()
           .fillInput(answer)
@@ -97,7 +97,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?enter (.*) on the 'What is the goods item number\?' page$
-  def and(?I)?enterXOnThe'WhatIsTheGoodsItemNumber\?'Page(answer: String): Unit = {
+  def andIenterXOnTheWhatIsTheGoodsItemNumberPage(answer: String): Unit = {
     GoodsItemPage
           .loadPage()
           .fillInput(answer)
@@ -105,7 +105,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove transport equipment (.*)\?' page$
-  def and(?I)?clickRadioOptionXOnThe'AreYouSureYouWantToRemoveTransportEquipmentX\?'Page(answer: String, containerIdNumber: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage(answer: String, containerIdNumber: String): Unit = {
     RemoveContainerPage
             .loadPage(containerIdNumber)
             .select(answer)
@@ -113,7 +113,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this seal\?' page$
-  def and(?I)?clickRadioOptionXOnThe'AreYouSureYouWantToRemoveThisSeal\?'Page(answer: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSealpage(answer: String): Unit = {
     RemoveSealPage
             .loadPage()
             .select(answer)
@@ -121,7 +121,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove goods item number (.*)\?' page$
-  def and(?I)?clickRadioOptionXOnThe'AreYouSureYouWantToRemoveGoodsItemNumberX\?'Page(answer: String, goodsIdNumber: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveGoodsItemNumberXPage(answer: String, goodsIdNumber: String): Unit = {
     RemoveGoodsItemPage
             .loadPage(goodsIdNumber)
             .select(answer)
@@ -129,7 +129,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a method of payment for transport charges\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'DoYouWantToAddAMethodOfPaymentForTransportCharges\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage(answer: String): Unit = {
     AddPaymentMethodPage
           .loadPage()
           .select(answer)
@@ -137,7 +137,7 @@ object TransportEquipmentChargesStepDefSteps {
   }
 
   // ^(?:I )?choose radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$
-  def and(?I)?chooseRadioOptionXOnThe'WhichMethodOfPaymentDoYouWantToUseForTransportCharges\?'Page(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhichMethodOfPaymentDoYouWantToUseForTransportChargesPage(answer: String): Unit = {
     MethodOfPaymentPage
           .loadPage()
           .select(answer)
