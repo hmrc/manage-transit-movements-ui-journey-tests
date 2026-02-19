@@ -1,3 +1,12 @@
+import DraftDepartureDeclarationsStepDefSteps.*
+import ManageStepDefSteps.*
+import PreTaskListStepDefSteps.*
+import TaskListStepDefSteps.*
+import Departure_GuaranteeDetailsStepDefSteps.*
+import CommonStepDefSteps.*
+import CYAStepDefSteps.*
+import DepartureDeclarationsStepDefSteps.*
+import PresentationNotificationStepDefSteps.*
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
@@ -11,10 +20,11 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
     Scenario("01 - Trader is able to make a departure declaration from home page") {
       When("I click on the Make a departure declaration link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Make a departure declaration")
 
       Then("I should be on the What is the Local Reference Number? page")
         // ⚠️ No step-def match found for: I should be on the What is the Local Reference Number? page
+        thenIshouldBeOnTheWhatIsTheLocalReferenceNumberPage()
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -25,41 +35,41 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
     Scenario("02 - Trader is able to view a draft departure declaration and delete it") {
       When("I click on the Make a departure declaration link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Make a departure declaration")
 
       Then("I enter 1234567890ABCDEFGHIJKL on the What is the Local Reference Number? page")
         // Possible match (best=0.79)
-        thenIenterOnTheWhatIsTheLocalReferenceNumberPage("")
+        thenIenterOnTheWhatIsTheLocalReferenceNumberPage("1234567890ABCDEFGHIJKL")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I choose radio option A on the Is this a standard or pre-lodged declaration? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheIsThisAStandardOrPrelodgedDeclarationPage("")
+        andIchooseRadioOptionXOnTheIsThisAStandardOrPrelodgedDeclarationPage("A")
 
       And("I select XI on the Where is the office of departure? page")
         // Possible match (best=0.85)
-        andIselectOnTheWhereIsTheOfficeOfDeparturePage("")
+        andIselectOnTheWhereIsTheOfficeOfDeparturePage("XI")
 
       And("I choose radio option Normal on the Which type of procedure are you using? page")
         // Possible match (best=0.80)
-        andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("")
+        andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Normal")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage() [0.76] (IdentificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page
 
       And("I choose radio option TIR on the Which type of declaration do you want to create? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage("")
+        andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage("TIR")
 
       And("I enter 1234567 on the What is the TIR carnet reference? page")
         // Possible match (best=0.79)
-        andIenterOnTheWhatIsTheTIRCarnetReferencePage("")
+        andIenterOnTheWhatIsTheTIRCarnetReferencePage("1234567")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I choose radio option Exit summary declaration (EXS) on the Which type of safety and security details do you want to add? page")
         // Possible match (best=0.85)
-        andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("")
+        andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("Exit summary declaration (EXS)")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheWhichTypeOfAuthorisationDoYouWantToAddPage() [0.81] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which type of authorisation do you want to add' page
         // andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage() [0.81] (PreTaskListStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which type of declaration do you want to create\?' page
@@ -84,7 +94,7 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click the Add guarantee details link on the Declaration summary page")
         // Possible match (best=0.93)
-        thenIclickTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
         // --- Other possible matches ---
         // thenIclickOnTheLinkOnTheDeclarationSummaryPage() [0.79] (TaskListStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration summary' page
 
@@ -94,26 +104,26 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the Back to transit movements link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Back to transit movements ")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDraftDepartureDeclarationsPage() [0.79] (DraftDepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Draft departure declarations' page
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Delete link on the Draft departure declarations page")
         // Possible match (best=0.94)
-        givenIclickOnTheLinkOnTheDraftDepartureDeclarationsPage("")
+        givenIclickOnTheLinkOnTheDraftDepartureDeclarationsPage("Delete")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click radio option Yes on the Are you sure you want to delete this declaration? page")
         // Possible match (best=0.81)
-        andIclickRadioOptionXOnTheAreYouSureYouWantToDeleteThisDeclarationPage("")
+        andIclickRadioOptionXOnTheAreYouSureYouWantToDeleteThisDeclarationPage("Yes")
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -136,18 +146,19 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       Then("I should be on the Goods under control - document requested page")
         // ⚠️ No step-def match found for: I should be on the Goods under control - document requested page
+        thenIshouldBeOnTheGoodsUnderControlDocumentRequestedPage()
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -170,13 +181,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -205,13 +216,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
@@ -245,13 +256,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -292,13 +303,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -308,6 +319,8 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       Then("I should be on the What is the new Local Reference Number? page")
         // ⚠️ No step-def match found for: I should be on the What is the new Local Reference Number? page
+        thenIshouldBeOnTheWhatIsTheLocalReferenceNumberPage()
+
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -334,13 +347,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
@@ -374,13 +387,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
@@ -410,18 +423,20 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I should be on the Are you sure you want to cancel this declaration? page")
         // ⚠️ No step-def match found for: I should be on the Are you sure you want to cancel this declaration? page
+        thenIshouldbeOnTheAreYouSureYouWantToCancelThisDeclarationPage()
+
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -444,13 +459,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -479,13 +494,13 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -514,18 +529,19 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       Then("I should be on the More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the More information needed to complete pre-lodged declaration page
+        andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
     }
 
@@ -552,18 +568,19 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       Then("I should be on the More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the More information needed to complete pre-lodged declaration page
+      andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
     }
 
@@ -582,21 +599,23 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       Then("I should be on the Confirmation needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the Confirmation needed to complete pre-lodged declaration page
+      thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       And("I click the Continue button on the presentation Confirmation needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I click the Continue button on the presentation Confirmation needed to complete pre-lodged declaration page
+        andIclickTheContinueButtonOnThePresentationMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       Then("I should be on the Presentation Notification Check your answers page")
         // Possible match (best=1.00)
@@ -623,18 +642,19 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       Then("I should be on the Intention to control - complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the Intention to control - complete pre-lodged declaration page
+      thenIshouldBeOnTheIntentionToControlCompletePrelodgedDeclarationPage()
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -665,26 +685,27 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
 
       And("I click on the Complete pre-lodged declaration link on the Prelodged declaration errors page")
         // Possible match (best=0.94)
-        givenIclickOnTheLinkOnThePrelodgedDeclarationErrorsPage("")
+        givenIclickOnTheLinkOnThePrelodgedDeclarationErrorsPage("Complete pre-lodged declaration")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
         // givenIclickOnTheLinkOnTheReviewPrelodgedDeclarationErrorsPage() [0.75] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Review pre-lodged declaration errors' page
 
       Then("I should be on the Confirmation needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the Confirmation needed to complete pre-lodged declaration page
+        thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -715,25 +736,26 @@ class ManageTransitMovementsDeparturesSpec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors ", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
 
       And("I click on the Complete pre-lodged declaration link on the Review pre-lodged declaration errors page")
         // Possible match (best=0.80)
-        givenIclickOnTheLinkOnTheReviewPrelodgedDeclarationErrorsPage("")
+        givenIclickOnTheLinkOnTheReviewPrelodgedDeclarationErrorsPage("Complete pre-lodged declaration")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
 
       Then("I should be on the Confirmation needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I should be on the Confirmation needed to complete pre-lodged declaration page
+        thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
         // Possible match (best=1.00)
