@@ -8,7 +8,7 @@ object LoginStepDefSteps {
   var departureId: String = ""
   var lrn: String         = ""
 
-  // ^I login with ID (.*)$
+  // ^I login with IDX (.*)$
   def andILoginWithIDX(id: String): Unit = {
     AuthorityWizardPage
           .loadPage()
