@@ -1,3 +1,11 @@
+import ManageStepDefSteps.*
+import PresentationNotificationStepDefSteps.*
+import CYAStepDefSteps.*
+import CommonStepDefSteps.*
+import DepartureDeclarationsStepDefSteps.*
+import RouteDetailsLocationOfGoodsStepDefSteps.*
+import BorderMeansOfTransportStepDefSteps.*
+import UnloadingStepDefSteps.*
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
@@ -22,22 +30,23 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click the Continue button on the presentation More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I click the Continue button on the presentation More information needed to complete pre-lodged declaration page
+        andIclickTheContinueButtonOnThePresentationMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I enter GBDEPE201HZ on the presentation What is the authorisation number for the location of goods? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage("")
+        andIenterOnThePresentationWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage("GBDEPE201HZ")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the authorisation number for the location of goods\?' page
 
@@ -55,7 +64,7 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I enter x9x9 on the presentation What is the additional identifier for the location of goods? page")
         // Possible match (best=0.85)
-        andIenterOnTheWhatIsTheAdditionalIdentifierForTheLocationOfGoodsPage("")
+        andIenterOnTheWhatIsTheAdditionalIdentifierForTheLocationOfGoodsPage("x9x9")
         // --- Other possible matches ---
         // andIenterOnThePresentationWhatIsTheAdditionalIdentifierForTheLocationOfGoodsPage() [0.85] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter (.+) on the presentation 'What is the additional identifier for the location of goods\?' page
         // andIenterXOnTheEnterADescriptionOfItemXPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?enter (.*) on the 'Enter a description of item (.*)' page
@@ -69,7 +78,7 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I choose radio option Yes on the presentation Do you want to add a contact for the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage("Yes")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage() [0.82] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the location of goods\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page
@@ -84,13 +93,13 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I enter Locator Joe on the presentation Who is the contact for the location of goods? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhoIsTheContactForTheLocationOfGoodsPage("")
+        andIenterOnThePresentationWhoIsTheContactForTheLocationOfGoodsPage("Locator Joe")
         // --- Other possible matches ---
         // andIenterOnTheWhoIsTheContactForTheLocationOfGoodsPage() [0.80] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'Who is the contact for the location of goods\?' page
 
       And("I enter +432 1212 1212 on the presentation What is the phone number for the location of goods’ contact? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhatIsThePhoneNumberForTheLocationOfGoodsContactPage("")
+        andIenterOnThePresentationWhatIsThePhoneNumberForTheLocationOfGoodsContactPage("+432 1212 1212")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsThePhoneNumberForTheLocationOfGoodsContactPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the phone number for the location of goods’ contact\?' page
         // andIenterOnThePresentationWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage() [0.77] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter (.+) on the presentation 'What is the authorisation number for the location of goods\?' page
@@ -102,7 +111,7 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I choose radio option Yes on the presentation Do you want to add a UN LOCODE for the place of loading? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("Yes")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage() [0.82] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of loading\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfLoadingPage() [0.81] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a place of loading\?' page
@@ -115,14 +124,14 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I enter DEAAL on the presentation What is the UN LOCODE for the place of loading? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhatIsTheUNLOCODEForThePlaceOfLoadingPage("")
+        andIenterOnThePresentationWhatIsTheUNLOCODEForThePlaceOfLoadingPage("DEAAL")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheUNLOCODEForThePlaceOfLoadingPage() [0.81] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the UN LOCODE for the place of loading\?' page
         // andIenterOnTheWhatIsTheUNLOCODEForThePlaceOfUnloadingPage() [0.76] (RouteDetailsPlaceOfUnloadingStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the UN LOCODE for the place of unloading\?' page
 
       And("I choose radio option Yes on the presentation Do you want to add extra information for the place of loading? page")
         // Possible match (best=0.90)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddExtraInformationForThePlaceOfLoadingPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddExtraInformationForThePlaceOfLoadingPage("Yes")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfLoadingPage() [0.85] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a place of loading\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage() [0.83] (RouteDetailsTransitStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a time of arrival in (.*)\?' page
@@ -151,39 +160,39 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select United Kingdom on the presentation In which country is the place of loading? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("")
+        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheInWhichCountryIsThePlaceOfLoadingPage() [0.80] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'In which country is the place of loading\?' page
         // andIselectOnTheWhichCountryIsThePlaceOfUnloadingInPage() [0.75] (RouteDetailsPlaceOfUnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which country is the place of unloading in\?' page
 
       And("I enter London on the presentation Where in United Kingdom is the place of loading? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("", "")
+        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("London", "United Kingdom")
 
       And("I enter the date on the presentation When do you expect the transit to arrive in Nancy bureau (FR003000)? page")
         // Possible match (best=1.00)
-        andIenterTheDateOnThePresentationWhenDoYouExpectTheTransitToArriveInXPage("")
+        andIenterTheDateOnThePresentationWhenDoYouExpectTheTransitToArriveInXPage("Nancy bureau (FR003000)")
         // --- Other possible matches ---
         // andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage() [0.90] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page
         // andIchooseFillInTheDateAndTimeOnTheWhenDoYouExpectTheTransitToArriveInXXPage() [0.77] (RouteDetailsTransitStepDefSteps.scala) pattern: (?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)\?' page
 
       And("I choose radio option Yes on the presentation Are you using any shipping containers to transport the goods? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("")
+        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("Yes")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheAreYouUsingAnyShippingContainersToTransportTheGoodsPage() [0.81] (TransportDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page
 
       And("I choose radio Maritime Transport on the presentation How is the transit crossing the border? page")
         // Possible match (best=0.80)
-        andIchooseRadioXOnThePresentationHowIsTheTransitCrossingTheBorderPage("")
+        andIchooseRadioXOnThePresentationHowIsTheTransitCrossingTheBorderPage("Maritime Transport")
 
       And("I choose radio Name of the sea-going vessel on the presentation inland mode Which identification do you want to use for this vehicle? page")
         // Possible match (best=0.82)
-        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("")
+        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("Name of the sea-going vessel")
 
       And("I enter identification number 5h1p1nn on What is the identification number for this? page")
         // Possible match (best=0.80)
-        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("")
+        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("5h1p1nn")
         // --- Other possible matches ---
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this\?' page
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisVehiclePage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this vehicle\?' page
@@ -198,38 +207,38 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select Nancy bureau (FR003000) on Where is the customs office at the border? page")
         // Possible match (best=0.80)
-        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("")
+        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Nancy bureau (FR003000)")
         // --- Other possible matches ---
         // andIselectOnWhereIsTheCustomsOfficeAtTheBorderPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?select (.+) on 'Where is the customs office at the border\?' page
 
       And("I choose radio Yes on the presentation Do you want to add a conveyance reference number? page")
         // Possible match (best=0.81)
-        andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("")
+        andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("Yes")
 
       And("I enter conveyance reference number 123456123456 on the What is the conveyance reference number? page")
         // Possible match (best=0.80)
-        andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("")
+        andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("123456123456")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I choose radio Yes on the presentation You have added 1 border means of transport page")
         // Possible match (best=0.91)
-        whenIchooseRadioXOnThePresentationYouHaveAddedXBorderMeansOfTransportPage("", "")
+        whenIchooseRadioXOnThePresentationYouHaveAddedXBorderMeansOfTransportPage("Yes", "1")
 
       And("I choose radio IATA flight number on the presentation inland mode Which identification do you want to use for this vehicle? page")
         // Possible match (best=0.82)
-        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("")
+        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("IATA flight number")
 
       And("I enter identification number YATA010 on What is the identification number for this? page")
         // Possible match (best=0.80)
-        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("")
+        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("YATA010")
         // --- Other possible matches ---
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this\?' page
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisVehiclePage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this vehicle\?' page
 
       And("I select United Kingdom on the active border mode What country is this vehicle registered to? page")
         // Possible match (best=0.81)
-        andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("")
+        andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage() [0.80] (BorderMeansOfTransportStepDefSteps.scala) pattern: (?:I )?select (.+) on the border mode 'What country is this vehicle registered to\?' page
         // andIselectOnTheWhatCountryIsThisVehicleRegisteredToPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'What country is this vehicle registered to\?' page
@@ -237,63 +246,63 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select Nancy bureau (FR003000) on Where is the customs office at the border? page")
         // Possible match (best=0.80)
-        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("")
+        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Nancy bureau (FR003000)")
         // --- Other possible matches ---
         // andIselectOnWhereIsTheCustomsOfficeAtTheBorderPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?select (.+) on 'Where is the customs office at the border\?' page
 
       And("I choose radio No on the presentation Do you want to add a conveyance reference number? page")
         // Possible match (best=0.81)
-        andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("")
+        andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("No")
 
       And("I click the Remove link on the You have added 2 border means of transport page")
         // Possible match (best=0.91)
-        andIclickTheXLinkOnTheYouHaveAddedXBorderMeansOfTransportPage("", "")
+        andIclickTheXLinkOnTheYouHaveAddedXBorderMeansOfTransportPage("Remove", "2")
 
       And("I click radio Yes on the Are you sure you want to remove border means of transport 1? page")
         // Possible match (best=0.93)
-        andIclickRadioXOnTheAreYouSureYouWantToRemoveBorderMeansOfTransportXPage("", "")
+        andIclickRadioXOnTheAreYouSureYouWantToRemoveBorderMeansOfTransportXPage("Yes", "1")
         // --- Other possible matches ---
         // andIselectRadioOptionXOnTheAreYouSureYouWantToRemoveBorderMeansOfTransportXPage() [0.76] (BorderMeansOfTransportStepDefSteps.scala) pattern: (?:I )?select radio option (.*) on the 'Are you sure you want to remove border means of transport (.*)\?' page
 
       And("I choose radio No on the presentation You have added 1 border means of transport page")
         // Possible match (best=0.91)
-        whenIchooseRadioXOnThePresentationYouHaveAddedXBorderMeansOfTransportPage("", "")
+        whenIchooseRadioXOnThePresentationYouHaveAddedXBorderMeansOfTransportPage("No", "1")
 
       And("I enter C001 on the presentation What is the container identification number? page")
         // Possible match (best=0.80)
-        andIenterOnThePresentationWhatIsTheContainerIdentificationNumberPage("")
+        andIenterOnThePresentationWhatIsTheContainerIdentificationNumberPage("C001")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheContainerIdentificationNumberPage() [0.79] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the container identification number\?' page
 
       And("I click radio Yes on the presentation Do you want to add a seal? page")
         // Possible match (best=0.80)
-        andIclickRadioXOnThePresentationDoYouWantToAddASealPage("")
+        andIclickRadioXOnThePresentationDoYouWantToAddASealPage("Yes")
 
       And("I enter S001 on the presentation What is the seal identification number? page")
         // Possible match (best=0.80)
-        andIenterOnThePresentationWhatIsTheSealIdentificationNumberPage("")
+        andIenterOnThePresentationWhatIsTheSealIdentificationNumberPage("S001")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheSealIdentificationNumberPage() [0.79] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the seal identification number\?' page
 
       And("I choose radio Yes on the presentation You have added 1 seal page")
         // Possible match (best=0.89)
-        whenIchooseRadioXOnThePresentationYouHaveAddedXSealPage("", "")
+        whenIchooseRadioXOnThePresentationYouHaveAddedXSealPage("Yes", "1")
 
       And("I enter S002 on the presentation What is the seal identification number? page")
         // Possible match (best=0.80)
-        andIenterOnThePresentationWhatIsTheSealIdentificationNumberPage("")
+        andIenterOnThePresentationWhatIsTheSealIdentificationNumberPage("S002")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheSealIdentificationNumberPage() [0.79] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the seal identification number\?' page
 
       And("I click the Remove link on the presentation You have added 2 seals page")
         // Possible match (best=0.90)
-        andIclickTheXLinkOnThePresentationYouHaveAddedXSealsPage("", "")
+        andIclickTheXLinkOnThePresentationYouHaveAddedXSealsPage("Remove", "2")
         // --- Other possible matches ---
         // andIclickTheXLinkOnTheYouHaveAddedXSealsPage() [0.79] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?click the (.*) link  on the 'You have added (.*) seals?' page
 
       And("I click radio option Yes on the presentation Are you sure you want to remove this seal? page")
         // Possible match (best=0.81)
-        andIclickRadioOptionXOnThePresentationAreYouSureYouWantToRemoveThisSealPage("")
+        andIclickRadioOptionXOnThePresentationAreYouSureYouWantToRemoveThisSealPage("Yes")
         // --- Other possible matches ---
         // andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSealpage() [0.81] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Are you sure you want to remove this seal\?' page
         // andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveItemXPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)\?' page
@@ -302,29 +311,31 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I choose radio No on the presentation You have added 1 seal page")
         // Possible match (best=0.89)
-        whenIchooseRadioXOnThePresentationYouHaveAddedXSealPage("", "")
+        whenIchooseRadioXOnThePresentationYouHaveAddedXSealPage("No", "1")
 
       And("I select item1 on the presentation Which items does this transport equipment apply to? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("")
+        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("item1")
         // --- Other possible matches ---
         // andIselectOnTheWhichItemDoesThisTransportEquipmentApplyToPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which item does this transport equipment apply to\?' page
 
       And("I choose radio Yes on the presentation You have applied 1 item to transport equipment 1 page")
         // ⚠️ No step-def match found for: I choose radio Yes on the presentation You have applied 1 item to transport equipment 1 page
+        andIchooseRadioXOnThePresentationYouHaveAppliedXItemsToTransportEquipmentXPage("Yes", "1","1")
 
       And("I select item2 on the presentation Which items does this transport equipment apply to? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("")
+        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("item2")
         // --- Other possible matches ---
         // andIselectOnTheWhichItemDoesThisTransportEquipmentApplyToPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which item does this transport equipment apply to\?' page
 
       And("I click the Remove link on the You have applied 2 item to transport equipment 1 page")
         // ⚠️ No step-def match found for: I click the Remove link on the You have applied 2 item to transport equipment 1 page
-
+        andIclickXOnYouHaveAppliedXItemToTransportEquipmentXPage("Remove", "2", "1")
+      
       And("I choose radio option Yes for the Are you sure you want to remove this item from transport equipment 1? page")
         // Possible match (best=0.93)
-        andIchooseRadioOptionXForTheAreYouSureYouWantToRemoveThisItemFromTransportEquipmentPage("", "")
+        andIchooseRadioOptionXForTheAreYouSureYouWantToRemoveThisItemFromTransportEquipmentPage("Yes", "1")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisItemFromTransportEquipmentPage() [0.83] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Are you sure you want to remove this item from transport equipment (.+)\?' page
         // andIchooseRadioOptionXOnAreYouSureYouWantToRemoveThisSealFromTransportEquipmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on 'Are you sure you want to remove this seal from transport equipment (.*)\?' page
@@ -334,49 +345,51 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I choose radio No on the presentation You have applied 1 item to transport equipment 1 page")
         // ⚠️ No step-def match found for: I choose radio No on the presentation You have applied 1 item to transport equipment 1 page
+        andIchooseRadioXOnThePresentationYouHaveAppliedXItemsToTransportEquipmentXPage("No", "1", "1")
 
       And("I choose radio option Yes on the presentation You have added 1 transport equipment page")
         // Possible match (best=0.91)
-        andIchooseRadioOptionXOnThePresentationYouHaveAddedXTransportEquipmentPage("", "")
+        andIchooseRadioOptionXOnThePresentationYouHaveAddedXTransportEquipmentPage("Yes", "1")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage() [0.80] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) transport equipment' page
 
       And("I click radio No on the presentation Do you want to add a container identification number? page")
         // Possible match (best=0.81)
-        andIclickRadioXOnThePresentationDoYouWantToAddAContainerIdentificationNumberPage("")
+        andIclickRadioXOnThePresentationDoYouWantToAddAContainerIdentificationNumberPage("No")
         // --- Other possible matches ---
         // andIclickRadioXOnThePresentationDoYouWantToAddASealPage() [0.76] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?click radio (.*) on the presentation 'Do you want to add a seal\?' page
 
       And("I click radio No on the presentation Do you want to add a seal? page")
         // Possible match (best=0.80)
-        andIclickRadioXOnThePresentationDoYouWantToAddASealPage("")
+        andIclickRadioXOnThePresentationDoYouWantToAddASealPage("No")
 
       And("I select item3 on the presentation Which items does this transport equipment apply to? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("")
+        andIselectOnThePresentationWhichItemsDoesThisTransportEquipmentApplyToPage("item3")
         // --- Other possible matches ---
         // andIselectOnTheWhichItemDoesThisTransportEquipmentApplyToPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which item does this transport equipment apply to\?' page
 
       And("I choose radio No on the presentation You have applied 1 item to transport equipment 2 page")
         // ⚠️ No step-def match found for: I choose radio No on the presentation You have applied 1 item to transport equipment 2 page
+        andIchooseRadioXOnThePresentationYouHaveAppliedXItemsToTransportEquipmentXPage("No", "1", "2")
 
       And("I click the Remove link on the presentation You have added 2 transport equipment page")
         // Possible match (best=0.91)
-        andIclickTheXLinkOnThePresentationYouHaveAddedXTransportEquipmentPage("", "")
+        andIclickTheXLinkOnThePresentationYouHaveAddedXTransportEquipmentPage("Remove", "2")
         // --- Other possible matches ---
         // andIclickTheXLinkOnTheAddPresentationYouHaveAddedXTransportEquipmentPage() [0.91] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?click the (.*) link on the presentation 'You have added (.*) transport equipment' page
         // andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage() [0.80] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?click the (.*) link on the 'You have added (.*) transport equipment' page
 
       And("I click radio option Yes on the presentation Are you sure you want to remove transport equipment 1? page")
         // Possible match (best=0.93)
-        andIclickRadioOptionXOnThePresentationAreYouSureYouWantToRemoveTransportEquipmentXPage("", "")
+        andIclickRadioOptionXOnThePresentationAreYouSureYouWantToRemoveTransportEquipmentXPage("Yes", "1")
         // --- Other possible matches ---
         // andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage() [0.82] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Are you sure you want to remove transport equipment (.*)\?' page
         // andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveItemXPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)\?' page
 
       And("I choose radio option No on the presentation You have added 1 transport equipment page")
         // Possible match (best=0.91)
-        andIchooseRadioOptionXOnThePresentationYouHaveAddedXTransportEquipmentPage("", "")
+        andIchooseRadioOptionXOnThePresentationYouHaveAddedXTransportEquipmentPage("No", "1")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage() [0.80] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) transport equipment' page
 
@@ -409,22 +422,23 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click the Continue button on the presentation More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I click the Continue button on the presentation More information needed to complete pre-lodged declaration page
+        andIclickTheContinueButtonOnThePresentationMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I enter the date on the presentation When do you expect the transit to arrive in Belfast Docks,Unit 2 Block C (XI000142)? page")
         // Possible match (best=1.00)
-        andIenterTheDateOnThePresentationWhenDoYouExpectTheTransitToArriveInXPage("")
+        andIenterTheDateOnThePresentationWhenDoYouExpectTheTransitToArriveInXPage("Belfast Docks,Unit 2 Block C (XI000142)")
         // --- Other possible matches ---
         // andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage() [0.90] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?enter the date on the 'When do you expect the transit to arrive in (.*)\?' page
         // andIchooseFillInTheDateAndTimeOnTheWhenDoYouExpectTheTransitToArriveInXXPage() [0.77] (RouteDetailsTransitStepDefSteps.scala) pattern: (?:I )?choose fill in the date and time on the 'When do you expect the transit to arrive in (.*), (.*)\?' page
@@ -446,39 +460,42 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click the Continue button on the presentation More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I click the Continue button on the presentation More information needed to complete pre-lodged declaration page
+        andIclickTheContinueButtonOnThePresentationMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I choose radio option Approved place on the presentation Which type of location are the goods in? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationWhichTypeOfLocationAreTheGoodsInPage("")
+        andIchooseRadioOptionXOnThePresentationWhichTypeOfLocationAreTheGoodsInPage("Approved place")
 
       And("I choose a radio option Address on the presentation How do you want to identify the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseARadioOptionXOnThePresentationHowDoYouWantToIdentifyTheLocationOfGoodsPage("")
+        andIchooseARadioOptionXOnThePresentationHowDoYouWantToIdentifyTheLocationOfGoodsPage("Address")
 
       And("I select United Kingdom on the presentation In which country is the location of goods? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationInWhichCountryIsTheLocationOfGoodsPage("")
+        andIselectOnThePresentationInWhichCountryIsTheLocationOfGoodsPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheLocationOfGoodsCountryPage() [0.78] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?select (.+) on the location of goods country page
 
       And("I fill in the address on the presentation What is the address for the location of goods? page")
         // ⚠️ No step-def match found for: I fill in the address on the presentation What is the address for the location of goods? page
+        andIfillInTheAddressOnThePresentationWhatIsTheAddressForTheLocationOfGoodsPage()
+        
 
       And("I choose radio option No on the presentation Do you want to add a contact for the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage() [0.82] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the location of goods\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page
@@ -506,39 +523,39 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select United Kingdom on the presentation In which country is the place of loading? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("")
+        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheInWhichCountryIsThePlaceOfLoadingPage() [0.80] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'In which country is the place of loading\?' page
         // andIselectOnTheWhichCountryIsThePlaceOfUnloadingInPage() [0.75] (RouteDetailsPlaceOfUnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which country is the place of unloading in\?' page
 
       And("I enter London on the presentation Where in United Kingdom is the place of loading? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("", "")
+        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("London", "United Kingdom")
 
       And("I choose radio option No on the presentation Are you using any shipping containers to transport the goods? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("")
+        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheAreYouUsingAnyShippingContainersToTransportTheGoodsPage() [0.81] (TransportDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page
 
       And("I choose radio Air transport on the presentation How is the transit crossing the border? page")
         // Possible match (best=0.80)
-        andIchooseRadioXOnThePresentationHowIsTheTransitCrossingTheBorderPage("")
+        andIchooseRadioXOnThePresentationHowIsTheTransitCrossingTheBorderPage("Air")
 
       And("I choose radio Registration Number of the Aircraft on the presentation inland mode Which identification do you want to use for this vehicle? page")
         // Possible match (best=0.82)
-        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("")
+        andIchooseRadioXOnThePresentationInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("Registration Number of the Aircraft")
 
       And("I enter identification number GB1234567 on What is the identification number for this? page")
         // Possible match (best=0.80)
-        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("")
+        andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
         // --- Other possible matches ---
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this\?' page
         // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisVehiclePage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this vehicle\?' page
 
       And("I select United Kingdom on the active border mode What country is this vehicle registered to? page")
         // Possible match (best=0.81)
-        andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("")
+        andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage() [0.80] (BorderMeansOfTransportStepDefSteps.scala) pattern: (?:I )?select (.+) on the border mode 'What country is this vehicle registered to\?' page
         // andIselectOnTheWhatCountryIsThisVehicleRegisteredToPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'What country is this vehicle registered to\?' page
@@ -546,20 +563,20 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select Belfast Docks,Unit 2 Block C (XI000142) on Where is the customs office at the border? page")
         // Possible match (best=0.85)
-        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("")
+        andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Belfast Docks,Unit 2 Block C (XI000142)")
         // --- Other possible matches ---
         // andIselectOnWhereIsTheCustomsOfficeAtTheBorderPage() [0.85] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?select (.+) on 'Where is the customs office at the border\?' page
         // andIselectOnTheWhereIsTheOfficeOfDeparturePage() [0.79] (PreTaskListStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Where is the office of departure\?' page
 
       And("I enter conveyance reference number GB123456123456 on the What is the conveyance reference number? page")
         // Possible match (best=0.80)
-        andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("")
+        andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I choose radio option No on the presentation Do you want to add any transport equipment? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage() [0.81] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
@@ -595,22 +612,23 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click the Continue button on the presentation More information needed to complete pre-lodged declaration page")
         // ⚠️ No step-def match found for: I click the Continue button on the presentation More information needed to complete pre-lodged declaration page
+        andIclickTheContinueButtonOnThePresentationMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I choose radio option No on the presentation Do you want to add a UN LOCODE for the place of loading? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage() [0.82] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a UN LOCODE for the place of loading\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfLoadingPage() [0.81] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a place of loading\?' page
@@ -623,24 +641,24 @@ class PresentationNotificationE2EP6Spec extends AnyFeatureSpec with GivenWhenThe
 
       And("I select United Kingdom on the presentation In which country is the place of loading? page")
         // Possible match (best=0.80)
-        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("")
+        andIselectOnThePresentationInWhichCountryIsThePlaceOfLoadingPage("United Kingdom")
         // --- Other possible matches ---
         // andIselectOnTheInWhichCountryIsThePlaceOfLoadingPage() [0.80] (RouteDetailsPlaceOfLoadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'In which country is the place of loading\?' page
         // andIselectOnTheWhichCountryIsThePlaceOfUnloadingInPage() [0.75] (RouteDetailsPlaceOfUnloadingStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'Which country is the place of unloading in\?' page
 
       And("I enter London on the presentation Where in United Kingdom is the place of loading? page")
         // Possible match (best=0.81)
-        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("", "")
+        andIenterOnThePresentationWhereInXIsThePlaceOfLoadingPage("London", "United Kingdom")
 
       And("I choose radio option No on the presentation Are you using any shipping containers to transport the goods? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("")
+        andIchooseRadioOptionXOnThePresentationAreYouUsingAnyShippingContainersToTransportTheGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheAreYouUsingAnyShippingContainersToTransportTheGoodsPage() [0.81] (TransportDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Are you using any shipping containers to transport the goods\?' page
 
       And("I choose radio option No on the presentation Do you want to add any transport equipment? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("")
+        andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage() [0.81] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
