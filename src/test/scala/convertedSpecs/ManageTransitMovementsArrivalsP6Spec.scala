@@ -1,3 +1,7 @@
+import ArrivalNotificationsStepDefSteps.*
+import CommonStepDefSteps.andISignOut
+import ManageStepDefSteps.*
+import UnloadingStepDefSteps.*
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
@@ -19,18 +23,19 @@ class ManageTransitMovementsArrivalsP6Spec extends AnyFeatureSpec with GivenWhen
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
         // Possible match (best=0.90)
-        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("", "")
+        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
       Then("I should be on the Do you want to use the revised unloading procedure? page")
         // ⚠️ No step-def match found for: I should be on the Do you want to use the revised unloading procedure? page
+        thenIshouldBeOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage()
 
       And("I sign out")
         // Possible match (best=1.00)
@@ -57,7 +62,7 @@ class ManageTransitMovementsArrivalsP6Spec extends AnyFeatureSpec with GivenWhen
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
@@ -67,7 +72,7 @@ class ManageTransitMovementsArrivalsP6Spec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
         // Possible match (best=0.90)
-        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("", "")
+        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
@@ -92,7 +97,7 @@ class ManageTransitMovementsArrivalsP6Spec extends AnyFeatureSpec with GivenWhen
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
@@ -102,7 +107,7 @@ class ManageTransitMovementsArrivalsP6Spec extends AnyFeatureSpec with GivenWhen
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
         // Possible match (best=0.90)
-        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("", "")
+        andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
