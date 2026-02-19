@@ -1,7 +1,12 @@
 
+import LoginStepDefSteps.andILoginWithIDX
+import ManageStepDefSteps.*
+import CommonStepDefSteps.*
+import DepartureDeclarationsStepDefSteps.*
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
+import specsteps.CancellationsStepDefSteps.*
 
 
 
