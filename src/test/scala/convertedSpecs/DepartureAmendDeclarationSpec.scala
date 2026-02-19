@@ -1,6 +1,22 @@
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
+import LoginStepDefSteps.*
+import CommonStepDefSteps.*
+import DepartureDeclarationsStepDefSteps.*
+import ManageStepDefSteps.*
+import PreTaskListStepDefSteps.*
+import TaskListStepDefSteps.*
+import TraderDetailsStepDefSteps.*
+import RouteDetailsLocationOfGoodsStepDefSteps.*
+import CYAStepDefSteps.*
+import Departure_GuaranteeDetailsStepDefSteps.andIenterOnTheHowMuchIsTheLiabilityInPoundsPage
+import DocumentsStepDefSteps.*
+import ItemDetailsStepDefSteps.*
+import TransportEquipmentChargesStepDefSteps.*
+import PreviousStepDefSteps.*
+import Departure_GuaranteeDetailsStepDefSteps.*
+import DepartureConfirmationStepDefSteps.*
 
 
 class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
@@ -196,6 +212,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link on the You have added 1 item page")
         // ⚠️ No step-def match found for: I click the Change link on the You have added 1 item page
+        andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
@@ -248,6 +265,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
         andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
 
       And("I click the Confirm and resend button on the Declaration summary page")
+      andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
 
       And("I click the Sign out link on the Departure declaration sent page")
@@ -299,6 +317,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       Then("I input a random LRN on the What is the new Local Reference Number? page")
         // ⚠️ No step-def match found for: I input a random LRN on the What is the new Local Reference Number? page
+      whenIInputARandomLRNOnTheWhatIsTheNewLocalReferenceNumberPage()
 
       And("I should see Error status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
@@ -452,6 +471,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link on the You have added 1 item page")
         // ⚠️ No step-def match found for: I click the Change link on the You have added 1 item page
+      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
@@ -505,6 +525,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Confirm and resend button on the Declaration summary page")
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
+      andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
@@ -708,6 +729,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link on the You have added 1 item page")
         // ⚠️ No step-def match found for: I click the Change link on the You have added 1 item page
+      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
@@ -761,6 +783,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Confirm and resend button on the Declaration summary page")
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
+      andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
@@ -850,9 +873,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 3 guarantee page")
         // ⚠️ No step-def match found for: I choose radio option No on the You have added 3 guarantee page
+      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "3")
 
       And("I click the Confirm and resend button on the Declaration summary page")
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
+      andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
