@@ -1,3 +1,9 @@
+import ArrivalNotificationsStepDefSteps.thenIShouldBeOnTheArrivalNotificationsPage
+import IdentificationStepDefSteps.*
+import LocationOfGoodsStepDefSteps.*
+import CYAStepDefSteps.*
+import ConfirmationStepDefSteps.*
+import CommonStepDefSteps.*
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
