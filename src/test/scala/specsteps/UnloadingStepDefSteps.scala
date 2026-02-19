@@ -852,10 +852,10 @@ object UnloadingStepDefSteps {
           .submitPage()
   }
 
-  // ^(?:I )?choose radio option (.*) on the 'Do you want to add a Customs Union and Statistics (.*) code for the item\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsXCodeForTheItemPage(answer: String, index: String): Unit = {
+  // ^(?:I )?choose radio option (.*) on the 'Do you want to add a Customs Union and Statistics (CUS) code for the item\?' page$
+  def andIchooseRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsXCodeForTheItemPage(answer: String): Unit = {
     UnloadingFEOptionToAddItemNewCusPage
-          .loadPage(index)
+          .loadPage()
           .select(answer)
           .submitPage()
   }
