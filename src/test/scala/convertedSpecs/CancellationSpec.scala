@@ -38,27 +38,27 @@ class CancellationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
         // Possible match (best=0.81)
-        andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("")
+        andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("Yes")
 
       And("I enter a cancellation reason, with a comma on the Why do you want to cancel this declaration? page")
         // Possible match (best=0.80)
-        andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("")
+        andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("a cancellation reason,")
 
       And("I click on the Check the status of departure declarations link on the Cancellation request sent page")
         // Possible match (best=0.94)
-        givenIClickOnTheLinkOnTheCancellationRequestSentPage("")
+        givenIClickOnTheLinkOnTheCancellationRequestSentPage("Check the status of departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -87,27 +87,27 @@ class CancellationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
         // Possible match (best=0.81)
-        andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("")
+        andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("Yes")
 
       And("I enter a cancellation reason, with a comma on the Why do you want to cancel this declaration? page")
         // Possible match (best=0.80)
-        andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("")
+        andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("a cancellation reason, with a comma")
 
       And("I click on the Check the status of departure declarations link on the Cancellation request sent page")
         // Possible match (best=0.94)
-        givenIClickOnTheLinkOnTheCancellationRequestSentPage("")
+        givenIClickOnTheLinkOnTheCancellationRequestSentPage("Check the status of departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 

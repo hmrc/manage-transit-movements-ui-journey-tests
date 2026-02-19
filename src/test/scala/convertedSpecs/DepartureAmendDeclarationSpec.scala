@@ -46,13 +46,13 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -62,41 +62,41 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Error status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details ")
 
       And("I should see Error status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "route details")
 
       And("I should see Error status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "transport details")
 
       And("I should see Error status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "documents")
 
       And("I should see Error status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "items")
 
       And("I should see Error status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "guarantee details")
 
       And("I click on the Amend trader details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend trader details")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact? on the Trader details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the transit holder? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage() [0.77] (TraderDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the consignor\?' page
         // andIchooseRadioOptionXOnThEDoYouWantToAddAContactForTheCarrierPage() [0.77] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier\?' page
@@ -110,21 +110,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
 
       And("I click on the Amend route details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend route details")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page
         // andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage() [0.78] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page
@@ -142,21 +142,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
 
       And("I click on the Amend transport details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend transport details")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
@@ -168,25 +168,25 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
 
       And("I click on the Amend documents link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 3 documents page")
         // Possible match (best=0.89)
-        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("", "")
+        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
 
       And("I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
         // Possible match (best=0.81)
-        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
         // --- Other possible matches ---
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any additional information for this item\?' page
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyCommentsForTheAdditionalInformationPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any comments for the additional information\?' page
@@ -198,15 +198,15 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 3 documents page")
         // Possible match (best=0.89)
-        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("", "")
+        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amend", "documents")
 
       And("I click on the Amend items link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend items")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
@@ -216,11 +216,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
         // Possible match (best=0.80)
-        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
         // Possible match (best=1.00)
@@ -228,29 +228,29 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click radio option No on the You have added 1 item page")
         // Possible match (best=0.89)
-        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("", "")
+        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
 
       And("I click on the Amend guarantee details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("", "")
+        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
         // Possible match (best=0.80)
-        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("")
+        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.9")
 
       And("I submit on the Check your answers section Guarantee details page")
         // Possible match (best=1.00)
@@ -258,11 +258,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("", "")
+        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
 
       And("I click the Confirm and resend button on the Declaration summary page")
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
@@ -270,7 +270,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
-        andIclickTheLinkOnTheDepartureDeclarationSentPage("")
+        andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
     }
 
@@ -301,13 +301,13 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -321,41 +321,41 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Error status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details")
 
       And("I should see Error status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "route details")
 
       And("I should see Error status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "transport details")
 
       And("I should see Error status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "documents")
 
       And("I should see Error status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "items")
 
       And("I should see Error status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "guarantee details")
 
       And("I click on the Amend trader details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact? on the Trader details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the transit holder? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage() [0.77] (TraderDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the consignor\?' page
         // andIchooseRadioOptionXOnThEDoYouWantToAddAContactForTheCarrierPage() [0.77] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier\?' page
@@ -369,21 +369,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
 
       And("I click on the Amend route details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page
         // andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage() [0.78] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page
@@ -401,21 +401,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
 
       And("I click on the Amend transport details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
@@ -427,25 +427,25 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
 
       And("I click on the Amend documents link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 3 documents page")
         // Possible match (best=0.89)
-        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("", "")
+        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
 
       And("I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
         // Possible match (best=0.81)
-        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
         // --- Other possible matches ---
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any additional information for this item\?' page
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyCommentsForTheAdditionalInformationPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any comments for the additional information\?' page
@@ -457,15 +457,15 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 3 documents page")
         // Possible match (best=0.89)
-        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("", "")
+        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
 
       And("I click on the Amend items link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend items")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
@@ -475,11 +475,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
         // Possible match (best=0.80)
-        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
         // Possible match (best=1.00)
@@ -487,29 +487,29 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click radio option No on the You have added 1 item page")
         // Possible match (best=0.89)
-        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("", "")
+        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
 
       And("I click on the Amend guarantee details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("", "")
+        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
         // Possible match (best=0.80)
-        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("")
+        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.99")
 
       And("I submit on the Check your answers section Guarantee details page")
         // Possible match (best=1.00)
@@ -517,11 +517,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("", "")
+        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
 
       And("I click the Confirm and resend button on the Declaration summary page")
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
@@ -529,7 +529,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
-        andIclickTheLinkOnTheDepartureDeclarationSentPage("")
+        andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
     }
 
@@ -564,13 +564,13 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration ", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
@@ -580,41 +580,41 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Error status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details")
 
       And("I should see Error status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "route details")
 
       And("I should see Error status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "transport details")
 
       And("I should see Error status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "documents")
 
       And("I should see Error status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "items")
 
       And("I should see Error status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "guarantee details")
 
       And("I click on the Amend trader details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact for the consignor? on the Trader details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the consignor? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnThEDoYouWantToAddAContactForTheCarrierPage() [0.77] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
@@ -627,21 +627,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
 
       And("I click on the Amend route details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage() [0.81] (RouteDetailsLocationOfGoodsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a location of goods\?' page
         // andIchooseRadioOptionXOnThePresentationDoYouWantToAddAContactForTheLocationOfGoodsPage() [0.78] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the presentation 'Do you want to add a contact for the location of goods\?' page
@@ -659,21 +659,21 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
 
       And("I click on the Amend transport details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
         // Possible match (best=0.82)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
@@ -685,25 +685,25 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Amended status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
 
       And("I click on the Amend documents link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 3 documents page")
         // Possible match (best=0.89)
-        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("", "")
+        whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
 
       And("I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
         // Possible match (best=0.81)
-        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
         // --- Other possible matches ---
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any additional information for this item\?' page
         // andIclickRadioOptionXOnTheDoYouWantToAddAnyCommentsForTheAdditionalInformationPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Do you want to add any comments for the additional information\?' page
@@ -715,15 +715,15 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 3 documents page")
         // Possible match (best=0.89)
-        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("", "")
+        andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
 
       And("I click on the Amend items link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
@@ -733,11 +733,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
         // Possible match (best=0.80)
-        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("")
+        andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
         // Possible match (best=1.00)
@@ -745,29 +745,29 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click radio option No on the You have added 1 item page")
         // Possible match (best=0.89)
-        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("", "")
+        andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
 
       And("I click on the Amend guarantee details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend guarantee details")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("", "")
+        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
         // Possible match (best=0.80)
-        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("")
+        andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.9")
 
       And("I submit on the Check your answers section Guarantee details page")
         // Possible match (best=1.00)
@@ -775,11 +775,11 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("", "")
+        whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
 
       And("I click the Confirm and resend button on the Declaration summary page")
         // ⚠️ No step-def match found for: I click the Confirm and resend button on the Declaration summary page
@@ -787,7 +787,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
-        andIclickTheLinkOnTheDepartureDeclarationSentPage("")
+        andIclickTheLinkOnTheDepartureDeclarationSentPage("Sing out")
 
     }
 
@@ -818,13 +818,13 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
         // givenIclickOnTheLinkOnTheDeclarationErrorsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Declaration errors' page
@@ -835,41 +835,41 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I should see Completed status for trader details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
 
       And("I should see Completed status for route details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "route details")
 
       And("I should see Completed status for transport details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "transport details")
 
       And("I should see Completed status for documents on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "documents")
 
       And("I should see Completed status for items on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "items")
 
       And("I should see Error status for guarantee details on the Declaration summary page")
         // Possible match (best=0.88)
-        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("", "")
+        andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "guarantee details")
 
       And("I click on the Amend guarantee details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Remove link on the You have added 4 guarantees page")
         // Possible match (best=0.89)
-        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("", "")
+        andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Remove", "4")
 
       And("I choose radio option Yes on the Are you sure you want to remove this guarantee? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisGuaranteePage("")
+        andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisGuaranteePage("Yes")
 
       And("I choose radio option No on the You have added 3 guarantee page")
         // ⚠️ No step-def match found for: I choose radio option No on the You have added 3 guarantee page
@@ -881,7 +881,7 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Sign out link on the Departure declaration sent page")
         // Possible match (best=0.94)
-        andIclickTheLinkOnTheDepartureDeclarationSentPage("")
+        andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
     }
 
@@ -908,29 +908,29 @@ class DepartureAmendDeclarationSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
         // Possible match (best=0.90)
-        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("", "")
+        andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend", "25GB000246TK0E6WJ1")
         // --- Other possible matches ---
         // givenIclickOnTheLinkOnTheDepartureDeclarationsPage() [0.79] (DepartureDeclarationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Departure declarations' page
 
       And("I click on the Edit trader details link on the Declaration summary page")
         // Possible match (best=0.94)
-        thenIclickOnTheLinkOnTheDeclarationSummaryPage("")
+        thenIclickOnTheLinkOnTheDeclarationSummaryPage("Edit trader details")
         // --- Other possible matches ---
         // thenIclickTheLinkOnTheDeclarationSummaryPage() [0.78] (TaskListStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the 'Declaration summary' page
 
       And("I click the Change link for Do you want to add a contact for the consignor? on the Trader details Check your answers page")
         // Possible match (best=0.80)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Change")
 
       And("I choose radio option No on the Do you want to add a contact for the consignor? page")
         // Possible match (best=0.81)
-        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("")
+        andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
         // --- Other possible matches ---
         // andIchooseRadioOptionXOnThEDoYouWantToAddAContactForTheCarrierPage() [0.77] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a contact for the carrier\?' page
         // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
