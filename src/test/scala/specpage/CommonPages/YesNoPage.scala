@@ -16,25 +16,14 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import java.time.LocalDateTime
+trait YesNoPage extends RadioPage {
 
-trait DateTimePage extends StringPage {
-
-  lazy val now: LocalDateTime = LocalDateTime.now()
-
-  final val day: String    = now.getDayOfMonth.toString
-  final val month: String  = now.getMonthValue.toString
-  final val year: String   = now.getYear.toString
-  final val hour: String   = now.getHour.toString
-  final val minute: String = now.getMinute.toString
-
-  def fillInputs(): this.type = {
-    fillInputById("value.day", day)
-    fillInputById("value.month", month)
-    fillInputById("value.year", year)
-    fillInputById("value.hour", hour)
-    fillInputById("value.minute", minute)
-
+  def select(answer: String): this.type = {
+    answer match {
+      case "Yes" => clickById("value")
+      case "No"  => clickById("value-no")
+      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
+    }
     this
   }
 }

@@ -16,11 +16,25 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait CoordinatesPage extends StringPage {
+import java.time.LocalDateTime
 
-  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
-    fillInputById("latitude", latitudeNo)
-    fillInputById("longitude", longitudeNo)
+trait DateTimePage extends StringPage {
+
+  lazy val now: LocalDateTime = LocalDateTime.now()
+
+  final val day: String    = now.getDayOfMonth.toString
+  final val month: String  = now.getMonthValue.toString
+  final val year: String   = now.getYear.toString
+  final val hour: String   = now.getHour.toString
+  final val minute: String = now.getMinute.toString
+
+  def fillInputs(): this.type = {
+    fillInputById("value.day", day)
+    fillInputById("value.month", month)
+    fillInputById("value.year", year)
+    fillInputById("value.hour", hour)
+    fillInputById("value.minute", minute)
+
     this
   }
 }

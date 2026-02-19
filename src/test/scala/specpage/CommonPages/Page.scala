@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,15 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.scalatest.concurrent.Eventually.eventually
+trait Page extends BasePage {
 
-object CommonPage extends BasePage {
+  def title(args: String*): String
 
-  def clickLink(linkText: String): Unit =
-    clickByPartialLinkText(linkText)
-
-  def refreshPage(): Unit =
-    driver.navigate().refresh()
-
-  def wait(t: Int): Unit = {
-    val time = t * 1000
-    eventually(Thread.sleep(time))
+  def loadPage(args: String*): this.type = {
+    onPage(title(args: _*))
+    this
   }
+
+  private def onPage(expectedTitle: String): Unit =
+    fluentWait.until(_.getTitle.contains(expectedTitle))
 }

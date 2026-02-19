@@ -16,11 +16,24 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait RadioPage extends Page {
+import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
+import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
 
-  def select(answer: String): this.type
+object SessionPage extends Page {
 
-  protected def clickRadioBtn(answer: String): Unit =
-    findByCssSelector(s"input[type='radio'][value='$answer']").click()
+  override def title(args: String*): String = "Authority Wizard - Session attributes"
 
+  def saveBearerToken(): this.type = {
+    World.bearerToken = findByCssSelector("[data-session-id='authToken']").getText
+    this
+  }
+
+  def saveSessionId(): this.type = {
+    World.sessionId = findByCssSelector("[data-session-id='sessionId']").getText
+    this
+  }
+
+  def navigate(): Unit =
+    ManageTransitMovementsPage
+      .loadPage()
 }

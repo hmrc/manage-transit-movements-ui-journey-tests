@@ -17,6 +17,7 @@
 package uk.gov.hmrc.test.ui.pages
 
 import org.openqa.selenium.{By, WebElement}
+import uk.gov.hmrc.selenium.webdriver.Driver
 import uk.gov.hmrc.test.ui.utils.DriverHelper
 
 import scala.language.postfixOps
@@ -35,7 +36,7 @@ trait BasePage extends DriverHelper {
 
   def checkForContent(content: String): Unit = assert(findById("main-content").getText.contains(content))
 
-  def navigateTo(url: String): Unit = driver.navigate().to(url)
+  def navigateTo(url: String): Unit = Driver.instance.navigate().to(url)
 }
 
 case class PageNotFoundException(s: String) extends Exception(s)

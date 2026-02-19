@@ -16,15 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait Page extends BasePage {
+trait AddressCountryPage extends SelectPage {
 
-  def title(args: String*): String
+  val numberAndStreet: String
+  val city: String
+  val postalCode: String
 
-  def loadPage(args: String*): this.type = {
-    onPage(title(args: _*))
+  def fillInputs(): this.type = {
+    fillInputById("numberAndStreet", numberAndStreet)
+    fillInputById("city", city)
+    fillInputById("postalCode", postalCode)
     this
   }
-
-  private def onPage(expectedTitle: String): Unit =
-    fluentWait.until(_.getTitle.contains(expectedTitle))
 }

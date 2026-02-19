@@ -16,24 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
-import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
+trait CoordinatesPage extends StringPage {
 
-object SessionPage extends Page {
-
-  override def title(args: String*): String = "Authority Wizard - Session attributes"
-
-  def saveBearerToken(): this.type = {
-    World.bearerToken = findByCssSelector("[data-session-id='authToken']").getText
+  def fillInputs(latitudeNo: String, longitudeNo: String): this.type = {
+    fillInputById("latitude", latitudeNo)
+    fillInputById("longitude", longitudeNo)
     this
   }
-
-  def saveSessionId(): this.type = {
-    World.sessionId = findByCssSelector("[data-session-id='sessionId']").getText
-    this
-  }
-
-  def navigate(): Unit =
-    ManageTransitMovementsPage
-      .loadPage()
 }

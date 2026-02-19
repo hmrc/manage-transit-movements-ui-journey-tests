@@ -16,14 +16,16 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait YesNoPage extends RadioPage {
+trait AddressPage extends StringPage {
 
-  def select(answer: String): this.type = {
-    answer match {
-      case "Yes" => clickById("value")
-      case "No"  => clickById("value-no")
-      case _     => throw new IllegalArgumentException(s"Unknown answer: $answer")
-    }
+  val addressLine1: String
+  val addressLine2: String
+  val postalCode: String
+
+  def fillInputs(): this.type = {
+    fillInputById("numberAndStreet", addressLine1)
+    fillInputById("city", addressLine2)
+    fillInputById("postalCode", postalCode)
     this
   }
 }

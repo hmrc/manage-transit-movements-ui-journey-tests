@@ -16,16 +16,11 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait AddressCountryPage extends SelectPage {
+trait RadioPage extends Page {
 
-  val numberAndStreet: String
-  val city: String
-  val postalCode: String
+  def select(answer: String): this.type
 
-  def fillInputs(): this.type = {
-    fillInputById("numberAndStreet", numberAndStreet)
-    fillInputById("city", city)
-    fillInputById("postalCode", postalCode)
-    this
-  }
+  protected def clickRadioBtn(answer: String): Unit =
+    findByCssSelector(s"input[type='radio'][value='$answer']").click()
+
 }

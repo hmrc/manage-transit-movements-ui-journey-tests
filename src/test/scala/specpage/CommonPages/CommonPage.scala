@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,20 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-trait AddressPage extends StringPage {
+import org.scalatest.concurrent.Eventually.eventually
+import uk.gov.hmrc.selenium.webdriver.Driver
 
-  val addressLine1: String
-  val addressLine2: String
-  val postalCode: String
+object CommonPage extends BasePage {
 
-  def fillInputs(): this.type = {
-    fillInputById("numberAndStreet", addressLine1)
-    fillInputById("city", addressLine2)
-    fillInputById("postalCode", postalCode)
-    this
+  def clickLink(linkText: String): Unit =
+    clickByPartialLinkText(linkText)
+
+  def refreshPage(): Unit = {
+    Driver.instance.navigate().refresh()
+  }
+
+  def wait(t: Int): Unit = {
+    val time = t * 1000
+    eventually(Thread.sleep(time))
   }
 }
