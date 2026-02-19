@@ -1,3 +1,9 @@
+import CYAStepDefSteps.*
+import CommonStepDefSteps.*
+import Departure_GuaranteeDetailsStepDefSteps.*
+import GetGuaranteeBalanceStepDefSteps.*
+import ManageStepDefSteps.*
+import LoginStepDefSteps.*
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.GivenWhenThen
 import org.scalatest.featurespec.AnyFeatureSpec
@@ -19,14 +25,14 @@ class GetGuaranteeBalanceSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I enter 22GB1111111111113 on the Get Balance What is the Guarantee Reference Number? page")
         // Possible match (best=0.80)
-        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("")
+        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("22GB1111111111113")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage() [0.79] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I enter x906 on the Get Balance What is the access code? page")
         // Possible match (best=0.85)
-        andIenterOnTheWhatIsTheAccessCodePage("")
+        andIenterOnTheWhatIsTheAccessCodePage("x906")
         // --- Other possible matches ---
         // andIenterOnTheGetBalanceWhatIsTheAccessCodePage() [0.85] (GetGuaranteeBalanceStepDefSteps.scala) pattern: (?:I )?enter (.+) on the Get Balance 'What is the access code\?' page
         // andIenterXOnTheWhatIsTheCommodityCodePage() [0.79] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?enter (.*) on the 'What is the commodity code\?' page
@@ -39,7 +45,7 @@ class GetGuaranteeBalanceSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the Check your details and try again link on the The Guarantee Reference Number and access code do not match page")
         // Possible match (best=0.96)
-        andIclickTheLinkOnTheTheGuaranteeReferenceNumberAndAccessCodeDoNotMatchPage("")
+        andIclickTheLinkOnTheTheGuaranteeReferenceNumberAndAccessCodeDoNotMatchPage("Check your details and try again")
 
       And("I submit on the Get Balance Check your answers page")
         // Possible match (best=1.00)
@@ -47,34 +53,34 @@ class GetGuaranteeBalanceSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click the check your details are correct and try again link on the We could not check your guarantee balance page")
         // Possible match (best=0.95)
-        andIclickTheLinkOnTheWeCouldNotCheckYourGuaranteeBalancePage("")
+        andIclickTheLinkOnTheWeCouldNotCheckYourGuaranteeBalancePage("check your details are correct and try again")
 
       And("I wait for 60 seconds")
         // Possible match (best=1.00)
-        andIwaitForXSeconds("60")
+        andIwaitForXSeconds(60)
 
       And("I click the change link for guarantee reference number on the Check your answers page")
         // Possible match (best=0.95)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("change")
         // --- Other possible matches ---
         // andIClickTheChangeLinkForOnTheCheckYourAnswersPage() [0.80] (GetGuaranteeBalanceStepDefSteps.scala) pattern: (?:I )?I click the change link for (.+) on the 'Check your answers' page
 
       And("I enter 22GB1111111111112 on the Get Balance What is the Guarantee Reference Number? page")
         // Possible match (best=0.80)
-        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("")
+        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("22GB1111111111112")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage() [0.79] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I click the change link for access code on the Check your answers page")
         // Possible match (best=0.95)
-        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("")
+        andIclickTheChangeLinkForOnTheCheckYourAnswersPage("change")
         // --- Other possible matches ---
         // andIClickTheChangeLinkForOnTheCheckYourAnswersPage() [0.80] (GetGuaranteeBalanceStepDefSteps.scala) pattern: (?:I )?I click the change link for (.+) on the 'Check your answers' page
 
       And("I enter AB12 on the Get Balance What is the access code? page")
         // Possible match (best=0.80)
-        andIenterOnTheGetBalanceWhatIsTheAccessCodePage("")
+        andIenterOnTheGetBalanceWhatIsTheAccessCodePage("AB12")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheAccessCodePage() [0.79] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the access code\?' page
 
@@ -99,18 +105,18 @@ class GetGuaranteeBalanceSpec extends AnyFeatureSpec with GivenWhenThen {
 
       And("I click on the Check your guarantee balance link on the Manage your transit movements page")
         // Possible match (best=0.95)
-        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+        givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Check your guarantee balance")
 
       And("I enter 02GB1234567890120 on the Get Balance What is the Guarantee Reference Number? page")
         // Possible match (best=0.80)
-        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("")
+        thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("02GB1234567890120")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage() [0.79] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the Guarantee Reference Number\?' page
         // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I enter AB12 on the Get Balance What is the access code? page")
         // Possible match (best=0.80)
-        andIenterOnTheGetBalanceWhatIsTheAccessCodePage("")
+        andIenterOnTheGetBalanceWhatIsTheAccessCodePage("AB12")
         // --- Other possible matches ---
         // andIenterOnTheWhatIsTheAccessCodePage() [0.79] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the access code\?' page
 
