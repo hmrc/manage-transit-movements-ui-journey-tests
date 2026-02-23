@@ -15,8 +15,7 @@
  */
 
 package specpage
-
-
+import specpage.CommonPages.*
 
 object ManagedFEPrelodgedDeclarationErrors extends Page {
 

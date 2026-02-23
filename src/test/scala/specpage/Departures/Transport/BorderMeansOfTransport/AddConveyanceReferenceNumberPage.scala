@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
+package specpage.Departures.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
+
 
 object AddConveyanceReferenceNumberPage extends YesNoPage {
 

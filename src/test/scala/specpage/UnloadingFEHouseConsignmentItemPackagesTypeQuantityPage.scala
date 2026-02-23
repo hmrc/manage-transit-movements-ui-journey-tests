@@ -15,7 +15,7 @@
  */
 
 package specpage
-
+import specpage.CommonPages.*
 
 object UnloadingFEHouseConsignmentItemPackagesTypeQuantityPage extends StringPage {
 

@@ -16,7 +16,8 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
+
 
 object Arrivals_OfficeOfDestinationPage extends SelectPage {
 

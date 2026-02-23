@@ -16,7 +16,8 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
+
 
 object PresentationNotificationLocationOfGoodsAddContactPage extends YesNoPage {
 

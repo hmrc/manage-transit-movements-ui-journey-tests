@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport
+package specpage.Departures.Transport.InlandModeOfTransport
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
+
 
 object AddInlandModeOfTransportPage extends YesNoPage {
 

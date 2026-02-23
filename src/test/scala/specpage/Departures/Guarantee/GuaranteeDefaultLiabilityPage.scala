@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Guarantee
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object GuaranteeDefaultLiabilityPage extends YesNoPage {
 

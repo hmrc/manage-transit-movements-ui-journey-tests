@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Guarantee
-
-import uk.gov.hmrc.test.ui.pages.Page
+import specpage.CommonPages.*
 
 object GuaranteeBForTIRDeclarationPage extends Page {
 

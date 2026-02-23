@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Documents.Supporting
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object AddLineItemNumberPage extends YesNoPage {
 

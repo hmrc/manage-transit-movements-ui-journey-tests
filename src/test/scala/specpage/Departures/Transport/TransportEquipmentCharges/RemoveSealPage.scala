@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+package specpage.Departures.Transport.TransportEquipmentCharges
+import specpage.CommonPages.*
 
 object RemoveSealPage extends YesNoPage {
 

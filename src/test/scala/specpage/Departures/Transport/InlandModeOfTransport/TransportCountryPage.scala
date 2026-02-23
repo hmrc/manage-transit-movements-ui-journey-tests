@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.InlandModeOfTransport
+package specpage.Departures.Transport.InlandModeOfTransport
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
 
 object TransportCountryPage extends SelectPage {
 

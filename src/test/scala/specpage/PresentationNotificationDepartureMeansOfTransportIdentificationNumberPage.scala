@@ -15,8 +15,7 @@
  */
 
 package specpage
-
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object PresentationNotificationDepartureMeansOfTransportIdentificationNumberPage extends StringPage {
 

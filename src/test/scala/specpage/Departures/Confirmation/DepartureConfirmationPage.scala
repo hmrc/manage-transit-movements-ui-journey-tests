@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Confirmation
-
-import uk.gov.hmrc.test.ui.pages.Page
+import specpage.CommonPages.*
 
 object DepartureConfirmationPage extends Page {
 

@@ -1,3 +1,5 @@
+package specsteps
+
 /*
  * Copyright 2026 HM Revenue & Customs
  *
@@ -14,7 +16,15 @@
  * limitations under the License.
  */
 
-import uk.gov.hmrc.test.ui.pages.{AuthorityWizardPage, SessionPage}
+import specpage.CommonPages.*
+
+object World {
+  var bearerToken: String = ""
+  var sessionId: String   = ""
+  var arrivalId: String   = ""
+  var departureId: String = ""
+  var lrn: String         = ""
+}
 
 object LoginStepDefSteps {
 

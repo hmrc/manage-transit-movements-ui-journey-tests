@@ -16,7 +16,8 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.CoordinatesPage
+import specpage.CommonPages.*
+
 
 object Arrivals_LocationOfGoodsCoordinatesPage extends CoordinatesPage {
 

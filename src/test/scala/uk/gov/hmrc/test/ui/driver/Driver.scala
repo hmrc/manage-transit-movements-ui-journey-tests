@@ -16,12 +16,10 @@
 
 package uk.gov.hmrc.test.ui.driver
 
-
 import org.openqa.selenium.WebDriver
 import uk.gov.hmrc.selenium.webdriver.Driver
 
-trait Driver  {
-  
+trait Driver {
 
   implicit lazy val driver: WebDriver = Driver.instance
 }

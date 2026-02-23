@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Guarantee
-
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import specpage.CommonPages.*
 
 object GuaranteeTypePage extends RadioPage {
 

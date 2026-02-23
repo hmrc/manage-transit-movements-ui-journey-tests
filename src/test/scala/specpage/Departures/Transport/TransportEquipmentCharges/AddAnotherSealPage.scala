@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
+package specpage.Departures.Transport.TransportEquipmentCharges
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object AddAnotherSealPage extends YesNoPage {
 

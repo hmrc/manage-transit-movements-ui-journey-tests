@@ -15,6 +15,8 @@
  */
 
 package specpage
+import specpage.CommonPages.*
+
 
 object UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage extends StringPage {
 

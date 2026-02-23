@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Items
-
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object AdditionalInformationTypePage extends SelectPage {
 

@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Documents.Previous
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object DeclareQuantityOfPackagePage extends YesNoPage {
 

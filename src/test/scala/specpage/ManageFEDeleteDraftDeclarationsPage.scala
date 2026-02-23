@@ -15,6 +15,8 @@
  */
 
 package specpage
+import specpage.CommonPages.*
+
 object ManageFEDeleteDraftDeclarationsPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to delete this declaration?"

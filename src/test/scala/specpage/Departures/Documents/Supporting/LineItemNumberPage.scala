@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Documents.Supporting
-
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object LineItemNumberPage extends StringPage {
 

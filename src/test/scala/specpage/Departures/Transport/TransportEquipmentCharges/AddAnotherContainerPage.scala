@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges
+package specpage.Departures.Transport.TransportEquipmentCharges
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object AddAnotherContainerPage extends YesNoPage {
 

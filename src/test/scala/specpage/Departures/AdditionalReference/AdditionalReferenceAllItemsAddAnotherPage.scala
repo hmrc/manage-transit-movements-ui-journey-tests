@@ -15,8 +15,8 @@
  */
 
 package specpage.Departures.AdditionalReference
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AdditionalReferenceAllItemsAddAnotherPage extends YesNoPage {
 

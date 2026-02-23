@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.ContainerDetails
+package specpage.Departures.Transport.ContainerDetails
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
+
 
 object ContainersPage extends YesNoPage {
 

@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportDetails
+package specpage.Departures.Transport.TransportDetails
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import specpage.CommonPages.*
+
 
 object ItemsBeingTransportedToAnotherCountry extends RadioPage {
 

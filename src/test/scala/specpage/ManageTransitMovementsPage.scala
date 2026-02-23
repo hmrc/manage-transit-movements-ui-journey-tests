@@ -15,7 +15,7 @@
  */
 
 package specpage
-
+import specpage.CommonPages.*
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object ManageTransitMovementsPage extends Page {

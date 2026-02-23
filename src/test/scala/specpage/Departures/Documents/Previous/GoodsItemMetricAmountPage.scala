@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Documents.Previous
-
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object GoodsItemMetricAmountPage extends StringPage {
 

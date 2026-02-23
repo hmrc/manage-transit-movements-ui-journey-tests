@@ -16,8 +16,9 @@
 
 package specpage.CommonPages
 
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
-import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
+import specpage.*
+import specsteps.*
+
 
 object SessionPage extends Page {
 

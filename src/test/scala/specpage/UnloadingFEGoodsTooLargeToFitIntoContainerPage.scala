@@ -15,7 +15,7 @@
  */
 
 package specpage
-
+import specpage.CommonPages.*
 
 object UnloadingFEGoodsTooLargeToFitIntoContainerPage extends YesNoPage {
 

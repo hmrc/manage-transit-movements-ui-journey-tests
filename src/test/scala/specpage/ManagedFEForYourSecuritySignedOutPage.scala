@@ -15,6 +15,7 @@
  */
 
 package specpage
+import specpage.CommonPages.*
 
 object ManagedFEForYourSecuritySignedOutPage extends Page {
 

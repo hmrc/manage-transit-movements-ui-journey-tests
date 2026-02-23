@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.SupplyChainActor
+package specpage.Departures.Transport.SupplyChainActor
 
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 

@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
-
+package specpage.CommonPages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 

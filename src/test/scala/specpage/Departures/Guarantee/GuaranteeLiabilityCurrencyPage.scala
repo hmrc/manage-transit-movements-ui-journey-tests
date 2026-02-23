@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Guarantee
-
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object GuaranteeLiabilityCurrencyPage extends SelectPage {
 

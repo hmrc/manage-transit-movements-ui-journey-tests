@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Guarantee
-
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object GuaranteeReferenceNumberPage extends StringPage {
 

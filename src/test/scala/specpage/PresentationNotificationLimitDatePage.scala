@@ -16,8 +16,7 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.DatePage
-
+import specpage.CommonPages.*
 import java.time.LocalDateTime
 
 object PresentationNotificationLimitDatePage extends DatePage {

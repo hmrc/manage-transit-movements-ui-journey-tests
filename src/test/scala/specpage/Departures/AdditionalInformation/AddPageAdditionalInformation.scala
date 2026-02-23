@@ -15,8 +15,8 @@
  */
 
 package specpage.Departures.AdditionalInformation
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object AddPageAdditionalInformation extends YesNoPage {
 

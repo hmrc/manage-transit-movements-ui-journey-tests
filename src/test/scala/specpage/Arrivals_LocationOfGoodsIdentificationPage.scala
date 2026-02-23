@@ -16,7 +16,8 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import specpage.CommonPages.*
+
 
 object Arrivals_LocationOfGoodsIdentificationPage extends RadioPage {
 

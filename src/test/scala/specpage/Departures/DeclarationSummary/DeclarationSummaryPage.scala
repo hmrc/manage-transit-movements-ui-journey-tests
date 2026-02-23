@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.DeclarationSummary
-
-import uk.gov.hmrc.test.ui.pages.Page
+import specpage.CommonPages.*
 
 object DeclarationSummaryPage extends Page {
 

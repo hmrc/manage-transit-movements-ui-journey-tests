@@ -15,8 +15,7 @@
  */
 
 package specpage.Departures.Documents.Previous
-
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object PackageTypePage extends SelectPage {
 

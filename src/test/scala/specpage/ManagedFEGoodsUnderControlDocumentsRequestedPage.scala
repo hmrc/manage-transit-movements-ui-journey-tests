@@ -16,7 +16,8 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.Page
+import specpage.CommonPages.*
+
 
 object ManagedFEGoodsUnderControlDocumentsRequestedPage extends Page {
 

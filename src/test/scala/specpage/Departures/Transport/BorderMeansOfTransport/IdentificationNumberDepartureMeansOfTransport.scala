@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.BorderMeansOfTransport
+package specpage.Departures.Transport.BorderMeansOfTransport
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object IdentificationNumberDepartureMeansOfTransport extends YesNoPage {
 

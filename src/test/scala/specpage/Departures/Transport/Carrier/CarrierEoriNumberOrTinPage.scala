@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Transport.Carrier
+package specpage.Departures.Transport.Carrier
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
+
 
 object CarrierEoriNumberOrTinPage extends StringPage {
 
