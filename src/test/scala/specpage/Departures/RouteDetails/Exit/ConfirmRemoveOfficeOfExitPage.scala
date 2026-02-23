@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+package specpage.Departures.RouteDetails.Exit
+import specpage.CommonPages.*
 
 object ConfirmRemoveOfficeOfExitPage extends YesNoPage {
 

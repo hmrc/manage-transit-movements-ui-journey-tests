@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Transit
+package specpage.Departures.RouteDetails.Transit
 
-import uk.gov.hmrc.test.ui.pages.Page
+import specpage.CommonPages.*
 
 object NoTransitOfficesPage extends Page {
 

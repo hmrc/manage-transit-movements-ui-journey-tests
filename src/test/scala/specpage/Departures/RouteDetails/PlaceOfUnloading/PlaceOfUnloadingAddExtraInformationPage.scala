@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfUnloading
+package specpage.Departures.RouteDetails.PlaceOfUnloading
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object PlaceOfUnloadingAddExtraInformationPage extends YesNoPage {
 

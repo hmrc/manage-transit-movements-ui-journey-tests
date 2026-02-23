@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.Exit
-
-import uk.gov.hmrc.test.ui.pages.SelectPage
+package specpage.Departures.RouteDetails.Exit
+import specpage.CommonPages.*
 
 object OfficeOfExitCountryPage extends SelectPage {
 

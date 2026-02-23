@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.LocationOfGoods
+package specpage.Departures.RouteDetails.LocationOfGoods
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import specpage.CommonPages.*
 
 object LocationOfGoodsIdentificationPage extends RadioPage {
 

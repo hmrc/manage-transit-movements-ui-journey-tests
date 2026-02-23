@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.RouteDetails.PlaceOfLoading
+package specpage.Departures.RouteDetails.PlaceOfLoading
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object PlaceOfLoadingCountryPage extends SelectPage {
 
