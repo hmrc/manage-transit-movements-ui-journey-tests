@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.Items
+package specpage.Departures.Items
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
+
 
 object ItemUCRNumberPage extends StringPage {
 

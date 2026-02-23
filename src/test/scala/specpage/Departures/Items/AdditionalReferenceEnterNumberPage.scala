@@ -16,7 +16,8 @@
 
 package specpage.Departures.Items
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
+
 
 object AdditionalReferenceEnterNumberPage extends StringPage {
 

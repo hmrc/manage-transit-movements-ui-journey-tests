@@ -15,8 +15,8 @@
  */
 
 package specpage.Departures.PreTaskList
+import specpage.CommonPages.*
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
 
 object SecurityDetailsPage extends RadioPage {
 

@@ -16,7 +16,7 @@
 
 package specpage.Departures.PreTaskList
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object TIRCarnetPage extends StringPage {
 
