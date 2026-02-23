@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAddDocumentTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of document do you want to add?"

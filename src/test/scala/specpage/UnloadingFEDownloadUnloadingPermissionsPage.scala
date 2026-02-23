@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDownloadUnloadingPermissionsPage extends Page {
 
   override def title(args: String*): String = "Download the unloading permission"

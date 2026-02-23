@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object PresentationNotificationActingAsRepresentative extends YesNoPage {

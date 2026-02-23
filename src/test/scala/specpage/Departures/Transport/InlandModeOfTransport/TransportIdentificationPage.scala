@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.InlandModeOfTransport
 import specpage.CommonPages.*
 
-
 object TransportIdentificationPage extends RadioPage {
 
   override def title(args: String*): String = "Which identification do you want to use for this vehicle?"

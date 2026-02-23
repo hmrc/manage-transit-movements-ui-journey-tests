@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.BorderMeansOfTransport
 import specpage.CommonPages.*
 
-
 object AddBorderModeOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =

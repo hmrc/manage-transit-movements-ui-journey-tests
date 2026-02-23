@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemTransportChargesPage extends RadioPage {
 
   override def title(args: String*): String = "Which method of payment do you want to use for transport charges?"

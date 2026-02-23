@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemDescriptionPage extends StringPage {
 
   override def title(args: String*): String = String.format("Enter a description of item %s", args: _*)

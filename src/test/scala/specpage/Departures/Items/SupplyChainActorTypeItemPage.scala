@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object SupplyChainActorTypeItemPage extends RadioPage {
 
   override def title(args: String*): String = "Which type of supply chain actor do you want to add?"

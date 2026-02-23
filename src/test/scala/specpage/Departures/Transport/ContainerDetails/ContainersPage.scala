@@ -18,7 +18,6 @@ package specpage.Departures.Transport.ContainerDetails
 
 import specpage.CommonPages.*
 
-
 object ContainersPage extends YesNoPage {
 
   override def title(args: String*): String =

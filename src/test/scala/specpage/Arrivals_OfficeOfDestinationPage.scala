@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_OfficeOfDestinationPage extends SelectPage {
 
   override def title(args: String*): String = "Where is the office of destination?"

@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_AuthorisationsReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String =

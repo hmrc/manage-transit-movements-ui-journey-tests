@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDepMeansCountryTypeVehicleRegisteredPage extends SelectPage {
 
   override def title(args: String*): String = "What country is this vehicle registered to?"

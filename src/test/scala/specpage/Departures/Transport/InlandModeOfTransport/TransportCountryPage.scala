@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.InlandModeOfTransport
 import specpage.CommonPages.*
 
-
 object TransportCountryPage extends SelectPage {
 
   override def title(args: String*): String = "What country is this vehicle registered to?"

@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.InlandModeOfTransport
 import specpage.CommonPages.*
 
-
 object AddVehicleIdentificationInlandModeOfTransport extends YesNoPage {
 
   override def title(args: String*): String = String.format("%s", args: _*)

@@ -17,7 +17,6 @@
 package specpage.Departures.PreTaskList
 import specpage.CommonPages.*
 
-
 object OfficeOfDeparturePage extends SelectPage {
 
   override def title(args: String*): String = "Where is the office of departure?"

@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object ConfirmRemoveDocumentFromItemPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to remove this document from the item?"

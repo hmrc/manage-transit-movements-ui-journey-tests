@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportDetails
 
 import specpage.CommonPages.*
 
-
 object ItemsSameDispatchCountryPage extends YesNoPage {
 
   override def title(args: String*): String =

@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemCountryOfDestinationPage extends SelectPage {
 
   override def title(args: String*): String = "What is the item’s country of destination?"

@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.TransportEquipmentCharges
 import specpage.CommonPages.*
 
-
 object AddContainerIdentificationNumberPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a container identification number?"

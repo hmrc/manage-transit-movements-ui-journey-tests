@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object CancellationReasonPage extends StringPage {
 
   override def title(args: String*): String = "Why do you want to cancel this declaration?"

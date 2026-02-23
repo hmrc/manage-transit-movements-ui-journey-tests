@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAdditionalReferenceAddAnotherHCPage extends YesNoPage {
 
   override def title(args: String*): String = args match {

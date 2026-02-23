@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFECountryForNewDepartureMeansOfTransportPage extends SelectPage {
 
   override def title(args: String*): String = "What country is the new departure means of transport registered to?"

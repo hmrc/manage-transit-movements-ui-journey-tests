@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object ManagedFEDepartureDeclarationsPage extends StringPage {
 
   override def title(args: String*): String = "Departure declarations"

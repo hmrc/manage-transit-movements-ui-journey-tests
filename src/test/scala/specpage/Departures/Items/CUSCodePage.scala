@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object CUSCodePage extends StringPage {
 
   override def title(args: String*): String = "What is the Customs Union and Statistics (CUS) code?"

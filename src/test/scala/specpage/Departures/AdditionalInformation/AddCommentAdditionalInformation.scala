@@ -17,7 +17,6 @@
 package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-
 object AddCommentAdditionalInformation extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add any comments for the additional information?"

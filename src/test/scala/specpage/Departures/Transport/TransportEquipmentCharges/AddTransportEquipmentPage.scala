@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportEquipmentCharges
 
 import specpage.CommonPages.*
 
-
 object AddTransportEquipmentPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add any transport equipment?"

@@ -18,7 +18,6 @@ package specpage.Departures.Transport.Carrier
 
 import specpage.CommonPages.*
 
-
 object CarrierEoriNumberOrTinPage extends StringPage {
 
   override def title(args: String*): String =

@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object CannotSendUnloadingPage extends Page {
 
   override def title(args: String*): String = "You cannot send these unloading remarks"

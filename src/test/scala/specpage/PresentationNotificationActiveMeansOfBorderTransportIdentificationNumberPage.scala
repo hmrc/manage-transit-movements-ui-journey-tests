@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object PresentationNotificationActiveMeansOfBorderTransportIdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = String.format("What is the identification for this vehicle?")

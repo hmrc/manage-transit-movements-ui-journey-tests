@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object ManagedFEGoodsNotReleasedDetailsPage extends Page {
 
   override def title(args: String*): String = "Goods not released"

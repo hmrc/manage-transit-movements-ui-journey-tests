@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.BorderMeansOfTransport
 import specpage.CommonPages.*
 
-
 object ConveyanceReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the conveyance reference number?"

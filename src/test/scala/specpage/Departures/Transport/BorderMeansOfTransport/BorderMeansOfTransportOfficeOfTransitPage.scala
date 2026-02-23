@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.BorderMeansOfTransport
 import specpage.CommonPages.*
 
-
 object BorderMeansOfTransportOfficeOfTransitPage extends SelectPage {
 
   override def title(args: String*): String = "Where is the customs office at the border?"

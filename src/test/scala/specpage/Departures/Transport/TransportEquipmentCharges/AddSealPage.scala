@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportEquipmentCharges
 
 import specpage.CommonPages.*
 
-
 object AddSealPage extends YesNoPage {
 
   override def title(args: String*): String = String.format("Do you want to add a seal?", args: _*)

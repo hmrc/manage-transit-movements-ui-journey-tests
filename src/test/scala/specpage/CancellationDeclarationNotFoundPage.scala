@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object CancellationDeclarationNotFoundPage extends Page {
 
   override def title(args: String*): String = "You cannot cancel this departure declaration"

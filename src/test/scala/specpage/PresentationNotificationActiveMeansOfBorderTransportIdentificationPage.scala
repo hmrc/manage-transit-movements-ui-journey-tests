@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object PresentationNotificationActiveMeansOfBorderTransportIdentificationPage extends RadioPage {
 
   override def title(args: String*): String = "Which identification do you want to use for this vehicle?"

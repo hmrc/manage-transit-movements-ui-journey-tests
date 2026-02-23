@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportDetails
 
 import specpage.CommonPages.*
 
-
 object ItemsDestinationCountryPage extends SelectPage {
 
   override def title(args: String*): String = "What country are the items being transported to?"

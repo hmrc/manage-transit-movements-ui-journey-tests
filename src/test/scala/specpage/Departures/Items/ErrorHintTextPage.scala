@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ErrorHintTextPage extends Page {
 
   override def title(args: String*): String = "Before you continue"

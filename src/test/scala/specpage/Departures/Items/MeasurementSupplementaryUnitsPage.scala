@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object MeasurementSupplementaryUnitsPage extends StringPage {
 
   override def title(args: String*): String = "How many supplementary units does the item include?"

@@ -17,7 +17,6 @@
 package specpage.Departures.AdditionalReference
 import specpage.CommonPages.*
 
-
 object AddPageAdditionalReference extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an additional reference for all items?"

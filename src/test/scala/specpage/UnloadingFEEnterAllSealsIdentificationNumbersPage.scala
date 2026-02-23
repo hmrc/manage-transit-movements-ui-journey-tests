@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEEnterAllSealsIdentificationNumbersPage extends StringPage {
 
   override def title(args: String*): String = "What is the identification number for the replacement external seal?"

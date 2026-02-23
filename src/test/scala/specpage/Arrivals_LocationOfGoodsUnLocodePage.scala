@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_LocationOfGoodsUnLocodePage extends StringPage {
 
   override def title(args: String*): String = "What is the UN/LOCODE for the location of goods?"

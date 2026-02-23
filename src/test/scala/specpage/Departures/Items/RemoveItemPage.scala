@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object RemoveItemPage extends YesNoPage {
 
   override def title(args: String*): String =

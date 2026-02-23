@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemTransportEquipmentPage extends SelectPage {
 
   override def title(args: String*): String = "Which transport equipment are you using for this item?"

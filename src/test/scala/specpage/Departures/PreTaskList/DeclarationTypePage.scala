@@ -17,7 +17,6 @@
 package specpage.Departures.PreTaskList
 import specpage.CommonPages.*
 
-
 object DeclarationTypePage extends RadioPage {
 
   override def title(args: String*): String = "Which type of declaration do you want to create?"

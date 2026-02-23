@@ -19,7 +19,6 @@ package specpage.CommonPages
 import specpage.*
 import specsteps.*
 
-
 object SessionPage extends Page {
 
   override def title(args: String*): String = "Authority Wizard - Session attributes"

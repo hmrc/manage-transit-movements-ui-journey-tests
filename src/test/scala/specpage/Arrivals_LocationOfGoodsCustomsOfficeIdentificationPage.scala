@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPage {
 
   override def title(args: String*): String = "What is the customs office identifier for the location of goods?"

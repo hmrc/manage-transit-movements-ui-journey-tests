@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportDetails
 
 import specpage.CommonPages.*
 
-
 object CountryOfDispatchPage extends SelectPage {
 
   override def title(args: String*): String = "What is the country of dispatch?"

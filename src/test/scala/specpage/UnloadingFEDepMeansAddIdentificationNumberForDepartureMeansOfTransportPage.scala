@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDepMeansAddIdentificationNumberForDepartureMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an identification for this vehicle?"

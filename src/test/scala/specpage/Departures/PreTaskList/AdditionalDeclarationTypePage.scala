@@ -17,7 +17,6 @@
 package specpage.Departures.PreTaskList
 import specpage.CommonPages.*
 
-
 object AdditionalDeclarationTypePage extends RadioPage {
 
   override def title(args: String*): String = "Is this a standard or pre-lodged declaration?"

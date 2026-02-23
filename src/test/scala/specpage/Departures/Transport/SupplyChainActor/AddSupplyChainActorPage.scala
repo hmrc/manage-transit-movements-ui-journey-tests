@@ -18,7 +18,6 @@ package specpage.Departures.Transport.SupplyChainActor
 
 import specpage.CommonPages.*
 
-
 object AddSupplyChainActorPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a supply chain actor for all items?"

@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.BorderMeansOfTransport
 import specpage.CommonPages.*
 
-
 object BorderMeansOfTransportCountryPage extends SelectPage {
 
   override def title(args: String*): String = "What country is this vehicle registered to?"

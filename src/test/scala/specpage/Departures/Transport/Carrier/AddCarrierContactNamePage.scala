@@ -18,7 +18,6 @@ package specpage.Departures.Transport.Carrier
 
 import specpage.CommonPages.*
 
-
 object AddCarrierContactNamePage extends StringPage {
 
   override def title(args: String*): String = "Who is the contact for the carrier?"

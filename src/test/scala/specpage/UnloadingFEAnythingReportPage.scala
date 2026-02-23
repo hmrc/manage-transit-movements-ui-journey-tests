@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAnythingReportPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you have anything else to report?"

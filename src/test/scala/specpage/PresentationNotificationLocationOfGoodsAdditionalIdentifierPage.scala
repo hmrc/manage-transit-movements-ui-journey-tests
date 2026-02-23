@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object PresentationNotificationLocationOfGoodsAdditionalIdentifierPage extends StringPage {
 
   override def title(args: String*): String = "What is the additional identifier for the location of goods?"

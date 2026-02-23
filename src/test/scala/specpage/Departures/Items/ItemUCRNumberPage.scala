@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemUCRNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Unique Consignment Reference (UCR)?"

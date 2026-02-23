@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportEquipmentCharges
 
 import specpage.CommonPages.*
 
-
 object ContainerIdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the container identification number?"

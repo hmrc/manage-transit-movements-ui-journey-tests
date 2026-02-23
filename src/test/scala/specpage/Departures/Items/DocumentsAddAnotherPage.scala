@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object DocumentsAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {

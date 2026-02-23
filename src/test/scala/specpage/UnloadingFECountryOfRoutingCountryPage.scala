@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFECountryOfRoutingCountryPage extends SelectPage {
 
   override def title(args: String*): String = "Which country do you want to add to the transit route?"

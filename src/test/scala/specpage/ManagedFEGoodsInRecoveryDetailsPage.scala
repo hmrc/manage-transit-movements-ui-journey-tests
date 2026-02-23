@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object ManagedFEGoodsInRecoveryDetailsPage extends Page {
 
   override def title(args: String*): String = "Goods being recovered"

@@ -18,7 +18,6 @@ package specpage.Departures.Transport.SupplyChainActor
 
 import specpage.CommonPages.*
 
-
 object AddAnotherSupplyChainActorPage extends YesNoPage {
 
   override def title(args: String*): String = args match {

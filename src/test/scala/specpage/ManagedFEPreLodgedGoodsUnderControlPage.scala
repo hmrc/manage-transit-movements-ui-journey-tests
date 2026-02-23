@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object ManagedFEPreLodgedGoodsUnderControlPage extends Page {
 
   override def title(args: String*): String = "Intention to control - complete pre-lodged declaration"

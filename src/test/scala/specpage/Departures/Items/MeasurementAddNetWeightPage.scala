@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object MeasurementAddNetWeightPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add the item’s net weight?"

@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object PresentationNotificationLocationOfGoodsAddIdentificationPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an additional identifier for the location of goods?"

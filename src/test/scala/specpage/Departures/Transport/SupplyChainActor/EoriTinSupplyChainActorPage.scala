@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.SupplyChainActor
 import specpage.CommonPages.*
 
-
 object EoriTinSupplyChainActorPage extends StringPage {
 
   override def title(args: String*): String =

@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object AddNomenclatureCodePage extends YesNoPage {
 
   override def title(args: String*): String = String.format("Do you want to add a combined nomenclature code?")

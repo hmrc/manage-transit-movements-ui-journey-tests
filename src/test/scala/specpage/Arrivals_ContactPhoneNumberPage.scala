@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_ContactPhoneNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the phone number for the location of goods’ contact?"

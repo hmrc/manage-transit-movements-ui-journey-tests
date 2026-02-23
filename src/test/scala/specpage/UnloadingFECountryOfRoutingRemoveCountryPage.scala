@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFECountryOfRoutingRemoveCountryPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to remove this country from the transit route?"

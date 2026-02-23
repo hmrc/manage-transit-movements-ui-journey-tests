@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEChangeCommodityCodePage extends StringPage {
 
   override def title(args: String*): String =

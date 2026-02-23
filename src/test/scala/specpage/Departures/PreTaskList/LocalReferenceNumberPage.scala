@@ -17,7 +17,6 @@
 package specpage.Departures.PreTaskList
 import specpage.CommonPages.*
 
-
 object LocalReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Local Reference Number (LRN)?"

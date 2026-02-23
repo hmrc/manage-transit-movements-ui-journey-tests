@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_LocationOfGoodsIdentificationPage extends RadioPage {
 
   override def title(args: String*): String = "How do you want to identify the location of goods?"

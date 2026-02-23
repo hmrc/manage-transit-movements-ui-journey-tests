@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object AdditionalReferenceEnterNumberPage extends StringPage {
 
   override def title(args: String*): String = "Enter the additional reference number"

@@ -17,7 +17,6 @@
 package specpage.Departures.AdditionalReference
 import specpage.CommonPages.*
 
-
 object AddAnotherPageAdditionalReference extends YesNoPage {
 
   override def title(args: String*): String = args match {

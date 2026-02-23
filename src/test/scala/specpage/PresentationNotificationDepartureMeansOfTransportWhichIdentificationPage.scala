@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object PresentationNotificationDepartureMeansOfTransportWhichIdentificationPage extends RadioPage {
 
   override def title(args: String*): String =

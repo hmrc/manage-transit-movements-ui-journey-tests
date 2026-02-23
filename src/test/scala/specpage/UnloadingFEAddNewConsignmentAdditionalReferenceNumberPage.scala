@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the additional reference number?"

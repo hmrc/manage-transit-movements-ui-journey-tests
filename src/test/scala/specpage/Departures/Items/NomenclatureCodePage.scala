@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object NomenclatureCodePage extends StringPage {
 
   override def title(args: String*): String = "What is the combined nomenclature code?"

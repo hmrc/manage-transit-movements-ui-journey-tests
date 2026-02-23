@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.InlandModeOfTransport
 import specpage.CommonPages.*
 
-
 object InlandModeOfTransportPage extends RadioPage {
 
   override def title(args: String*): String = "Which inland mode of transport are you using?"

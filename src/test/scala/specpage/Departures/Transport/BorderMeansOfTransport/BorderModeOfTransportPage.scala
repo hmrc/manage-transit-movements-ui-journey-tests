@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.BorderMeansOfTransport
 import specpage.CommonPages.*
 
-
 object BorderModeOfTransportPage extends RadioPage {
 
   override def title(args: String*): String = "How is the transit crossing the border?"

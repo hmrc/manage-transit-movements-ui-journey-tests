@@ -18,7 +18,6 @@ package specpage.Departures.Transport.TransportEquipmentCharges
 
 import specpage.CommonPages.*
 
-
 object AddPaymentMethodPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a method of payment for transport charges?"

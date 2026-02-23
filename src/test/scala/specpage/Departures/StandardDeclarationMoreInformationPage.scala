@@ -18,7 +18,6 @@ package specpage.Departures
 
 import specpage.CommonPages.*
 
-
 object StandardDeclarationMoreInformationPage extends Page {
 
   override def title(args: String*): String = "You can only make a standard declaration"

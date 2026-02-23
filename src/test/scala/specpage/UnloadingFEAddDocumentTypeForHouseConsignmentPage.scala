@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAddDocumentTypeForHouseConsignmentPage extends SelectPage {
 
   override def title(args: String*): String =

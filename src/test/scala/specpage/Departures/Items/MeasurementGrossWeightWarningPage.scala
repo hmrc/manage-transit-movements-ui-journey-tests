@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object MeasurementGrossWeightWarningPage extends Page {
 
   override def title(args: String*): String = "Before you continue"

@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object PresentationNotificationLocationOfGoodsAddContactPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a contact for the location of goods?"

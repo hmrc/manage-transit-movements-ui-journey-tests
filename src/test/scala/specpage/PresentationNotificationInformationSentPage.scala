@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object PresentationNotificationInformationSentPage extends Page {
 
   override def title(args: String*): String = "Information sent"

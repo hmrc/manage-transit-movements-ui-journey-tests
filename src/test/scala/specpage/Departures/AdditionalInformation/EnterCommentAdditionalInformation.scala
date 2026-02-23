@@ -17,7 +17,6 @@
 package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-
 object EnterCommentAdditionalInformation extends StringPage {
 
   override def title(args: String*): String = "Enter your comments for the additional information"

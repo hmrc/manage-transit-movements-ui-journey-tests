@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.TransportEquipmentCharges
 import specpage.CommonPages.*
 
-
 object RemoveGoodsItemPage extends YesNoPage {
 
   override def title(args: String*): String = args match {

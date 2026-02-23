@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDepMeansAddIdentificationTypeForDepartureMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =

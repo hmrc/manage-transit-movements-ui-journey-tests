@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object DocumentToAttachPage extends YesNoPage {
 
   override def title(args: String*): String = "Which document do you want to attach?"

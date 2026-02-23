@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEConsignmentCrossCheckPage extends Page {
 
   override def title(args: String*): String =

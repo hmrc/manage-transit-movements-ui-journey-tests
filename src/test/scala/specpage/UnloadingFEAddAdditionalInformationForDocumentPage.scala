@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEAddAdditionalInformationForDocumentPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add any additional information for this document?"

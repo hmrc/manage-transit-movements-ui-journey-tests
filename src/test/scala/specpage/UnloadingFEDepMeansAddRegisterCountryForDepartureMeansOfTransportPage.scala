@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDepMeansAddRegisterCountryForDepartureMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add the registered country for this vehicle?"

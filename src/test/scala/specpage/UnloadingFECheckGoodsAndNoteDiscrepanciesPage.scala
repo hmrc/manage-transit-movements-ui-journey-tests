@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFECheckGoodsAndNoteDiscrepanciesPage extends Page {
 
   override def title(args: String*): String = "Check the goods and note any discrepancies"

@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_ConfirmationPage extends Page {
 
   override def title(args: String*): String = "Arrival notification sent"

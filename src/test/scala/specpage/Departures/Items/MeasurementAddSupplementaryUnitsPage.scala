@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object MeasurementAddSupplementaryUnitsPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add supplementary units?"

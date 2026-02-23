@@ -18,7 +18,6 @@ package specpage.Departures.Transport.BorderMeansOfTransport
 
 import specpage.CommonPages.*
 
-
 object AddVehicleIdentificationBorderMeansOfTransport extends YesNoPage {
 
   override def title(args: String*): String =

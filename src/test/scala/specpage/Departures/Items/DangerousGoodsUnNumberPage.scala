@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object DangerousGoodsUnNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the UN number for the dangerous goods?"

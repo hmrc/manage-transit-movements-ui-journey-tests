@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_LocationOfGoodsCoordinatesPage extends CoordinatesPage {
 
   override def title(args: String*): String = "What are the coordinates for the location of goods?"

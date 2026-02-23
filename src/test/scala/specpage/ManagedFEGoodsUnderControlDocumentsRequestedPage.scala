@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object ManagedFEGoodsUnderControlDocumentsRequestedPage extends Page {
 
   override def title(args: String*): String = "Goods under control - document requested"

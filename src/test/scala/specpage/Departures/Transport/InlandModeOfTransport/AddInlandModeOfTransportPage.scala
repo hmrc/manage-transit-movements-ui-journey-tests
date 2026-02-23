@@ -18,7 +18,6 @@ package specpage.Departures.Transport.InlandModeOfTransport
 
 import specpage.CommonPages.*
 
-
 object AddInlandModeOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an inland mode of transport?"

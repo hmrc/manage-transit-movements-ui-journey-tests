@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_MovementReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Movement Reference Number (MRN)?"

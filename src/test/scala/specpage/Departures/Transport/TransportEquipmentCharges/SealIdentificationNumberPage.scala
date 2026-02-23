@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.TransportEquipmentCharges
 import specpage.CommonPages.*
 
-
 object SealIdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the seal identification number?"

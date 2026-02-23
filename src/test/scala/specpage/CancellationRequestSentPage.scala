@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object CancellationRequestSentPage extends Page {
 
   override def title(args: String*): String = "Cancellation request sent"

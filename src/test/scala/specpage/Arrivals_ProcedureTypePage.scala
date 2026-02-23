@@ -18,7 +18,6 @@ package specpage
 
 import specpage.CommonPages.*
 
-
 object Arrivals_ProcedureTypePage extends RadioPage {
 
   override def title(args: String*): String = "What type of procedure are you using?"

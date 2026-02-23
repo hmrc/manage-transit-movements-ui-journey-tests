@@ -17,7 +17,6 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-
 object YouDoNotHaveDocumentsToAttachPage extends Page {
 
   override def title(args: String*): String = "You do not have any documents to attach"

@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object ItemDeclarationTypePage extends RadioPage {
 
   override def title(args: String*): String = "Which type of declaration do you want to create for this item?"

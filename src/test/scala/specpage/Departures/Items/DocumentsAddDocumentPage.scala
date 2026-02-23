@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object DocumentsAddDocumentPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to attach any documents to this item?"

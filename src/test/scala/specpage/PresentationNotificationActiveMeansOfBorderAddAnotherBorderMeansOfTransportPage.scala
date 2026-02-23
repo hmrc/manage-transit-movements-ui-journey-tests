@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object PresentationNotificationActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String = args match {

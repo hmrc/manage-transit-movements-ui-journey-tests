@@ -17,7 +17,6 @@
 package specpage
 import specpage.CommonPages.*
 
-
 object UnloadingFEDepMeansHouseConsignmentIdentificationForDepartureMeansOfTransportPage extends RadioPage {
 
   override def title(args: String*): String =

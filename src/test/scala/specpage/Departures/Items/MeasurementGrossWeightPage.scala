@@ -18,7 +18,6 @@ package specpage.Departures.Items
 
 import specpage.CommonPages.*
 
-
 object MeasurementGrossWeightPage extends StringPage {
 
   override def title(args: String*): String = "What is the item’s gross weight?"

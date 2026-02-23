@@ -17,7 +17,6 @@
 package specpage.Departures.PreTaskList
 import specpage.CommonPages.*
 
-
 object SecurityDetailsPage extends RadioPage {
 
   override def title(args: String*): String = "Which type of safety and security details do you want to add?"

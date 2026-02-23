@@ -17,7 +17,6 @@
 package specpage.Departures.Transport.Authorisations
 import specpage.CommonPages.*
 
-
 object AuthorisationAddAnotherPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
