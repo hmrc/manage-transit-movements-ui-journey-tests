@@ -21,7 +21,6 @@ import uk.gov.hmrc.test.ui.pages.Departures.Items.PackagesTypeQuantityPage
 import uk.gov.hmrc.test.ui.pages.PresentationNotification.PresentationNotificationTransportEquipmentIncrementPage
 import uk.gov.hmrc.test.ui.pages.Unloading.*
 
-
 class UnloadingStepDef extends BaseStepDef {
 
   Then("""^(?:I )?should be on the 'Do you want to use the revised unloading procedure\?' page$""") { () =>

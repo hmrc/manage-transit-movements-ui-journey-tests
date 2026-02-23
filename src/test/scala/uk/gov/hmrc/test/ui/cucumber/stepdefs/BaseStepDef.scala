@@ -18,6 +18,6 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.matchers.should.Matchers
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.driver.Driver
 
-trait BaseStepDef extends BrowserDriver with ScalaDsl with EN with Matchers
+trait BaseStepDef extends Driver with ScalaDsl with EN with Matchers

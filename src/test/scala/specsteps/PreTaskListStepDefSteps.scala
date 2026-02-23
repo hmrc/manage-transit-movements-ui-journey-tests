@@ -1,3 +1,19 @@
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.PreTaskList.*
 import uk.gov.hmrc.test.ui.pages.Departures.StandardDeclarationMoreInformationPage
@@ -6,104 +22,90 @@ import uk.gov.hmrc.test.ui.utils.CacheHelper
 object PreTaskListStepDefSteps {
 
   // ^I input a random LRN on the 'What is the Local Reference Number\?' page$
-  def whenIInputARandomLRNOnTheWhatIsTheLocalReferenceNumberPage(): Unit = {
+  def whenIInputARandomLRNOnTheWhatIsTheLocalReferenceNumberPage(): Unit =
     LocalReferenceNumberPage
-          .loadPage()
-          .fillInput()
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput()
+      .submitPage()
 
   // ^I input a random LRN on the 'What is the new Local Reference Number\?' page$
-  def whenIInputARandomLRNOnTheWhatIsTheNewLocalReferenceNumberPage(): Unit = {
+  def whenIInputARandomLRNOnTheWhatIsTheNewLocalReferenceNumberPage(): Unit =
     NewLocalReferenceNumberPage
-          .loadPage()
-          .fillInput()
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput()
+      .submitPage()
 
   // ^(?:I )?enter (.+) on the 'What is the Local Reference Number\?' page$
-  def thenIenterOnTheWhatIsTheLocalReferenceNumberPage(answer: String): Unit = {
+  def thenIenterOnTheWhatIsTheLocalReferenceNumberPage(answer: String): Unit =
     LocalReferenceNumberPage
-          .loadPage()
-          .fillInput(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
 
   // ^(?:I )?should be on the 'What is the Local Reference Number\?' page$
-  def thenIshouldBeOnTheWhatIsTheLocalReferenceNumberPage(): Unit = {
+  def thenIshouldBeOnTheWhatIsTheLocalReferenceNumberPage(): Unit =
     LocalReferenceNumberPage
-          .loadPage()
-  }
+      .loadPage()
 
   // ^(?:I )?should be on the 'What is the new Local Reference Number\?' page$
-  def thenIshouldBeOnTheWhatIsTheNewLocalReferenceNumberPage(): Unit = {
+  def thenIshouldBeOnTheWhatIsTheNewLocalReferenceNumberPage(): Unit =
     NewLocalReferenceNumberPage
-          .loadPage()
-  }
+      .loadPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Is this a standard or pre-lodged declaration\?' page$
-  def andIchooseRadioOptionXOnTheIsThisAStandardOrPrelodgedDeclarationPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheIsThisAStandardOrPrelodgedDeclarationPage(answer: String): Unit =
     AdditionalDeclarationTypePage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?select (.+) on the 'Where is the office of departure\?' page$
-  def andIselectOnTheWhereIsTheOfficeOfDeparturePage(answer: String): Unit = {
+  def andIselectOnTheWhereIsTheOfficeOfDeparturePage(answer: String): Unit =
     OfficeOfDeparturePage
-          .loadPage()
-          .select(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Which type of procedure are you using\?' page$
-  def andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage(answer: String): Unit =
     ProcedureTypePage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Which type of declaration do you want to create\?' page$
-  def andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage(answer: String): Unit =
     DeclarationTypePage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?enter (.+) on the 'What is the TIR carnet reference\?' page$
-  def andIenterOnTheWhatIsTheTIRCarnetReferencePage(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheTIRCarnetReferencePage(answer: String): Unit =
     TIRCarnetPage
-          .loadPage()
-          .fillInput(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Which type of safety and security details do you want to add\?' page$
-  def andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage(answer: String): Unit =
     SecurityDetailsPage
-          .loadPage()
-          .select(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^the user has submitted (.+) for LRN (.+) and EORI number (.+)$
-  def whenTheUserHasSubmittedFileForLRNAndEORINumber(fileName: String, lrn: String, eoriNumber: String): Unit = {
+  def whenTheUserHasSubmittedFileForLRNAndEORINumber(fileName: String, lrn: String, eoriNumber: String): Unit =
     CacheHelper.submitDepartureAnswers(fileName, lrn, eoriNumber)
-  }
 
   // ^the user has submitted (.+) for MRN (.+) and EORI number (.+)$
-  def whenTheUserHasSubmittedFileForMRNAndEORINumber(fileName: String, mrn: String, eoriNumber: String): Unit = {
+  def whenTheUserHasSubmittedFileForMRNAndEORINumber(fileName: String, mrn: String, eoriNumber: String): Unit =
     CacheHelper.submitArrivalAnswers(fileName, mrn, eoriNumber)
-  }
 
   // ^(?:I )?click the Continue button on the standard declaration 'You can only make a standard declaration' page$
-  def andIclickTheContinueButtonOnTheStandardDeclarationYouCanOnlyMakeAStandardDeclarationPage(): Unit = {
+  def andIclickTheContinueButtonOnTheStandardDeclarationYouCanOnlyMakeAStandardDeclarationPage(): Unit =
     StandardDeclarationMoreInformationPage
-          .loadPage()
-          .submitPage()
-  }
+      .loadPage()
+      .submitPage()
 
 }

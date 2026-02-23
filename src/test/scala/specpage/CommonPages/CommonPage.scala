@@ -24,9 +24,8 @@ object CommonPage extends BasePage {
   def clickLink(linkText: String): Unit =
     clickByPartialLinkText(linkText)
 
-  def refreshPage(): Unit = {
+  def refreshPage(): Unit =
     Driver.instance.navigate().refresh()
-  }
 
   def wait(t: Int): Unit = {
     val time = t * 1000

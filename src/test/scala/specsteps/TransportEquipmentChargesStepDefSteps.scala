@@ -1,147 +1,151 @@
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.BaseStepDef
 import uk.gov.hmrc.test.ui.pages.Departures.Transport.TransportEquipmentCharges.*
 
 object TransportEquipmentChargesStepDefSteps {
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add any transport equipment\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage(answer: String): Unit =
     AddTransportEquipmentPage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a container identification number\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddAContainerIdentificationNumberPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAContainerIdentificationNumberPage(answer: String): Unit =
     AddContainerIdentificationNumberPage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddASealPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddASealPage(answer: String): Unit =
     AddSealPage
-          .loadPage()
-          .select(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a goods item number\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddAGoodsItemNumberPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAGoodsItemNumberPage(answer: String): Unit =
     AddGoodsItemNumberPage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?click the (.*) link on the 'You have added (.*) transport equipment' page$
-  def andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage(sectionLink: String, numberOfContainers: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage(sectionLink: String, numberOfContainers: String): Unit =
     AddAnotherContainerPage
-            .loadPage(numberOfContainers)
-            .clickByPartialLinkText(sectionLink)
-  }
+      .loadPage(numberOfContainers)
+      .clickByPartialLinkText(sectionLink)
 
   // ^(?:I )?click the (.*) link  on the 'You have added (.*) seals?' page$
-  def andIclickTheXLinkOnTheYouHaveAddedXSealsPage(sectionLink: String, numberOfSeals: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXSealsPage(sectionLink: String, numberOfSeals: String): Unit =
     AddAnotherSealPage
-            .loadPage(numberOfSeals)
-            .clickByPartialLinkText(sectionLink)
-  }
+      .loadPage(numberOfSeals)
+      .clickByPartialLinkText(sectionLink)
 
   // ^(?:I )?click the (.*) link on the 'You have added (.*) goods item numbers?' page$
-  def andIclickTheXLinkOnTheYouHaveAddedXGoodsItemNumbersPage(sectionLink: String, numberOfGoodsItems: String): Unit = {
+  def andIclickTheXLinkOnTheYouHaveAddedXGoodsItemNumbersPage(sectionLink: String, numberOfGoodsItems: String): Unit =
     AddAnotherGoodsItemPage
-            .loadPage(numberOfGoodsItems)
-            .clickByPartialLinkText(sectionLink)
-  }
+      .loadPage(numberOfGoodsItems)
+      .clickByPartialLinkText(sectionLink)
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) transport equipment' page$
-  def andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage(answer: String, numberOfContainers: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage(answer: String, numberOfContainers: String): Unit =
     AddAnotherContainerPage
-            .loadPage(numberOfContainers)
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage(numberOfContainers)
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) seals?' page$
-  def andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage(answer: String, numberOfSeals: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage(answer: String, numberOfSeals: String): Unit =
     AddAnotherSealPage
-            .loadPage(numberOfSeals)
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage(numberOfSeals)
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'You have added (.*) goods item numbers?' page$
-  def andIchooseRadioOptionXOnTheYouHaveAddedXGoodsItemNumbersPage(answer: String, numberOfGoodsItems: String): Unit = {
+  def andIchooseRadioOptionXOnTheYouHaveAddedXGoodsItemNumbersPage(answer: String, numberOfGoodsItems: String): Unit =
     AddAnotherGoodsItemPage
-            .loadPage(numberOfGoodsItems)
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage(numberOfGoodsItems)
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?enter (.+) on the 'What is the container identification number\?' page$
-  def andIenterOnTheWhatIsTheContainerIdentificationNumberPage(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheContainerIdentificationNumberPage(answer: String): Unit =
     ContainerIdentificationNumberPage
-          .loadPage()
-          .fillInput(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
 
   // ^(?:I )?enter (.+) on the 'What is the seal identification number\?' page$
-  def andIenterOnTheWhatIsTheSealIdentificationNumberPage(answer: String): Unit = {
+  def andIenterOnTheWhatIsTheSealIdentificationNumberPage(answer: String): Unit =
     SealIdentificationNumberPage
-          .loadPage()
-          .fillInput(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
 
   // ^(?:I )?enter (.*) on the 'What is the goods item number\?' page$
-  def andIenterXOnTheWhatIsTheGoodsItemNumberPage(answer: String): Unit = {
+  def andIenterXOnTheWhatIsTheGoodsItemNumberPage(answer: String): Unit =
     GoodsItemPage
-          .loadPage()
-          .fillInput(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove transport equipment (.*)\?' page$
-  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage(answer: String, containerIdNumber: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage(
+    answer: String,
+    containerIdNumber: String
+  ): Unit =
     RemoveContainerPage
-            .loadPage(containerIdNumber)
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage(containerIdNumber)
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove this seal\?' page$
-  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSealpage(answer: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSealpage(answer: String): Unit =
     RemoveSealPage
-            .loadPage()
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?click radio option (.*) on the 'Are you sure you want to remove goods item number (.*)\?' page$
-  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveGoodsItemNumberXPage(answer: String, goodsIdNumber: String): Unit = {
+  def andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveGoodsItemNumberXPage(
+    answer: String,
+    goodsIdNumber: String
+  ): Unit =
     RemoveGoodsItemPage
-            .loadPage(goodsIdNumber)
-            .select(answer)
-            .submitPage()
-  }
+      .loadPage(goodsIdNumber)
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Do you want to add a method of payment for transport charges\?' page$
-  def andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage(answer: String): Unit =
     AddPaymentMethodPage
-          .loadPage()
-          .select(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
   // ^(?:I )?choose radio option (.*) on the 'Which method of payment do you want to use for transport charges\?' page$
-  def andIchooseRadioOptionXOnTheWhichMethodOfPaymentDoYouWantToUseForTransportChargesPage(answer: String): Unit = {
+  def andIchooseRadioOptionXOnTheWhichMethodOfPaymentDoYouWantToUseForTransportChargesPage(answer: String): Unit =
     MethodOfPaymentPage
-          .loadPage()
-          .select(answer)
-          .submitPage()
-  }
+      .loadPage()
+      .select(answer)
+      .submitPage()
 
 }
