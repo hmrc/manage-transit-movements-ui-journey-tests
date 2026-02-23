@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Representative
+package specpage.Departures.TraderDetails.Representative
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object ActingAsRepresentativePage extends YesNoPage {
 

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails
+package specpage.Departures.TraderDetails
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object SetReducedDataSetIndicatorPage extends YesNoPage {
 

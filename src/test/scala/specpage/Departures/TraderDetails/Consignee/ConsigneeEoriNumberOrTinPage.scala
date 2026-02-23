@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignee
+package specpage.Departures.TraderDetails.Consignee
 
-import uk.gov.hmrc.test.ui.pages.StringPage
+import specpage.CommonPages.*
 
 object ConsigneeEoriNumberOrTinPage extends StringPage {
 

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder
+package specpage.Departures.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object IsTIRidKnownPage extends YesNoPage {
 

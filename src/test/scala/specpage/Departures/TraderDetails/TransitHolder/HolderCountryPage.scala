@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.TransitHolder
+package specpage.Departures.TraderDetails.TransitHolder
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object HolderCountryPage extends SelectPage {
 

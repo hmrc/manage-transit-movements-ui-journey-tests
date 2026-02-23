@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.TraderDetails.Consignor
+package specpage.Departures.TraderDetails.Consignor
 
-import uk.gov.hmrc.test.ui.pages.SelectPage
+import specpage.CommonPages.*
 
 object ConsignorCountryPage extends SelectPage {
 
