@@ -16,7 +16,6 @@
 
 package specpage
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object ConfirmCancellationPage extends YesNoPage {
 

@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
-
+package specpage
 object ManageFEDeleteDraftDeclarationsPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to delete this declaration?"

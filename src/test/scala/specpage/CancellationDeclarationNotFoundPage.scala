@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Cancellations
+package specpage
 
 import uk.gov.hmrc.test.ui.pages.Page
 

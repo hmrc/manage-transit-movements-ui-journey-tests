@@ -16,7 +16,7 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import uk.gov.hmrc.selenium.webdriver.Driver
+
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
 object AuthorityWizardPage extends Page {

@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
-
-import uk.gov.hmrc.test.ui.pages.SelectPage
+package specpage
 
 object UnloadingFEAdditionalReferenceHouseConsignmentItemTypePage extends SelectPage {
 

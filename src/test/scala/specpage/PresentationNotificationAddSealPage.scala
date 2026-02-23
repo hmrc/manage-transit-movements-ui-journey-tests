@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+package specpage
 
 object PresentationNotificationAddSealPage extends YesNoPage {
 

@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
-
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+package specpage
 
 object UnloadingFEDocumentsAddAnotherDocumentsHCPage extends YesNoPage {
 

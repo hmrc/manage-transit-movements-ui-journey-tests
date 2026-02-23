@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
+package specpage
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
 
 object UnloadingFEHouseConsignmentRemoveItemPage extends YesNoPage {
 

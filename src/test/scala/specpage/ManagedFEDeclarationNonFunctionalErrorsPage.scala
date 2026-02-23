@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Manage
-
-import uk.gov.hmrc.test.ui.pages.Page
+package specpage
 
 object ManagedFEDeclarationNonFunctionalErrorsPage extends Page {
 

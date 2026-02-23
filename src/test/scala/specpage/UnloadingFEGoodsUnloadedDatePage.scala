@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
-
-import uk.gov.hmrc.test.ui.pages.DatePage
+package specpage
 
 object UnloadingFEGoodsUnloadedDatePage extends DatePage {
 

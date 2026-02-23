@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package specpage.CommonPages
 
 trait CoordinatesPage extends StringPage {
 

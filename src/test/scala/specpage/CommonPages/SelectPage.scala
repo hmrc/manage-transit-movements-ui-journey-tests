@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package specpage.CommonPages
 
 import org.openqa.selenium.{By, Keys, WebElement}
 

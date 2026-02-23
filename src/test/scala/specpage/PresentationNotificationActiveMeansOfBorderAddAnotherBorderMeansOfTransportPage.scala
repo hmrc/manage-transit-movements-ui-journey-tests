@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.PresentationNotification
+package specpage
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
 
 object PresentationNotificationActiveMeansOfBorderAddAnotherBorderMeansOfTransportPage extends YesNoPage {
 

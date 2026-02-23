@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.GetGuaranteeBalance
-
-import uk.gov.hmrc.test.ui.pages.StringPage
+package specpage
 
 object GuaranteeRefNumberPage extends StringPage {
 

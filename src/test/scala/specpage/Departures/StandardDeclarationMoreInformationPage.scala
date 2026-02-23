@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures
+package specpage.Departures
 
 import uk.gov.hmrc.test.ui.pages.Page
 

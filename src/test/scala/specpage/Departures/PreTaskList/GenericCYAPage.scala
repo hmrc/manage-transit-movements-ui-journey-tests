@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Departures.PreTaskList
+package specpage.Departures.PreTaskList
 
 import uk.gov.hmrc.test.ui.pages.Page
 

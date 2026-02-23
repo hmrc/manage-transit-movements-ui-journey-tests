@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages.Unloading
-
-import uk.gov.hmrc.test.ui.pages.RadioPage
+package specpage
 
 object UnloadingFEDepMeansIdentificationForDepartureMeansOfTransportPage extends RadioPage {
 

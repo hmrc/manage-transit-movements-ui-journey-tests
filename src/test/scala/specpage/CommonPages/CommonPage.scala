@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package specpage.CommonPages
 
 import org.scalatest.concurrent.Eventually.eventually
 import uk.gov.hmrc.selenium.webdriver.Driver

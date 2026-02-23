@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.pages
+package specpage.CommonPages
 
 import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 import uk.gov.hmrc.test.ui.pages.Manage.ManageTransitMovementsPage
