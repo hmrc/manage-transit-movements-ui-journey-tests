@@ -18,21 +18,29 @@ package convertedSpecs
 
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers
-import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
+import org.scalatest.{BeforeAndAfter, BeforeAndAfterAll, BeforeAndAfterEach, GivenWhenThen}
 import uk.gov.hmrc.selenium.webdriver.{Browser, ScreenshotOnFailure}
+import uk.gov.hmrc.test.ui.utils.{DriverHelper, MongoHelper}
 
 trait BaseSpec
     extends AnyFeatureSpec
     with GivenWhenThen
     with Matchers
     with BeforeAndAfterEach
+    with BeforeAndAfterAll
     with Browser
-    with ScreenshotOnFailure {
+    with ScreenshotOnFailure
+    with DriverHelper
+    with MongoHelper {
 
-  override def beforeEach(): Unit =
+  override def beforeAll(): Unit =
     startBrowser()
 
-  override def afterEach(): Unit =
+  override def beforeEach(): Unit =
+    dropCollections()
+    deleteCookies()
+
+  override def afterAll(): Unit =
     quitBrowser()
 
 }

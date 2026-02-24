@@ -32,7 +32,6 @@ package specsteps
  * limitations under the License.
  */
 
-
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.matchers.should.Matchers
 import uk.gov.hmrc.test.ui.driver.Driver
