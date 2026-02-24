@@ -16,7 +16,7 @@
 
 package specpage.Departures.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object AddAnotherBorderMeansOfTransportPage extends YesNoPage {
 

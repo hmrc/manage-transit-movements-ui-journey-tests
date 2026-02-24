@@ -17,7 +17,7 @@
 package specpage.Departures.Items
 import specpage.CommonPages.*
 
-object AdditionalInformationTypePage extends SelectPage {
+object ItemAdditionalInformationTypePage extends SelectPage {
 
   override def title(args: String*): String = "What type of additional information do you want to add?"
 

@@ -16,7 +16,7 @@
 
 package specpage.Departures.Transport.BorderMeansOfTransport
 
-import uk.gov.hmrc.test.ui.pages.{InvalidTitleArgsException, YesNoPage}
+import specpage.CommonPages.*
 
 object RemoveDepartureMeansOfTransportPage extends YesNoPage {
 

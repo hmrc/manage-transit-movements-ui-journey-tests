@@ -16,7 +16,7 @@
 
 package specpage.Departures.Transport.SupplyChainActor
 
-import uk.gov.hmrc.test.ui.pages.YesNoPage
+import specpage.CommonPages.*
 
 object RemoveSupplyChainActorPage extends YesNoPage {
 

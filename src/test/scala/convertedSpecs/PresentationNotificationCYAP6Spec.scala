@@ -14,14 +14,31 @@
  * limitations under the License.
  */
 
-import CYAStepDefSteps.*
-import DepartureDeclarationsStepDefSteps.*
-import InlandModeOfTransportStepDefSteps.*
-import PresentationNotificationStepDefSteps.*
-import org.scalatest.GivenWhenThen
-import org.scalatest.featurespec.AnyFeatureSpec
+package convertedSpecs
 
-class PresentationNotificationCYAP6Spec extends AnyFeatureSpec with GivenWhenThen {
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import specsteps.CYAStepDefSteps.*
+import specsteps.DepartureDeclarationsStepDefSteps.*
+import specsteps.InlandModeOfTransportStepDefSteps.*
+import specsteps.PresentationNotificationStepDefSteps.*
+import org.scalatest.GivenWhenThen
+
+class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
 
   Feature(
     "Trader sends in fully completed pre-lodged departure declaration type D (IE015) and reviews their answers in presentation notification service (IE170) via CYA page"

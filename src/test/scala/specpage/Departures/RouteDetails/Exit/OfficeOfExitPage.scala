@@ -17,7 +17,6 @@
 package specpage.Departures.RouteDetails.Exit
 import specpage.CommonPages.*
 
-
 object OfficeOfExitPage extends SelectPage {
 
   override def title(args: String*): String = String.format("Where in %s is the office of exit for transit?", args: _*)

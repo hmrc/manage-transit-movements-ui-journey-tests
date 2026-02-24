@@ -32,19 +32,9 @@ package specsteps
  * limitations under the License.
  */
 
-import specpage.Departures.Confirmation.DepartureConfirmationPage
 
-object DepartureConfirmationStepDefSteps {
+import io.cucumber.scala.{EN, ScalaDsl}
+import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.driver.Driver
 
-  // ^(?:I )?click the (.+) link on the 'Departure declaration sent' page$
-  def andIclickTheLinkOnTheDepartureDeclarationSentPage(link: String): Unit =
-    DepartureConfirmationPage
-      .loadPage()
-      .selectLink(link)
-
-  // ^(?:I )?(?:should )?be on the 'Departure declaration sent' page$
-  def thenIshouldbeOnTheDepartureDeclarationSentPage(): Unit =
-    DepartureConfirmationPage
-      .loadPage()
-
-}
+trait BaseStepDef extends Driver with ScalaDsl with EN with Matchers

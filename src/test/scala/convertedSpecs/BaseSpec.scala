@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package specs
+package convertedSpecs
 
 import org.scalatest.featurespec.AnyFeatureSpec
 import org.scalatest.matchers.should.Matchers

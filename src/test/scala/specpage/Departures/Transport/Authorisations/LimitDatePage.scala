@@ -16,7 +16,7 @@
 
 package specpage.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.DatePage
+import specpage.CommonPages.*
 
 import java.time.LocalDateTime
 

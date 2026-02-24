@@ -14,18 +14,36 @@
  * limitations under the License.
  */
 
-import ArrivalNotificationsStepDefSteps.{andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage, thenIShouldBeOnTheArrivalNotificationsPage, thenIShouldBeOnTheReviewNotificationErrorsPage}
-import CYAStepDefSteps.andIsubmitOnTheCheckYourAnswersSectionXPage
-import CommonStepDefSteps.andISignOut
-import ConfirmationStepDefSteps.thenIshouldbeOnTheArrivalNotificationSentPage
-import IdentificationStepDefSteps.andIenterOnTheMovementReferenceNumberPage
-import LoginStepDefSteps.andILoginWithIDX
-import ManageStepDefSteps.{givenIclickOnTheLinkOnTheManageYourTransitMovementsPage, givenIsubmitAFile}
-import PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForMRNAndEORINumber
-import org.scalatest.GivenWhenThen
-import org.scalatest.featurespec.AnyFeatureSpec
+package convertedSpecs
 
-class ArrivalsAmendNotificationP6Spec extends AnyFeatureSpec with GivenWhenThen {
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import specsteps.ArrivalNotificationsStepDefSteps.{andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage, thenIShouldBeOnTheArrivalNotificationsPage, thenIShouldBeOnTheReviewNotificationErrorsPage}
+import specsteps.CYAStepDefSteps.andIsubmitOnTheCheckYourAnswersSectionXPage
+import specsteps.CommonStepDefSteps.andISignOut
+import specsteps.ConfirmationStepDefSteps.thenIshouldbeOnTheArrivalNotificationSentPage
+import specsteps.IdentificationStepDefSteps.andIenterOnTheMovementReferenceNumberPage
+import specsteps.LoginStepDefSteps.andILoginWithIDX
+import specsteps.ManageStepDefSteps.{givenIclickOnTheLinkOnTheManageYourTransitMovementsPage, givenIsubmitAFile}
+import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForMRNAndEORINumber
+import org.scalatest.GivenWhenThen
+import specsteps.ArrivalNotificationsStepDefSteps
+
+class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
 
   Feature("End to end journey for amending an arrival notification - Final") {
 

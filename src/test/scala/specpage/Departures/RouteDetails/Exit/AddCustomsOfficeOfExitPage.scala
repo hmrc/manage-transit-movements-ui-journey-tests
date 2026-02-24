@@ -17,7 +17,6 @@
 package specpage.Departures.RouteDetails.Exit
 import specpage.CommonPages.*
 
-
 object AddCustomsOfficeOfExitPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a customs office of exit?"

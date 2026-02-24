@@ -16,7 +16,7 @@
 
 package specpage.Departures.Transport.Authorisations
 
-import uk.gov.hmrc.test.ui.pages.RadioPage
+import specpage.CommonPages.*
 
 object AuthorisationTypePage extends RadioPage {
 

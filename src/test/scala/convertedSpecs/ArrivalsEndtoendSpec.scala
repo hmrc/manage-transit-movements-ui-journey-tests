@@ -14,16 +14,33 @@
  * limitations under the License.
  */
 
-import ArrivalNotificationsStepDefSteps.thenIShouldBeOnTheArrivalNotificationsPage
-import CYAStepDefSteps.*
-import CommonStepDefSteps.*
-import ConfirmationStepDefSteps.*
-import IdentificationStepDefSteps.*
-import LocationOfGoodsStepDefSteps.*
-import org.scalatest.GivenWhenThen
-import org.scalatest.featurespec.AnyFeatureSpec
+package convertedSpecs
 
-class ArrivalsEndtoendSpec extends AnyFeatureSpec with GivenWhenThen {
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import specsteps.ArrivalNotificationsStepDefSteps.thenIShouldBeOnTheArrivalNotificationsPage
+import specsteps.CYAStepDefSteps.*
+import specsteps.CommonStepDefSteps.*
+import specsteps.ConfirmationStepDefSteps.*
+import specsteps.IdentificationStepDefSteps.*
+import specsteps.LocationOfGoodsStepDefSteps.*
+import org.scalatest.GivenWhenThen
+
+class ArrivalsEndtoendSpec extends BaseSpec with GivenWhenThen {
 
   Feature("End to end journey Arrival notification feature") {
 

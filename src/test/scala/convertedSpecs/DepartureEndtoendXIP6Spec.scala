@@ -14,29 +14,45 @@
  * limitations under the License.
  */
 
-import BorderMeansOfTransportStepDefSteps.*
-import CYAStepDefSteps.*
-import CarrierDetailsStepDefSteps.*
-import DepartureConfirmationStepDefSteps.*
-import Departure_GuaranteeDetailsStepDefSteps.*
-import DocumentsStepDefSteps.*
-import InlandModeOfTransportStepDefSteps.*
-import ItemDetailsStepDefSteps.*
-import PreTaskListStepDefSteps.*
-import PreviousStepDefSteps.*
-import RouteDetailsLocationOfGoodsStepDefSteps.*
-import RouteDetailsPlaceOfLoadingStepDefSteps.*
-import RouteDetailsStepDefSteps.*
-import SupplyChainActorStepDefSteps.*
-import TaskListStepDefSteps.*
-import TraderDetailsStepDefSteps.*
-import TransportDetailsStepDefSteps.*
-import TransportEquipmentChargesStepDefSteps.*
-import org.scalatest.GivenWhenThen
-import org.scalatest.featurespec.AnyFeatureSpec
-import org.scalatest.matchers.should.Matchers
+package convertedSpecs
 
-class DepartureEndtoendXIP6Spec extends AnyFeatureSpec with GivenWhenThen {
+/*
+ * Copyright 2026 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import specsteps.BorderMeansOfTransportStepDefSteps.*
+import specsteps.CYAStepDefSteps.*
+import specsteps.CarrierDetailsStepDefSteps.*
+import specsteps.DepartureConfirmationStepDefSteps.*
+import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
+import specsteps.DocumentsStepDefSteps.*
+import specsteps.InlandModeOfTransportStepDefSteps.*
+import specsteps.ItemDetailsStepDefSteps.*
+import specsteps.PreTaskListStepDefSteps.*
+import specsteps.PreviousStepDefSteps.*
+import specsteps.RouteDetailsLocationOfGoodsStepDefSteps.*
+import specsteps.RouteDetailsPlaceOfLoadingStepDefSteps.*
+import specsteps.RouteDetailsStepDefSteps.*
+import specsteps.SupplyChainActorStepDefSteps.*
+import specsteps.TaskListStepDefSteps.*
+import specsteps.TraderDetailsStepDefSteps.*
+import specsteps.TransportDetailsStepDefSteps.*
+import specsteps.TransportEquipmentChargesStepDefSteps.*
+import org.scalatest.GivenWhenThen
+
+class DepartureEndtoendXIP6Spec extends BaseSpec with GivenWhenThen {
 
   Feature("End to end journey for Prelodged Northern Ireland office of departure") {
 
