@@ -66,7 +66,7 @@ class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
       // Possible match (best=0.95)
-      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("")
+      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
       // --- Other possible matches ---
       // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
@@ -76,7 +76,7 @@ class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
       // Possible match (best=0.90)
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("", "")
+      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
       // --- Other possible matches ---
       // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
