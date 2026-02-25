@@ -36,6 +36,7 @@ import specsteps.ArrivalNotificationsStepDefSteps.*
 import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.ManageStepDefSteps.*
 import specsteps.UnloadingStepDefSteps.*
+import specsteps.LoginStepDefSteps.andILoginWithIDX
 import org.scalatest.GivenWhenThen
 
 class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
@@ -43,6 +44,9 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
   Feature("Manage transit movements frontend tests for Arrivals") {
 
     Scenario("01 - Trader is able to view and make unloading remarks") {
+      Given("I login with ID 1234567890")
+      andILoginWithIDX("1234567890")
+
       When("I submit an Phase6 IE007 Arrival Notification")
       // Possible match (best=1.00)
       givenIsubmitAFile("Phase6 IE007 Arrival Notification")
@@ -74,6 +78,9 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
     }
 
     Scenario("02 - Trader is able to view unloading remarks for all errors") {
+      Given("I login with ID 1234567890")
+      andILoginWithIDX("1234567890")
+
       When("I submit an Phase6 IE007 Arrival Notification")
       // Possible match (best=1.00)
       givenIsubmitAFile("Phase6 IE007 Arrival Notification")
@@ -117,6 +124,9 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
     }
 
     Scenario("03 - Trader is able to view arrival notification rejections for all errors") {
+      Given("I login with ID 1234567890")
+      andILoginWithIDX("1234567890")
+
       When("I submit an Phase6 IE007 Arrival Notification")
       // Possible match (best=1.00)
       givenIsubmitAFile("Phase6 IE007 Arrival Notification")

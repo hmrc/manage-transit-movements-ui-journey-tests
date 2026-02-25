@@ -34,7 +34,6 @@ package convertedSpecs
 
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
-import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
 import specsteps.GetGuaranteeBalanceStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
