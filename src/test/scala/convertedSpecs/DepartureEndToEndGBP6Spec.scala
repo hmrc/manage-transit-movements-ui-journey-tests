@@ -57,7 +57,7 @@ import specsteps.LoginStepDefSteps
 import specsteps.ManageStepDefSteps.*
 import specsteps.RouteDetailsPlaceOfUnloadingStepDefSteps.*
 
-class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen {
+class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
   override def beforeEach(): Unit = {
     dropCollections()

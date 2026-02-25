@@ -57,7 +57,7 @@ object CYAStepDefSteps {
   // ^(?:I )?click the Change link for (.+) on the 'Check your answers' page$
   def andIclickTheChangeLinkForOnTheCheckYourAnswersPage(text: String): Unit =
     CYAPage
-      .clickLinkById(text)
+      .clickChangeLink(text)
 
   // ^(?:I )?click the Change link for (.+) on the (?:Transport details|Unloading|Route details|Trader details|Documents|Item 1|Guarantee details) 'Check your answers' page$
   def andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
