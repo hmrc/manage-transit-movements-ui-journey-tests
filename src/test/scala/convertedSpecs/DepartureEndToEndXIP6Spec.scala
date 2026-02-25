@@ -92,7 +92,6 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       And("I submit the Check your answers page")
       andIsubmitTheCheckYourAnswersPage()
 
-
       // -------------------------Trader details-------------------------
       When("I click the Add trader details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add trader details")
@@ -135,7 +134,6 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
 
       And("I should see Completed status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
-
 
       // -------------------------Route details-------------------------
       When("I click the Add route details link on the Declaration summary page")
@@ -205,8 +203,6 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
-
-
 
       // -------------------------Guarantee details-------------------------
       And("I click the Add guarantee details link on the Declaration summary page")
@@ -340,8 +336,6 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
-
-
       // -------------------------Document details-------------------------
       When("I click the Add documents link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add documents")
@@ -402,8 +396,6 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
-
-
 
       // -------------------------Item details-------------------------
       When("I click the Add items link on the Declaration summary page")
