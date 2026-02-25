@@ -80,9 +80,6 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
     Scenario("01 Procedure 'Simplified' - Declaration 'T2' - Security '2 EXS' - Binding itinerary 1 -") {
       And("I choose radio option Simplified on the Which type of procedure are you using? page")
       andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Simplified")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage() [0.76] (IdentificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page
-
       And("I choose radio option T2 on the Which type of declaration do you want to create? page")
       andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage("T2")
       And(
@@ -93,57 +90,58 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
       And("I submit the Check your answers page")
       andIsubmitTheCheckYourAnswersPage()
 
+      // -------------------------Trader details-------------------------
       And("I click the Add trader details link on the Declaration summary page")
-
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add trader details")
+      
       And("I choose radio option No on the Do you know the transit holder’s EORI number? page")
-
       andIchooseRadioOptionXOnTheDoYouKnowTheTransitHoldersEORINumberPage("No")
-
+      
       And("I enter Joe Blog on the What is the transit holder’s name? page")
-
       andIenterOnTheWhatIsTheTransitHoldersNamePage("Joe Blog")
-
+      
       And("I select United Kingdom on the Which country is the transit holder based in? page")
-
       andIselectOnTheWhichCountryIsTheTransitHolderBasedInPage("United Kingdom")
-
+      
       And("I fill in the address on the What is the transit holder’s address? page")
       andIfillInTheAddressOnTheWhatIsTheTransitHoldersAddressPage()
-
+      
       And("I choose radio option Yes on the Do you want to add a contact for the transit holder? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("Yes")
-
+      
       And("I enter John contact on the What is the contact’s name? page")
       andIenterNameOnTheWhatIsTheContactsNamePage("John")
-
+      
       And("I enter +2112212112 on the What is the phone number for the transit holder’s contact? page")
       andIenterOnTheWhatIsThePhoneNumberForTheTransitHoldersContactPage("+2112212112 ")
-
+      
       And("I choose radio option No on the Are you acting as a representative? page")
       andIchooseRadioOptionXOnTheAreYouActingAsARepresentativePage("No")
+      
       And("I choose radio option Yes on the Do you want to use a reduced data set? page")
       thenIchooseRadioOptionXOnTheDoYouWantToUseAReducedDataSetPage("Yes")
-
+      
       And("I choose radio option No on the Do you know the consignor’s EORI number or TIN? page")
       andIchooseRadioOptionXOnTheDoYouKnowTheConsignorsEORINumberOrTINPage("No")
+      
       And("I enter Pip Consignor on the What is the consignor’s name? page")
       andIenterOnTheWhatIsTheConsignorsNamePage("Pip Consignor")
-
+      
       And("I select United Kingdom on the Which country is the consignor based in? page")
       andIselectOnTheWhichCountryIsTheConsignorBasedInPage("United Kingdom")
-
+      
       And("I fill in the address on the What is the consignor’s address? page")
       andIfillInTheAddressOnTheWhatIsTheConsignorsAddressPage()
-
+      
       And("I choose radio option No on the Do you want to add a contact for the consignor? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
+      
       And("I choose radio option No on the Do you know the consignee’s EORI number or TIN? page")
       andIchooseRadioOptionXOnTheDoYouKnowTheConsigneesEORINumberOrTINPage("No")
-
+      
       And("I enter Simpson Blog Consignee on the What is the consignee’s name? page")
       andIenterOnTheWhatIsTheConsigneesNamePage("Simpson Blog Consignee")
-
+      
       And("I select United Kingdom on the Which country is the consignee based in? page")
       andIselectOnTheWhichCountryIsTheConsigneeBasedInPage("United Kingdom")
 
@@ -159,6 +157,7 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
       And("I should see Completed status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
 
+      // -------------------------Route details-------------------------
       When("I click the Add route details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add route details")
 
@@ -177,19 +176,17 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
       andIselectOnTheWhichCountryDoYouWantToAddToTheTransitRoutePage("Germany")
 
       And("I choose radio option Yes on the You have added 1 country to the transit route page")
-      // Possible match (best=0.79)
-      // andIchooseRadioOptionXOnTheTransitRouteAddCountryPage("Yes")
-      // --- Other possible matches ---
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("Yes", "1")
-      // [0.79] (RouteDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) countr(?:y |ies )to the transit route' page
 
       And("I select France on the Which country do you want to add to the transit route? page")
       andIselectOnTheWhichCountryDoYouWantToAddToTheTransitRoutePage("France")
+
       And("I choose radio option Yes on the You have added 2 countries to the transit route page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("Yes", "2")
 
       And("I select Andorra on the Which country do you want to add to the transit route? page")
       andIselectOnTheWhichCountryDoYouWantToAddToTheTransitRoutePage("Andorra")
+
       And("I choose radio option No on the You have added 3 countries to the transit route page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "3")
 
@@ -221,15 +218,10 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
       )
 
       And("I submit on the Check your answers section Office of transit page")
-      // Possible match (best=1.00)
       andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
 
       And("I choose radio option Yes on the You have added 1 office of transit page")
-      // Possible match (best=0.79)
-      // andIchooseRadioOptionXOnTheAddOfficeOfTransitPage("Yes")
-      // --- Other possible matches ---
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes", "1")
-      // [0.76] (RouteDetailsTransitStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) offices? of transit' page
 
       And("I select France on the Which country is the office of transit in? page")
       andIselectOnTheWhichCountryIsTheOfficeOfTransitInPage("France")
@@ -239,33 +231,36 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
       And("I choose radio option No on the Do you want to add a time of arrival in Bastia port (FR000380)? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage("No", "Bastia port (FR000380)")
+      
       And("I submit on the Check your answers section Office of transit page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
 
       And("I choose radio option No on the You have added 2 offices of transit page")
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("No", "2")
+      
       And("I enter 1234567890 on the What is the authorisation number for the location of goods? page")
       andIenterOnTheWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage("1234567890")
+      
       And("I choose radio option No on the Do you want to add an additional identifier for the location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalIdentifierForTheLocationOfGoodsPage("No")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
+      
       And("I submit on the Check your answers section Location of goods page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
 
       And("I choose radio option No on the Do you want to add a UN LOCODE for the place of loading? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("No")
+      
       And("I select United Kingdom on the In which country is the place of loading? page")
       andIselectOnTheInWhichCountryIsThePlaceOfLoadingPage("United Kingdom")
+      
       And("I enter London on the Where in United Kingdom is the place of loading? page")
       andIenterOnTheWhereInXIsThePlaceOfLoadingPage("London", "United Kingdom")
 
       And("I choose radio option No on the Do you want to add a place of unloading? page")
-      // Possible match (best=0.81)
       andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfUnloadingPage("No")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfUnloadingPage() [0.81] (RouteDetailsPlaceOfUnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a place of unloading\?' page
 
       And("I submit on the Check your answers section Places of loading and unloading page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Places of loading and unloading")
@@ -276,18 +271,23 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
+      // -------------------------Guarantee details-------------------------
       When("I click the Add guarantee details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
+      
       And("I choose radio option (A) Guarantee waiver by agreement on the Which type of guarantee is it? page")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(A) Guarantee waiver by agreement")
+      
       And("I choose radio option No on the You have added 1 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "1")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
+      // -------------------------Transport details-------------------------
       When("I click the Add transport details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add transport details")
+      
       And("I choose radio option Yes on the Do you want to use the same UCR for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheSameUCRForAllItemsPage("Yes")
 
@@ -299,6 +299,7 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
       And("I select United Kingdom on the What is the country of dispatch? page")
       andIselectOnTheWhatIsTheCountryOfDispatchPage("United Kingdom")
+      
       And(
         "I choose radio option Yes on the Are the goods being transported to another country after the end of this transit movement? page"
       )
@@ -312,6 +313,7 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
       And("I choose radio option Yes on the Are you using any shipping containers to transport the goods? page")
       andIchooseRadioOptionXOnTheAreYouUsingAnyShippingContainersToTransportTheGoodsPage("Yes")
+      
       And("I choose radio option No on the Do you want to add an inland mode of transport? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAnInlandModeOfTransportPage("No")
       And(
@@ -325,13 +327,16 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      
       And("I submit on the Check your answers section Departure means of transport page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
       andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
+      
       And("I choose radio option Sea on the How is the transit crossing the border? page")
       andIchooseRadioOptionXOnTheHowIsTheTransitCrossingTheBorderPage("Sea")
+      
       And(
         "I choose radio option Name of a sea-going vessel on the border mode Which identification do you want to use for this vehicle? page"
       )
@@ -343,22 +348,28 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
 
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
       andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      
       And("I select Bastia port (FR000380) on the Where is the customs office at the border? page")
       andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Bastia port (FR000380)")
+      
       And("I choose radio option No on the Do you want to add a conveyance reference number? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAConveyanceReferenceNumberPage("No")
+      
       And("I submit on the Check your answers section Border means of transport page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Border means of transport")
 
       And("I choose radio option No on the You have added 1 border means of transport page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXBorderMeansOfTransportPage("No", "1")
+      
       And("I submit on the Check your answers section Modes and means of transport page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
 
       And("I choose radio option Yes on the Do you want to add a supply chain actor for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASupplyChainActorForAllItemsPage("Yes")
+      
       And("I choose radio option Consolidator on the Which type of supply chain actor do you want to add? page")
       andIchooseRadioOptionXOnTheWhichTypeOfSupplyChainActorDoYouWantToAddPage("Consolidator")
+      
       And(
         "I enter FR98472189002 on the What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator? page"
       )
@@ -366,156 +377,235 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen{
         "FR98472189002",
         "consolidator"
       )
+      
       And("I choose radio option No on the You have added 1 supply chain actor page")
       andIchooseRadioOptionXOnTheYouHaveAddedSupplyChainActorsPage("No", "1")
+      
       And("I enter ACR123 reference number on the What is the reference number for the ACR authorisation? page")
       andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("ACR123", "ACR")
+      
       And("I enter TRD123 reference number on the What is the reference number for the TRD authorisation? page")
       andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("TRD123", "TRD")
+      
       And("I choose radio option No on the You have added 2 transport authorisations page")
       whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("No", "2")
+      
       And("I enter the date on the When do you expect the transit to arrive in Abruzzo - Pescara (IT406100)? page")
       andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage("Abruzzo - Pescara (IT406100)")
+      
       When("I choose radio option No on the Do you want to add a carrier? page")
       andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
+      
       And("I enter C001 on the What is the container identification number? page")
       andIenterOnTheWhatIsTheContainerIdentificationNumberPage("C001")
+      
       And("I choose radio option No on the Do you want to add a seal? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASealPage("No")
+      
       And("I submit on the Check your answers section Transport equipment page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
+      
       And("I choose radio option No on the You have added 1 transport equipment page")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("No", "1")
+      
       And("I choose radio option Yes on the Do you want to add a method of payment for transport charges? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("Yes")
+      
       And(
         "I choose radio option Credit card on the Which method of payment do you want to use for transport charges? page"
       )
       andIchooseRadioOptionXOnTheWhichMethodOfPaymentDoYouWantToUseForTransportChargesPage("Credit card")
+      
       And("I click radio option No on the Do you want to add an additional reference for all items? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForAllItemsPage("No")
+      
       And("I click radio option No on the Do you want to add any additional information for all items? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
+      
       And("I submit on the Check your answers section Transport details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
+
+
+      // -------------------------Document details-------------------------
       When("I click the Add documents link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add documents")
+      
       And("I click radio option No on the Do you want to use this document for all items? page")
       andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      
       Then("I select Previous - (C605) Information sheet INF3 on the What previous document do you want to add? page")
       andIselectOnTheWhatPreviousDocumentDoYouWantToAddPage("Previous - (C605) Information sheet INF3")
+      
       And("I enter 1234 on the What is the document’s reference number? page")
       andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
+      
       And("I submit on the Check your answers section Documents page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      
       And("I choose radio option Yes on the You have added 1 document page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
+      
       And("I click radio option No on the Do you want to use this document for all items? page")
       andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      
       And("I select Supporting - (N003) Certificate of quality on the What type of document do you want to add? page")
       andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Supporting - (N003) Certificate of quality")
+      
       And("I enter 98765 on the What is the document’s reference number? page")
       andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("98765")
+      
       And("I click radio option No on the Do you want to add a line item number? page")
       andIclickRadioOptionXOnTheDoYouWantToAddALineItemNumberPage("No")
+      
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
+      
       And("I submit on the Check your answers section Documents page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      
       And("I choose radio option Yes on the You have added 2 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "2")
+      
       And("I click radio option Yes on the Do you want to use this document for all items? page")
       andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("Yes")
+      
       Then("I select Transport - (N741) Master airwaybill on the What type of document do you want to add? page")
       andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Transport - (N741) Master airwaybill")
+      
       And("I enter 1234 on the What is the document’s reference number? page")
       andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      
       And("I submit on the Check your answers section Documents page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      
       Then("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+
+
+      // -------------------------Item details-------------------------
       When("I click the Add items link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add items")
+      
       And("I enter This is a description on the Enter a description of item 1 page")
       andIenterXOnTheEnterADescriptionOfItemXPage("This is a description", "1")
+      
       And("I select (1) Transport equipment - C001 on the Which transport equipment are you using for this item? page")
       andIselectOnTheWhichTransportEquipmentAreYouUsingForThisItemPage("(1) Transport equipment - C001")
+      
       And("I click radio option No on the Do you want to add a Customs Union and Statistics code? page")
       andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("No")
+      
       And("I enter 010130 on the What is the commodity code? page")
       andIenterXOnTheWhatIsTheCommodityCodePage("010130")
+      
       And("I click radio option No on the Does the item contain any dangerous goods? page")
       andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("No")
+      
       And("I enter 100 on the What is the item’s gross weight? page")
       andIenterXOnTheWhatIsTheItemsGrossWeightPage("100")
+      
       And("I click radio option No on the Do you want to add supplementary units? page")
       andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      
       And("I select (NE) Unpacked or unpackaged on the What type of package are you using for the item? page")
       andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(NE) Unpacked or unpackaged")
+      
       And("I enter 1 on the How many of these are you using? page")
       andIenterXOnTheHowManyOfTheseAreYouUsingPage("1")
+      
       And("I click radio option No on the Do you want to add a shipping mark? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("No")
+      
       And("I click radio option No on the You have added 1 types of package page")
       andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
+      
       And("I click radio option No on the Do you want to add a supply chain actor for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("No")
+      
       And("I select Previous - (C605) Information sheet INF3 on the Which document do you want to attach? page")
       andIselectOnTheWhichDocumentDoYouWantToAttachPage("Previous - (C605) Information sheet INF3")
+      
       And("I click radio option No on the You have attached 2 documents to this item page")
       andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "2")
+      
       And("I click radio option No on the Do you want to add an additional reference for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("No")
+      
       And("I click radio option No on the Do you want to add any additional information for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
+      
       And("I submit on the Check your answers section Items page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      
       And("I click radio option Yes on the You have added 1 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("Yes", "1")
+      
       And("I enter This is a description on the Enter a description of item 2 page")
       andIenterXOnTheEnterADescriptionOfItemXPage("This is a description ", "2")
+      
       And("I select (1) Transport equipment - C001 on the Which transport equipment are you using for this item? page")
       andIselectOnTheWhichTransportEquipmentAreYouUsingForThisItemPage("(1) Transport equipment - C001")
+      
       And("I click radio option No on the Do you want to add a Customs Union and Statistics code? page")
       andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("No")
+      
       And("I enter 010130 on the What is the commodity code? page")
       andIenterXOnTheWhatIsTheCommodityCodePage("010130")
+      
       And("I click radio option No on the Does the item contain any dangerous goods? page")
       andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("No")
+      
       And("I enter 0 on the What is the item’s gross weight? page")
       andIenterXOnTheWhatIsTheItemsGrossWeightPage("0")
+      
       And("I click the continue button on the Before you continue page")
       andIclickTheContinueButtonOnTheBeforeYouContinuePage()
+      
       And("I click radio option No on the Do you want to add supplementary units? page")
       andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      
       And("I select (NE) Unpacked or unpackaged on the What type of package are you using for the item? page")
       andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(NE) Unpacked or unpackaged")
+      
       And("I enter 1 on the How many of these are you using? page")
       andIenterXOnTheHowManyOfTheseAreYouUsingPage("1")
+      
       And("I click radio option No on the Do you want to add a shipping mark? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("No")
+      
       And("I click radio option No on the You have added 1 types of package page")
       andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
+      
       And("I click radio option No on the Do you want to add a supply chain actor for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("No")
+      
       And("I select Previous - (C605) Information sheet INF3 - 1234 on the Which document do you want to attach? page")
       andIselectOnTheWhichDocumentDoYouWantToAttachPage("Previous - (C605) Information sheet INF3 - 1234")
+      
       And("I click radio option No on the You have attached 2 document to this item page")
       andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "2")
+      
       And("I click radio option No on the Do you want to add an additional reference for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("No")
+      
       And("I click radio option No on the Do you want to add any additional information for this item? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
+      
       And("I submit on the Check your answers section Items page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      
       And("I click radio option No on the You have added 2 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "2")
+      
       And("I click the Confirm and send button on the Declaration summary page")
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
+      
       And("I click the Sign out link on the Departure declaration sent page")
       andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
