@@ -52,6 +52,8 @@ object CYAPage extends Page {
       case "What do you want to report?"                                                => clickLinkById("report")
       case "Are the goods too large to fit into a container"                            =>
         clickByPartialLinkText("Are the goods too large to fit into a container?")
+      case "Are you acting as a representative?"                                        => clickLinkById("acting-as-representative")
+      case "Do you want to add an inland mode of transport?"                            => clickLinkById("transport-inland-mode")
     }
     this
   }
