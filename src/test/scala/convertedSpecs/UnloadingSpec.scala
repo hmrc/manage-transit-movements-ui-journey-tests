@@ -33,7 +33,7 @@ package convertedSpecs
  */
 
 import specsteps.ArrivalNotificationsStepDefSteps.{andIClickOnTheMakeUnloadingRemarksOnTheReviewUnloadingRemarksErrorsPage, andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage, thenIShouldBeOnTheArrivalNotificationsPage, thenIshouldBeOnTheReviewUnloadingRemarksErrorsPage}
-import specsteps.CYAStepDefSteps.{andIclickTheChangeLinkForOnTheCheckYourAnswersPage, andIsubmitTheCheckYourAnswersPage}
+import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
@@ -59,7 +59,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
       // Possible match (best=0.95)
-      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Make an arrival notification")
+      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
       // --- Other possible matches ---
       // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
@@ -111,7 +111,9 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
         "I click the Change link for Has the external seal been replaced by a customs authority? on the Unloading Check your answers page"
       )
       // Possible match (best=0.85)
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Has the external seal been replaced by a customs authority")
+      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
+        "Has the external seal been replaced by a customs authority?"
+      )
       // --- Other possible matches ---
       // andIclickTheLinkOnThePrelodgeCheckYourAnswersPage() [0.79] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?click the (.+) link on the Prelodge 'Check your answers' page
       // andIclickTheLinkForInHouseConsignment() [0.77] (UnloadingStepDefSteps.scala) pattern: (?:I )?click the (.+) link for (.+) in House consignment (.+)
