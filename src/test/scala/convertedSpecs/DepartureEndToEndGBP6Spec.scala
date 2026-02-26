@@ -53,7 +53,7 @@ import specsteps.TransportAuthorisationsStepDefSteps.*
 import specsteps.TransportDetailsStepDefSteps.*
 import specsteps.TransportEquipmentChargesStepDefSteps.*
 import org.scalatest.GivenWhenThen
-import specsteps.LoginStepDefSteps
+import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.RouteDetailsPlaceOfUnloadingStepDefSteps.*
 
@@ -63,7 +63,7 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen {
     dropCollections()
     deleteCookies()
     Given("I login with ID 1234567890")
-    LoginStepDefSteps.andILoginWithIDX("1234567890")
+    andILoginWithIDX("1234567890")
     When("I click on the Make a departure declaration link on the Manage your transit movements page")
     givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Make a departure declaration")
     And("I input a random LRN on the What is the Local Reference Number page")
