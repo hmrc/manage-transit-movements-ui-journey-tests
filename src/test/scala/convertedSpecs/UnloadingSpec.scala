@@ -407,7 +407,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       )
       // Possible match (best=0.80)
       andIclickTheChangeLinkForOnTheCheckYourAnswersPage(
-        "Were there any discrepancies between the transit and unloading permission"
+        "Were there any discrepancies between the transit and unloading permission?"
       )
 
       And(
@@ -471,7 +471,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
 
       When("I click on the View arrival notifications link on the Manage your transit movements page")
       // Possible match (best=0.95)
-      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival")
+      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
       // --- Other possible matches ---
       // givenIClickOnTheLinkOnTheArrivalNotificationsPage() [0.79] (ArrivalNotificationsStepDefSteps.scala) pattern: (?:I )?click on the (.+) link on the 'Arrival notifications' page
 
