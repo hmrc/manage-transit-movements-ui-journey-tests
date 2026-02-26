@@ -35,6 +35,7 @@ package convertedSpecs
 import specsteps.UnloadingStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
 import specsteps.ArrivalNotificationsStepDefSteps.andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage
+import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 
@@ -69,7 +70,6 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
       "I choose radio option No on the Were there any discrepancies between the transit movement and unloading permission? page"
     )
     andIchooseRadioOptionXOnTheWereThereAnyDiscrepanciesBetweenTheTransitMovementAndUnloadingPermissionPage("Yes")
-
   }
 
   Feature("Navigating to Pages from Cross-check declaration summary to all individual sections of pages") {
@@ -149,6 +149,9 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
 
       And("I enter additional reference additionalRef123 on the What is the new additional reference number? page")
       andenterAdditionalReferenceOnTheWhatIsTheNewAdditionalReferenceNumberPage("additionalRef123")
+
+      And("I sign out")
+      andISignOut()
     }
 
     Scenario("02 - Unloading remarks - Item level Cross-check page in change mode") {
@@ -279,6 +282,9 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
 
       And("I enter shipping mark abc on the What is the new shipping mark for item 1 in house consignment 1? page")
       andIenterShippingMarkOnTheWhatIsTheNewShippingMarkForItem1InHouseConsignment1Page("abc")
+
+      And("I sign out")
+      andISignOut()
 
     }
   }

@@ -36,8 +36,9 @@ import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.UnloadingStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
 import specsteps.ArrivalNotificationsStepDefSteps.andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage
+import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.LoginStepDefSteps.andILoginWithIDX
-import specsteps.ManageStepDefSteps._
+import specsteps.ManageStepDefSteps.*
 
 class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with BeforeAndAfterEach {
 
@@ -256,6 +257,9 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
 
       And("I select radio option No on the You have added 1 country to the transit route page")
       andIselectRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "1")
+
+      And("I sign out")
+      andISignOut()
 
     }
 
@@ -505,6 +509,9 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       And("I click radio option No on the You have added 1 item for house consignment 1 page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemsforHouseConsignmentXPage("No", "1", "1")
 
+      And("I sign out")
+      andISignOut()
+
     }
 
     Scenario("03 - Unloading remarks - Cross-check page add and remove House Consignment") {
@@ -711,6 +718,9 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       And("I click radio option No on the You have added 1 house consignment page")
       // Possible match (best=0.90)
       andIclickRadioOptionXOnTheYouHaveAddedXHouseConsignmentPage("No", "1")
+
+      And("I sign out")
+      andISignOut()
 
     }
   }

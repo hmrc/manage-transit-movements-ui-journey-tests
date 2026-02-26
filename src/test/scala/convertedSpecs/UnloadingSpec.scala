@@ -378,6 +378,15 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       And("I enter example comment here on the What do you want to report? page")
       andIenterOnTheWhatDoYouWantToReportPage("example comment")
 
+      And("I submit the Check your answers page")
+      andIsubmitTheCheckYourAnswersPage()
+
+      And("I should be on the Unloading remarks sent page")
+      thenIshouldbeOnTheUnloadingRemarksSentPage()
+
+      And("I sign out")
+      andISignOut()
+
     }
 
     Scenario("07 - E2E Navigation (Seals - State 0)") {
@@ -425,6 +434,15 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the Do you have anything else to report? page")
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
+      And("I submit the Check your answers page")
+      andIsubmitTheCheckYourAnswersPage()
+
+      And("I should be on the Unloading remarks sent page")
+      thenIshouldbeOnTheUnloadingRemarksSentPage()
+
+      And("I sign out")
+      andISignOut()
+
     }
 
     Scenario("08 - E2E Navigation (Shortest journey)") {
@@ -462,6 +480,15 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
 
       And("I choose radio option No on the Do you have anything else to report? page")
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
+
+      And("I submit the Check your answers page")
+      andIsubmitTheCheckYourAnswersPage()
+
+      And("I should be on the Unloading remarks sent page")
+      thenIshouldbeOnTheUnloadingRemarksSentPage()
+
+      And("I sign out")
+      andISignOut()
 
     }
   }
