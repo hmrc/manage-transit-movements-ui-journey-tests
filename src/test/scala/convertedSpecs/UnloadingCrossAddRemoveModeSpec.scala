@@ -516,207 +516,96 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
 
     Scenario("03 - Unloading remarks - Cross-check page add and remove House Consignment") {
       And("I click the add or remove house consignment link")
-      // Possible match (best=1.00)
       andIclickTheAddOrRemoveHouseConsignmentLink()
 
       And("I click radio option Yes on the You have added 1 house consignment page")
-      // Possible match (best=0.90)
       andIclickRadioOptionXOnTheYouHaveAddedXHouseConsignmentPage("Yes", "1")
 
       And("I enter number 100 on What is the gross weight of House Consignment 2? page")
-      // Possible match (best=0.91)
       andIenterNumberOnWhatIsTheGrossWeightOfHouseConsignmentPage("100", "2")
 
       And(
         "I choose radio option Yes on the Do you want to add a Unique Consignment Reference for this house consignment? page"
       )
-      // Possible match (best=0.82)
       andIchooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferenceForThisHouseConsignmentPage("Yes")
-      // --- Other possible matches ---
-      // andIChooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferencePage() [0.81] (ItemDetailsStepDefSteps.scala) pattern: (?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForHouseConsignmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferenceForThisItemPage() [0.78] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAReferenceForTheGuaranteePage() [0.77] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a reference for the guarantee\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page
 
       And("I enter UCRHC12312 on the What is the Unique Consignment Reference for house consignment 2? page")
-      // Possible match (best=0.91)
       andIenterOnTheWhatIsTheUniqueConsignmentReferenceForHouseConsignmentPage("UCRHC12312", "2")
-      // --- Other possible matches ---
-      // andIenterXOnTheWhatIsTheUniqueConsignmentReferencePage() [0.79] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?enter (.*) on the 'What is the Unique Consignment Reference\?' page
-      // andIenterOnTheWhatIsTheUCRPage() [0.78] (TransportDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the UCR\?' page
-      // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And(
         "I choose radio option Yes on the Do you want to add a departure means of transport for house consignment 2? page"
       )
-      // Possible match (best=0.94)
       andIchooseRadioOptionXOnTheDoYouWantToAddADepartureMeansOfTransportForHouseConsignmentXPage("Yes", "2")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDepartureMeansXPage() [0.77] (InlandModeOfTransportStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the departure means '(.*)' page
-      // andIchooseRadioOptionXOnTheWhichIdentificationDoYouWantToUseForTheDepartureMeansOfTransportInHouseConsignmentXPage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport in house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForHouseConsignmentXPage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheWhichIdentificationDoYouWantToUseForTheDepartureMeansOfTransportPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport\?' page
 
       And(
         "I choose radio option IMO Ship Identification Number on the Which identification do you want to use for the departure means of transport in house consignment 2? page"
       )
-      // Possible match (best=0.94)
       andIchooseRadioOptionXOnTheWhichIdentificationDoYouWantToUseForTheDepartureMeansOfTransportInHouseConsignmentXPage(
         "IMO Ship Identification Number",
         "2"
       )
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheWhichIdentificationDoYouWantToUseForTheDepartureMeansOfTransportPage() [0.82] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which identification do you want to use for the departure means of transport\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddADepartureMeansOfTransportForHouseConsignmentXPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a departure means of transport for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnThePresentationDepartureMeansOfTransportWhichIdentificationDoYouWantToUseForTheDepartureMeansOfTransportPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the presentation departure means of transport 'Which identification do you want to use for the departure means of transport\?' page
-      // andIchooseRadioOptionXOnTheWhichIdentificationDoYouWantToUseForTheNewDepartureMeansOfTransportPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which identification do you want to use for the new departure means of transport\?' page
-      // andIchooseRadioOptionXOnTheDepartureMeansXPage() [0.77] (InlandModeOfTransportStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the departure means '(.*)' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page
 
       And("I enter identification number Identify1234 on What is the identification number for this vehicle? page")
-      // Possible match (best=0.80)
       andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisVehiclePage("Identify1234")
-      // --- Other possible matches ---
-      // andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage() [0.80] (BorderMeansOfTransportStepDefSteps.scala) pattern: (?:I )?enter identification (.+) on the 'What is the identification number for this\?' page
-      // andIenterIdentificationNumberOnWhatIsTheIdentificationNumberForThisPage() [0.80] (PresentationNotificationStepDefSteps.scala) pattern: (?:I )?enter identification number (.+) on 'What is the identification number for this\?' page
 
       And("I select Germany - DE on the What country is this vehicle registered to? page")
-      // Possible match (best=0.80)
       andIselectOnTheWhatCountryIsThisVehicleRegisteredToPage("Germany - DE")
 
       And("I choose radio option No on the You have added 1 departure means of transport for house consignment 2 page")
-      // Possible match (best=0.93)
       andIchooseRadioOptionXOnTheYouHaveAddedXDepartureMeansOfTransportForHouseConsignment2Page("No", "1")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheYouHaveAddedXDepartureMeansOfTransportPage() [0.81] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) departure means of transport' page
-      // andIchooseRadioOptionXOnTheDepartureMeansXPage() [0.77] (InlandModeOfTransportStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the departure means '(.*)' page
-      // whenIchooseRadioOptionXOnTheYouHaveAddedXBorderMeansOfTransportPage() [0.77] (BorderMeansOfTransportStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) border means of transport' page
 
       And("I choose radio option Yes on the Do you want to add any documents for house consignment 2? page")
-      // Possible match (best=0.93)
       andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage("Yes", "2")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddADocumentForTheItemPage() [0.77] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a document for the item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForHouseConsignmentXPage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
 
       And("I select Supporting - (C651) on the What type of document do you want to add for house consignment 2? page")
-      // Possible match (best=0.93)
       andIselectOnTheWhatTypeOfDocumentDoYouWantToAddForHouseConsignmentXPage("Supporting - (C651)", "2")
-      // --- Other possible matches ---
-      // andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage() [0.80] (DocumentsStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'What type of document do you want to add\?' page
-      // andIselectOnTheWhatPreviousDocumentDoYouWantToAddPage() [0.75] (DocumentsStepDefSteps.scala) pattern: (?:I )?select (.+) on the 'What previous document do you want to add\?' page
 
       And("I enter reference number ref1234 on What is the document’s reference number? page")
-      // Possible match (best=0.80)
       andIenterReferenceNumberOnWhatIsTheDocumentsReferenceNumberPage("ref1234")
-      // --- Other possible matches ---
-      // andIenterOnTheWhatIsTheDocumentsReferenceNumberPage() [0.80] (DocumentsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the document’s reference number\?' page
-      // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
-      // andIenterReferenceNumberOnTheWhatIsTheDocumentsNewReferenceNumberPage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?enter reference number (.+) on the 'What is the document’s new reference number\?' page
 
       And(
         "I choose radio option Yes on the documents Do you want to add any additional information for this document? page"
       )
-      // Possible match (best=0.82)
       andIchooseRadioOptionXOnTheDocumentsDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("Yes")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddADocumentForTheItemPage() [0.77] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a document for the item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page
 
       And(
         "I add additional information 12345 on documents Enter the additional information in house consignment 2 page"
       )
-      // Possible match (best=0.91)
       andIaddAdditionalInformationOnDocumentsEnterTheAdditionalInformationInHouseConsignmentXPage("12345", "2")
 
       And("I choose radio option No on the You have added 1 document to all items in house consignment 2 page")
-      // Possible match (best=0.80)
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentstoAllItemsInHouseConsignment2Page("No", "1")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheYouHaveAddedXDocumentstoAllItemsPage() [0.78] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'You have added (.*) documen(?:t |ts )to all items' page
 
       And("I choose radio option Yes on the Do you want to add an additional reference for house consignment 2? page")
-      // Possible match (best=0.93)
       andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForHouseConsignmentXPage("Yes", "2")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage() [0.79] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an item for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForTheItemPage() [0.78] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for the item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAReferenceForTheGuaranteePage() [0.77] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a reference for the guarantee\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferencePage() [0.77] (ItemDetailsStepDefSteps.scala) pattern: (?:I )? choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferenceForThisHouseConsignmentPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a Unique Consignment Reference for this house consignment\?' page
 
       And(
         "I choose Y023 - Consignee (AEO certificate number) on the What type of additional reference do you want to add for house consignment 2? page"
       )
-      // Possible match (best=0.93)
       andIchooseOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddForHouseConsignmentXPage(
         "Y023 - Consignee (AEO certificate number)",
         "2"
       )
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      // Possible match (best=0.81)
       andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
 
       And("I enter additional reference newRef999 on the What is the additional reference number? page")
-      // Possible match (best=0.80)
       andIenterAdditionalReferenceXOnTheWhatIsTheAdditionalReferenceNumberPage("newRef999")
-      // --- Other possible matches ---
-      // andIenterAdditionalReferenceXOnTheWhatIsTheAdditionalReferenceNumberPage() [0.80] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?enter additional reference (.*) on the 'What is the additional reference number\?' page
-      // andIenterXOnTheEnterTheAdditionalReferenceNumberPage() [0.79] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?enter (.*) on the 'Enter the additional reference number' page
-      // andIenterOnTheWhatIsTheReferencePage() [0.78] (Departure_GuaranteeDetailsStepDefSteps.scala) pattern: (?:I )?enter (.+) on the 'What is the reference\?' page
 
       And("I click radio option No on the You have added 1 additional reference for house consignment 2 page")
-      // Possible match (best=0.92)
       andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferenceForHouseConsignment2Page("No", "1")
-      // --- Other possible matches ---
-      // andIclickRadioOptionXOnTheYouHaveAddedXHouseConsignmentPage() [0.80] (UnloadingStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'You have added (.*) house consignment' page
 
       And("I choose radio option No on the Do you want to add an item for house consignment 2? page")
-      // Possible match (best=0.93)
       andIchooseRadioOptionXOnTheDoYouWantToAddAnItemForHouseConsignmentXPage("No", "2")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheDoYouWantToAddADocumentForTheItemPage() [0.77] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a document for the item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAPackageForTheItemPage() [0.77] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a package for the item\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForHouseConsignmentXPage() [0.76] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an additional reference for house consignment (.*)\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage() [0.76] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add an authorisation' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddASealPage() [0.76] (TransportEquipmentChargesStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a seal\?' page
-      // andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage() [0.76] (CarrierDetailsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add a carrier\?' page
-      // andIchooseRadioOptionXOnTheDoYouWantToAddAnyDocumentsForHouseConsignmentXPage() [0.75] (UnloadingStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Do you want to add any documents for house consignment (.*)\?' page
 
       And("I click the Remove link on the You have added 2 house consignments page")
-      // Possible match (best=0.90)
       andIclickTheXLinkOnTheYouHaveAddedXHouseConsignmentsPage("Remove", "2")
 
       And("I click radio option Yes on the Are you sure you want to remove house consignment 1? page")
-      // Possible match (best=0.92)
       andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveHouseConsignmentPage("Yes", "1")
-      // --- Other possible matches ---
-      // andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveItemXPage() [0.78] (ItemDetailsStepDefSteps.scala) pattern: (?:I )?click radio option (.*) on the 'Are you sure you want to remove item (.*)\?' page
 
       And("I click radio option No on the You have added 1 house consignment page")
-      // Possible match (best=0.90)
       andIclickRadioOptionXOnTheYouHaveAddedXHouseConsignmentPage("No", "1")
 
       And("I sign out")
