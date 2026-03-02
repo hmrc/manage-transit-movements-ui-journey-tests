@@ -105,4 +105,25 @@ object DocumentsStepDefSteps {
       .select(answer)
       .submitPage()
 
+  // ^(?:I )?click radio option (.*) on the 'Do you want to add any additional information for this document\?' page$
+  def andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationDocument(answer: String): Unit =
+    AddAdditionalInformationPage
+      .loadPage()
+      .select(answer)
+      .submitPage()
+
+  // ^(?:I )?enter (.*) on the 'Enter the additional information\?' page$
+  def andIEnterXOnDocumentEnterAdditionalInformationPage(answer: String): Unit =
+    DocumentEnterAdditionalInfoPage
+      .loadPage()
+      .fillInput(answer)
+      .submitPage()
+
+  // ^(?:I )?click radio option (.*) on the 'Do you want to add any documents\?' page$
+  def andIClickRadioOptionXOnDoYouWantToAddAnyDocuments(answer: String): Unit =
+    DocumentsAddADocument
+      .loadPage()
+      .select(answer)
+      .submitPage()
+
 }
