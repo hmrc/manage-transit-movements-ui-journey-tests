@@ -60,17 +60,16 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
     Scenario("01 Great Britain office of departure (simplified)") {
       And("I choose radio option A on the Is this a standard or pre-lodged declaration page")
       andIchooseRadioOptionXOnTheIsThisAStandardOrPrelodgedDeclarationPage("A")
-      
+
       And("I select GB on the Where is the office of departure page")
       andIselectOnTheWhereIsTheOfficeOfDeparturePage("GB")
 
-
       And("I choose radio option Simplified on the Which type of procedure are you using? page")
       andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Simplified")
-      
+
       And("I choose radio option T2 on the Which type of declaration do you want to create? page")
       andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage("T2")
-      
+
       And(
         "I choose radio option Exit summary declaration (EXS) on the Which type of safety and security details do you want to add? page"
       )
@@ -84,7 +83,7 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
 
       And("I sign out")
       andISignOut()
-      
+
     }
 
     Scenario("02 Great Britain office of departure (normal)") {
@@ -93,7 +92,6 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
 
       And("I select GB on the Where is the office of departure page")
       andIselectOnTheWhereIsTheOfficeOfDeparturePage("GB")
-
 
       And("I choose radio option Normal on the Which type of procedure are you using? page")
       andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Normal")
@@ -114,7 +112,7 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
 
       And("I sign out")
       andISignOut()
-      
+
     }
 
     Scenario("03 Northern Ireland office of departure") {
@@ -123,7 +121,6 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
 
       And("I select XI on the Where is the office of departure page")
       andIselectOnTheWhereIsTheOfficeOfDeparturePage("XI")
-
 
       And("I choose radio option Normal on the Which type of procedure are you using? page")
       andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Normal")
@@ -148,7 +145,6 @@ class PreTaskList extends BaseSpec with GivenWhenThen {
       And("I sign out")
       andISignOut()
     }
-    
-    
+
   }
 }

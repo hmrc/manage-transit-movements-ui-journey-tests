@@ -48,7 +48,6 @@ import specsteps.TaskListStepDefSteps.*
 import specsteps.RouteDetailsStepDefSteps.*
 import specsteps.RouteDetailsTransitStepDefSteps.*
 
-
 class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
 
   Feature("Route details Journey") {
@@ -74,23 +73,27 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I click on the Add route details link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add route details")
 
-      //Specific Circumstance Indicator
+      // Specific Circumstance Indicator
       And("I choose radio option Yes on the 'Do you want to add a specific circumstance indicator?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASpecificCircumstanceIndicatorPage("Yes")
-      And("I choose radio option A20 - Express consignments in the context of exit summary declarations on the 'Which specific circumstance indicator do you want to add?' page")
-      andIchooseRadioOptionXOnTheWhichSpecificCircumstanceIndicatorDoYouWantToAddPage("A20 - Express consignments in the context of exit summary declarations")
+      And(
+        "I choose radio option A20 - Express consignments in the context of exit summary declarations on the 'Which specific circumstance indicator do you want to add?' page"
+      )
+      andIchooseRadioOptionXOnTheWhichSpecificCircumstanceIndicatorDoYouWantToAddPage(
+        "A20 - Express consignments in the context of exit summary declarations"
+      )
 
-      //Transit Route
+      // Transit Route
       And("I select Italy on the 'What country is the office of destination in?' page")
       andIselectOnTheWhatCountryIsTheOfficeOfDestinationInPage("Italy")
       And("I select IT on the 'Where in Italy is the office of destination?' page")
       andIselectOnTheWhereInIsTheOfficeOfDestinationPage("IT", "Italy")
 
-      //Binding Itinerary
+      // Binding Itinerary
       And("I choose radio option Yes on the 'Are you using a binding itinerary?' page")
       andIchooseRadioOptionXOnTheAreYouUsingABindingItineraryPage("Yes")
 
-      //Country of Routing - Adding and Removing a Transit Country
+      // Country of Routing - Adding and Removing a Transit Country
       And("I select Serbia - XS on the 'Which country do you want to add to the transit route?' page")
       andIselectOnTheWhichCountryDoYouWantToAddToTheTransitRoutePage("Serbia - XS")
       And("And I choose radio option No on the 'You have added 1 country to the transit route' page")
@@ -99,8 +102,13 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
       And("I choose to click on transit route summary page link on the 'No offices of transit' page")
       andIchooseToClickOnXLinkOnTheNoOfficesOfTransitPage("transit route summary page")
-      And("I choose to click on Add or remove transit route countries link on the Check your answers section Transit route page")
-      andIchooseToClickOnXLinkOnTheCheckYourAnswersSectionXPage("Add or remove transit route countries","Transit route")
+      And(
+        "I choose to click on Add or remove transit route countries link on the Check your answers section Transit route page"
+      )
+      andIchooseToClickOnXLinkOnTheCheckYourAnswersSectionXPage(
+        "Add or remove transit route countries",
+        "Transit route"
+      )
       And("And I choose radio option No on the 'You have added 1 country to the transit route' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("Yes", "1")
       And("I select Germany on the 'Which country do you want to add to the transit route?' page")
@@ -115,7 +123,9 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheWhichCountryDoYouWantToAddToTheTransitRoutePage("Andorra")
       And("And I choose to click on the Remove link on the 'You have added 4 countries to the transit route' page")
       andIchooseToClickOnTheXLinkOnTheYouHaveAddedXCountriestoTheTransitRoutePage("Remove", "4")
-      And("And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page")
+      And(
+        "And I choose radio option Yes on the 'Are you sure you want to remove this country from the transit route?' page"
+      )
       andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisCountryFromTheTransitRoutePage("Yes")
       And("And I choose radio option Yes on the 'You have added 3 countries to the transit route' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("Yes", "3")
@@ -126,20 +136,32 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I submit on the Check your answers section Transit route page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
 
-      //Office of Transit
+      // Office of Transit
 
       And("And I select Andorra on the 'Which country is the office of transit in?' page")
       andIselectOnTheWhichCountryIsTheOfficeOfTransitInPage("Andorra")
-      And("And I select CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) on the 'Where in Andorra is the office of transit?' page")
-      andIselectOnTheWhereInXIsTheOfficeOfTransitPage("CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)","Andorra")
-      And("And I choose radio option Yes on the 'Do you want to add a time of arrival in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)?' page")
-      andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage("Yes","CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)")
-      And("And I choose fill in the date and time on the 'When do you expect the transit to arrive in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA, Andorra?' page")
-      andIchooseFillInTheDateAndTimeOnTheWhenDoYouExpectTheTransitToArriveInXXPage("CUSTOMS OFFICE SANT JULIÀ DE LÒRIA","Andorra")
+      And(
+        "And I select CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001) on the 'Where in Andorra is the office of transit?' page"
+      )
+      andIselectOnTheWhereInXIsTheOfficeOfTransitPage("CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)", "Andorra")
+      And(
+        "And I choose radio option Yes on the 'Do you want to add a time of arrival in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)?' page"
+      )
+      andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage(
+        "Yes",
+        "CUSTOMS OFFICE SANT JULIÀ DE LÒRIA (AD000001)"
+      )
+      And(
+        "And I choose fill in the date and time on the 'When do you expect the transit to arrive in CUSTOMS OFFICE SANT JULIÀ DE LÒRIA, Andorra?' page"
+      )
+      andIchooseFillInTheDateAndTimeOnTheWhenDoYouExpectTheTransitToArriveInXXPage(
+        "CUSTOMS OFFICE SANT JULIÀ DE LÒRIA",
+        "Andorra"
+      )
       And("And I submit on the Check your answers section Office of transit page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
       And("And I choose radio option Yes on the 'You have added 1 office of transit' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes","1")
+      andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes", "1")
       And("And I select France on the 'Which country is the office of transit in?' page")
       andIselectOnTheWhichCountryIsTheOfficeOfTransitInPage("France")
       And("And I select Bastia port (FR000380) on the 'Where in France is the office of transit?' page")
@@ -153,7 +175,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("And I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page")
       andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisOfficeOfTransitPage("Yes")
       And("And I choose radio option Yes on the 'You have added 1 office of transit' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes","1")
+      andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes", "1")
       And("And I select Germany on the 'Which country is the office of transit in?' page")
       andIselectOnTheWhichCountryIsTheOfficeOfTransitInPage("Germany")
       And("And I select Brake (DE005301) on the 'Where in Germany is the office of transit?' page")
@@ -175,18 +197,18 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("And I choose radio option No on the 'You have added 3 offices of transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("No", "3")
 
-      //Office of Exit
+      // Office of Exit
 
       And("And I choose radio option Yes on the 'Do you want to add a customs office of exit?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddACustomsOfficeOfExitPage("Yes")
       And("And I select France on the 'In which country is the office of exit for transit?' page")
       andIselectOnTheInWhichCountryIsTheOfficeOfExitForTransitPage("France")
       And("And I select Dijon bureau (FR001170) on the 'Where in France is the office of exit for transit?' page")
-      andIselectOnTheWhereInXIsTheOfficeOfExitForTransitPage("Dijon bureau (FR001170)","France")
+      andIselectOnTheWhereInXIsTheOfficeOfExitForTransitPage("Dijon bureau (FR001170)", "France")
       And("And I submit on the Check your answers section Office of exit for transit page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Office of exit for transit")
       And("And I choose radio option Yes on the 'You have added 1 office of exit for transit' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedOfficesOfExitForTransitPage("Yes","1")
+      andIchooseRadioOptionXOnTheYouHaveAddedOfficesOfExitForTransitPage("Yes", "1")
       And("And I select France on the 'In which country is the office of exit for transit?' page")
       andIselectOnTheInWhichCountryIsTheOfficeOfExitForTransitPage("France")
       And("And I select Brest bureau (FR000690) on the 'Where in France is the office of exit for transit?' page")
@@ -195,16 +217,20 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIsubmitOnTheCheckYourAnswersSectionXPage("Office of exit for transit")
       And("And I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page")
       andIchooseToClickOnTheXLinkOnTheYouHaveAddedXOfficesOfExitForTransitPage("Remove", "2")
-      And("And I choose radio option Yes on the 'Are you sure you want to remove this office of exit for transit?' page")
+      And(
+        "And I choose radio option Yes on the 'Are you sure you want to remove this office of exit for transit?' page"
+      )
       andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisOfficeOfExitForTransitPage("Yes")
       And("And I choose radio option No on the 'You have added 1 office of exit for transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedOfficesOfExitForTransitPage("No", "1")
 
-      //Location of Goods
+      // Location of Goods
 
       And("And I enter 1234567890 on the 'What is the authorisation number for the location of goods?' page")
       andIenterOnTheWhatIsTheAuthorisationNumberForTheLocationOfGoodsPage("1234567890")
-      And("And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page")
+      And(
+        "And I choose radio option Yes on the 'Do you want to add an additional identifier for the location of goods?' page"
+      )
       andIchooseRadioOptionXOnTheDoYouWantToAddAnAdditionalIdentifierForTheLocationOfGoodsPage("Yes")
       And("And I enter x9x9 on the 'What is the additional identifier for the location of goods?' page")
       andIenterOnTheWhatIsTheAdditionalIdentifierForTheLocationOfGoodsPage("x9x9")
@@ -217,7 +243,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("And I submit on the Check your answers section Location of goods page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
 
-      //PLace of Loading/Unloading UNLOCODE
+      // PLace of Loading/Unloading UNLOCODE
 
       And("And I choose radio option Yes on the 'Do you want to add a UN LOCODE for the place of loading?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("Yes")
@@ -235,7 +261,9 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfUnloadingPage("Yes")
       And("And I enter DEAAL on the 'What is the UN LOCODE for the place of unloading?' page")
       andIenterOnTheWhatIsTheUNLOCODEForThePlaceOfUnloadingPage("DEAAL")
-      And("And I choose radio option Yes on the 'Do you want to add extra information for the place of unloading?' page")
+      And(
+        "And I choose radio option Yes on the 'Do you want to add extra information for the place of unloading?' page"
+      )
       andIchooseRadioOptionXOnTheDoYouWantToAddExtraInformationForThePlaceOfUnloadingPage("Yes")
       And("And I select Italy on the 'Which country is the place of unloading in?' page")
       andIselectOnTheWhichCountryIsThePlaceOfUnloadingInPage("Italy")
@@ -277,17 +305,17 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I click on the Add route details link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add route details")
 
-      //Transit Route
+      // Transit Route
       And("I select Italy on the 'What country is the office of destination in?' page")
       andIselectOnTheWhatCountryIsTheOfficeOfDestinationInPage("Italy")
       And("I select Bari on the 'Where in Italy is the office of destination?' page")
       andIselectOnTheWhereInIsTheOfficeOfDestinationPage("Bari", "Italy")
 
-      //Binding Itinerary
+      // Binding Itinerary
       And("I choose radio option No on the 'Are you using a binding itinerary?' page")
       andIchooseRadioOptionXOnTheAreYouUsingABindingItineraryPage("No")
 
-      //Country of Routing
+      // Country of Routing
       And("And I choose radio option Yes on the 'Do you want to add a country to the transit route?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddACountryToTheTransitRoutePage("Yes")
       And("I select Andorra on the 'Which country do you want to add to the transit route?' page")
@@ -301,19 +329,21 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I submit on the Check your answers section Transit route page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
 
-      //Location of Goods
+      // Location of Goods
       And("And I choose radio option Yes on the 'Do you want to add a location of goods?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage("Yes")
       And("And I choose radio option Designated location on the 'Which type of location is it?' page")
       andIchooseRadioOptionXOnTheWhichTypeOfLocationIsItPage("Designated location")
-      And("And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page")
+      And(
+        "And I choose radio option Customs office identifier on the 'How do you want to identify the location of goods?' page"
+      )
       andIchooseRadioOptionXOnTheHowDoYouWantToIdentifyTheLocationOfGoodsPage("Customs office identifier")
       And("And I select XI on the departure location of goods customs office identification page")
       andIselectOnTheDepartureLocationOfGoodsCustomsOfficeIdentificationPage("XI")
       And("And I submit on the Check your answers section Location of goods page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
 
-      //Place of loading
+      // Place of loading
       And("And I choose radio option Yes on the 'Do you want to add a place of loading?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfLoadingPage("Yes")
       And("And I choose radio option No on the 'Do you want to add a UN LOCODE for the place of loading?' page")
