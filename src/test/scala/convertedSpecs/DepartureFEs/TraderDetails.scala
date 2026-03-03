@@ -69,9 +69,11 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
     andILoginWithIDX("1234567890")
   }
 
-  Feature("Pre task list journey") {
+  Feature("Trader details journey") {
 
-    Scenario("01 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration with EORI numbers, Contacts, Representatives") {
+    Scenario(
+      "01 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration with EORI numbers, Contacts, Representatives"
+    ) {
       And("the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsGB.json", "1234567890TDGB", "1234567890")
 
@@ -122,7 +124,6 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
       And("I enter +11 1111 1111 on the representative 'What is your phone number?' page")
       andIenterOnTheRepresentativeWhatIsYourPhoneNumberPage("+11 1111 1111")
 
-
 //          ## Reduced data set operator (can only be true when security = 0)
       And("I choose radio option Yes on the 'Do you want to use a reduced data set?' page")
       thenIchooseRadioOptionXOnTheDoYouWantToUseAReducedDataSetPage("Yes")
@@ -165,7 +166,9 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
 
     }
 
-    Scenario("02 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration, no EORI numbers, no Contacts, no Representative") {
+    Scenario(
+      "02 Great Britain office of departure, T2 declaration type, exitSummaryDeclaration, no EORI numbers, no Contacts, no Representative"
+    ) {
 
       And("the user has submitted traderDetailsGB.json for LRN 1234567890TDGB and EORI number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsGB.json", "1234567890TDGB", "1234567890")
@@ -198,19 +201,19 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
       And("I fill in the address on the 'What is the transit holder’s address?' page")
       andIfillInTheAddressOnTheWhatIsTheTransitHoldersAddressPage()
 
-    //      ## Transit holder's contact person's details
+      //      ## Transit holder's contact person's details
       And("I choose radio option No on the 'Do you want to add a contact for the transit holder?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("No")
 
-    //      ## Representative details
+      //      ## Representative details
       And("I choose radio option No on the 'Are you acting as a representative?' page")
       andIchooseRadioOptionXOnTheAreYouActingAsARepresentativePage("No")
 
-    //      ## Reduced data set operator (can only be true when security = 0)
+      //      ## Reduced data set operator (can only be true when security = 0)
       And("I choose radio option No on the 'Do you want to use a reduced data set?' page")
       thenIchooseRadioOptionXOnTheDoYouWantToUseAReducedDataSetPage("No")
 
-    //      ## Consignor
+      //      ## Consignor
       And("I choose radio option No on the 'Do you know the consignor’s EORI number or TIN?' page")
       andIchooseRadioOptionXOnTheDoYouKnowTheConsignorsEORINumberOrTINPage("No")
 
@@ -223,11 +226,11 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
       And("I fill in the address on the 'What is the consignor’s address?' page")
       andIfillInTheAddressOnTheWhatIsTheConsignorsAddressPage()
 
-    //      ## Consignor contact
+      //      ## Consignor contact
       And("I choose radio option No on the 'Do you want to add a contact for the consignor?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
 
-    //      ## Consignee
+      //      ## Consignee
 
       And("I choose radio option No on the 'Do you know the consignee’s EORI number or TIN?' page")
       andIchooseRadioOptionXOnTheDoYouKnowTheConsigneesEORINumberOrTINPage("No")
@@ -240,7 +243,6 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
 
       And("I fill in the address on the 'What is the consignee’s address?' page")
       andIfillInTheAddressOnTheWhatIsTheConsigneesAddressPage()
-
 
       And("I submit on the Check your answers section Trader details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
@@ -256,7 +258,9 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
 
     }
 
-    Scenario("03 Northern Ireland office of departure, TIR declaration type, entrySummaryDeclaration,  no EORI numbers, no Contacts, no Representative") {
+    Scenario(
+      "03 Northern Ireland office of departure, TIR declaration type, entrySummaryDeclaration,  no EORI numbers, no Contacts, no Representative"
+    ) {
 
       And("the user has submitted traderDetailsXI.json for LRN 1234567890TDXI and EORI number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsXI.json", "1234567890TDXI", "1234567890")
@@ -325,7 +329,6 @@ class TraderDetails extends BaseSpec with GivenWhenThen {
       And("I sign out")
       andISignOut()
     }
-
 
   }
 }
