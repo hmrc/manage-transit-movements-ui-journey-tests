@@ -60,7 +60,7 @@ import specsteps.TaskListStepDefSteps.*
 import specsteps.TraderDetailsStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 
-class TraderDetails extends BaseSpec with GivenWhenThen {
+class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
 
   override def beforeEach(): Unit = {
     dropCollections()

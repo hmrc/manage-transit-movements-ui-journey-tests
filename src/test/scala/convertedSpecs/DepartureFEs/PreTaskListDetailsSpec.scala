@@ -42,7 +42,7 @@ import specsteps.TaskListStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
 import convertedSpecs.BaseSpec
 
-class PreTaskList extends BaseSpec with GivenWhenThen {
+class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
 
   override def beforeEach(): Unit = {
     dropCollections()

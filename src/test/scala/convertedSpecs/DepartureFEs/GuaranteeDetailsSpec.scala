@@ -60,7 +60,7 @@ import specsteps.ManageStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
 import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
 
-class GuaranteeDetails extends BaseSpec with GivenWhenThen {
+class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
 
   override def beforeEach(): Unit = {
     dropCollections()
@@ -96,7 +96,7 @@ class GuaranteeDetails extends BaseSpec with GivenWhenThen {
       And("I choose radio option Yes on the You have added 1 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "1")
 
-      //Guarantee 2
+      // Guarantee 2
       And("I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(1) Comprehensive guarantee")
 
@@ -124,8 +124,10 @@ class GuaranteeDetails extends BaseSpec with GivenWhenThen {
       And("I choose radio option Yes on the You have added 2 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "2")
 
-      //Guarantee 3
-      And("I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page")
+      // Guarantee 3
+      And(
+        "I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page"
+      )
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(8) Guarantee not required – exempt public body")
 
       And("I enter 01GB123456789012 on the 'What is the reference?' page")
@@ -178,7 +180,9 @@ class GuaranteeDetails extends BaseSpec with GivenWhenThen {
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "4")
 
       // Guarantee 5
-      And("I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page")
+      And(
+        "I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page"
+      )
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(5) Guarantee waiver – secured for 500 euros or less")
 
       And("I select GBP on the What currency do you want to use for the liability? page")
@@ -195,7 +199,9 @@ class GuaranteeDetails extends BaseSpec with GivenWhenThen {
 
       // Guarantee 6
 
-      And("I choose radio option (4) Individual guarantee in the form of vouchers on the 'Which type of guarantee is it?' page")
+      And(
+        "I choose radio option (4) Individual guarantee in the form of vouchers on the 'Which type of guarantee is it?' page"
+      )
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(4) Individual guarantee in the form of vouchers")
 
       And("And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page")
@@ -264,7 +270,6 @@ class GuaranteeDetails extends BaseSpec with GivenWhenThen {
 
       And("I sign out")
       andISignOut()
-
 
     }
   }

@@ -43,7 +43,6 @@ import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForLRNAndEORINumber
 import specsteps.TaskListStepDefSteps.*
 
-
 class DocumentsSpec extends BaseSpec with GivenWhenThen {
 
   Feature("Journeys for Previous, Transport & Supporting documents") {
@@ -69,7 +68,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("I click on the Add documents link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add documents")
 
-      //Previous Document
+      // Previous Document
       And("I click radio option No on the 'Do you want to use this document for all items?' page")
       andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
       And("I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page")
@@ -83,7 +82,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("I submit on the Check your answers section Documents page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
       And("I choose radio option Yes on the 'You have added 1 document' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes","1")
+      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
       And("I click radio option No on the 'Do you want to use this document for all items?' page")
       andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
       And("I select Previous - (N380) Commercial invoice on the 'What type of document do you want to add?' page")
