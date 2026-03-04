@@ -16,8 +16,8 @@
 
 package uk.gov.hmrc.test.ui.utils
 
+import specsteps.World
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
 
 object ApiHelper extends HttpClient with FileHelper with DriverHelper {
 

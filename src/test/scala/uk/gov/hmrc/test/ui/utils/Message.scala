@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.utils
 
 import play.api.libs.json.__
 import play.api.libs.ws.StandaloneWSResponse
-import uk.gov.hmrc.test.ui.cucumber.stepdefs.World
+import specsteps.World
 
 sealed trait Message {
   val endpoint: String

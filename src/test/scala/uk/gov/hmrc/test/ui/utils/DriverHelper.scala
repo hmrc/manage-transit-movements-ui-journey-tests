@@ -20,12 +20,12 @@ import io.cucumber.scala.Scenario
 import org.openqa.selenium.*
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
-import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import uk.gov.hmrc.test.ui.driver.Driver
 
 import java.time.Duration
 import scala.language.postfixOps
 
-trait DriverHelper extends BrowserDriver {
+trait DriverHelper extends Driver {
 
   def deleteCookies(): Unit = {
     println("============================Clearing cookies")
