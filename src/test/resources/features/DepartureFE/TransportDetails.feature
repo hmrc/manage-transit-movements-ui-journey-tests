@@ -251,6 +251,9 @@ Feature: Transport details journey
       ## Supply chain actor
     When I choose radio option No on the 'Do you want to add a supply chain actor for all items?' page
 
+      ## Authorisation
+    When I choose radio option No on the 'Do you want to add an authorisation' page
+
       ## Carrier
     When I choose radio option No on the 'Do you want to add a carrier?' page
     And I click radio option No on the 'Do you want to add an additional reference for all items?' page
