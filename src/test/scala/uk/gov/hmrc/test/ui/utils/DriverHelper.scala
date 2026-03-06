@@ -27,32 +27,35 @@ import scala.language.postfixOps
 
 trait DriverHelper extends Driver {
 
-  def deleteCookies(): Unit = {
+  def deleteCookies()(implicit driver: WebDriver): Unit = {
     println("============================Clearing cookies")
+    require(driver != null, "WebDriver is not initialized")
     driver.manage().deleteAllCookies()
   }
 
-  def takeScreenshot(scenario: Scenario): Unit =
+  def takeScreenshot(scenario: Scenario)(implicit driver: WebDriver): Unit =
     if (scenario.isFailed) {
       val screenshotName = scenario.getName.replaceAll(" ", "_")
       val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
       scenario.attach(screenshot, "image/png", screenshotName)
     }
 
-  def fluentWait: FluentWait[WebDriver] = new FluentWait[WebDriver](driver)
-    .withTimeout(Duration.ofSeconds(TestConfiguration.timeout))
-    .pollingEvery(Duration.ofMillis(TestConfiguration.pollDelay))
-    .ignoring(classOf[Exception])
+  def fluentWait(implicit driver: WebDriver): FluentWait[WebDriver] =
+    new FluentWait[WebDriver](driver)
+      .withTimeout(Duration.ofSeconds(TestConfiguration.timeout))
+      .pollingEvery(Duration.ofMillis(TestConfiguration.pollDelay))
+      .ignoring(classOf[Exception])
 
-  lazy val jse: JavascriptExecutor = driver.asInstanceOf[JavascriptExecutor]
+  def jse(implicit driver: WebDriver): JavascriptExecutor =
+    driver.asInstanceOf[JavascriptExecutor]
 
-  def bringIntoView(by: By, action: WebElement => Unit): Unit = {
+  def bringIntoView(by: By, action: WebElement => Unit)(implicit driver: WebDriver): Unit = {
     val element = find(by)
     jse.executeScript("arguments[0].scrollIntoView()", element)
     action(element)
   }
 
-  def find(by: By): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  def find(by: By)(implicit driver: WebDriver): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
-  def click(by: By): Unit = bringIntoView(by, _.click)
+  def click(by: By)(implicit driver: WebDriver): Unit = bringIntoView(by, _.click)
 }

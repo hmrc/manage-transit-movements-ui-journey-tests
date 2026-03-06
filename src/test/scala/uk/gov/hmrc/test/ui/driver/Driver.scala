@@ -21,5 +21,6 @@ import uk.gov.hmrc.selenium.webdriver.Driver
 
 trait Driver {
 
-  implicit lazy val driver: WebDriver = Driver.instance
+  implicit def driver: WebDriver = Driver.instance
+
 }
