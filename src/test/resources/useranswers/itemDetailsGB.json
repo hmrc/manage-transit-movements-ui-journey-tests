@@ -159,82 +159,85 @@
         }
       }
     },
-    "transportDetails" : {
-      "preRequisites" : {
-        "sameUcrYesNo" : false,
-        "sameCountryOfDispatchYesNo" : false,
-        "addCountryOfDestination" : true,
-        "transportedToSameCountryYesNo" : false,
-        "containerIndicator" : true
+    "transportDetails": {
+      "preRequisites": {
+        "sameUcrYesNo": false,
+        "sameCountryOfDispatchYesNo": false,
+        "addCountryOfDestination": true,
+        "transportedToSameCountryYesNo": false,
+        "containerIndicator": true
       },
-      "equipmentsAndCharges" : {
-        "equipments" : [
+      "equipmentsAndCharges": {
+        "equipments": [
           {
-            "uuid" : "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
-            "containerIdentificationNumber" : "GB123456789000",
-            "addSealsYesNo" : true,
-            "seals" : [
+            "uuid": "042d4c6e-a0b6-4796-bd04-ce11108cffe1",
+            "containerIdentificationNumber": "GB123456789000",
+            "addSealsYesNo": true,
+            "seals": [
               {
-                "identificationNumber" : "Seal009"
+                "identificationNumber": "1234"
               }
-            ]
+            ],
+            "addAnotherSeal": false
           },
           {
-            "addContainerIdentificationNumberYesNo" : true,
-            "uuid" : "e0de183a-b420-4e88-8294-41bad782bd78",
-            "containerIdentificationNumber" : "ABC1234",
-            "addSealsYesNo" : false
+            "addContainerIdentificationNumberYesNo": true,
+            "uuid": "e0de183a-b420-4e88-8294-41bad782bd78",
+            "containerIdentificationNumber": "ABC1234",
+            "addSealsYesNo": false
           }
-        ]
+        ],
+        "addAnotherEquipment": false
       },
-      "transportMeans" : {
-        "departure" : [
+      "transportMeans": {
+        "departure": [
           {
-            "identification" : {
-              "type" : "30",
-              "description" : "Registration Number of the Road Vehicle"
+            "identification": {
+              "type": "30",
+              "description": "Registration Number of the Road Vehicle"
             },
-            "meansIdentificationNumber" : "REG1231231",
-            "vehicleCountry" : {
-              "code" : "GB",
-              "description" : "United Kingdom"
+            "meansIdentificationNumber": "REG1231231",
+            "vehicleCountry": {
+              "code": "GB",
+              "description": "United Kingdom"
             }
           }
         ],
-        "addActiveBorderTransportMeansYesNo" : false
+        "addActiveBorderTransportMeansYesNo": false
       },
-      "supplyChainActorYesNo" : true,
-      "supplyChainActors" : [
+      "supplyChainActorYesNo": true,
+      "supplyChainActors": [
         {
-          "supplyChainActorType" : {
-            "role" : "FW",
-            "description" : "Freight Forwarder"
+          "supplyChainActorType": {
+            "role": "FW",
+            "description": "Freight Forwarder"
           },
-          "identificationNumber" : "GB123456789001"
+          "identificationNumber": "GB123456789001"
         }
       ],
-      "authorisationsAndLimit" : {
-        "authorisations" : [
+      "authorisationsAndLimit": {
+        "authorisations": [
           {
-            "inferredAuthorisationType" : {
-              "code" : "C521",
-              "description" : "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
+            "inferredAuthorisationType": {
+              "code": "C521",
+              "description": "ACR - Authorisation for the status of authorised consignor for Union transit (Column 9b, Annex A of Delegated Regulation (EU) 2015/2446)"
             },
-            "isMandatory" : true,
-            "authorisationReferenceNumber" : "gfsdg"
+            "isMandatory": true,
+            "authorisationReferenceNumber": "GBACT24A1100003"
           }
         ],
-        "authorisationsInferred" : true
+        "authorisationsInferred": true,
+        "addAuthorisationsYesNo": true,
+        "addAnotherAuthorisation": false,
+        "limit": {
+          "limitDate": "2026-03-21"
+        }
       },
-      "carrierDetailYesNo" : true,
-      "carrierDetails" : {
-        "identificationNumber" : "GB123456789000",
-        "addContactYesNo" : false
-      },
-      "addInlandModeYesNo" : false,
-      "addBorderModeOfTransportYesNo" : false,
-      "addAdditionalReferenceYesNo" : false,
-      "addAdditionalInformationYesNo" : false
+      "carrierDetailYesNo": false,
+      "addInlandModeYesNo": false,
+      "addBorderModeOfTransportYesNo": false,
+      "addAdditionalReferenceYesNo": false,
+      "addAdditionalInformationYesNo": false
     },
     "documents" : {
       "addDocumentsYesNo" : true,
