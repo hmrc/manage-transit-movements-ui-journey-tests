@@ -69,6 +69,11 @@ object TransportAuthorisationsStepDefSteps {
       .select(answer)
       .submitPage()
 
+  def andIclickTheContinueButtonOnTheYouHaveAddedXAuthorisationsPage(numberOfAuthorisations: String): Unit =
+    AuthorisationAddAnotherPage
+      .loadPage(numberOfAuthorisations)
+      .submitPage()
+
   // ^(?:I )?choose to click on (.*) link on the 'You have added (.*) authorisations?' page$
   def whenIchooseToClickOnXLinkOnTheYouHaveAddedXAuthorisationsPage(
     sectionLink: String,

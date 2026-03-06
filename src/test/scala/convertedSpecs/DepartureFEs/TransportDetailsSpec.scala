@@ -724,18 +724,24 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the Do you want to add a supply chain actor for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASupplyChainActorForAllItemsPage("No")
 
-//   ## Authorisation
-//          And("I enter ACR123 reference number on the What is the reference number for the ACR authorisation? page")
-//          andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("ACR123", "ACR")
-//
-//          And("I enter TRD123 reference number on the What is the reference number for the TRD authorisation? page")
-//          andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("TRD123", "TRD")
-//
-//          And("I choose radio option No on the You have added 2 transport authorisations page")
-//          whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("No", "2")
-//
-//          And("I enter the date on the When do you expect the transit to arrive in AEROPORTO (IT262101)? page")
-//          andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage("AEROPORTO (IT262101)")
+      //   ## Authorisation
+      And("I choose radio option Yes on the 'Do you want to add an authorisation' page")
+      andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage("Yes")
+
+      And("I choose radio option TRD on the 'Which type of authorisation do you want to add?' page")
+      andIchooseRadioOptionXOnTheWhichTypeOfAuthorisationDoYouWantToAddPage("TRD")
+
+      And("I enter TRD123 reference number on the What is the reference number for the TRD authorisation? page")
+      andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("TRD123", "TRD")
+
+      And("I choose radio option Yes on the You have added 2 transport authorisations page")
+      whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("Yes", "1")
+
+      And("I enter SSE123 reference number on the What is the reference number for the SSE authorisation? page")
+      andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("SSE123", "SSE")
+
+      And("I choose to click on Continue link on the You have added 2 transport authorisations page")
+      andIclickTheContinueButtonOnTheYouHaveAddedXAuthorisationsPage("2")
 
       //      ## Carrier
       And("I choose radio option No on the Do you want to add a carrier? page")

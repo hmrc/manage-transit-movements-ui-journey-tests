@@ -50,6 +50,7 @@ import specsteps.TaskListStepDefSteps.*
 import specsteps.TraderDetailsStepDefSteps.*
 import specsteps.TransportDetailsStepDefSteps.*
 import specsteps.TransportEquipmentChargesStepDefSteps.*
+import specsteps.TransportAuthorisationsStepDefSteps.*
 import org.scalatest.GivenWhenThen
 import specsteps.*
 import specsteps.ManageStepDefSteps.*
@@ -290,6 +291,19 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
 
       When("I choose radio option No on the Do you want to add a supply chain actor for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASupplyChainActorForAllItemsPage("No")
+
+      //   ## Authorisation
+      And("I choose radio option Yes on the 'Do you want to add an authorisation' page")
+      andIchooseRadioOptionXOnTheDoYouWantToAddAnAuthorisationPage("Yes")
+
+      And("I choose radio option TRD on the 'Which type of authorisation do you want to add?' page")
+      andIchooseRadioOptionXOnTheWhichTypeOfAuthorisationDoYouWantToAddPage("TRD")
+
+      And("I enter TRD123 reference number on the What is the reference number for the TRD authorisation? page")
+      andIenterReferenceNumberOnTheWhatIsTheReferenceNumberForTheAuthorisationPage("TRD123", "TRD")
+
+      And("I choose radio option No on the You have added 2 transport authorisations page")
+      whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("No", "1")
 
       When("I choose radio option No on the Do you want to add a carrier? page")
       andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
