@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package convertedSpecs.DepartureFEs
+package specs.DepartureFEs
 
 /*
  * Copyright 2026 HM Revenue & Customs
@@ -40,7 +40,7 @@ import specsteps.CYAStepDefSteps.*
 import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
-import convertedSpecs.BaseSpec
+import specs.BaseSpec
 
 class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
 

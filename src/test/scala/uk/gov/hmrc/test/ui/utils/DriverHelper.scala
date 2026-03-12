@@ -55,7 +55,8 @@ trait DriverHelper extends Driver {
     action(element)
   }
 
-  def find(by: By)(implicit driver: WebDriver): WebElement = fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
+  def find(by: By)(implicit driver: WebDriver): WebElement =
+    fluentWait.until(ExpectedConditions.presenceOfElementLocated(by))
 
   def click(by: By)(implicit driver: WebDriver): Unit = bringIntoView(by, _.click)
 }

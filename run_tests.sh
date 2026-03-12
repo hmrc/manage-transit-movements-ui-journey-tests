@@ -11,4 +11,4 @@ fi
 # Scalafmt checks have been separated from the test command to avoid OutOfMemoryError in Jenkins
 sbt scalafmtCheckAll scalafmtSbtCheck
 
-sbt clean -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Dbrowser.option.headless=true -Denvironment="${ENV:=local}" "testOnly convertedSpecs.*"
+sbt clean -Dbrowser="${BROWSER_TYPE:=$DEFAULT_BROWSER}" -Dbrowser.option.headless=true -Denvironment="${ENV:=local}" "testOnly specs.*"

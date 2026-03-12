@@ -20,6 +20,10 @@ import specpage.*
 
 object CancellationsStepDefSteps {
 
+  def thenIshouldbeontheAreYouSureYouWantToCancelThisDeclaration(): Unit =
+    ConfirmCancellationPage
+      .loadPage()
+
   // ^(?:I )?choose radio option (.*) on the 'Are you sure you want to cancel this declaration\?' page$
   def andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage(answer: String): Unit =
     ConfirmCancellationPage

@@ -73,6 +73,10 @@ object DepartureDeclarationsStepDefSteps {
       .loadPage()
       .selectDepartureDeclarationLink(declarationLink)
 
+  def thenIshouldBeonTheDeclarationErrorsPage(): Unit =
+    ManagedFEDeclarationErrorsPage
+      .loadPage()
+
   // ^(?:I )?click on the Amend errors button on the 'Amend declaration errors' page$
   def givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage(): Unit =
     ManagedFEAmendDeclarationErrorsPage

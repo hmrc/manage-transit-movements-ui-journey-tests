@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package convertedSpecs
+package specs
 
 /*
  * Copyright 2026 HM Revenue & Customs

@@ -30,7 +30,7 @@
  * limitations under the License.
  */
 
-package convertedSpecs.DepartureFEs
+package specs.DepartureFEs
 
 /*
  * Copyright 2026 HM Revenue & Customs
@@ -48,7 +48,7 @@ package convertedSpecs.DepartureFEs
  * limitations under the License.
  */
 
-import convertedSpecs.BaseSpec
+import specs.BaseSpec
 import org.scalatest.GivenWhenThen
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
