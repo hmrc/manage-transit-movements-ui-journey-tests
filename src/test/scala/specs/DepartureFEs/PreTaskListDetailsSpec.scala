@@ -37,7 +37,6 @@ import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.CYAStepDefSteps.*
-import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
 import specs.BaseSpec

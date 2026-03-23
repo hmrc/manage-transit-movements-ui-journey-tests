@@ -52,7 +52,6 @@ import specs.BaseSpec
 import org.scalatest.GivenWhenThen
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
-import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -280,7 +279,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I click the Add trader details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add trader details")
 
-//       ## Transit holder
+      //       ## Transit holder
       And("I choose radio option Yes on the Do you know the transit holder’s EORI number? page")
       andIchooseRadioOptionXOnTheDoYouKnowTheTransitHoldersEORINumberPage("Yes")
 

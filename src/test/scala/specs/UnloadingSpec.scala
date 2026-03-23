@@ -32,7 +32,7 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.ArrivalNotificationsStepDefSteps.{andIClickOnTheMakeUnloadingRemarksOnTheReviewUnloadingRemarksErrorsPage, andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage, thenIShouldBeOnTheArrivalNotificationsPage, thenIshouldBeOnTheReviewUnloadingRemarksErrorsPage}
+import specsteps.ArrivalNotificationsStepDefSteps.*
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.LoginStepDefSteps.*

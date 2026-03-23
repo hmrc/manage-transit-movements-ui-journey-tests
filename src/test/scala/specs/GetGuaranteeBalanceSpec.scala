@@ -32,7 +32,6 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
 import specsteps.GetGuaranteeBalanceStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
@@ -76,13 +75,13 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       andIwaitForXSeconds(60)
 
       And("I click the change link for guarantee reference number on the Check your answers page")
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("guarantee reference number")
+      andIClickTheChangeLinkForOnTheCheckYourAnswersPage("guarantee reference number")
 
       And("I enter 22GB1111111111112 on the Get Balance What is the Guarantee Reference Number? page")
       thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("22GB1111111111112")
 
       And("I click the change link for access code on the Check your answers page")
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("access code")
+      andIClickTheChangeLinkForOnTheCheckYourAnswersPage("access code")
 
       And("I enter AB12 on the Get Balance What is the access code? page")
       andIenterOnTheGetBalanceWhatIsTheAccessCodePage("AB12")

@@ -24,7 +24,7 @@ This is the UI journey test repository for the following frontend services:
 
 ## How to run the journey tests
 * Start the relevant services in service manager with either:
-  * `sm2 --start CTC_TRADERS_P5_ACCEPTANCE` - for services in Post transition mode
+  * `sm2 --start CTC_TRADERS_P6_ACCEPTANCE` - for all but Get guarantee balance service
   * `sm2 --start CTC_TRADERS_GUARANTEE_BALANCE_ACCEPTANCE_V2` - for check guarantee balance service
   * `sbt -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes run` - If running frontends or customs-reference-data service locally with sbt, make sure you run them in test only mode
 
@@ -32,22 +32,25 @@ This is the UI journey test repository for the following frontend services:
 * Run tests:
   * all tests with `./run_tests.sh`
   * isolated tests with:
-    * `./run_with_tags.sh Departure`
-    * `./run_with_tags.sh Arrival`
-    * `./run_with_tags.sh Cancellation`
-    * `./run_with_tags.sh Unloading`
-    * `./run_with_tags.sh Manage`
+    * `./run_individual_specs.sh "DepartureFEs.*"`
+    * `./run_individual_specs.sh "Arrival*"`
+    * `./run_individual_specs.sh "CancellationSpec"`
+    * `./run_individual_specs.sh "Unloading*"`
+    * `./run_individual_specs.sh "Manage*"`
 
 * Run Check Guarantee Balance tests:
-  * isolated test with `./run_with_tags.sh GetGuaranteeBalance`
+  * isolated test with `./run_individual_specs.sh GetGuaranteeBalanceSpec`
 
 
 * Run individual departure journey tests
-  * Using the `./run_with_tags.sh` script you can add on the departure journey you want, eg:
-    * `./run_with_tags.sh DepartureRouteDetails`
-    * The full list of runners can be found in `src/test/scala/uk/gov/hmrc/test/ui/cucumber/runner` whatever comes after the '`RunnerFor`' 
-      can be appended to the `./run_with_tags.sh` script to run those tests
-
+  * Using the `./run_individual_specs.sh` script you can add on the departure journey you want, eg:
+    * `./run_individual_specs.sh DepartureFEs.DocumentsSpec`
+    * `./run_individual_specs.sh DepartureFEs.GuaranteeDetailsSpec`
+    * `./run_individual_specs.sh DepartureFEs.ItemDetailsSpec`
+    * `./run_individual_specs.sh DepartureFEs.PreTaskListDetailsSpec`
+    * `./run_individual_specs.sh DepartureFEs.RouteDetailsSpec`
+    * `./run_individual_specs.sh DepartureFEs.TraderDetailsSpec`
+    * `./run_individual_specs.sh DepartureFEs.TransportDetailsSpec`
 
 
 * To view the tests running in a browser, add `-Dbrowser.option.headless=false` to the relevant `sbt` command.

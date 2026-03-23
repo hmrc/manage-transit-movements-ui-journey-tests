@@ -82,7 +82,6 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details")
 
       And("I should see Error status for route details on the Declaration summary page")
-      // Possible match (best=0.88)
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "route details")
 
       And("I should see Error status for transport details on the Declaration summary page")

@@ -52,7 +52,6 @@ import specs.BaseSpec
 import org.scalatest.GivenWhenThen
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
-import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
@@ -60,7 +59,6 @@ import specsteps.BorderMeansOfTransportStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
-import specsteps.TraderDetailsStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
 import specsteps.TransportDetailsStepDefSteps.*
 import specsteps.SupplyChainActorStepDefSteps.*
@@ -253,7 +251,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I submit on the Check your answers section Modes and means of transport page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
 
-      //      ## Supply chain actor
+      //   Supply chain actor
       And("I choose radio option Yes on the Do you want to add a supply chain actor for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASupplyChainActorForAllItemsPage("Yes")
 
@@ -272,24 +270,14 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheYouHaveAddedSupplyChainActorsPage("Yes", "1")
 
       // Supply chain actor 2
-      And("I choose radio option Manufacturer on the Which type of supply chain actor do you want to add? page")
+      And("I add another supply chain actor and remove")
       andIchooseRadioOptionXOnTheWhichTypeOfSupplyChainActorDoYouWantToAddPage("Manufacturer")
-
-      And(
-        "I enter FR98472189002 on the What is the EORI number or Third Country Unique Identification Number TCUIN for the consolidator? page"
-      )
       andIenterOnTheWhatIsTheEORINumberOrThirdCountryUniqueIdentificationNumberTCUINForTheXPage(
         "GB0101010101",
         "manufacturer"
       )
-
-      And("I choose to click on Remove link on the 'You have added 2 supply chain actors' page")
       whenIchooseToClickOnXLinkOnTheYouHaveAddedSupplyChainActorsPage("Remove", "2")
-
-      And("I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page")
       andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSupplyChainActorItemPage("Yes")
-
-      And("I choose radio option No on the You have added 1 supply chain actor page")
       andIchooseRadioOptionXOnTheYouHaveAddedSupplyChainActorsPage("No", "1")
 
       //      ## Authorisation
@@ -368,25 +356,13 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       // Transport equipment 2
 
-      And("I choose radio option Yes on the 'Do you want to add a container identification number?' page")
+      And("I add another transport equipment and remove")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContainerIdentificationNumberPage("Yes")
-
-      And("I enter C002 on the What is the container identification number? page")
       andIenterOnTheWhatIsTheContainerIdentificationNumberPage("C002")
-
-      And("I choose radio option No on the Do you want to add a seal? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASealPage("No")
-
-      And("I submit on the Check your answers section Transport equipment page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
-
-      And("I click the Remove link on the 'You have added 2 transport equipment' page")
       andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage("Remove", "2")
-
-      And("I click radio option Yes on the 'Are you sure you want to remove transport equipment 1?' page")
       andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage("Yes", "1")
-
-      And("I choose radio option No on the You have added 1 transport equipment page")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("No", "1")
 
       //    ## Additional Reference
