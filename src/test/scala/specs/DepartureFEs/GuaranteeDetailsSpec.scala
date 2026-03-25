@@ -52,7 +52,6 @@ import specs.BaseSpec
 import org.scalatest.GivenWhenThen
 import specsteps.CYAStepDefSteps.*
 import specsteps.CommonStepDefSteps.*
-import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -97,144 +96,62 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "1")
 
       // Guarantee 2
-      And("I choose radio option (1) Comprehensive guarantee on the 'Which type of guarantee is it?' page")
+      And("I add a second guarantee type (1) Comprehensive guarantee")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(1) Comprehensive guarantee")
-
-      And("I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page")
       andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage("01GB1234567890120A123456")
-
-      And("I select GBP on the What currency do you want to use for the liability? page")
       andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-
-      And("I enter 0 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-
-      And("I choose radio option No on the Do you want to use the default liability amount of 10000 euros? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-
-      And("I enter 120.99 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("120.99")
-
-      And("I enter AC01 on the 'What is the access code?' page")
       andIenterOnTheWhatIsTheAccessCodePage("AC01")
-
-      And("I submit on the Check your answers section Guarantee details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-
-      And("I choose radio option Yes on the You have added 2 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "2")
 
       // Guarantee 3
-      And(
-        "I choose radio option (8) Guarantee not required – exempt public body on the 'Which type of guarantee is it?' page"
-      )
+      And("I add a third guarantee type (8) - Guarantee not required – exempt public body")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(8) Guarantee not required – exempt public body")
-
-      And("I enter 01GB123456789012 on the 'What is the reference?' page")
       andIenterOnTheWhatIsTheReferencePage("01GB123456789012")
-
-      And("I select GBP on the What currency do you want to use for the liability? page")
       andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-
-      And("I enter 0 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-
-      And("I choose radio option No on the Do you want to use the default liability amount of 10000 euros? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-
-      And("I enter 123 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("123")
-
-      And("I submit on the Check your answers section Guarantee details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-
-      And("I choose radio option Yes on the You have added 3 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "3")
 
       // Guarantee 4
-      And("I choose radio option (3) Individual guarantee in cash on the 'Which type of guarantee is it?' page")
+      And("I add forth guarantee type (3) Individual guarantee in cash")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(3) Individual guarantee in cash")
-
-      And("I choose radio option Yes on the 'Do you want to add a reference for the guarantee?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAReferenceForTheGuaranteePage("Yes")
-
-      And("I enter 01GB123456789012 on the 'What is the reference for the guarantee?' page")
       andIenterOnTheWhatIsTheReferenceForTheGuaranteePage("01GB123456789012")
-
-      And("I select GBP on the What currency do you want to use for the liability? page")
       andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-
-      And("I enter 0 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-
-      And("I choose radio option No on the Do you want to use the default liability amount of 10000 euros? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-
-      And("I enter 54.99 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("54.99")
-
-      And("I submit on the Check your answers section Guarantee details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-
-      And("I choose radio option Yes on the You have added 4 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "4")
 
       // Guarantee 5
-      And(
-        "I choose radio option (5) Guarantee waiver – secured for 500 euros or less on the 'Which type of guarantee is it?' page"
-      )
+      And("I add fifth guarantee type (5) Guarantee waiver – secured for 500 euros or less")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(5) Guarantee waiver – secured for 500 euros or less")
-
-      And("I select GBP on the What currency do you want to use for the liability? page")
       andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-
-      And("I enter 54.99 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("54.99")
-
-      And("I submit on the Check your answers section Guarantee details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-
-      And("I choose radio option Yes on the You have added 5 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "5")
 
       // Guarantee 6
 
-      And(
-        "I choose radio option (4) Individual guarantee in the form of vouchers on the 'Which type of guarantee is it?' page"
-      )
+      And("I add sixth guarantee type (4) Individual guarantee in the form of vouchers and remove one")
       andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(4) Individual guarantee in the form of vouchers")
-
-      And("And I enter 01GB1234567890120A123456 on the 'What is the Guarantee Reference Number?' page")
       andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage("01GB1234567890120A123456")
-
-      And("I select GBP on the What currency do you want to use for the liability? page")
       andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-
-      And("I enter 200 on the How much is the liability in pounds? page")
       andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("200")
-
-      And("I enter AC01 on the 'What is the access code?' page")
       andIenterOnTheWhatIsTheAccessCodePage("AC01")
-
-      And("I submit on the Check your answers section Guarantee details page")
       andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-
-      And(" I click the Remove link on the 'You have added 6 guarantees' page")
       andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Remove", "6")
-
-      And("I choose radio option Yes on the Are you sure you want to remove this guarantee? page")
       andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisGuaranteePage("Yes")
-
-      And("I choose radio option No on the You have added 5 guarantee page")
       whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "5")
-
-      Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
-
-      And("I should see Completed status for guarantee details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "guarantee details")
-
-      And("I sign out")
       andISignOut()
 
     }

@@ -615,19 +615,12 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen {
       "02 Procedure 'Normal'- Declaration 'T' - Security '0 No security' - Required document is missing - Declaration 'T' - Item declaration type T2 - Item Level Previous document added"
     ) {
       And("I choose radio option Normal on the Which type of procedure are you using? page")
-      // Possible match (best=0.80)
       andIchooseRadioOptionXOnTheWhichTypeOfProcedureAreYouUsingPage("Normal")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage() [0.76] (IdentificationStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'What type of procedure are you using\?' page
-
       And("I choose radio option T on the Which type of declaration do you want to create? page")
       andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreatePage("T")
 
       And("I choose radio option No security on the Which type of safety and security details do you want to add? page")
-      // Possible match (best=0.82)
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("No security")
-      // --- Other possible matches ---
-      // andIchooseRadioOptionXOnTheWhichTypeOfAuthorisationDoYouWantToAddPage() [0.77] (TransportAuthorisationsStepDefSteps.scala) pattern: (?:I )?choose radio option (.*) on the 'Which type of authorisation do you want to add' page
 
       And("I submit the Check your answers page")
       andIsubmitTheCheckYourAnswersPage()

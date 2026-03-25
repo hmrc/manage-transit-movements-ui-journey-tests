@@ -18,8 +18,8 @@ package specpage.CommonPages
 
 object CYAPage extends Page {
 
-//  override def title(args: String*): String = "Check your answers"
-//
+  //  override def title(args: String*): String = "Check your answers"
+  //
   override def title(args: String*): String =
     String.format("Check your answers - %s", args: _*)
 
