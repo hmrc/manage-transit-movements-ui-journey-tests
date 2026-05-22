@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.test.ui.utils
 
-import io.cucumber.scala.Scenario
 import org.openqa.selenium.*
 import org.openqa.selenium.support.ui.{ExpectedConditions, FluentWait}
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
@@ -32,13 +31,6 @@ trait DriverHelper extends Driver {
     require(driver != null, "WebDriver is not initialized")
     driver.manage().deleteAllCookies()
   }
-
-  def takeScreenshot(scenario: Scenario)(implicit driver: WebDriver): Unit =
-    if (scenario.isFailed) {
-      val screenshotName = scenario.getName.replaceAll(" ", "_")
-      val screenshot     = driver.asInstanceOf[TakesScreenshot].getScreenshotAs(OutputType.BYTES)
-      scenario.attach(screenshot, "image/png", screenshotName)
-    }
 
   def fluentWait(implicit driver: WebDriver): FluentWait[WebDriver] =
     new FluentWait[WebDriver](driver)
