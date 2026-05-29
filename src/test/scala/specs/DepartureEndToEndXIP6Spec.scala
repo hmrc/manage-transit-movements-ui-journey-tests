@@ -280,8 +280,8 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
       andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
-      And("I select Abruzzo on the Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Abruzzo")
+      And("I select Aero on the Where is the customs office at the border? page")
+      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Aeroporto")
 
       And("I enter conveyance number GB123456123456 on the What is the conveyance reference number? page")
       andIenterConveyanceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")

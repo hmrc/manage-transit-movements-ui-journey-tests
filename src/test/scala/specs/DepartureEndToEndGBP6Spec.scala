@@ -392,8 +392,8 @@ class DepartureEndToEndGBP6Spec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the You have added 2 transport authorisations page")
       whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("No", "2")
 
-      And("I enter the date on the When do you expect the transit to arrive in Abruzzo - Pescara (IT406100)? page")
-      andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage("Abruzzo - Pescara (IT406100)")
+      And("I enter the date on the When do you expect the transit to arrive in AEROPORTO (IT262101)? page")
+      andIenterTheDateOnTheWhenDoYouExpectTheTransitToArriveInXPage("AEROPORTO (IT262101)")
 
       When("I choose radio option No on the Do you want to add a carrier? page")
       andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
