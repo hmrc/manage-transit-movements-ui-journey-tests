@@ -331,7 +331,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I select Belfast Docks,Unit 2 Block C (XI000142) on Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Belfast Docks,Unit 2 Block C (XI000142)")
+      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("XI000142")
 
       And("I enter conveyance reference number GB123456123456 on the What is the conveyance reference number? page")
       andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
