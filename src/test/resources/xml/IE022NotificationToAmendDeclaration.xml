@@ -6,21 +6,19 @@
     <messageType>CC022C</messageType>
     <correlationIdentifier>6a4e32fb53062f03-0000000000000000</correlationIdentifier>
     <TransitOperation>
-        <MRN>25GB000246TK0E6WJ1</MRN>
-        <amendmentNotificationDateAndTime>2026-07-08T11:22:35</amendmentNotificationDateAndTime>
+        <MRN>26XI000081NIL9PAJ3</MRN>
+        <amendmentNotificationDateAndTime>2026-10-15T13:41:18</amendmentNotificationDateAndTime>
     </TransitOperation>
     <CustomsOfficeOfDeparture>
-        <referenceNumber>XI000142</referenceNumber>
+        <referenceNumber>XI000081</referenceNumber>
     </CustomsOfficeOfDeparture>
     <HolderOfTheTransitProcedure>
-        <identificationNumber>XI123456789000</identificationNumber>
-        <TIRHolderIdentificationNumber>123456789</TIRHolderIdentificationNumber>
+        <identificationNumber>XI673265407737</identificationNumber>
     </HolderOfTheTransitProcedure>
     <FunctionalError>
         <sequenceNumber>1</sequenceNumber>
-        <errorPointer>/CC013C/Consignment/PreviousDocument[1]/referenceNumber</errorPointer>
-        <errorCode>12</errorCode>
-        <errorReason>R0076</errorReason>
-        <originalAttributeValue>Doc12345678</originalAttributeValue>
+        <errorCode>14</errorCode>
+        <errorReason>N2</errorReason>
+        <originalAttributeValue>26FRDS1A17ZX2HC1B6</originalAttributeValue>
     </FunctionalError>
 </ncts:CC022C>
