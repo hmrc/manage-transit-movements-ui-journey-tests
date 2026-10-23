@@ -129,78 +129,76 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
     }
+    
+    //These tests have been commented out due to a fix in DL-20605 - if Net Company implement their fix then we can reinstate these tests after reverted the changes.
 
-    Scenario(
-      "02 End to end journey for viewing errors from a rejected declaration amendment after MRN allocation - No data in the cache"
-    ) {
-      Given("I login with ID 1234567890")
-      andILoginWithIDX("1234567890")
-
-      When("I submit an IE015 Departure Declaration")
-      givenIsubmitAFile("IE015 Departure Declaration")
-
-      Then("I submit an IE028 MRN Allocated")
-      givenIsubmitAFile("IE028 MRN Allocated")
-
-      Then("I submit an IE013 Declaration Amendment")
-      givenIsubmitAFile("IE013 Declaration Amendment")
-
-      And("I submit an IE022 Notification To Amend Declaration")
-      givenIsubmitAFile("IE022 Notification To Amend Declaration")
-
-      And("I refresh the page")
-      andIrefreshThePage()
-
-      And("I click on the View departure declarations link on the Manage your transit movements page")
-      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
-
-      And("I click on the View error link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View error", "25GB000246TK0E6WJ1")
-
-      Then("I should be on the Review Declaration errors page")
-      thenIshouldbeOnTheReviewDeclarationErrorsPage()
-
-      And("I sign out")
-      andISignOut()
-    }
-
-    Scenario(
-      "03 End to end journey for when no function errors exist from a rejected declaration amendment after MRN allocation"
-    ) {
-      Given("I login with ID 1234567890")
-      andILoginWithIDX("1234567890")
-
-      When("I submit an IE015 Departure Declaration")
-      givenIsubmitAFile("IE015 Departure Declaration")
-
-      Then("I submit an IE028 MRN Allocated")
-      givenIsubmitAFile("IE028 MRN Allocated")
-
-      Then("I submit an IE013 Declaration Amendment")
-      givenIsubmitAFile("IE013 Declaration Amendment")
-
-      And("I submit an IE022 Notification To Amend Declaration No Errors")
-      givenIsubmitAFile("IE022 Notification To Amend Declaration No Errors")
-
-      And("the user has submitted departureDeclaration.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890")
-      whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
-
-      And("I refresh the page")
-      andIrefreshThePage()
-
-      And("I click on the View departure declarations link on the Manage your transit movements page")
-      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
-
-      And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
-
-      Then("I should be on the Declaration errors page")
-      thenIshouldbeOnTheDeclarationErrorsPage()
-
-      And("I sign out")
-      andISignOut()
-    }
-
+//    Scenario("02 End to end journey for viewing errors from a rejected declaration amendment after MRN allocation - No data in the cache") {
+//      Given("I login with ID 1234567890")
+//      andILoginWithIDX("1234567890")
+//
+//      When("I submit an IE015 Departure Declaration")
+//      givenIsubmitAFile("IE015 Departure Declaration")
+//
+//      Then("I submit an IE028 MRN Allocated")
+//      givenIsubmitAFile("IE028 MRN Allocated")
+//
+//      Then("I submit an IE013 Declaration Amendment")
+//      givenIsubmitAFile("IE013 Declaration Amendment")
+//
+//      And("I submit an IE022 Notification To Amend Declaration")
+//      givenIsubmitAFile("IE022 Notification To Amend Declaration")
+//
+//      And("I refresh the page")
+//      andIrefreshThePage()
+//
+//      And("I click on the View departure declarations link on the Manage your transit movements page")
+//      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
+//
+//      And("I click on the View error link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
+//      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View error", "25GB000246TK0E6WJ1")
+//
+//      Then("I should be on the Review Declaration errors page")
+//      thenIshouldbeOnTheReviewDeclarationErrorsPage()
+//
+//      And("I sign out")
+//      andISignOut()
+//    }
+//
+//    Scenario("03 End to end journey for when no function errors exist from a rejected declaration amendment after MRN allocation") {
+//      Given("I login with ID 1234567890")
+//      andILoginWithIDX("1234567890")
+//
+//      When("I submit an IE015 Departure Declaration")
+//      givenIsubmitAFile("IE015 Departure Declaration")
+//
+//      Then("I submit an IE028 MRN Allocated")
+//      givenIsubmitAFile("IE028 MRN Allocated")
+//
+//      Then("I submit an IE013 Declaration Amendment")
+//      givenIsubmitAFile("IE013 Declaration Amendment")
+//
+//      And("I submit an IE022 Notification To Amend Declaration No Errors")
+//      givenIsubmitAFile("IE022 Notification To Amend Declaration No Errors")
+//
+//      And("the user has submitted departureDeclaration.json for LRN 25GB000246TK0E6WJ1 and EORI number 1234567890")
+//      whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
+//
+//      And("I refresh the page")
+//      andIrefreshThePage()
+//
+//      And("I click on the View departure declarations link on the Manage your transit movements page")
+//      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
+//
+//      And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
+//      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+//
+//      Then("I should be on the Declaration errors page")
+//      thenIshouldbeOnTheDeclarationErrorsPage()
+//
+//      And("I sign out")
+//      andISignOut()
+//    }
+//
     Scenario("04 End to end journey for amending a rejected Prelodged declaration amendment after MRN allocation") {
       Given("I login with ID 1234567890")
       andILoginWithIDX("1234567890")
