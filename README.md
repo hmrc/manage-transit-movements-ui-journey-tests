@@ -25,6 +25,7 @@ This is the UI journey test repository for the following frontend services:
 ## How to run the journey tests
 * Start the relevant services in service manager with either:
   * `sm2 --start CTC_TRADERS_P6_ACCEPTANCE` - for all but Get guarantee balance service
+  * `sm2 --start CTC_TRADERS_AES_ACCEPTANCE` - starts services with AES flag enabled
   * `sm2 --start CTC_TRADERS_GUARANTEE_BALANCE_ACCEPTANCE_V2` - for check guarantee balance service
   * `sbt -Dplay.http.router=testOnlyDoNotUseInAppConf.Routes run` - If running frontends or customs-reference-data service locally with sbt, make sure you run them in test only mode
 
@@ -51,6 +52,9 @@ This is the UI journey test repository for the following frontend services:
     * `./run_individual_specs.sh DepartureFEs.RouteDetailsSpec`
     * `./run_individual_specs.sh DepartureFEs.TraderDetailsSpec`
     * `./run_individual_specs.sh DepartureFEs.TransportDetailsSpec`
+
+* Run AES Notification to amend declaration tests:
+  * isolated test with `./run_individual_specs.sh NotificationToAmendDeclarationSpec`
 
 
 * To view the tests running in a browser, add `-Dbrowser.option.headless=false` to the relevant `sbt` command.
