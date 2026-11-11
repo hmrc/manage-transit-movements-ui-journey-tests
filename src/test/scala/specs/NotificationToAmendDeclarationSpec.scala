@@ -129,8 +129,8 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
 
     }
-    
-    //These tests have been commented out due to a fix in DL-20605 - if Net Company implement their fix then we can reinstate these tests after reverted the changes.
+
+    // These tests have been commented out due to a fix in DL-20605 - if Net Company implement their fix then we can reinstate these tests after reverted the changes.
 
 //    Scenario("02 End to end journey for viewing errors from a rejected declaration amendment after MRN allocation - No data in the cache") {
 //      Given("I login with ID 1234567890")
