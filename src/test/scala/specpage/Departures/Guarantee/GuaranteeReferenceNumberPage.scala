@@ -21,4 +21,9 @@ object GuaranteeReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
 
+  def enterGuaranteeReference(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

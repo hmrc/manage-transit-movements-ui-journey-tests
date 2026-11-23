@@ -22,4 +22,9 @@ object CarrierContactPhoneNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the phone number for the carrier’s contact?"
 
+  def enterContactPhoneNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

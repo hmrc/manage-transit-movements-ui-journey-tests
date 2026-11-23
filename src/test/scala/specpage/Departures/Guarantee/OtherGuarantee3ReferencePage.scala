@@ -21,4 +21,9 @@ object OtherGuarantee3ReferencePage extends StringPage {
 
   override def title(args: String*): String = "What is the reference for the guarantee?"
 
+  def enterReference(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

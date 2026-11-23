@@ -48,14 +48,27 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddAnotherBorderMeansOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddConveyanceReferenceNumberPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddVehicleIdentificationBorderMeansOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportCountryPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportIdentificationNumberPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportOfficeOfTransitPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOftransportIdentificationPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderModeOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.ConveyanceReferenceNumberPage
+import specpage.Departures.Transport.Carrier.AddCarrierContactNamePage
+import specpage.Departures.Transport.Carrier.AddCarrierContactPersonPage
+import specpage.Departures.Transport.Carrier.AddCarrierPage
+import specpage.Departures.Transport.Carrier.CarrierContactPhoneNumberPage
+import specpage.Departures.Transport.Carrier.CarrierEoriNumberOrTinPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
-import specsteps.BorderMeansOfTransportStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
@@ -64,7 +77,6 @@ import specsteps.TransportDetailsStepDefSteps.*
 import specsteps.SupplyChainActorStepDefSteps.*
 import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.TransportAuthorisationsStepDefSteps.*
-import specsteps.CarrierDetailsStepDefSteps.*
 import specsteps.TransportEquipmentChargesStepDefSteps.*
 
 class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
@@ -85,7 +97,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("transportDetailsGB.json", "1234567890TDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -147,7 +159,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
+      CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option Yes on the You have added 1 departure means of transport page")
       andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("Yes", "1")
@@ -166,7 +178,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
+      CYAPage.submitAnswers("Departure means of transport")
 
       And("I choose to click on the Remove link on the You have added 2 departure means of transport' page")
       whenIchooseToClickOnTheXLinkOnTheYouHaveAddedDepartureMeansOfTransportPage("Remove", "2")
@@ -182,74 +194,70 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("Yes")
 
       And("I choose radio option Sea on the How is the transit crossing the border? page")
-      andIchooseRadioOptionXOnTheHowIsTheTransitCrossingTheBorderPage("Sea")
+      BorderModeOfTransportPage.selectBorderMode("Sea")
 
       And("I choose radio option Yes on the border means Do you want to add identification for this vehicle? page")
-      andIchooseRadioOptionXOnTheBorderMeansDoYouWantToAddIdentificationForThisVehiclePage("Yes")
+      AddVehicleIdentificationBorderMeansOfTransportPage.answerAddIdentification("Yes")
 
       And(
         "I choose radio option Name of a sea-going vessel on the border mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheBorderModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "Name of a sea-going vessel"
-      )
+      BorderMeansOftransportIdentificationPage.selectIdentificationType("Name of a sea-going vessel")
 
       And("I enter identification GB1234567 on the What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("GB1234567")
 
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
-      andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      BorderMeansOfTransportCountryPage.selectCountry("United Kingdom")
 
       // ## Border means office of transit
       And("I select Basel (DE004058) on the 'Where is the customs office at the border?' page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Basel (DE004058)")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Basel (DE004058)")
 
       //      ## Conveyance Reference Number
       And("I choose radio option Yes on the Do you want to add a conveyance reference number? page")
-      andIchooseRadioOptionXOnTheDoYouWantToAddAConveyanceReferenceNumberPage("Yes")
+      AddConveyanceReferenceNumberPage.answerAddConveyanceReference("Yes")
 
       And("I enter conveyance number GB123456123456 on the What is the conveyance reference number? page")
-      andIenterConveyanceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
+      ConveyanceReferenceNumberPage.enterConveyanceReference("GB123456123456")
 
       And("I submit on the Check your answers section Border means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Border means of transport")
+      CYAPage.submitAnswers("Border means of transport")
 
       And("I choose radio option Yes on the You have added 1 border means of transport page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXBorderMeansOfTransportPage("Yes", "1")
+      AddAnotherBorderMeansOfTransportPage.answerAddAnother("Yes", "1")
 
       And(
         "I choose radio option Registration number of the road vehicle on the border mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheBorderModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "Registration number of the road vehicle"
-      )
+      BorderMeansOftransportIdentificationPage.selectIdentificationType("Registration number of the road vehicle")
 
       And("I enter identification number GB15REG on What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB15REG")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("GB15REG")
 
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
-      andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      BorderMeansOfTransportCountryPage.selectCountry("United Kingdom")
 
       And("I select Basel (DE004058) on the 'Where is the customs office at the border?' page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Basel (DE004058)")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Basel (DE004058)")
 
       And("I choose radio option No on the Do you want to add a conveyance reference number? page")
-      andIchooseRadioOptionXOnTheDoYouWantToAddAConveyanceReferenceNumberPage("No")
+      AddConveyanceReferenceNumberPage.answerAddConveyanceReference("No")
 
       And("I submit on the Check your answers section Border means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Border means of transport")
+      CYAPage.submitAnswers("Border means of transport")
 
       And("I choose to click on Remove link on the add another border means of transport page")
-      andIchooseToClickOnXLinkOnTheAddAnotherBorderMeansOfTransportPage("Remove")
+      AddAnotherBorderMeansOfTransportPage.followLink("Remove")
 
       And("I select radio option Yes on the 'Are you sure you want to remove border means of transport 1?' page")
       andIclickRadioXOnTheAreYouSureYouWantToRemoveBorderMeansOfTransportXPage("Yes", "1")
 
       And("I choose radio option No on the You have added 1 border means of transport page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXBorderMeansOfTransportPage("No", "1")
+      AddAnotherBorderMeansOfTransportPage.answerAddAnother("No", "1")
 
       And("I submit on the Check your answers section Modes and means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
+      CYAPage.submitAnswers("Modes and means of transport")
 
       //   Supply chain actor
       And("I choose radio option Yes on the Do you want to add a supply chain actor for all items? page")
@@ -307,21 +315,21 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //      ## Carrier
       And("I choose radio option Yes on the Do you want to add a carrier? page")
-      andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("Yes")
+      AddCarrierPage.answerAddCarrier("Yes")
 
       And(
         "I enter GB123456123456 on the 'What is the carrier’s EORI number or Third Country Unique Identification Number TCUIN?' page"
       )
-      andIenterOnTheWhatIsTheCarriersEORINumberOrThirdCountryUniqueIdentificationNumberTCUINPage("GB123456123456")
+      CarrierEoriNumberOrTinPage.enterEoriOrTin("GB123456123456")
 
       And("I choose radio option Yes on the 'Do you want to add a contact for the carrier?' page")
-      andIchooseRadioOptionXOnThEDoYouWantToAddAContactForTheCarrierPage("Yes")
+      AddCarrierContactPersonPage.answerAddContact("Yes")
 
       And("I enter Moseley on the 'Who is the contact for the carrier?' page")
-      andIenterOnTheWhoIsTheContactForTheCarrierPage("Moseley")
+      AddCarrierContactNamePage.enterContactName("Moseley")
 
       And("I enter +88 888 888 on the 'What is the phone number for the carrier’s contact?' page")
-      andIenterOnTheWhatIsThePhoneNumberForTheCarriersContactPage("+88 888 888 ")
+      CarrierContactPhoneNumberPage.enterContactPhoneNumber("+88 888 888 ")
 
       //      ## Transport Equipment
       And("I enter C001 on the What is the container identification number? page")
@@ -349,7 +357,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage("No", "1")
 
       And("I submit on the Check your answers section Transport equipment page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
+      CYAPage.submitAnswers("Transport equipment")
 
       And("I choose radio option Yes on the You have added 1 transport equipment page")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("Yes", "1")
@@ -360,7 +368,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAContainerIdentificationNumberPage("Yes")
       andIenterOnTheWhatIsTheContainerIdentificationNumberPage("C002")
       andIchooseRadioOptionXOnTheDoYouWantToAddASealPage("No")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
+      CYAPage.submitAnswers("Transport equipment")
       andIclickTheXLinkOnTheYouHaveAddedXTransportEquipmentPage("Remove", "2")
       andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveTransportEquipmentXPage("Yes", "1")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("No", "1")
@@ -441,7 +449,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationForAllItemsPage("No", "1")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -450,7 +458,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "transport details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -460,7 +468,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("transportDetailsGB.json", "1234567890TDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -507,7 +515,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
+      CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
       andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
@@ -517,10 +525,10 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("No")
 
       And("I choose radio option No on the border means Do you want to add identification for this vehicle? page")
-      andIchooseRadioOptionXOnTheBorderMeansDoYouWantToAddIdentificationForThisVehiclePage("No")
+      AddVehicleIdentificationBorderMeansOfTransportPage.answerAddIdentification("No")
 
       And("I submit on the Check your answers section Modes and means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
+      CYAPage.submitAnswers("Modes and means of transport")
 
       //      ## Supply chain actor
       And("I choose radio option No on the Do you want to add a supply chain actor for all items? page")
@@ -541,7 +549,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //      ## Carrier
       And("I choose radio option No on the Do you want to add a carrier? page")
-      andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
+      AddCarrierPage.answerAddCarrier("No")
 
       And("I choose radio option Yes on the 'Do you want to add any transport equipment?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage("Yes")
@@ -553,7 +561,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage("No", "1")
 
       And("I submit on the Check your answers section Transport equipment page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
+      CYAPage.submitAnswers("Transport equipment")
 
       And("I choose radio option Yes on the You have added 1 transport equipment page")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("Yes", "1")
@@ -565,7 +573,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheYouHaveAddedXSealsPage("No", "1")
 
       And("I submit on the Check your answers section Transport equipment page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport equipment")
+      CYAPage.submitAnswers("Transport equipment")
 
       And("I choose radio option No on the You have added 1 transport equipment page")
       andIchooseRadioOptionXOnTheYouHaveAddedXTransportEquipmentPage("No", "2")
@@ -579,7 +587,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -588,7 +596,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "transport details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -598,7 +606,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("transportDetailsXI.json", "1234567890TDXI", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -654,7 +662,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
+      CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
       andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
@@ -664,37 +672,35 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("Yes")
 
       And("I choose radio option Air on the How is the transit crossing the border? page")
-      andIchooseRadioOptionXOnTheHowIsTheTransitCrossingTheBorderPage("Air")
+      BorderModeOfTransportPage.selectBorderMode("Air")
 
       And("I choose radio option Yes on the border means Do you want to add identification for this vehicle? page")
-      andIchooseRadioOptionXOnTheBorderMeansDoYouWantToAddIdentificationForThisVehiclePage("Yes")
+      AddVehicleIdentificationBorderMeansOfTransportPage.answerAddIdentification("Yes")
 
       And(
         "I choose radio option registration number of the aircraft on the border mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheBorderModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "registration number of the aircraft"
-      )
+      BorderMeansOftransportIdentificationPage.selectIdentificationType("registration number of the aircraft")
 
       And("I enter identification GB1234567 on the What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("GB1234567")
 
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
-      andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      BorderMeansOfTransportCountryPage.selectCountry("United Kingdom")
 
       // ## Border means office of transit
       And("I select BARI on the 'Where is the customs office at the border?' page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("BARI")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("BARI")
 
       // Conveyance Reference Number
       And("I choose radio option Yes on the 'Do you want to add a conveyance reference number?' page")
-      andIchooseRadioOptionXOnTheDoYouWantToAddAConveyanceReferenceNumberPage("Yes")
+      AddConveyanceReferenceNumberPage.answerAddConveyanceReference("Yes")
 
       And("And I enter conveyance number GB123456123456 on the 'What is the conveyance reference number?' page")
-      andIenterConveyanceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
+      ConveyanceReferenceNumberPage.enterConveyanceReference("GB123456123456")
 
       And("I submit on the Check your answers section Modes and means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
+      CYAPage.submitAnswers("Modes and means of transport")
 
       //      ## Supply chain actor
       And("I choose radio option No on the Do you want to add a supply chain actor for all items? page")
@@ -721,7 +727,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //      ## Carrier
       And("I choose radio option No on the Do you want to add a carrier? page")
-      andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
+      AddCarrierPage.answerAddCarrier("No")
 
       //    ## Additional Reference
       And("I click radio option No on the Do you want to add an additional reference for all items? page")
@@ -732,7 +738,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -741,7 +747,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "transport details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
   }

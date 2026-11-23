@@ -32,10 +32,10 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
 import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
@@ -54,7 +54,7 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       And("The user has submitted itemDetailsGB.json for LRN 1234567890TDGB and EORI Number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("itemDetailsGB.json", "1234567890TDGB", "1234567890")
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
       And(
@@ -232,7 +232,7 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationPage("No", "1")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
       And("I click radio option Yes on the 'You have added 1 item' page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("Yes", "1")
 
@@ -259,7 +259,7 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
       And("I click the Remove link on the 'You have added 2 items' page")
       andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove item 1?' page")
@@ -272,7 +272,7 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "items")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -283,7 +283,7 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       And("The user has submitted itemDetailsXI.json for LRN 1234567890TDXI and EORI Number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("itemDetailsXI.json", "1234567890TDXI", "1234567890")
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
       And(
@@ -342,7 +342,8 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
+
       And("I click radio option No on the 'You have added 1 item' page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
       Then("I should be on the Declaration summary page")

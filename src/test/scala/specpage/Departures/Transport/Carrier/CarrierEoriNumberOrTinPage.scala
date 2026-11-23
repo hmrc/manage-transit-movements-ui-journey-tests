@@ -23,4 +23,9 @@ object CarrierEoriNumberOrTinPage extends StringPage {
   override def title(args: String*): String =
     "What is the carrier’s EORI number or Third Country Unique Identification Number (TCUIN)?"
 
+  def enterEoriOrTin(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

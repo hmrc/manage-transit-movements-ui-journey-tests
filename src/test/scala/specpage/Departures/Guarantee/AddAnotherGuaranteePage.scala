@@ -24,4 +24,13 @@ object AddAnotherGuaranteePage extends YesNoPage {
     case _        => String.format("You have added %s guarantees", args: _*)
   }
 
+  def answerAddAnother(answer: String, guaranteesInTitle: String): Unit =
+    loadPage(guaranteesInTitle)
+      .select(answer)
+      .submitPage()
+
+  def followLink(linkText: String, numberOfGuaranteeTitle: String): Unit =
+    loadPage(numberOfGuaranteeTitle)
+      .clickByPartialLinkText(linkText)
+
 }

@@ -22,4 +22,9 @@ object CancellationReasonPage extends StringPage {
 
   override def title(args: String*): String = "Why do you want to cancel this declaration?"
 
+  def enterCancellationReason(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

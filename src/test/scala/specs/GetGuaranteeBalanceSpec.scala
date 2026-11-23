@@ -32,7 +32,7 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.CommonStepDefSteps.*
+import specpage.CommonPages.CommonPage
 import specsteps.GetGuaranteeBalanceStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
@@ -72,7 +72,7 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       andIclickTheLinkOnTheWeCouldNotCheckYourGuaranteeBalancePage("check your details are correct and try again")
 
       And("I wait for 60 seconds")
-      andIwaitForXSeconds(60)
+      CommonPage.wait(60)
 
       And("I click the change link for guarantee reference number on the Check your answers page")
       andIClickTheChangeLinkForOnTheCheckYourAnswersPage("guarantee reference number")
@@ -93,7 +93,7 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       thenIshouldseeAConfirmationOfMyBalanceOnTheAvailableBalancePage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -117,7 +117,7 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnTheWeCannotGetTheBalanceForThisTypeOfGuaranteePage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

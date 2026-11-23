@@ -21,4 +21,9 @@ object BorderMeansOfTransportIdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = String.format("What is the identification for this vehicle?")
 
+  def enterIdentificationNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

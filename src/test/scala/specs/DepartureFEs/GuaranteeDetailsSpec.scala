@@ -48,16 +48,27 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.Departures.Guarantee.AddAnotherGuaranteePage
+import specpage.Departures.Guarantee.ConfirmRemoveGuaranteePage
+import specpage.Departures.Guarantee.GuaranteeAccessCodePage
+import specpage.Departures.Guarantee.GuaranteeBForTIRDeclarationPage
+import specpage.Departures.Guarantee.GuaranteeDefaultLiabilityPage
+import specpage.Departures.Guarantee.GuaranteeLiabilityAmountPage
+import specpage.Departures.Guarantee.GuaranteeLiabilityCurrencyPage
+import specpage.Departures.Guarantee.GuaranteeReferenceNumberPage
+import specpage.Departures.Guarantee.GuaranteeTypePage
+import specpage.Departures.Guarantee.OtherGuarantee3ReferencePage
+import specpage.Departures.Guarantee.OtherGuarantee8ReferencePage
+import specpage.Departures.Guarantee.WantToAddReferenceForGuaranteePage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
-import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
 
 class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
 
@@ -75,7 +86,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("guaranteeDetailsGB.json", "1234567890GDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -90,69 +101,69 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
 
       And("I choose radio option (A) Guarantee waiver by agreement on the Which type of guarantee is it? page")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(A) Guarantee waiver by agreement")
+      GuaranteeTypePage.selectGuaranteeType("(A) Guarantee waiver by agreement")
 
       And("I choose radio option Yes on the You have added 1 guarantee page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "1")
+      AddAnotherGuaranteePage.answerAddAnother("Yes", "1")
 
       // Guarantee 2
       And("I add a second guarantee type (1) Comprehensive guarantee")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(1) Comprehensive guarantee")
-      andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage("01GB1234567890120A123456")
-      andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-      andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("120.99")
-      andIenterOnTheWhatIsTheAccessCodePage("AC01")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "2")
+      GuaranteeTypePage.selectGuaranteeType("(1) Comprehensive guarantee")
+      GuaranteeReferenceNumberPage.enterGuaranteeReference("01GB1234567890120A123456")
+      GuaranteeLiabilityCurrencyPage.selectLiabilityCurrency("GBP")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("0")
+      GuaranteeDefaultLiabilityPage.answerUseDefaultLiability("No")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("120.99")
+      GuaranteeAccessCodePage.enterAccessCode("AC01")
+      CYAPage.submitAnswers("Guarantee details")
+      AddAnotherGuaranteePage.answerAddAnother("Yes", "2")
 
       // Guarantee 3
       And("I add a third guarantee type (8) - Guarantee not required – exempt public body")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(8) Guarantee not required – exempt public body")
-      andIenterOnTheWhatIsTheReferencePage("01GB123456789012")
-      andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-      andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("123")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "3")
+      GuaranteeTypePage.selectGuaranteeType("(8) Guarantee not required – exempt public body")
+      OtherGuarantee8ReferencePage.enterReference("01GB123456789012")
+      GuaranteeLiabilityCurrencyPage.selectLiabilityCurrency("GBP")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("0")
+      GuaranteeDefaultLiabilityPage.answerUseDefaultLiability("No")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("123")
+      CYAPage.submitAnswers("Guarantee details")
+      AddAnotherGuaranteePage.answerAddAnother("Yes", "3")
 
       // Guarantee 4
       And("I add forth guarantee type (3) Individual guarantee in cash")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(3) Individual guarantee in cash")
-      andIchooseRadioOptionXOnTheDoYouWantToAddAReferenceForTheGuaranteePage("Yes")
-      andIenterOnTheWhatIsTheReferenceForTheGuaranteePage("01GB123456789012")
-      andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("0")
-      andIchooseRadioOptionXOnTheDoYouWantToUseTheDefaultLiabilityAmountOf10000EurosPage("No")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("54.99")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "4")
+      GuaranteeTypePage.selectGuaranteeType("(3) Individual guarantee in cash")
+      WantToAddReferenceForGuaranteePage.answerAddReference("Yes")
+      OtherGuarantee3ReferencePage.enterReference("01GB123456789012")
+      GuaranteeLiabilityCurrencyPage.selectLiabilityCurrency("GBP")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("0")
+      GuaranteeDefaultLiabilityPage.answerUseDefaultLiability("No")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("54.99")
+      CYAPage.submitAnswers("Guarantee details")
+      AddAnotherGuaranteePage.answerAddAnother("Yes", "4")
 
       // Guarantee 5
       And("I add fifth guarantee type (5) Guarantee waiver – secured for 500 euros or less")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(5) Guarantee waiver – secured for 500 euros or less")
-      andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("54.99")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("Yes", "5")
+      GuaranteeTypePage.selectGuaranteeType("(5) Guarantee waiver – secured for 500 euros or less")
+      GuaranteeLiabilityCurrencyPage.selectLiabilityCurrency("GBP")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("54.99")
+      CYAPage.submitAnswers("Guarantee details")
+      AddAnotherGuaranteePage.answerAddAnother("Yes", "5")
 
       // Guarantee 6
 
       And("I add sixth guarantee type (4) Individual guarantee in the form of vouchers and remove one")
-      andIchooseRadioOptionXOnTheWhichTypeOfGuaranteeIsItPage("(4) Individual guarantee in the form of vouchers")
-      andIenterOnTheWhatIsTheGuaranteeReferenceNumberPage("01GB1234567890120A123456")
-      andIselectOnTheWhatCurrencyDoYouWantToUseForTheLiabilityPage("GBP")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("200")
-      andIenterOnTheWhatIsTheAccessCodePage("AC01")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
-      andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Remove", "6")
-      andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisGuaranteePage("Yes")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "5")
+      GuaranteeTypePage.selectGuaranteeType("(4) Individual guarantee in the form of vouchers")
+      GuaranteeReferenceNumberPage.enterGuaranteeReference("01GB1234567890120A123456")
+      GuaranteeLiabilityCurrencyPage.selectLiabilityCurrency("GBP")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("200")
+      GuaranteeAccessCodePage.enterAccessCode("AC01")
+      CYAPage.submitAnswers("Guarantee details")
+      AddAnotherGuaranteePage.followLink("Remove", "6")
+      ConfirmRemoveGuaranteePage.confirmRemoval("Yes")
+      AddAnotherGuaranteePage.answerAddAnother("No", "5")
       thenIshouldbeOnTheDeclarationSummaryPage()
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "guarantee details")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -162,7 +173,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("guaranteeDetailsXI.json", "1234567890GDXI", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -177,7 +188,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
 
       Then("I click the Continue button on the 'Guarantee added for TIR declaration' page")
-      andIclickTheContinueButtonOnTheGuaranteeAddedForTIRDeclarationPage()
+      GuaranteeBForTIRDeclarationPage.continueToNextPage()
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -186,7 +197,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "guarantee details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

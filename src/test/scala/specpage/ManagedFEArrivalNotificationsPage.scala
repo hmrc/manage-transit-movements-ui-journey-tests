@@ -35,4 +35,21 @@ object ManagedFEArrivalNotificationsPage extends StringPage {
     clickById(id)
   }
 
+  def openArrival(linkText: String, mrn: String): Unit =
+    loadPage()
+      .selectArrivalAction(linkText, mrn)
+
+  def followLink(link: String): Unit =
+    loadPage()
+      .selectAction(link)
+
+  def search(searchString: String): Unit =
+    loadPage()
+      .fillInput(searchString)
+      .clickById("submit")
+
+  def checkContent(content: String): Unit =
+    loadPage()
+      .checkForContent(content)
+
 }

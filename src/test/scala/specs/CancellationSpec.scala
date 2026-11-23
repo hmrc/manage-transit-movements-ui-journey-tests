@@ -32,13 +32,14 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.CommonStepDefSteps.*
+import specpage.CancellationReasonPage
+import specpage.CancellationRequestSentPage
+import specpage.CommonPages.CommonPage
+import specpage.ConfirmCancellationPage
 import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.*
 import org.scalatest.GivenWhenThen
-
-import specsteps.CancellationsStepDefSteps.*
 
 class CancellationSpec extends BaseSpec with GivenWhenThen {
 
@@ -58,7 +59,7 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE028 MRN Allocated")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -67,16 +68,16 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
-      andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("Yes")
+      ConfirmCancellationPage.confirmCancellation("Yes")
 
       And("I enter a cancellation reason, with a comma on the Why do you want to cancel this declaration? page")
-      andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("a cancellation reason,")
+      CancellationReasonPage.enterCancellationReason("a cancellation reason,")
 
       And("I click on the Check the status of departure declarations link on the Cancellation request sent page")
-      givenIClickOnTheLinkOnTheCancellationRequestSentPage("Check the status of departure declarations")
+      CancellationRequestSentPage.viewDepartureDeclarations("Check the status of departure declarations")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -91,7 +92,7 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -100,16 +101,16 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
-      andIChooseRadioOptionXOnTheAreYouSureYouWantToCancelThisDeclarationPage("Yes")
+      ConfirmCancellationPage.confirmCancellation("Yes")
 
       And("I enter a cancellation reason, with a comma on the Why do you want to cancel this declaration? page")
-      andIEnterXOnTheWhyDoYouWantToCancelThisDeclarationPage("a cancellation reason, with a comma")
+      CancellationReasonPage.enterCancellationReason("a cancellation reason, with a comma")
 
       And("I click on the Check the status of departure declarations link on the Cancellation request sent page")
-      givenIClickOnTheLinkOnTheCancellationRequestSentPage("Check the status of departure declarations")
+      CancellationRequestSentPage.viewDepartureDeclarations("Check the status of departure declarations")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

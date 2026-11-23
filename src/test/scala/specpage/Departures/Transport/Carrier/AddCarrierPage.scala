@@ -22,4 +22,9 @@ object AddCarrierPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a carrier?"
 
+  def answerAddCarrier(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

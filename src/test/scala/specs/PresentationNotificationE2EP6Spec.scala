@@ -32,9 +32,10 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.BorderMeansOfTransportStepDefSteps.*
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
+import specpage.CommonPages.CommonPage
+import specpage.Departures.PreTaskList.GenericCYAPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportIdentificationNumberPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportOfficeOfTransitPage
 import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
@@ -60,7 +61,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -135,13 +136,13 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       )
 
       And("I enter identification number 5h1p1nn on What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("5h1p1nn")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("5h1p1nn")
 
       And("I select United Kingdom on the active border mode What country is this vehicle registered to? page")
       andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I select Nancy bureau (FR003000) on Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Nancy bureau (FR003000)")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Nancy bureau (FR003000)")
 
       And("I choose radio Yes on the presentation Do you want to add a conveyance reference number? page")
       andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("Yes")
@@ -160,13 +161,13 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       )
 
       And("I enter identification number YATA010 on What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("YATA010")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("YATA010")
 
       And("I select United Kingdom on the active border mode What country is this vehicle registered to? page")
       andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I select Nancy bureau (FR003000) on Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Nancy bureau (FR003000)")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Nancy bureau (FR003000)")
 
       And("I choose radio No on the presentation Do you want to add a conveyance reference number? page")
       andIchooseRadioXOnThePresentationDoYouWantToAddAConveyanceReferenceNumberPage("No")
@@ -252,7 +253,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()
@@ -270,7 +271,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -325,13 +326,13 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       )
 
       And("I enter identification number GB1234567 on What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("GB1234567")
 
       And("I select United Kingdom on the active border mode What country is this vehicle registered to? page")
       andIselectOnTheActiveBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I select Belfast Docks,Unit 2 Block C (XI000142) on Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Belfast Docks,Unit 2 Block C (XI000142)")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Belfast Docks,Unit 2 Block C (XI000142)")
 
       And("I enter conveyance reference number GB123456123456 on the What is the conveyance reference number? page")
       andIenterConveyanceReferenceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
@@ -343,7 +344,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()
@@ -363,7 +364,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -399,7 +400,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()

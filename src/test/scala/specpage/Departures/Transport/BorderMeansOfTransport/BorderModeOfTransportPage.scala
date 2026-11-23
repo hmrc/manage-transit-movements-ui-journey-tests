@@ -31,4 +31,10 @@ object BorderModeOfTransportPage extends RadioPage {
     clickRadioBtn(modeOfTransportCSSValue)
     this
   }
+
+  def selectBorderMode(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

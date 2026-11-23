@@ -25,4 +25,8 @@ object Arrivals_ConfirmationPage extends Page {
   def selectNotificationLink(notificationLink: String): Unit =
     clickByPartialLinkText(notificationLink)
 
+  def followNotificationLink(answer: String): Unit =
+    loadPage()
+      .selectNotificationLink(answer)
+
 }

@@ -15,11 +15,17 @@
  */
 
 package specpage.Departures.Transport.BorderMeansOfTransport
+
 import specpage.CommonPages.*
 
-object RegisteredVehicleCountryDepartureMeansOfTransport extends YesNoPage {
+object AddVehicleIdentificationBorderMeansOfTransportPage extends YesNoPage {
 
   override def title(args: String*): String =
-    "Do you want to add the registered country for this vehicle?"
+    "Do you want to add identification for this vehicle?"
+
+  def answerAddIdentification(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
 
 }

@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package specpage.Departures.Transport.BorderMeansOfTransport
+package specpage.Departures.Guarantee
 import specpage.CommonPages.*
 
-object IdentificationNumberDepartureMeansOfTransport extends YesNoPage {
+object LiabilityForGuaranteePage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Do you want to add an identification for this vehicle?"
+  override def title(args: String*): String = "Do you want to add a liability for the guarantee?"
+
+  def answerAddLiability(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
 
 }

@@ -32,11 +32,17 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.BorderMeansOfTransportStepDefSteps.*
-import specsteps.CYAStepDefSteps.*
-import specsteps.CarrierDetailsStepDefSteps.*
+import specpage.CommonPages.CYAPage
+import specpage.Departures.Guarantee.GuaranteeBForTIRDeclarationPage
+import specpage.Departures.PreTaskList.GenericCYAPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportCountryPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportIdentificationNumberPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportOfficeOfTransitPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOftransportIdentificationPage
+import specpage.Departures.Transport.BorderMeansOfTransport.BorderModeOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.ConveyanceReferenceNumberPage
+import specpage.Departures.Transport.Carrier.AddCarrierPage
 import specsteps.DepartureConfirmationStepDefSteps.*
-import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
 import specsteps.DocumentsStepDefSteps.*
 import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.ItemDetailsStepDefSteps.*
@@ -91,7 +97,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("Exit summary declaration (EXS)")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       // -------------------------Trader details-------------------------
       When("I click the Add trader details link on the Declaration summary page")
@@ -128,7 +134,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatIsTheConsigneesEORINumberOrTINPage("GE00101001")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -165,7 +171,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "2")
 
       And("I submit on the Check your answers section Transit route page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
+      CYAPage.submitAnswers("Transit route")
 
       And("I choose radio option Yes on the Do you want to add a location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddALocationOfGoodsPage("Yes")
@@ -182,7 +188,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIselectOnTheDepartureLocationOfGoodsCustomsOfficeIdentificationPage("XI")
 
       And("I submit on the Check your answers section Location of goods page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
+      CYAPage.submitAnswers("Location of goods")
 
       And("I choose radio option No on the Do you want to add a UN LOCODE for the place of loading? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAUNLOCODEForThePlaceOfLoadingPage("No")
@@ -197,10 +203,10 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAPlaceOfUnloadingPage("No")
 
       And("I submit on the Check your answers section Places of loading and unloading page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Places of loading and unloading")
+      CYAPage.submitAnswers("Places of loading and unloading")
 
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -210,7 +216,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
 
       Then("I click the Continue button on the Guarantee added for TIR declaration page")
-      andIclickTheContinueButtonOnTheGuaranteeAddedForTIRDeclarationPage()
+      GuaranteeBForTIRDeclarationPage.continueToNextPage()
 
       And("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -259,35 +265,33 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Departure means of transport")
+      CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
       andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
 
       And("I choose radio option Air on the How is the transit crossing the border? page")
-      andIchooseRadioOptionXOnTheHowIsTheTransitCrossingTheBorderPage("Air")
+      BorderModeOfTransportPage.selectBorderMode("Air")
 
       And(
         "I choose radio option registration number of the aircraft on the border mode Which identification do you want to use for this vehicle? page"
       )
-      andIchooseRadioOptionXOnTheBorderModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "registration number of the aircraft"
-      )
+      BorderMeansOftransportIdentificationPage.selectIdentificationType("registration number of the aircraft")
 
       And("I enter identification GB1234567 on the What is the identification number for this? page")
-      andIenterIdentificationOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      BorderMeansOfTransportIdentificationNumberPage.enterIdentificationNumber("GB1234567")
 
       And("I select United Kingdom on the border mode What country is this vehicle registered to? page")
-      andIselectOnTheBorderModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      BorderMeansOfTransportCountryPage.selectCountry("United Kingdom")
 
       And("I select Abruzzo on the Where is the customs office at the border? page")
-      andIselectOnTheWhereIsTheCustomsOfficeAtTheBorderPage("Abruzzo")
+      BorderMeansOfTransportOfficeOfTransitPage.selectCustomsOffice("Abruzzo")
 
       And("I enter conveyance number GB123456123456 on the What is the conveyance reference number? page")
-      andIenterConveyanceNumberOnTheWhatIsTheConveyanceReferenceNumberPage("GB123456123456")
+      ConveyanceReferenceNumberPage.enterConveyanceReference("GB123456123456")
 
       And("I submit on the Check your answers section Modes and means of transport page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Modes and means of transport")
+      CYAPage.submitAnswers("Modes and means of transport")
 
       When("I choose radio option No on the Do you want to add a supply chain actor for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddASupplyChainActorForAllItemsPage("No")
@@ -306,7 +310,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       whenIchooseRadioOptionXOnTheYouHaveAddedTransportAuthorisationsPage("No", "1")
 
       When("I choose radio option No on the Do you want to add a carrier? page")
-      andIChooseRadioOptionXOnTheDoYouWantToAddACarrierPage("No")
+      AddCarrierPage.answerAddCarrier("No")
 
       And("I choose radio option No on the Do you want to add any transport equipment? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAnyTransportEquipmentPage("No")
@@ -323,7 +327,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Do you want to use the same Unique Consignment Reference?")
+      CYAPage.clickChangeLink("Do you want to use the same Unique Consignment Reference?")
 
       And("I choose radio option No on the Do you want to use the same UCR for all items? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheSameUCRForAllItemsPage("No")
@@ -331,7 +335,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "click the Change link for Are all the items being dispatched from the same country? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Are all the items being dispatched from the same country?")
+      CYAPage.clickChangeLink("Are all the items being dispatched from the same country?")
 
       And("I choose radio option No on the Are all the items being dispatched from the same country? page")
       andIchooseRadioOptionXOnTheAreAllTheItemsBeingDispatchedFromTheSameCountryPage("No")
@@ -339,13 +343,13 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "click the Change link for Are all the items being transported to the same country? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Are all the items being transported to the same country?")
+      CYAPage.clickChangeLink("Are all the items being transported to the same country?")
 
       And("I choose radio option No on the Are all the items being transported to the same country? page")
       andIchooseRadioOptionXOnTheAreAllTheItemsBeingTransportedToTheSameCountryPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -373,7 +377,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option Yes on the You have added 1 document page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
@@ -388,7 +392,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("air1234")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option Yes on the You have added 2 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "2")
@@ -406,7 +410,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
@@ -490,7 +494,7 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")

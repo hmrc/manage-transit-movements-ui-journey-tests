@@ -21,4 +21,9 @@ object ConfirmCancellationPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to cancel this declaration?"
 
+  def confirmCancellation(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }
