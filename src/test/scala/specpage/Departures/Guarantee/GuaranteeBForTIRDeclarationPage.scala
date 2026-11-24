@@ -21,4 +21,8 @@ object GuaranteeBForTIRDeclarationPage extends Page {
 
   override def title(args: String*): String = "Guarantee added for TIR declaration"
 
+  def continueToNextPage(): Unit =
+    loadPage()
+      .submitPage()
+
 }

@@ -23,4 +23,9 @@ object AddConveyanceReferenceNumberPage extends YesNoPage {
   override def title(args: String*): String =
     "Do you want to add a conveyance reference number?"
 
+  def answerAddConveyanceReference(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

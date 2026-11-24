@@ -21,4 +21,7 @@ object ManagedFEReviewNotificationErrorsPage extends Page {
 
   override def title(args: String*): String = "Review notification errors"
 
+  def makeAnotherArrivalNotification(): Unit =
+    loadPage().clickById("arrival-link")
+
 }

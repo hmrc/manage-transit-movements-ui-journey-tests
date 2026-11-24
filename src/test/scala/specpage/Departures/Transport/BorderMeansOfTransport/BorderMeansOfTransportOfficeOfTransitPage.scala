@@ -23,4 +23,9 @@ object BorderMeansOfTransportOfficeOfTransitPage extends SelectPage {
 
   override val id: String = "office"
 
+  def selectCustomsOffice(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -47,4 +47,10 @@ object GuaranteeTypePage extends RadioPage {
     clickRadioBtn(value)
     this
   }
+
+  def selectGuaranteeType(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

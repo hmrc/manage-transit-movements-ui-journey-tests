@@ -17,8 +17,13 @@
 package specpage.Departures.Guarantee
 import specpage.CommonPages.*
 
-object LiabilityForGuarantee extends YesNoPage {
+object GuaranteeLiabilityAmountPage extends StringPage {
 
-  override def title(args: String*): String = "Do you want to add a liability for the guarantee?"
+  override def title(args: String*): String = "How much is the liability amount?"
+
+  def enterLiabilityAmount(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
 
 }

@@ -58,4 +58,8 @@ object CYAPage extends Page {
     this
   }
 
+  def submitAnswers(subheading: String): Unit =
+    loadPage(subheading)
+      .submitPage()
+
 }

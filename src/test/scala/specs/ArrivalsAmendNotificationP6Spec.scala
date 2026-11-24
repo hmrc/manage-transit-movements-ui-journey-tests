@@ -32,16 +32,16 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.ArrivalNotificationsStepDefSteps.{andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage, thenIShouldBeOnTheArrivalNotificationsPage, thenIShouldBeOnTheReviewNotificationErrorsPage}
-import specsteps.CYAStepDefSteps.andIsubmitOnTheCheckYourAnswersSectionXPage
-import specsteps.CommonStepDefSteps.andISignOut
-import specsteps.ConfirmationStepDefSteps.thenIshouldbeOnTheArrivalNotificationSentPage
+import specpage.Arrivals_ConfirmationPage
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.ManagedFEArrivalNotificationsPage
+import specpage.ManagedFEReviewNotificationErrorsPage
 import specsteps.IdentificationStepDefSteps.andIenterOnTheMovementReferenceNumberPage
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.{givenIclickOnTheLinkOnTheManageYourTransitMovementsPage, givenIsubmitAFile}
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForMRNAndEORINumber
 import org.scalatest.GivenWhenThen
-import specsteps.ArrivalNotificationsStepDefSteps
 
 class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
 
@@ -58,24 +58,30 @@ class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForMRNAndEORINumber("arrivalNotification.json", "25GB000246TK0E6WJ1", "1234567890")
       When("I click on the View arrival notifications link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
+
       Then("I should be on the Arrival notifications page")
-      thenIShouldBeOnTheArrivalNotificationsPage()
+      ManagedFEArrivalNotificationsPage.loadPage()
+
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("View errors", "25GB000246TK0E6WJ1")
+
       Then("I should be on the Review notification errors page")
-      thenIShouldBeOnTheReviewNotificationErrorsPage()
+      ManagedFEReviewNotificationErrorsPage.loadPage()
+
       And("I click on the Make another arrival notification link on the Review notification errors page")
-      ArrivalNotificationsStepDefSteps
-        .thenIclickOnTheMakeAnotherArrivalNotificationLinkOnTheReviewNotificationErrorsPage()
+      ManagedFEReviewNotificationErrorsPage.makeAnotherArrivalNotification()
+
       And("I enter 25GB000246TK0E6WJ1 on the Movement Reference Number page")
       andIenterOnTheMovementReferenceNumberPage("25GB000246TK0E6WJ1")
+
       And("I submit on the Check your answers section Arrivals page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Arrivals")
+      CYAPage.submitAnswers("Arrivals")
+
       And("I should be on the Arrival notification sent page")
-      thenIshouldbeOnTheArrivalNotificationSentPage()
+      Arrivals_ConfirmationPage.loadPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

@@ -32,9 +32,9 @@ package specs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.DocumentsStepDefSteps.*
@@ -68,7 +68,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -106,15 +106,13 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add any additional information for this document?"
-      )
+      CYAPage.clickChangeLink("Do you want to add any additional information for this document?")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
@@ -149,7 +147,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      givenIsubmitAFile("IE022 Notification To Amend Declaration")
 //
 //      And("I refresh the page")
-//      andIrefreshThePage()
+//      CommonPage.refreshPage()
 //
 //      And("I click on the View departure declarations link on the Manage your transit movements page")
 //      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -161,7 +159,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      thenIshouldbeOnTheReviewDeclarationErrorsPage()
 //
 //      And("I sign out")
-//      andISignOut()
+//      CommonPage.signOut()
 //    }
 //
 //    Scenario("03 End to end journey for when no function errors exist from a rejected declaration amendment after MRN allocation") {
@@ -184,7 +182,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 //
 //      And("I refresh the page")
-//      andIrefreshThePage()
+//      CommonPage.refreshPage()
 //
 //      And("I click on the View departure declarations link on the Manage your transit movements page")
 //      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -196,7 +194,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      thenIshouldbeOnTheDeclarationErrorsPage()
 //
 //      And("I sign out")
-//      andISignOut()
+//      CommonPage.signOut()
 //    }
 //
     Scenario("04 End to end journey for amending a rejected Prelodged declaration amendment after MRN allocation") {
@@ -222,7 +220,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -260,15 +258,13 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add any additional information for this document?"
-      )
+      CYAPage.clickChangeLink("Do you want to add any additional information for this document?")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")

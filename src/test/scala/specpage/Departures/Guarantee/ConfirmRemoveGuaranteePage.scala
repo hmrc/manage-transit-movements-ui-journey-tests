@@ -21,4 +21,9 @@ object ConfirmRemoveGuaranteePage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to remove this guarantee?"
 
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

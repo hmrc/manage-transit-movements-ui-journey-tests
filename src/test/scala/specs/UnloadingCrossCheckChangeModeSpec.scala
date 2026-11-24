@@ -32,10 +32,10 @@ package specs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CommonPage
+import specpage.ManagedFEArrivalNotificationsPage
 import specsteps.UnloadingStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
-import specsteps.ArrivalNotificationsStepDefSteps.andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage
-import specsteps.CommonStepDefSteps.andISignOut
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 
@@ -53,7 +53,7 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
     When("I click on the View arrival notifications link on the Manage your transit movements page")
     givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
     And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-    andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+    ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
     And("I choose radio option No on the Do you want to use the revised unloading procedure? page")
     andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("No")
     Then("I click the Continue button on the Unload the goods and note any discrepancies page")
@@ -151,7 +151,7 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
       andenterAdditionalReferenceOnTheWhatIsTheNewAdditionalReferenceNumberPage("additionalRef123")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("02 - Unloading remarks - Item level Cross-check page in change mode") {
@@ -284,7 +284,7 @@ class UnloadingCrossCheckChangeModeSpec extends BaseSpec with GivenWhenThen with
       andIenterShippingMarkOnTheWhatIsTheNewShippingMarkForItem1InHouseConsignment1Page("abc")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

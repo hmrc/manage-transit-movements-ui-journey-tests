@@ -32,10 +32,10 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.ArrivalNotificationsStepDefSteps.thenIShouldBeOnTheArrivalNotificationsPage
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
-import specsteps.ConfirmationStepDefSteps.*
+import specpage.Arrivals_ConfirmationPage
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.ManagedFEArrivalNotificationsPage
 import specsteps.IdentificationStepDefSteps.*
 import specsteps.LocationOfGoodsStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
@@ -74,15 +74,18 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
       andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+
       And("I submit on the Check your answers section Arrivals page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Arrivals")
+      CYAPage.submitAnswers("Arrivals")
+
       And("I click the Make another arrival notification link on the Arrival notification sent page")
-      andIclickTheLinkOnTheArrivalNotificationSentPage("Make another arrival notification")
+      Arrivals_ConfirmationPage.followNotificationLink("Make another arrival notification")
+
       And("I should be on the What is the Movement Reference Number page")
       thenIshouldbeOnTheWhatIsTheMovementReferenceNumberPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -99,15 +102,18 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       andIchooseRadioOptionXOnTheArrivalLocationOfGoodsIdentificationPage("Customs office identifier")
       And("I select GB on the arrival location of goods customs office identification page")
       andIselectOnTheArrivalLocationOfGoodsCustomsOfficeIdentificationPage("GB")
+
       And("I submit on the Check your answers section Arrivals page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Arrivals")
+      CYAPage.submitAnswers("Arrivals")
+
       And("I click the Check the status of arrival notifications link on the Arrival notification sent page")
-      andIclickTheLinkOnTheArrivalNotificationSentPage("Check the status of arrival notifications")
+      Arrivals_ConfirmationPage.followNotificationLink("Check the status of arrival notifications")
+
       And("I should be on the Arrival notifications page")
-      thenIShouldBeOnTheArrivalNotificationsPage()
+      ManagedFEArrivalNotificationsPage.loadPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -131,12 +137,15 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
       andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+
       And("I submit on the Check your answers section Arrivals page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Arrivals")
+      CYAPage.submitAnswers("Arrivals")
+
       And("I should be on the Arrival notification sent page")
-      thenIshouldbeOnTheArrivalNotificationSentPage()
+      Arrivals_ConfirmationPage.loadPage()
+
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -157,10 +166,13 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
       andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+
       And("I submit on the Check your answers section Arrivals page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Arrivals")
+      CYAPage.submitAnswers("Arrivals")
+
       And("I click the Make another arrival notification link on the Arrival notification sent page")
-      andIclickTheLinkOnTheArrivalNotificationSentPage("Make another arrival notification")
+      Arrivals_ConfirmationPage.followNotificationLink("Make another arrival notification")
+
       And("I should be on the What is the Movement Reference Number page")
       thenIshouldbeOnTheWhatIsTheMovementReferenceNumberPage()
       And("I enter 25GB000246TK0E6WJ1 on the Movement Reference Number page")
@@ -169,7 +181,7 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       thenIshouldseeAnErrorOnTheWhatIsTheMovementReferenceNumberPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 

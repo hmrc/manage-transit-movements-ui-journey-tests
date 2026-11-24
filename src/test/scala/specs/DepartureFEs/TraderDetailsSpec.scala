@@ -48,10 +48,10 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -77,7 +77,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsGB.json", "1234567890TDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -152,7 +152,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatIsTheConsigneesEORINumberOrTINPage("GE00101001")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -161,7 +161,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -173,7 +173,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsGB.json", "1234567890TDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -244,7 +244,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIfillInTheAddressOnTheWhatIsTheConsigneesAddressPage()
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -253,7 +253,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -265,7 +265,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("traderDetailsXI.json", "1234567890TDXI", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -317,7 +317,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatIsTheConsigneesEORINumberOrTINPage("GE00101001")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       Then("I should be on the 'Declaration summary' page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -326,7 +326,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
   }

@@ -25,4 +25,8 @@ object CancellationRequestSentPage extends Page {
   def selectDepartureDeclarationLink(declarationLink: String): Unit =
     clickByPartialLinkText(declarationLink)
 
+  def viewDepartureDeclarations(declarationLink: String): Unit =
+    loadPage()
+      .selectDepartureDeclarationLink(declarationLink)
+
 }

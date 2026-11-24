@@ -21,4 +21,7 @@ object ManagedFEReviewUnloadingRemarksErrorsPage extends Page {
 
   override def title(args: String*): String = "Review unloading remarks errors"
 
+  def makeUnloadingRemarks(): Unit =
+    clickById("submit")
+
 }

@@ -21,4 +21,9 @@ object GuaranteeDefaultLiabilityPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to use the default liability amount of 10,000 euros?"
 
+  def answerUseDefaultLiability(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

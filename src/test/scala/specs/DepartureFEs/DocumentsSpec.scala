@@ -32,10 +32,10 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DocumentsStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
 import specsteps.LoginStepDefSteps.*
@@ -56,7 +56,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("documentsGB1.json", "1234567890DGB1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -80,7 +80,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("I enter 12345,6789 on the Documents 'Enter the additional information' page")
       andIEnterXOnDocumentEnterAdditionalInformationPage("12345,6789")
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
       And("I choose radio option Yes on the 'You have added 1 document' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
       And("I click radio option No on the 'Do you want to use this document for all items?' page")
@@ -92,7 +92,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("I click radio option No on the 'Do you want to add any additional information for this document?' page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationDocument("No")
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
       And("I choose to click on the Remove link on the 'You have added 2 documents' page")
       whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this document?' page")
@@ -105,7 +105,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "documents")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -117,7 +117,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("The user has submitted documentsGB2.json for LRN 1234567890DGB2 and EORI Number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("documentsGB2.json", "1234567890DGB2", "1234567890")
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
       And(
@@ -136,7 +136,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("I enter 1234 on the 'What is the document’s reference number?' page")
       andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
       And("I choose radio option No on the 'You have added 1 document' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "1")
 
@@ -146,7 +146,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "documents")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("03 Departure Office 'XI' - Declaration 'TIR' - Documents - 'Supporting'") {
@@ -157,7 +157,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("The user has submitted documentsXI.json for LRN 1234567890DXI and EORI Number 1234567890")
       whenTheUserHasSubmittedFileForLRNAndEORINumber("documentsXI.json", "1234567890DXI", "1234567890")
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
       And(
@@ -184,7 +184,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And("And I enter 12345 on the Documents 'Enter the additional information' page")
       andIEnterXOnDocumentEnterAdditionalInformationPage("12345")
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
       And("I choose radio option No on the 'You have added 1 document' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "1")
 
@@ -194,7 +194,7 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "documents")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
   }
 }

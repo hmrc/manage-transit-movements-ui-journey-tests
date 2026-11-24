@@ -20,4 +20,10 @@ import specpage.CommonPages.*
 object WantToAddReferenceForGuaranteePage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a reference for the guarantee?"
+
+  def answerAddReference(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

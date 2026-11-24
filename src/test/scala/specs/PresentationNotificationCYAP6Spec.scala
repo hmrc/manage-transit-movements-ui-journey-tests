@@ -32,14 +32,15 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.CYAStepDefSteps.*
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.Departures.PreTaskList.GenericCYAPage
 import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
 import org.scalatest.GivenWhenThen
 import specsteps.LoginStepDefSteps
 import specsteps.ManageStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 
 class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
@@ -57,7 +58,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
     givenIsubmitAFile("IE928 Positive Acknowledgment")
 
     And("I refresh the page")
-    andIrefreshThePage()
+    CommonPage.refreshPage()
 
     And("I click on the View departure declarations link on the Manage your transit movements page")
     givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -81,7 +82,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I click the Change link for acting as representative on the Check your answers page")
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Are you acting as a representative?")
+      CYAPage.clickChangeLink("Are you acting as a representative?")
 
       And("I choose radio option Yes on the presentation Are you acting as a representative? page")
       andIchooseRadioOptionXOnThePresentationAreYouActingAsARepresentativePage("Yes")
@@ -102,7 +103,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()
@@ -116,7 +117,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I click the Change link for transport inland Mode on the Check your answers page")
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Do you want to add an inland mode of transport?")
+      CYAPage.clickChangeLink("Do you want to add an inland mode of transport?")
 
       And("I choose radio option Maritime on the Which inland mode of transport are you using? page")
       andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Maritime")
@@ -144,7 +145,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()
@@ -158,7 +159,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I click the Change link for transport inland mode on the Check your answers page")
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage("Do you want to add an inland mode of transport?")
+      CYAPage.clickChangeLink("Do you want to add an inland mode of transport?")
 
       And("I choose radio option Mail on the Which inland mode of transport are you using? page")
       andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Mail")
@@ -167,7 +168,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()
@@ -213,7 +214,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnThePresentationYouHaveAddedXDepartureMeansOfTransportPage("No", "1")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Information sent page")
       thenIshouldbeOnTheInformationSentPage()

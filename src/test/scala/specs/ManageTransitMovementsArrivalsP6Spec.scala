@@ -32,8 +32,10 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.ArrivalNotificationsStepDefSteps.*
-import specsteps.CommonStepDefSteps.andISignOut
+import specpage.CommonPages.CommonPage
+import specpage.ManagedFEArrivalNotificationsPage
+import specpage.ManagedFEReviewNotificationErrorsPage
+import specpage.ManagedFEReviewUnloadingRemarksErrorsPage
 import specsteps.ManageStepDefSteps.*
 import specsteps.UnloadingStepDefSteps.*
 import specsteps.LoginStepDefSteps.andILoginWithIDX
@@ -57,13 +59,13 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       Then("I should be on the Do you want to use the revised unloading procedure? page")
       thenIshouldBeOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -87,16 +89,16 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       Then("I should be on the Arrival notifications page")
-      thenIShouldBeOnTheArrivalNotificationsPage()
+      ManagedFEArrivalNotificationsPage.loadPage()
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the Review unloading remarks errors page")
-      thenIshouldBeOnTheReviewUnloadingRemarksErrorsPage()
+      ManagedFEReviewUnloadingRemarksErrorsPage.loadPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -114,16 +116,16 @@ class ManageTransitMovementsArrivalsP6Spec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       Then("I should be on the Arrival notifications page")
-      thenIShouldBeOnTheArrivalNotificationsPage()
+      ManagedFEArrivalNotificationsPage.loadPage()
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the Review notification errors page")
-      thenIShouldBeOnTheReviewNotificationErrorsPage()
+      ManagedFEReviewNotificationErrorsPage.loadPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

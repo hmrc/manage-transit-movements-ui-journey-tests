@@ -22,4 +22,9 @@ object AddBorderModeOfTransportPage extends YesNoPage {
   override def title(args: String*): String =
     "Are you using another vehicle to cross the border?"
 
+  def answerAddBorderMode(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

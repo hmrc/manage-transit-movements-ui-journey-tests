@@ -21,4 +21,9 @@ object ConveyanceReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the conveyance reference number?"
 
+  def enterConveyanceReference(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

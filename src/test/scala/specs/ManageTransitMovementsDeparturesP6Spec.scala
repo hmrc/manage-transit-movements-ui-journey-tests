@@ -32,12 +32,12 @@ package specs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CommonPage
+import specpage.ConfirmCancellationPage
+import specpage.Departures.Guarantee.GuaranteeBForTIRDeclarationPage
+import specpage.Departures.PreTaskList.GenericCYAPage
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.andIsubmitTheCheckYourAnswersPage
-import specsteps.CancellationsStepDefSteps.thenIshouldbeontheAreYouSureYouWantToCancelThisDeclaration
-import specsteps.CommonStepDefSteps.{andISignOut, andIrefreshThePage}
 import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.Departure_GuaranteeDetailsStepDefSteps.andIclickTheContinueButtonOnTheGuaranteeAddedForTIRDeclarationPage
 import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.*
@@ -65,7 +65,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeOnTheWhatIsTheLocalReferenceNumberPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -98,14 +98,14 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("Exit summary declaration (EXS)")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       // -------------------------Guarantee details-------------------------
       When("I click the Add guarantee details link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add guarantee details")
 
       Then("I click the Continue button on the 'Guarantee added for TIR declaration' page")
-      andIclickTheContinueButtonOnTheGuaranteeAddedForTIRDeclarationPage()
+      GuaranteeBForTIRDeclarationPage.continueToNextPage()
 
       And("I click on the Back to transit movements link on the 'Declaration summary' page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Back to transit movements")
@@ -120,7 +120,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIclickRadioOptionXOnTheAreYouSureYouWantToDeleteThisDeclarationPage("Yes")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -133,7 +133,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE060 Control Decision Notification With Documents")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -145,7 +145,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeOnTheGoodsUnderControlDocumentRequestedPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -158,7 +158,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE060 Control Decision Notification With No Documents")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -170,7 +170,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeOnTheGoodsUnderControlPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("05 - Trader is able to review declaration errors for a departure declaration") {
@@ -181,7 +181,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE056 Rejection With No Amendable Errors")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -193,7 +193,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheReviewDeclarationErrorsPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("06 - Trader is able to amend a declaration error for a departure declaration before MRN allocation") {
@@ -207,7 +207,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -222,7 +222,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheDeclarationSummaryPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("07 - Trader is able to amend a declaration error for a departure declaration after MRN allocation") {
@@ -240,7 +240,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -255,7 +255,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeOnTheWhatIsTheNewLocalReferenceNumberPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("08 - Trader is able to review errors for a amended departure declaration with no functional errors") {
@@ -270,7 +270,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE056 Amendment Rejection With NO Amendable Errors")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -282,7 +282,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeonTheDeclarationErrorsPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("09 - Trader is able to review cancellation errors for a departure declaration") {
@@ -297,7 +297,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE056 Cancellation Rejection With No Amendable Errors")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -309,7 +309,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheReviewCancellationErrorsPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("10 Trader is able to cancel a departure declaration") {
@@ -321,7 +321,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE028 MRN Allocated")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -330,10 +330,11 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Are you sure you want to cancel this declaration?' page")
-      thenIshouldbeontheAreYouSureYouWantToCancelThisDeclaration()
+      ConfirmCancellationPage
+        .loadPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("11 Trader is able to review IE035 message details for Goods being recovered") {
@@ -345,7 +346,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE035 Recovery Notification")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -357,7 +358,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheGoodsBeingRecoveredPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("12 Trader is able to review IE051 message details for Goods not released") {
@@ -369,7 +370,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE051 No Release For Transit")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -381,7 +382,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheGoodsNotReleasedPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("14 Trader completes a departure declaration that was previously pre-lodged") {
@@ -393,7 +394,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -407,7 +408,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("15 Trader completes a pre-lodge departure followed by an amendment and is able to complete a pre-lodge") {
@@ -425,7 +426,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE004 Amendment Acceptance")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -442,7 +443,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario(
@@ -456,7 +457,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE928 Positive Acknowledgment")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -475,7 +476,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("17 Trader is able to see a control decision notification IE060 for a pre-lodged declaration") {
@@ -490,7 +491,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE060 Control Decision Type 2")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -502,7 +503,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldBeOnTheIntentionToControlCompletePrelodgedDeclarationPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("18 Trader is able to see a departure rejection WITH NO functional errors for a pre-lodged declaration") {
@@ -520,7 +521,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE056 Rejection Of IE170 No Errors")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -535,7 +536,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
     Scenario("19 Trader is able to see a departure rejection WITH functional errors for a pre-lodged declaration") {
@@ -553,7 +554,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIsubmitAFile("IE056 Rejection Of IE170 With Errors")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the 'Manage your transit movements' page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -568,7 +569,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
   }
 }

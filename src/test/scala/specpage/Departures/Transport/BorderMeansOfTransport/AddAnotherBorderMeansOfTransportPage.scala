@@ -25,4 +25,12 @@ object AddAnotherBorderMeansOfTransportPage extends YesNoPage {
     case _        => String.format("You have added %s border means of transport", args: _*)
   }
 
+  def followLink(sectionLink: String): Unit =
+    clickByPartialLinkText(sectionLink)
+
+  def answerAddAnother(answer: String, numberOfBorderMeansInTitle: String): Unit =
+    loadPage(numberOfBorderMeansInTitle)
+      .select(answer)
+      .submitPage()
+
 }

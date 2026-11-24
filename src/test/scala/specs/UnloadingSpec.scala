@@ -32,9 +32,11 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.ArrivalNotificationsStepDefSteps.*
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.andISignOut
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.Departures.PreTaskList.GenericCYAPage
+import specpage.ManagedFEArrivalNotificationsPage
+import specpage.ManagedFEReviewUnloadingRemarksErrorsPage
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.UnloadingStepDefSteps.*
@@ -58,7 +60,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("Yes")
@@ -84,9 +86,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Has the external seal been replaced by a customs authority? on the Unloading Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Has the external seal been replaced by a customs authority?"
-      )
+      CYAPage.clickChangeLink("Has the external seal been replaced by a customs authority?")
 
       And("I choose radio option Yes on the Has the external seal been replaced by a customs authority? page")
       andIchooseRadioOptionXOnTheHasTheExternalSealBeenReplacedByACustomsAuthorityPage("Yes")
@@ -95,7 +95,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatIsTheIdentificationNumberForTheReplacementExternalSealPage("NewSeal1")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
@@ -116,7 +116,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("Yes")
@@ -156,7 +156,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
@@ -179,7 +179,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("Yes")
@@ -232,13 +232,13 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -262,16 +262,16 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       Then("I should be on the Arrival notifications page")
-      thenIShouldBeOnTheArrivalNotificationsPage()
+      ManagedFEArrivalNotificationsPage.loadPage()
 
       And("I click on the View errors link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the Review unloading remarks errors page")
-      thenIshouldBeOnTheReviewUnloadingRemarksErrorsPage()
+      ManagedFEReviewUnloadingRemarksErrorsPage.loadPage()
 
       And("I click on the Make unloading remarks on the Review unloading remarks errors page")
-      andIClickOnTheMakeUnloadingRemarksOnTheReviewUnloadingRemarksErrorsPage()
+      ManagedFEReviewUnloadingRemarksErrorsPage.makeUnloadingRemarks()
 
       And("I choose radio option Yes on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("Yes")
@@ -293,9 +293,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Were there any discrepancies between the transit and unloading permission? on the Unloading Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheCheckYourAnswersPage(
-        "Were there any discrepancies between the transit and unloading permission?"
-      )
+      CYAPage.clickChangeLink("Were there any discrepancies between the transit and unloading permission?")
 
       And(
         "I choose radio option Yes on the Were there any discrepancies between the transit movement and unloading permission? page"
@@ -323,13 +321,13 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -347,7 +345,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option No on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("No")
@@ -379,13 +377,13 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIenterOnTheWhatDoYouWantToReportPage("example comment")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -403,7 +401,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option No on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("No")
@@ -435,13 +433,13 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -459,7 +457,7 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View arrival notifications")
 
       And("I click on the Make unloading remarks link for MRN 25GB000246TK0E6WJ1 on the Arrival notifications page")
-      andIClickOnTheXLinkForMRNXOnTheArrivalNotificationsPage("Make unloading remarks", "25GB000246TK0E6WJ1")
+      ManagedFEArrivalNotificationsPage.openArrival("Make unloading remarks", "25GB000246TK0E6WJ1")
 
       And("I choose radio option No on the Do you want to use the revised unloading procedure? page")
       andIchooseRadioOptionXOnTheDoYouWantToUseTheRevisedUnloadingProcedurePage("No")
@@ -482,13 +480,13 @@ class UnloadingSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouHaveAnythingElseToReportPage("No")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       And("I should be on the Unloading remarks sent page")
       thenIshouldbeOnTheUnloadingRemarksSentPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
   }

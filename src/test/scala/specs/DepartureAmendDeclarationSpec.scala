@@ -32,11 +32,13 @@ package specs
  * limitations under the License.
  */
 
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
+import specpage.Departures.Guarantee.AddAnotherGuaranteePage
+import specpage.Departures.Guarantee.ConfirmRemoveGuaranteePage
+import specpage.Departures.Guarantee.GuaranteeLiabilityAmountPage
 import specsteps.DepartureConfirmationStepDefSteps.*
 import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.Departure_GuaranteeDetailsStepDefSteps.*
 import specsteps.DocumentsStepDefSteps.*
 import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
@@ -67,7 +69,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -100,15 +102,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend trader details")
 
       And("I click the Change link for Do you want to add a contact? on the Trader details Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact?")
 
       And("I choose radio option No on the Do you want to add a contact for the transit holder? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("No")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       And("I should see Amended status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
@@ -119,15 +119,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact for the location of goods?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact for the location of goods?")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
 
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       And("I should see Amended status for route details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
@@ -138,15 +136,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a method of payment for transport charges?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a method of payment for transport charges?")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       And("I should see Amended status for transport details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
@@ -160,15 +156,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add any additional information for this document?"
-      )
+      CYAPage.clickChangeLink("Do you want to add any additional information for this document?")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
@@ -183,15 +177,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add supplementary units?"
-      )
+      CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
       andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
@@ -203,21 +195,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 4 guarantees page")
-      andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
+      AddAnotherGuaranteePage.followLink("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Liability amount"
-      )
+      CYAPage.clickChangeLink("Liability amount")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.9")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("999.9")
 
       And("I submit on the Check your answers section Guarantee details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
+      CYAPage.submitAnswers("Guarantee details")
 
       And("I choose radio option No on the You have added 4 guarantees page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
+      AddAnotherGuaranteePage.answerAddAnother("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
@@ -247,7 +237,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -283,15 +273,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link for Do you want to add a contact? on the Trader details Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact?")
 
       And("I choose radio option No on the Do you want to add a contact for the transit holder? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheTransitHolderPage("No")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       And("I should see Amended status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
@@ -302,15 +290,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact for the location of goods?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact for the location of goods?")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
 
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       And("I should see Amended status for route details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
@@ -321,15 +307,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a method of payment for transport charges?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a method of payment for transport charges?")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       And("I should see Amended status for transport details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
@@ -343,15 +327,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add any additional information for this document?"
-      )
+      CYAPage.clickChangeLink("Do you want to add any additional information for this document?")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
@@ -366,15 +348,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add supplementary units?"
-      )
+      CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
       andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
@@ -386,21 +366,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 4 guarantees page")
-      andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
+      AddAnotherGuaranteePage.followLink("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Liability amount"
-      )
+      CYAPage.clickChangeLink("Liability amount")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.99")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("999.99")
 
       And("I submit on the Check your answers section Guarantee details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
+      CYAPage.submitAnswers("Guarantee details")
 
       And("I choose radio option No on the You have added 4 guarantees page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
+      AddAnotherGuaranteePage.answerAddAnother("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
@@ -433,7 +411,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -468,15 +446,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a contact for the consignor? on the Trader details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact for the consignor?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact for the consignor?")
 
       And("I choose radio option No on the Do you want to add a contact for the consignor? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       And("I should see Amended status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "trader details")
@@ -487,15 +463,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a contact for the location of goods? on the Route details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact for the location of goods?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact for the location of goods?")
 
       And("I choose radio option No on the Do you want to add a contact for the location of goods? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheLocationOfGoodsPage("No")
 
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       And("I should see Amended status for route details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "route details")
@@ -506,15 +480,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a method of payment for transport charges? on the Transport details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a method of payment for transport charges?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a method of payment for transport charges?")
 
       And("I choose radio option No on the Do you want to add a method of payment for transport charges? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
 
       And("I submit on the Check your answers section Transport details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transport details")
+      CYAPage.submitAnswers("Transport details")
 
       And("I should see Amended status for transport details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "transport details")
@@ -528,15 +500,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add any additional information for this document?"
-      )
+      CYAPage.clickChangeLink("Do you want to add any additional information for this document?")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
 
       And("I submit on the Check your answers section Documents page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Documents")
+      CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
       andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
@@ -551,15 +521,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add supplementary units?"
-      )
+      CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
       andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
 
       And("I submit on the Check your answers section Items page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Items")
+      CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
       andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
@@ -571,21 +539,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend guarantee details")
 
       And("I click the Change link on the You have added 4 guarantees page")
-      andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Change", "4")
+      AddAnotherGuaranteePage.followLink("Change", "4")
 
       And("I click the Change link for Liability amount on the Guarantee details Check your answers page")
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Liability amount"
-      )
+      CYAPage.clickChangeLink("Liability amount")
 
       And("I enter 999.99 on the How much is the liability in pounds? page")
-      andIenterOnTheHowMuchIsTheLiabilityInPoundsPage("999.9")
+      GuaranteeLiabilityAmountPage.enterLiabilityAmount("999.9")
 
       And("I submit on the Check your answers section Guarantee details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Guarantee details")
+      CYAPage.submitAnswers("Guarantee details")
 
       And("I choose radio option No on the You have added 4 guarantees page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "4")
+      AddAnotherGuaranteePage.answerAddAnother("No", "4")
 
       And("I should see Amended status for guarantee details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "guarantee details")
@@ -615,7 +581,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -648,13 +614,13 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Remove link on the You have added 4 guarantees page")
-      andIclickTheXLinkOnTheYouHaveAddedXGuaranteesPage("Remove", "4")
+      AddAnotherGuaranteePage.followLink("Remove", "4")
 
       And("I choose radio option Yes on the Are you sure you want to remove this guarantee? page")
-      andIchooseRadioOptionXOnTheAreYouSureYouWantToRemoveThisGuaranteePage("Yes")
+      ConfirmRemoveGuaranteePage.confirmRemoval("Yes")
 
       And("I choose radio option No on the You have added 3 guarantee page")
-      whenIchooseRadioOptionXOnTheYouHaveAddedXGuaranteesPage("No", "3")
+      AddAnotherGuaranteePage.answerAddAnother("No", "3")
 
       And("I click the Confirm and resend button on the Declaration summary page")
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
@@ -678,7 +644,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("departureDeclaration.json", "25GB000246TK0E6WJ1", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
@@ -692,9 +658,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click the Change link for Do you want to add a contact for the consignor? on the Trader details Check your answers page"
       )
-      andIclickTheChangeLinkForOnTheTransportDetailsUnloadingRouteDetailsTraderDetailsDocumentsItem1GuaranteeDetailsCheckYourAnswersPage(
-        "Do you want to add a contact for the consignor?"
-      )
+      CYAPage.clickChangeLink("Do you want to add a contact for the consignor?")
 
       And("I choose radio option No on the Do you want to add a contact for the consignor? page")
       andIchooseRadioOptionXOnTheDoYouWantToAddAContactForTheConsignorPage("No")
@@ -703,7 +667,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIsubmitAFile("IE029 Release For Transit")
 
       And("I submit on the Check your answers section Trader details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Trader details")
+      CYAPage.submitAnswers("Trader details")
 
       Then("I should be on the For your security we signed you out page")
       thenIshouldBeOnTheForYourSecurityWeSignedYouOutPage()

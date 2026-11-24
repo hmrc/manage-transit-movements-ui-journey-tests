@@ -23,4 +23,9 @@ object GuaranteeLiabilityCurrencyPage extends SelectPage {
 
   override val id: String = "currency"
 
+  def selectLiabilityCurrency(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

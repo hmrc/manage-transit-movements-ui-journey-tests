@@ -32,13 +32,13 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CommonPage
+import specpage.Departures.PreTaskList.GenericCYAPage
 import org.scalatest.GivenWhenThen
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
-import specsteps.CYAStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specs.BaseSpec
 
 class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
@@ -75,13 +75,13 @@ class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("Exit summary declaration (EXS)")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -104,13 +104,13 @@ class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("No security")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -136,13 +136,13 @@ class PreTaskListDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheWhichTypeOfSafetyAndSecurityDetailsDoYouWantToAddPage("Exit summary declaration (EXS)")
 
       And("I submit the Check your answers page")
-      andIsubmitTheCheckYourAnswersPage()
+      GenericCYAPage.submitAnswers()
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
 
   }

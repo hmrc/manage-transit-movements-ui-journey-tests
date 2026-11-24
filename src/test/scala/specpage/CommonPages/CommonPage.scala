@@ -31,4 +31,8 @@ object CommonPage extends BasePage {
     val time = t * 1000
     eventually(Thread.sleep(time))
   }
+
+  def signOut(): Unit =
+    clickLink("Sign out")
+
 }

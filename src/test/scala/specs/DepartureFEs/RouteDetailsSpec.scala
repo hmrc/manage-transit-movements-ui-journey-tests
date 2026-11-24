@@ -32,10 +32,10 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.CommonPages.CYAPage
+import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.CYAStepDefSteps.*
-import specsteps.CommonStepDefSteps.*
 import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
@@ -61,7 +61,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("routeDetailsGB.json", "1234567890RDGB", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -99,7 +99,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the 'You have added 1 country to the transit route' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "1")
       And("I submit on the Check your answers section Transit route page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
+      CYAPage.submitAnswers("Transit route")
       And("I choose to click on transit route summary page link on the 'No offices of transit' page")
       andIchooseToClickOnXLinkOnTheNoOfficesOfTransitPage("transit route summary page")
       And(
@@ -134,7 +134,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the 'You have added 4 countries to the transit route' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "4")
       And("I submit on the Check your answers section Transit route page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
+      CYAPage.submitAnswers("Transit route")
 
       // Office of Transit
 
@@ -159,7 +159,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
         "Andorra"
       )
       And("I submit on the Check your answers section Office of transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
+      CYAPage.submitAnswers("Office of transit")
       And("I choose radio option Yes on the 'You have added 1 office of transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes", "1")
       And("I select France on the 'Which country is the office of transit in?' page")
@@ -169,7 +169,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the 'Do you want to add a time of arrival in Bastia port (FR000380)?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage("No", "Bastia port (FR000380)")
       And("I submit on the Check your answers section Office of transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
+      CYAPage.submitAnswers("Office of transit")
       And("I choose to click on the Remove link on the 'You have added 2 offices of transit' page")
       andIchooseToClickOnTheXLinkOnTheYouHaveAddedXOfficesOfTransitPage("Remove", "2")
       And("I choose radio option Yes on the 'Are you sure you want to remove this office of transit?' page")
@@ -183,7 +183,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the 'Do you want to add a time of arrival in Brake (DE005301)?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage("No", "Brake (DE005301)")
       And("I submit on the Check your answers section Office of transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
+      CYAPage.submitAnswers("Office of transit")
       And("I choose radio option No on the 'You have added 2 offices of transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("Yes", "2")
       And("I select Serbia on the 'Which country is the office of transit in?' page")
@@ -193,7 +193,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I choose radio option No on the 'Do you want to add a time of arrival in CI GRADINA (RS013277)?' page")
       andIchooseRadioOptionXOnTheDoYouWantToAddATimeOfArrivalInXPage("No", "CI GRADINA (RS013277)")
       And("I submit on the Check your answers section Office of transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of transit")
+      CYAPage.submitAnswers("Office of transit")
       And("I choose radio option No on the 'You have added 3 offices of transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXOfficesOfTransitPage("No", "3")
 
@@ -206,7 +206,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I select Dijon bureau (FR001170) on the 'Where in France is the office of exit for transit?' page")
       andIselectOnTheWhereInXIsTheOfficeOfExitForTransitPage("Dijon bureau (FR001170)", "France")
       And("I submit on the Check your answers section Office of exit for transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of exit for transit")
+      CYAPage.submitAnswers("Office of exit for transit")
       And("I choose radio option Yes on the 'You have added 1 office of exit for transit' page")
       andIchooseRadioOptionXOnTheYouHaveAddedOfficesOfExitForTransitPage("Yes", "1")
       And("I select France on the 'In which country is the office of exit for transit?' page")
@@ -214,7 +214,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I select Brest bureau (FR000690) on the 'Where in France is the office of exit for transit?' page")
       andIselectOnTheWhereInXIsTheOfficeOfExitForTransitPage("Brest bureau (FR000690)", "France")
       And("I submit on the Check your answers section Office of exit for transit page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Office of exit for transit")
+      CYAPage.submitAnswers("Office of exit for transit")
       And("I choose to click on the Remove link on the 'You have added 2 offices of exit for transit' page")
       andIchooseToClickOnTheXLinkOnTheYouHaveAddedXOfficesOfExitForTransitPage("Remove", "2")
       And(
@@ -241,7 +241,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I enter +432 1212 1212 on the 'What is the phone number for the location of goods’ contact?' page")
       andIenterOnTheWhatIsThePhoneNumberForTheLocationOfGoodsContactPage("+432 1212 1212")
       And("I submit on the Check your answers section Location of goods page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
+      CYAPage.submitAnswers("Location of goods")
 
       // PLace of Loading/Unloading UNLOCODE
 
@@ -270,9 +270,9 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I enter Milano on the 'Where in Italy is the place of unloading?' page")
       andIenterOnTheWhereInXIsThePlaceOfUnloadingPage("Milano", "Italy")
       And("I submit on the Check your answers section Places of loading and unloading page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Places of loading and unloading")
+      CYAPage.submitAnswers("Places of loading and unloading")
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -280,7 +280,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "route details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
 
     }
 
@@ -293,7 +293,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       whenTheUserHasSubmittedFileForLRNAndEORINumber("routeDetailsXI.json", "1234567890RDXI", "1234567890")
 
       And("I refresh the page")
-      andIrefreshThePage()
+      CommonPage.refreshPage()
 
       And("I click on the View draft departure declarations link on the Manage your transit movements page")
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
@@ -327,7 +327,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("And I choose radio option No on the 'You have added 2 countries to the transit route' page")
       andIchooseRadioOptionXOnTheYouHaveAddedXCountriestoTheTransitRoutePage("No", "2")
       And("I submit on the Check your answers section Transit route page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Transit route")
+      CYAPage.submitAnswers("Transit route")
 
       // Location of Goods
       And("I choose radio option Yes on the 'Do you want to add a location of goods?' page")
@@ -341,7 +341,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And("I select XI on the departure location of goods customs office identification page")
       andIselectOnTheDepartureLocationOfGoodsCustomsOfficeIdentificationPage("XI")
       And("I submit on the Check your answers section Location of goods page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Location of goods")
+      CYAPage.submitAnswers("Location of goods")
 
       // Place of loading
       And("I choose radio option Yes on the 'Do you want to add a place of loading?' page")
@@ -352,18 +352,21 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       andIselectOnTheInWhichCountryIsThePlaceOfLoadingPage("United Kingdom")
       And("I enter London on the 'Where in United Kingdom is the place of loading?' page")
       andIenterOnTheWhereInXIsThePlaceOfLoadingPage("London", "United Kingdom")
+
       And("I submit on the Check your answers section Places of loading and unloading page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Places of loading and unloading")
+      CYAPage.submitAnswers("Places of loading and unloading")
+
       And("I submit on the Check your answers section Route details page")
-      andIsubmitOnTheCheckYourAnswersSectionXPage("Route details")
+      CYAPage.submitAnswers("Route details")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
+
       And("I should see Completed status for route details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "route details")
 
       And("I sign out")
-      andISignOut()
+      CommonPage.signOut()
     }
   }
 }

@@ -21,4 +21,9 @@ object GuaranteeAccessCodePage extends StringPage {
 
   override def title(args: String*): String = "What is the access code?"
 
+  def enterAccessCode(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

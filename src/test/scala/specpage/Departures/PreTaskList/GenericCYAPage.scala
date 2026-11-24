@@ -20,4 +20,9 @@ import specpage.CommonPages.*
 object GenericCYAPage extends Page {
 
   override def title(args: String*): String = "Check your answers"
+
+  def submitAnswers(): Unit =
+    loadPage()
+      .submitPage()
+
 }
