@@ -22,4 +22,10 @@ object Arrivals_AuthorisationsReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String =
     String.format("What is the authorisation reference number?")
+
+  def enterAuthorisationReference(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

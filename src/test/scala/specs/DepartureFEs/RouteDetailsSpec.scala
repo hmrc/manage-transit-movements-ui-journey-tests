@@ -32,11 +32,11 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForLRNAndEORINumber
@@ -69,7 +69,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890RDGB on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890RDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890RDGB")
       And("I click on the Add route details link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add route details")
 
@@ -301,7 +301,7 @@ class RouteDetailsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890RDXI on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890RDXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890RDXI")
       And("I click on the Add route details link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add route details")
 

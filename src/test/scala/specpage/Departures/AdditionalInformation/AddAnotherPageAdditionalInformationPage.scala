@@ -14,13 +14,24 @@
  * limitations under the License.
  */
 
-package specpage.Departures.AdditionalReference
+package specpage.Departures.AdditionalInformation
+
 import specpage.CommonPages.*
 
-object AddAnotherPageAdditionalReference extends YesNoPage {
+object AddAnotherPageAdditionalInformationPage extends YesNoPage {
 
   override def title(args: String*): String = args match {
-    case Seq("1") => "You have added 1 additional reference for all items"
-    case _        => String.format("You have added %s additional reference for all items", args: _*)
+    case Seq("1") => "You have added 1 additional information for all items"
+    case _        => String.format("You have added %s additional information for all items", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfReferences: String): Unit =
+    loadPage(numberOfReferences)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfAdditionalInfoInTitle: String): Unit =
+    loadPage(numberOfAdditionalInfoInTitle)
+      .clickByPartialLinkText(sectionLink)
+
 }

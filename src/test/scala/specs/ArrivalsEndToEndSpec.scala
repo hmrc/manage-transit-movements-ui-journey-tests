@@ -32,12 +32,24 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Arrivals_AuthorisationsReferenceNumberPage
+import specpage.Arrivals_ConsigneeEoriTinPage
+import specpage.Arrivals_ContactPhoneNumberPage
+import specpage.Arrivals_ErrorMovementReferenceNumberPage
+import specpage.Arrivals_LocationOfGoodsAddContactPage
+import specpage.Arrivals_LocationOfGoodsAuthorisationNumberPage
+import specpage.Arrivals_LocationOfGoodsContactNamePage
+import specpage.Arrivals_LocationOfGoodsCoordinatesPage
+import specpage.Arrivals_LocationOfGoodsCustomsOfficeIdentificationPage
+import specpage.Arrivals_LocationOfGoodsIdentificationPage
+import specpage.Arrivals_LocationOfGoodsTypePage
+import specpage.Arrivals_MovementReferenceNumberPage
+import specpage.Arrivals_OfficeOfDestinationPage
+import specpage.Arrivals_ProcedureTypePage
 import specpage.Arrivals_ConfirmationPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.ManagedFEArrivalNotificationsPage
-import specsteps.IdentificationStepDefSteps.*
-import specsteps.LocationOfGoodsStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
 import specsteps.LoginStepDefSteps
 import specsteps.ManageStepDefSteps.givenIclickOnTheLinkOnTheManageYourTransitMovementsPage
@@ -52,28 +64,28 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
     When("I click on the Make an arrival notification link on the Manage your transit movements page")
     givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Make an arrival notification")
     And("I enter 25GB000246TK0E6WJ1 on the Movement Reference Number page")
-    andIenterOnTheMovementReferenceNumberPage("25GB000246TK0E6WJ1")
+    Arrivals_MovementReferenceNumberPage.enterMrn("25GB000246TK0E6WJ1")
   }
 
   Feature("End to end journey Arrival notification feature") {
 
     Scenario("01 - Simplified - Authorisation number w/ contact") {
       When("I select GB on the arrival office of destination page")
-      andIselectOnTheArrivalOfficeOfDestinationPage("GB")
+      Arrivals_OfficeOfDestinationPage.selectOffice("GB")
       And("I choose radio option Simplified on the What type of procedure are you using? page")
-      andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage("Simplified")
+      Arrivals_ProcedureTypePage.selectProcedureType("Simplified")
       And("I enter GB123456789000 on the consignee eori tin page")
-      andIenterOnTheConsigneeEoriTinPage("GB123456789000")
+      Arrivals_ConsigneeEoriTinPage.enterEoriOrTin("GB123456789000")
       And("I enter XIACT24A7770003 on the authorisations reference number page")
-      andIenterOnTheAuthorisationsReferenceNumberPage("XIACT24A7770003")
+      Arrivals_AuthorisationsReferenceNumberPage.enterAuthorisationReference("XIACT24A7770003")
       And("I enter XI DES BT1 3ET on the arrival location of goods authorisation number page")
-      andIenterOnTheArrivalLocationOfGoodsAuthorisationNumberPage("XI DES BT1 3ET")
+      Arrivals_LocationOfGoodsAuthorisationNumberPage.enterAuthorisationNumber("XI DES BT1 3ET")
       And("I choose radio option Yes on the arrival location of goods add contact page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsAddContactPage("Yes")
+      Arrivals_LocationOfGoodsAddContactPage.answerAddContact("Yes")
       And("I enter John Joe on the arrival location of goods contact page")
-      andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
+      Arrivals_LocationOfGoodsContactNamePage.enterContactName("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
-      andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+      Arrivals_ContactPhoneNumberPage.enterContactPhoneNumber("+44 2345 82 83")
 
       And("I submit on the Check your answers section Arrivals page")
       CYAPage.submitAnswers("Arrivals")
@@ -82,7 +94,7 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       Arrivals_ConfirmationPage.followNotificationLink("Make another arrival notification")
 
       And("I should be on the What is the Movement Reference Number page")
-      thenIshouldbeOnTheWhatIsTheMovementReferenceNumberPage()
+      Arrivals_MovementReferenceNumberPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -91,17 +103,17 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
 
     Scenario("02 - Normal - Customs office") {
       When("I select GB on the arrival office of destination page")
-      andIselectOnTheArrivalOfficeOfDestinationPage("GB")
+      Arrivals_OfficeOfDestinationPage.selectOffice("GB")
       And("I choose radio option Normal on the What type of procedure are you using? page")
-      andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage("Normal")
+      Arrivals_ProcedureTypePage.selectProcedureType("Normal")
       And("I enter GB123456789000 on the consignee eori tin page")
-      andIenterOnTheConsigneeEoriTinPage("GB123456789000")
+      Arrivals_ConsigneeEoriTinPage.enterEoriOrTin("GB123456789000")
       And("I choose radio option Designated destination on the arrival location of goods type page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsTypePage("Designated destination")
+      Arrivals_LocationOfGoodsTypePage.selectLocationType("Designated destination")
       And("I choose radio option Customs office identifier on the arrival location of goods identification page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsIdentificationPage("Customs office identifier")
+      Arrivals_LocationOfGoodsIdentificationPage.selectIdentificationType("Customs office identifier")
       And("I select GB on the arrival location of goods customs office identification page")
-      andIselectOnTheArrivalLocationOfGoodsCustomsOfficeIdentificationPage("GB")
+      Arrivals_LocationOfGoodsCustomsOfficeIdentificationPage.selectCustomsOffice("GB")
 
       And("I submit on the Check your answers section Arrivals page")
       CYAPage.submitAnswers("Arrivals")
@@ -119,24 +131,24 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
 
     Scenario("03 - Normal - Coordinates w/ contact") {
       When("I select GB on the arrival office of destination page")
-      andIselectOnTheArrivalOfficeOfDestinationPage("GB")
+      Arrivals_OfficeOfDestinationPage.selectOffice("GB")
 
       And("I choose radio option Normal on the What type of procedure are you using? page")
-      andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage("Normal")
+      Arrivals_ProcedureTypePage.selectProcedureType("Normal")
       And("I enter GB123456789000 on the consignee eori tin page")
-      andIenterOnTheConsigneeEoriTinPage("GB123456789000")
+      Arrivals_ConsigneeEoriTinPage.enterEoriOrTin("GB123456789000")
       And("I choose radio option Approved place on the arrival location of goods type page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsTypePage("Approved place")
+      Arrivals_LocationOfGoodsTypePage.selectLocationType("Approved place")
       And("I choose radio option Coordinates on the arrival location of goods identification page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsIdentificationPage("Coordinates")
+      Arrivals_LocationOfGoodsIdentificationPage.selectIdentificationType("Coordinates")
       And("I enter 50.96622 and 1.86201 on the arrival location of goods coordinates page")
-      andIenterAndOnTheArrivalLocationOfGoodsCoordinatesPage("50.96622", "1.86201")
+      Arrivals_LocationOfGoodsCoordinatesPage.enterCoordinates("50.96622", "1.86201")
       And("I choose radio option Yes on the arrival location of goods add contact page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsAddContactPage("Yes")
+      Arrivals_LocationOfGoodsAddContactPage.answerAddContact("Yes")
       And("I enter John Joe on the arrival location of goods contact page")
-      andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
+      Arrivals_LocationOfGoodsContactNamePage.enterContactName("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
-      andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+      Arrivals_ContactPhoneNumberPage.enterContactPhoneNumber("+44 2345 82 83")
 
       And("I submit on the Check your answers section Arrivals page")
       CYAPage.submitAnswers("Arrivals")
@@ -151,21 +163,21 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
 
     Scenario("04 - User cannot re-enter their Arrival notification after submission") {
       When("I select GB on the arrival office of destination page")
-      andIselectOnTheArrivalOfficeOfDestinationPage("GB")
+      Arrivals_OfficeOfDestinationPage.selectOffice("GB")
       And("I choose radio option Simplified on the What type of procedure are you using? page")
-      andIchooseRadioOptionXOnTheWhatTypeOfProcedureAreYouUsingPage("Simplified")
+      Arrivals_ProcedureTypePage.selectProcedureType("Simplified")
       And("I enter GB123456789000 on the consignee eori tin page")
-      andIenterOnTheConsigneeEoriTinPage("GB123456789000")
+      Arrivals_ConsigneeEoriTinPage.enterEoriOrTin("GB123456789000")
       And("I enter XIACT24A7770003 on the authorisations reference number page")
-      andIenterOnTheAuthorisationsReferenceNumberPage("XIACT24A7770003")
+      Arrivals_AuthorisationsReferenceNumberPage.enterAuthorisationReference("XIACT24A7770003")
       And("I enter XI DES BT1 3ET on the arrival location of goods authorisation number page")
-      andIenterOnTheArrivalLocationOfGoodsAuthorisationNumberPage("XI DES BT1 3ET")
+      Arrivals_LocationOfGoodsAuthorisationNumberPage.enterAuthorisationNumber("XI DES BT1 3ET")
       And("I choose radio option Yes on the arrival location of goods add contact page")
-      andIchooseRadioOptionXOnTheArrivalLocationOfGoodsAddContactPage("Yes")
+      Arrivals_LocationOfGoodsAddContactPage.answerAddContact("Yes")
       And("I enter John Joe on the arrival location of goods contact page")
-      andIenterOnTheArrivalLocationOfGoodsContactPage("John Joe")
+      Arrivals_LocationOfGoodsContactNamePage.enterContactName("John Joe")
       And("I enter +44 2345 82 83 on the arrival location of goods contact number page")
-      andIenterOnTheArrivalLocationOfGoodsContactNumberPage("+44 2345 82 83")
+      Arrivals_ContactPhoneNumberPage.enterContactPhoneNumber("+44 2345 82 83")
 
       And("I submit on the Check your answers section Arrivals page")
       CYAPage.submitAnswers("Arrivals")
@@ -174,11 +186,11 @@ class ArrivalsEndToEndSpec extends BaseSpec with GivenWhenThen with BeforeAndAft
       Arrivals_ConfirmationPage.followNotificationLink("Make another arrival notification")
 
       And("I should be on the What is the Movement Reference Number page")
-      thenIshouldbeOnTheWhatIsTheMovementReferenceNumberPage()
+      Arrivals_MovementReferenceNumberPage.loadPage()
       And("I enter 25GB000246TK0E6WJ1 on the Movement Reference Number page")
-      andIenterOnTheMovementReferenceNumberPage("25GB000246TK0E6WJ1")
+      Arrivals_MovementReferenceNumberPage.enterMrn("25GB000246TK0E6WJ1")
       And("I should see an error on the What is the Movement Reference Number page")
-      thenIshouldseeAnErrorOnTheWhatIsTheMovementReferenceNumberPage()
+      Arrivals_ErrorMovementReferenceNumberPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()

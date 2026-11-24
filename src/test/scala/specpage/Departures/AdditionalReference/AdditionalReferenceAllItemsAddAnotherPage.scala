@@ -23,4 +23,9 @@ object AdditionalReferenceAllItemsAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 additional reference for all items"
     case _        => String.format("You have added %s additional references for all items", args: _*)
   }
+
+  def followLink(sectionLink: String, numberOfReferences: String): Unit =
+    loadPage(numberOfReferences)
+      .clickByPartialLinkText(sectionLink)
+
 }

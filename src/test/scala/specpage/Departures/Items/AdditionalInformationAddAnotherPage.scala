@@ -23,4 +23,14 @@ object AdditionalInformationAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 additional information"
     case _        => String.format("You have added %s additional information", args: _*)
   }
+
+  def answerAddAnother(answer: String, documentNumber: String): Unit =
+    loadPage(documentNumber)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfDocuments: String): Unit =
+    loadPage(numberOfDocuments)
+      .clickByPartialLinkText(sectionLink)
+
 }

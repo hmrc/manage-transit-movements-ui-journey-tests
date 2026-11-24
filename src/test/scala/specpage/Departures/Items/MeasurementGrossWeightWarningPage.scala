@@ -21,4 +21,8 @@ object MeasurementGrossWeightWarningPage extends Page {
 
   override def title(args: String*): String = "Before you continue"
 
+  def continueToNextPage(): Unit =
+    loadPage()
+      .submitPage()
+
 }

@@ -21,4 +21,9 @@ object AddLineItemNumberPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a line item number?"
 
+  def answerAddLineItemNumber(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -20,4 +20,10 @@ import specpage.CommonPages.*
 object RemoveDangerousGoodsPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to remove this UN number?"
+
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

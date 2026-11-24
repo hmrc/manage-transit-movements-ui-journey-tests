@@ -24,4 +24,9 @@ object DocumentsWhichDocumentPage extends SelectPage {
 
   override val id: String = "document"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

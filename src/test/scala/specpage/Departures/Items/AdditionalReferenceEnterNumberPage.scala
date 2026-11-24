@@ -22,4 +22,9 @@ object AdditionalReferenceEnterNumberPage extends StringPage {
 
   override def title(args: String*): String = "Enter the additional reference number"
 
+  def enterAndContinue(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

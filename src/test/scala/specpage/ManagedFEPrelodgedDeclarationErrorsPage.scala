@@ -14,11 +14,18 @@
  * limitations under the License.
  */
 
-package specpage.Departures.Documents.Documents
+package specpage
 import specpage.CommonPages.*
 
-object DocumentsForAllItems extends YesNoPage {
+object ManagedFEPrelodgedDeclarationErrorsPage extends Page {
 
-  override def title(args: String*): String = String.format("Do you want to use this document for all items?")
+  override def title(args: String*): String = "Pre-lodged declaration errors"
+
+  def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
+    clickByPartialLinkText(declarationLink)
+
+  def followDepartureLink(declarationLink: String): Unit =
+    loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
 
 }

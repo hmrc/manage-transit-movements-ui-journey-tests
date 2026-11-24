@@ -22,4 +22,10 @@ object Arrivals_ConsigneeEoriTinPage extends StringPage {
 
   override def title(args: String*): String =
     "What is the consignee’s EORI number or Trader Identification Number (TIN)?"
+
+  def enterEoriOrTin(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

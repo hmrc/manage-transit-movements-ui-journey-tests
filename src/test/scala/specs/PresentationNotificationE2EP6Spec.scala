@@ -32,11 +32,12 @@ package specs
  * limitations under the License.
  */
 
+import specpage.ManagedFEDepartureDeclarationsPage
+import specpage.ManagedFEPreLodgeCYA
 import specpage.CommonPages.CommonPage
 import specpage.Departures.PreTaskList.GenericCYAPage
 import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportIdentificationNumberPage
 import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOfTransportOfficeOfTransitPage
-import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
 import specsteps.RouteDetailsLocationOfGoodsStepDefSteps.*
@@ -69,7 +70,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       And(
         "I click the Continue button on the presentation More information needed to complete pre-lodged declaration page"
@@ -250,7 +251,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnThePresentationYouHaveAddedXTransportEquipmentPage("No", "1")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()
@@ -279,7 +280,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       And(
         "I click the Continue button on the presentation More information needed to complete pre-lodged declaration page"
@@ -341,7 +342,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("No")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()
@@ -372,7 +373,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       And(
         "I click the Continue button on the presentation More information needed to complete pre-lodged declaration page"
@@ -397,7 +398,7 @@ class PresentationNotificationE2EP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnThePresentationDoYouWantToAddAnyTransportEquipmentPage("No")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()

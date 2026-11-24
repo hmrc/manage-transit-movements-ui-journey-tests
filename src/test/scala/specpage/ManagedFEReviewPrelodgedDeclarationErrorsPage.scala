@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package specpage.Departures.AdditionalInformation
+package specpage
 import specpage.CommonPages.*
 
-object RemovePageAdditionalInformation extends YesNoPage {
+object ManagedFEReviewPrelodgedDeclarationErrorsPage extends Page {
 
-  override def title(args: String*): String =
-    "Are you sure you want to remove this additional information from all items?"
+  override def title(args: String*): String = "Review pre-lodged declaration errors"
+
+  def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
+    clickByPartialLinkText(declarationLink)
+
+  def followDepartureLink(declarationLink: String): Unit =
+    loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
 
 }

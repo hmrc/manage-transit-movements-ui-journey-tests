@@ -32,12 +32,22 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.Departures.Documents.Documents.AddAdditionalInformationPage
+import specpage.Departures.Documents.Documents.DocumentAddAnotherPage
+import specpage.Departures.Documents.Documents.DocumentEnterAdditionalInfoPage
+import specpage.Departures.Documents.Documents.DocumentPreviousTypePage
+import specpage.Departures.Documents.Documents.DocumentReferenceNumberPage
+import specpage.Departures.Documents.Documents.DocumentTypePage
+import specpage.Departures.Documents.Documents.DocumentsAddADocumentPage
+import specpage.Departures.Documents.Documents.DocumentsForAllItemsPage
+import specpage.Departures.Documents.Documents.RemoveDocumentPage
+import specpage.Departures.Documents.Supporting.AddLineItemNumberPage
+import specpage.Departures.Documents.Supporting.LineItemNumberPage
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.DocumentsStepDefSteps.*
-import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForLRNAndEORINumber
@@ -64,41 +74,41 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890DGB1 on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890DGB1")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890DGB1")
       And("I click on the Add documents link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add documents")
 
       // Previous Document
       And("I click radio option No on the 'Do you want to use this document for all items?' page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      DocumentsForAllItemsPage.answerUseForAllItems("No")
       And("I select Previous - (C605) Information sheet INF3 on the 'What previous document do you want to add?' page")
-      andIselectOnTheWhatPreviousDocumentDoYouWantToAddPage("Previous - (C605) Information sheet INF3")
+      DocumentPreviousTypePage.selectPreviousDocumentType("Previous - (C605) Information sheet INF3")
       And("I enter 1234 on the 'What is the document’s reference number?' page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("1234")
       And("I click radio option Yes on the 'Do you want to add any additional information for this document?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationDocument("Yes")
+      AddAdditionalInformationPage.answerAddInformation("Yes")
       And("I enter 12345,6789 on the Documents 'Enter the additional information' page")
-      andIEnterXOnDocumentEnterAdditionalInformationPage("12345,6789")
+      DocumentEnterAdditionalInfoPage.enterAdditionalInformation("12345,6789")
       And("I submit on the Check your answers section Documents page")
       CYAPage.submitAnswers("Documents")
       And("I choose radio option Yes on the 'You have added 1 document' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
+      DocumentAddAnotherPage.answerAddAnother("Yes", "1")
       And("I click radio option No on the 'Do you want to use this document for all items?' page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      DocumentsForAllItemsPage.answerUseForAllItems("No")
       And("I select Previous - (N380) Commercial invoice on the 'What type of document do you want to add?' page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Previous - (N380) Commercial invoice")
+      DocumentTypePage.selectDocumentType("Previous - (N380) Commercial invoice")
       And("I enter 1234 on the 'What is the document’s reference number?' page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("1234")
       And("I click radio option No on the 'Do you want to add any additional information for this document?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationDocument("No")
+      AddAdditionalInformationPage.answerAddInformation("No")
       And("I submit on the Check your answers section Documents page")
       CYAPage.submitAnswers("Documents")
       And("I choose to click on the Remove link on the 'You have added 2 documents' page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Remove", "2")
+      DocumentAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this document?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisDocumentPage("Yes")
+      RemoveDocumentPage.confirmRemoval("Yes")
       And("I choose radio option No on the 'You have added 1 documents' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "1")
+      DocumentAddAnotherPage.answerAddAnother("No", "1")
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
       And("I should see Completed status for documents on the Declaration summary page")
@@ -123,22 +133,22 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890DGB2 on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890DGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890DGB")
       And("I click on the Add documents link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add documents")
 
       And("I click radio option Yes on the 'Do you want to add any documents?' page")
-      andIClickRadioOptionXOnDoYouWantToAddAnyDocuments("Yes")
+      DocumentsAddADocumentPage.answerAddDocument("Yes")
       And("I click radio option Yes on the 'Do you want to use this document for all items?' page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("Yes")
+      DocumentsForAllItemsPage.answerUseForAllItems("Yes")
       And("I select Transport - (N704) Master bill of lading on the 'What type of document do you want to add?' page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Transport - (N704) Master bill of lading")
+      DocumentTypePage.selectDocumentType("Transport - (N704) Master bill of lading")
       And("I enter 1234 on the 'What is the document’s reference number?' page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("1234")
       And("I submit on the Check your answers section Documents page")
       CYAPage.submitAnswers("Documents")
       And("I choose radio option No on the 'You have added 1 document' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "1")
+      DocumentAddAnotherPage.answerAddAnother("No", "1")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -163,30 +173,30 @@ class DocumentsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890DGB2 on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890DXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890DXI")
       And("I click on the Add documents link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add documents")
 
       And("I click radio option Yes on the 'Do you want to add any documents?' page")
-      andIClickRadioOptionXOnDoYouWantToAddAnyDocuments("Yes")
+      DocumentsAddADocumentPage.answerAddDocument("Yes")
       And("I click radio option Yes on the 'Do you want to use this document for all items?' page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("Yes")
+      DocumentsForAllItemsPage.answerUseForAllItems("Yes")
       And("I select Supporting - (C673) Catch certificate on the 'What type of document do you want to add?' page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Supporting - (C673) Catch certificate")
+      DocumentTypePage.selectDocumentType("Supporting - (C673) Catch certificate")
       And("I enter 1234 on the 'What is the document’s reference number?' page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("1234")
       And("And I click radio option Yes on the 'Do you want to add a line item number?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddALineItemNumberPage("Yes")
+      AddLineItemNumberPage.answerAddLineItemNumber("Yes")
       And("And I enter 54321 on the 'What is the line item number?' page")
-      andIenterOnTheWhatIsTheLineItemNumberPage("54321")
+      LineItemNumberPage.enterLineItemNumber("54321")
       And("And I click radio option Yes on the 'Do you want to add any additional information for this document?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationDocument("Yes")
+      AddAdditionalInformationPage.answerAddInformation("Yes")
       And("And I enter 12345 on the Documents 'Enter the additional information' page")
-      andIEnterXOnDocumentEnterAdditionalInformationPage("12345")
+      DocumentEnterAdditionalInfoPage.enterAdditionalInformation("12345")
       And("I submit on the Check your answers section Documents page")
       CYAPage.submitAnswers("Documents")
       And("I choose radio option No on the 'You have added 1 document' page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "1")
+      DocumentAddAnotherPage.answerAddAnother("No", "1")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()

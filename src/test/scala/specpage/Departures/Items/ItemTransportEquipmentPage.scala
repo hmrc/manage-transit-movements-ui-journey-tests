@@ -24,4 +24,9 @@ object ItemTransportEquipmentPage extends SelectPage {
 
   override val id: String = "equipment"
 
+  def selectEquipment(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

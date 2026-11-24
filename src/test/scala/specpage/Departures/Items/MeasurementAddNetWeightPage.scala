@@ -22,4 +22,9 @@ object MeasurementAddNetWeightPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add the item’s net weight?"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -24,4 +24,14 @@ object DangerousGoodsUnNumberAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 UN number for dangerous goods"
     case _        => String.format("You have added %s UN numbers for dangerous goods", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfUnNumber: String): Unit =
+    loadPage(numberOfUnNumber)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfUnNumber: String): Unit =
+    loadPage(numberOfUnNumber)
+      .clickByPartialLinkText(sectionLink)
+
 }

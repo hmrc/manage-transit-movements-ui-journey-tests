@@ -22,4 +22,9 @@ object MeasurementSupplementaryUnitsPage extends StringPage {
 
   override def title(args: String*): String = "How many supplementary units does the item include?"
 
+  def enterSupplementaryUnits(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

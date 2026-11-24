@@ -48,6 +48,7 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specs.BaseSpec
@@ -57,7 +58,6 @@ import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.TaskListStepDefSteps.*
 import specsteps.TraderDetailsStepDefSteps.*
-import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 
 class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
 
@@ -83,7 +83,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDGB")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -179,7 +179,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDGB")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -271,7 +271,7 @@ class TraderDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDXI")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()

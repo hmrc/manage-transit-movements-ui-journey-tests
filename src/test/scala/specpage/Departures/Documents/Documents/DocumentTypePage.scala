@@ -23,4 +23,9 @@ object DocumentTypePage extends SelectPage {
 
   override val id: String = "document"
 
+  def selectDocumentType(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -21,4 +21,9 @@ object AddDangerousGoodsPage extends YesNoPage {
 
   override def title(args: String*): String = "Does the item contain any dangerous goods?"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

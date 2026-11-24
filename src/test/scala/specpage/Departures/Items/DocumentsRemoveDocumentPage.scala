@@ -22,4 +22,10 @@ object DocumentsRemoveDocumentPage extends YesNoPage {
 
   override def title(args: String*): String =
     String.format("Are you sure you want to remove this document from the item?")
+
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

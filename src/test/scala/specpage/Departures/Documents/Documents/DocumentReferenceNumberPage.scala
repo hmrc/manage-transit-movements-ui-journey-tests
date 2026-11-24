@@ -21,4 +21,9 @@ object DocumentReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the document’s reference number?"
 
+  def enterReferenceNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

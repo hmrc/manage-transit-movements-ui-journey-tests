@@ -22,4 +22,9 @@ object PackagesAddShippingMarkPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a shipping mark?"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -48,6 +48,7 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.Departures.Guarantee.AddAnotherGuaranteePage
@@ -64,7 +65,6 @@ import specpage.Departures.Guarantee.OtherGuarantee8ReferencePage
 import specpage.Departures.Guarantee.WantToAddReferenceForGuaranteePage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
@@ -92,7 +92,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890GDGB on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890GDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890GDGB")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -179,7 +179,7 @@ class GuaranteeDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890GDXI on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890GDXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890GDXI")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()

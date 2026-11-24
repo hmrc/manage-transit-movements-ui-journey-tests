@@ -21,4 +21,10 @@ object GetBalanceGuaranteeRefNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Guarantee Reference Number (GRN)?"
   override def submitPage(): Unit           = clickById("continue")
+
+  def enterGuaranteeReference(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

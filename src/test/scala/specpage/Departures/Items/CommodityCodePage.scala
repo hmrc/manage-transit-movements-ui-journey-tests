@@ -21,4 +21,9 @@ object CommodityCodePage extends StringPage {
 
   override def title(args: String*): String = "What is the commodity code?"
 
+  def enterAndContinue(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

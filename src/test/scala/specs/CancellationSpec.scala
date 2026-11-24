@@ -32,11 +32,11 @@ package specs
  * limitations under the License.
  */
 
+import specpage.ManagedFEDepartureDeclarationsPage
 import specpage.CancellationReasonPage
 import specpage.CancellationRequestSentPage
 import specpage.CommonPages.CommonPage
 import specpage.ConfirmCancellationPage
-import specsteps.DepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.*
 import org.scalatest.GivenWhenThen
@@ -65,7 +65,7 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Cancel declaration", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
       ConfirmCancellationPage.confirmCancellation("Yes")
@@ -98,7 +98,7 @@ class CancellationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Cancel declaration", "25GB000246TK0E6WJ1")
 
       And("I choose radio option Yes on the Are you sure you want to cancel this declaration? page")
       ConfirmCancellationPage.confirmCancellation("Yes")

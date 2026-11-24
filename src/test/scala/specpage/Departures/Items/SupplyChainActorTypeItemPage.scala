@@ -31,4 +31,10 @@ object SupplyChainActorTypeItemPage extends RadioPage {
     clickRadioBtn(typeSupplyChainActor)
     this
   }
+
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

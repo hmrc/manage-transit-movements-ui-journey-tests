@@ -22,4 +22,9 @@ object MeasurementAddSupplementaryUnitsPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add supplementary units?"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

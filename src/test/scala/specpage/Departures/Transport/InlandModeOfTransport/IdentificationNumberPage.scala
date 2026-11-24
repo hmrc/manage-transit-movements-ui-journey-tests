@@ -21,4 +21,9 @@ object IdentificationNumberPage extends StringPage {
 
   override def title(args: String*): String = String.format("What is the identification for this vehicle?")
 
+  def enterRegistrationNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

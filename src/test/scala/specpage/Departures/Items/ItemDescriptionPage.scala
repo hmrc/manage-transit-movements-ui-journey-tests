@@ -22,4 +22,9 @@ object ItemDescriptionPage extends StringPage {
 
   override def title(args: String*): String = String.format("Enter a description of item %s", args: _*)
 
+  def enterDescription(answer: String, itemNumber: String): Unit =
+    loadPage(itemNumber)
+      .fillInput(answer)
+      .submitPage()
+
 }

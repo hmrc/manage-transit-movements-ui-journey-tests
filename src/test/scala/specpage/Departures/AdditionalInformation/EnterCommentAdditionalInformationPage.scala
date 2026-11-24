@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-package specpage
+package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-object ManagedFEPrelodgedDeclarationErrors extends Page {
+object EnterCommentAdditionalInformationPage extends StringPage {
 
-  override def title(args: String*): String = "Pre-lodged declaration errors"
+  override def title(args: String*): String = "Enter your comments for the additional information"
 
-  def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
-    clickByPartialLinkText(declarationLink)
+  def enterAndContinue(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
 
 }

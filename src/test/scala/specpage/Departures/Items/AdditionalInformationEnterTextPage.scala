@@ -21,4 +21,9 @@ object AdditionalInformationEnterTextPage extends StringPage {
 
   override def title(args: String*): String = "Enter the additional information"
 
+  def enterAndContinue(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

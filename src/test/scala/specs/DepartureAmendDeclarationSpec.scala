@@ -32,15 +32,18 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Departures.Confirmation.DepartureConfirmationPage
+import specpage.Departures.Documents.Documents.DocumentAddAnotherPage
+import specpage.Departures.Items.ItemsAddAnotherPage
+import specpage.Departures.Items.MeasurementAddSupplementaryUnitsPage
+import specpage.ManagedFEAmendDeclarationErrorsPage
+import specpage.ManagedFEAmendGuaranteeErrorsPage
+import specpage.ManagedFEDepartureDeclarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.Departures.Guarantee.AddAnotherGuaranteePage
 import specpage.Departures.Guarantee.ConfirmRemoveGuaranteePage
 import specpage.Departures.Guarantee.GuaranteeLiabilityAmountPage
-import specsteps.DepartureConfirmationStepDefSteps.*
-import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.DocumentsStepDefSteps.*
-import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -75,10 +78,10 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       And("I should see Error status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details")
@@ -151,7 +154,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 3 documents page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
+      DocumentAddAnotherPage.followLink("Change", "3")
 
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
@@ -165,7 +168,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
@@ -174,19 +177,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend items")
 
       And("I click the Change link on the You have added 1 item page")
-      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
+      ItemsAddAnotherPage.followLink("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
       CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
@@ -216,7 +219,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 
@@ -243,10 +246,10 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       Then("I input a random LRN on the What is the new Local Reference Number? page")
       whenIInputARandomLRNOnTheWhatIsTheNewLocalReferenceNumberPage()
@@ -322,7 +325,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 3 documents page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
+      DocumentAddAnotherPage.followLink("Change", "3")
 
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
@@ -336,7 +339,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
@@ -345,19 +348,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend items")
 
       And("I click the Change link on the You have added 1 item page")
-      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
+      ItemsAddAnotherPage.followLink("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
       CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
@@ -387,7 +390,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 
@@ -417,10 +420,10 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       And("I should see Error status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Error", "trader details")
@@ -495,7 +498,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 3 documents page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
+      DocumentAddAnotherPage.followLink("Change", "3")
 
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
@@ -509,7 +512,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
@@ -518,19 +521,19 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 1 item page")
-      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Change", "1")
+      ItemsAddAnotherPage.followLink("Change", "1")
 
       And("I click the Change link for Do you want to add supplementary units? on the Item 1 Check your answers page")
       CYAPage.clickChangeLink("Do you want to add supplementary units?")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
 
       And("I should see Amended status for items on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "items")
@@ -560,7 +563,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 
@@ -587,10 +590,10 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend guarantee errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendGuaranteeErrorsPage()
+      ManagedFEAmendGuaranteeErrorsPage.amendErrors()
 
       And("I should see Completed status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
@@ -626,7 +629,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 
@@ -650,7 +653,7 @@ class DepartureAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Edit trader details link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Edit trader details")

@@ -24,4 +24,8 @@ object GetBalanceCantCheckBalancePage extends StringPage {
   def selectAction(sectionLink: String): Unit =
     clickByPartialLinkText(sectionLink)
 
+  def followLink(link: String): Unit =
+    loadPage()
+      .selectAction(link)
+
 }

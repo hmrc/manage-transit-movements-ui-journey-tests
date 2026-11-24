@@ -35,4 +35,8 @@ object ManagedFEDepartureDeclarationsPage extends StringPage {
     clickById(id)
   }
 
+  def openDeparture(linkText: String, lrn: String): Unit =
+    loadPage()
+      .selectDepartureAction(linkText, lrn)
+
 }

@@ -21,4 +21,8 @@ object YouDoNotHavePreviousDocumentsToAttachPage extends Page {
 
   override def title(args: String*): String = "You do not have any previous documents to attach"
 
+  def goToDocuments(): Unit =
+    loadPage()
+      .clickById("documents")
+
 }

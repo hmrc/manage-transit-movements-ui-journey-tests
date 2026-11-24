@@ -24,4 +24,9 @@ object PackageTypePage extends SelectPage {
 
   override val id: String = "package"
 
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

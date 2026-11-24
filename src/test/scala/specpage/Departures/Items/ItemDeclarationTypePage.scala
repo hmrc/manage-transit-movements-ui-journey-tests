@@ -26,4 +26,10 @@ object ItemDeclarationTypePage extends RadioPage {
     clickRadioBtn(answer)
     this
   }
+
+  def selectDeclarationType(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -32,11 +32,12 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Departures.Transport.InlandModeOfTransport.InlandModeOfTransportPage
+import specpage.ManagedFEDepartureDeclarationsPage
+import specpage.ManagedFEPreLodgeCYA
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.Departures.PreTaskList.GenericCYAPage
-import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
 import org.scalatest.GivenWhenThen
 import specsteps.LoginStepDefSteps
@@ -66,7 +67,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
     And(
       "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page"
     )
-    andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+    ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
     And("I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page")
     andIclickTheContinueButtonOnThePresentationConfirmationNeededToCompletePrelodgedDeclarationPage()
 
@@ -79,7 +80,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
 
     Scenario("01 Representative section for a complete Normal pre-lodge departure declaration") {
       Given("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I click the Change link for acting as representative on the Check your answers page")
       CYAPage.clickChangeLink("Are you acting as a representative?")
@@ -100,7 +101,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       andIenterOnThePresentationRepresentativeWhatIsYourPhoneNumberPage("+11 1111 1111")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()
@@ -114,13 +115,13 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       "02 Departure means of transport section with Mode as other than Mail for a complete Normal pre-lodge departure declaration"
     ) {
       Given("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I click the Change link for transport inland Mode on the Check your answers page")
       CYAPage.clickChangeLink("Do you want to add an inland mode of transport?")
 
       And("I choose radio option Maritime on the Which inland mode of transport are you using? page")
-      andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Maritime")
+      InlandModeOfTransportPage.selectInlandMode("Maritime")
 
       And(
         "I choose radio option Name of a sea-going vessel on the presentation departure means of transport Which identification do you want to use for the departure means of transport? page"
@@ -142,7 +143,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       andIselectOnThePresentationWhatCountryIsTheDepartureMeansOfTransportRegisteredToPage("United Kingdom")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()
@@ -156,16 +157,16 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
       "03 Inland mode of transport section with mode as Mail for a complete Normal pre-lodge departure declaration"
     ) {
       Given("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I click the Change link for transport inland mode on the Check your answers page")
       CYAPage.clickChangeLink("Do you want to add an inland mode of transport?")
 
       And("I choose radio option Mail on the Which inland mode of transport are you using? page")
-      andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Mail")
+      InlandModeOfTransportPage.selectInlandMode("Mail")
 
       Then("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I submit the Check your answers page")
       GenericCYAPage.submitAnswers()
@@ -177,7 +178,7 @@ class PresentationNotificationCYAP6Spec extends BaseSpec with GivenWhenThen {
 
     Scenario("04 Add and Remove a departure transport Means for a complete Normal pre-lodge departure declaration") {
       Given("I should be on the Presentation Notification Check your answers page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I click the Add or remove departure means of transport link on the Prelodge Check your answers page")
       andIclickTheLinkOnThePrelodgeCheckYourAnswersPage("Add or remove departure means of transport")

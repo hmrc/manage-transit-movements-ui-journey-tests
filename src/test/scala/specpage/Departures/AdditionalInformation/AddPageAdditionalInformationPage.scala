@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package specpage.Departures.Documents.Documents
-
+package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-object DocumentsAddADocument extends YesNoPage {
+object AddPageAdditionalInformationPage extends YesNoPage {
 
-  override def title(args: String*): String = String.format("Do you want to add any documents")
+  override def title(args: String*): String = "Do you want to add any additional information for all items?"
+
+  def selectAndContinue(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
 
 }

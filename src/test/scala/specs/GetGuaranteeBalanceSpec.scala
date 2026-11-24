@@ -32,8 +32,14 @@ package specs
  * limitations under the License.
  */
 
+import specpage.GetBalanceAvailableBalanceConfirmationPage
+import specpage.GetBalanceCYAPage
+import specpage.GetBalanceCantCheckBalancePage
+import specpage.GetBalanceDetailsDoNotMatchPage
+import specpage.GetBalanceGuaranteeAccessCodePage
+import specpage.GetBalanceGuaranteeRefNumberPage
+import specpage.GetBalanceInvalidGuaranteePage
 import specpage.CommonPages.CommonPage
-import specsteps.GetGuaranteeBalanceStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import org.scalatest.GivenWhenThen
@@ -50,47 +56,47 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Check your guarantee balance")
 
       And("I enter 22GB1111111111113 on the Get Balance What is the Guarantee Reference Number? page")
-      thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("22GB1111111111113")
+      GetBalanceGuaranteeRefNumberPage.enterGuaranteeReference("22GB1111111111113")
 
       And("I enter x906 on the Get Balance What is the access code? page")
-      andIenterOnTheGetBalanceWhatIsTheAccessCodePage("x906")
+      GetBalanceGuaranteeAccessCodePage.enterAccessCode("x906")
 
       And("I submit on the Get Balance Check your answers page")
-      andIsubmitOnTheGetBalanceCheckYourAnswersPage()
+      GetBalanceCYAPage.submitAnswers()
 
       And(
         "I click the Check your details and try again link on the The Guarantee Reference Number and access code do not match page"
       )
-      andIclickTheLinkOnTheTheGuaranteeReferenceNumberAndAccessCodeDoNotMatchPage("Check your details and try again")
+      GetBalanceDetailsDoNotMatchPage.followLink("Check your details and try again")
 
       And("I submit on the Get Balance Check your answers page")
-      andIsubmitOnTheGetBalanceCheckYourAnswersPage()
+      GetBalanceCYAPage.submitAnswers()
 
       And(
         "I click the check your details are correct and try again link on the We could not check your guarantee balance page"
       )
-      andIclickTheLinkOnTheWeCouldNotCheckYourGuaranteeBalancePage("check your details are correct and try again")
+      GetBalanceCantCheckBalancePage.followLink("check your details are correct and try again")
 
       And("I wait for 60 seconds")
       CommonPage.wait(60)
 
       And("I click the change link for guarantee reference number on the Check your answers page")
-      andIClickTheChangeLinkForOnTheCheckYourAnswersPage("guarantee reference number")
+      GetBalanceCYAPage.clickChangeLink("guarantee reference number")
 
       And("I enter 22GB1111111111112 on the Get Balance What is the Guarantee Reference Number? page")
-      thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("22GB1111111111112")
+      GetBalanceGuaranteeRefNumberPage.enterGuaranteeReference("22GB1111111111112")
 
       And("I click the change link for access code on the Check your answers page")
-      andIClickTheChangeLinkForOnTheCheckYourAnswersPage("access code")
+      GetBalanceCYAPage.clickChangeLink("access code")
 
       And("I enter AB12 on the Get Balance What is the access code? page")
-      andIenterOnTheGetBalanceWhatIsTheAccessCodePage("AB12")
+      GetBalanceGuaranteeAccessCodePage.enterAccessCode("AB12")
 
       And("I submit on the Get Balance Check your answers page")
-      andIsubmitOnTheGetBalanceCheckYourAnswersPage()
+      GetBalanceCYAPage.submitAnswers()
 
       Then("I should see a confirmation of my balance on the Available balance page")
-      thenIshouldseeAConfirmationOfMyBalanceOnTheAvailableBalancePage()
+      GetBalanceAvailableBalanceConfirmationPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -105,16 +111,16 @@ class GetGuaranteeBalanceSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("Check your guarantee balance")
 
       And("I enter 02GB1234567890120 on the Get Balance What is the Guarantee Reference Number? page")
-      thenIenterOnTheGetBalanceWhatIsTheGuaranteeReferenceNumberPage("02GB1234567890120")
+      GetBalanceGuaranteeRefNumberPage.enterGuaranteeReference("02GB1234567890120")
 
       And("I enter AB12 on the Get Balance What is the access code? page")
-      andIenterOnTheGetBalanceWhatIsTheAccessCodePage("AB12")
+      GetBalanceGuaranteeAccessCodePage.enterAccessCode("AB12")
 
       And("I submit on the Get Balance Check your answers page")
-      andIsubmitOnTheGetBalanceCheckYourAnswersPage()
+      GetBalanceCYAPage.submitAnswers()
 
       Then("I should be on the We cannot get the balance for this type of guarantee page")
-      thenIshouldbeOnTheWeCannotGetTheBalanceForThisTypeOfGuaranteePage()
+      GetBalanceInvalidGuaranteePage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
