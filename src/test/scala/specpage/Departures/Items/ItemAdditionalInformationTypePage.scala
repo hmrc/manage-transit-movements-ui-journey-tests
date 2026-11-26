@@ -23,9 +23,4 @@ object ItemAdditionalInformationTypePage extends SelectPage {
 
   override val id: String = "additional-information"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

@@ -23,9 +23,4 @@ object AdditionalReferenceTypePage extends SelectPage {
 
   override val id: String = "additional-reference"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

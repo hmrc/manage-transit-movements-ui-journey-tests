@@ -22,9 +22,4 @@ object ItemUCRNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Unique Consignment Reference (UCR)?"
 
-  def enterAndContinue(answer: String): Unit =
-    loadPage()
-      .fillInput(answer)
-      .submitPage()
-
 }

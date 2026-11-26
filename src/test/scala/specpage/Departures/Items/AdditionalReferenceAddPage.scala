@@ -21,9 +21,4 @@ object AdditionalReferenceAddPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add an additional reference for this item?"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

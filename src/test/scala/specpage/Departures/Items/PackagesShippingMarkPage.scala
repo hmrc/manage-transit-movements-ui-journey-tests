@@ -22,9 +22,4 @@ object PackagesShippingMarkPage extends StringPage {
 
   override def title(args: String*): String = "What is the shipping mark?"
 
-  def enterAndContinue(answer: String): Unit =
-    loadPage()
-      .fillInput(answer)
-      .submitPage()
-
 }

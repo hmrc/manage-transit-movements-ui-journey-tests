@@ -21,9 +21,4 @@ object EnterCommentAdditionalInformationPage extends StringPage {
 
   override def title(args: String*): String = "Enter your comments for the additional information"
 
-  def enterAndContinue(answer: String): Unit =
-    loadPage()
-      .fillInput(answer)
-      .submitPage()
-
 }

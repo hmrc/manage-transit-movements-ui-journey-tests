@@ -21,9 +21,4 @@ object UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage extends StringP
 
   override def title(args: String*): String = "What is the additional reference number?"
 
-  def enterAndContinue(answer: String): Unit =
-    loadPage()
-      .fillInput(answer)
-      .submitPage()
-
 }

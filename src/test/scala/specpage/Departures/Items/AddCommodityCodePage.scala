@@ -21,9 +21,4 @@ object AddCommodityCodePage extends YesNoPage {
 
   override def title(args: String*): String = String.format("Do you want to add a commodity code?")
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

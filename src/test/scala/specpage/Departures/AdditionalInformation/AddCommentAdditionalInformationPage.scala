@@ -21,9 +21,4 @@ object AddCommentAdditionalInformationPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add any comments for the additional information?"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

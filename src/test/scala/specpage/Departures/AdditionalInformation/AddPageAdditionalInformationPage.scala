@@ -21,9 +21,4 @@ object AddPageAdditionalInformationPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add any additional information for all items?"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

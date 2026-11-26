@@ -21,9 +21,4 @@ object SupplyChainActorItemAddPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a supply chain actor for this item?"
 
-  def selectAndContinue(answer: String): Unit =
-    loadPage()
-      .select(answer)
-      .submitPage()
-
 }

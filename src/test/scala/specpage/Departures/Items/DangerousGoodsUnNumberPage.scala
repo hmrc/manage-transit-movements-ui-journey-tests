@@ -22,9 +22,4 @@ object DangerousGoodsUnNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the UN number for the dangerous goods?"
 
-  def enterAndContinue(answer: String): Unit =
-    loadPage()
-      .fillInput(answer)
-      .submitPage()
-
 }

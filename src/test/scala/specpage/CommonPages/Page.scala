@@ -28,3 +28,14 @@ trait Page extends BasePage {
   private def onPage(expectedTitle: String): Unit =
     fluentWait.until(_.getTitle.contains(expectedTitle))
 }
+
+trait SelectablePage extends Page {
+
+  def selectAndContinue(answer: String, titleArgs: String*): Unit =
+    loadPage(titleArgs*)
+      .select(answer)
+      .submitPage()
+
+  def select(answer: String): this.type
+
+}

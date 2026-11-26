@@ -20,11 +20,11 @@ import org.openqa.selenium.{By, Keys, WebElement}
 
 import scala.jdk.CollectionConverters._
 
-trait SelectPage extends StringPage {
+trait SelectPage extends StringPage with SelectablePage {
 
   val id: String = "value"
 
-  def select(answer: String): this.type = {
+  override def select(answer: String): this.type = {
     selectValueFromDropDown(answer)
     this
   }
