@@ -20,6 +20,11 @@ import org.openqa.selenium.WebElement
 
 trait StringPage extends Page {
 
+  def enterAndContinue(answer: String, titleArgs: String*): Unit =
+    loadPage(titleArgs*)
+      .fillInput(answer)
+      .submitPage()
+
   def fillInput(answer: String): this.type = {
     fillInputById("value", answer)
     this

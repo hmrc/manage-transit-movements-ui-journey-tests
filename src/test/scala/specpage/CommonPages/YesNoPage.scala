@@ -18,6 +18,11 @@ package specpage.CommonPages
 
 trait YesNoPage extends RadioPage {
 
+  def selectAndContinue(answer: String, titleArgs: String*): Unit =
+    loadPage(titleArgs*)
+      .select(answer)
+      .submitPage()
+
   def select(answer: String): this.type = {
     answer match {
       case "Yes" => clickById("value")
