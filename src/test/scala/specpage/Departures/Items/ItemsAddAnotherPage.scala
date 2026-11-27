@@ -24,4 +24,14 @@ object ItemsAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 item"
     case _        => String.format("You have added %s items", args: _*)
   }
+
+  def answerAddAnother(answer: String, itemNumber: String): Unit =
+    loadPage(itemNumber)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfItems: String): Unit =
+    loadPage(numberOfItems)
+      .clickByPartialLinkText(sectionLink)
+
 }

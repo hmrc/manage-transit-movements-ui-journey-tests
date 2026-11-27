@@ -22,4 +22,9 @@ object Arrivals_MovementReferenceNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the Movement Reference Number (MRN)?"
 
+  def enterMrn(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

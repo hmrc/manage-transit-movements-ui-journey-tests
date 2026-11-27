@@ -22,4 +22,10 @@ object AdditionalReferenceRemovePage extends YesNoPage {
 
   override def title(args: String*): String =
     String.format("Are you sure you want to remove this additional reference?")
+
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

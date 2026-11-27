@@ -14,12 +14,17 @@
  * limitations under the License.
  */
 
-package specpage.Departures.AdditionalInformation
+package specpage.Departures.Documents.Documents
+
 import specpage.CommonPages.*
 
-object RemovePageAdditionalInformation extends YesNoPage {
+object DocumentsAddADocumentPage extends YesNoPage {
 
-  override def title(args: String*): String =
-    "Are you sure you want to remove this additional information from all items?"
+  override def title(args: String*): String = String.format("Do you want to add any documents")
+
+  def answerAddDocument(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
 
 }

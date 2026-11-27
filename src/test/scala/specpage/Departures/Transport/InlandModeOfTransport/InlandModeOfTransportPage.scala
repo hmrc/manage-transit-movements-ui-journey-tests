@@ -35,4 +35,10 @@ object InlandModeOfTransportPage extends RadioPage {
     clickRadioBtn(modeOfTransportCSSValue)
     this
   }
+
+  def selectInlandMode(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

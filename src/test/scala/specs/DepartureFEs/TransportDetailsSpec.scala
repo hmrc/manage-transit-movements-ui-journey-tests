@@ -48,6 +48,28 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.Departures.AdditionalInformation.AddAnotherPageAdditionalInformationPage
+import specpage.Departures.AdditionalInformation.AddCommentAdditionalInformationPage
+import specpage.Departures.AdditionalInformation.AddPageAdditionalInformationPage
+import specpage.Departures.AdditionalInformation.EnterCommentAdditionalInformationPage
+import specpage.Departures.AdditionalInformation.RemovePageAdditionalInformationPage
+import specpage.Departures.AdditionalReference.AddAnotherPageAdditionalReferencePage
+import specpage.Departures.AdditionalReference.AddPageAdditionalReferencePage
+import specpage.Departures.AdditionalReference.AdditionalReferenceAllItemsAddAnotherPage
+import specpage.Departures.AdditionalReference.AdditionalReferenceAllItemsRemovePage
+import specpage.Departures.Items.AdditionalReferenceAddNumberPage
+import specpage.Departures.Items.AdditionalReferenceEnterNumberPage
+import specpage.Departures.Items.AdditionalReferenceTypePage
+import specpage.Departures.Items.ItemAdditionalInformationTypePage
+import specpage.Departures.Items.SupplyChainActorItemRemoveSCAPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddAnotherDepartureMeansOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddNewBorderModeOfTransportPage
+import specpage.Departures.Transport.BorderMeansOfTransport.RemoveDepartureMeansOfTransportPage
+import specpage.Departures.Transport.InlandModeOfTransport.IdentificationNumberPage
+import specpage.Departures.Transport.InlandModeOfTransport.InlandModeOfTransportPage
+import specpage.Departures.Transport.InlandModeOfTransport.TransportCountryPage
+import specpage.Departures.Transport.InlandModeOfTransport.TransportIdentificationPage
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.Departures.Transport.BorderMeansOfTransport.AddAnotherBorderMeansOfTransportPage
@@ -66,8 +88,6 @@ import specpage.Departures.Transport.Carrier.CarrierContactPhoneNumberPage
 import specpage.Departures.Transport.Carrier.CarrierEoriNumberOrTinPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.DraftDepartureDeclarationsStepDefSteps.*
-import specsteps.InlandModeOfTransportStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -75,7 +95,6 @@ import specsteps.TaskListStepDefSteps.*
 import specsteps.PresentationNotificationStepDefSteps.*
 import specsteps.TransportDetailsStepDefSteps.*
 import specsteps.SupplyChainActorStepDefSteps.*
-import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.TransportAuthorisationsStepDefSteps.*
 import specsteps.TransportEquipmentChargesStepDefSteps.*
 
@@ -103,7 +122,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDGB")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -143,55 +162,51 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAnInlandModeOfTransportPage("Yes")
 
       And("I choose radio option Maritime on the 'Which inland mode of transport are you using?' page")
-      andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Maritime")
+      InlandModeOfTransportPage.selectInlandMode("Maritime")
 
       And(
         "I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "Name of a sea-going vessel"
-      )
+      TransportIdentificationPage.selectIdentificationType("Name of a sea-going vessel")
 
       And("I enter registration number GB1234567 on the What is the identification number for this? page")
-      andIenterRegistrationNumberOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      IdentificationNumberPage.enterRegistrationNumber("GB1234567")
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
-      andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      TransportCountryPage.selectCountry("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
       CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option Yes on the You have added 1 departure means of transport page")
-      andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("Yes", "1")
+      AddAnotherDepartureMeansOfTransportPage.answerAddAnother("Yes", "1")
 
       And(
         "I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "Name of a sea-going vessel"
-      )
+      TransportIdentificationPage.selectIdentificationType("Name of a sea-going vessel")
 
       And("I enter registration number GB1234567 on the What is the identification number for this? page")
-      andIenterRegistrationNumberOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      IdentificationNumberPage.enterRegistrationNumber("GB1234567")
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
-      andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      TransportCountryPage.selectCountry("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
       CYAPage.submitAnswers("Departure means of transport")
 
       And("I choose to click on the Remove link on the You have added 2 departure means of transport' page")
-      whenIchooseToClickOnTheXLinkOnTheYouHaveAddedDepartureMeansOfTransportPage("Remove", "2")
+      AddAnotherDepartureMeansOfTransportPage.followLink("Remove", "2")
 
       And("I choose radio option Yes for the 'Are you sure you want to remove departure means of transport 1?' page")
-      andIchooseRadioOptionXForTheAreYouSureYouWantToRemoveDepartureMeansOfTransportPage("Yes", "1")
+      RemoveDepartureMeansOfTransportPage.confirmRemoval("Yes", "1")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
-      andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
+      AddAnotherDepartureMeansOfTransportPage.answerAddAnother("No", "1")
 
       //      ## Border means of transport
       And("I choose radio option Yes on Do you want to add a border mode of transport? page")
-      andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("Yes")
+      AddNewBorderModeOfTransportPage.answerAddBorderMode("Yes")
 
       And("I choose radio option Sea on the How is the transit crossing the border? page")
       BorderModeOfTransportPage.selectBorderMode("Sea")
@@ -285,7 +300,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
         "manufacturer"
       )
       whenIchooseToClickOnXLinkOnTheYouHaveAddedSupplyChainActorsPage("Remove", "2")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSupplyChainActorItemPage("Yes")
+      SupplyChainActorItemRemoveSCAPage.confirmRemoval("Yes")
       andIchooseRadioOptionXOnTheYouHaveAddedSupplyChainActorsPage("No", "1")
 
       //      ## Authorisation
@@ -375,78 +390,78 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //    ## Additional Reference
       And("I click radio option Yes on the Do you want to add an additional reference for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForAllItemsPage("Yes")
+      AddPageAdditionalReferencePage.selectAndContinue("Yes")
 
       And(
         "I select Y023 - Consignee (AEO certificate number) on the What type of additional reference do you want to add? page"
       )
-      andIselectOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddPage("Y023 - Consignee (AEO certificate number)")
+      AdditionalReferenceTypePage.selectAndContinue("Y023 - Consignee (AEO certificate number)")
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
 
       And("I enter 12345 on the 'Enter the additional reference number' page")
-      andIenterXOnTheEnterTheAdditionalReferenceNumberPage("12345")
+      AdditionalReferenceEnterNumberPage.enterAndContinue("12345")
 
       And("I click radio option Yes on the 'You have added 1 additional reference for all items' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferenceForAllItemsPage("Yes", "1")
+      AddAnotherPageAdditionalReferencePage.answerAddAnother("Yes", "1")
 
       And(
         "I select Y025 - Representative (AEO certificate number) on the What type of additional reference do you want to add? page"
       )
-      andIselectOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddPage("Y025 - Representative (AEO certificate number)")
+      AdditionalReferenceTypePage.selectAndContinue("Y025 - Representative (AEO certificate number)")
 
       And("I click radio option No on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("No")
+      AdditionalReferenceAddNumberPage.selectAndContinue("No")
 
       And("I click the Remove link on the 'You have added 2 additional references for all items?' page")
-      andIclickTheXLinkOnTheYouHaveAddedXAdditionalReferencesForAllItemsPage("Remove", "2")
+      AdditionalReferenceAllItemsAddAnotherPage.followLink("Remove", "2")
 
       And(
         "I click radio option Yes on the 'Are you sure you want to remove this additional reference from all items?' page"
       )
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalReferenceFromAllItemsPage("Yes")
+      AdditionalReferenceAllItemsRemovePage.confirmRemoval("Yes")
 
       And("I click radio option Yes on the 'You have added 1 additional reference for all items' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferenceForAllItemsPage("No", "1")
+      AddAnotherPageAdditionalReferencePage.answerAddAnother("No", "1")
 
       //  ## Additional Information
 
       And("I click radio option Yes on the Do you want to add any additional information for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("Yes")
+      AddPageAdditionalInformationPage.selectAndContinue("Yes")
 
       And(
         "I select 20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction on the 'What type of additional information do you want to add?' page"
       )
-      andIselectOnTheWhatTypeOfAdditionalInformationDoYouWantToAddPage(
+      ItemAdditionalInformationTypePage.selectAndContinue(
         "20100 - Export from one EFTA country subject to restriction or export from the Union subject to restriction"
       )
 
       And("I click radio option Yes on the 'Do you want to add any comments for the additional information?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyCommentsForTheAdditionalInformationPage("Yes")
+      AddCommentAdditionalInformationPage.selectAndContinue("Yes")
 
       And("I enter Comment 1 on the 'Enter your comments for the additional information' page")
-      andIenterOnTheEnterYourCommentsForTheAdditionalInformationPage("Comment 1")
+      EnterCommentAdditionalInformationPage.enterAndContinue("Comment 1")
 
       And("I click radio option Yes on the 'You have added 1 additional information for all items' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationForAllItemsPage("Yes", "1")
+      AddAnotherPageAdditionalInformationPage.answerAddAnother("Yes", "1")
 
       And("I select 20300 - Export on the 'What type of additional information do you want to add?' page")
-      andIselectOnTheWhatTypeOfAdditionalInformationDoYouWantToAddPage("20300 - Export")
+      ItemAdditionalInformationTypePage.selectAndContinue("20300 - Export")
 
       And("I click radio option No on the 'Do you want to add any comments for the additional information?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyCommentsForTheAdditionalInformationPage("No")
+      AddCommentAdditionalInformationPage.selectAndContinue("No")
 
       And("I choose to click on the Remove link on the 'You have added 2 additional information for all items' page")
-      andIchooseToClickOnTheXLinkOnTheYouHaveAddedXAdditionalInformationForAllItemsPage("Remove", "2")
+      AddAnotherPageAdditionalInformationPage.followLink("Remove", "2")
 
       And(
         "I click radio option Yes on the 'Are you sure you want to remove this additional information from all items?' page"
       )
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalInformationFromAllItemsPage("Yes")
+      RemovePageAdditionalInformationPage.confirmRemoval("Yes")
 
       And("I click radio option No on the 'You have added 1 additional information for all items' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationForAllItemsPage("No", "1")
+      AddAnotherPageAdditionalInformationPage.answerAddAnother("No", "1")
 
       And("I submit on the Check your answers section Transport details page")
       CYAPage.submitAnswers("Transport details")
@@ -474,7 +489,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDGB on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDGB")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -504,25 +519,23 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I choose radio option Name of a sea-going vessel on the inland mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage(
-        "Name of a sea-going vessel"
-      )
+      TransportIdentificationPage.selectIdentificationType("Name of a sea-going vessel")
 
       And("I enter registration number GB1234567 on the What is the identification number for this? page")
-      andIenterRegistrationNumberOnTheWhatIsTheIdentificationNumberForThisPage("GB1234567")
+      IdentificationNumberPage.enterRegistrationNumber("GB1234567")
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
-      andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      TransportCountryPage.selectCountry("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
       CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
-      andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
+      AddAnotherDepartureMeansOfTransportPage.answerAddAnother("No", "1")
 
       //      ## Border means of transport
       And("I choose radio option No on Do you want to add a border mode of transport? page")
-      andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("No")
+      AddNewBorderModeOfTransportPage.answerAddBorderMode("No")
 
       And("I choose radio option No on the border means Do you want to add identification for this vehicle? page")
       AddVehicleIdentificationBorderMeansOfTransportPage.answerAddIdentification("No")
@@ -580,11 +593,11 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //    ## Additional Reference
       And("I click radio option No on the Do you want to add an additional reference for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForAllItemsPage("No")
+      AddPageAdditionalReferencePage.selectAndContinue("No")
 
       //  ## Additional Information
       And("I click radio option No on the Do you want to add any additional information for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
+      AddPageAdditionalInformationPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Transport details page")
       CYAPage.submitAnswers("Transport details")
@@ -612,7 +625,7 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the link for LRN 1234567890TDXI on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDXI")
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -648,28 +661,28 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAnInlandModeOfTransportPage("Yes")
 
       And("I choose radio option Rail on the 'Which inland mode of transport are you using?' page")
-      andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Rail")
+      InlandModeOfTransportPage.selectInlandMode("Rail")
 
       And(
         "I choose radio option Train number on the inland mode 'Which identification do you want to use for this vehicle?' page"
       )
-      andIchooseRadioOptionXOnTheInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("Train number")
+      TransportIdentificationPage.selectIdentificationType("Train number")
 
       And("I enter registration number 1234567 on the What is the identification number for this? page")
-      andIenterRegistrationNumberOnTheWhatIsTheIdentificationNumberForThisPage("1234567")
+      IdentificationNumberPage.enterRegistrationNumber("1234567")
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
-      andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      TransportCountryPage.selectCountry("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
       CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
-      andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
+      AddAnotherDepartureMeansOfTransportPage.answerAddAnother("No", "1")
 
       // Border means of transport
       And("I choose radio option Yes on Do you want to add a border mode of transport? page")
-      andIchooseRadioOptionXOnDoYouWantToAddABorderModeOfTransportPage("Yes")
+      AddNewBorderModeOfTransportPage.answerAddBorderMode("Yes")
 
       And("I choose radio option Air on the How is the transit crossing the border? page")
       BorderModeOfTransportPage.selectBorderMode("Air")
@@ -731,11 +744,11 @@ class TransportDetailsSpec extends BaseSpec with GivenWhenThen {
 
       //    ## Additional Reference
       And("I click radio option No on the Do you want to add an additional reference for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForAllItemsPage("No")
+      AddPageAdditionalReferencePage.selectAndContinue("No")
 
       //  ## Additional Information
       And("I click radio option No on the Do you want to add any additional information for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
+      AddPageAdditionalInformationPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Transport details page")
       CYAPage.submitAnswers("Transport details")

@@ -32,12 +32,13 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Departures.Confirmation.DepartureConfirmationPage
+import specpage.Departures.Documents.Documents.DocumentAddAnotherPage
+import specpage.ManagedFEAmendDeclarationErrorsPage
+import specpage.ManagedFEDepartureDeclarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import org.scalatest.GivenWhenThen
-import specsteps.DepartureConfirmationStepDefSteps.*
-import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.DocumentsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -74,10 +75,10 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       And("I should see Error status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
@@ -101,7 +102,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 3 documents page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
+      DocumentAddAnotherPage.followLink("Change", "3")
 
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
@@ -115,7 +116,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
@@ -124,7 +125,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 
@@ -153,10 +154,10 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 //
 //      And("I click on the View error link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-//      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View error", "25GB000246TK0E6WJ1")
+//      ManagedFEDepartureDeclarationsPage.openDeparture("View error", "25GB000246TK0E6WJ1")
 //
 //      Then("I should be on the Review Declaration errors page")
-//      thenIshouldbeOnTheReviewDeclarationErrorsPage()
+//      ManagedFEReviewDeclarationErrorsPage.loadPage()
 //
 //      And("I sign out")
 //      CommonPage.signOut()
@@ -188,10 +189,10 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
 //      givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 //
 //      And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-//      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+//      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 //
 //      Then("I should be on the Declaration errors page")
-//      thenIshouldbeOnTheDeclarationErrorsPage()
+//      ManagedFEDeclarationNonFunctionalErrorsPage.loadPage()
 //
 //      And("I sign out")
 //      CommonPage.signOut()
@@ -226,10 +227,10 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       And("I should see Error status for trader details on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Completed", "trader details")
@@ -253,7 +254,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Amend")
 
       And("I click the Change link on the You have added 3 documents page")
-      whenIclickTheXLinkOnTheYouHaveAddedXDocumentsPage("Change", "3")
+      DocumentAddAnotherPage.followLink("Change", "3")
 
       And(
         "I click the Change link for Do you want to add any additional information for this document? on the Documents Check your answers page"
@@ -267,7 +268,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       And("I should see Amended status for documents on the Declaration summary page")
       andIshouldSeeXStatusForOnTheDeclarationSummaryPage("Amended", "documents")
@@ -276,7 +277,7 @@ class NotificationToAmendDeclarationSpec extends BaseSpec with GivenWhenThen {
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
 
     }
 

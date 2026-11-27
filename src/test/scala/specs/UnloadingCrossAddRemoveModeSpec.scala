@@ -32,9 +32,15 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Departures.Items.AdditionalReferenceAddAnotherPage
+import specpage.Departures.Items.AdditionalReferenceAddNumberPage
+import specpage.Departures.Items.AdditionalReferenceRemovePage
+import specpage.Departures.Items.AdditionalReferenceTypePage
+import specpage.Departures.Items.ItemDescriptionPage
+import specpage.Departures.Items.PackagesAddShippingMarkPage
+import specpage.UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage
 import specpage.CommonPages.CommonPage
 import specpage.ManagedFEArrivalNotificationsPage
-import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.UnloadingStepDefSteps.*
 import org.scalatest.{BeforeAndAfterEach, GivenWhenThen}
 import specsteps.LoginStepDefSteps.andILoginWithIDX
@@ -214,27 +220,27 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       andIclickTheLinkForSection("Add or remove additional reference", "Additional reference", "1")
 
       And("I click radio option Yes on the You have added 1 additional reference page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferencesPage("Yes", "1")
+      AdditionalReferenceAddAnotherPage.answerAddAnother("Yes", "1")
 
       And(
         "I select Y023 - Consignee (AEO certificate number) on the What type of additional reference do you want to add? page"
       )
-      andIselectOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddPage("Y023 - Consignee (AEO certificate number)")
+      AdditionalReferenceTypePage.selectAndContinue("Y023 - Consignee (AEO certificate number)")
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
 
       And("I enter additional reference newRef999 on the What is the additional reference number? page")
-      andIenterAdditionalReferenceXOnTheWhatIsTheAdditionalReferenceNumberPage("newRef999")
+      UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage.enterAndContinue("newRef999")
 
       And("I click the Remove link on the You have added 2 additional references page")
-      andIclickTheXLinkOnTheYouHaveAddedXAdditionalReferencesPage("Remove", "2")
+      AdditionalReferenceAddAnotherPage.followLink("Remove", "2")
 
       And("I click radio option Yes on the Are you sure you want to remove this additional reference? page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalReferencePage("Yes")
+      AdditionalReferenceRemovePage.confirmRemoval("Yes")
 
       And("I click radio option No on the You have added 1 additional reference page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferencesPage("No", "1")
+      AdditionalReferenceAddAnotherPage.answerAddAnother("No", "1")
 
       And("I click the add or remove countries of routing link")
       andIclickTheAddOrRemoveCountriesOfRoutingLink()
@@ -283,7 +289,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       andIclickRadioOptionXOnTheYouHaveAddedXItemsforHouseConsignmentXPage("Yes", "1", "1")
 
       And("I enter testing on the Enter the description of item 2 in house consignment 1 page")
-      andIenterXOnTheEnterADescriptionOfItemXPage("testing", "2")
+      ItemDescriptionPage.enterDescription("testing", "2")
 
       And("I choose radio option Yes on the Do you want to add the item’s gross weight? page")
       andIhooseRadioOptionXOnTheDoYouWantToAddTheItemsGrossWeightPage("Yes")
@@ -402,7 +408,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       )
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
 
       And(
         "I enter additional reference newRef999 on the What is the additional reference number for item 2 in house consignment 1? page"
@@ -426,7 +432,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       )
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
 
       And(
         "I enter additional reference newRef999 on the What is the additional reference number for item 2 in house consignment 1? page"
@@ -440,7 +446,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       andIclickXOnTheYouHaveAddedAdditionalReferencesforItemInHouseConsignment1Page("Remove", "2", "2")
 
       And("I click radio option Yes on the Are you sure you want to remove this additional reference? page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalReferencePage("Yes")
+      AdditionalReferenceRemovePage.confirmRemoval("Yes")
 
       And(
         "I click No on additional reference You have added 1 additional reference for item 2 in house consignment 1 page"
@@ -460,7 +466,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       andIenterXOnTheHowManyOfThisPackageAreYouUsingForItemXInHouseConsignment1Page("2", "2")
 
       And("I click radio option Yes on the Do you want to add a shipping mark? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("Yes")
+      PackagesAddShippingMarkPage.selectAndContinue("Yes")
 
       And(
         "I enter This is a description of the cargo 1 on the What is the shipping mark for item 2 in house consignment 1? page"
@@ -481,7 +487,7 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       andIchooseRadioOptionXOnTheDoYouWantToAddTheQuantityOfThisPackagePage("No")
 
       And("I click radio option No on the Do you want to add a shipping mark? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("No")
+      PackagesAddShippingMarkPage.selectAndContinue("No")
 
       And(
         "I click Remove on the house consignment package You have added 2 types of packages for item 2 in house consignment 1 page"
@@ -590,10 +596,10 @@ class UnloadingCrossAddRemoveModeSpec extends BaseSpec with GivenWhenThen with B
       )
 
       And("I click radio option Yes on the Do you want to add an additional reference number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
 
       And("I enter additional reference newRef999 on the What is the additional reference number? page")
-      andIenterAdditionalReferenceXOnTheWhatIsTheAdditionalReferenceNumberPage("newRef999")
+      UnloadingFEAddNewConsignmentAdditionalReferenceNumberPage.enterAndContinue("newRef999")
 
       And("I click radio option No on the You have added 1 additional reference for house consignment 2 page")
       andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferenceForHouseConsignment2Page("No", "1")

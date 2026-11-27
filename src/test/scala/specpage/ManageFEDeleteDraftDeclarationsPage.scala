@@ -21,4 +21,9 @@ object ManageFEDeleteDraftDeclarationsPage extends YesNoPage {
 
   override def title(args: String*): String = "Are you sure you want to delete this declaration?"
 
+  def confirmDeletion(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

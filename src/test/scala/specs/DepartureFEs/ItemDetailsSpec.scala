@@ -32,12 +32,60 @@ package specs.DepartureFEs
  * limitations under the License.
  */
 
+import specpage.Departures.Items.AddCUSCodePage
+import specpage.Departures.Items.AddDangerousGoodsPage
+import specpage.Departures.Items.AddNomenclatureCodePage
+import specpage.Departures.Items.AdditionalInformationAddAnotherPage
+import specpage.Departures.Items.AdditionalInformationAddPage
+import specpage.Departures.Items.AdditionalInformationEnterTextPage
+import specpage.Departures.Items.AdditionalInformationRemovePage
+import specpage.Departures.Items.AdditionalReferenceAddAnotherPage
+import specpage.Departures.Items.AdditionalReferenceAddNumberPage
+import specpage.Departures.Items.AdditionalReferenceAddPage
+import specpage.Departures.Items.AdditionalReferenceEnterNumberPage
+import specpage.Departures.Items.AdditionalReferenceRemovePage
+import specpage.Departures.Items.AdditionalReferenceTypePage
+import specpage.Departures.Items.CUSCodePage
+import specpage.Departures.Items.CommodityCodePage
+import specpage.Departures.Items.DangerousGoodsUnNumberAddAnotherPage
+import specpage.Departures.Items.DangerousGoodsUnNumberPage
+import specpage.Departures.Items.DocumentsAddAnotherPage
+import specpage.Departures.Items.DocumentsRemoveDocumentPage
+import specpage.Departures.Items.DocumentsWhichDocumentPage
+import specpage.Departures.Items.ErrorHintTextPage
+import specpage.Departures.Items.ItemAdditionalInformationTypePage
+import specpage.Departures.Items.ItemCountryOfDestinationPage
+import specpage.Departures.Items.ItemCountryOfDispatchPage
+import specpage.Departures.Items.ItemDeclarationTypePage
+import specpage.Departures.Items.ItemDescriptionPage
+import specpage.Departures.Items.ItemTransportEquipmentPage
+import specpage.Departures.Items.ItemUCRNumberPage
+import specpage.Departures.Items.ItemsAddAnotherPage
+import specpage.Departures.Items.MeasurementAddNetWeightPage
+import specpage.Departures.Items.MeasurementAddSupplementaryUnitsPage
+import specpage.Departures.Items.MeasurementGrossWeightPage
+import specpage.Departures.Items.MeasurementGrossWeightWarningPage
+import specpage.Departures.Items.MeasurementNetWeightPage
+import specpage.Departures.Items.MeasurementSupplementaryUnitsPage
+import specpage.Departures.Items.NomenclatureCodePage
+import specpage.Departures.Items.PackageTypePage
+import specpage.Departures.Items.PackagesAddAnotherPage
+import specpage.Departures.Items.PackagesAddShippingMarkPage
+import specpage.Departures.Items.PackagesShippingMarkPage
+import specpage.Departures.Items.PackagesTypeQuantityPage
+import specpage.Departures.Items.RemoveDangerousGoodsPage
+import specpage.Departures.Items.RemoveItemPage
+import specpage.Departures.Items.RemovePackagePage
+import specpage.Departures.Items.SupplyChainActorEoriTinItemPage
+import specpage.Departures.Items.SupplyChainActorItemAddAnotherPage
+import specpage.Departures.Items.SupplyChainActorItemAddPage
+import specpage.Departures.Items.SupplyChainActorItemRemoveSCAPage
+import specpage.Departures.Items.SupplyChainActorTypeItemPage
+import specpage.ManagedFEDraftDepartureDelcarationsPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specs.BaseSpec
 import org.scalatest.GivenWhenThen
-import specsteps.DraftDepartureDeclarationsStepDefSteps.andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage
-import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.LoginStepDefSteps.*
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForLRNAndEORINumber
@@ -60,212 +108,209 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890TDGB on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDGB")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDGB")
       And("I click on the Add items link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add items")
 
       // Item Details
       And("I enter This is a description, with a comma on the 'Enter a description of item 1' page")
-      andIenterXOnTheEnterADescriptionOfItemXPage("This is a description, with a comma", "1")
+      ItemDescriptionPage.enterDescription("This is a description, with a comma", "1")
       And(
         "I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page"
       )
-      andIselectOnTheWhichTransportEquipmentAreYouUsingForThisItemPage("(1) Transport equipment - GB123456789000")
+      ItemTransportEquipmentPage.selectEquipment("(1) Transport equipment - GB123456789000")
       And("I choose radio option T2 on the 'Which type of declaration do you want to create for this item?' page")
-      andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreateForThisItemPage("T2")
+      ItemDeclarationTypePage.selectDeclarationType("T2")
       And("I select United Kingdom on the 'What is the item’s country of dispatch?' page")
-      andIselectOnTheWhatIsTheItemsCountryOfDispatchPage("United Kingdom")
+      ItemCountryOfDispatchPage.selectCountry("United Kingdom")
       And("I select Germany on the 'What is the item’s country of destination?' page")
-      andIselectOnTheWhatIsTheItemsCountryOfDestinationPage("Germany")
+      ItemCountryOfDestinationPage.selectCountry("Germany")
       And("I enter UCR12312 on the 'What is the Unique Consignment Reference?' page")
-      andIenterXOnTheWhatIsTheUniqueConsignmentReferencePage("UCR12312")
+      ItemUCRNumberPage.enterAndContinue("UCR12312")
       And("I click radio option Yes on the 'Do you want to add a Customs Union and Statistics code?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("Yes")
+      AddCUSCodePage.selectAndContinue("Yes")
       And("I enter 0010001-6 on the 'What is the Customs Union and Statistics code?' page")
-      andIenterXOnTheWhatIsTheCustomsUnionAndStatisticsCodePage("0010001-6")
+      CUSCodePage.enterAndContinue("0010001-6")
       And("And I enter 392690 on the 'What is the commodity code?' page")
-      andIenterXOnTheWhatIsTheCommodityCodePage("392690")
+      CommodityCodePage.enterAndContinue("392690")
 
       // Dangerous Goods
       And("I click radio option Yes on the 'Does the item contain any dangerous goods?' page")
-      andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("Yes")
+      AddDangerousGoodsPage.selectAndContinue("Yes")
       And("I enter AB12 on the 'What is the UN number for the dangerous goods?' page")
-      andIenterXOnTheWhatIsTheUNNumberForTheDangerousGoodsPage("AB12")
+      DangerousGoodsUnNumberPage.enterAndContinue("AB12")
       And("I click radio option Yes on the 'You have added 1 UN number for dangerous goods' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXUNNumbesforDangerousGoodsPage("Yes", "1")
+      DangerousGoodsUnNumberAddAnotherPage.answerAddAnother("Yes", "1")
       And("I enter 1234 on the 'What is the UN number for the dangerous goods?' page")
-      andIenterXOnTheWhatIsTheUNNumberForTheDangerousGoodsPage("1234")
+      DangerousGoodsUnNumberPage.enterAndContinue("1234")
       And("I click the Remove link on the 'You have added 2 UN numbers for dangerous goods' page")
-      andIclickTheXLinkOnTheYouHaveAddedXUNNumbersforDangerousGoodsPage("Remove", "2")
+      DangerousGoodsUnNumberAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this UN number?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisUNNumberPage("Yes")
+      RemoveDangerousGoodsPage.confirmRemoval("Yes")
       And("I click radio option No on the 'You have added 1 UN number for dangerous goods' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXUNNumbesforDangerousGoodsPage("No", "1")
+      DangerousGoodsUnNumberAddAnotherPage.answerAddAnother("No", "1")
 
       // Measurement Section
       And("I enter 100 on the 'What is the item’s gross weight?' page")
-      andIenterXOnTheWhatIsTheItemsGrossWeightPage("100")
+      MeasurementGrossWeightPage.enterGrossWeight("100")
       And("I click radio option Yes on the 'Do you want to add the item’s net weight?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddTheItemsNetWeightPage("Yes")
+      MeasurementAddNetWeightPage.selectAndContinue("Yes")
       And("I enter 25.99 on the 'What is the item’s net weight?' page")
-      andIenterXOnTheWhatIsTheItemsNetWeightPage("25.99")
+      MeasurementNetWeightPage.enterNetWeight("25.99")
       And("I click radio option Yes on the 'Do you want to add supplementary units?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("Yes")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("Yes")
       And("I enter 123.99 on the 'How many supplementary units does the item include?' page")
-      andIenterXOnTheHowManySupplementaryUnitsDoesTheItemIncludePage("123.99")
+      MeasurementSupplementaryUnitsPage.enterSupplementaryUnits("123.99")
 
       // Package Section
       And("I select (NE) Unpacked or unpackaged on the 'What type of package are you using for the item?' page")
-      andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(NE) Unpacked or unpackaged")
+      PackageTypePage.selectAndContinue("(NE) Unpacked or unpackaged")
       And("I enter 1 on the 'How many of these are you using?' page")
-      andIenterXOnTheHowManyOfTheseAreYouUsingPage("1")
+      PackagesTypeQuantityPage.enterAndContinue("1")
       And("I click radio option Yes on the 'Do you want to add a shipping mark?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("Yes")
+      PackagesAddShippingMarkPage.selectAndContinue("Yes")
       And("I enter This is a description on the 'What is the shipping mark?' page")
-      andIenterXOnTheWhatIsTheShippingMarkPage("This is a description")
+      PackagesShippingMarkPage.enterAndContinue("This is a description")
       And("I click radio option Yes on the 'You have added 1 types of package' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("Yes", "1")
+      PackagesAddAnotherPage.answerAddAnother("Yes", "1")
       And("I select (AE) Aerosol on the 'What type of package are you using for the item?' page")
-      andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(AE) Aerosol")
+      PackageTypePage.selectAndContinue("(AE) Aerosol")
       And("I enter 0 on the 'How many of these are you using?' page")
-      andIenterXOnTheHowManyOfTheseAreYouUsingPage("0")
+      PackagesTypeQuantityPage.enterAndContinue("0")
       And("I click continue on the 'Before you continue' page")
-      andIclickContinueOnTheBeforeYouContinuePage()
+      ErrorHintTextPage.continueToNextPage()
       And("I enter This is a shipping mark on the 'What is the shipping mark?' page")
-      andIenterXOnTheWhatIsTheShippingMarkPage("This is a shipping mark")
+      PackagesShippingMarkPage.enterAndContinue("This is a shipping mark")
       And("I click the Remove link on the 'You have added 2 types of packages' page")
-      andIclickTheXLinkOnTheYouHaveAddedXTypesofPackagesPage("Remove", "2")
+      PackagesAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this package from the item?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisPackageFromTheItemPage("Yes")
+      RemovePackagePage.confirmRemoval("Yes")
       And("I click radio option No on the 'You have added 1 type of package' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
+      PackagesAddAnotherPage.answerAddAnother("No", "1")
 
       // Supply Chain Actor
       And("I click radio option Yes on the 'Do you want to add a supply chain actor for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("Yes")
+      SupplyChainActorItemAddPage.selectAndContinue("Yes")
       And("I click radio option Consolidator on the 'Which type of supply chain actor do you want to add?' item page")
-      andIclickRadioOptionXOnTheWhichTypeOfSupplyChainActorDoYouWantToAddItemPage("Consolidator")
+      SupplyChainActorTypeItemPage.selectAndContinue("Consolidator")
       And(
         "I enter GB123456789000 on the 'What is the EORI number or Trader Identification Number TIN for the consolidator?' item page"
       )
-      andIenterXOnTheWhatIsTheEORINumberOrTraderIdentificationNumberTINForTheXItemPage("GB123456789000", "consolidator")
+      SupplyChainActorEoriTinItemPage.enterAndContinue("GB123456789000", "consolidator")
       And("I click radio option Yes on the 'You have added 1 supply chain actor for this item' item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXSupplyChainActorsForThisItemItemPage("Yes", "1")
+      SupplyChainActorItemAddAnotherPage.answerAddAnother("Yes", "1")
       And(
         "I click radio option Warehouse keeper on the 'Which type of supply chain actor do you want to add?' item page"
       )
-      andIclickRadioOptionXOnTheWhichTypeOfSupplyChainActorDoYouWantToAddItemPage("Warehouse keeper")
+      SupplyChainActorTypeItemPage.selectAndContinue("Warehouse keeper")
       And(
         "I enter GB123456789000 on the 'What is the EORI number or Trader Identification Number TIN for the warehouse keeper?' item page"
       )
-      andIenterXOnTheWhatIsTheEORINumberOrTraderIdentificationNumberTINForTheXItemPage(
-        "GB123456789000",
-        "warehouse keeper"
-      )
+      SupplyChainActorEoriTinItemPage.enterAndContinue("GB123456789000", "warehouse keeper")
       And("I click the Remove link on the 'You have added 2 supply chain actors for this item' item page")
-      andIclickTheXLinkOnTheYouHaveAddedXSupplyChainActorsForThisItemItemPage("Remove", "2")
+      SupplyChainActorItemAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this supply chain actor?' item page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisSupplyChainActorItemPage("Yes")
+      SupplyChainActorItemRemoveSCAPage.confirmRemoval("Yes")
       And("I click radio option No on the 'You have added 1 supply chain actor for this item' item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXSupplyChainActorsForThisItemItemPage("No", "1")
+      SupplyChainActorItemAddAnotherPage.answerAddAnother("No", "1")
 
       // Documents Section
       And("I click radio option Yes on the 'You have attached 1 document to this item' page")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("Yes", "1")
+      DocumentsAddAnotherPage.answerAddAnother("Yes", "1")
       And("I select (C673) Catch certificate on the 'Which document do you want to attach?' page")
-      andIselectOnTheWhichDocumentDoYouWantToAttachPage("(C673) Catch certificate")
+      DocumentsWhichDocumentPage.selectAndContinue("(C673) Catch certificate")
       And("I click the Remove link on the 'You have attached 2 documents to this item' page")
-      andIclickTheXLinkOnTheYouHaveAttachedXDocumentsToThisItemPage("Remove", "2")
+      DocumentsAddAnotherPage.followLink("Remove", "2")
       And(
         "I click radio option Yes on the 'Are you sure you want to remove this document from the item?' document page"
       )
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisDocumentFromTheItemDocumentPage("Yes")
+      DocumentsRemoveDocumentPage.confirmRemoval("Yes")
       And("I click radio option No on the 'You have attached 1 document to this item' page")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "1")
+      DocumentsAddAnotherPage.answerAddAnother("No", "1")
 
       // Additional Reference
       And("I click radio option Yes on the 'Do you want to add an additional reference for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("Yes")
+      AdditionalReferenceAddPage.selectAndContinue("Yes")
       And(
         "I select (Y023) Consignee (AEO certificate number) on the 'What type of additional reference do you want to add?' page"
       )
-      andIselectOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddPage("(Y023) Consignee (AEO certificate number)")
+      AdditionalReferenceTypePage.selectAndContinue("(Y023) Consignee (AEO certificate number)")
       And("I click radio option Yes on the 'Do you want to add an additional reference number?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceNumberPage("Yes")
+      AdditionalReferenceAddNumberPage.selectAndContinue("Yes")
       And("I enter 12345,6789 on the 'Enter the additional reference number' page")
-      andIenterXOnTheEnterTheAdditionalReferenceNumberPage("12345,6789")
+      AdditionalReferenceEnterNumberPage.enterAndContinue("12345,6789")
       And("click radio option Yes on the 'You have added 1 additional reference' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferencesPage("Yes", "1")
+      AdditionalReferenceAddAnotherPage.answerAddAnother("Yes", "1")
       And(
         "I select (C651) Electronic administrative document (e-AD) on the 'What type of additional reference do you want to add?' page"
       )
-      andIselectOnTheWhatTypeOfAdditionalReferenceDoYouWantToAddPage("(C651) Electronic administrative document (e-AD)")
+      AdditionalReferenceTypePage.selectAndContinue("(C651) Electronic administrative document (e-AD)")
       And("I enter 98765,4321 on the 'Enter the additional reference number' page")
-      andIenterXOnTheEnterTheAdditionalReferenceNumberPage("98765,4321")
+      AdditionalReferenceEnterNumberPage.enterAndContinue("98765,4321")
       And("I click the Remove link on the 'You have added 2 additional references' page")
-      andIclickTheXLinkOnTheYouHaveAddedXAdditionalReferencesPage("Remove", "2")
+      AdditionalReferenceAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this additional reference?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalReferencePage("Yes")
+      AdditionalReferenceRemovePage.confirmRemoval("Yes")
       And("click radio option No on the 'You have added 1 additional reference' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalReferencesPage("No", "1")
+      AdditionalReferenceAddAnotherPage.answerAddAnother("No", "1")
 
       // Additional Information
       And("I click radio option Yes on the 'Do you want to add any additional information for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("Yes")
+      AdditionalInformationAddPage.selectAndContinue("Yes")
       And("I select (20300) Export on the 'What type of additional information do you want to add?' page")
-      andIselectOnTheWhatTypeOfAdditionalInformationDoYouWantToAddPage("(20300) Export")
+      ItemAdditionalInformationTypePage.selectAndContinue("(20300) Export")
       And("I enter 12345 on the 'Enter the additional information' page")
-      andIenterXOnTheEnterTheAdditionalInformationPage("12345")
+      AdditionalInformationEnterTextPage.enterAndContinue("12345")
       And("I click radio option Yes on the 'You have added 1 additional information' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationPage("Yes", "1")
+      AdditionalInformationAddAnotherPage.answerAddAnother("Yes", "1")
       And(
         "I select (20200) Export from one EFTA country subject to duties or export from the Union subject to duties on the 'What type of additional information do you want to add?' page"
       )
-      andIselectOnTheWhatTypeOfAdditionalInformationDoYouWantToAddPage("(20200) Export")
+      ItemAdditionalInformationTypePage.selectAndContinue("(20200) Export")
       And("I enter 12345 on the 'Enter the additional information' page")
-      andIenterXOnTheEnterTheAdditionalInformationPage("12345")
+      AdditionalInformationEnterTextPage.enterAndContinue("12345")
       And("I click the Remove link on the 'You have added 2 additional information' page")
-      andIclickTheXLinkOnTheYouHaveAddedXAdditionalInformationPage("Remove", "2")
+      AdditionalInformationAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove this additional information?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveThisAdditionalInformationPage("Yes")
+      AdditionalInformationRemovePage.confirmRemoval("Yes")
       And("I click radio option No on the 'You have added 1 additional information' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXAdditionalInformationPage("No", "1")
+      AdditionalInformationAddAnotherPage.answerAddAnother("No", "1")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
       And("I click radio option Yes on the 'You have added 1 item' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("Yes", "1")
+      ItemsAddAnotherPage.answerAddAnother("Yes", "1")
 
       And("I add a second Item answering No to all optional questions")
-      andIenterXOnTheEnterADescriptionOfItemXPage("This is a description", "2")
-      andIselectOnTheWhichTransportEquipmentAreYouUsingForThisItemPage("(1) Transport equipment - GB123456789000")
-      andIchooseRadioOptionXOnTheWhichTypeOfDeclarationDoYouWantToCreateForThisItemPage("T1")
-      andIselectOnTheWhatIsTheItemsCountryOfDispatchPage("United Kingdom")
-      andIselectOnTheWhatIsTheItemsCountryOfDestinationPage("Germany")
-      andIenterXOnTheWhatIsTheUniqueConsignmentReferencePage("UCR12312")
-      andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("No")
-      andIenterXOnTheWhatIsTheCommodityCodePage("392690")
-      andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("No")
-      andIenterXOnTheWhatIsTheItemsGrossWeightPage("100")
-      andIclickRadioOptionXOnTheDoYouWantToAddTheItemsNetWeightPage("No")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
-      andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(NE) Unpacked or unpackaged")
-      andIenterXOnTheHowManyOfTheseAreYouUsingPage("1")
-      andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("No")
-      andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
-      andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("No")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "1")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("No")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
+      ItemDescriptionPage.enterDescription("This is a description", "2")
+      ItemTransportEquipmentPage.selectEquipment("(1) Transport equipment - GB123456789000")
+      ItemDeclarationTypePage.selectDeclarationType("T1")
+      ItemCountryOfDispatchPage.selectCountry("United Kingdom")
+      ItemCountryOfDestinationPage.selectCountry("Germany")
+      ItemUCRNumberPage.enterAndContinue("UCR12312")
+      AddCUSCodePage.selectAndContinue("No")
+      CommodityCodePage.enterAndContinue("392690")
+      AddDangerousGoodsPage.selectAndContinue("No")
+      MeasurementGrossWeightPage.enterGrossWeight("100")
+      MeasurementAddNetWeightPage.selectAndContinue("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
+      PackageTypePage.selectAndContinue("(NE) Unpacked or unpackaged")
+      PackagesTypeQuantityPage.enterAndContinue("1")
+      PackagesAddShippingMarkPage.selectAndContinue("No")
+      PackagesAddAnotherPage.answerAddAnother("No", "1")
+      SupplyChainActorItemAddPage.selectAndContinue("No")
+      DocumentsAddAnotherPage.answerAddAnother("No", "1")
+      AdditionalReferenceAddPage.selectAndContinue("No")
+      AdditionalInformationAddPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
       And("I click the Remove link on the 'You have added 2 items' page")
-      andIclickTheXLinkOnTheYouHaveAddedXItemsPage("Remove", "2")
+      ItemsAddAnotherPage.followLink("Remove", "2")
       And("I click radio option Yes on the 'Are you sure you want to remove item 1?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToRemoveItemXPage("Yes", "1")
+      RemoveItemPage.confirmRemoval("Yes", "1")
       And("I click radio option No on the 'You have added 1 item' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
       And("I should see Completed status for items on the Declaration summary page")
@@ -289,63 +334,63 @@ class ItemDetailsSpec extends BaseSpec with GivenWhenThen {
       And(
         "I click on the link for LRN 1234567890TDXI on the Draft Departure declarations page"
       )
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("1234567890TDXI")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("1234567890TDXI")
       And("I click on the Add items link on the Declaration summary page")
       thenIclickOnTheLinkOnTheDeclarationSummaryPage("Add items")
 
       // Item Details
       And("I enter This is a description on the 'Enter a description of item 1' page")
-      andIenterXOnTheEnterADescriptionOfItemXPage("This is a description", "1")
+      ItemDescriptionPage.enterDescription("This is a description", "1")
       And(
         "I select (1) Transport equipment - GB123456789000 on the 'Which transport equipment are you using for this item?' page"
       )
-      andIselectOnTheWhichTransportEquipmentAreYouUsingForThisItemPage("(1) Transport equipment - GB123456789000")
+      ItemTransportEquipmentPage.selectEquipment("(1) Transport equipment - GB123456789000")
       And("I select United Kingdom on the 'What is the item’s country of dispatch?' page")
-      andIselectOnTheWhatIsTheItemsCountryOfDispatchPage("United Kingdom")
+      ItemCountryOfDispatchPage.selectCountry("United Kingdom")
       And("I select Germany on the 'What is the item’s country of destination?' page")
-      andIselectOnTheWhatIsTheItemsCountryOfDestinationPage("Germany")
+      ItemCountryOfDestinationPage.selectCountry("Germany")
       And("I enter UCR12312 on the 'What is the Unique Consignment Reference?' page")
-      andIenterXOnTheWhatIsTheUniqueConsignmentReferencePage("UCR12312")
+      ItemUCRNumberPage.enterAndContinue("UCR12312")
       And("I click radio option No on the 'Do you want to add a Customs Union and Statistics code?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("No")
+      AddCUSCodePage.selectAndContinue("No")
       And("And I enter 392690 on the 'What is the commodity code?' page")
-      andIenterXOnTheWhatIsTheCommodityCodePage("392690")
+      CommodityCodePage.enterAndContinue("392690")
       And("I click radio option Yes on the 'Do you want to add a combined nomenclature code?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACombinedNomenclatureCodePage("Yes")
+      AddNomenclatureCodePage.selectAndContinue("Yes")
       And("I enter A1 on the 'What is the combined nomenclature code?' page")
-      andIenterXOnTheWhatIsTheCombinedNomenclatureCodePage("A1")
+      NomenclatureCodePage.enterAndContinue("A1")
       And("I click radio option No on the 'Does the item contain any dangerous goods?' page")
-      andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("No")
+      AddDangerousGoodsPage.selectAndContinue("No")
       And("I enter 0 on the 'What is the item’s gross weight?' page")
-      andIenterXOnTheWhatIsTheItemsGrossWeightPage("0")
+      MeasurementGrossWeightPage.enterGrossWeight("0")
       And("I click the continue button on the 'Before you continue' page")
-      andIclickTheContinueButtonOnTheBeforeYouContinuePage()
+      MeasurementGrossWeightWarningPage.continueToNextPage()
       And("I click radio option No on the 'Do you want to add the item’s net weight?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddTheItemsNetWeightPage("No")
+      MeasurementAddNetWeightPage.selectAndContinue("No")
       And("I click radio option No on the 'Do you want to add supplementary units?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
       And("I select (AE) Aerosol on the 'What type of package are you using for the item?' page")
-      andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(AE) Aerosol")
+      PackageTypePage.selectAndContinue("(AE) Aerosol")
       And("I enter 20 on the 'How many of these are you using?' page")
-      andIenterXOnTheHowManyOfTheseAreYouUsingPage("20")
+      PackagesTypeQuantityPage.enterAndContinue("20")
       And("I enter This is a description on the 'What is the shipping mark?' page")
-      andIenterXOnTheWhatIsTheShippingMarkPage("This is a description")
+      PackagesShippingMarkPage.enterAndContinue("This is a description")
       And("I click radio option No on the 'You have added 1 types of package' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
+      PackagesAddAnotherPage.answerAddAnother("No", "1")
       And("I click radio option No on the 'Do you want to add a supply chain actor for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("No")
+      SupplyChainActorItemAddPage.selectAndContinue("No")
       And("I click radio option No on the 'You have attached 1 document to this item' page")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "1")
+      DocumentsAddAnotherPage.answerAddAnother("No", "1")
       And("I click radio option No on the 'Do you want to add an additional reference for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("No")
+      AdditionalReferenceAddPage.selectAndContinue("No")
       And("I click radio option No on the 'Do you want to add any additional information for this item?' page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
+      AdditionalInformationAddPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the 'You have added 1 item' page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
       And("I should see Completed status for items on the Declaration summary page")

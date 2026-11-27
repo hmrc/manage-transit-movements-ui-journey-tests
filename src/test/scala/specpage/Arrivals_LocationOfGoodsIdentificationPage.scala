@@ -34,4 +34,10 @@ object Arrivals_LocationOfGoodsIdentificationPage extends RadioPage {
     clickRadioBtn(value)
     this
   }
+
+  def selectIdentificationType(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

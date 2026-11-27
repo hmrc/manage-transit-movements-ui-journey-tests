@@ -23,4 +23,9 @@ object AddNewBorderModeOfTransportPage extends YesNoPage {
   override def title(args: String*): String =
     "Do you want to add a border mode of transport?"
 
+  def answerAddBorderMode(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

@@ -21,4 +21,10 @@ object RemoveItemPage extends YesNoPage {
 
   override def title(args: String*): String =
     String.format("Are you sure you want to remove item %s?", args: _*)
+
+  def confirmRemoval(answer: String, itemNumber: String): Unit =
+    loadPage(itemNumber)
+      .select(answer)
+      .submitPage()
+
 }

@@ -28,4 +28,9 @@ object Arrivals_ProcedureTypePage extends RadioPage {
     this
   }
 
+  def selectProcedureType(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

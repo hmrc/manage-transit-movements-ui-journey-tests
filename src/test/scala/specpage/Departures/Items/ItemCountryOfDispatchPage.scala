@@ -24,4 +24,9 @@ object ItemCountryOfDispatchPage extends SelectPage {
 
   override val id: String = "country"
 
+  def selectCountry(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

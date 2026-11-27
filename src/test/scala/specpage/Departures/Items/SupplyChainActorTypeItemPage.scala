@@ -31,4 +31,5 @@ object SupplyChainActorTypeItemPage extends RadioPage {
     clickRadioBtn(typeSupplyChainActor)
     this
   }
+
 }

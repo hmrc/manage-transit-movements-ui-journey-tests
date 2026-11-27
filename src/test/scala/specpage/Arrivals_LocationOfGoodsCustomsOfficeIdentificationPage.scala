@@ -24,4 +24,9 @@ object Arrivals_LocationOfGoodsCustomsOfficeIdentificationPage extends SelectPag
 
   override val id: String = "office"
 
+  def selectCustomsOffice(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

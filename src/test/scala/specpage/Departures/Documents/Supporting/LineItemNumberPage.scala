@@ -21,4 +21,9 @@ object LineItemNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the line item number?"
 
+  def enterLineItemNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

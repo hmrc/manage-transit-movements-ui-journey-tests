@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package specpage.Departures.AdditionalReference
+package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-object AddPageAdditionalReference extends YesNoPage {
+object RemovePageAdditionalInformationPage extends YesNoPage {
 
-  override def title(args: String*): String = "Do you want to add an additional reference for all items?"
+  override def title(args: String*): String =
+    "Are you sure you want to remove this additional information from all items?"
+
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
 
 }

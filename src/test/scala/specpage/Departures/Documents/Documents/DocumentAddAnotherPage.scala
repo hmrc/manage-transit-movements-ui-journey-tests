@@ -23,4 +23,14 @@ object DocumentAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 document"
     case _        => String.format("You have added %s documents", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfDocuments: String): Unit =
+    loadPage(numberOfDocuments)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfDocuments: String): Unit =
+    loadPage(numberOfDocuments)
+      .clickByPartialLinkText(sectionLink)
+
 }

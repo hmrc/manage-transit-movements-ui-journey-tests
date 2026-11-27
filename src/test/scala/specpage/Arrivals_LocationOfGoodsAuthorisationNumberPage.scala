@@ -22,4 +22,9 @@ object Arrivals_LocationOfGoodsAuthorisationNumberPage extends StringPage {
 
   override def title(args: String*): String = "What is the authorisation number for the location of goods?"
 
+  def enterAuthorisationNumber(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

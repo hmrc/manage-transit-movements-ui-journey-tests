@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package specpage.Departures.Documents.Documents
+package specpage.Departures.AdditionalInformation
 import specpage.CommonPages.*
 
-object DocumentsForAllItems extends YesNoPage {
+object EnterCommentAdditionalInformationPage extends StringPage {
 
-  override def title(args: String*): String = String.format("Do you want to use this document for all items?")
+  override def title(args: String*): String = "Enter your comments for the additional information"
 
 }

@@ -16,9 +16,7 @@
 
 package specpage.CommonPages
 
-trait RadioPage extends Page {
-
-  def select(answer: String): this.type
+trait RadioPage extends SelectablePage {
 
   protected def clickRadioBtn(answer: String): Unit =
     findByCssSelector(s"input[type='radio'][value='$answer']").click()

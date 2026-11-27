@@ -20,4 +20,5 @@ import specpage.CommonPages.*
 object AddItemUCRPage extends YesNoPage {
 
   override def title(args: String*): String = "Do you want to add a Unique Consignment Reference (UCR)?"
+
 }

@@ -22,4 +22,9 @@ object MeasurementGrossWeightPage extends StringPage {
 
   override def title(args: String*): String = "What is the item’s gross weight?"
 
+  def enterGrossWeight(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

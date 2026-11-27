@@ -22,4 +22,9 @@ object Arrivals_LocationOfGoodsCoordinatesPage extends CoordinatesPage {
 
   override def title(args: String*): String = "What are the coordinates for the location of goods?"
 
+  def enterCoordinates(latitudeNo: String, longitudeNo: String): Unit =
+    loadPage()
+      .fillInputs(latitudeNo, longitudeNo)
+      .submitPage()
+
 }

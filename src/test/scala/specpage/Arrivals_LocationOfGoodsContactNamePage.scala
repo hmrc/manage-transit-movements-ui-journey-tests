@@ -22,4 +22,9 @@ object Arrivals_LocationOfGoodsContactNamePage extends StringPage {
 
   override def title(args: String*): String = "Who is the contact for the location of goods?"
 
+  def enterContactName(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

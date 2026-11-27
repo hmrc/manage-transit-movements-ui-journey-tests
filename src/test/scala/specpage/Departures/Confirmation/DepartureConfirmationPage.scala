@@ -23,4 +23,9 @@ object DepartureConfirmationPage extends Page {
 
   def selectLink(link: String): Unit =
     clickByPartialLinkText(link)
+
+  def followConfirmationLink(link: String): Unit =
+    loadPage()
+      .selectLink(link)
+
 }

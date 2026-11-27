@@ -32,12 +32,12 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Arrivals_MovementReferenceNumberPage
 import specpage.Arrivals_ConfirmationPage
 import specpage.CommonPages.CYAPage
 import specpage.CommonPages.CommonPage
 import specpage.ManagedFEArrivalNotificationsPage
 import specpage.ManagedFEReviewNotificationErrorsPage
-import specsteps.IdentificationStepDefSteps.andIenterOnTheMovementReferenceNumberPage
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.{givenIclickOnTheLinkOnTheManageYourTransitMovementsPage, givenIsubmitAFile}
 import specsteps.PreTaskListStepDefSteps.whenTheUserHasSubmittedFileForMRNAndEORINumber
@@ -72,7 +72,7 @@ class ArrivalsAmendNotificationP6Spec extends BaseSpec with GivenWhenThen {
       ManagedFEReviewNotificationErrorsPage.makeAnotherArrivalNotification()
 
       And("I enter 25GB000246TK0E6WJ1 on the Movement Reference Number page")
-      andIenterOnTheMovementReferenceNumberPage("25GB000246TK0E6WJ1")
+      Arrivals_MovementReferenceNumberPage.enterMrn("25GB000246TK0E6WJ1")
 
       And("I submit on the Check your answers section Arrivals page")
       CYAPage.submitAnswers("Arrivals")

@@ -24,4 +24,8 @@ object ManagedFEDraftDepartureDelcarationsPage extends StringPage {
   def selectDraftDeclarationLink(link: String): Unit =
     clickByPartialLinkText(link)
 
+  def followDraftLink(link: String): Unit =
+    loadPage()
+      .selectDraftDeclarationLink(link)
+
 }

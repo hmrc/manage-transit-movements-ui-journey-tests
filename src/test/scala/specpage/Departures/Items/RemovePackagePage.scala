@@ -21,4 +21,10 @@ object RemovePackagePage extends YesNoPage {
 
   override def title(args: String*): String =
     "Are you sure you want to remove this package from the item?"
+
+  def confirmRemoval(answer: String): Unit =
+    loadPage()
+      .select(answer)
+      .submitPage()
+
 }

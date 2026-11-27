@@ -28,4 +28,12 @@ object GetBalanceCYAPage extends StringPage {
     clickById(id)
   }
 
+  def submitAnswers(): Unit =
+    loadPage()
+      .submitPage()
+
+  def clickChangeLink(linkText: String): Unit =
+    loadPage()
+      .clickLinkByIdTextSplit(linkText)
+
 }

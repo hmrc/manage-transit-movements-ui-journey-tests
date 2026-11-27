@@ -23,4 +23,14 @@ object AdditionalReferenceAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 additional reference"
     case _        => String.format("You have added %s additional references", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfReferences: String): Unit =
+    loadPage(numberOfReferences)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfReferences: String): Unit =
+    loadPage(numberOfReferences)
+      .clickByPartialLinkText(sectionLink)
+
 }

@@ -32,13 +32,24 @@ package specs
  * limitations under the License.
  */
 
+import specpage.ManageFEDeleteDraftDeclarationsPage
+import specpage.ManagedFEAmendDeclarationErrorsPage
+import specpage.ManagedFEConfirmationNeededToCompleteDeclarationPage
+import specpage.ManagedFEDeclarationErrorsPage
+import specpage.ManagedFEDepartureDeclarationsPage
+import specpage.ManagedFEDraftDepartureDelcarationsPage
+import specpage.ManagedFEGoodsInRecoveryDetailsPage
+import specpage.ManagedFEGoodsNotReleasedDetailsPage
+import specpage.ManagedFEPreLodgeCYA
+import specpage.ManagedFEPrelodgedDeclarationErrorsPage
+import specpage.ManagedFEReviewCancellationErrorsPage
+import specpage.ManagedFEReviewDeclarationErrorsPage
+import specpage.ManagedFEReviewPrelodgedDeclarationErrorsPage
 import specpage.CommonPages.CommonPage
 import specpage.ConfirmCancellationPage
 import specpage.Departures.Guarantee.GuaranteeBForTIRDeclarationPage
 import specpage.Departures.PreTaskList.GenericCYAPage
 import org.scalatest.GivenWhenThen
-import specsteps.DepartureDeclarationsStepDefSteps.*
-import specsteps.DraftDepartureDeclarationsStepDefSteps.*
 import specsteps.LoginStepDefSteps.andILoginWithIDX
 import specsteps.ManageStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
@@ -114,10 +125,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View draft departure declarations")
 
       And("I click on the Delete link on the 'Draft departure declarations' page")
-      andIclickOnTheLinkForLRNXOnTheDraftDepartureDeclarationsPage("Delete")
+      ManagedFEDraftDepartureDelcarationsPage.followDraftLink("Delete")
 
       And("I click radio option Yes on the 'Are you sure you want to delete this declaration?' page")
-      andIclickRadioOptionXOnTheAreYouSureYouWantToDeleteThisDeclarationPage("Yes")
+      ManageFEDeleteDraftDeclarationsPage.confirmDeletion("Yes")
 
       And("I sign out")
       CommonPage.signOut()
@@ -139,7 +150,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View details", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Goods under control - document requested' page")
       thenIshouldBeOnTheGoodsUnderControlDocumentRequestedPage()
@@ -164,7 +175,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View details", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Goods under control' page")
       thenIshouldBeOnTheGoodsUnderControlPage()
@@ -187,10 +198,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Review declaration errors' page")
-      thenIshouldbeOnTheReviewDeclarationErrorsPage()
+      ManagedFEReviewDeclarationErrorsPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -213,10 +224,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       Then("I should be on the Declaration summary page")
       thenIshouldbeOnTheDeclarationSummaryPage()
@@ -246,10 +257,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Amend declaration link for LRN 25GB000246TK0E6WJ1 on the Departure declarations page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Amend declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Amend declaration", "25GB000246TK0E6WJ1")
 
       And("I click on the Amend errors button on the Amend declaration errors page")
-      givenIclickOnTheAmendErrorsButtonOnTheAmendDeclarationErrorsPage()
+      ManagedFEAmendDeclarationErrorsPage.amendErrors()
 
       Then("I should be on the 'What is the new Local Reference Number?' page")
       thenIshouldBeOnTheWhatIsTheNewLocalReferenceNumberPage()
@@ -276,10 +287,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Declaration errors' page")
-      thenIshouldBeonTheDeclarationErrorsPage()
+      ManagedFEDeclarationErrorsPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -303,10 +314,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Review cancellation errors' page")
-      thenIshouldbeOnTheReviewCancellationErrorsPage()
+      ManagedFEReviewCancellationErrorsPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -327,7 +338,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the Cancel declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Cancel declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Cancel declaration", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Are you sure you want to cancel this declaration?' page")
       ConfirmCancellationPage
@@ -352,10 +363,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View details", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Goods being recovered' page")
-      thenIshouldbeOnTheGoodsBeingRecoveredPage()
+      ManagedFEGoodsInRecoveryDetailsPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -376,10 +387,10 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View details", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Goods not released' page")
-      thenIshouldbeOnTheGoodsNotReleasedPage()
+      ManagedFEGoodsNotReleasedDetailsPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -402,7 +413,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       And(
         "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'More information needed to complete pre-lodged declaration' page")
       andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
@@ -434,10 +445,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       And(
         "I click on the Complete pre lodged declaration link link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage(
-        "Complete pre lodged declaration",
-        "25GB000246TK0E6WJ1"
-      )
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'More information needed to complete pre-lodged declaration' page")
       andIshouldBeOnTheMoreInformationNeededToCompletePrelodgedDeclarationPage()
@@ -465,7 +473,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       And(
         "I click on the Complete pre lodged declaration link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page"
       )
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("Complete pre lodged declaration", "25GB000246TK0E6WJ1")
 
       And(
         "I click the Continue button on the presentation 'Confirmation needed to complete pre-lodged declaration' page"
@@ -473,7 +481,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       andIclickTheContinueButtonOnThePresentationConfirmationNeededToCompletePrelodgedDeclarationPage()
 
       Then("Then I should be on the Presentation Notification 'Check your answers' page")
-      thenIshouldbeOnThePresentationNotificationCheckYourAnswersPage()
+      ManagedFEPreLodgeCYA.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -497,7 +505,7 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View details link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View details", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View details", "25GB000246TK0E6WJ1")
 
       Then("I should be on the 'Intention to control - complete pre-lodged declaration' page")
       thenIshouldBeOnTheIntentionToControlCompletePrelodgedDeclarationPage()
@@ -527,13 +535,13 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       And("I click on the Complete pre-lodged declaration link on the 'Prelodged declaration errors' page")
-      givenIclickOnTheLinkOnThePrelodgedDeclarationErrorsPage("Complete pre-lodged declaration")
+      ManagedFEPrelodgedDeclarationErrorsPage.followDepartureLink("Complete pre-lodged declaration")
 
       Then("I should be on the 'Confirmation needed to complete pre-lodged declaration' page")
-      thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
+      ManagedFEConfirmationNeededToCompleteDeclarationPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()
@@ -560,13 +568,13 @@ class ManageTransitMovementsDeparturesP6Spec extends BaseSpec with GivenWhenThen
       givenIclickOnTheLinkOnTheManageYourTransitMovementsPage("View departure declarations")
 
       And("I click on the View errors link for LRN 25GB000246TK0E6WJ1 on the 'Departure declarations' page")
-      andIclickOnTheXLinkForLRNXOnTheDepartureDeclarationsPage("View errors", "25GB000246TK0E6WJ1")
+      ManagedFEDepartureDeclarationsPage.openDeparture("View errors", "25GB000246TK0E6WJ1")
 
       And("And I click on the Complete pre-lodged declaration link on the 'Review pre-lodged declaration errors' page")
-      givenIclickOnTheLinkOnTheReviewPrelodgedDeclarationErrorsPage("Complete pre-lodged declaration")
+      ManagedFEReviewPrelodgedDeclarationErrorsPage.followDepartureLink("Complete pre-lodged declaration")
 
       Then("I should be on the 'Confirmation needed to complete pre-lodged declaration' page")
-      thenIshouldbeOnTheConfirmationNeededToCompletePrelodgedDeclarationPage()
+      ManagedFEConfirmationNeededToCompleteDeclarationPage.loadPage()
 
       And("I sign out")
       CommonPage.signOut()

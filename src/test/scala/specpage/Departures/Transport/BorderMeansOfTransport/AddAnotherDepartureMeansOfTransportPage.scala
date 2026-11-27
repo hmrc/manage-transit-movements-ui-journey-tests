@@ -24,4 +24,14 @@ object AddAnotherDepartureMeansOfTransportPage extends YesNoPage {
     case Seq("1") => "You have added 1 departure means of transport"
     case _        => String.format("You have added %s departure means of transport", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfDepartureMeans: String): Unit =
+    loadPage(numberOfDepartureMeans)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfDepartureMeans: String): Unit =
+    loadPage(numberOfDepartureMeans)
+      .clickByPartialLinkText(sectionLink)
+
 }

@@ -25,4 +25,10 @@ object RemoveDepartureMeansOfTransportPage extends YesNoPage {
       String.format("Are you sure you want to remove departure means of transport %s?", departureMeansNo)
     case _                     => throw InvalidTitleArgsException(s"Expected a departure means  number but got: $args")
   }
+
+  def confirmRemoval(answer: String, departureMeansNo: String): Unit =
+    loadPage(departureMeansNo)
+      .select(answer)
+      .submitPage()
+
 }

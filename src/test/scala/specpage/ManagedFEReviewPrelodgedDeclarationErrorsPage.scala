@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-package specpage.Departures.Documents.Documents
-
+package specpage
 import specpage.CommonPages.*
 
-object DocumentsAddADocument extends YesNoPage {
+object ManagedFEReviewPrelodgedDeclarationErrorsPage extends Page {
 
-  override def title(args: String*): String = String.format("Do you want to add any documents")
+  override def title(args: String*): String = "Review pre-lodged declaration errors"
+
+  def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
+    clickByPartialLinkText(declarationLink)
+
+  def followDepartureLink(declarationLink: String): Unit =
+    loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
 
 }

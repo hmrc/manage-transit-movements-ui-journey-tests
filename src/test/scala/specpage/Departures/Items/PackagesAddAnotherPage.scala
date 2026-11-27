@@ -24,4 +24,14 @@ object PackagesAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 type of package"
     case _        => String.format("You have added %s types of packages", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfPackage: String): Unit =
+    loadPage(numberOfPackage)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfPackage: String): Unit =
+    loadPage(numberOfPackage)
+      .clickByPartialLinkText(sectionLink)
+
 }

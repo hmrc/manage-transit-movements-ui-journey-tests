@@ -21,4 +21,8 @@ object ManagedFEAmendDeclarationErrorsPage extends Page {
 
   override def title(args: String*): String = "Amend declaration errors"
 
+  def amendErrors(): Unit =
+    loadPage()
+      .submitPage()
+
 }

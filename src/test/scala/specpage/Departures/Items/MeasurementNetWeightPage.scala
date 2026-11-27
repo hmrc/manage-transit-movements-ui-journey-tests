@@ -22,4 +22,9 @@ object MeasurementNetWeightPage extends StringPage {
 
   override def title(args: String*): String = "What is the item’s net weight?"
 
+  def enterNetWeight(answer: String): Unit =
+    loadPage()
+      .fillInput(answer)
+      .submitPage()
+
 }

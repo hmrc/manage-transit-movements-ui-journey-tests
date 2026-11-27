@@ -17,11 +17,15 @@
 package specpage
 import specpage.CommonPages.*
 
-object ManagedFEPrelodgedDeclarationErrors extends Page {
+object ManagedFEPrelodgedDeclarationErrorsPage extends Page {
 
   override def title(args: String*): String = "Pre-lodged declaration errors"
 
   def selectPrelodgeDepartureDeclarationLink(declarationLink: String): Unit =
     clickByPartialLinkText(declarationLink)
+
+  def followDepartureLink(declarationLink: String): Unit =
+    loadPage()
+      .selectPrelodgeDepartureDeclarationLink(declarationLink)
 
 }

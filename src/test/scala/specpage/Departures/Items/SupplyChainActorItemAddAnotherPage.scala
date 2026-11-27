@@ -23,4 +23,14 @@ object SupplyChainActorItemAddAnotherPage extends YesNoPage {
     case Seq("1") => "You have added 1 supply chain actor for this item"
     case _        => String.format("You have added %s supply chain actors for this item", args: _*)
   }
+
+  def answerAddAnother(answer: String, numberOfSCAs: String): Unit =
+    loadPage(numberOfSCAs)
+      .select(answer)
+      .submitPage()
+
+  def followLink(sectionLink: String, numberOfSCAs: String): Unit =
+    loadPage(numberOfSCAs)
+      .clickByPartialLinkText(sectionLink)
+
 }

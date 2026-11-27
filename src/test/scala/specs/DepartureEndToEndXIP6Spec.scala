@@ -32,6 +32,44 @@ package specs
  * limitations under the License.
  */
 
+import specpage.Departures.AdditionalInformation.AddPageAdditionalInformationPage
+import specpage.Departures.AdditionalReference.AddPageAdditionalReferencePage
+import specpage.Departures.Confirmation.DepartureConfirmationPage
+import specpage.Departures.Documents.Documents.DocumentAddAnotherPage
+import specpage.Departures.Documents.Documents.DocumentReferenceNumberPage
+import specpage.Departures.Documents.Documents.DocumentTypePage
+import specpage.Departures.Documents.Documents.DocumentsForAllItemsPage
+import specpage.Departures.Documents.Supporting.AddLineItemNumberPage
+import specpage.Departures.Items.AddCUSCodePage
+import specpage.Departures.Items.AddCommodityCodePage
+import specpage.Departures.Items.AddDangerousGoodsPage
+import specpage.Departures.Items.AddDocumentsPage
+import specpage.Departures.Items.AddItemUCRPage
+import specpage.Departures.Items.AddNomenclatureCodePage
+import specpage.Departures.Items.AdditionalInformationAddPage
+import specpage.Departures.Items.AdditionalReferenceAddPage
+import specpage.Departures.Items.CUSCodePage
+import specpage.Departures.Items.CommodityCodePage
+import specpage.Departures.Items.DocumentsAddAnotherPage
+import specpage.Departures.Items.DocumentsWhichDocumentPage
+import specpage.Departures.Items.ItemCountryOfDestinationPage
+import specpage.Departures.Items.ItemCountryOfDispatchPage
+import specpage.Departures.Items.ItemDescriptionPage
+import specpage.Departures.Items.ItemUCRNumberPage
+import specpage.Departures.Items.ItemsAddAnotherPage
+import specpage.Departures.Items.MeasurementAddNetWeightPage
+import specpage.Departures.Items.MeasurementAddSupplementaryUnitsPage
+import specpage.Departures.Items.MeasurementGrossWeightPage
+import specpage.Departures.Items.NomenclatureCodePage
+import specpage.Departures.Items.PackageTypePage
+import specpage.Departures.Items.PackagesAddAnotherPage
+import specpage.Departures.Items.PackagesAddShippingMarkPage
+import specpage.Departures.Items.SupplyChainActorItemAddPage
+import specpage.Departures.Transport.BorderMeansOfTransport.AddAnotherDepartureMeansOfTransportPage
+import specpage.Departures.Transport.InlandModeOfTransport.IdentificationNumberPage
+import specpage.Departures.Transport.InlandModeOfTransport.InlandModeOfTransportPage
+import specpage.Departures.Transport.InlandModeOfTransport.TransportCountryPage
+import specpage.Departures.Transport.InlandModeOfTransport.TransportIdentificationPage
 import specpage.CommonPages.CYAPage
 import specpage.Departures.Guarantee.GuaranteeBForTIRDeclarationPage
 import specpage.Departures.PreTaskList.GenericCYAPage
@@ -42,10 +80,6 @@ import specpage.Departures.Transport.BorderMeansOfTransport.BorderMeansOftranspo
 import specpage.Departures.Transport.BorderMeansOfTransport.BorderModeOfTransportPage
 import specpage.Departures.Transport.BorderMeansOfTransport.ConveyanceReferenceNumberPage
 import specpage.Departures.Transport.Carrier.AddCarrierPage
-import specsteps.DepartureConfirmationStepDefSteps.*
-import specsteps.DocumentsStepDefSteps.*
-import specsteps.InlandModeOfTransportStepDefSteps.*
-import specsteps.ItemDetailsStepDefSteps.*
 import specsteps.PreTaskListStepDefSteps.*
 import specsteps.PreviousStepDefSteps.*
 import specsteps.RouteDetailsLocationOfGoodsStepDefSteps.*
@@ -251,24 +285,24 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAnInlandModeOfTransportPage("Yes")
 
       And("I choose radio option Rail on the Which inland mode of transport are you using? page")
-      andIchooseRadioOptionXOnTheWhichInlandModeOfTransportAreYouUsingPage("Rail")
+      InlandModeOfTransportPage.selectInlandMode("Rail")
 
       And(
         "I choose radio option Train number on the inland mode Which identification do you want to use for this vehicle? page"
       )
-      andIchooseRadioOptionXOnTheInlandModeWhichIdentificationDoYouWantToUseForThisVehiclePage("Train number")
+      TransportIdentificationPage.selectIdentificationType("Train number")
 
       And("I enter registration number 1234567 on the What is the identification number for this? page")
-      andIenterRegistrationNumberOnTheWhatIsTheIdentificationNumberForThisPage("1234567")
+      IdentificationNumberPage.enterRegistrationNumber("1234567")
 
       And("I select United Kingdom on the inland mode What country is this vehicle registered to? page")
-      andIselectOnTheInlandModeWhatCountryIsThisVehicleRegisteredToPage("United Kingdom")
+      TransportCountryPage.selectCountry("United Kingdom")
 
       And("I submit on the Check your answers section Departure means of transport page")
       CYAPage.submitAnswers("Departure means of transport")
 
       And("I select radio option No on the You have added 1 departure means of transport page")
-      andIselectRadioOptionXOnTheYouHaveAddedDepartureMeansOfTransportPage("No", "1")
+      AddAnotherDepartureMeansOfTransportPage.answerAddAnother("No", "1")
 
       And("I choose radio option Air on the How is the transit crossing the border? page")
       BorderModeOfTransportPage.selectBorderMode("Air")
@@ -319,10 +353,10 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       andIchooseRadioOptionXOnTheDoYouWantToAddAMethodOfPaymentForTransportChargesPage("No")
 
       And("I click radio option No on the Do you want to add an additional reference for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForAllItemsPage("No")
+      AddPageAdditionalReferencePage.selectAndContinue("No")
 
       And("I click radio option No on the Do you want to add any additional information for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForAllItemsPage("No")
+      AddPageAdditionalInformationPage.selectAndContinue("No")
 
       And(
         "click the Change link for Do you want to use the same Unique Consignment Reference? on the Transport details Check your answers page"
@@ -359,19 +393,19 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add documents")
 
       And("I click radio option Yes on the Do you want to add any documents? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyDocumentsPage("Yes")
+      AddDocumentsPage.selectAndContinue("Yes")
 
       And("I click radio option No on the Do you want to use this document for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      DocumentsForAllItemsPage.answerUseForAllItems("No")
 
       Then("I select Supporting - (C673) Catch certificate on the What type of document do you want to add? page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Supporting - (C673) Catch certificate")
+      DocumentTypePage.selectDocumentType("Supporting - (C673) Catch certificate")
 
       And("I enter RefNoCL213Doc1 on the What is the document’s reference number? page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("RefNoCL213Doc1")
+      DocumentReferenceNumberPage.enterReferenceNumber("RefNoCL213Doc1")
 
       And("I click radio option No on the Do you want to add a line item number? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddALineItemNumberPage("No")
+      AddLineItemNumberPage.answerAddLineItemNumber("No")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
@@ -380,31 +414,31 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option Yes on the You have added 1 document page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "1")
+      DocumentAddAnotherPage.answerAddAnother("Yes", "1")
 
       And("I click radio option Yes on the Do you want to use this document for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("Yes")
+      DocumentsForAllItemsPage.answerUseForAllItems("Yes")
 
       And("I select Transport - (N741) Master airwaybill on the What type of document do you want to add? page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Transport - (N741) Master airwaybill")
+      DocumentTypePage.selectDocumentType("Transport - (N741) Master airwaybill")
 
       And("I enter air1234 on the What is the document’s reference number? page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("air1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("air1234")
 
       And("I submit on the Check your answers section Documents page")
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option Yes on the You have added 2 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("Yes", "2")
+      DocumentAddAnotherPage.answerAddAnother("Yes", "2")
 
       And("I click radio option No on the Do you want to use this document for all items? page")
-      andIclickRadioOptionXOnTheDoYouWantToUseThisDocumentForAllItemsPage("No")
+      DocumentsForAllItemsPage.answerUseForAllItems("No")
 
       And("I select Previous - (C605) Information sheet INF3 on the What type of document do you want to add? page")
-      andIselectOnTheWhatTypeOfDocumentDoYouWantToAddPage("Previous - (C605) Information sheet INF3")
+      DocumentTypePage.selectDocumentType("Previous - (C605) Information sheet INF3")
 
       And("I enter 1234 on the What is the document’s reference number? page")
-      andIenterOnTheWhatIsTheDocumentsReferenceNumberPage("1234")
+      DocumentReferenceNumberPage.enterReferenceNumber("1234")
 
       And("I click radio option No on the Do you want to add any additional information for this document? page")
       andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisDocumentPage("No")
@@ -413,97 +447,97 @@ class DepartureEndToEndXIP6Spec extends BaseSpec with GivenWhenThen {
       CYAPage.submitAnswers("Documents")
 
       And("I choose radio option No on the You have added 3 documents page")
-      andIchooseRadioOptionXOnTheYouHaveAddedXDocumentsPage("No", "3")
+      DocumentAddAnotherPage.answerAddAnother("No", "3")
 
       // -------------------------Item details-------------------------
       When("I click the Add items link on the Declaration summary page")
       thenIclickTheLinkOnTheDeclarationSummaryPage("Add items")
 
       And("I enter This is a description of Item 1 on the Enter a description of item 1 page")
-      andIenterXOnTheEnterADescriptionOfItemXPage("This is a description ", "1")
+      ItemDescriptionPage.enterDescription("This is a description ", "1")
 
       And("I select United Kingdom on the What is the item’s country of dispatch? page")
-      andIselectOnTheWhatIsTheItemsCountryOfDispatchPage("United Kingdom")
+      ItemCountryOfDispatchPage.selectCountry("United Kingdom")
 
       And("I select Italy on the What is the item’s country of destination? page")
-      andIselectOnTheWhatIsTheItemsCountryOfDestinationPage("Italy")
+      ItemCountryOfDestinationPage.selectCountry("Italy")
 
       And("I choose radio option Yes on the Do you want to add a Unique Consignment Reference? page")
-      andIChooseRadioOptionXOnTheDoYouWantToAddAUniqueConsignmentReferencePage("Yes")
+      AddItemUCRPage.selectAndContinue("Yes")
 
       And("I enter UCR12312 on the What is the Unique Consignment Reference? page")
-      andIenterXOnTheWhatIsTheUniqueConsignmentReferencePage("UCR12312")
+      ItemUCRNumberPage.enterAndContinue("UCR12312")
 
       And("I click radio option Yes on the Do you want to add a Customs Union and Statistics code? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACustomsUnionAndStatisticsCodePage("Yes")
+      AddCUSCodePage.selectAndContinue("Yes")
 
       And("I enter 0010003-8 on the What is the Customs Union and Statistics code? page")
-      andIenterXOnTheWhatIsTheCustomsUnionAndStatisticsCodePage("0010003-8")
+      CUSCodePage.enterAndContinue("0010003-8")
 
       And("I click radio option Yes on the Do you want to add a commodity code? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACommodityCodePage("Yes")
+      AddCommodityCodePage.selectAndContinue("Yes")
 
       And("I enter 010130 on the What is the commodity code? page")
-      andIenterXOnTheWhatIsTheCommodityCodePage("010130")
+      CommodityCodePage.enterAndContinue("010130")
 
       And("I click radio option Yes on the Do you want to add a combined nomenclature code? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddACombinedNomenclatureCodePage("Yes")
+      AddNomenclatureCodePage.selectAndContinue("Yes")
 
       And("I enter A1 on the What is the combined nomenclature code? page")
-      andIenterXOnTheWhatIsTheCombinedNomenclatureCodePage("A1")
+      NomenclatureCodePage.enterAndContinue("A1")
 
       And("I click radio option No on the Does the item contain any dangerous goods? page")
-      andIclickRadioOptionXOnTheDoesTheItemContainAnyDangerousGoodsPage("No")
+      AddDangerousGoodsPage.selectAndContinue("No")
 
       And("I enter 100 on the What is the item’s gross weight? page")
-      andIenterXOnTheWhatIsTheItemsGrossWeightPage("100")
+      MeasurementGrossWeightPage.enterGrossWeight("100")
 
       And("I click radio option No on the Do you want to add the item’s net weight? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddTheItemsNetWeightPage("No")
+      MeasurementAddNetWeightPage.selectAndContinue("No")
 
       And("I click radio option No on the Do you want to add supplementary units? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddSupplementaryUnitsPage("No")
+      MeasurementAddSupplementaryUnitsPage.selectAndContinue("No")
 
       And("I select (VL) Bulk, liquid on the What type of package are you using for the item? page")
-      andIselectOnTheWhatTypeOfPackageAreYouUsingForTheItemPage("(VL) Bulk, liquid")
+      PackageTypePage.selectAndContinue("(VL) Bulk, liquid")
 
       And("I click radio option No on the Do you want to add a shipping mark? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAShippingMarkPage("No")
+      PackagesAddShippingMarkPage.selectAndContinue("No")
 
       And("I click radio option No on the You have added 1 type of package page")
-      andIclickRadioOptionXOnTheYouHaveAddedXTypesofPackagePage("No", "1")
+      PackagesAddAnotherPage.answerAddAnother("No", "1")
 
       And("I click radio option No on the Do you want to add a supply chain actor for this item? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddASupplyChainActorForThisItemPage("No")
+      SupplyChainActorItemAddPage.selectAndContinue("No")
 
       And("I click radio option Yes on the You have attached 1 document to this item page")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("Yes", "1")
+      DocumentsAddAnotherPage.answerAddAnother("Yes", "1")
 
       And(
         "I select Supporting - (C673) Catch certificate - RefNoCL213Doc1 on the Which document do you want to attach? page"
       )
-      andIselectOnTheWhichDocumentDoYouWantToAttachPage("Supporting - (C673) Catch certificate - RefNoCL213Doc1")
+      DocumentsWhichDocumentPage.selectAndContinue("Supporting - (C673) Catch certificate - RefNoCL213Doc1")
 
       And("I click radio option No on the You have attached 2 documents to this item page")
-      andIclickRadioOptionXOnTheYouHaveAttachedXDocumentsToThisItemPage("No", "2")
+      DocumentsAddAnotherPage.answerAddAnother("No", "2")
 
       And("I click radio option No on the Do you want to add an additional reference for this item? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnAdditionalReferenceForThisItemPage("No")
+      AdditionalReferenceAddPage.selectAndContinue("No")
 
       And("I click radio option No on the Do you want to add any additional information for this item? page")
-      andIclickRadioOptionXOnTheDoYouWantToAddAnyAdditionalInformationForThisItemPage("No")
+      AdditionalInformationAddPage.selectAndContinue("No")
 
       And("I submit on the Check your answers section Items page")
       CYAPage.submitAnswers("Items")
 
       And("I click radio option No on the You have added 1 item page")
-      andIclickRadioOptionXOnTheYouHaveAddedXItemPage("No", "1")
+      ItemsAddAnotherPage.answerAddAnother("No", "1")
 
       And("I click the Confirm and send button on the Declaration summary page")
       andIclickTheConfirmAndResendConfirmAndSendButtonOnTheDeclarationSummaryPage()
 
       And("I click the Sign out link on the Departure declaration sent page")
-      andIclickTheLinkOnTheDepartureDeclarationSentPage("Sign out")
+      DepartureConfirmationPage.followConfirmationLink("Sign out")
     }
   }
 }
